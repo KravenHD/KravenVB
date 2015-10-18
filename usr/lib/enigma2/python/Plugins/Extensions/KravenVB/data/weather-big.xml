@@ -1,0 +1,94 @@
+<!-- /* Weather -->
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 20" foregroundColor="KravenFont2" render="Label" position="22,22" size="60,25" source="session.CurrentService" zPosition="3" halign="center" transparent="1" noWrap="1">
+    <convert type="KravenVBWeather">forecastTodayDay</convert>
+  </widget>
+  <widget source="session.CurrentService" position="83,10" transparent="1" zPosition="8" size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend">
+    <convert  type="KravenVBWeather">currentWeatherPicon</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 16" foregroundColor="KravenFont2" render="Label" position="50,60" size="118,38" source="session.CurrentService" halign="center" transparent="1" zPosition="8" valign="center">
+    <convert type="KravenVBWeather">currentWeatherText</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="133,10" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTodayTempMax</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="133,35" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTodayTempMin</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 20" foregroundColor="KravenFont2" render="Label" position="209,22" size="60,25" source="session.CurrentService" zPosition="3" halign="center" transparent="1" noWrap="1">
+    <convert type="KravenVBWeather">forecastTomorrowDay</convert>
+  </widget>
+  <widget source="session.CurrentService" position="269,10" transparent="1" zPosition="8" size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend">
+    <convert  type="KravenVBWeather">forecastTomorrowPicon</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 16" foregroundColor="KravenFont2" render="Label" position="235,61" size="118,38" source="session.CurrentService" halign="center" transparent="1" zPosition="8" valign="center">
+    <convert type="KravenVBWeather">forecastTomorrowText</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="319,10" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrowTempMax</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="319,35" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrowTempMin</convert>
+  </widget>
+ <widget backgroundColor="KravenInfobarBackground" font="Regular2; 20" foregroundColor="KravenFont2" render="Label" position="395,22" size="60,25" source="session.CurrentService" zPosition="3" halign="center" transparent="1" noWrap="1">
+    <convert type="KravenVBWeather">forecastTomorrow1Day</convert>
+  </widget>
+  <widget source="session.CurrentService" position="456,10" transparent="1" zPosition="8" size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend">
+    <convert  type="KravenVBWeather">forecastTomorrow1Picon</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 16" foregroundColor="KravenFont2" render="Label" position="424,61" size="118,38" source="session.CurrentService" halign="center" transparent="1" zPosition="8" valign="center">
+    <convert type="KravenVBWeather">forecastTomorrow1Text</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="505,10" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrow1TempMax</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="505,35" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrow1TempMin</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 20" foregroundColor="KravenFont2" render="Label" position="580,22" size="60,25" source="session.CurrentService" zPosition="3" halign="center" transparent="1" noWrap="1">
+    <convert type="KravenVBWeather">forecastTomorrow2Day</convert>
+  </widget>
+  <widget source="session.CurrentService" position="641,10" transparent="1" zPosition="8" size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend">
+    <convert  type="KravenVBWeather">forecastTomorrow2Picon</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 16" foregroundColor="KravenFont2" render="Label" position="609,61" size="118,38" source="session.CurrentService" halign="center" transparent="1" zPosition="8" valign="center">
+    <convert type="KravenVBWeather">forecastTomorrow2Text</convert>
+  </widget>
+<widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="691,10" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrow2TempMax</convert>
+  </widget>
+<widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="691,35" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrow2TempMin</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 20" foregroundColor="KravenFont2" render="Label" position="765,22" size="60,25" source="session.CurrentService" zPosition="3" halign="center" transparent="1" noWrap="1">
+    <convert type="KravenVBWeather">forecastTomorrow3Day</convert>
+ </widget>
+  <widget source="session.CurrentService" position="826,10" transparent="1" zPosition="8" size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend">
+    <convert  type="KravenVBWeather">forecastTomorrow3Picon</convert>
+  </widget>
+  <widget backgroundColor="KravenInfobarBackground" font="Regular2; 16" foregroundColor="KravenFont2" render="Label" position="794,61" size="118,38" source="session.CurrentService" halign="center" transparent="1" zPosition="8" valign="center">
+    <convert type="KravenVBWeather">forecastTomorrow3Text</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="876,10" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrow3TempMax</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="876,35" size="60,25" source="session.CurrentService" zPosition="8" halign="center" transparent="1">
+    <convert type="KravenVBWeather">forecastTomorrow3TempMin</convert>
+  </widget>
+  <eLabel text="Temp:" position="990,8" size="170,22" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="1045,8" size="215,22" source="session.CurrentService" zPosition="3" halign="left" transparent="1">
+    <convert type="KravenVBWeather">feels</convert>
+  </widget>
+  <eLabel text="Wind:" position="990,32" size="70,22" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
+  <widget backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="1045,32" size="215,22" source="session.CurrentService" zPosition="3" halign="left" transparent="1">
+    <convert type="KravenVBWeather">currentWind</convert>
+  </widget>
+  <eLabel text="Klima:" position="990,56" size="180,25" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="1045,56" size="215,22" source="session.CurrentService" zPosition="3" halign="left" transparent="1">
+    <convert type="KravenVBWeather">klima</convert>
+  </widget>
+  <eLabel text="Ort:" position="990,80" size="60,25" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
+  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="1045,80" size="215,22" source="session.CurrentService" zPosition="3" halign="left" transparent="1">
+    <convert type="KravenVBWeather">currentLocation</convert>
+  </widget>
+  <ePixmap pixmap="KravenVB/header-kraven/ibaro.png" position="0,0" size="1280,443" zPosition="-9" />
+<!-- Weather */-->

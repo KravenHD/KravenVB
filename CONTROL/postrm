@@ -1,0 +1,8 @@
+#!/bin/sh
+rm -rf /usr/share/enigma2/KravenVB
+rm -rf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB
+rm -rf /usr/lib/enigma2/python/Components/Converter/KravenVB*
+rm -rf /usr/lib/enigma2/python/Components/Renderer/KravenVB*
+echo "                                                          "
+echo "              ...Skin successful removed.                 "
+echo "                                                          "

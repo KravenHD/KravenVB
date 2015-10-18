@@ -1,0 +1,893 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Kraven <KravenVB@web.de>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: KravenVB\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-06 23:16+0200\n"
+"PO-Revision-Date: 2015-10-13 21:42+0100\n"
+"Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
+"Language-Team: kraven & mike99\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: KravenVBYWeather.py
+msgid "N-NE"
+msgstr "N-NO"
+
+#: KravenVBYWeather.py
+msgid "NE"
+msgstr "NO"
+
+#: KravenVBYWeather.py
+msgid "E-NE"
+msgstr "O-NO"
+
+#: KravenVBYWeather.py
+msgid "E"
+msgstr "O"
+
+#: KravenVBYWeather.py
+msgid "E-SE"
+msgstr "O-SO"
+
+#: KravenVBYWeather.py
+msgid "SE"
+msgstr "SO"
+
+#: KravenVBYWeather.py
+msgid "S-SE"
+msgstr "S-SO"
+
+#: KravenVBYWeather.py
+msgid "Mon"
+msgstr "MO"
+
+#: KravenVBYWeather.py
+msgid "Tue"
+msgstr "DI"
+
+#: KravenVBYWeather.py
+msgid "Wed"
+msgstr "MI"
+
+#: KravenVBYWeather.py
+msgid "Thu"
+msgstr "DO"
+
+#: KravenVBYWeather.py
+msgid "Fri"
+msgstr "FR"
+
+#: KravenVBYWeather.py
+msgid "Sat"
+msgstr "SA"
+
+#: KravenVBYWeather.py
+msgid "Sun"
+msgstr "SO"
+
+#: KravenVBYWeather.py
+msgid ""
+"Tropical\n"
+" storm"
+msgstr ""
+"Tropischer\n"
+" Sturm"
+
+#: KravenVBYWeather.py
+msgid "Hurricane"
+msgstr "Hurrikan"
+
+#: KravenVBYWeather.py
+msgid ""
+"Severe\n"
+" thunderstorms"
+msgstr ""
+"Schwere\n"
+" Gewitter"
+
+#: KravenVBYWeather.py
+msgid "Thunderstorms"
+msgstr "Gewitter"
+
+#: KravenVBYWeather.py
+msgid ""
+"Mixed rain\n"
+" and snow"
+msgstr ""
+"Regen\n"
+" und Schnee"
+
+#: KravenVBYWeather.py
+msgid ""
+"Mixed rain\n"
+" and sleet"
+msgstr ""
+"Regen\n"
+" und Schneeregen"
+
+#: KravenVBYWeather.py
+msgid ""
+"Mixed snow\n"
+" and sleet"
+msgstr ""
+"Schnee\n"
+" und Graupel"
+
+#: KravenVBYWeather.py
+msgid ""
+"Freezing\n"
+" drizzle"
+msgstr ""
+"Frierender\n"
+" Nieselregen"
+
+#: KravenVBYWeather.py
+msgid "Drizzle"
+msgstr "Nieselregen"
+
+#: KravenVBYWeather.py
+msgid ""
+"Freezing\n"
+" rain"
+msgstr "Eisregen"
+
+#: KravenVBYWeather.py
+msgid "Showers"
+msgstr "Regen"
+
+#: KravenVBYWeather.py
+msgid "Rain"
+msgstr "Regen"
+
+#: KravenVBYWeather.py
+msgid ""
+"Snow\n"
+" flurries"
+msgstr "Schneetreiben"
+
+#: KravenVBYWeather.py
+msgid ""
+"Light\n"
+" snow showers"
+msgstr ""
+"Leichte\n"
+" Schneeschauer"
+
+#: KravenVBYWeather.py
+msgid ""
+"Blowing\n"
+" snow"
+msgstr "Schneetreiben"
+
+#: KravenVBYWeather.py
+msgid "Snow"
+msgstr "Schnee"
+
+#: KravenVBYWeather.py
+msgid "Hail"
+msgstr "Hagel"
+
+#: KravenVBYWeather.py
+msgid "Sleet"
+msgstr "Schneeregen"
+
+#: KravenVBYWeather.py
+msgid "Dust"
+msgstr "Staub"
+
+#: KravenVBYWeather.py
+msgid "Foggy"
+msgstr "Nebelig"
+
+#: KravenVBYWeather.py
+msgid "Haze"
+msgstr "Nebel"
+
+#: KravenVBYWeather.py
+msgid "Smoky"
+msgstr "Qualmig"
+
+#: KravenVBYWeather.py
+msgid "Blustery"
+msgstr "Stürmisch"
+
+#: KravenVBYWeather.py
+msgid "Windy"
+msgstr "Windig"
+
+#: KravenVBYWeather.py
+msgid "Cold"
+msgstr "Kalt"
+
+#: KravenVBYWeather.py
+msgid "Cloudy"
+msgstr "Wolkig"
+
+#: KravenVBYWeather.py
+msgid ""
+"Mostly\n"
+" cloudy"
+msgstr ""
+"Überwiegend\n"
+" bewölkt"
+
+#: KravenVBYWeather.py
+msgid ""
+"Partly\n"
+" cloudy"
+msgstr ""
+"Teilweise\n"
+" bewölkt"
+
+#: KravenVBYWeather.py
+msgid "Clear"
+msgstr "Klar"
+
+#: KravenVBYWeather.py
+msgid "Sunny"
+msgstr "Sonnig"
+
+#: KravenVBYWeather.py
+msgid "Fair"
+msgstr "Heiter"
+
+#: KravenVBYWeather.py
+msgid ""
+"Mixed rain\n"
+" and hail"
+msgstr ""
+"Regen\n"
+" und Hagel"
+
+#: KravenVBYWeather.py
+msgid "Hot"
+msgstr "Heiss"
+
+#: KravenVBYWeather.py
+msgid ""
+"Isolated\n"
+" thunderstorms"
+msgstr ""
+"Vereinzelte\n"
+" Gewitter"
+
+#: KravenVBYWeather.py
+msgid ""
+"Scattered\n"
+" thunderstorms"
+msgstr ""
+"Vereinzelte\n"
+" Gewitter"
+
+#: KravenVBYWeather.py
+msgid ""
+"Scattered\n"
+" showers"
+msgstr ""
+"Vereinzelte\n"
+" Regenschauer"
+
+#: KravenVBYWeather.py
+msgid "Heavy snow"
+msgstr ""
+"Starker\n"
+" Schneefall"
+
+#: KravenVBYWeather.py
+msgid ""
+"Scattered\n"
+" snow showers"
+msgstr ""
+"Vereinzelte\n"
+" Schneeschauer"
+
+#: KravenVBYWeather.py
+msgid "Thundershowers"
+msgstr "Gewitter"
+
+#: KravenVBYWeather.py
+msgid "Snow showers"
+msgstr "Schneeschauer"
+
+#: KravenVBYWeather.py
+msgid ""
+"Isolated\n"
+" thundershowers"
+msgstr ""
+"Vereinzelt\n"
+" Gewitter"
+
+#: KravenVBYWeather.py
+msgid ""
+"Not\n"
+" available"
+msgstr ""
+"Nicht\n"
+" verfügbar"
+
+#: KravenVBYWeather.py
+msgid " from "
+msgstr " aus "
+
+#: KravenVBYWeather.py
+msgid "% humidity"
+msgstr "% Luftfeuchte"
+
+#: KravenVBYWeather.py
+msgid ", feels "
+msgstr ", gefühlt "
+
+#: KravenVB.py
+msgid "with Border"
+msgstr "mit Rahmen"
+
+#: KravenVB.py
+msgid "left"
+msgstr "links"
+
+#: KravenVB.py
+msgid "right"
+msgstr "rechts"
+
+#: KravenVB.py
+msgid "bottom"
+msgstr "unten"
+
+#: KravenVB.py
+msgid "top"
+msgstr "oben"
+
+#: KravenVB.py
+msgid "center"
+msgstr "mittig"
+
+#: KravenVB.py
+msgid "low"
+msgstr "niedrig"
+
+#: KravenVB.py
+msgid "medium"
+msgstr "mittel"
+
+#: KravenVB.py
+msgid "high"
+msgstr "hoch"
+
+#: KravenVB.py
+msgid "amber"
+msgstr "amber"
+
+#: KravenVB.py
+msgid "amber dark"
+msgstr "amber dunkel"
+
+#: KravenVB.py
+msgid "black"
+msgstr "schwarz"
+
+#: KravenVB.py
+msgid "blue"
+msgstr "blau"
+
+#: KravenVB.py
+msgid "blue dark"
+msgstr "blau dunkel"
+
+#: KravenVB.py
+msgid "brown"
+msgstr "braun"
+
+#: KravenVB.py
+msgid "brown dark"
+msgstr "braun dunkel"
+
+#: KravenVB.py
+msgid "cobalt"
+msgstr "cobalt"
+
+#: KravenVB.py
+msgid "cobalt dark"
+msgstr "cobalt dunkel"
+
+#: KravenVB.py
+msgid "cyan"
+msgstr "cyan"
+
+#: KravenVB.py
+msgid "cyan dark"
+msgstr "cyan dunkel"
+
+#: KravenVB.py
+msgid "grey"
+msgstr "grau"
+
+#: KravenVB.py
+msgid "grey dark"
+msgstr "grau dunkel"
+
+#: KravenVB.py
+msgid "green"
+msgstr "grün"
+
+#: KravenVB.py
+msgid "green dark"
+msgstr "grün dunkel"
+
+#: KravenVB.py
+msgid "Kraven dark"
+msgstr "Kraven dunkel"
+
+#: KravenVB.py
+msgid "olive"
+msgstr "olive"
+
+#: KravenVB.py
+msgid "olive dark"
+msgstr "olive dunkel"
+
+#: KravenVB.py
+msgid "orange"
+msgstr "orange"
+
+#: KravenVB.py
+msgid "orange dark"
+msgstr "orange dunkel"
+
+#: KravenVB.py
+msgid "pink"
+msgstr "pink"
+
+#: KravenVB.py
+msgid "pink dark"
+msgstr "pink dunkel"
+
+#: KravenVB.py
+msgid "red"
+msgstr "rot"
+
+#: KravenVB.py
+msgid "red dark"
+msgstr "rot dunkel"
+
+#: KravenVB.py
+msgid "steel"
+msgstr "steel"
+
+#: KravenVB.py
+msgid "steel dark"
+msgstr "steel dunkel"
+
+#: KravenVB.py
+msgid "violet"
+msgstr "violet"
+
+#: KravenVB.py
+msgid "violet dark"
+msgstr "violet dunkel"
+
+#: KravenVB.py
+msgid "white"
+msgstr "weiß"
+
+#: KravenVB.py
+msgid "yellow"
+msgstr "gelb"
+
+#: KravenVB.py
+msgid "off"
+msgstr "aus"
+
+#: KravenVB.py
+msgid "no Cover"
+msgstr "kein Cover"
+
+#: KravenVB.py
+msgid "no Cover2"
+msgstr "kein Cover2"
+
+#: KravenVB.py
+msgid "small Cover"
+msgstr "kleines Cover"
+
+#: KravenVB.py
+msgid "small Cover2"
+msgstr "kleines Cover2"
+
+#: KravenVB.py
+msgid "big Cover"
+msgstr "großes Cover"
+
+#: KravenVB.py
+msgid "big Cover2"
+msgstr "großes Cover2"
+
+#: KravenVB.py
+msgid "very big Cover"
+msgstr "sehr großes Cover"
+
+#: KravenVB.py
+msgid "very big Cover2"
+msgstr "sehr großes Cover2"
+
+#: KravenVB.py
+msgid "on"
+msgstr "ein"
+
+#: KravenVB.py
+msgid "Weather"
+msgstr "Wetter"
+
+#: KravenVB.py
+msgid "standard"
+msgstr "standard"
+
+#: KravenVB.py
+msgid "standard big"
+msgstr "standard groß"
+
+#: KravenVB.py
+msgid "colored"
+msgstr "farbig"
+
+#: KravenVB.py
+msgid "colorfull"
+msgstr "bunt"
+
+#: KravenVB.py
+msgid "colorfull2"
+msgstr "bunt2"
+
+#: KravenVB.py
+msgid "big"
+msgstr "groß"
+
+#: KravenVB.py
+msgid "small"
+msgstr "klein"
+
+#: KravenVB.py
+msgid "Running Text (Delay)"
+msgstr "Laufschrift (Verzögerung)"
+
+#: KravenVB.py
+msgid "Background-Transparency"
+msgstr "Hintergrund-Transparenz"
+
+#: KravenVB.py
+msgid "Weather-ID"
+msgstr "Wetter-ID"
+
+#: KravenVB.py
+msgid "______________________ Global-Colors ___________________________"
+msgstr "______________________ Globale Farben __________________________"
+
+#: KravenVB.py
+msgid "______________________ Infobar _________________________________"
+msgstr "______________________ Infobar _________________________________"
+
+#: KravenVB.py
+msgid "______________________ Views ___________________________________"
+msgstr "______________________ Ansichten _______________________________"
+
+#: KravenVB.py
+msgid "______________________ Channellist _____________________________"
+msgstr "______________________ Kanalliste ______________________________"
+
+#: KravenVB.py
+msgid "______________________ Weather _________________________________"
+msgstr "______________________ Wetter __________________________________"
+
+#: KravenVB.py
+msgid "Refresh interval (in minutes)"
+msgstr "Aktualisierungsintervall (in Minuten)"
+
+#: KravenVB.py
+msgid "Screennames"
+msgstr "Screennamen"
+
+#: KravenVB.py
+msgid "Menus"
+msgstr "Menüs"
+
+#: KravenVB.py
+msgid "Weather-Style"
+msgstr "Wetter-Stil"
+
+#: KravenVB.py
+msgid "Meteo-Color"
+msgstr "Meteo-Farbe"
+
+#: KravenVB.py
+msgid "only available for Meteo-Style"
+msgstr "nur verfügbar für Meteo-Stil"
+
+#: KravenVB.py
+msgid "Channellist-Style"
+msgstr "Kanallisten-Stil"
+
+#: KravenVB.py
+msgid "Primetime"
+msgstr "Primetime"
+
+#: KravenVB.py
+msgid "Primetime-Time"
+msgstr "Primetime-Uhrzeit"
+
+#: KravenVB.py
+msgid "Primetime-Font"
+msgstr "Primetime-Schrift"
+
+#: KravenVB.py
+msgid "only available when Primetime is activated"
+msgstr "nur verfügbar bei aktivierter Primetime"
+
+#: KravenVB.py
+msgid "Lines"
+msgstr "Linien"
+
+#: KravenVB.py
+msgid "Background"
+msgstr "Hintergrund"
+
+#: KravenVB.py
+msgid "Progress-Border"
+msgstr "Fortschrittsbalken-Rahmen"
+
+#: KravenVB.py
+msgid "Listselection"
+msgstr "Auswahlbalken"
+
+#: KravenVB.py
+msgid "Listselection-Border"
+msgstr "Auswahlbalken-Rahmen"
+
+#: KravenVB.py
+msgid "Progress-/Volumebar"
+msgstr "Fortschritts-/Lautstärkebalken"
+
+#: KravenVB.py
+msgid "Primary-Font"
+msgstr "Primär-Schrift"
+
+#: KravenVB.py
+msgid "Secondary-Font"
+msgstr "Sekundär-Schrift"
+
+#: KravenVB.py
+msgid "Selection-Font"
+msgstr "Auswahl-Schrift"
+
+#: KravenVB.py
+msgid "Marking-Font"
+msgstr "Markierungs-Schrift"
+
+#: KravenVB.py
+msgid "ECM-Font"
+msgstr "ECM-Schrift"
+
+#: KravenVB.py
+msgid "Colorbutton-Font"
+msgstr "Farbtasten-Schrift"
+
+#: KravenVB.py
+msgid "Clock-Style"
+msgstr "Uhr-Anzeige"
+
+#: KravenVB.py
+msgid "Analog-Clock-Color"
+msgstr "Analoguhr-Farbe"
+
+#: KravenVB.py
+msgid "System-Infos"
+msgstr "System-Infos"
+
+#: KravenVB.py
+msgid "Satellite-Infos"
+msgstr "Satelliten-Infos"
+
+#: KravenVB.py
+msgid "ECM-Infos"
+msgstr "ECM-Infos"
+
+#: KravenVB.py
+msgid "______________________ General __________________________________"
+msgstr "______________________ Allgemein __________________________________"
+
+#: KravenVB.py
+msgid "Channellist"
+msgstr "Kanalliste"
+
+#: KravenVB.py
+msgid "Volume"
+msgstr "Lautstärke"
+
+#: KravenVB.py
+msgid "Do you really want to reboot now?"
+msgstr "Wollen Sie jetzt neu starten?"
+
+#: KravenVB.py
+msgid "Restart GUI"
+msgstr "GUI neu starten"
+
+#: KravenVB.py
+msgid "Error creating Skin!"
+msgstr "Fehler beim Erstellen des Skins!"
+
+#: KravenVB.py
+msgid ""
+"GUI needs a restart to apply a new skin.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Zum Aktivieren des Skin muss die Oberfläche\n"
+"neu gestartet werden.\n"
+"\n"
+"Wollen Sie jetzt neu starten?"
+
+#: plugin.py
+msgid "Configuration tool for KravenVB"
+msgstr "Konfigurationstool für KravenVB"
+
+#: KravenVB.py
+msgid "no Picon"
+msgstr "kein Picon"
+
+#: KravenVB.py
+msgid "Name small"
+msgstr "Name klein"
+
+#: KravenVB.py
+msgid "Name & Number small"
+msgstr "Name & Nummer klein"
+
+#: KravenVB.py
+msgid "Name big"
+msgstr "Name groß"
+
+#: KravenVB.py
+msgid "Name & Number big"
+msgstr "Name & Nummer groß"
+
+#: KravenVB.py
+msgid "Name & Number"
+msgstr "Name & Nummer"
+
+#: KravenVB.py
+msgid "Channelname/-number-Font"
+msgstr "Kanalname/-nummer-Schrift"
+
+#: KravenVB.py
+msgid "Channelname/-number"
+msgstr "Kanalname/-nummer"
+
+#: KravenVB.py
+msgid "Infobox-Contents"
+msgstr "Infobox-Inhalte"
+
+#: KravenVB.py
+msgid "top/bottom"
+msgstr "untereinander"
+
+#: KravenVB.py
+msgid "left/right"
+msgstr "nebeneinander"
+
+#: KravenVB.py
+msgid "single"
+msgstr "einfach"
+
+#: KravenVB.py
+msgid "MiniTV left"
+msgstr "MiniTV links"
+
+#: KravenVB.py
+msgid "MiniTV right"
+msgstr "MiniTV rechts"
+
+#: KravenVB.py
+msgid "Tuner number/Record"
+msgstr "Tuneranzahl/Aufnahme"
+
+#: KravenVB.py
+msgid "Infobar-Icons"
+msgstr "Infobar-Icons"
+
+#: KravenVB.py
+msgid "Icons (except Infobar)"
+msgstr "Icons (ausgenommen Infobar)"
+
+#: KravenVB.py
+msgid "Infobar-Background"
+msgstr "Infobar-Hintergrund"
+
+#: KravenVB.py
+msgid "Icons + 4 Tuner + Resolution + Infobox"
+msgstr "Icons + 4 Tuner + Auflösung + Infobox"
+
+#: KravenVB.py
+msgid "Icons + REC + 2 Tuner + Resolution + Infobox"
+msgstr "Icons + REC + 2 Tuner + Auflösung + Infobox"
+
+#: KravenVB.py
+msgid "Show Infobar-Background"
+msgstr "Zeige Infobar-Hintergrund"
+
+#: KravenVB.py
+msgid "in all Screens"
+msgstr "in allen Screens"
+
+#: KravenVB.py
+msgid "only Infobar, SecondInfobar & Players"
+msgstr "nur Infobar, SecondInfobar & Players"
+
+#: KravenVB.py
+msgid "light"
+msgstr "hell"
+
+#: KravenVB.py
+msgid "dark"
+msgstr "dunkel"
+
+#: KravenVB.py
+msgid "thin"
+msgstr "schmal"
+
+#: KravenVB.py
+msgid "middle"
+msgstr "mittel"
+
+#: KravenVB.py
+msgid "wide"
+msgstr "breit"
+
+#: KravenVB.py
+msgid "Infobar-Style"
+msgstr "Infobar-Stil"
+
+#: KravenVB.py
+msgid "Scrollbars"
+msgstr "Scrollbalken"
+
+#: KravenVB.py
+msgid "only available for Clock Analog"
+msgstr "nur verfügbar für Analog-Uhr"
+
+#: KravenVB.py
+msgid "not available in this style"
+msgstr "in diesem Stil nicht verfügbar"
+
+#: KravenVB.py
+msgid "not available when scrollbars activated"
+msgstr "nicht verfügbar bei aktivierten Scrollbalken"
+
+#: KravenVB.py
+msgid "Tuner/Satellite + SNR"
+msgstr "Tuner/Satellit + SNR"
+
+#: KravenVB.py
+msgid "Tuner/Satellite + dB"
+msgstr "Tuner/Satellit + dB"
+
+#: KravenVB.py
+msgid "CPU + Load"
+msgstr "CPU + Systemlast"
+
+#: KravenVB.py
+msgid "Temperature + Fan"
+msgstr "Temperatur + Lüfter"
+
+#: KravenVBECMLine.py
+msgid "not available"
+msgstr "Nicht vorhanden"
+
+#: KravenVBECMLine.py
+msgid "free to air"
+msgstr "Frei empfangbar"

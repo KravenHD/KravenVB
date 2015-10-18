@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "                                                          "
+echo "             ...Skin successful installed.                "
+echo "                                                          "
+wget -O /dev/null 'http://127.0.0.1/web/message?type=1&text=KravenVB%20wurde%20erfolgreich%20installiert.%0A%0AZur%20Nutzung%20rufen%20Sie%20das%20Plugin%20auf,%20speichern%20Ihre%20Einstellungen%20und%20starten%20die%20Oberfl%C3%A4che%20neu.&timeout=13'
+exit 0

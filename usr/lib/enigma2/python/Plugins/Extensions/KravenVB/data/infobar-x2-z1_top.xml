@@ -1,0 +1,73 @@
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_sub_off.png" position="578,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_sub_on.png" position="578,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="VServiceInfo">SubtitlesAvailable</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_txt_off.png" position="629,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_txt_on.png" position="629,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_dolby_off.png" position="680,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_dolby_on.png" position="680,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_format_off.png" position="731,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_format_on.png" position="731,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hd_off.png" position="782,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hd_on.png" position="782,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_crypt_off.png" position="833,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_crypt_on.png" position="833,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hbbtv_off.png" position="884,23" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hbbtv_on.png" position="884,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+    <convert type="KravenVBServiceInfoEX">HasHBBTV</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="KravenVB/icons-light/infobar/a_off.png" position="935,23" size="20,22" zPosition="1" alphatest="blend" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/icons-light/infobar/a_on.png" position="935,23" zPosition="2" size="20,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="KravenVB/icons-light/infobar/b_off.png" position="960,23" size="20,22" zPosition="1" alphatest="blend" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/icons-light/infobar/b_on.png" position="960,23" zPosition="2" size="20,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="KravenVB/icons-light/infobar/c_off.png" position="984,23" size="20,22" zPosition="1" alphatest="blend" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/icons-light/infobar/c_on.png" position="984,23" zPosition="2" size="20,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="KravenVB/icons-light/infobar/d_off.png" position="1009,23" size="20,22" zPosition="1" alphatest="blend" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/icons-light/infobar/d_on.png" position="1009,23" zPosition="2" size="20,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">8</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap pixmap="KravenVB/header-kraven/ibaro.png" position="0,-20" size="1280,443" zPosition="-9" />
+  <ePixmap pixmap="KravenVB/icons-light/infobar/aufloesung.png" position="1038,23" size="112,22" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Label" zPosition="3" position="1039,21" size="110,22" font="Regular; 19" halign="center" backgroundColor="KravenInfobarBackground" foregroundColor="KravenButtonStyleFont" transparent="1">
+    <convert type="KravenVBExtraInfo">Resolution</convert>    
+  </widget>
+  <ePixmap pixmap="KravenVB/icons-light/infobar/aufloesung2.png" position="1158,23" size="116,22" zPosition="1" alphatest="blend" />
+  <widget backgroundColor="KravenInfobarBackground" font="Regular;19" foregroundColor="KravenButtonStyleFont" halign="left" position="1161,21" size="55,22" render="Label" source="session.CurrentService" transparent="1">
+    <convert  type="KravenVBExtServiceInfo">OrbitalPosition</convert>
+  </widget>
+  <widget render="Label" font="Regular; 19" position="1204,21" size="67,22" halign="right" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenButtonStyleFont"  source="session.FrontendStatus">
+    <convert  type="KravenVBFrontendInfo">SNR</convert>
+  </widget>
+  <!--<eLabel text="  S:"  font="Regular; 19" position="1210,21" size="30,22" halign="left" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenButtonStyleFont" />-->
