@@ -1,6 +1,6 @@
 #######################################################################
 #
-# KravenVB by Team Kraven
+# KravenVB by Kraven, oerlgrey, stony272 and tomele
 # 
 # Thankfully inspired by:
 # MyMetrix
@@ -823,6 +823,37 @@ config.plugins.KravenVB.ECMInfo = ConfigSelection(default="none", choices = [
 				("ecm-info-on", _("on"))
 				])
 				
+config.plugins.KravenVB.ECMLine1 = ConfigSelection(default="VeryShortCaid", choices = [
+				("VeryShortCaid", _("CAID + Time")),
+				("VeryShortReader", _("Reader + Time")),
+				("ShortHops", _("CAID + Hops + Time")),
+				("ShortReader", _("CAID + Reader + Time"))
+				])
+				
+config.plugins.KravenVB.ECMLine2 = ConfigSelection(default="VeryShortCaid", choices = [
+				("VeryShortCaid", _("CAID + Time")),
+				("VeryShortReader", _("Reader + Time")),
+				("ShortHops", _("CAID + Hops + Time")),
+				("ShortReader", _("CAID + Reader + Time")),
+				("Normal", _("CAID + Reader + Hops + Time")),
+				("Long", _("CAID + System + Reader + Hops + Time")),
+				("VeryLong", _("CAM + CAID + System + Reader + Hops + Time"))
+				])
+				
+config.plugins.KravenVB.ECMLine3 = ConfigSelection(default="VeryShortCaid", choices = [
+				("VeryShortCaid", _("CAID + Time")),
+				("VeryShortReader", _("Reader + Time")),
+				("ShortHops", _("CAID + Hops + Time")),
+				("ShortReader", _("CAID + Reader + Time")),
+				("Normal", _("CAID + Reader + Hops + Time")),
+				("Long", _("CAID + System + Reader + Hops + Time"))
+				])
+				
+config.plugins.KravenVB.FTA = ConfigSelection(default="FTAVisible", choices = [
+				("FTAVisible", _("on")),
+				("none", _("off"))
+				])
+				
 config.plugins.KravenVB.SystemInfo = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("systeminfo-big", _("big")),
@@ -921,7 +952,6 @@ config.plugins.KravenVB.IBtop = ConfigSelection(default="infobar-x2-z1_top", cho
 				
 config.plugins.KravenVB.Infobox = ConfigSelection(default="sat", choices = [
 				("sat", _("Tuner/Satellite + SNR")),
-				("db", _("Tuner/Satellite + dB")),
 				("cpu", _("CPU + Load")),
 				("temp", _("Temperature + Fan"))
 				])
@@ -1015,7 +1045,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <eLabel position="830,80" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" name="," />
   <eLabel position="830,130" size="402,46" text="for VTi-Image" font="Regular; 26" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
-  <eLabel position="845,180" size="372,46" text="Version: 2.5.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
+  <eLabel position="845,180" size="372,46" text="Version: 2.6.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
   <ePixmap backgroundColor="#00000000" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/about.png" position="847,280" size="368,207" zPosition="-9" />
   <widget name="helperimage" position="847,280" size="368,207" zPosition="1" backgroundColor="#00000000" />
 </screen>
@@ -1140,6 +1170,13 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("System-Infos"), config.plugins.KravenVB.SystemInfo))
 		list.append(getConfigListEntry(_("Satellite-Infos"), config.plugins.KravenVB.SatInfo))
 		list.append(getConfigListEntry(_("ECM-Infos"), config.plugins.KravenVB.ECMInfo))
+		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+			list.append(getConfigListEntry(_("ECM-Contents"), config.plugins.KravenVB.ECMLine1))
+		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
+			list.append(getConfigListEntry(_("ECM-Contents"), config.plugins.KravenVB.ECMLine2))
+		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
+			list.append(getConfigListEntry(_("ECM-Contents"), config.plugins.KravenVB.ECMLine3))
+		list.append(getConfigListEntry(_("Show 'free to air'"), config.plugins.KravenVB.FTA))
 		list.append(getConfigListEntry(_("ECM-Font"), config.plugins.KravenVB.ECMFont))
 		list.append(getConfigListEntry(_("______________________ Channellist _____________________________"), ))
 		if fileExists("/usr/lib/enigma2/python/Components/Converter/MiniTVDisplay.py") and fileExists("/usr/lib/enigma2/python/Components/Renderer/MiniTV.py"):
@@ -1280,6 +1317,22 @@ class KravenVB(ConfigListScreen, Screen):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/about.png"
 			elif returnValue == "meteo-light":
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/meteo.jpg"
+			elif returnValue == "VeryShortCaid":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "VeryShortReader":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "ShortHops":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "ShortReader":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "Normal":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "Long":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "VeryLong":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
+			elif returnValue == "FTAVisible":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/ecm-info-on.jpg"
 			else:
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/" + returnValue + ".jpg"
 			if fileExists(path):
@@ -1590,8 +1643,6 @@ class KravenVB(ConfigListScreen, Screen):
 					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBExtServiceInfo">OrbitalPosition', 'convert  type="KravenVBTempFanInfo">TempInfo'])
-				elif config.plugins.KravenVB.Infobox.value == "db":
-					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert  type="KravenVBFrontendInfo">SNRdB'])
 
 			### Infobar_begin
 			self.appendSkinFile(self.daten + "infobar-begin.xml")
@@ -1635,6 +1686,23 @@ class KravenVB(ConfigListScreen, Screen):
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ClockStyle2.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ClockStyle3.value + ".xml")
+				
+			### FTA
+			if config.plugins.KravenVB.FTA.value == "FTAVisible":
+				self.skinSearchAndReplace.append(['FTAInvisible</convert>', 'FTAVisible</convert>'])
+			elif config.plugins.KravenVB.FTA.value == "none":
+				self.skinSearchAndReplace.append(['FTAVisible</convert>', 'FTAInvisible</convert>'])
+
+			### ecm-contents
+			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+				self.skinSearchAndReplace.append(['<convert type="KravenVBECMLine">ECMLine,FTAInvisible</convert>', '<convert type="KravenVBECMLine">' + config.plugins.KravenVB.ECMLine1.value + ',FTAInvisible</convert>'])
+				self.skinSearchAndReplace.append(['<convert type="KravenVBECMLine">ECMLine,FTAVisible</convert>', '<convert type="KravenVBECMLine">' + config.plugins.KravenVB.ECMLine1.value + ',FTAVisible</convert>'])
+			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
+				self.skinSearchAndReplace.append(['<convert type="KravenVBECMLine">ECMLine,FTAInvisible</convert>', '<convert type="KravenVBECMLine">' + config.plugins.KravenVB.ECMLine2.value + ',FTAInvisible</convert>'])
+				self.skinSearchAndReplace.append(['<convert type="KravenVBECMLine">ECMLine,FTAVisible</convert>', '<convert type="KravenVBECMLine">' + config.plugins.KravenVB.ECMLine2.value + ',FTAVisible</convert>'])
+			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
+				self.skinSearchAndReplace.append(['<convert type="KravenVBECMLine">ECMLine,FTAInvisible</convert>', '<convert type="KravenVBECMLine">' + config.plugins.KravenVB.ECMLine3.value + ',FTAInvisible</convert>'])
+				self.skinSearchAndReplace.append(['<convert type="KravenVBECMLine">ECMLine,FTAVisible</convert>', '<convert type="KravenVBECMLine">' + config.plugins.KravenVB.ECMLine3.value + ',FTAVisible</convert>'])
 
 			### ecm-info
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":

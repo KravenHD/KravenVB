@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-10-13 21:42+0100\n"
+"PO-Revision-Date: 2015-10-22 21:54+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -697,6 +697,42 @@ msgstr "Satelliten-Infos"
 #: KravenVB.py
 msgid "ECM-Infos"
 msgstr "ECM-Infos"
+
+#: KravenVB.py
+msgid "ECM-Contents"
+msgstr "ECM-Inhalte"
+
+#: KravenVB.py
+msgid "Show 'free to air'"
+msgstr "Zeige 'Frei empfangbar'"
+
+#: KravenVB.py
+msgid "CAID + Time"
+msgstr "CAID + Zeit"
+
+#: KravenVB.py
+msgid "Reader + Time"
+msgstr "Reader + Zeit"
+
+#: KravenVB.py
+msgid "CAID + Hops + Time"
+msgstr "CAID + Hops + Zeit"
+
+#: KravenVB.py
+msgid "CAID + Reader + Time"
+msgstr "CAID + Reader + Zeit"
+
+#: KravenVB.py
+msgid "CAID + Reader + Hops + Time"
+msgstr "CAID + Reader + Hops + Zeit"
+
+#: KravenVB.py
+msgid "CAID + System + Reader + Hops + Time"
+msgstr "CAID + System + Reader + Hops + Zeit"
+
+#: KravenVB.py
+msgid "CAM + CAID + System + Reader + Hops + Time"
+msgstr "CAM + CAID + System + Reader + Hops + Zeit"
 
 #: KravenVB.py
 msgid "______________________ General __________________________________"

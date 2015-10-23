@@ -1,7 +1,9 @@
 <skin>
   <copyright>
     <!-- DONT REMOVE THIS DISCLAIMER -->
-    <!-- KravenVB by Team Kraven -->
+    <!-- KravenVB by Kraven and oerlgrey -->
+    <!-- Icons and buttons by stony272 -->
+    <!-- Thanks to TBX, Mike99 and tomele -->
     <!-- You can change this skin for PERSONAL USE ONLY -->
     <!-- You are not allowed to publish our skin without our permission -->
   </copyright>
@@ -156,3 +158,13 @@
     <color color="KravenMarkedFont" name="ListboxMarkedAndSelectedForeground" />
     <color color="KravenFont1" name="WindowTitleForeground" />
     <color color="KravenBackground" name="WindowTitleBackground" />
+    <borderset name="bsWindow">
+      <pixmap filename="KravenVB/bsWindow/bs_tl.png" pos="bpTopLeft" />
+      <pixmap filename="KravenVB/bsWindow/bs_t.png" pos="bpTop" />
+      <pixmap filename="KravenVB/bsWindow/bs_tr.png" pos="bpTopRight" />
+      <pixmap filename="KravenVB/bsWindow/bs_l.png" pos="bpLeft" />
+      <pixmap filename="KravenVB/bsWindow/bs_r.png" pos="bpRight" />
+      <pixmap filename="KravenVB/bsWindow/bs_bl.png" pos="bpBottomLeft" />
+      <pixmap filename="KravenVB/bsWindow/bs_b.png" pos="bpBottom" />
+      <pixmap filename="KravenVB/bsWindow/bs_br.png" pos="bpBottomRight" />
+    </borderset>
