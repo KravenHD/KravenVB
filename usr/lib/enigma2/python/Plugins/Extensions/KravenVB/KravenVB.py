@@ -1,6 +1,6 @@
 #######################################################################
 #
-# KravenVB by Kraven, oerlgrey, stony272 and tomele
+# KravenVB by Team-Kraven
 # 
 # Thankfully inspired by:
 # MyMetrix
