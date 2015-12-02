@@ -38,5 +38,5 @@
   <widget source="session.FrontendStatus" render="Label" font="Regular;16" position="1205,11" size="35,20" halign="right" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
      <convert type="KravenVBFrontendInfo">SNR</convert>
   </widget>
-  <ePixmap pixmap="KravenVB/header-kraven/ibar.png" position="0,490" size="1280,400" zPosition="-9" alphatest="blend" />
-  <ePixmap pixmap="KravenVB/header-kraven/ibaro.png" position="0,-20" size="1280,443" zPosition="-9" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/ibar.png" position="0,490" size="1280,400" zPosition="-9" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/ibaro.png" position="0,-20" size="1280,443" zPosition="-9" alphatest="blend" />

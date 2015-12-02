@@ -31,11 +31,14 @@
     <color name="KravenProgress" value="#00C3461B" />
     <color name="KravenSelection" value="#000050EF" />
     <color name="KravenSelFont" value="#00ffffff" />
+    <color name="KravenEMCSelection" value="#000050EF" />
+    <color name="KravenEMCSelFont" value="#00ffffff" />
     <color name="KravenMarkedFont" value="#00ffffff" />
     <color name="KravenECMFont" value="#00ffffff" />
     <color name="KravenChannelnameFont" value="#00ffffff" />
     <color name="KravenPrimetimeFont" value="#0070AD11" />
     <color name="KravenMeteoFont" value="#00fff0e0" />
+	<color name="selectedFG" value="#00ffffff" />
     <color name="orange" value="#00dc5221" />
     <color name="rds_text_bg" value="#00003258" />
     <color name="red" value="#00f23d21" />

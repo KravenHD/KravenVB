@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-10-22 21:54+0100\n"
+"PO-Revision-Date: 2015-12-01 22:12+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -326,6 +326,38 @@ msgstr "% Luftfeuchte"
 msgid ", feels "
 msgstr ", gefühlt "
 
+#: KravenVBECMLine.py
+msgid "not available"
+msgstr "Nicht vorhanden"
+
+#: KravenVBECMLine.py
+msgid "free to air"
+msgstr "Frei empfangbar"
+
+#: KravenVBECMLine.py
+msgid "CAM/Card unsupported"
+msgstr "CAM/Karte nicht unterstützt"
+
+#: KravenVBECMLine.py
+msgid "unknown"
+msgstr "unbekannt"
+
+#: KravenVBECMLine.py
+msgid "System: unknown"
+msgstr "System: unbekannt"
+
+#: KravenVBECMLine.py
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: KravenVBECMLine.py
+msgid "waiting for information ..."
+msgstr "Warte auf Informationen ..."
+
+#: KravenVBECMLine.py
+msgid "no information available"
+msgstr "Keine Informationen verfügbar"
+
 #: KravenVB.py
 msgid "with Border"
 msgstr "mit Rahmen"
@@ -351,24 +383,16 @@ msgid "center"
 msgstr "mittig"
 
 #: KravenVB.py
-msgid "low"
-msgstr "niedrig"
-
-#: KravenVB.py
-msgid "medium"
-msgstr "mittel"
-
-#: KravenVB.py
-msgid "high"
-msgstr "hoch"
-
-#: KravenVB.py
 msgid "amber"
-msgstr "amber"
+msgstr "bernstein"
 
 #: KravenVB.py
 msgid "amber dark"
-msgstr "amber dunkel"
+msgstr "bernstein dunkel"
+
+#: KravenVB.py
+msgid "amber very dark"
+msgstr "bernstein sehr dunkel"
 
 #: KravenVB.py
 msgid "black"
@@ -383,12 +407,20 @@ msgid "blue dark"
 msgstr "blau dunkel"
 
 #: KravenVB.py
+msgid "blue very dark"
+msgstr "blau sehr dunkel"
+
+#: KravenVB.py
 msgid "brown"
 msgstr "braun"
 
 #: KravenVB.py
 msgid "brown dark"
 msgstr "braun dunkel"
+
+#: KravenVB.py
+msgid "brown very dark"
+msgstr "braun sehr dunkel"
 
 #: KravenVB.py
 msgid "cobalt"
@@ -399,12 +431,20 @@ msgid "cobalt dark"
 msgstr "cobalt dunkel"
 
 #: KravenVB.py
+msgid "cobalt very dark"
+msgstr "cobalt sehr dunkel"
+
+#: KravenVB.py
 msgid "cyan"
 msgstr "cyan"
 
 #: KravenVB.py
 msgid "cyan dark"
 msgstr "cyan dunkel"
+
+#: KravenVB.py
+msgid "cyan very dark"
+msgstr "cyan sehr dunkel"
 
 #: KravenVB.py
 msgid "grey"
@@ -415,6 +455,10 @@ msgid "grey dark"
 msgstr "grau dunkel"
 
 #: KravenVB.py
+msgid "grey very dark"
+msgstr "grau sehr dunkel"
+
+#: KravenVB.py
 msgid "green"
 msgstr "grün"
 
@@ -423,8 +467,16 @@ msgid "green dark"
 msgstr "grün dunkel"
 
 #: KravenVB.py
+msgid "green very dark"
+msgstr "grün sehr dunkel"
+
+#: KravenVB.py
 msgid "Kraven dark"
 msgstr "Kraven dunkel"
+
+#: KravenVB.py
+msgid "Kraven very dark"
+msgstr "Kraven sehr dunkel"
 
 #: KravenVB.py
 msgid "olive"
@@ -435,12 +487,20 @@ msgid "olive dark"
 msgstr "olive dunkel"
 
 #: KravenVB.py
+msgid "olive very dark"
+msgstr "olive sehr dunkel"
+
+#: KravenVB.py
 msgid "orange"
 msgstr "orange"
 
 #: KravenVB.py
 msgid "orange dark"
 msgstr "orange dunkel"
+
+#: KravenVB.py
+msgid "orange very dark"
+msgstr "orange sehr dunkel"
 
 #: KravenVB.py
 msgid "pink"
@@ -451,6 +511,10 @@ msgid "pink dark"
 msgstr "pink dunkel"
 
 #: KravenVB.py
+msgid "pink very dark"
+msgstr "pink sehr dunkel"
+
+#: KravenVB.py
 msgid "red"
 msgstr "rot"
 
@@ -459,20 +523,32 @@ msgid "red dark"
 msgstr "rot dunkel"
 
 #: KravenVB.py
+msgid "red very dark"
+msgstr "rot sehr dunkel"
+
+#: KravenVB.py
 msgid "steel"
-msgstr "steel"
+msgstr "stahl"
 
 #: KravenVB.py
 msgid "steel dark"
-msgstr "steel dunkel"
+msgstr "stahl dunkel"
+
+#: KravenVB.py
+msgid "steel very dark"
+msgstr "stahl sehr dunkel"
 
 #: KravenVB.py
 msgid "violet"
-msgstr "violet"
+msgstr "violett"
 
 #: KravenVB.py
 msgid "violet dark"
-msgstr "violet dunkel"
+msgstr "violett dunkel"
+
+#: KravenVB.py
+msgid "violet very dark"
+msgstr "violett sehr dunkel"
 
 #: KravenVB.py
 msgid "white"
@@ -555,8 +631,16 @@ msgid "small"
 msgstr "klein"
 
 #: KravenVB.py
+msgid "big + Sat"
+msgstr "groß + Sat"
+
+#: KravenVB.py
 msgid "Running Text (Delay)"
 msgstr "Laufschrift (Verzögerung)"
+
+#: KravenVB.py
+msgid "Running Text (Speed)"
+msgstr "Laufschrift (Geschwindigkeit)"
 
 #: KravenVB.py
 msgid "Background-Transparency"
@@ -691,10 +775,6 @@ msgid "System-Infos"
 msgstr "System-Infos"
 
 #: KravenVB.py
-msgid "Satellite-Infos"
-msgstr "Satelliten-Infos"
-
-#: KravenVB.py
 msgid "ECM-Infos"
 msgstr "ECM-Infos"
 
@@ -707,32 +787,28 @@ msgid "Show 'free to air'"
 msgstr "Zeige 'Frei empfangbar'"
 
 #: KravenVB.py
-msgid "CAID + Time"
-msgstr "CAID + Zeit"
+msgid "short with CAID"
+msgstr "kurz mit CAID"
 
 #: KravenVB.py
-msgid "Reader + Time"
-msgstr "Reader + Zeit"
+msgid "short with source"
+msgstr "kurz mit Quelle"
 
 #: KravenVB.py
-msgid "CAID + Hops + Time"
-msgstr "CAID + Hops + Zeit"
+msgid "compact"
+msgstr "kompakt"
 
 #: KravenVB.py
-msgid "CAID + Reader + Time"
-msgstr "CAID + Reader + Zeit"
+msgid "balanced"
+msgstr "ausgewogen"
 
 #: KravenVB.py
-msgid "CAID + Reader + Hops + Time"
-msgstr "CAID + Reader + Hops + Zeit"
+msgid "extensive"
+msgstr "ausführlich"
 
 #: KravenVB.py
-msgid "CAID + System + Reader + Hops + Time"
-msgstr "CAID + System + Reader + Hops + Zeit"
-
-#: KravenVB.py
-msgid "CAM + CAID + System + Reader + Hops + Time"
-msgstr "CAM + CAID + System + Reader + Hops + Zeit"
+msgid "complete"
+msgstr "vollständig"
 
 #: KravenVB.py
 msgid "______________________ General __________________________________"
@@ -749,6 +825,14 @@ msgstr "Lautstärke"
 #: KravenVB.py
 msgid "Do you really want to reboot now?"
 msgstr "Wollen Sie jetzt neu starten?"
+
+#: KravenVB.py
+msgid "Do you really want to reset all values to their defaults?"
+msgstr "Wollen Sie wirklich alle Werte auf ihren Standard zurücksetzen?"
+
+#: KravenVB.py
+msgid "Do you really want to exit without saving?"
+msgstr "Wollen Sie wirklich beenden, ohne zu speichern?"
 
 #: KravenVB.py
 msgid "Restart GUI"
@@ -829,6 +913,10 @@ msgid "MiniTV right"
 msgstr "MiniTV rechts"
 
 #: KravenVB.py
+msgid "Preview"
+msgstr "Vorschau"
+
+#: KravenVB.py
 msgid "Tuner number/Record"
 msgstr "Tuneranzahl/Aufnahme"
 
@@ -843,6 +931,10 @@ msgstr "Icons (ausgenommen Infobar)"
 #: KravenVB.py
 msgid "Infobar-Background"
 msgstr "Infobar-Hintergrund"
+
+#: KravenVB.py
+msgid "Infobar-Transparency"
+msgstr "Infobar-Transparenz"
 
 #: KravenVB.py
 msgid "Icons + 4 Tuner + Resolution + Infobox"
@@ -920,10 +1012,334 @@ msgstr "CPU + Systemlast"
 msgid "Temperature + Fan"
 msgstr "Temperatur + Lüfter"
 
-#: KravenVBECMLine.py
-msgid "not available"
-msgstr "Nicht vorhanden"
+#: KravenVB.py
+msgid "The KravenVB skin will be generated by this plugin according to your preferences. Make your settings and watch the changes in the preview window above. When finished, save your skin by pressing the green button and restart the GUI."
+msgstr "Der KravenVB Skin wird durch dieses Plugin nach Ihren Wünschen erzeugt. Machen Sie Ihre Einstellungen und beobachten Sie die Änderungen im Vorschaufenster oben. Zum Schluss speichern Sie den Skin (grüne Taste) und starten die Oberfläche neu."
 
-#: KravenVBECMLine.py
-msgid "free to air"
-msgstr "Frei empfangbar"
+#: KravenVB.py
+msgid "Choose between light and dark icons in system screens. The icons in the infobars are not affected."
+msgstr "Wählen Sie zwischen hellen und dunklen Symbolen in Systemseiten. Die Symbole in den Infoleisten sind davon nicht betroffen."
+
+#: KravenVB.py
+msgid "Choose the start delay for running text."
+msgstr "Wählen Sie die Startverzögerung für Laufschriften."
+
+#: KravenVB.py
+msgid "Choose the speed for running text."
+msgstr "Wählen Sie die Geschwindigkeit für Laufschriften."
+
+#: KravenVB.py
+msgid "only available when Running Text is activated"
+msgstr "nur verfügbar bei aktivierter Laufschrift"
+
+#: KravenVB.py
+msgid "This option is not available because running text is deactivated."
+msgstr "Diese Option ist nicht verfügbar, da die Laufschrift deaktiviert ist."
+
+#: KravenVB.py
+msgid "Choose the width of scrollbars in lists or deactivate scrollbars completely. Active scrollbars deactivate the option \"show the infobar background in all screens (bicolored background)\"."
+msgstr "Wählen Sie die Breite der Bildlaufleisten in Listen oder deaktivieren Sie diese komplett. Aktive Bildlaufleisten deaktivieren die Option \"Anzeige des Infoleisten-Hintergrunds in allen Seiten (zweifarbiger Hintergrund)\"."
+
+#: KravenVB.py
+msgid "Choose between MiniTV or Kraven logo in system menus."
+msgstr "Wählen Sie zwischen MiniTV und  Kraven-Logo in Systemmenüs."
+
+#: KravenVB.py
+msgid "Choose the background color for all screens. You can choose from a list of predefined colors or create your own color using RGB sliders."
+msgstr "Wählen Sie die Hintergrundfarbe für alle Seiten. Sie können aus einer Liste von vordefinierten Farben wählen oder Ihre eigene Farbe mit RGB-Reglern erzeugen."
+
+#: KravenVB.py
+msgid "Choose the degree of background transparency for all screens."
+msgstr "Wählen Sie den Grad der Hintergrundtransparenz für alle Seiten."
+
+#: KravenVB.py
+msgid "Choose the background color of selection bars."
+msgstr "Wählen Sie die Hintergrundfarbe der Auswahlbalken."
+
+#: KravenVB.py
+msgid "Choose the border color of selection bars or deactivate borders completely."
+msgstr "Wählen Sie die Rahmenfarbe der Auswahlbalken oder deaktivieren Sie die Rahmen komplett."
+
+#: KravenVB.py
+msgid "Choose the color of progress bars."
+msgstr "Wählen Sie die Farbe der Fortschrittsbalken."
+
+#: KravenVB.py
+msgid "Choose the border color of progress bars."
+msgstr "Wählen Sie die Rahmenfarbe der Fortschrittsbalken."
+
+#: KravenVB.py
+msgid "Choose the color of all lines. This affects dividers as well as the line in the center of some progress bars."
+msgstr "Wählen Sie die Farbe für alle Linien. Dies betrifft Trennlinien sowie die Linie in der Mitte einiger Fortschrittsbalken."
+
+#: KravenVB.py
+msgid "Choose the color of the primary font. The primary font is used for list items, textboxes and other important information."
+msgstr "Wählen Sie die Farbe der primären Schriftart. Der primäre Schriftart wird für Listeneinträge, Textfelder und andere wichtige Informationen verwendet."
+
+#: KravenVB.py
+msgid "Choose the color of the secondary font. The secondary font is used for headers, labels and other additional information."
+msgstr "Wählen Sie die Farbe der sekundären Schriftart. Die sekundäre Schriftart wird für Überschriften, Labels und andere zusätzliche Informationen verwendet."
+
+#: KravenVB.py
+msgid "Choose the color of the font in selection bars."
+msgstr "Wählen Sie die Farbe der Schrift in Auswahlbalken."
+
+#: KravenVB.py
+msgid "Choose the font color of marked list items."
+msgstr "Wählen Sie die Schriftfarbe von markierten Listenelementen."
+
+#: KravenVB.py
+msgid "Choose the font color of the color button labels."
+msgstr "Wählen Sie die Schriftfarbe der Farbtastenbeschriftungen."
+
+#: KravenVB.py
+msgid "Specify the weather id for your location. You can find it at http://weather.open-store.net (the blue 6-digit number)."
+msgstr "Geben Sie die Wetter-ID für Ihren Standort ein. Sie können die ID unter http://weather.open-store.net finden (die blaue 6-stellige Zahl)."
+
+#: KravenVB.py
+msgid "Choose the frequency of loading weather data from the internet. Please note that it can take some time to show the weather after a reboot."
+msgstr "Wählen Sie die Häufigkeit für das Laden von Wetterdaten aus dem Internet. Bitte beachten Sie, dass es nach einem Neustart einige Zeit dauern kann, bis das Wetter angezeigt wird."
+
+#: KravenVB.py
+msgid "Choose between graphical weather symbols and Meteo symbols."
+msgstr "Wählen Sie zwischen grafischen Wettersymbolen und Meteo-Symbolen."
+
+#: KravenVB.py
+msgid "Choose between light and dark Meteo symbols."
+msgstr "Wählen Sie zwischen hellen und dunklen Meteo-Symbolen."
+
+#: KravenVB.py
+msgid "Choose from different infobar styles. Please note that not every style provides every feature. Therefore some features might be unavailable for the chosen style."
+msgstr "Wählen Sie eine von verschiedenen Infoleisten-Varianten. Bitte beachten Sie, dass nicht jede Variante jede Funktion bietet. Deshalb sind einige Funktionen für die ausgewählte Variante möglicherweise nicht verfügbar."
+
+#: KravenVB.py
+msgid "Choose the background color of the infobars. You can choose from a list of predefined colors or create your own color using RGB sliders."
+msgstr "Wählen Sie die Hintergrundfarbe der Infoleisten. Sie können aus einer Liste von vordefinierten Farben wählen oder Ihre eigene Farbe mit RGB-Reglern erzeugen."
+
+#: KravenVB.py
+msgid "Choose the degree of background transparency for the infobars."
+msgstr "Wählen Sie den Grad der Hintergrundtransparenz für die Infoleisten."
+
+#: KravenVB.py
+msgid "Choose whether you want to see the infobar background in all screens (bicolored background)."
+msgstr "Wählen Sie, ob Sie den Infoleisten-Hintergrund auf allen Seiten sehen wollen (zweifarbiger Hintergrund)."
+
+#: KravenVB.py
+msgid "Choose between light and dark infobar icons."
+msgstr "Wählen Sie zwischen hellen und dunklen Infoleisten-Symbolen."
+
+#: KravenVB.py
+msgid "Choose from different options to display tuner and recording state."
+msgstr "Wählen Sie eine von verschiedenen Varianten für die Anzeige von Tunern und Aufnahmezustand."
+
+#: KravenVB.py
+msgid "Choose which informations will be shown in the info box."
+msgstr "Wählen Sie, welche Informationen in der Infobox angezeigt werden sollen."
+
+#: KravenVB.py
+msgid "Choose from different options to show the weather in the infobar."
+msgstr "Wählen Sie eine von verschiedenen Varianten, um das Wetter in der Infoleiste anzuzeigen."
+
+#: KravenVB.py
+msgid "Activate or deactivate displaying the weather in the infobar."
+msgstr "Aktivieren oder deaktivieren Sie die Wetteranzeige in der Infoleiste."
+
+#: KravenVB.py
+msgid "Choose from different options to show the channel name and number in the infobar."
+msgstr "Wählen Sie eine von verschiedenen Varianten, um Kanal-Namen und -Nummer in der Infoleiste anzuzeigen."
+
+#: KravenVB.py
+msgid "Choose the font color of channel name and number"
+msgstr "Wählen Sie die Schriftfarbe für Kanal-Name und -Nummer"
+
+#: KravenVB.py
+msgid "Choose from different options to show the clock in the infobar."
+msgstr "Wählen Sie eine von verschiedenen Varianten, um die Uhr in der Infoleiste anzuzeigen."
+
+#: KravenVB.py
+msgid "Choose from different colors for the analog type clock in the infobar."
+msgstr "Wählen Sie eine von verschiedenen Farben für die Analoguhr in der Infoleiste."
+
+#: KravenVB.py
+msgid "Choose from different additional windows with system informations or deactivate them completely."
+msgstr "Wählen Sie eines von verschiedenen zusätzlichen Fenstern mit Systeminformationen oder deaktivieren Sie diese komplett."
+
+#: KravenVB.py
+msgid "Activate or deactivate an additional window with satellite informations."
+msgstr "Aktivieren oder deaktivieren Sie ein zusätzliches Fenster mit Satelliten-Informationen."
+
+#: KravenVB.py
+msgid "Activate or deactivate ECM informations in the infobar."
+msgstr "Aktivieren oder deaktivieren Sie ECM-Informationen in der Infoleiste."
+
+#: KravenVB.py
+msgid "Choose from different options to display the ECM informations."
+msgstr "Wählen Sie eine von verschiedenen Varianten, um die ECM-Informationen anzuzeigen."
+
+#: KravenVB.py
+msgid "Choose whether 'free to air' is displayed or not for unencrypted channels."
+msgstr "Wählen Sie, ob \"Frei empfangbar\" für unverschlüsselte Sender angezeigt wird oder nicht."
+
+#: KravenVB.py
+msgid "Choose the font color of the ECM information."
+msgstr "Wählen Sie die Schriftfarbe der ECM-Informationen."
+
+#: KravenVB.py
+msgid "Choose from different styles for the channel selection screen."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Kanalauswahl."
+
+#: KravenVB.py
+msgid "Choose whether primetime program information is displayed or not."
+msgstr "Wählen Sie, ob Hauptsendezeit-Programminformationen angezeigt werden oder nicht."
+
+#: KravenVB.py
+msgid "Specify the time for your primetime."
+msgstr "Geben Sie die Uhrzeit für Ihre Hauptsendezeit ein."
+
+#: KravenVB.py
+msgid "Choose the font color of the primetime information."
+msgstr "Wählen Sie die Schriftfarbe der Hauptsendezeit-Informationen."
+
+#: KravenVB.py
+msgid "Choose from different styles for the volume display."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Lautstärkeanzeige."
+
+#: KravenVB.py
+msgid "Choose from different styles for CoolTVGuide."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"CoolTVGuide\"."
+
+#: KravenVB.py
+msgid "only available for 'Custom EMC-Selection-Colors'"
+msgstr "nur verfügbar für 'Eigene EMC-Auswahl-Farben'"
+
+#: KravenVB.py
+msgid "EMC-Style"
+msgstr "EMC-Stil"
+
+#: KravenVB.py
+msgid "Choose whether you want to customize the selection-colors for EnhancedMovieCenter."
+msgstr "Wählen Sie, ob Sie die Auswahl-Farben für EnhancedMovieCenter anpassen möchten."
+
+#: KravenVB.py
+msgid "Custom EMC-Selection-Colors"
+msgstr "Eigene EMC-Auswahl-Farben"
+
+#: KravenVB.py
+msgid "EMC-Listselection"
+msgstr "EMC-Auswahlbalken"
+
+#: KravenVB.py
+msgid "Choose the background color of selection bars for EnhancedMovieCenter."
+msgstr "Wählen Sie die Hintergrundfarbe der Auswahlbalken für EnhancedMovieCenter."
+
+#: KravenVB.py
+msgid "EMC-Selection-Font"
+msgstr "EMC-Auswahl-Schrift"
+
+#: KravenVB.py
+msgid "Choose the color of the font in selection bars for EnhancedMovieCenter."
+msgstr "Wählen Sie die Farbe der Schrift in Auswahlbalken für EnhancedMovieCenter."
+
+#: KravenVB.py
+msgid "This option is not available because 'Custom EMC-Selection-Colors' is deactivated."
+msgstr "Diese Option ist nicht verfügbar, da 'Eigene EMC-Auswahl-Farben' deaktiviert ist."
+
+#: KravenVB.py
+msgid "Choose from different styles for EnhancedMovieCenter."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"EnhancedMovieCenter\"."
+
+#: KravenVB.py
+msgid "not available for Nobile-Styles"
+msgstr "nicht verfügbar für Nobile-Listen"
+
+#: KravenVB.py
+msgid "Servicenumber/-name Fontsize"
+msgstr "Sendernummer/-name Schriftgrösse"
+
+#: KravenVB.py
+msgid "Serviceinfo Fontsize"
+msgstr "Sendungsinfo Schriftgrösse"
+
+#: KravenVB.py
+msgid "This option is not available for Nobile-Styles."
+msgstr "Diese Option ist nicht verfügbar für Nobile-Listen."
+
+#: KravenVB.py
+msgid "Choose the font size of channelnumber and channelname."
+msgstr "Wählen Sie die Schriftgrösse für Kanalnummer und Kanalname."
+
+#: KravenVB.py
+msgid "Choose the font size of serviceinformation."
+msgstr "Wählen Sie die Schriftgrösse für die Sendungsinformation."
+
+#: KravenVB.py
+msgid "Choose from different styles for MovieSelection."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Filmauswahl."
+
+#: KravenVB.py
+msgid "Choose from different styles for SecondInfobar."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"SecondInfoBar\"."
+
+#: KravenVB.py
+msgid "Choose from different styles for ExtNumberZap"
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"ExtNumberZap\""
+
+#: KravenVB.py
+msgid "Activate or deactivate small screen names for debugging purposes."
+msgstr "Aktivieren oder deaktivieren Sie die Anzeige von kleinen Seiten-Namen für die Fehlersuche."
+
+#: KravenVB.py
+msgid "only available when activated"
+msgstr "nur verfügbar, wenn aktiviert"
+
+#: KravenVB.py
+msgid "only available when ECM-Infos are activated"
+msgstr "nur verfügbar bei aktivierten ECM-Infos"
+
+#: KravenVB.py
+msgid "self"
+msgstr "eigene RGB-Farbe"
+
+#: KravenVB.py
+msgid "          red"
+msgstr "          Rot"
+
+#: KravenVB.py
+msgid "          green"
+msgstr "          Grün"
+
+#: KravenVB.py
+msgid "          blue"
+msgstr "          Blau"
+
+#: KravenVB.py
+msgid "Set the intensity of this basic color with the slider."
+msgstr "Bestimmen Sie die Intensität dieser Grundfarbe mit dem Einstellbalken."
+
+#: KravenVB.py
+msgid "This option is not available because displaying channel name and number is deactivated."
+msgstr "Diese Option ist nicht verfügbar, da die Anzeige von Kanal-Name und -Nummer deaktiviert ist."
+
+#: KravenVB.py
+msgid "This option is not available because Meteo symbols are not selected."
+msgstr "Diese Option ist nicht verfügbar, da nicht die Meteo-Symbole ausgewählt sind."
+
+#: KravenVB.py
+msgid "This option is not available because scrollbars are activated."
+msgstr "Diese Option ist nicht verfügbar, da Bildlaufleisten aktiviert sind."
+
+#: KravenVB.py
+msgid "This option is not available for the selected infobar style."
+msgstr "Diese Option ist für die ausgewählte Darstellungs-Variante der Infoleiste nicht verfügbar."
+
+#: KravenVB.py
+msgid "This option is not available for the selected clock type."
+msgstr "Diese Option ist für den ausgewählten Uhrentyp nicht verfügbar."
+
+#: KravenVB.py
+msgid "This option is not available because displaying ECM information is deactivated."
+msgstr "Diese Option ist nicht verfügbar, da die Anzeige von ECM-Informationen deaktiviert ist."
+
+#: KravenVB.py
+msgid "This option is not available because displaying primetime information is deactivated."
+msgstr "Diese Option ist nicht verfügbar, da die Anzeige von Hauptsendezeit-Informationen deaktiviert ist."

@@ -1,7 +1,7 @@
   <widget alphatest="blend" position="20,542" render="KravenVBXPicon" size="400,170" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
-  <widget font="Regular;30" foregroundColor="KravenFont1" halign="left" noWrap="1" position="438,615" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
+  <widget font="Regular;30" foregroundColor="KravenFont1" halign="left" noWrap="1" position="438,615" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenFont1" halign="right" position="913,620" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">

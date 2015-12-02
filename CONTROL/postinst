@@ -1,4 +1,8 @@
 #!/bin/sh
+if [ -f /tmp/header-kraven/ibar_000000.png ]; then
+    mkdir /usr/share/enigma2/KravenVB/header-kraven/
+    cp -r /tmp/header-kraven/* /usr/share/enigma2/KravenVB/header-kraven/
+fi
 echo "                                                          "
 echo "             ...Skin successful installed.                "
 echo "                                                          "

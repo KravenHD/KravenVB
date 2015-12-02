@@ -1,7 +1,7 @@
   <widget alphatest="blend" position="20,580" size="220,132" render="KravenVBXPicon" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
-  <widget font="Regular;30" foregroundColor="KravenFont1" halign="left" noWrap="1" position="439,559" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
+  <widget font="Regular;30" foregroundColor="KravenFont1" halign="left" noWrap="1" position="439,559" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenFont1" halign="right" position="913,564" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
@@ -17,7 +17,7 @@
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <widget font="Regular; 30" foregroundColor="KravenFont2" halign="left" position="439,650" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Next" valign="top" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
+  <widget font="Regular; 30" foregroundColor="KravenFont2" halign="left" position="439,650" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Next" valign="top" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenFont2" valign="center" halign="right" position="914,656" render="Label" size="107,35" source="session.Event_Next" transparent="1" zPosition="1">

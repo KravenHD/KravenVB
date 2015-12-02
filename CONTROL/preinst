@@ -7,8 +7,9 @@ if opkg list-installed |grep enigma2-plugin-skins-kravenvb; then
 		echo "                 was found and removed!                    "
 		echo "                                                           "
 fi
-
-if [ -f /usr/share/enigma2/KravenVB/skin.xml ]; then
+if [ -f /usr/share/enigma2/KravenVB/header-kraven/ibar_000000.png ]; then
+    mkdir /tmp/header-kraven
+    cp -r /usr/share/enigma2/KravenVB/header-kraven/* /tmp/header-kraven/
     rm -rf /usr/share/enigma2/KravenVB
     rm -rf /usr/lib/enigma2/python/Components/Converter/KravenVB*
     rm -rf /usr/lib/enigma2/python/Components/Renderer/KravenVB*
@@ -24,10 +25,6 @@ if [ -f /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/plugin.py ]; then
 		echo "                 was found and removed!                    "
 		echo "                                                           "
 fi
-
-
-
-
 echo "                                                           "
 echo "        The Skin KravenVB is now being installed...        "
 echo "                                                           "

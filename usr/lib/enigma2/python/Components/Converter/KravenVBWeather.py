@@ -20,12 +20,15 @@ from Components.Converter.Converter import Converter
 from Components.Element import cached
 from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Components.Language import language
-import gettext, os, time
 from twisted.web.client import getPage
 from xml.dom.minidom import parseString
 from enigma import eTimer
 from Components.config import config
 from time import strftime
+from Poll import Poll
+from copy import deepcopy
+import gettext, os, time
+
 
 lang = language.getLanguage()
 os.environ["LANGUAGE"] = lang[:2]
@@ -40,20 +43,33 @@ def _(txt):
 	return t
 
 weather_data = None
+weather_data_old = None
+look_again = False
+load_data = False
+look_count = 0
 
-class KravenVBWeather(Converter, object):
+class KravenVBWeather(Poll, Converter, object):
 
 	def __init__(self, type):
+		Poll.__init__(self)
 		Converter.__init__(self, type)
-		global weather_data
-		if weather_data is None:
-			weather_data = WeatherData()
 		self.type = type
-
+		self.poll_interval = 10000
+		self.poll_enabled = True
+		global weather_data
+		global weather_data_old
+		global load_data
+		if weather_data is None:
+			load_data = True
+			weather_data = WeatherData()
+		if weather_data_old is None:
+			load_data = False
+			weather_data_old = WeatherData()
+			
 	@cached
 	def getText(self):
-		WeatherInfo = weather_data.WeatherInfo
-		
+		WeatherInfo = weather_data_old.WeatherInfo
+
 		# due to yahoo changing the forecast scheme hours after the actual day has changed
 		# read actual day name and tomorrow forecast day name
 
@@ -846,6 +862,7 @@ class WeatherData:
 			"forecastTodayPicon": "N/A",
 			"forecastTodayDay": "N/A",
 			"forecastTodayDate": "N/A",
+			"forecastTodayDateEn": "N/A",
 			"forecastTodayTempMin": "0",
 			"forecastTodayTempMax": "0",
 			"forecastTodayTempMinMax": "0",
@@ -854,6 +871,7 @@ class WeatherData:
 			"forecastTomorrowPicon": "N/A",
 			"forecastTomorrowDay": "N/A",
 			"forecastTomorrowDate": "N/A",
+			"forecastTomorrowDateEn": "N/A",
 			"forecastTomorrowTempMin": "0",
 			"forecastTomorrowTempMax": "0",
 			"forecastTomorrowTempMinMax": "0",
@@ -882,7 +900,18 @@ class WeatherData:
 			"forecastTomorrow3TempMax": "0",
 			"forecastTomorrow3TempMinMax": "0",
 		}
-		if config.plugins.KravenVB.refreshInterval.value > 0:
+		
+		if config.plugins.KravenVB.refreshInterval:
+			self.refreshInterval=int(config.plugins.KravenVB.refreshInterval.value)
+		else:
+			self.refreshInterval=15
+			
+		if config.plugins.KravenVB.weather_city:
+			self.weatherCity=str(config.plugins.KravenVB.weather_city.value)
+		else:
+			self.weatherCity=""
+			
+		if self.refreshInterval > 0 and load_data:
 			self.timer = eTimer()
 			self.timer.callback.append(self.GetWeather)
 			self.GetWeather()
@@ -891,19 +920,51 @@ class WeatherData:
 		print "[WeatherUpdate] error fetching weather data"
 
 	def GetWeather(self):
-		timeout = config.plugins.KravenVB.refreshInterval.value * 1000 * 60
+		global look_again
+		global look_count
+		global weather_data_old
+		
+		url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D%22"+self.weatherCity+"%22&format=xml"
+		timeout = self.refreshInterval*1000*60.0
+		retry_timeout = 15555
+		
 		if timeout > 0:
-			self.timer.start(timeout, True)
-			print "KravenVB lookup for ID " + str(config.plugins.KravenVB.weather_city.value)
-			url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%3D%22"+str(config.plugins.KravenVB.weather_city.value)+"%22&format=xml"
-			getPage(url,method = 'GET').addCallback(self.GotWeatherData).addErrback(self.downloadError)
+			if weather_data is None:
+				look_count = 1
+				print "KravenWeather lookup 1 for ID " + self.weatherCity
+				getPage(url,method = 'GET').addCallback(self.GotWeatherData).addErrback(self.downloadError)
+				self.timer.start(retry_timeout, True)
+				look_again = True
+			else:
+				adate = strftime("%-d. %b", time.localtime()).replace('Dez','Dec').replace('Mai','May').replace('Okt','Oct').replace('Mrz','Mar')
+				ddate = weather_data.WeatherInfo["forecastTodayDateEn"]
+				mdate = weather_data.WeatherInfo["forecastTomorrowDateEn"]
+				looking = look_again
+				if adate not in (ddate,mdate):
+					look_count +=1
+					print "KravenWeather: Weather data for "+str(ddate)+" is not for current day: "+str(adate)
+					print "KravenWeather: Weather lookup "+str(look_count)+" for ID " + self.weatherCity
+					getPage(url,method = 'GET').addCallback(self.GotWeatherData).addErrback(self.downloadError)
+					self.timer.start(retry_timeout, True)
+					look_again = True
+				elif looking:
+					look_count = 0
+					print "KravenWeather: Weather data is correct, next lookup in "+str(self.refreshInterval)+" minutes"
+					weather_data_old = deepcopy(weather_data)
+					self.timer.start(int(timeout), True)
+					look_again = False
+				else:
+					look_count +=1
+					print "KravenWeather: Weather lookup "+str(look_count)+" for ID "+self.weatherCity
+					getPage(url,method = 'GET').addCallback(self.GotWeatherData).addErrback(self.downloadError)
+					self.timer.start(retry_timeout, True)
+					look_again = True
 
 	def GotWeatherData(self, data = None):
 		if data is not None:
 			dom = parseString(data)
 			title = self.getText(dom.getElementsByTagName('title')[0].childNodes)
 			self.WeatherInfo["currentLocation"] = str(title).split(',')[0].replace("Yahoo! Weather - ","")
-
 			weather = dom.getElementsByTagName('yweather:wind')[0]
 			self.WeatherInfo["currentDirection"] = _(str(weather.getAttributeNode('direction').nodeValue))
 			if not self.WeatherInfo["currentDirection"] is 'N/A':
@@ -965,6 +1026,7 @@ class WeatherData:
 			self.WeatherInfo["forecastTodayCode"] = self.ConvertCondition(weather.getAttributeNode('code').nodeValue)
 			self.WeatherInfo["forecastTodayDay"] = _(weather.getAttributeNode('day').nodeValue)
 			self.WeatherInfo["forecastTodayDate"] = self.getWeatherDate(weather)
+			self.WeatherInfo["forecastTodayDateEn"] = self.getWeatherDateEn(weather)
 			self.WeatherInfo["forecastTodayTempMax"] = self.getTemp(weather.getAttributeNode('high').nodeValue) + "°C"
 			self.WeatherInfo["forecastTodayTempMin"] = self.getTemp(weather.getAttributeNode('low').nodeValue) + "°C"
 			self.WeatherInfo["forecastTodayTempMinMax"] = self.getTemp(weather.getAttributeNode('low').nodeValue) + "°/" + self.getTemp(weather.getAttributeNode('high').nodeValue) + "°"
@@ -975,6 +1037,7 @@ class WeatherData:
 			self.WeatherInfo["forecastTomorrowCode"] = self.ConvertCondition(weather.getAttributeNode('code').nodeValue)
 			self.WeatherInfo["forecastTomorrowDay"] = _(weather.getAttributeNode('day').nodeValue)
 			self.WeatherInfo["forecastTomorrowDate"] = self.getWeatherDate(weather)
+			self.WeatherInfo["forecastTomorrowDateEn"] = self.getWeatherDateEn(weather)
 			self.WeatherInfo["forecastTomorrowTempMax"] = self.getTemp(weather.getAttributeNode('high').nodeValue) + "°C"
 			self.WeatherInfo["forecastTomorrowTempMin"] = self.getTemp(weather.getAttributeNode('low').nodeValue) + "°C"
 			self.WeatherInfo["forecastTomorrowTempMinMax"] = self.getTemp(weather.getAttributeNode('low').nodeValue) + "°/" + self.getTemp(weather.getAttributeNode('high').nodeValue) + "°"
@@ -1070,4 +1133,11 @@ class WeatherData:
 		str_weather = cur_weather[0]
 		if len(cur_weather) >= 2:
 			str_weather += ". " + _(cur_weather[1])
+		return str_weather
+
+	def getWeatherDateEn(self, weather):
+		cur_weather = str(weather.getAttributeNode('date').nodeValue).split(" ")
+		str_weather = cur_weather[0]
+		if len(cur_weather) >= 2:
+			str_weather += ". " + cur_weather[1]
 		return str_weather

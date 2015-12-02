@@ -90,5 +90,5 @@
   <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 18" foregroundColor="KravenFont1" render="Label" position="1045,80" size="215,22" source="session.CurrentService" zPosition="3" halign="left" transparent="1">
     <convert type="KravenVBWeather">currentLocation</convert>
   </widget>
-  <ePixmap pixmap="KravenVB/header-kraven/ibaro.png" position="0,0" size="1280,443" zPosition="-9" />
+  <ePixmap pixmap="KravenVB/ibaro.png" position="0,0" size="1280,165" zPosition="-9" alphatest="blend"/>
 <!-- Weather */-->
