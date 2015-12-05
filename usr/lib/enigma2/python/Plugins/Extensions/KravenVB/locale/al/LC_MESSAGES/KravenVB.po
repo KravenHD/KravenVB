@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-12-05 15:28+0100\n"
+"PO-Revision-Date: 2015-12-05 17:22+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: al\n"
@@ -611,6 +611,18 @@ msgid "standard big"
 msgstr "Madhësia standarde"
 
 #: KravenVB.py
+msgid "Secondinfobar"
+msgstr "Bari i dyt informativ"
+
+#: KravenVB.py
+msgid "Debug"
+msgstr "Gabime- Info"
+
+#: KravenVB.py
+msgid "ExtNumberZap"
+msgstr "Numri kërcyës i kanalit"
+
+#: KravenVB.py
 msgid "colored"
 msgstr "Me ngjyra"
 
@@ -764,7 +776,7 @@ msgstr "Shrimi i butonve me ngjyra"
 
 #: KravenVB.py
 msgid "Clock-Style"
-msgstr "Shfaqja e Orës"
+msgstr "Shfaqja e Orës dhe Motit"
 
 #: KravenVB.py
 msgid "Analog-Clock-Color"
@@ -1150,7 +1162,7 @@ msgstr "Zgjidhni ngjyren e shkrimit për emrin dhe numrin e kanalit"
 
 #: KravenVB.py
 msgid "Choose from different options to show the clock in the infobar."
-msgstr "Zgjidhni nga mundësit e mundëshme, për tregimin e Orës në infobar."
+msgstr "Zgjidhni nga mundësit e mundëshme, për tregimin e Orës  dhe Motit në infobar."
 
 #: KravenVB.py
 msgid "Choose from different colors for the analog type clock in the infobar."
@@ -1206,7 +1218,7 @@ msgstr "Zgjidhni nga mundësit e mundëshme për tregimin e Volumit të zërit C
 
 #: KravenVB.py
 msgid "only available for 'Custom EMC-Selection-Colors'"
-msgstr "Në dispozicin vetëm nëse krijoni ngjyrat e EMC's vet me rregullator'"
+msgstr "Vetëm nëse krijoni ngjyrat e EMC's vet me rregullator'"
 
 #: KravenVB.py
 msgid "EMC-Style"
@@ -1238,6 +1250,10 @@ msgstr "Zgjidhin ngjyrën e shkrimit selektuës të EnhancedMovieCenter."
 
 #: KravenVB.py
 msgid "This option is not available because 'Custom EMC-Selection-Colors' is deactivated."
+msgstr "Ky opcion nuk është aktiv, sepse opcioni për rregullim ngjyrash me rregullator është deaktivuar."
+
+#: KravenVB.py
+msgid "This option is not available because 'Customize EMC-Selection-Colors' is deactivated."
 msgstr "Ky opcion nuk është aktiv, sepse opcioni për rregullim ngjyrash me rregullator është deaktivuar."
 
 #: KravenVB.py
