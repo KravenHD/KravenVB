@@ -88,13 +88,6 @@
 	  </convert>
     </widget>
     <widget backgroundColor="KravenInfobar2Background" font="Regular2;34" foregroundColor="KravenFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-    <ePixmap backgroundColor="KravenBackground3" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
-    <ePixmap backgroundColor="KravenBackground3" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
-    <ePixmap backgroundColor="KravenBackground3" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
-    <ePixmap backgroundColor="KravenBackground3" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
-    <widget font="Regular; 20" halign="left" valign="center" name="green" position="320,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="yellow" position="570,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="blue" position="820,665" size="300,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
     <eLabel backgroundColor="KravenBackground3" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap backgroundColor="KravenBackground3" pixmap="KravenVB/logo.png" position="930,100" size="200,200" alphatest="blend" />
     <widget backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
