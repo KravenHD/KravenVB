@@ -766,7 +766,24 @@ config.plugins.KravenVB.ChannelSelectionStyle = ConfigSelection(default="channel
 				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
 				("channelselection-style-minitv", _("MiniTV left")),
 				("channelselection-style-minitv4", _("MiniTV right")),
-				("channelselection-style-minitv3", _("PiP"))
+				("channelselection-style-minitv3", _("Preview"))
+				])
+				
+config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channelselection-style-minitv", choices = [
+				("channelselection-style-nopicon", _("no Picon")),
+				("channelselection-style-zpicon", _("Z-Picons")),
+				("channelselection-style-xpicon", _("X-Picons")),
+				("channelselection-style-zzpicon", _("ZZ-Picons")),
+				("channelselection-style-zzzpicon", _("ZZZ-Picons")),
+				("channelselection-style-nobile", _("Nobile")),
+				("channelselection-style-nobile2", _("Nobile 2")),
+				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
+				("channelselection-style-minitv", _("MiniTV left")),
+				("channelselection-style-minitv4", _("MiniTV right")),
+				("channelselection-style-minitv2", _("Dual TV")),
+				("channelselection-style-minitv22", _("Dual TV 2")),
+				("channelselection-style-minitv3", _("Preview")),
+				("channelselection-style-minitv33", _("Extended Preview"))
 				])
 				
 config.plugins.KravenVB.NumberZapExt = ConfigSelection(default="none", choices = [
@@ -1226,7 +1243,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <eLabel position="830,70" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" name="," />
   <eLabel position="830,125" size="402,34" text="for VTi-Image" font="Regular; 26" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
-  <eLabel position="845,165" size="372,40" text="Version: 3.0.7" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
+  <eLabel position="845,165" size="372,40" text="Version: 3.1.1" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
   <widget name="helperimage" position="847,220" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,220" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,450" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="center" valign="top" transparent="1" />
@@ -1301,7 +1318,7 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Marking-Font"), config.plugins.KravenVB.MarkedFont, _("Choose the font color of marked list items.")))
 		list.append(getConfigListEntry(_("Colorbutton-Font"), config.plugins.KravenVB.ButtonText, _("Choose the font color of the color button labels.")))
 		list.append(getConfigListEntry(_("______________________ Weather _________________________________"), ))
-		list.append(getConfigListEntry(_("Weather-ID"), config.plugins.KravenVB.weather_city, _("Specify the weather id for your location. You can find it at http://weather.open-store.net (the blue 6-digit number).")))
+		list.append(getConfigListEntry(_("Weather-ID"), config.plugins.KravenVB.weather_city, _("Specify the weather ID for your location. You can find it at https://weather.yahoo.com. Just enter your ZIP or city and get your weather. The number at the end of the URL is your ID.")))
 		list.append(getConfigListEntry(_("Refresh interval (in minutes)"), config.plugins.KravenVB.refreshInterval, _("Choose the frequency of loading weather data from the internet. Please note that it can take some time to show the weather after a reboot.")))
 		list.append(getConfigListEntry(_("Weather-Style"), config.plugins.KravenVB.WeatherView, _("Choose between graphical weather symbols and Meteo symbols.")))
 		if config.plugins.KravenVB.WeatherView.value == "meteo":
@@ -1422,8 +1439,11 @@ class KravenVB(ConfigListScreen, Screen):
 			list.append(getConfigListEntry(_("Show 'free to air'"), config.plugins.KravenVB.FTA, _("Choose whether 'free to air' is displayed or not for unencrypted channels.")))
 			list.append(getConfigListEntry(_("ECM-Font"), config.plugins.KravenVB.ECMFont, _("Choose the font color of the ECM information.")))
 		list.append(getConfigListEntry(_("______________________ Channellist _____________________________"), ))
-		list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle, _("Choose from different styles for the channel selection screen.")))
-		if config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile" or config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile2" or config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile-minitv":
+		if SystemInfo.get("NumVideoDecoders",1) > 1:
+			list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle2, _("Choose from different styles for the channel selection screen.")))
+		else:
+			list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle, _("Choose from different styles for the channel selection screen.")))
+		if config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile" or config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile2" or config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile-minitv" or config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile" or config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile2" or config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile-minitv":
 			list.append(getConfigListEntry(_("Servicenumber/-name Fontsize"), config.plugins.KravenVB.ChannelSelectionServiceSizeNA, _("This option is not available for Nobile-Styles.")))
 			list.append(getConfigListEntry(_("Serviceinfo Fontsize"), config.plugins.KravenVB.ChannelSelectionInfoSizeNA, _("This option is not available for Nobile-Styles.")))
 		else:
@@ -1566,6 +1586,8 @@ class KravenVB(ConfigListScreen, Screen):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colorfull2.jpg"
 			elif returnValue == "size-16" or returnValue == "size-18" or returnValue == "size-20" or returnValue == "size-22" or returnValue == "size-24" or returnValue == "size-26" or returnValue == "size-28" or returnValue == "size-30":
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/size.jpg"
+			elif returnValue == "channelselection-style-minitv33":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/channelselection-style-minitv3.jpg"
 			elif returnValue == "00" or returnValue == "0":
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/none.jpg"
 			else:
@@ -1714,7 +1736,7 @@ class KravenVB(ConfigListScreen, Screen):
 			self.skinSearchAndReplace.append(['name="KravenButtonText" value="#00ffffff', 'name="KravenButtonText" value="#' + config.plugins.KravenVB.ButtonText.value])
 			
 			### ChannelSelection Font-Size
-			if not config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile" or not config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile2" or not config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile-minitv":
+			if not config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile" or not config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile2" or not config.plugins.KravenVB.ChannelSelectionStyle.value == "channelselection-style-nobile-minitv" or not config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile" or not config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile2" or not config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile-minitv":
 				if config.plugins.KravenVB.ChannelSelectionServiceSize.value == "size-16":
 					self.skinSearchAndReplace.append(['serviceNumberFont="Regular;25"', 'serviceNumberFont="Regular;16"'])
 					self.skinSearchAndReplace.append(['serviceNameFont="Regular;25"', 'serviceNameFont="Regular;16"'])
@@ -1986,7 +2008,42 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.Volume.value + ".xml")
 			
 			### ChannelSelection
-			self.appendSkinFile(self.daten + config.plugins.KravenVB.ChannelSelectionStyle.value + ".xml")
+			if SystemInfo.get("NumVideoDecoders",1) > 1:
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.ChannelSelectionStyle2.value + ".xml")
+				if config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-minitv33" or config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-minitv2" or config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-minitv22":
+					config.usage.use_pig.value = True
+					config.usage.use_pig.save()
+					config.usage.use_extended_pig.value = True
+					config.usage.use_extended_pig.save()
+					config.usage.use_extended_pig_channelselection.value = True
+					config.usage.use_extended_pig_channelselection.save()
+					config.usage.servicelist_preview_mode.value = False
+					config.usage.servicelist_preview_mode.save()
+					config.usage.zap_pip.value = False
+					config.usage.zap_pip.save()
+				else:
+					config.usage.use_pig.value = True
+					config.usage.use_pig.save()
+					config.usage.use_extended_pig.value = False
+					config.usage.use_extended_pig.save()
+					config.usage.use_extended_pig_channelselection.value = False
+					config.usage.use_extended_pig_channelselection.save()
+					config.usage.servicelist_preview_mode.value = False
+					config.usage.servicelist_preview_mode.save()
+					config.usage.zap_pip.value = False
+					config.usage.zap_pip.save()
+			else:
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.ChannelSelectionStyle.value + ".xml")
+				config.usage.use_pig.value = True
+				config.usage.use_pig.save()
+				config.usage.use_extended_pig.value = False
+				config.usage.use_extended_pig.save()
+				config.usage.use_extended_pig_channelselection.value = False
+				config.usage.use_extended_pig_channelselection.save()
+				config.usage.servicelist_preview_mode.value = False
+				config.usage.servicelist_preview_mode.save()
+				config.usage.zap_pip.value = False
+				config.usage.zap_pip.save()
 
 			### Infobox
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4" or config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":

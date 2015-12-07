@@ -117,12 +117,12 @@ class KravenVBWeather(Poll, Converter, object):
 			WeatherInfo["forecastTomorrow2Picon"] = WeatherInfo["forecastTomorrow3Picon"] 
 		
 			WeatherInfo["forecastTomorrow3Code"] = "("
-			WeatherInfo["forecastTomorrow3Date"] = ""
-			WeatherInfo["forecastTomorrow3TempMax"] = ""
-			WeatherInfo["forecastTomorrow3TempMin"] = ""
-			WeatherInfo["forecastTomorrow3TempMinMax"] = ""
-			WeatherInfo["forecastTomorrow3Text"] = ""
-			WeatherInfo["forecastTomorrow3Picon"] = "3200"
+			WeatherInfo["forecastTomorrow3Date"] = "N/A"
+			WeatherInfo["forecastTomorrow3TempMax"] = "N/A"
+			WeatherInfo["forecastTomorrow3TempMin"] = "N/A"
+			WeatherInfo["forecastTomorrow3TempMinMax"] = "0"
+			WeatherInfo["forecastTomorrow3Text"] = "0"
+			WeatherInfo["forecastTomorrow3Picon"] = "0"
 
 			if WeatherInfo["forecastTomorrow3Day"] == "MO":
 				WeatherInfo["forecastTomorrow3Day"] = "DI"

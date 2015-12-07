@@ -31,7 +31,7 @@ fbtool_1=None
 init_PiG_1=None
 fb_size_history_1=[]
 
-class KravenVBPig(Renderer):
+class KravenVBPig2(Renderer):
 	def __init__(self):
 		Renderer.__init__(self)
 		global fbtool_1
@@ -47,6 +47,18 @@ class KravenVBPig(Renderer):
 		self._can_extended_PiG=False
 		self.first_PiG=False
 		self.is_channelselection=False
+
+		#Added by tomele
+		self.x2=97
+		self.y2=369
+		self.w2=400
+		self.h2=220
+		self.x2=format(int(float(self.x2)/self.fb_w*720.0),'x').zfill(8)
+		self.y2=format(int(float(self.y2)/self.fb_h*576.0),'x').zfill(8)
+		self.w2=format(int(float(self.w2)/self.fb_w*720.0),'x').zfill(8)
+		self.h2=format(int(float(self.h2)/self.fb_h*576.0),'x').zfill(8)
+		self.fb_size2=[self.w2,self.h2,self.x2,self.y2]
+		self.prev_size2=None
 
 	GUI_WIDGET=eVideoWidget
 
@@ -129,7 +141,22 @@ class KravenVBPig(Renderer):
 				if self.fb_size:
 					fbtool_1.setFBSize(self.fb_size,decoder=1)
 
+		#Added by tomele
+		if self.decoder==0:
+			self.prev_size2=fbtool_1.getFBSize(decoder=1)
+			fbtool_1.setFBSize(self.fb_size2,decoder=1)
+		else:
+			self.prev_size2=fbtool_1.getFBSize(decoder=0)
+			fbtool_1.setFBSize(self.fb_size2,decoder=0)
+
 	def onHide(self):
+
+		#Added by tomele
+		if self.decoder==0:
+			fbtool_1.setFBSize(['000002d0','00000240','00000000','00000000'],decoder=1,force=True)
+		else:
+			fbtool_1.setFBSize(['000002d0','00000240','00000000','00000000'],decoder=0,force=True)
+
 		if self.instance:
 			fbtool_1.is_PiG=False
 			self.preWidgetRemove(self.instance)

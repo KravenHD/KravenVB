@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-12-01 22:12+0100\n"
+"PO-Revision-Date: 2015-12-07 21:41+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -917,6 +917,10 @@ msgid "Preview"
 msgstr "Vorschau"
 
 #: KravenVB.py
+msgid "Extended Preview"
+msgstr "Erweiterte Vorschau"
+
+#: KravenVB.py
 msgid "Tuner number/Record"
 msgstr "Tuneranzahl/Aufnahme"
 
@@ -1093,8 +1097,8 @@ msgid "Choose the font color of the color button labels."
 msgstr "Wählen Sie die Schriftfarbe der Farbtastenbeschriftungen."
 
 #: KravenVB.py
-msgid "Specify the weather id for your location. You can find it at http://weather.open-store.net (the blue 6-digit number)."
-msgstr "Geben Sie die Wetter-ID für Ihren Standort ein. Sie können die ID unter http://weather.open-store.net finden (die blaue 6-stellige Zahl)."
+msgid "Specify the weather ID for your location. You can find it at https://weather.yahoo.com. Just enter your ZIP or city and get your weather. The number at the end of the URL is your ID."
+msgstr "Geben Sie die Wetter-ID für Ihre Position an. Sie finden Sie unter https://weather.yahoo.com. Geben Sie Ihre PLZ oder Stadt ein und rufen Sie Ihr Wetter ab. Die Zahl am Ende der URL ist Ihre ID."
 
 #: KravenVB.py
 msgid "Choose the frequency of loading weather data from the internet. Please note that it can take some time to show the weather after a reboot."
