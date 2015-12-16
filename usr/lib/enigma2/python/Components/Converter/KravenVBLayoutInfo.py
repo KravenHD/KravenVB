@@ -1,3 +1,14 @@
+#
+#  ECM LINE Converter
+#
+#  Coded by tomele for Kraven Skins
+#
+#  This code is licensed under the Creative Commons
+#  Attribution-NonCommercial-ShareAlike 4.0 International
+#  License. To view a copy of this license, visit
+#  http://creativecommons.org/licenses/by-nc-sa/4.0/
+#
+
 from Components.Converter.Converter import Converter
 from Components.Element import cached
 from Poll import Poll
@@ -9,6 +20,22 @@ SIZE_UNITS = ['B',
  'TB',
  'PB',
  'EB']
+
+import os, gettext
+from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from Components.Language import language
+
+lang = language.getLanguage()
+os.environ["LANGUAGE"] = lang[:2]
+gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
+gettext.textdomain("enigma2")
+gettext.bindtextdomain("KravenVB", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/KravenVB/locale/"))
+
+def _(txt):
+	t = gettext.dgettext("KravenVB", txt)
+	if t == txt:
+		t = gettext.gettext(txt)
+	return t
 
 class KravenVBLayoutInfo(Poll, Converter):
     HDDTEMP = 0
@@ -27,9 +54,9 @@ class KravenVBLayoutInfo(Poll, Converter):
         type = type.split(',')
         self.shortFormat = 'Short' in type
         self.fullFormat = 'Full' in type
-        self.freiFormat = 'Frei' in type
-        self.genutztFormat = 'Genutzt' in type
-        self.langFormat = 'Lang' in type
+        self.freeFormat = 'Free' in type
+        self.usedFormat = 'Used' in type
+        self.longFormat = 'Long' in type
         if 'HddTemp' in type:
             self.type = self.HDDTEMP
         elif 'LoadAvg' in type:
@@ -81,33 +108,22 @@ class KravenVBLayoutInfo(Poll, Converter):
             else:
                 list = self.getMemInfo(entry[0])
             if list[0] == 0:
-                if self.freiFormat or self.genutztFormat or self.langFormat:
-                    text = 'Nicht vorhanden'
+                if self.freeFormat or self.usedFormat or self.longFormat:
+                    text = _('not available')
                 else:
-                    text = '%s: Not Available' % entry[1]
-            elif self.freiFormat:
-                    text = '%s, %s frei' % (self.getSizeStr(list[0]),
-                    self.getSizeStr(list[2]))
-            elif self.genutztFormat:
-                    text = '%s, %s%% genutzt' % (self.getSizeStr(list[0]), list[3])
-            elif self.langFormat:
-                 text = '%s, %s frei, %s genutzt (%s%%)' % (self.getSizeStr(list[0]),
-                 self.getSizeStr(list[2]),
-                 self.getSizeStr(list[1]),
-                 list[3])
+                    text = entry[1]+': '+_('not available')
+            elif self.freeFormat:
+                    text = self.getSizeStr(list[0])+', '+self.getSizeStr(list[2])+' '+_('free')
+            elif self.usedFormat:
+                    text = self.getSizeStr(list[0])+', '+str(list[3])+'% '+_('used')
+            elif self.longFormat:
+                 text = self.getSizeStr(list[0])+', '+self.getSizeStr(list[2])+' '+_('free')+', '+self.getSizeStr(list[1])+' '+_('used')+' ('+str(list[3])+'%)'
             elif self.shortFormat:
-                text = '%s: %s, in use: %s%%' % (entry[1], self.getSizeStr(list[0]), list[3])
+                text = entry[1]+': '+self.getSizeStr(list[0])+', '+_('used')+': '+str(list[3])+'%'
             elif self.fullFormat:
-                text = '%s: %s Free:%s Used:%s (%s%%)' % (entry[1],
-                 self.getSizeStr(list[0]),
-                 self.getSizeStr(list[2]),
-                 self.getSizeStr(list[1]),
-                 list[3])
+                text = entry[1]+': '+self.getSizeStr(list[0])+'  '+_('Free')+': '+self.getSizeStr(list[2])+'  '+_('Used')+': '+self.getSizeStr(list[1])+' ('+str(list[3])+'%)'
             else:
-                text = '%s: %s Used:%s Free:%s' % (entry[1],
-                 self.getSizeStr(list[0]),
-                 self.getSizeStr(list[1]),
-                 self.getSizeStr(list[2]))
+                text = entry[1]+': '+self.getSizeStr(list[0])+'  '+_('Used')+': '+self.getSizeStr(list[1])+'  '+_('Free')+': '+self.getSizeStr(list[2])
         return text
 
     @cached

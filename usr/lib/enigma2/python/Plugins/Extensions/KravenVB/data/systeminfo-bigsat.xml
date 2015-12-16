@@ -52,14 +52,14 @@
   <eLabel text="USB:" position="960,435" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIbarBackground" transparent="1" foregroundColor="KravenFont2" />
   
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="1010,375" size="220,20" halign="left" valign="bottom" backgroundColor="KravenIbarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
-    <convert type="KravenVBLayoutInfo">FlashInfo,Genutzt</convert>
+    <convert type="KravenVBLayoutInfo">FlashInfo,Free</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="1010,395" size="220,20" halign="left" valign="bottom" backgroundColor="KravenIbarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
-    <convert type="KravenVBLayoutInfo">MemTotal,Genutzt</convert>
+    <convert type="KravenVBLayoutInfo">MemTotal,Free</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="1010,415" size="220,20" halign="left" valign="bottom" backgroundColor="KravenIbarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
-    <convert type="KravenVBLayoutInfo">HddInfo,Frei</convert>
+    <convert type="KravenVBLayoutInfo">HddInfo,Free</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="1010,435" size="220,20" halign="left" valign="bottom" backgroundColor="KravenIbarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
-    <convert type="KravenVBLayoutInfo">UsbInfo,Frei</convert>
+    <convert type="KravenVBLayoutInfo">UsbInfo,Free</convert>
   </widget>

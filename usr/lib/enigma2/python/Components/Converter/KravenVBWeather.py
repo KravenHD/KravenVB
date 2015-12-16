@@ -118,11 +118,11 @@ class KravenVBWeather(Poll, Converter, object):
 		
 			WeatherInfo["forecastTomorrow3Code"] = "("
 			WeatherInfo["forecastTomorrow3Date"] = "N/A"
-			WeatherInfo["forecastTomorrow3TempMax"] = "N/A"
-			WeatherInfo["forecastTomorrow3TempMin"] = "N/A"
+			WeatherInfo["forecastTomorrow3TempMax"] = "0"
+			WeatherInfo["forecastTomorrow3TempMin"] = "0"
 			WeatherInfo["forecastTomorrow3TempMinMax"] = "0"
-			WeatherInfo["forecastTomorrow3Text"] = "0"
-			WeatherInfo["forecastTomorrow3Picon"] = "0"
+			WeatherInfo["forecastTomorrow3Text"] = "N/A"
+			WeatherInfo["forecastTomorrow3Picon"] = "N/A"
 
 			if WeatherInfo["forecastTomorrow3Day"] == "MO":
 				WeatherInfo["forecastTomorrow3Day"] = "DI"
@@ -138,6 +138,8 @@ class KravenVBWeather(Poll, Converter, object):
  				WeatherInfo["forecastTomorrow3Day"] = "SO"
 			elif WeatherInfo["forecastTomorrow3Day"] == "SO":
  				WeatherInfo["forecastTomorrow3Day"] = "MO"
+			else:
+ 				WeatherInfo["forecastTomorrow3Day"] = "N/A"
 
 		# end of yahoo forecast fix
 				

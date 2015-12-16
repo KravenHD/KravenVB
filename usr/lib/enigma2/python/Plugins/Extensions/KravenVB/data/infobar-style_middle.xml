@@ -4,11 +4,11 @@
 <screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="0,0" size="1280,720" title="SecondInfoBar">
   <eLabel text="Flash:" position="40,11" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="82,11" size="180,20" halign="left" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
-    <convert type="KravenVBLayoutInfo">FlashInfo,Genutzt</convert>
+    <convert type="KravenVBLayoutInfo">FlashInfo,Free</convert>
   </widget>
   <eLabel text="HDD:" position="270,11" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="308,11" size="140,20" halign="left" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">
-    <convert type="KravenVBLayoutInfo">HddInfo,Frei</convert>
+    <convert type="KravenVBLayoutInfo">HddInfo,Free</convert>
   </widget>
   <eLabel text="Video:" position="460,11" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenFont2" />
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="505,11" size="280,20" halign="left" valign="bottom" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenFont1">

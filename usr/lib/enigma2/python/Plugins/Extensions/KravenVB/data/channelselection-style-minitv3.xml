@@ -1,4 +1,4 @@
-<!-- /* ChannelSelection MiniTV3 -->
+<!-- /* ChannelSelection - Preview -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
     <widget backgroundColor="KravenBackground2" scrollbarMode="showNever" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenFont1" colorServiceRecording="red" foregroundColorServiceNotAvail="yellow" itemHeight="50" name="list" position="569,77" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="672,560" transparent="1" />
     <widget font="Regular; 22" foregroundColor="KravenFont1" position="42,423" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" size="505,161" source="ServiceEvent" valign="top" backgroundColor="KravenBackground2" transparent="1">
@@ -50,6 +50,6 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="ChannelSelection - PIP" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="ChannelSelection - Preview" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
 </screen>
   <!-- ChannelSelection MiniTV3 */-->

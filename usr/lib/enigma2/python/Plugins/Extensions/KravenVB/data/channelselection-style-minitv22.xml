@@ -1,4 +1,4 @@
-<!-- /* ChannelSelection MiniTV/PIP2 -->
+<!-- /* ChannelSelection - Dual TV 2 -->
 <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
     <widget backgroundColor="KravenBackground2" scrollbarMode="showNever" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="yellow" itemHeight="50" name="list" position="569,77" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="672,560" transparent="1" />
     <widget font="Regular; 30" foregroundColor="KravenFont2" position="42,66" halign="left" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=1,always=0,repeat=5,oneshot=1" size="505,40" source="ServiceEvent" backgroundColor="KravenBackground2" transparent="1" valign="bottom">
@@ -25,10 +25,10 @@
       <convert type="KravenVBEventTime">EndTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
-    <widget position="90,120" render="Progress" size="410,5" source="ServiceEvent" transparent="1" zPosition="7" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress410.png">
+    <widget position="95,120" render="Progress" size="400,5" source="ServiceEvent" transparent="1" zPosition="7" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress410.png">
       <convert type="KravenVBEventTime">Progress</convert>
     </widget>
-    <eLabel position="90,122" size="410,1" backgroundColor="KravenLine" />
+    <eLabel position="95,122" size="400,1" backgroundColor="KravenLine" />
     <widget backgroundColor="KravenBackground2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" size="505,27" position="42,596" transparent="1" noWrap="1">
     </widget>
     <!--<widget backgroundColor="KravenBackground2" foregroundColor="KravenPrimetimeFont" font="Regular;22" source="ServiceEvent" render="Label" position="42,623" size="505,27" transparent="1" noWrap="1">
@@ -52,6 +52,6 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="ChannelSelection - MiniTV/PIP 2" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="ChannelSelection - Dual TV 2" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
 </screen>
   <!-- ChannelSelection MiniTV/PIP2 */-->

@@ -1,15 +1,16 @@
 #!/bin/sh
 echo "Checking for previous installations..."
-if opkg list-installed |grep enigma2-plugin-skins-kravenvb; then
-		opkg remove enigma2-plugin-skins-kravenvb
-		echo "                                                           "
-		echo "            Previous KravenVB installation                 "
-		echo "                 was found and removed!                    "
-		echo "                                                           "
+if [ -f /usr/share/enigma2/KravenVB/ibar.png ]; then
+    cp /usr/share/enigma2/KravenVB/ibar.png /tmp
 fi
-if [ -f /usr/share/enigma2/KravenVB/header-kraven/ibar_000000.png ]; then
-    mkdir /tmp/header-kraven
-    cp -r /usr/share/enigma2/KravenVB/header-kraven/* /tmp/header-kraven/
+if [ -f /usr/share/enigma2/KravenVB/ibaro.png ]; then
+    cp /usr/share/enigma2/KravenVB/ibaro.png /tmp
+fi
+if [ -f /usr/share/enigma2/KravenVB/backg.png ]; then
+    cp /usr/share/enigma2/KravenVB/backg.png /tmp
+fi
+if [ -f /usr/share/enigma2/KravenVB/skin.xml ]; then
+    cp /usr/share/enigma2/KravenVB/skin.xml /tmp
     rm -rf /usr/share/enigma2/KravenVB
     rm -rf /usr/lib/enigma2/python/Components/Converter/KravenVB*
     rm -rf /usr/lib/enigma2/python/Components/Renderer/KravenVB*
@@ -28,4 +29,3 @@ fi
 echo "                                                           "
 echo "        The Skin KravenVB is now being installed...        "
 echo "                                                           "
-exit 0
