@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-12-15 18:58+0100\n"
+"PO-Revision-Date: 2015-12-18 18:20+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.7.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: KravenVBYWeather.py
@@ -1471,3 +1471,7 @@ msgstr "nicht verfügbar bei MiniTV in Systemmenüs"
 #: KravenVB.py
 msgid "This option is not available because MiniTV for system menus is activated."
 msgstr "Diese Option ist nicht verfügbar, da MiniTV in Systemmenüs aktiviert ist."
+
+#: KravenVB.py
+msgid "press OK for the FAQs"
+msgstr "Drücken Sie OK für die FAQs"

@@ -1,7 +1,4 @@
 #!/bin/sh
-if [ -f /tmp/skin.xml ]; then
-    mv -f /tmp/skin.xml /usr/share/enigma2/KravenVB
-fi
 if [ -f /tmp/ibar.png ]; then
     mv -f /tmp/ibar.png /usr/share/enigma2/KravenVB
 fi

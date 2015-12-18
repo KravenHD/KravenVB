@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mphelp skin="KravenVBFaq" caption="KravenVB FAQ">
+	<page title="FAQ">
+		<text value="Warum finde ich KravenVB in der Skinauswahl nicht ? __________________
+\nDer KravenVB Skin muss erst erzeugt werden. Rufen Sie das Plugin KravenVB auf, machen Sie Ihre Einstellungen und speichern Sie das Skin mit der grünen Taste. Nach einem GUI-Neustart ist der Skin aktiv.
+\n\nWo finde ich meine Wetter-ID ? _________________________________________
+\nGehen Sie auf die Internet-Seite https://weather.yahoo.com. Geben Sie dort Ihre PLZ oder Stadt ein und rufen Sie Ihr Wetter ab. Die Zahl am Ende der URL in der Adressleiste Ihres Browsers ist Ihre Wetter-ID.
+\n\nWarum sehe ich keine Sender-Picons in der Infobar ? __________________
+\nDer Ordner mit Ihren Picons hat einen falschen Namen. Benennen Sie den Ordner, in dem Ihre Picons gespeichert sind, in 'picon' um.
+\n\nWas kann ich bei einem LS in der Kanalliste tun (nur Solo4K) ? __________
+\nInstallieren Sie bitte unseren Fix für eine fehlerhafte Systemdatei (PigDummy.tar.gz). Sie finden ihn in unserem Support-Thread unter http://vuplus-support.org. Kopieren Sie die Datei nach /tmp, rufen Sie das VTI-Panel auf (blaue Taste) -> Manuelle Installation von Paketen -> .tar.gz installieren. Nach einem GUI-Neustart sollte es behoben sein.
+\nWas kann ich bei einem LS in PermanentTimeshift tun ? _______________
+\nDeaktivieren Sie im PTS-Plugin die Option zur Anzeige der PTS-eigenen Timeshift-Bar. Unser Skin hat eine eigene, passende Timeshift-Bar.
+\n\nWarum ist der Skin an den Rändern abgeschnitten ? ___________________
+\nSie haben wahrscheinlich Overscan an Ihrem TV eingeschaltet. Diese Funktion schneidet die Bildränder ab. Deaktivieren Sie Overscan oder installieren Sie die Systemerweiterung 'uipositionersetup'. Mit 'Menü positionieren' können Sie den Overscan ausgleichen.
+\n\nWie kann ich zwischen den Einstellungs-Profilen wechseln ? ___________
+\nDie Profile können Sie im Plugin mit rechts/links auf dem Punkt 'Aktives Profil' wechseln. Beim Wechsel wird das vorige Profil automatisch gespeichert und das neue geladen. Wenn das neue noch nicht existiert, wird es mit den Einstellungen des vorigen erzeugt.
+\n\nWie kann ich meine Einstellungen auf eine andere Box kopieren ? _____
+\nSie finden die Profile unter /etc/kraven_profile_x. Kopieren Sie einfach das gewünschte Profil auf die Zielbox, wählen Sie es dort im Plugin aus und erzeugen Ihr Skin damit neu.
+\nWie kann ich ein Profil klonen, um Einstellungen zu übernehmen ? ____
+\nSie finden die Profile unter /etc/kraven_profile_x. Kopieren Sie einfach das Quellprofil über das Zielprofil. Wählen Sie das Zielprofil im Plugin aus und erzeugen Ihr Skin neu."/>
+	</page>
+	<page title="FAQ">
+		<text value="Why is there no KravenVB in the skin selection ? ________________________
+\nThe KravenVB skin must be generated first. Call the extension KravenVB, make your settings and save the skin with the green button. The skin will be active after a GUI restart.
+\n\nWhere can I find my Weather ID ? _______________________________________
+\nGo to the internet site https://weather.yahoo.com. Once there, enter your zip code or city, and get your weather. The number at the end of the URL in the address bar of your browser is your weather ID.
+\n\nWhy are there no channel picons in the infobar ? ______________________
+\nThe folder containing your picons has a wrong name. Rename the folder with your picons to 'picon'.
+\n\nWhat can I do if I get a LS in the channel list (only Solo4K) ? _____________
+\nPlease install our fix for a faulty system file (PigDummy.tar.gz). You can find it in our support thread at http://vuplus-support.org. Copy the file to /tmp, call the VTI panel (blue button) -> manual package installation -> .tar.gz installation. After a GUI restart the problem should be gone.
+\nWhat can I do if I get a LS exiting PermanentTimeshift ? ________________
+\nDisable the option to display the PTS timeshift bar in the PTS plugin. Our skin comes with its own matching timeshift bar.
+\n\nWhy is the skin cut off at the edges ? ___________________________________
+\nYou have probably turned on overscan on your TV. This function truncates the edges. Disable overscan or install the system extension 'uipositionersetup'. With this extension 'Position menu' you can compensate for the overscan.
+\n\nHow can I switch the settings profiles ? _________________________________
+\nYou can switch the profiles with right/left on the 'active profile' option. On switching the prior profile gets saved automatically and the new one gets loaded. If the new one doesnt exist, it gets generated based on the settings of the prior one.
+\n\nHow can I copy my settings to a different box ? _________________________
+\nYou can find the profiles under /etc/kraven_profile_x. Just copy the file with your profile to the target box, choose it in the plugin there and create your skin again.
+\nHow can I clone a profile to take over certain settings ? ________________
+\nYou can find the profiles under /etc/kraven_profile_x. Just copy the source profile over the target profile. Choose the target profile in the plugin and create your skin again."/>
+	</page>
+</mphelp>

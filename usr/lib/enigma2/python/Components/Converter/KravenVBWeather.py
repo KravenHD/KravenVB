@@ -122,7 +122,7 @@ class KravenVBWeather(Poll, Converter, object):
 			WeatherInfo["forecastTomorrow3TempMin"] = "0"
 			WeatherInfo["forecastTomorrow3TempMinMax"] = "0"
 			WeatherInfo["forecastTomorrow3Text"] = "N/A"
-			WeatherInfo["forecastTomorrow3Picon"] = "N/A"
+			WeatherInfo["forecastTomorrow3Picon"] = "3200"
 
 			if WeatherInfo["forecastTomorrow3Day"] == "MO":
 				WeatherInfo["forecastTomorrow3Day"] = "DI"
@@ -857,11 +857,11 @@ class WeatherData:
 			"klima": "N/A",
 			"currentWeatherCode": "(",
 			"currentWeatherText": "N/A",
-			"currentWeatherPicon": "N/A",
+			"currentWeatherPicon": "3200",
 			"currentWeatherTemp": "=",
 			"forecastTodayCode": "(",
 			"forecastTodayText": "N/A",
-			"forecastTodayPicon": "N/A",
+			"forecastTodayPicon": "3200",
 			"forecastTodayDay": "N/A",
 			"forecastTodayDate": "N/A",
 			"forecastTodayDateEn": "N/A",
@@ -870,7 +870,7 @@ class WeatherData:
 			"forecastTodayTempMinMax": "0",
 			"forecastTomorrowCode": "(",
 			"forecastTomorrowText": "N/A",
-			"forecastTomorrowPicon": "N/A",
+			"forecastTomorrowPicon": "3200",
 			"forecastTomorrowDay": "N/A",
 			"forecastTomorrowDate": "N/A",
 			"forecastTomorrowDateEn": "N/A",
@@ -879,7 +879,7 @@ class WeatherData:
 			"forecastTomorrowTempMinMax": "0",
 			"forecastTomorrow1Code": "(",
 			"forecastTomorrow1Text": "N/A",
-			"forecastTomorrow1Picon": "N/A",
+			"forecastTomorrow1Picon": "3200",
 			"forecastTomorrow1Day": "N/A",
 			"forecastTomorrow1Date": "N/A",
 			"forecastTomorrow1TempMin": "0",
@@ -887,7 +887,7 @@ class WeatherData:
 			"forecastTomorrow1TempMinMax": "0",
 			"forecastTomorrow2Code": "(",
 			"forecastTomorrow2Text": "N/A",
-			"forecastTomorrow2Picon": "N/A",
+			"forecastTomorrow2Picon": "3200",
 			"forecastTomorrow2Day": "N/A",
 			"forecastTomorrow2Date": "N/A",
 			"forecastTomorrow2TempMin": "0",
@@ -895,7 +895,7 @@ class WeatherData:
 			"forecastTomorrow2TempMinMax": "0",
 			"forecastTomorrow3Code": "(",
 			"forecastTomorrow3Text": "N/A",
-			"forecastTomorrow3Picon": "N/A",
+			"forecastTomorrow3Picon": "3200",
 			"forecastTomorrow3Day": "N/A",
 			"forecastTomorrow3Date": "N/A",
 			"forecastTomorrow3TempMin": "0",

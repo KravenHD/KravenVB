@@ -10,7 +10,6 @@ if [ -f /usr/share/enigma2/KravenVB/backg.png ]; then
     cp /usr/share/enigma2/KravenVB/backg.png /tmp
 fi
 if [ -f /usr/share/enigma2/KravenVB/skin.xml ]; then
-    cp /usr/share/enigma2/KravenVB/skin.xml /tmp
     rm -rf /usr/share/enigma2/KravenVB
     rm -rf /usr/lib/enigma2/python/Components/Converter/KravenVB*
     rm -rf /usr/lib/enigma2/python/Components/Renderer/KravenVB*
