@@ -1077,8 +1077,8 @@ msgid "Choose the background color for all screens. You can choose from a list o
 msgstr "Wählen Sie die Hintergrundfarbe für alle Seiten. Sie können aus einer Liste von vordefinierten Farben wählen oder Ihre eigene Farbe mit RGB-Reglern erzeugen."
 
 #: KravenVB.py
-msgid "Choose the degree of background transparency for all screens."
-msgstr "Wählen Sie den Grad der Hintergrundtransparenz für alle Seiten."
+msgid "Choose the degree of background transparency for all screens except system menus and channellists."
+msgstr "Wählen Sie den Grad der Hintergrundtransparenz für alle Seiten außer Systemmenüs und Kanallisten."
 
 #: KravenVB.py
 msgid "Choose the background color of selection bars."
@@ -1213,8 +1213,8 @@ msgid "Choose the font color of the ECM information."
 msgstr "Wählen Sie die Schriftfarbe der ECM-Informationen."
 
 #: KravenVB.py
-msgid "Choose from different styles for the channel selection screen."
-msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Kanalauswahl."
+msgid "Choose from different styles for the channel selection screen. Preview, Extended Preview and DualTV styles disable transparency in all other screens."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Kanalauswahl. Stile vom Typ \"Vorschau\", \"Erweiterte Vorschau\" und \"Doppel-TV\" deaktivieren die Transparenz auf allen anderen Seiten."
 
 #: KravenVB.py
 msgid "Choose whether primetime program information is displayed or not."
@@ -1457,16 +1457,16 @@ msgid "Choose between direct zapping (1xOK) and zapping after preview (2xOK)."
 msgstr "Wählen Sie zwischen direktem Umschalten (1xOK) und Umschalten nach Vorschau (2xOK)."
 
 #: KravenVB.py
-msgid "This option is only available for extended preview and dual tv channellist styles."
-msgstr "Diese Option ist nur für die Kanallisten-Stile \"Erweiterte Vorschau\" und \"Doppel-TV\" verfügbar."
+msgid "This option is only available for MiniTV, Extended Preview and DualTV channellist styles."
+msgstr "Diese Option ist nur für die Kanallisten-Stile vom Typ \"MiniTV\", \"Erweiterte Vorschau\" und \"Doppel-TV\" verfügbar."
 
 #: KravenVB.py
 msgid "This option is not available for MiniTV, Preview and DualTV channellist styles."
-msgstr "Diese Option ist für die Kanallisten-Stile \"MiniTV\", \"Vorschau\" und \"Doppel-TV\" nicht verfügbar."
+msgstr "Diese Option ist für die Kanallisten-Stile vom Typ \"MiniTV\", \"Vorschau\" und \"Doppel-TV\" nicht verfügbar."
 
 #: KravenVB.py
-msgid "not available for MiniTV in system menus"
-msgstr "nicht verfügbar bei MiniTV in Systemmenüs"
+msgid "not available for MiniTV"
+msgstr "nicht verfügbar bei MiniTV"
 
 #: KravenVB.py
 msgid "This option is not available because MiniTV for system menus is activated."
@@ -1475,3 +1475,27 @@ msgstr "Diese Option ist nicht verfügbar, da MiniTV in Systemmenüs aktiviert i
 #: KravenVB.py
 msgid "press OK for the FAQs"
 msgstr "Drücken Sie OK für die FAQs"
+
+#: KravenVB.py
+msgid "only available when weather activated"
+msgstr "nur verfügbar bei aktiviertem Wetter"
+
+#: KravenVB.py
+msgid "This option is not available because weather is deactivated." 
+msgstr "Diese Option ist nicht verfügbar, da die Wetteranzeige deaktiviert ist."
+
+#: KravenVB.py
+msgid "Choose the degree of background transparency for system menu screens."
+msgstr "Wählen Sie den Grad der Hintergrund-Transparenz für Systemmenüs."
+
+#: KravenVB.py
+msgid "Menu-Transparency"
+msgstr "Menü-Transparenz"
+
+#: KravenVB.py
+msgid "not available (channellist style)"
+msgstr "nicht verfügbar (Kanallisten-Stil)"
+
+#: KravenVB.py
+msgid "This option is not available because the channellist style is Preview, Extended Preview or DualTV."
+msgstr "Diese Option ist nicht verfügbar, da der Kanallisten-Stil vom Typ \"Vorschau\", \"Erweiterte Vorschau\" oder \"Doppel-TV\" ist." 

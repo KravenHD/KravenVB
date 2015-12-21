@@ -21,23 +21,23 @@
 #
 
 from Renderer import Renderer
-from enigma import eVideoWidget, eSize, ePoint, getDesktop, eServiceCenter, eServiceReference, getDesktop, iServiceInformation
+from enigma import eVideoWidget,eTimer,getDesktop,eServiceCenter,iServiceInformation
 from Screens.InfoBar import InfoBar
-from Tools.FBHelperTool import FBHelperTool
 from Components.SystemInfo import SystemInfo
 from Components.config import config
+from enigma import eActionMap
 
-fbtool = FBHelperTool()
-init_PiG = None
-fb_size_history = []
+fbtool=None
+init_PiG=None
+fb_size_history=[]
 
 class KravenVBPig3(Renderer):
 	def __init__(self):
 		Renderer.__init__(self)
-		self.Position = self.Size = None
-		self.decoder = 0
-		if SystemInfo.get("NumVideoDecoders", 1) > 1:
-			self.decoder = 1
+		global fbtool
+		fbtool=KravenFBHelper()
+		self.Position=self.Size=None
+		self.decoder=0
 		self.fb_w = getDesktop(0).size().width()
 		self.fb_h = getDesktop(0).size().height()
 		self.fb_size = None
@@ -49,10 +49,7 @@ class KravenVBPig3(Renderer):
 	GUI_WIDGET = eVideoWidget
 
 	def postWidgetCreate(self, instance):
-		self.decoder = 0
 		self.prev_fb_info = fbtool.getFBSize()
-		if self.decoder > 0:
-			self.prev_fb_info_second_dec = fbtool.getFBSize(decoder = 1)
 		desk = getDesktop(0)
 		instance.setDecoder(self.decoder)
 		instance.setFBSize(desk.size())
@@ -93,24 +90,10 @@ class KravenVBPig3(Renderer):
 				self.instance.resize(self.Size)
 			if self.Position:
 				self.instance.move(self.Position)
-			if self.decoder > 0:
-				fbtool.setFBSize(['000002d0', '00000240', '00000000', '00000000'], decoder = 0)
-				if InfoBar.instance and not InfoBar.instance.session.pipshown:
-					InfoBar.instance.showPiG()
-					global init_PiG
-					if not init_PiG and not self.is_channelselection and InfoBar.instance.session.pipshown:
-						self.first_PiG = True
-						init_PiG = True
-				cur_size = fbtool.getFBSize(decoder = 1)
+			if InfoBar.instance and InfoBar.instance.session.pipshown and not InfoBar.instance.session.is_audiozap:
+				fbtool.setFBSize(['00000001','00000001','00000000','00000000'],decoder=1)
 				if self.fb_size:
-					global fb_size_history
-					if fb_size_history != self.fb_size:
-						fb_size_history = self.fb_size
-						fbtool.setFBSize(self.fb_size, self.decoder)
-			elif InfoBar.instance and InfoBar.instance.session.pipshown and not InfoBar.instance.session.is_audiozap:
-				fbtool.setFBSize(['000002d0', '00000240', '00000000', '00000000'], decoder = 0)
-				if self.fb_size:
-					fbtool.setFBSize(self.fb_size, decoder = 1)
+					fbtool.setFBSize(self.fb_size, self.decoder)
 
 	def onHide(self):
 		if self.instance:
@@ -132,3 +115,67 @@ class KravenVBPig3(Renderer):
 			if InfoBar.instance and InfoBar.instance.session.is_pig:
 				InfoBar.instance.showPiP()
 		self.__dict__.clear()
+
+#Added by tomele
+class KravenFBHelper:
+	def __init__(self):
+		self.fb_proc_path="/proc/stb/vmpeg"
+		self.fb_info=["dst_width","dst_height","dst_left","dst_top"]
+		self.new_fb_size_pos=None
+		self.decoder=None
+		self.delayTimer=None
+		self.is_PiG=False
+
+	def getFBSize(self,decoder=0):
+		ret=[]
+		for val in self.fb_info:
+			try:
+				f=open("%s/%d/%s" % (self.fb_proc_path,decoder,val),"r")
+				fb_val=f.read().strip()
+				ret.append(fb_val)
+				f.close()
+			except IOError:
+				pass
+		if len(ret)==4:
+			return ret
+		return None
+
+	def setFBSize(self,fb_size_pos,decoder=0,force=False):
+		if self.delayTimer:
+			self.delayTimer.stop()
+		if (InfoBar.instance and InfoBar.instance.session.pipshown) or force:
+			if fb_size_pos and len(fb_size_pos)>=4:
+				i=0
+				for val in self.fb_info:
+					try:
+						f=open("%s/%d/%s" % (self.fb_proc_path,decoder,val),"w")
+						fb_val=fb_size_pos[i]
+						f.write(fb_val)
+						f.close()
+					except IOError:
+						pass
+					i+=1
+				for val in ("00000001","00000000"):
+					try:
+						f=open("%s/%d/%s" % (self.fb_proc_path,decoder,"dst_apply"),"w")
+						f.write(val)
+						f.close()
+					except IOError:
+						pass
+
+	def delayTimerFinished(self):
+		fb_size_pos=self.new_fb_size_pos
+		decoder=self.decoder
+		self.new_fb_size_pos=None
+		self.decoder=None
+		if not self.is_PiG:
+			self.setFBSize(fb_size_pos,decoder)
+
+	def setFBSize_delayed(self,fb_size_pos,decoder=0,delay=1000):
+		if fb_size_pos and len(fb_size_pos)>=4:
+			self.new_fb_size_pos=fb_size_pos
+			self.decoder=decoder
+			self.delayTimer=eTimer()
+			self.delayTimer.callback.append(self.delayTimerFinished)
+			self.delayTimer.start(delay)
+

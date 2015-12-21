@@ -1,4 +1,4 @@
-  <widget source="session.VideoPicture" render="Pig" position="40,52" size="320,180" zPosition="3" backgroundColor="transparent" />
+  <widget source="session.VideoPicture" render="KravenVBPig3" position="40,52" size="320,180" zPosition="3" backgroundColor="transparent" />
   <eLabel backgroundColor="#00000000" position="40,52" size="320,180" transparent="0" zPosition="2" />
   <eLabel backgroundColor="#001F1F1F" position="40,52" size="320,3" transparent="0" zPosition="4" />
   <eLabel backgroundColor="#001F1F1F" position="40,229" size="320,3" transparent="0" zPosition="4" />

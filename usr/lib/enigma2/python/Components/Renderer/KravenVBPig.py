@@ -27,15 +27,15 @@ from Components.SystemInfo import SystemInfo
 from Components.config import config
 from enigma import eActionMap
 
-fbtool_1=None
-init_PiG_1=None
-fb_size_history_1=[]
+fbtool=None
+init_PiG=None
+fb_size_history=[]
 
 class KravenVBPig(Renderer):
 	def __init__(self):
 		Renderer.__init__(self)
-		global fbtool_1
-		fbtool_1=KravenFBHelper()
+		global fbtool
+		fbtool=KravenFBHelper()
 		self.Position=self.Size=None
 		self.decoder=0
 		if SystemInfo.get("NumVideoDecoders",1)>1:
@@ -61,9 +61,9 @@ class KravenVBPig(Renderer):
 						self.decoder=0
 		else:
 			self.decoder=0
-		self.prev_fb_info=fbtool_1.getFBSize()
+		self.prev_fb_info=fbtool.getFBSize()
 		if self.decoder>0:
-			self.prev_fb_info_second_dec=fbtool_1.getFBSize(decoder=1)
+			self.prev_fb_info_second_dec=fbtool.getFBSize(decoder=1)
 		desk=getDesktop(0)
 		instance.setDecoder(self.decoder)
 		instance.setFBSize(desk.size())
@@ -104,43 +104,43 @@ class KravenVBPig(Renderer):
 		return ret
 
 	def onShow(self):
-		fbtool_1.is_PiG=True
+		fbtool.is_PiG=True
 		if self.instance:
 			if self.Size:
 				self.instance.resize(self.Size)
 			if self.Position:
 				self.instance.move(self.Position)
 			if self.decoder>0:
-				fbtool_1.setFBSize(['000002d0','00000240','00000000','00000000'],decoder=0)
+				fbtool.setFBSize(['000002d0','00000240','00000000','00000000'],decoder=0)
 				if InfoBar.instance and not InfoBar.instance.session.pipshown:
 					InfoBar.instance.showPiG()
-					global init_PiG_1
-					if not init_PiG_1 and not self.is_channelselection and InfoBar.instance.session.pipshown:
+					global init_PiG
+					if not init_PiG and not self.is_channelselection and InfoBar.instance.session.pipshown:
 						self.first_PiG=True
-						init_PiG_1=True
-				cur_size=fbtool_1.getFBSize(decoder=1)
+						init_PiG=True
+				cur_size=fbtool.getFBSize(decoder=1)
 				if self.fb_size:
-					global fb_size_history_1
-					if fb_size_history_1 != self.fb_size:
-						fb_size_history_1=self.fb_size
-						fbtool_1.setFBSize(self.fb_size,self.decoder)
+					global fb_size_history
+					if fb_size_history != self.fb_size:
+						fb_size_history=self.fb_size
+						fbtool.setFBSize(self.fb_size,self.decoder)
 			elif InfoBar.instance and InfoBar.instance.session.pipshown and not InfoBar.instance.session.is_audiozap:
-				fbtool_1.setFBSize(['000002d0','00000240','00000000','00000000'],decoder=0)
+				fbtool.setFBSize(['000002d0','00000240','00000000','00000000'],decoder=0)
 				if self.fb_size:
-					fbtool_1.setFBSize(self.fb_size,decoder=1)
+					fbtool.setFBSize(self.fb_size,decoder=1)
 
 	def onHide(self):
 		if self.instance:
-			fbtool_1.is_PiG=False
+			fbtool.is_PiG=False
 			self.preWidgetRemove(self.instance)
 			if InfoBar.instance and InfoBar.instance.session.pipshown and InfoBar.instance.session.is_splitscreen:
 				self.prev_fb_info=InfoBar.instance.session.pip.prev_fb_info
 				self.prev_fb_info_second_dec=InfoBar.instance.session.pip.prev_fb_info_second_dec
-				fbtool_1.setFBSize(self.prev_fb_info_second_dec,decoder=1)
-				fbtool_1.setFBSize_delayed(self.prev_fb_info,decoder=0,delay=200)
+				fbtool.setFBSize(self.prev_fb_info_second_dec,decoder=1)
+				fbtool.setFBSize_delayed(self.prev_fb_info,decoder=0,delay=200)
 			elif InfoBar.instance and InfoBar.instance.session.pipshown and not InfoBar.instance.session.is_splitscreen and not InfoBar.instance.session.is_audiozap and not InfoBar.instance.session.is_pig:
 				self.prev_fb_info=InfoBar.instance.session.pip.prev_fb_info
-				fbtool_1.setFBSize_delayed(self.prev_fb_info,decoder=1,delay=200)
+				fbtool.setFBSize_delayed(self.prev_fb_info,decoder=1,delay=200)
 
 	#Added by tomele
 	def changed(self,what):
@@ -153,8 +153,8 @@ class KravenVBPig(Renderer):
 
 	def destroy(self):
 		if self.first_PiG and InfoBar.instance.session.pipshown:
-			global init_PiG_1
-			init_PiG_1=False
+			global init_PiG
+			init_PiG=False
 			if InfoBar.instance and InfoBar.instance.session.is_pig:
 				InfoBar.instance.showPiP()
 		self.__dict__.clear()

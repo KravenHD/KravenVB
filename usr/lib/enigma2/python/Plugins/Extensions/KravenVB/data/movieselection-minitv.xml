@@ -4,7 +4,7 @@
 	<eLabel text="MovieSelection" position="70,12" size="708,46" backgroundColor="KravenInfobar2Background" font="Regular2;34" foregroundColor="KravenFont2" halign="left" valign="center" transparent="1" />
     <widget name="list" position="70,110" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="KravenBackground2" font="Regular;17" halign="right" name="freeDiskSpace" position="70,80" size="708,24" transparent="1" valign="center" />
-	<widget source="session.VideoPicture" render="Pig" position="838,80" size="384,216" zPosition="3" backgroundColor="transparent" />
+	<widget source="session.VideoPicture" render="KravenVBPig3" position="838,80" size="384,216" zPosition="3" backgroundColor="transparent" />
     <eLabel backgroundColor="#00000000" position="838,80" size="384,216" transparent="0" zPosition="2" />
     <eLabel backgroundColor="#001F1F1F" position="838,80" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="838,293" size="384,3" transparent="0" zPosition="4" />

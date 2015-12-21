@@ -17,6 +17,7 @@
     <color name="grey" value="#00f0e3d6" />
     <color name="KravenBackground" value="#00000000" />
     <color name="KravenBackground2" value="#00000000" />
+    <color name="KravenBackground3" value="#00000000" />
     <color name="KravenBackground4" value="#00000000" />
     <color name="KravenBorder" value="#00ffffff" />
     <color name="KravenButtonText" value="#00ffffff" />
