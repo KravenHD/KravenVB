@@ -1,11 +1,7 @@
 #
-#  Channellist Preview Renderer
-#
+#  MiniTV Renderer
+#  Based on P(icture)i(n)g(raphics) renderer by VTi-Team
 #  Modified by tomele for Kraven Skins
-#
-#  based on
-#  P(icture)i(n)g(raphics) renderer
-#  by VTi-Team
 #
 #  This plugin is licensed under the Creative Commons
 #  Attribution-NonCommercial-ShareAlike 3.0 Unported
@@ -79,7 +75,7 @@ class KravenVBPig3(Renderer):
 				
 		ret = Renderer.applySkin(self, desktop, parent)
 		if ret:
-			self.Position = self.instance.position() # fixme, scaling!
+			self.Position = self.instance.position()
 			self.Size = self.instance.size()
 		return ret
 
@@ -116,7 +112,6 @@ class KravenVBPig3(Renderer):
 				InfoBar.instance.showPiP()
 		self.__dict__.clear()
 
-#Added by tomele
 class KravenFBHelper:
 	def __init__(self):
 		self.fb_proc_path="/proc/stb/vmpeg"

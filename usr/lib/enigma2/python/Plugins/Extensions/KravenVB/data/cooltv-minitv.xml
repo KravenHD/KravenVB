@@ -32,7 +32,7 @@
     <eLabel backgroundColor="#001F1F1F" position="42,273" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="42,60" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="423,60" size="3,216" transparent="0" zPosition="4" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -49,7 +49,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolSingleGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolSingleGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolInfoGuide -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolInfoGuide" position="0,0" size="1280,720" title="Cool Info Guide">
@@ -81,7 +81,7 @@
     <eLabel backgroundColor="#001F1F1F" position="42,273" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="42,60" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="423,60" size="3,216" transparent="0" zPosition="4" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -98,7 +98,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolInfoGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolInfoGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolTVGuide -->
   <screen backgroundColor="transparent" name="CoolTVGuide" position="0,0" size="1280,720" flags="wfNoBorder" title="Cool TV Guide">
@@ -127,7 +127,7 @@
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>
     <widget backgroundColor="KravenInfobar2Background" name="date" position="950,22" font="Regular2;22" foregroundColor="KravenFont2" halign="right" size="180,30" transparent="1" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -144,7 +144,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolTVGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolTVGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolNiceGuide -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolNiceGuide" position="0,0" size="1280,720" title="Cool Nice Guide">
@@ -182,7 +182,7 @@
     <eLabel backgroundColor="#001F1F1F" position="42,273" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="42,60" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="423,60" size="3,216" transparent="0" zPosition="4" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -199,7 +199,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolNiceGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolNiceGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolSearch -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolSearch" position="0,0" size="1280,720" title="Cool Search">
@@ -228,7 +228,7 @@
     <eLabel backgroundColor="#001F1F1F" position="42,273" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="42,60" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="423,60" size="3,216" transparent="0" zPosition="4" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -245,7 +245,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolSearch - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolSearch - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolEasyGuide -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolEasyGuide" position="0,0" size="1280,720" title="Cool Easy Guide">
@@ -275,7 +275,7 @@
     <eLabel backgroundColor="#001F1F1F" position="42,273" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="42,60" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="423,60" size="3,216" transparent="0" zPosition="4" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -292,7 +292,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolEasyGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolEasyGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolMultiGuide -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolMultiGuide" position="0,0" size="1280,720" title="Cool Multi Guide">
@@ -330,7 +330,7 @@
     <eLabel backgroundColor="#001F1F1F" position="42,273" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="42,60" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="#001F1F1F" position="423,60" size="3,216" transparent="0" zPosition="4" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -347,7 +347,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolMultiGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolMultiGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolTinyGuide -->
   <screen backgroundColor="transparent" name="CoolTinyGuide" position="0,0" size="1280,720" flags="wfNoBorder" title="Cool Tiny Guide">
@@ -376,7 +376,7 @@
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>
     <widget backgroundColor="KravenInfobar2Background" name="date" position="950,22" font="Regular2;22" foregroundColor="KravenFont2" halign="right" size="180,30" transparent="1" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -393,7 +393,7 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolTinyGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolTinyGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolChannelGuide -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolChannelGuide" position="0,0" size="1280,720" title="Cool Channel Guide">
@@ -427,7 +427,7 @@
     <widget backgroundColor="KravenBackground2" font="Regular;19" foregroundColor="KravenFont2" position="42,570" render="CoolNextEvent" size="384,80" source="Service" transparent="1">
     </widget>
     <widget backgroundColor="KravenInfobar2Background" name="date" position="950,22" font="Regular2;22" foregroundColor="KravenFont2" halign="right" size="180,30" transparent="1" />
-    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+    <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenInfobar2Background" foregroundColor="KravenButtonText" transparent="1" zPosition="1" />
@@ -444,6 +444,6 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="CoolChannelGuide - MiniTV" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="CoolChannelGuide - MiniTV" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
   </screen>
   <!-- CoolTVGuide */-->

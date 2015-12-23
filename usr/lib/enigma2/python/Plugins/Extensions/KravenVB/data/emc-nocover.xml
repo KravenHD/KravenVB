@@ -41,7 +41,7 @@
     <convert type="EMCClockToText">InMinutes</convert>
   </widget>
   <eLabel backgroundColor="KravenBackground" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
-  <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center" foregroundColor="KravenFont1">
+  <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenFont1" font="Regular;26" halign="right" backgroundColor="KravenInfobar2Background" transparent="1" valign="center">
     <convert type="ClockToText">Default</convert>
   </widget>
   <ePixmap backgroundColor="KravenBackground" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
@@ -57,6 +57,6 @@
     <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<eLabel backgroundColor="KravenInfobar2Background" font="Regular;13" foregroundColor="red" text="EMCSelection - no Cover" position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->
+    <!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red" text="EMCSelection - no Cover" position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->
 </screen>
 <!-- EMC NoCover */-->

@@ -1,11 +1,7 @@
 #
 #  Channellist Preview Renderer
-#
+#  Based on P(icture)i(n)g(raphics) renderer by VTi-Team
 #  Modified by tomele for Kraven Skins
-#
-#  based on
-#  P(icture)i(n)g(raphics) renderer
-#  by VTi-Team
 #
 #  This plugin is licensed under the Creative Commons
 #  Attribution-NonCommercial-ShareAlike 3.0 Unported
@@ -70,7 +66,6 @@ class KravenVBPig(Renderer):
 		self.this_instance=instance
 
 	def applySkin(self,desktop,parent):
-		# do some voodoo for the lovely ChannelSelection ...
 		if parent.__class__.__name__=="ChannelSelection":
 			self.is_channelselection=True
 			if not config.usage.use_extended_pig_channelselection.value:
@@ -99,7 +94,7 @@ class KravenVBPig(Renderer):
 			self.fb_size=[w,h,x,y]
 		ret=Renderer.applySkin(self,desktop,parent)
 		if ret:
-			self.Position=self.instance.position() # fixme,scaling!
+			self.Position=self.instance.position()
 			self.Size=self.instance.size()
 		return ret
 
@@ -141,8 +136,9 @@ class KravenVBPig(Renderer):
 			elif InfoBar.instance and InfoBar.instance.session.pipshown and not InfoBar.instance.session.is_splitscreen and not InfoBar.instance.session.is_audiozap and not InfoBar.instance.session.is_pig:
 				self.prev_fb_info=InfoBar.instance.session.pip.prev_fb_info
 				fbtool.setFBSize_delayed(self.prev_fb_info,decoder=1,delay=200)
+			else:
+				fbtool.setFBSize(['00000001','00000001','00000000','00000000'],self.decoder)
 
-	#Added by tomele
 	def changed(self,what):
 		if InfoBar.instance:
 			current=self.source.getCurrentService()
@@ -159,7 +155,6 @@ class KravenVBPig(Renderer):
 				InfoBar.instance.showPiP()
 		self.__dict__.clear()
 
-#Added by tomele
 class KravenFBHelper:
 	def __init__(self):
 		self.fb_proc_path="/proc/stb/vmpeg"

@@ -1102,11 +1102,11 @@ msgstr "Wählen Sie die Farbe für alle Linien. Dies betrifft Trennlinien sowie 
 
 #: KravenVB.py
 msgid "Choose the color of the primary font. The primary font is used for list items, textboxes and other important information."
-msgstr "Wählen Sie die Farbe der primären Schriftart. Der primäre Schriftart wird für Listeneinträge, Textfelder und andere wichtige Informationen verwendet."
+msgstr "Wählen Sie die Farbe der primären Schrift. Die primäre Schrift wird für Listeneinträge, Textfelder und andere wichtige Informationen verwendet."
 
 #: KravenVB.py
 msgid "Choose the color of the secondary font. The secondary font is used for headers, labels and other additional information."
-msgstr "Wählen Sie die Farbe der sekundären Schriftart. Die sekundäre Schriftart wird für Überschriften, Labels und andere zusätzliche Informationen verwendet."
+msgstr "Wählen Sie die Farbe der sekundären Schrift. Die sekundäre Schrift wird für Überschriften, Labels und andere zusätzliche Informationen verwendet."
 
 #: KravenVB.py
 msgid "Choose the color of the font in selection bars."
@@ -1213,8 +1213,8 @@ msgid "Choose the font color of the ECM information."
 msgstr "Wählen Sie die Schriftfarbe der ECM-Informationen."
 
 #: KravenVB.py
-msgid "Choose from different styles for the channel selection screen. Preview, Extended Preview and DualTV styles disable transparency in all other screens."
-msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Kanalauswahl. Stile vom Typ \"Vorschau\", \"Erweiterte Vorschau\" und \"Doppel-TV\" deaktivieren die Transparenz auf allen anderen Seiten."
+msgid "Choose from different styles for the channel selection screen."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für die Kanalauswahl."
 
 #: KravenVB.py
 msgid "Choose whether primetime program information is displayed or not."
@@ -1498,4 +1498,22 @@ msgstr "nicht verfügbar (Kanallisten-Stil)"
 
 #: KravenVB.py
 msgid "This option is not available because the channellist style is Preview, Extended Preview or DualTV."
-msgstr "Diese Option ist nicht verfügbar, da der Kanallisten-Stil vom Typ \"Vorschau\", \"Erweiterte Vorschau\" oder \"Doppel-TV\" ist." 
+msgstr "Diese Option ist nicht verfügbar, da der Kanallisten-Stil vom Typ \"Vorschau\", \"Erweiterte Vorschau\" oder \"Doppel-TV\" ist."
+
+#: KravenVB.py
+msgid "Primary-Infobar-Font"
+msgstr "Primäre Infoleisten-Schrift"
+
+#: KravenVB.py
+msgid "Secondary-Infobar-Font"
+msgstr "Sekundäre Infoleisten-Schrift"
+
+#: KravenVB.py
+msgid "Choose the color of the primary infobar font."
+msgstr "Wählen Sie die Farbe der primären Infoleisten-Schrift."
+
+#: KravenVB.py
+msgid "Choose the color of the secondary infobar font."
+msgstr "Wählen Sie die Farbe der sekundären Infoleisten-Schrift."
+
+

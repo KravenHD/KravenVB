@@ -23,6 +23,8 @@
     <color name="KravenButtonText" value="#00ffffff" />
     <color name="KravenFont1" value="#00ffffff" />
     <color name="KravenFont2" value="#00F0A30A" />
+    <color name="KravenIBFont1" value="#00ffffff" />
+    <color name="KravenIBFont2" value="#00F0A30A" />
     <color name="KravenButtonStyleFont" value="#00fff0e0" />
     <color name="KravenLine" value="#00ffffff" />
     <color name="KravenInfobarBackground" value="#001B1775" />
