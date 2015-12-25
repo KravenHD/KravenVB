@@ -156,7 +156,10 @@ class KravenVBWeather(Poll, Converter, object):
 		elif self.type == "klima":
 			return WeatherInfo[self.type]
 		elif self.type == "currentWeatherTemp":
-			return WeatherInfo[self.type] + "°C"
+			if WeatherInfo[self.type] != "":
+				return WeatherInfo[self.type] + "°C"
+			else:
+				return ""
 		elif self.type == "currentWeatherText":
 			if WeatherInfo["currentWeatherPicon"] == '0':
 				return _('Tornado')
@@ -858,49 +861,49 @@ class WeatherData:
 			"currentWeatherCode": "(",
 			"currentWeatherText": "N/A",
 			"currentWeatherPicon": "3200",
-			"currentWeatherTemp": "=",
+			"currentWeatherTemp": "",
 			"forecastTodayCode": "(",
 			"forecastTodayText": "N/A",
 			"forecastTodayPicon": "3200",
 			"forecastTodayDay": "N/A",
 			"forecastTodayDate": "N/A",
 			"forecastTodayDateEn": "N/A",
-			"forecastTodayTempMin": "0",
-			"forecastTodayTempMax": "0",
-			"forecastTodayTempMinMax": "0",
+			"forecastTodayTempMin": "",
+			"forecastTodayTempMax": "",
+			"forecastTodayTempMinMax": "",
 			"forecastTomorrowCode": "(",
 			"forecastTomorrowText": "N/A",
 			"forecastTomorrowPicon": "3200",
 			"forecastTomorrowDay": "N/A",
 			"forecastTomorrowDate": "N/A",
 			"forecastTomorrowDateEn": "N/A",
-			"forecastTomorrowTempMin": "0",
-			"forecastTomorrowTempMax": "0",
-			"forecastTomorrowTempMinMax": "0",
+			"forecastTomorrowTempMin": "",
+			"forecastTomorrowTempMax": "",
+			"forecastTomorrowTempMinMax": "",
 			"forecastTomorrow1Code": "(",
 			"forecastTomorrow1Text": "N/A",
 			"forecastTomorrow1Picon": "3200",
 			"forecastTomorrow1Day": "N/A",
 			"forecastTomorrow1Date": "N/A",
-			"forecastTomorrow1TempMin": "0",
-			"forecastTomorrow1TempMax": "0",
-			"forecastTomorrow1TempMinMax": "0",
+			"forecastTomorrow1TempMin": "",
+			"forecastTomorrow1TempMax": "",
+			"forecastTomorrow1TempMinMax": "",
 			"forecastTomorrow2Code": "(",
 			"forecastTomorrow2Text": "N/A",
 			"forecastTomorrow2Picon": "3200",
 			"forecastTomorrow2Day": "N/A",
 			"forecastTomorrow2Date": "N/A",
-			"forecastTomorrow2TempMin": "0",
-			"forecastTomorrow2TempMax": "0",
-			"forecastTomorrow2TempMinMax": "0",
+			"forecastTomorrow2TempMin": "",
+			"forecastTomorrow2TempMax": "",
+			"forecastTomorrow2TempMinMax": "",
 			"forecastTomorrow3Code": "(",
 			"forecastTomorrow3Text": "N/A",
 			"forecastTomorrow3Picon": "3200",
 			"forecastTomorrow3Day": "N/A",
 			"forecastTomorrow3Date": "N/A",
-			"forecastTomorrow3TempMin": "0",
-			"forecastTomorrow3TempMax": "0",
-			"forecastTomorrow3TempMinMax": "0",
+			"forecastTomorrow3TempMin": "",
+			"forecastTomorrow3TempMax": "",
+			"forecastTomorrow3TempMinMax": "",
 		}
 		
 		if config.plugins.KravenVB.refreshInterval:

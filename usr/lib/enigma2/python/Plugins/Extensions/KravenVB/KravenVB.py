@@ -1367,7 +1367,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <eLabel position="830,70" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" name="," />
   <eLabel position="830,125" size="402,34" text="for VTi-Image" font="Regular; 26" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
-  <eLabel position="845,165" size="372,40" text="Version: 3.5.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
+  <eLabel position="845,165" size="372,40" text="Version: 3.5.1" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
   <widget name="helperimage" position="847,220" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,220" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,450" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="center" valign="top" transparent="1" />
@@ -2190,7 +2190,10 @@ class KravenVB(ConfigListScreen, Screen):
 			### IB Color visible
 			if config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0":
 				if config.plugins.KravenVB.IBColor.value == "only-infobar":
-					self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
+					if config.plugins.KravenVB.BackgroundColor.value == "self":
+						self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + self.skincolorbackgroundcolor])
+					else:
+						self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
 					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />'," "])
 					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'," "])
 					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="380,400" alphatest="blend" zPosition="-9" />'," "])
@@ -2200,7 +2203,10 @@ class KravenVB(ConfigListScreen, Screen):
 					self.skinSearchAndReplace.append(['backgroundColor="KravenInfobar2Background" font="Regular2;34" foregroundColor="KravenFont2"', 'backgroundColor="KravenInfobar2Background" font="Regular2;34" foregroundColor="KravenIBFont2"'])
 					self.skinSearchAndReplace.append(['position="1138,22" size="100,28" foregroundColor="KravenFont1"', 'position="1138,22" size="100,28" foregroundColor="KravenIBFont1"'])
 			elif config.plugins.KravenVB.ScrollBar.value in ("scrollbarWidth=5","scrollbarWidth=10","scrollbarWidth=15"):
-				self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
+				if config.plugins.KravenVB.BackgroundColor.value == "self":
+					self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + self.skincolorbackgroundcolor])
+				else:
+					self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
 				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />'," "])
 				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'," "])
 				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="380,400" alphatest="blend" zPosition="-9" />'," "])
