@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
 #######################################################################
 #
 # KravenVB by Team-Kraven
-# 
+#
 # Thankfully inspired by:
 # MyMetrix
 # Coded by iMaxxx (c) 2013
@@ -69,7 +71,10 @@ config.plugins.KravenVB.InfobarSelfColorB = ConfigSlider(default=0, increment=15
 config.plugins.KravenVB.BackgroundSelfColorR = ConfigSlider(default=0, increment=15, limits=(0,255))
 config.plugins.KravenVB.BackgroundSelfColorG = ConfigSlider(default=0, increment=15, limits=(0,255))
 config.plugins.KravenVB.BackgroundSelfColorB = ConfigSlider(default=75, increment=15, limits=(0,255))
-				
+config.plugins.KravenVB.InfobarAntialias = ConfigSlider(default=10, increment=1, limits=(0,20))
+config.plugins.KravenVB.ECMLineAntialias = ConfigSlider(default=10, increment=1, limits=(0,20))
+config.plugins.KravenVB.ScreensAntialias = ConfigSlider(default=10, increment=1, limits=(0,20))
+
 config.plugins.KravenVB.customProfile = ConfigSelection(default="1", choices = [
 				("1", _("1")),
 				("2", _("2")),
@@ -77,6 +82,23 @@ config.plugins.KravenVB.customProfile = ConfigSelection(default="1", choices = [
 				("4", _("4")),
 				("5", _("5"))
 				])
+
+profList = [("default", _("0 (hardcoded)"))]
+for i in range(1,21):
+	n=name=str(i)
+	if fileExists("/etc/kraven_default_"+n):
+		if i==1:
+			name="1 (@tomele)"
+		elif i==2:
+			name="2 (@örlgrey)"
+		elif i==3:
+			name="3 (@stony272)"
+		elif i==4:
+			name="4 (@Linkstar)"
+		elif i==5:
+			name="5 (@rene67)"
+		profList.append((n,_(name)))
+config.plugins.KravenVB.defaultProfile = ConfigSelection(default="default", choices = profList)
 				
 config.plugins.KravenVB.refreshInterval = ConfigSelection(default="15", choices = [
 				("0", _("0")),
@@ -87,7 +109,7 @@ config.plugins.KravenVB.refreshInterval = ConfigSelection(default="15", choices 
 				("240", _("240")),
 				("480", _("480"))
 				])
-				
+
 config.plugins.KravenVB.Volume = ConfigSelection(default="volume-border", choices = [
 				("volume-original", _("original")),
 				("volume-border", _("with Border")),
@@ -96,7 +118,7 @@ config.plugins.KravenVB.Volume = ConfigSelection(default="volume-border", choice
 				("volume-top", _("top")),
 				("volume-center", _("center"))
 				])
-				
+
 config.plugins.KravenVB.MenuColorTrans = ConfigSelection(default="32", choices = [
 				("00", _("0%")),
 				("0C", _("5%")),
@@ -105,11 +127,11 @@ config.plugins.KravenVB.MenuColorTrans = ConfigSelection(default="32", choices =
 				("58", _("35%")),
 				("7E", _("50%"))
 				])
-				
+
 config.plugins.KravenVB.MenuColorTransNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available for MiniTV"))
 				])
-				
+
 config.plugins.KravenVB.BackgroundColorTrans = ConfigSelection(default="32", choices = [
 				("00", _("0%")),
 				("0C", _("5%")),
@@ -118,7 +140,7 @@ config.plugins.KravenVB.BackgroundColorTrans = ConfigSelection(default="32", cho
 				("58", _("35%")),
 				("7E", _("50%"))
 				])
-				
+
 config.plugins.KravenVB.InfobarColorTrans = ConfigSelection(default="00", choices = [
 				("00", _("0%")),
 				("0C", _("5%")),
@@ -127,7 +149,7 @@ config.plugins.KravenVB.InfobarColorTrans = ConfigSelection(default="00", choice
 				("58", _("35%")),
 				("7E", _("50%"))
 				])
-				
+
 config.plugins.KravenVB.BackgroundColor = ConfigSelection(default="self", choices = [
 				("F0A30A", _("amber")),
 				("B27708", _("amber dark")),
@@ -176,7 +198,7 @@ config.plugins.KravenVB.BackgroundColor = ConfigSelection(default="self", choice
 				("ffffff", _("white")),
 				("self", _("self"))
 				])
-				
+
 config.plugins.KravenVB.InfobarColor = ConfigSelection(default="self", choices = [
 				("F0A30A", _("amber")),
 				("B27708", _("amber dark")),
@@ -225,7 +247,7 @@ config.plugins.KravenVB.InfobarColor = ConfigSelection(default="self", choices =
 				("ffffff", _("white")),
 				("self", _("self"))
 				])
-				
+
 config.plugins.KravenVB.SelectionBackground = ConfigSelection(default="000050EF", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -259,7 +281,7 @@ config.plugins.KravenVB.SelectionBackground = ConfigSelection(default="000050EF"
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.Font1 = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -293,7 +315,7 @@ config.plugins.KravenVB.Font1 = ConfigSelection(default="00ffffff", choices = [
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.Font2 = ConfigSelection(default="00F0A30A", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -327,7 +349,7 @@ config.plugins.KravenVB.Font2 = ConfigSelection(default="00F0A30A", choices = [
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.IBFont1 = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -361,7 +383,7 @@ config.plugins.KravenVB.IBFont1 = ConfigSelection(default="00ffffff", choices = 
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.IBFont2 = ConfigSelection(default="00F0A30A", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -395,7 +417,7 @@ config.plugins.KravenVB.IBFont2 = ConfigSelection(default="00F0A30A", choices = 
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.SelectionFont = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -429,7 +451,7 @@ config.plugins.KravenVB.SelectionFont = ConfigSelection(default="00ffffff", choi
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.MarkedFont = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -463,7 +485,7 @@ config.plugins.KravenVB.MarkedFont = ConfigSelection(default="00ffffff", choices
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.ECMFont = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -497,7 +519,7 @@ config.plugins.KravenVB.ECMFont = ConfigSelection(default="00ffffff", choices = 
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.ChannelnameFont = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -531,7 +553,7 @@ config.plugins.KravenVB.ChannelnameFont = ConfigSelection(default="00ffffff", ch
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.PrimetimeFont = ConfigSelection(default="0070AD11", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -565,7 +587,7 @@ config.plugins.KravenVB.PrimetimeFont = ConfigSelection(default="0070AD11", choi
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.ButtonText = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -599,7 +621,7 @@ config.plugins.KravenVB.ButtonText = ConfigSelection(default="00ffffff", choices
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.Border = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -633,7 +655,7 @@ config.plugins.KravenVB.Border = ConfigSelection(default="00ffffff", choices = [
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.Progress = ConfigSelection(default="progress", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -669,7 +691,7 @@ config.plugins.KravenVB.Progress = ConfigSelection(default="progress", choices =
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.Line = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -703,7 +725,7 @@ config.plugins.KravenVB.Line = ConfigSelection(default="00ffffff", choices = [
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.SelectionBorder = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("00F0A30A", _("amber")),
@@ -738,7 +760,7 @@ config.plugins.KravenVB.SelectionBorder = ConfigSelection(default="none", choice
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.AnalogStyle = ConfigSelection(default="00999999", choices = [
 				("00F0A30A", _("amber")),
 				("001B1775", _("blue")),
@@ -755,7 +777,7 @@ config.plugins.KravenVB.AnalogStyle = ConfigSelection(default="00999999", choice
 				("006C0AAB", _("violet")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.InfobarStyle = ConfigSelection(default="infobar-style-x3", choices = [
 				("infobar-style-x1", _("X1")),
 				("infobar-style-x2", _("X2")),
@@ -768,81 +790,21 @@ config.plugins.KravenVB.InfobarStyle = ConfigSelection(default="infobar-style-x3
 				("infobar-style-zz4", _("ZZ4")),
 				("infobar-style-zzz1", _("ZZZ1"))
 				])
-				
+
 config.plugins.KravenVB.InfobarChannelName = ConfigSelection(default="none", choices = [
 				("none", _("off")),
-				("infobar-channelname-small-x1", _("Name small")),
-				("infobar-channelname-number-small-x1", _("Name & Number small")),
-				("infobar-channelname-x1", _("Name big")),
-				("infobar-channelname-number-x1", _("Name & Number big"))
+				("infobar-channelname-small", _("Name small")),
+				("infobar-channelname-number-small", _("Name & Number small")),
+				("infobar-channelname", _("Name big")),
+				("infobar-channelname-number", _("Name & Number big"))
 				])
-				
+
 config.plugins.KravenVB.InfobarChannelName2 = ConfigSelection(default="none", choices = [
 				("none", _("off")),
-				("infobar-channelname-small-x2", _("Name small")),
-				("infobar-channelname-number-small-x2", _("Name & Number small")),
-				("infobar-channelname-x2", _("Name big")),
-				("infobar-channelname-number-x2", _("Name & Number big"))
+				("infobar-channelname-small", _("Name")),
+				("infobar-channelname-number-small", _("Name & Number"))
 				])
-				
-config.plugins.KravenVB.InfobarChannelName3 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-small-z1", _("Name small")),
-				("infobar-channelname-number-small-z1", _("Name & Number small")),
-				("infobar-channelname-z1", _("Name big")),
-				("infobar-channelname-number-z1", _("Name & Number big"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName4 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-small-zz1", _("Name small")),
-				("infobar-channelname-number-small-zz1", _("Name & Number small")),
-				("infobar-channelname-zz1", _("Name big")),
-				("infobar-channelname-number-zz1", _("Name & Number big"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName5 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-zz2", _("Name")),
-				("infobar-channelname-number-zz2", _("Name & Number"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName6 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-small-zz4", _("Name small")),
-				("infobar-channelname-number-small-zz4", _("Name & Number small")),
-				("infobar-channelname-zz4", _("Name big")),
-				("infobar-channelname-number-zz4", _("Name & Number big"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName7 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-zzz1", _("Name")),
-				("infobar-channelname-number-zzz1", _("Name & Number"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName8 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-small-x3", _("Name small")),
-				("infobar-channelname-number-small-x3", _("Name & Number small")),
-				("infobar-channelname-x3", _("Name big")),
-				("infobar-channelname-number-x3", _("Name & Number big"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName9 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-small-z2", _("Name small")),
-				("infobar-channelname-number-small-z2", _("Name & Number small")),
-				("infobar-channelname-z2", _("Name big")),
-				("infobar-channelname-number-z2", _("Name & Number big"))
-				])
-				
-config.plugins.KravenVB.InfobarChannelName10 = ConfigSelection(default="none", choices = [
-				("none", _("off")),
-				("infobar-channelname-zz3", _("Name")),
-				("infobar-channelname-number-zz3", _("Name & Number"))
-				])
-				
+
 config.plugins.KravenVB.ChannelSelectionStyle = ConfigSelection(default="channelselection-style-minitv", choices = [
 				("channelselection-style-nopicon", _("no Picon")),
 				("channelselection-style-xpicon", _("X-Picons")),
@@ -857,7 +819,7 @@ config.plugins.KravenVB.ChannelSelectionStyle = ConfigSelection(default="channel
 				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
 				("channelselection-style-nobile-minitv3", _("Nobile Preview"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channelselection-style-minitv", choices = [
 				("channelselection-style-nopicon", _("no Picon")),
 				("channelselection-style-xpicon", _("X-Picons")),
@@ -876,16 +838,16 @@ config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channe
 				("channelselection-style-nobile-minitv3", _("Nobile Preview")),
 				("channelselection-style-nobile-minitv33", _("Nobile Extended Preview"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionMode = ConfigSelection(default="zap", choices = [
 				("zap", _("Zap (1xOK)")),
 				("preview", _("Preview (2xOK)"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionModeNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available for this channellist style"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionTrans = ConfigSelection(default="32", choices = [
 				("00", _("0%")),
 				("0C", _("5%")),
@@ -894,11 +856,11 @@ config.plugins.KravenVB.ChannelSelectionTrans = ConfigSelection(default="32", ch
 				("58", _("35%")),
 				("7E", _("50%"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionTransNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available for this channellist style"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionServiceSize = ConfigSelection(default="size-24", choices = [
 				("size-16", _("16")),
 				("size-18", _("18")),
@@ -909,11 +871,11 @@ config.plugins.KravenVB.ChannelSelectionServiceSize = ConfigSelection(default="s
 				("size-28", _("28")),
 				("size-30", _("30"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionServiceSizeNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available for Nobile-Styles"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionInfoSize = ConfigSelection(default="size-24", choices = [
 				("size-16", _("16")),
 				("size-18", _("18")),
@@ -924,11 +886,11 @@ config.plugins.KravenVB.ChannelSelectionInfoSize = ConfigSelection(default="size
 				("size-28", _("28")),
 				("size-30", _("30"))
 				])
-				
+
 config.plugins.KravenVB.ChannelSelectionInfoSizeNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available for Nobile-Styles"))
 				])
-				
+
 config.plugins.KravenVB.NumberZapExt = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("numberzapext-xpicon", _("X-Picons")),
@@ -936,19 +898,19 @@ config.plugins.KravenVB.NumberZapExt = ConfigSelection(default="none", choices =
 				("numberzapext-zzpicon", _("ZZ-Picons")),
 				("numberzapext-zzzpicon", _("ZZZ-Picons"))
 				])
-				
+
 config.plugins.KravenVB.CoolTVGuide = ConfigSelection(default="cooltv-minitv", choices = [
 				("cooltv-minitv", _("MiniTV")),
 				("cooltv-picon", _("Picon"))
 				])
-				
+
 config.plugins.KravenVB.MovieSelection = ConfigSelection(default="movieselection-no-cover", choices = [
 				("movieselection-no-cover", _("no Cover")),
 				("movieselection-small-cover", _("small Cover")),
 				("movieselection-big-cover", _("big Cover")),
 				("movieselection-minitv", _("MiniTV"))
 				])
-				
+
 config.plugins.KravenVB.EMCStyle = ConfigSelection(default="emc-minitv", choices = [
 				("emc-nocover", _("no Cover")),
 				("emc-nocover2", _("no Cover2")),
@@ -961,7 +923,7 @@ config.plugins.KravenVB.EMCStyle = ConfigSelection(default="emc-minitv", choices
 				("emc-minitv", _("MiniTV")),
 				("emc-minitv2", _("MiniTV2"))
 				])
-				
+
 config.plugins.KravenVB.RunningText = ConfigSelection(default="startdelay=4000", choices = [
 				("movetype=none", _("off")),
 				("startdelay=2000", _("2 sec")),
@@ -972,26 +934,26 @@ config.plugins.KravenVB.RunningText = ConfigSelection(default="startdelay=4000",
 				("startdelay=15000", _("15 sec")),
 				("startdelay=20000", _("20 sec"))
 				])
-				
+
 config.plugins.KravenVB.RunningTextSpeed = ConfigSelection(default="steptime=100", choices = [
 				("steptime=200", _("5 px/sec")),
 				("steptime=100", _("10 px/sec")),
 				("steptime=66", _("15 px/sec")),
 				("steptime=50", _("20 px/sec"))
 				])
-				
+
 config.plugins.KravenVB.ScrollBar = ConfigSelection(default="scrollbarWidth=0", choices = [
 				("scrollbarWidth=0", _("off")),
 				("scrollbarWidth=5", _("thin")),
 				("scrollbarWidth=10", _("middle")),
 				("scrollbarWidth=15", _("wide"))
 				])
-				
+
 config.plugins.KravenVB.IconStyle = ConfigSelection(default="icons-light", choices = [
 				("icons-light", _("light")),
 				("icons-dark", _("dark"))
 				])
-				
+
 config.plugins.KravenVB.IconStyle2 = ConfigSelection(default="icons-light2", choices = [
 				("icons-light2", _("light")),
 				("icons-dark2", _("dark"))
@@ -1020,31 +982,31 @@ config.plugins.KravenVB.ClockStyle3 = ConfigSelection(default="clock-classic3", 
 				("clock-android", _("Android")),
 				("clock-color3", _("colored"))
 				])
-				
+
 config.plugins.KravenVB.WeatherStyle = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("weather-big", _("big")),
 				("weather-small", _("small"))
 				])
-				
+
 config.plugins.KravenVB.WeatherStyle2 = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("weather-left", _("on"))
 				])
-				
+
 config.plugins.KravenVB.WeatherStyle3 = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("weather-left", _("on")),
 				("netatmobar", _("NetatmoBar"))
 				])
-				
+
 config.plugins.KravenVB.ECMLine1 = ConfigSelection(default="ShortReader", choices = [
 				("none", _("off")),
 				("VeryShortCaid", _("short with CAID")),
 				("VeryShortReader", _("short with source")),
 				("ShortReader", _("compact"))
 				])
-				
+
 config.plugins.KravenVB.ECMLine2 = ConfigSelection(default="ShortReader", choices = [
 				("none", _("off")),
 				("VeryShortCaid", _("short with CAID")),
@@ -1054,7 +1016,7 @@ config.plugins.KravenVB.ECMLine2 = ConfigSelection(default="ShortReader", choice
 				("Long", _("extensive")),
 				("VeryLong", _("complete"))
 				])
-				
+
 config.plugins.KravenVB.ECMLine3 = ConfigSelection(default="ShortReader", choices = [
 				("none", _("off")),
 				("VeryShortCaid", _("short with CAID")),
@@ -1063,180 +1025,103 @@ config.plugins.KravenVB.ECMLine3 = ConfigSelection(default="ShortReader", choice
 				("Normal", _("balanced")),
 				("Long", _("extensive")),
 				])
-				
+
 config.plugins.KravenVB.FTA = ConfigSelection(default="FTAVisible", choices = [
 				("FTAVisible", _("on")),
 				("none", _("off"))
 				])
-				
+
 config.plugins.KravenVB.SystemInfo = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("systeminfo-small", _("small")),
 				("systeminfo-big", _("big")),
 				("systeminfo-bigsat", _("big + Sat"))
 				])
-				
-config.plugins.KravenVB.SIB = ConfigSelection(default="infobar-style-x1_end2", choices = [
-				("infobar-style-x1_end", _("top/bottom")),
-				("infobar-style-x1_end2", _("left/right")),
-				("infobar-style-x1_end3", _("single")),
-				("infobar-style-x1_end4", _("MiniTV")),
-				("infobar-style-x1_end5", _("Weather"))
+
+config.plugins.KravenVB.SIB = ConfigSelection(default="sib4", choices = [
+				("sib1", _("top/bottom")),
+				("sib2", _("left/right")),
+				("sib3", _("single")),
+				("sib4", _("MiniTV")),
+				("sib5", _("MiniTV2")),
+				("sib6", _("Weather"))
 				])
-				
-config.plugins.KravenVB.SIB1 = ConfigSelection(default="infobar-style-x2_end2", choices = [
-				("infobar-style-x2_end", _("top/bottom")),
-				("infobar-style-x2_end2", _("left/right")),
-				("infobar-style-x2_end3", _("single")),
-				("infobar-style-x2_end4", _("MiniTV")),
-				("infobar-style-x2_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB2 = ConfigSelection(default="infobar-style-x3_end2", choices = [
-				("infobar-style-x3_end", _("top/bottom")),
-				("infobar-style-x3_end2", _("left/right")),
-				("infobar-style-x3_end3", _("single")),
-				("infobar-style-x3_end4", _("MiniTV")),
-				("infobar-style-x3_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB3 = ConfigSelection(default="infobar-style-z1_end2", choices = [
-				("infobar-style-z1_end", _("top/bottom")),
-				("infobar-style-z1_end2", _("left/right")),
-				("infobar-style-z1_end3", _("single")),
-				("infobar-style-z1_end4", _("MiniTV")),
-				("infobar-style-z1_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB4 = ConfigSelection(default="infobar-style-z2_end2", choices = [
-				("infobar-style-z2_end", _("top/bottom")),
-				("infobar-style-z2_end2", _("left/right")),
-				("infobar-style-z2_end3", _("single")),
-				("infobar-style-z2_end4", _("MiniTV")),
-				("infobar-style-z2_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB5 = ConfigSelection(default="infobar-style-zz1_end2", choices = [
-				("infobar-style-zz1_end", _("top/bottom")),
-				("infobar-style-zz1_end2", _("left/right")),
-				("infobar-style-zz1_end3", _("single")),
-				("infobar-style-zz1_end4", _("MiniTV")),
-				("infobar-style-zz1_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB6 = ConfigSelection(default="infobar-style-zz2_end2", choices = [
-				("infobar-style-zz2_end", _("top/bottom")),
-				("infobar-style-zz2_end2", _("left/right")),
-				("infobar-style-zz2_end3", _("single")),
-				("infobar-style-zz2_end4", _("MiniTV")),
-				("infobar-style-zz2_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB7 = ConfigSelection(default="infobar-style-zz3_end2", choices = [
-				("infobar-style-zz3_end", _("top/bottom")),
-				("infobar-style-zz3_end2", _("left/right")),
-				("infobar-style-zz3_end3", _("single")),
-				("infobar-style-zz3_end4", _("MiniTV")),
-				("infobar-style-zz3_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB8 = ConfigSelection(default="infobar-style-zz4_end2", choices = [
-				("infobar-style-zz4_end", _("top/bottom")),
-				("infobar-style-zz4_end2", _("left/right")),
-				("infobar-style-zz4_end3", _("single")),
-				("infobar-style-zz4_end4", _("MiniTV")),
-				("infobar-style-zz4_end5", _("Weather"))
-				])
-				
-config.plugins.KravenVB.SIB9 = ConfigSelection(default="infobar-style-zzz1_end2", choices = [
-				("infobar-style-zzz1_end", _("top/bottom")),
-				("infobar-style-zzz1_end2", _("left/right")),
-				("infobar-style-zzz1_end3", _("single")),
-				("infobar-style-zzz1_end4", _("MiniTV")),
-				("infobar-style-zzz1_end5", _("Weather"))
-				])
-				
+
 config.plugins.KravenVB.IBtop = ConfigSelection(default="infobar-x2-z1_top2", choices = [
-				("infobar-x2-z1_top", _("Icons + 4 Tuner + Resolution + Infobox")),
-				("infobar-x2-z1_top2", _("Icons + REC + 2 Tuner + Resolution + Infobox"))
+				("infobar-x2-z1_top", _("4 Tuner")),
+				("infobar-x2-z1_top2", _("REC + 2 Tuner"))
 				])
-				
+
 config.plugins.KravenVB.Infobox = ConfigSelection(default="sat", choices = [
 				("sat", _("Tuner/Satellite + SNR")),
 				("cpu", _("CPU + Load")),
 				("temp", _("Temperature + Fan"))
 				])
-				
+
 config.plugins.KravenVB.IBColor = ConfigSelection(default="all-screens", choices = [
 				("all-screens", _("in all Screens")),
 				("only-infobar", _("only Infobar, SecondInfobar & Players"))
 				])
-				
+
 config.plugins.KravenVB.About = ConfigSelection(default="about", choices = [
 				("about", _(" "))
 				])
-				
+
 config.plugins.KravenVB.About2 = ConfigSelection(default="about", choices = [
 				("about", _("press OK for the FAQs"))
 				])
-				
+
 config.plugins.KravenVB.ClockStyleNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available in this style"))
 				])
-				
+
 config.plugins.KravenVB.AnalogStyleNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available for Clock Analog"))
 				])
-				
+
 config.plugins.KravenVB.IBtopNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available in this style"))
 				])
-				
+
 config.plugins.KravenVB.InfoboxNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available in this style"))
 				])
-				
-config.plugins.KravenVB.IBColorNA = ConfigSelection(default="not-available", choices = [
-				("not-available", _("not available when scrollbars activated"))
-				])
-				
+
 config.plugins.KravenVB.Logo = ConfigSelection(default="minitv", choices = [
 				("logo", _("Logo")),
-				("minitv", _("MiniTV"))
+				("minitv", _("MiniTV")),
+				("metrix-icons", _("Icons")),
+				("minitv-metrix-icons", _("MiniTV + Icons"))
 				])
-				
+
 config.plugins.KravenVB.DebugNames = ConfigSelection(default="none", choices = [
 				("none", _("off")),
 				("screennames-on", _("on"))
 				])
-				
+
 config.plugins.KravenVB.WeatherView = ConfigSelection(default="meteo", choices = [
 				("icon", _("Icon")),
 				("meteo", _("Meteo"))
-				])
-				
-config.plugins.KravenVB.WeatherViewNA = ConfigSelection(default="not-available", choices = [
-				("not-available", _("only available when weather activated"))
 				])
 
 config.plugins.KravenVB.MeteoColor = ConfigSelection(default="meteo-light", choices = [
 				("meteo-light", _("light")),
 				("meteo-dark", _("dark"))
 				])
-				
+
 config.plugins.KravenVB.MeteoColorNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available for Meteo-Style"))
 				])
-				
+
 config.plugins.KravenVB.Primetimeavailable = ConfigSelection(default="primetime-on", choices = [
 				("primetime-off", _("off")),
 				("primetime-on", _("on"))
 				])
-				
+
 config.plugins.KravenVB.PrimetimeNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available when Primetime is activated"))
 				])
-				
+
 config.plugins.KravenVB.PrimetimeFontNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available when Primetime is activated"))
 				])
@@ -1244,24 +1129,24 @@ config.plugins.KravenVB.PrimetimeFontNA = ConfigSelection(default="not-available
 config.plugins.KravenVB.ChannelnameFontNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available when activated"))
 				])
-				
+
 config.plugins.KravenVB.FTANA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available when ECM-Infos are activated"))
 				])
-				
+
 config.plugins.KravenVB.ECMFontNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available when ECM-Infos are activated"))
 				])
-				
+
 config.plugins.KravenVB.RunningTextSpeedNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available when Running Text is activated"))
 				])
-				
+
 config.plugins.KravenVB.EMCSelectionColors = ConfigSelection(default="emc-colors-on", choices = [
 				("none", _("off")),
 				("emc-colors-on", _("on"))
 				])
-				
+
 config.plugins.KravenVB.EMCSelectionBackground = ConfigSelection(default="00213305", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -1295,11 +1180,11 @@ config.plugins.KravenVB.EMCSelectionBackground = ConfigSelection(default="002133
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.EMCSelectionBackgroundNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available for 'Custom EMC-Selection-Colors'"))
 				])
-				
+
 config.plugins.KravenVB.EMCSelectionFont = ConfigSelection(default="00ffffff", choices = [
 				("00F0A30A", _("amber")),
 				("00B27708", _("amber dark")),
@@ -1333,15 +1218,20 @@ config.plugins.KravenVB.EMCSelectionFont = ConfigSelection(default="00ffffff", c
 				("001F0333", _("violet dark")),
 				("00ffffff", _("white"))
 				])
-				
+
 config.plugins.KravenVB.EMCSelectionFontNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available for 'Custom EMC-Selection-Colors'"))
 				])
-				
+
 config.plugins.KravenVB.ColorNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("only available for self-colors"))
 				])
-				
+
+config.plugins.KravenVB.SerienRecorder = ConfigSelection(default="none", choices = [
+				("none", _("off")),
+				("serienrecorder", _("on"))
+				])
+
 #######################################################################
 
 class KravenVB(ConfigListScreen, Screen):
@@ -1367,7 +1257,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <eLabel position="830,70" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" name="," />
   <eLabel position="830,125" size="402,34" text="for VTi-Image" font="Regular; 26" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
-  <eLabel position="845,165" size="372,40" text="Version: 3.5.1" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
+  <eLabel position="845,165" size="372,40" text="Version: 4.0.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
   <widget name="helperimage" position="847,220" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,220" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,450" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="center" valign="top" transparent="1" />
@@ -1392,7 +1282,7 @@ class KravenVB(ConfigListScreen, Screen):
 
 		list = []
 		ConfigListScreen.__init__(self, list)
-		
+
 		self["actions"] = ActionMap(["KravenVBConfigActions", "OkCancelActions", "DirectionActions", "ColorActions", "InputActions"],
 		{
 			"upUp": self.keyUpLong,
@@ -1410,20 +1300,20 @@ class KravenVB(ConfigListScreen, Screen):
 			"papedown": self.pageDown,
 			"ok": self.faq
 		}, -1)
-		
+
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("Save skin"))
 		self["key_yellow"] = StaticText(_("Save profile"))
 		self["key_blue"] = StaticText(_("Reset profile"))
-		
+
 		self.UpdatePicture()
-		
+
 		self.timer = eTimer()
 		self.timer.callback.append(self.updateMylist)
 		self.onLayoutFinish.append(self.updateMylist)
-		
+
 		self.lastProfile="0"
-		
+
 		self.actClockstyle=""
 		self.actWeatherstyle=""
 		self.actChannelselectionstyle=""
@@ -1438,6 +1328,7 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("PROFILES _____________________________________________________________"), ))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("Active Profile"), config.plugins.KravenVB.customProfile, _("Select the profile you want to work with. Profiles are saved automatically on switching them or by pressing the yellow button. New profiles will be generated based on the actual one. Profiles are interchangeable between boxes.")))
+		list.append(getConfigListEntry(_("Default Profile for Reset"), config.plugins.KravenVB.defaultProfile, _("Select the default profile you want to use when resetting the active profile (blue button). You can add your own default profiles under /etc/kraven_default_nn (nn<=20).")))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("SYSTEM _______________________________________________________________"), ))
 		list.append(getConfigListEntry(_(" "), ))
@@ -1447,17 +1338,13 @@ class KravenVB(ConfigListScreen, Screen):
 			list.append(getConfigListEntry(_("Running Text (Speed)"), config.plugins.KravenVB.RunningTextSpeed, _("Choose the speed for running text.")))
 		elif config.plugins.KravenVB.RunningText.value == "movetype=none":
 			list.append(getConfigListEntry(_("Running Text (Speed)"), config.plugins.KravenVB.RunningTextSpeedNA, _("This option is not available because running text is deactivated.")))
-		list.append(getConfigListEntry(_("Scrollbars"), config.plugins.KravenVB.ScrollBar, _("Choose the width of scrollbars in lists or deactivate scrollbars completely. Active scrollbars deactivate the option \"show the infobar background in all screens (bicolored background)\".")))
-		if config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0":
-			list.append(getConfigListEntry(_("Show Infobar-Background"), config.plugins.KravenVB.IBColor, _("Choose whether you want to see the infobar background in all screens (bicolored background).")))
-		elif config.plugins.KravenVB.ScrollBar.value in ("scrollbarWidth=5","scrollbarWidth=10","scrollbarWidth=15"):
-			list.append(getConfigListEntry(_("Show Infobar-Background"), config.plugins.KravenVB.IBColorNA, _("This option is not available because scrollbars are activated.")))
-		list.append(getConfigListEntry(_("Menus"), config.plugins.KravenVB.Logo, _("Choose between MiniTV or Kraven logo in system menus.")))
-		if config.plugins.KravenVB.Logo.value == "logo":
+		list.append(getConfigListEntry(_("Scrollbars"), config.plugins.KravenVB.ScrollBar, _("Choose the width of scrollbars in lists or deactivate scrollbars completely.")))
+		list.append(getConfigListEntry(_("Show Infobar-Background"), config.plugins.KravenVB.IBColor, _("Choose whether you want to see the infobar background in all screens (bicolored background).")))
+		list.append(getConfigListEntry(_("Menus"), config.plugins.KravenVB.Logo, _("Choose from different options to display the system menus. Press OK for the FAQs with details on installing menu icons.")))
+		if config.plugins.KravenVB.Logo.value in ("logo","metrix-icons"):
 			list.append(getConfigListEntry(_("Menu-Transparency"), config.plugins.KravenVB.MenuColorTrans, _("Choose the degree of background transparency for system menu screens.")))
 		else:
 			list.append(getConfigListEntry(_("Menu-Transparency"), config.plugins.KravenVB.MenuColorTransNA, _("This option is not available because MiniTV for system menus is activated.")))
-		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("GLOBAL COLORS ________________________________________________________"), config.plugins.KravenVB.About, _(" ")))
@@ -1479,7 +1366,7 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Lines"), config.plugins.KravenVB.Line, _("Choose the color of all lines. This affects dividers as well as the line in the center of some progress bars.")))
 		list.append(getConfigListEntry(_("Primary-Font"), config.plugins.KravenVB.Font1, _("Choose the color of the primary font. The primary font is used for list items, textboxes and other important information.")))
 		list.append(getConfigListEntry(_("Secondary-Font"), config.plugins.KravenVB.Font2, _("Choose the color of the secondary font. The secondary font is used for headers, labels and other additional information.")))
-		list.append(getConfigListEntry(_("Selection-Font"), config.plugins.KravenVB.SelectionFont, _("Choose the color of the font in selection bars.")))
+		list.append(getConfigListEntry(_("Listselection-Font"), config.plugins.KravenVB.SelectionFont, _("Choose the color of the font in selection bars.")))
 		list.append(getConfigListEntry(_("Marking-Font"), config.plugins.KravenVB.MarkedFont, _("Choose the font color of marked list items.")))
 		list.append(getConfigListEntry(_("Colorbutton-Font"), config.plugins.KravenVB.ButtonText, _("Choose the font color of the color button labels.")))
 		list.append(getConfigListEntry(_(" "), ))
@@ -1507,63 +1394,15 @@ class KravenVB(ConfigListScreen, Screen):
 			list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.Infobox, _("Choose which informations will be shown in the info box.")))
 		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x3","infobar-style-z2","infobar-style-zz2","infobar-style-zz3"):
 			list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.InfoboxNA, _("This option is not available for the selected infobar style.")))
-		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x1","infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2","infobar-style-zz1","infobar-style-zz4"):
 			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName, _("Choose from different options to show the channel name and number in the infobar.")))
 			if config.plugins.KravenVB.InfobarChannelName.value == "none":
 				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
 			else:
 				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2":
+		else:
 			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName2, _("Choose from different options to show the channel name and number in the infobar.")))
 			if config.plugins.KravenVB.InfobarChannelName2.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName3, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName3.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName4, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName4.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName5, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName5.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName6, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName6.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName7, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName7.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName8, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName8.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName9, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName9.value ==  "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
-			else:
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName10, _("Choose from different options to show the channel name and number in the infobar.")))
-			if config.plugins.KravenVB.InfobarChannelName10.value ==  "none":
 				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontNA, _("This option is not available because displaying channel name and number is deactivated.")))
 			else:
 				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFont, _("Choose the font color of channel name and number")))
@@ -1613,10 +1452,7 @@ class KravenVB(ConfigListScreen, Screen):
 				self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle2.value
 		list.append(getConfigListEntry(_("Weather-ID"), config.plugins.KravenVB.weather_city, _("Specify the weather ID for your location. You can find it at https://weather.yahoo.com. Just enter your ZIP or city and get your weather. The number at the end of the URL is your ID.")))
 		list.append(getConfigListEntry(_("Refresh interval (in minutes)"), config.plugins.KravenVB.refreshInterval, _("Choose the frequency of loading weather data from the internet. Please note that it can take some time to show the weather after a reboot.")))
-		if self.actWeatherstyle != "none":
-			list.append(getConfigListEntry(_("Weather-Style"), config.plugins.KravenVB.WeatherView, _("Choose between graphical weather symbols and Meteo symbols.")))
-		else:
-			list.append(getConfigListEntry(_("Weather-Style"), config.plugins.KravenVB.WeatherViewNA, _("This option is not available because weather is deactivated.")))
+		list.append(getConfigListEntry(_("Weather-Style"), config.plugins.KravenVB.WeatherView, _("Choose between graphical weather symbols and Meteo symbols.")))
 		if config.plugins.KravenVB.WeatherView.value == "meteo":
 			list.append(getConfigListEntry(_("Meteo-Color"), config.plugins.KravenVB.MeteoColor, _("Choose between light and dark Meteo symbols.")))
 		elif config.plugins.KravenVB.WeatherView.value == "icon":
@@ -1672,50 +1508,114 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Volume"), config.plugins.KravenVB.Volume, _("Choose from different styles for the volume display.")))
 		list.append(getConfigListEntry(_("CoolTVGuide"), config.plugins.KravenVB.CoolTVGuide, _("Choose from different styles for CoolTVGuide.")))
 		list.append(getConfigListEntry(_("MovieSelection"), config.plugins.KravenVB.MovieSelection, _("Choose from different styles for MovieSelection.")))
-		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB1, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB2, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB3, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB4, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB5, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB6, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB7, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB8, _("Choose from different styles for SecondInfobar.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-			list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB9, _("Choose from different styles for SecondInfobar.")))
+		list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB, _("Choose from different styles for SecondInfobar.")))
+		list.append(getConfigListEntry(_("SerienRecorder"), config.plugins.KravenVB.SerienRecorder, _("Choose whether you want the Kraven skin to be applied to 'Serienrecorder' or not. Activation of this option prohibits the skin selection in the SR-plugin.")))
 		list.append(getConfigListEntry(_("ExtNumberZap"), config.plugins.KravenVB.NumberZapExt, _("Choose from different styles for ExtNumberZap")))
+		list.append(getConfigListEntry(_(" "), ))
+		list.append(getConfigListEntry(_("ANTIALIASING BRIGHTNESS ________________________________________________________________"), ))
+		list.append(getConfigListEntry(_(" "), ))
+		list.append(getConfigListEntry(_("Infobar"), config.plugins.KravenVB.InfobarAntialias, _("Reduce distortions (faint/blurry) or color frames around fonts in the infobar and widgets by adjusting the antialiasing brightness.")))
+		list.append(getConfigListEntry(_("ECM Infos"), config.plugins.KravenVB.ECMLineAntialias, _("Reduce distortions (faint/blurry) or color frames around the ecm information in the infobar by adjusting the antialiasing brightness.")))
+		list.append(getConfigListEntry(_("Screens"), config.plugins.KravenVB.ScreensAntialias, _("Reduce distortions (faint/blurry) or color frames around fonts at top and bottom of screens by adjusting the antialiasing brightness.")))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("DEBUG ________________________________________________________________"), ))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("Screennames"), config.plugins.KravenVB.DebugNames, _("Activate or deactivate small screen names for debugging purposes.")))
-		
+
 		self["config"].list = list
 		self["config"].l.setList(list)
 		self.updateHelp()
 		self["helperimage"].hide()
 		self.ShowPicture()
-		
+
 		option = self["config"].getCurrent()[1]
-		
+
 		if option == config.plugins.KravenVB.customProfile:
 			if config.plugins.KravenVB.customProfile.value==self.lastProfile:
 				self.saveProfile(msg=False)
 			else:
 				self.loadProfile()
 				self.lastProfile=config.plugins.KravenVB.customProfile.value
-		
-		if option == config.plugins.KravenVB.BackgroundColor:
-			if config.plugins.KravenVB.BackgroundColor.value in ("self"):
-				self.showColor(self.RGB(int(config.plugins.KravenVB.BackgroundSelfColorR.value), int(config.plugins.KravenVB.BackgroundSelfColorG.value), int(config.plugins.KravenVB.BackgroundSelfColorB.value)))
+
+		if option.value == "none":
+			self.showText(50,_("Off"))
+		elif option == config.plugins.KravenVB.customProfile:
+			self.showText(33,"/etc/kraven_profile_"+str(config.plugins.KravenVB.customProfile.value))
+		elif option == config.plugins.KravenVB.defaultProfile:
+			if option.value == "0":
+				self.showText(33,_("hardcoded"))
+			else:
+				self["helperimage"].show()
+		elif option == config.plugins.KravenVB.IBtop:
+			if option.value == "infobar-x2-z1_top":
+				self.showText(50,_("4 Tuner"))
+			elif option.value == "infobar-x2-z1_top2":
+				self.showText(50,_("REC + 2 Tuner"))
+		elif option in (config.plugins.KravenVB.InfobarChannelName,config.plugins.KravenVB.InfobarChannelName2):
+			if option.value == "infobar-channelname-small":
+				self.showText(40,_("RTL"))
+			elif option.value == "infobar-channelname-number-small":
+				self.showText(40,_("5 - RTL"))
+			elif option.value == "infobar-channelname":
+				self.showText(76,_("RTL"))
+			elif option.value == "infobar-channelname-number":
+				self.showText(76,_("5 - RTL"))
+		elif option in (config.plugins.KravenVB.ECMLine1,config.plugins.KravenVB.ECMLine2,config.plugins.KravenVB.ECMLine3):
+			if option.value == "VeryShortCaid":
+				self.showText(17,"CAID - Time")
+			elif option.value == "VeryShortReader":
+				self.showText(17,"Reader - Time")
+			elif option.value == "ShortReader":
+				self.showText(17,"CAID - Reader - Time")
+			elif option.value == "Normal":
+				self.showText(17,"CAID - Reader - Hops - Time")
+			elif option.value == "Long":
+				self.showText(17,"CAID - System - Reader - Hops - Time")
+			elif option.value == "VeryLong":
+				self.showText(17,"CAM - CAID - System - Reader - Hops - Time")
+		elif option == config.plugins.KravenVB.FTA and option.value == "FTAVisible":
+			self.showText(17,_("free to air"))
+		elif option == config.plugins.KravenVB.refreshInterval:
+			if option.value == "0":
+				self.showText(50,_("Off"))
+			elif option.value == "15":
+				self.showText(50,"00:15")
+			elif option.value == "30":
+				self.showText(50,"00:30")
+			elif option.value == "60":
+				self.showText(50,"01:00")
+			elif option.value == "120":
+				self.showText(50,"02:00")
+			elif option.value == "240":
+				self.showText(50,"04:00")
+			elif option.value == "480":
+				self.showText(50,"08:00")
+		elif option == config.plugins.KravenVB.ChannelSelectionMode:
+			if option.value == "zap":
+				self.showText(50,"1 x OK")
+			elif option.value == "preview":
+				self.showText(50,"2 x OK")
+		elif option == config.plugins.KravenVB.ChannelSelectionServiceSize:
+			size=config.plugins.KravenVB.ChannelSelectionServiceSize.value
+			self.showText(int(size[-2:]),size[-2:]+" Pixel")
+		elif option == config.plugins.KravenVB.ChannelSelectionInfoSize:
+			size=config.plugins.KravenVB.ChannelSelectionInfoSize.value
+			self.showText(int(size[-2:]),size[-2:]+" Pixel")
+		elif option in (config.plugins.KravenVB.InfobarAntialias,config.plugins.KravenVB.ECMLineAntialias,config.plugins.KravenVB.ScreensAntialias):
+			if option.value == 10:
+				self.showText(50,"+/- 0%")
+			elif option.value in range(0,10):
+				self.showText(50,"- "+str(100-option.value*10)+"%")
+			elif option.value in range(11,21):
+				self.showText(50,"+ "+str(option.value*10-100)+"%")
+		elif option == config.plugins.KravenVB.DebugNames and option.value == "screennames-on":
+			self.showText(50,"Debug")
+		elif option in (config.plugins.KravenVB.MenuColorTrans,config.plugins.KravenVB.BackgroundColorTrans,config.plugins.KravenVB.InfobarColorTrans,config.plugins.KravenVB.ChannelSelectionTrans) and option.value == "00":
+			self.showText(50,_("Off"))
+
+		elif option == config.plugins.KravenVB.BackgroundColor:
+			if config.plugins.KravenVB.BackgroundColor.value == "self":
+				self["helperimage"].show()
 			else:
 				self.showColor(self.hexRGB(config.plugins.KravenVB.BackgroundColor.value))
 		elif option in (config.plugins.KravenVB.BackgroundSelfColorR,config.plugins.KravenVB.BackgroundSelfColorG,config.plugins.KravenVB.BackgroundSelfColorB):
@@ -1750,8 +1650,8 @@ class KravenVB(ConfigListScreen, Screen):
 		elif option == config.plugins.KravenVB.ButtonText:
 			self.showColor(self.hexRGB(config.plugins.KravenVB.ButtonText.value))
 		elif option == config.plugins.KravenVB.InfobarColor:
-			if config.plugins.KravenVB.InfobarColor.value in ("self"):
-				self.showColor(self.RGB(int(config.plugins.KravenVB.InfobarSelfColorR.value), int(config.plugins.KravenVB.InfobarSelfColorG.value), int(config.plugins.KravenVB.InfobarSelfColorB.value)))
+			if config.plugins.KravenVB.InfobarColor.value == "self":
+				self["helperimage"].show()
 			else:
 				self.showColor(self.hexRGB(config.plugins.KravenVB.InfobarColor.value))
 		elif option in (config.plugins.KravenVB.InfobarSelfColorR,config.plugins.KravenVB.InfobarSelfColorG,config.plugins.KravenVB.InfobarSelfColorB):
@@ -1760,7 +1660,7 @@ class KravenVB(ConfigListScreen, Screen):
 			self.showColor(self.hexRGB(config.plugins.KravenVB.ChannelnameFont.value))
 		elif option == config.plugins.KravenVB.ECMFont:
 			self.showColor(self.hexRGB(config.plugins.KravenVB.ECMFont.value))
-		elif option ==  config.plugins.KravenVB.PrimetimeFont:
+		elif option == config.plugins.KravenVB.PrimetimeFont:
 			self.showColor(self.hexRGB(config.plugins.KravenVB.PrimetimeFont.value))
 		else:
 			self["helperimage"].show()
@@ -1773,17 +1673,7 @@ class KravenVB(ConfigListScreen, Screen):
 	def GetPicturePath(self):
 		try:
 			returnValue = self["config"].getCurrent()[1].value
-			if returnValue in ("infobar-style-x1_end","infobar-style-x2_end","infobar-style-x3_end","infobar-style-z1_end","infobar-style-z2_end","infobar-style-zz1_end","infobar-style-zz2_end","infobar-style-zz3_end","infobar-style-zz4_end","infobar-style-zzz1_end"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/SIB.jpg"
-			elif returnValue in ("infobar-style-x1_end2","infobar-style-x2_end2","infobar-style-x3_end2","infobar-style-z1_end2","infobar-style-z2_end2","infobar-style-zz1_end2","infobar-style-zz2_end2","infobar-style-zz3_end2","infobar-style-zz4_end2","infobar-style-zzz1_end2"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/SIB1.jpg"
-			elif returnValue in ("infobar-style-x1_end3","infobar-style-x2_end3","infobar-style-x3_end3","infobar-style-z1_end3","infobar-style-z2_end3","infobar-style-zz1_end3","infobar-style-zz2_end3","infobar-style-zz3_end3","infobar-style-zz4_end3","infobar-style-zzz1_end3"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/SIB2.jpg"
-			elif returnValue in ("infobar-style-x1_end4","infobar-style-x2_end4","infobar-style-x3_end4","infobar-style-z1_end4","infobar-style-z2_end4","infobar-style-zz1_end4","infobar-style-zz2_end4","infobar-style-zz3_end4","infobar-style-zz4_end4","infobar-style-zzz1_end4"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/SIB3.jpg"
-			elif returnValue in ("infobar-style-x1_end5","infobar-style-x2_end5","infobar-style-x3_end5","infobar-style-z1_end5","infobar-style-z2_end5","infobar-style-zz1_end5","infobar-style-zz2_end5","infobar-style-zz3_end5","infobar-style-zz4_end5","infobar-style-zzz1_end5"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/SIB4.jpg"
-			elif returnValue in ("clock-classic","clock-classic2","clock-classic3"):
+			if returnValue in ("clock-classic","clock-classic2","clock-classic3"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/clock-classic.jpg"
 			elif returnValue in ("clock-classic-big","clock-classic-big2","clock-classic-big3"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/clock-classic-big.jpg"
@@ -1797,18 +1687,24 @@ class KravenVB(ConfigListScreen, Screen):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/about.png"
 			elif returnValue == ("meteo-light"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/meteo.jpg"
-			elif returnValue == ("progress"):
+			elif returnValue in ("progress"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colorfull.jpg"
 			elif returnValue == ("progress2"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colorfull2.jpg"
-			elif returnValue in ("size-16","size-18","size-20","size-22","size-24","size-26","size-28","size-30"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/size.jpg"
+			elif returnValue in ("self","emc-colors-on"):
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colors.jpg"
+			elif returnValue == ("channelselection-style-minitv3"):
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/channelselection-style-minitv.jpg"
 			elif returnValue == ("channelselection-style-nobile-minitv3"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/channelselection-style-nobile-minitv.jpg"
-			elif returnValue in ("00","0"):
+			elif returnValue == "all-screens":
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/emc-smallcover.jpg"
+			elif returnValue in ("00","0","movetype=none","primetime-off"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/none.jpg"
 			elif returnValue in ("zap","preview"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/modus.jpg"
+			elif returnValue in ("infobar-style-x3","only-infobar"):
+				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/2.jpg"
 			elif returnValue in ("0C","18","32","58","7E"):
 				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/transparent.jpg"
 			else:
@@ -1895,70 +1791,98 @@ class KravenVB(ConfigListScreen, Screen):
 					x[1].save()
 			else:
 					pass
-		
+
 		if True:
 			self.skinSearchAndReplace = []
-			
+
 			### Background
 			if config.plugins.KravenVB.BackgroundColor.value == "self":
 				self.skincolorbackgroundcolor = str(hex(config.plugins.KravenVB.BackgroundSelfColorR.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.BackgroundSelfColorG.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.BackgroundSelfColorB.value)[2:4]).zfill(2)
-				self.skinSearchAndReplace.append(['name="KravenBackground" value="#00000000', 'name="KravenBackground" value="#00' + self.skincolorbackgroundcolor])
 			else:
-				self.skinSearchAndReplace.append(['name="KravenBackground" value="#00000000', 'name="KravenBackground" value="#00' + config.plugins.KravenVB.BackgroundColor.value])
-			
+				self.skincolorbackgroundcolor = config.plugins.KravenVB.BackgroundColor.value
+			self.skinSearchAndReplace.append(['name="Kravenbg" value="#00000000', 'name="Kravenbg" value="#00' + self.skincolorbackgroundcolor])
+
 			### Background Transparency (global)
-			self.skinSearchAndReplace.append(['name="KravenBackground" value="#00', 'name="KravenBackground" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value])
-			
+			self.skinSearchAndReplace.append(['name="Kravenbg" value="#00', 'name="Kravenbg" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value])
+
 			### Background2 (non-transparent)
 			if config.plugins.KravenVB.BackgroundColor.value == "self":
-				self.skinSearchAndReplace.append(['name="KravenBackground2" value="#00000000', 'name="KravenBackground2" value="#00' + self.skincolorbackgroundcolor])
+				self.skinSearchAndReplace.append(['name="Kravenbg2" value="#00000000', 'name="Kravenbg2" value="#00' + self.skincolorbackgroundcolor])
 			else:
-				self.skinSearchAndReplace.append(['name="KravenBackground2" value="#00000000', 'name="KravenBackground2" value="#00' + config.plugins.KravenVB.BackgroundColor.value])
-			
+				self.skinSearchAndReplace.append(['name="Kravenbg2" value="#00000000', 'name="Kravenbg2" value="#00' + config.plugins.KravenVB.BackgroundColor.value])
+
 			### Background3 (Menus Transparency)
-			if config.plugins.KravenVB.Logo.value == "logo":
+			if config.plugins.KravenVB.Logo.value in ("logo","metrix-icons"):
 				if config.plugins.KravenVB.BackgroundColor.value == "self":
-					self.skinSearchAndReplace.append(['name="KravenBackground3" value="#00000000', 'name="KravenBackground3" value="#' + config.plugins.KravenVB.MenuColorTrans.value + self.skincolorbackgroundcolor])
+					self.skinSearchAndReplace.append(['name="Kravenbg3" value="#00000000', 'name="Kravenbg3" value="#' + config.plugins.KravenVB.MenuColorTrans.value + self.skincolorbackgroundcolor])
 				else:
-					self.skinSearchAndReplace.append(['name="KravenBackground3" value="#00000000', 'name="KravenBackground3" value="#' + config.plugins.KravenVB.MenuColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
+					self.skinSearchAndReplace.append(['name="Kravenbg3" value="#00000000', 'name="Kravenbg3" value="#' + config.plugins.KravenVB.MenuColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
 			else:
 				if config.plugins.KravenVB.BackgroundColor.value == "self":
-					self.skinSearchAndReplace.append(['name="KravenBackground3" value="#00000000', 'name="KravenBackground3" value="#00' + self.skincolorbackgroundcolor])
+					self.skinSearchAndReplace.append(['name="Kravenbg3" value="#00000000', 'name="Kravenbg3" value="#00' + self.skincolorbackgroundcolor])
 				else:
-					self.skinSearchAndReplace.append(['name="KravenBackground3" value="#00000000', 'name="KravenBackground3" value="#00' + config.plugins.KravenVB.BackgroundColor.value])
-			
+					self.skinSearchAndReplace.append(['name="Kravenbg3" value="#00000000', 'name="Kravenbg3" value="#00' + config.plugins.KravenVB.BackgroundColor.value])
+
 			### Background4 (Channellist)
 			if config.plugins.KravenVB.BackgroundColor.value == "self":
-				self.skinSearchAndReplace.append(['name="KravenBackground4" value="#00000000', 'name="KravenBackground4" value="#' + config.plugins.KravenVB.ChannelSelectionTrans.value + self.skincolorbackgroundcolor])
+				self.skinSearchAndReplace.append(['name="Kravenbg4" value="#00000000', 'name="Kravenbg4" value="#' + config.plugins.KravenVB.ChannelSelectionTrans.value + self.skincolorbackgroundcolor])
 			else:
-				self.skinSearchAndReplace.append(['name="KravenBackground4" value="#00000000', 'name="KravenBackground4" value="#' + config.plugins.KravenVB.ChannelSelectionTrans.value + config.plugins.KravenVB.BackgroundColor.value])
-			
+				self.skinSearchAndReplace.append(['name="Kravenbg4" value="#00000000', 'name="Kravenbg4" value="#' + config.plugins.KravenVB.ChannelSelectionTrans.value + config.plugins.KravenVB.BackgroundColor.value])
+
 			### Infobar Backgrounds
 			if config.plugins.KravenVB.InfobarColor.value == "self":
 				self.skincolorinfobarcolor = str(hex(config.plugins.KravenVB.InfobarSelfColorR.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.InfobarSelfColorG.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.InfobarSelfColorB.value)[2:4]).zfill(2)
-				self.skinSearchAndReplace.append(['name="KravenInfobarBackground" value="#001B1775', 'name="KravenInfobarBackground" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.skincolorinfobarcolor])
-				self.skinSearchAndReplace.append(['name="KravenNameBackground" value="#A01B1775', 'name="KravenNameBackground" value="#7E' + self.skincolorinfobarcolor])
-				self.skinSearchAndReplace.append(['name="KravenIbarBackground" value="#4A1B1775', 'name="KravenIbarBackground" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.skincolorinfobarcolor])
 			else:
 				self.skincolorinfobarcolor = config.plugins.KravenVB.InfobarColor.value
-				self.skinSearchAndReplace.append(['name="KravenInfobarBackground" value="#001B1775', 'name="KravenInfobarBackground" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + config.plugins.KravenVB.InfobarColor.value])
-				self.skinSearchAndReplace.append(['name="KravenNameBackground" value="#A01B1775', 'name="KravenNameBackground" value="#7E' + config.plugins.KravenVB.InfobarColor.value])
-				self.skinSearchAndReplace.append(['name="KravenIbarBackground" value="#4A1B1775', 'name="KravenIbarBackground" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + config.plugins.KravenVB.InfobarColor.value])
+
+			##### Channelname. Transparency 50%, color always grey
+			self.skinSearchAndReplace.append(['name="KravenNamebg" value="#A01B1775', 'name="KravenNamebg" value="#7F7F7F7F'])
+
+			##### ECM. Transparency of infobar, color of text
+			# self.skinSearchAndReplace.append(['name="KravenECMbg" value="#F1325698', 'name="KravenECMbg" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.calcBrightness(config.plugins.KravenVB.ECMFont.value,config.plugins.KravenVB.ECMLineAntialias.value)])
+			self.skinSearchAndReplace.append(['name="KravenECMbg" value="#F1325698', 'name="KravenECMbg" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.ECMLineAntialias.value)])
+
+			##### Infobar. Transparency of infobar, color of infobar
+			self.skinSearchAndReplace.append(['name="KravenIBbg" value="#001B1775', 'name="KravenIBbg" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.InfobarAntialias.value)])
+
+			##### CoolTV. color of infobar or color of background, if ibar invisible
+			if config.plugins.KravenVB.IBColor.value == "all-screens":
+				self.skinSearchAndReplace.append(['name="KravenIBCoolbg" value="#00000000', 'name="KravenIBCoolbg" value="#00' + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.ScreensAntialias.value)])
+			else:
+				self.skinSearchAndReplace.append(['backgroundColor="KravenIBCoolbg"', 'backgroundColor="Kravenbg2"'])
+
+			##### Screens. Lower Transparency of infobar and background, color of infobar or color of background, if ibar invisible
+			if config.plugins.KravenVB.IBColor.value == "all-screens":
+				self.skinSearchAndReplace.append(['name="KravenIBbg2" value="#00000000', 'name="KravenIBbg2" value="#' + self.calcTransparency(config.plugins.KravenVB.InfobarColorTrans.value,config.plugins.KravenVB.BackgroundColorTrans.value) + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.ScreensAntialias.value)])
+				self.skinSearchAndReplace.append(['name="KravenIBbg3" value="#00000000', 'name="KravenIBbg3" value="#' + self.calcTransparency(config.plugins.KravenVB.InfobarColorTrans.value,config.plugins.KravenVB.MenuColorTrans.value) + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.ScreensAntialias.value)])
+				self.skinSearchAndReplace.append(['name="KravenIBbg4" value="#00000000', 'name="KravenIBbg4" value="#' + self.calcTransparency(config.plugins.KravenVB.InfobarColorTrans.value,config.plugins.KravenVB.ChannelSelectionTrans.value) + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.ScreensAntialias.value)])
+			else:
+				self.skinSearchAndReplace.append(['name="KravenIBbg2" value="#00000000', 'name="KravenIBbg2" value="#00' + config.plugins.KravenVB.BackgroundColorTrans.value + self.skincolorbackgroundcolor])
+				self.skinSearchAndReplace.append(['name="KravenIBbg3" value="#00000000', 'name="KravenIBbg3" value="#00' + config.plugins.KravenVB.MenuColorTrans.value + self.skincolorbackgroundcolor])
+				self.skinSearchAndReplace.append(['name="KravenIBbg4" value="#00000000', 'name="KravenIBbg4" value="#00' + config.plugins.KravenVB.ChannelSelectionTrans.value + self.skincolorbackgroundcolor])
 			
 			### Selection Background
 			if config.plugins.KravenVB.EMCSelectionColors.value == "none":
 				self.skinSearchAndReplace.append(['name="KravenSelection" value="#000050EF', 'name="KravenSelection" value="#' + config.plugins.KravenVB.SelectionBackground.value])
 				self.skinSearchAndReplace.append(['name="KravenEMCSelection" value="#000050EF', 'name="KravenEMCSelection" value="#' + config.plugins.KravenVB.SelectionBackground.value])
-			elif config.plugins.KravenVB.EMCSelectionColors.value == "emc-colors-on":
+			else:
 				self.skinSearchAndReplace.append(['name="KravenSelection" value="#000050EF', 'name="KravenSelection" value="#' + config.plugins.KravenVB.SelectionBackground.value])
 				self.skinSearchAndReplace.append(['name="KravenEMCSelection" value="#000050EF', 'name="KravenEMCSelection" value="#' + config.plugins.KravenVB.EMCSelectionBackground.value])
-			
+
 			### Menu (Logo/MiniTV)
 			if config.plugins.KravenVB.Logo.value == "minitv":
-				self.skinSearchAndReplace.append(['<panel name="menu" />', '<eLabel backgroundColor="KravenBackground3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><widget backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="KravenBackground3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="KravenBackground3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="KravenBackground3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="KravenBackground3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" /><widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,311" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="3,234" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="1235,80" size="3,234" transparent="0" zPosition="4" /><ePixmap backgroundColor="KravenBackground3" pixmap="KravenVB/logo2.png" position="980,489" size="100,100" alphatest="blend" />'])
+				self.skinSearchAndReplace.append(['<!-- Logo -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" /><widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,311" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="3,234" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="1235,80" size="3,234" transparent="0" zPosition="4" /><ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo2.png" position="980,489" size="100,100" alphatest="blend" />'])
+				self.skinSearchAndReplace.append(['<!-- Metrix-Icons -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" /><widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,311" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="3,234" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="1235,80" size="3,234" transparent="0" zPosition="4" /><ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo2.png" position="980,489" size="100,100" alphatest="blend" />'])
 			elif config.plugins.KravenVB.Logo.value == "logo":
-				self.skinSearchAndReplace.append(['<panel name="menu" />', '<eLabel backgroundColor="KravenBackground3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><ePixmap backgroundColor="KravenBackground3" pixmap="KravenVB/logo.png" position="930,100" size="200,200" alphatest="blend" /><widget backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="KravenBackground3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="KravenBackground3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="KravenBackground3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="KravenBackground3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="KravenBackground3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
-			
+				self.skinSearchAndReplace.append(['<!-- Logo -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
+				self.skinSearchAndReplace.append(['<!-- Metrix-Icons -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
+			elif config.plugins.KravenVB.Logo.value == "metrix-icons":
+				self.skinSearchAndReplace.append(['<!-- Metrix-Icons -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><widget position="902,72" size="256,256" render="KravenVBMenuIcon" source="menu" alphatest="blend"><convert type="KravenVBMenuIconPath"></convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
+				self.skinSearchAndReplace.append(['<!-- Logo -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%H</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%M</convert></widget><eLabel backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" /><widget backgroundColor="Kravenbg3" font="Regular; 32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%S</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%A</convert></widget><widget backgroundColor="Kravenbg3" font="Regular; 18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1"><convert type="ClockToText">Format:%e. %B</convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
+			else:
+				self.skinSearchAndReplace.append(['<!-- Metrix-Icons -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center"><convert type="ClockToText">Default</convert></widget><widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,311" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="3,234" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="1235,80" size="3,234" transparent="0" zPosition="4" /><widget position="902,360" size="256,256" render="KravenVBMenuIcon" source="menu" alphatest="blend"><convert type="KravenVBMenuIconPath"></convert></widget><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
+				self.skinSearchAndReplace.append(['<!-- Logo -->', '<eLabel backgroundColor="Kravenbg3" position="0,0" size="1280,720" transparent="0" zPosition="-10" /><widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center"><convert type="ClockToText">Default</convert></widget><widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,311" size="416,3" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="822,80" size="3,234" transparent="0" zPosition="4" /><eLabel backgroundColor="#001F1F1F" position="1235,80" size="3,234" transparent="0" zPosition="4" /><ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,360" size="256,256" alphatest="blend" /><ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" /><ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'])
+
 			### Font Colors
 			self.skinSearchAndReplace.append(['name="KravenFont1" value="#00ffffff', 'name="KravenFont1" value="#' + config.plugins.KravenVB.Font1.value])
 			self.skinSearchAndReplace.append(['name="KravenFont2" value="#00F0A30A', 'name="KravenFont2" value="#' + config.plugins.KravenVB.Font2.value])
@@ -1967,15 +1891,15 @@ class KravenVB(ConfigListScreen, Screen):
 			if config.plugins.KravenVB.EMCSelectionColors.value == "none":
 				self.skinSearchAndReplace.append(['name="KravenSelFont" value="#00ffffff', 'name="KravenSelFont" value="#' + config.plugins.KravenVB.SelectionFont.value])
 				self.skinSearchAndReplace.append(['name="KravenEMCSelFont" value="#00ffffff', 'name="KravenEMCSelFont" value="#' + config.plugins.KravenVB.SelectionFont.value])
-			elif config.plugins.KravenVB.EMCSelectionColors.value == "emc-colors-on":
+			else:
 				self.skinSearchAndReplace.append(['name="KravenSelFont" value="#00ffffff', 'name="KravenSelFont" value="#' + config.plugins.KravenVB.SelectionFont.value])
 				self.skinSearchAndReplace.append(['name="KravenEMCSelFont" value="#00ffffff', 'name="KravenEMCSelFont" value="#' + config.plugins.KravenVB.EMCSelectionFont.value])
 			self.skinSearchAndReplace.append(['name="selectedFG" value="#00ffffff', 'name="selectedFG" value="#' + config.plugins.KravenVB.SelectionFont.value])
-			self.skinSearchAndReplace.append(['name="KravenMarkedFont" value="#00ffffff', 'name="KravenMarkedFont" value="#' + config.plugins.KravenVB.MarkedFont.value])
-			self.skinSearchAndReplace.append(['name="KravenECMFont" value="#00ffffff', 'name="KravenECMFont" value="#' + config.plugins.KravenVB.ECMFont.value])
-			self.skinSearchAndReplace.append(['name="KravenChannelnameFont" value="#00ffffff', 'name="KravenChannelnameFont" value="#' + config.plugins.KravenVB.ChannelnameFont.value])
-			self.skinSearchAndReplace.append(['name="KravenButtonText" value="#00ffffff', 'name="KravenButtonText" value="#' + config.plugins.KravenVB.ButtonText.value])
-			
+			self.skinSearchAndReplace.append(['name="KravenMarked" value="#00ffffff', 'name="KravenMarked" value="#' + config.plugins.KravenVB.MarkedFont.value])
+			self.skinSearchAndReplace.append(['name="KravenECM" value="#00ffffff', 'name="KravenECM" value="#' + config.plugins.KravenVB.ECMFont.value])
+			self.skinSearchAndReplace.append(['name="KravenName" value="#00ffffff', 'name="KravenName" value="#' + config.plugins.KravenVB.ChannelnameFont.value])
+			self.skinSearchAndReplace.append(['name="KravenButton" value="#00ffffff', 'name="KravenButton" value="#' + config.plugins.KravenVB.ButtonText.value])
+
 			### ChannelSelection Font-Size
 			if not self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
 				if config.plugins.KravenVB.ChannelSelectionServiceSize.value == "size-16":
@@ -2018,104 +1942,72 @@ class KravenVB(ConfigListScreen, Screen):
 					self.skinSearchAndReplace.append(['serviceInfoFont="Regular;23"', 'serviceInfoFont="Regular;28"'])
 				elif config.plugins.KravenVB.ChannelSelectionInfoSize.value == "size-30":
 					self.skinSearchAndReplace.append(['serviceInfoFont="Regular;23"', 'serviceInfoFont="Regular;30"'])
-			
+
 			### Primetime
 			if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
 				self.skinSearchAndReplace.append(['<!--<widget', '<widget'])
 				self.skinSearchAndReplace.append(['</widget>-->', '</widget>'])
-				self.skinSearchAndReplace.append(['name="KravenPrimetimeFont" value="#0070AD11', 'name="KravenPrimetimeFont" value="#' + config.plugins.KravenVB.PrimetimeFont.value])
-			elif config.plugins.KravenVB.Primetimeavailable.value == "primetime-off":
+				self.skinSearchAndReplace.append(['name="KravenPrime" value="#0070AD11', 'name="KravenPrime" value="#' + config.plugins.KravenVB.PrimetimeFont.value])
+			else:
 				self.skinSearchAndReplace.append(['render="KravenVBSingleEpgList" size="362,54"', 'render="KravenVBSingleEpgList" size="362,81"'])
 				self.skinSearchAndReplace.append(['render="KravenVBSingleEpgList" size="400,54"', 'render="KravenVBSingleEpgList" size="400,81"'])
 				self.skinSearchAndReplace.append(['render="KravenVBSingleEpgList" size="505,27"', 'render="KravenVBSingleEpgList" size="505,54"'])
 				self.skinSearchAndReplace.append(['render="KravenVBSingleEpgList" size="778,81"', 'render="KravenVBSingleEpgList" size="778,108"'])
 				self.skinSearchAndReplace.append(['render="KravenVBSingleEpgListNobile" size="339,572"', 'render="KravenVBSingleEpgListNobile" size="339,594"'])
 				self.skinSearchAndReplace.append(['render="KravenVBSingleEpgList" size="474,308"', 'render="KravenVBSingleEpgList" size="474,330"'])
-			
+
 			### Debug-Names
 			if config.plugins.KravenVB.DebugNames.value == "screennames-on":
-				self.skinSearchAndReplace.append(['<!--<eLabel backgroundColor="#00000000" font="Regular;13" foregroundColor="red"', '<eLabel backgroundColor="#00000000" font="Regular;15" foregroundColor="red"'])
-				self.skinSearchAndReplace.append(['position="70,0" size="500,16" halign="left" valign="center" transparent="1" />-->', 'position="70,0" size="500,19" halign="left" valign="top" transparent="1" zPosition="9" /><eLabel position="0,0" size="1280,17" backgroundColor="#00000000" zPosition="8" />'])
-				self.skinSearchAndReplace.append(['position="42,0" size="500,16" halign="left" valign="center" transparent="1" />-->', 'position="42,0" size="500,19" halign="left" valign="top" transparent="1" zPosition="9" /><eLabel position="0,0" size="1280,17" backgroundColor="#00000000" zPosition="8" />'])
-				self.skinSearchAndReplace.append(['position="40,0" size="500,16" halign="left" valign="center" transparent="1" />-->', 'position="40,0" size="500,19" halign="left" valign="top" transparent="1" zPosition="9" /><eLabel position="0,0" size="1280,17" backgroundColor="#00000000" zPosition="8" />'])
-			
+				self.skinSearchAndReplace.append(['<!--<text', '<eLabel backgroundColor="#00000000" font="Regular;15" foregroundColor="white" text'])
+				self.skinSearchAndReplace.append(['<!-- KravenVBMenuEntryID-Converter -->', '<widget backgroundColor="#00000000" font="Regular;15" foregroundColor="white" render="Label" source="menu" position="70,0" size="500,18" halign="left" valign="center" transparent="1" zPosition="9"><convert type="KravenVBMenuEntryID"></convert></widget><eLabel position="0,0" size="1280,18" backgroundColor="#00000000" zPosition="8" />'])
+				self.skinSearchAndReplace.append(['" position="70,0" />-->', ' " position="70,0" size="500,18" halign="left" valign="center" transparent="1" zPosition="9" /><eLabel position="0,0" size="1280,18" backgroundColor="#00000000" zPosition="8" />'])
+				self.skinSearchAndReplace.append(['" position="42,0" />-->', ' " position="42,0" size="500,18" halign="left" valign="center" transparent="1" zPosition="9" /><eLabel position="0,0" size="1280,18" backgroundColor="#00000000" zPosition="8" />'])
+				self.skinSearchAndReplace.append(['" position="40,0" />-->', ' " position="40,0" size="500,18" halign="left" valign="center" transparent="1" zPosition="9" /><eLabel position="0,0" size="1280,18" backgroundColor="#00000000" zPosition="8" />'])
+
 			### Icons
-			if config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0" and config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
+			if config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-dark/icons/key_epg"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-dark/icons/key_exit"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-dark/icons/key_menu"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-dark/icons/key_ok"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/icons", "KravenVB/icons-dark/icons"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0" and config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
+			elif config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-light/icons/key_epg"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-light/icons/key_exit"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-light/icons/key_menu"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-light/icons/key_ok"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0" and config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
+			elif config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-light/infobar/key_epg"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-light/infobar/key_exit"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-light/infobar/key_menu"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-light/infobar/key_ok"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/icons", "KravenVB/icons-dark/icons"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0" and config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
+			elif config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-light/infobar/key_epg"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-light/infobar/key_exit"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-light/infobar/key_menu"])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-light/infobar/key_ok"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=5" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-dark/icons/key_epg"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-dark/icons/key_exit"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-dark/icons/key_menu"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-dark/icons/key_ok"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/icons", "KravenVB/icons-dark/icons"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=10" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-dark/icons/key_epg"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-dark/icons/key_exit"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-dark/icons/key_menu"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-dark/icons/key_ok"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/icons", "KravenVB/icons-dark/icons"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=15" and config.plugins.KravenVB.IconStyle2.value == "icons-dark2":
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-dark/icons/key_epg"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-dark/icons/key_exit"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-dark/icons/key_menu"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-dark/icons/key_ok"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/icons", "KravenVB/icons-dark/icons"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=5" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-light/icons/key_epg"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-light/icons/key_exit"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-light/icons/key_menu"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-light/icons/key_ok"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=10" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-light/icons/key_epg"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-light/icons/key_exit"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-light/icons/key_menu"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-light/icons/key_ok"])
-			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=15" and config.plugins.KravenVB.IconStyle2.value == "icons-light2":
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_epg", "KravenVB/icons-light/icons/key_epg"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_exit", "KravenVB/icons-light/icons/key_exit"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_menu", "KravenVB/icons-light/icons/key_menu"])
-				self.skinSearchAndReplace.append(["KravenVB/icons-light/key_ok", "KravenVB/icons-light/icons/key_ok"])
-			
+
 			### Infobar-Icons
 			if config.plugins.KravenVB.IconStyle.value == "icons-dark":
-				self.skinSearchAndReplace.append(['name="KravenButtonStyleFont" value="#00fff0e0"', 'name="KravenButtonStyleFont" value="#00000000"'])
+				self.skinSearchAndReplace.append(['name="KravenIcon" value="#00fff0e0"', 'name="KravenIcon" value="#00000000"'])
 				self.skinSearchAndReplace.append(["KravenVB/icons-light/infobar", "KravenVB/icons-dark/infobar"])
-			
+
 			### Weather-View
 			if config.plugins.KravenVB.WeatherView.value == "meteo":
-				self.skinSearchAndReplace.append(['size="50,50" render="KravenVBPiconUni" alphatest="blend" path="WetterIcons"', 'size="50,50" render="Label" font="Meteo; 40" halign="right" valign="center" foregroundColor="KravenMeteoFont" backgroundColor="KravenInfobarBackground" noWrap="1"'])
-				self.skinSearchAndReplace.append(['size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend"', 'size="50,50" render="Label" font="Meteo; 45" halign="center" valign="center" foregroundColor="KravenMeteoFont" backgroundColor="KravenInfobarBackground" noWrap="1"'])
-				self.skinSearchAndReplace.append(['size="70,70" render="KravenVBPiconUni" alphatest="blend" path="WetterIcons"', 'size="70,70" render="Label" font="Meteo; 70" halign="center" valign="center" foregroundColor="KravenMeteoFont" backgroundColor="KravenInfobarBackground" noWrap="1"'])
+				self.skinSearchAndReplace.append(['size="50,50" render="KravenVBPiconUni" alphatest="blend" path="WetterIcons"', 'size="50,50" render="Label" font="Meteo; 40" halign="right" valign="center" foregroundColor="KravenMeteo" backgroundColor="KravenIBbg" noWrap="1"'])
+				self.skinSearchAndReplace.append(['size="50,50" path="WetterIcons" render="KravenVBPiconUni" alphatest="blend"', 'size="50,50" render="Label" font="Meteo; 45" halign="center" valign="center" foregroundColor="KravenMeteo" backgroundColor="KravenIBbg" noWrap="1"'])
+				self.skinSearchAndReplace.append(['size="70,70" render="KravenVBPiconUni" alphatest="blend" path="WetterIcons"', 'size="70,70" render="Label" font="Meteo; 70" halign="center" valign="center" foregroundColor="KravenMeteo" backgroundColor="KravenIBbg" noWrap="1"'])
 				self.skinSearchAndReplace.append(['convert  type="KravenVBWeather">currentWeatherPicon', 'convert  type="KravenVBWeather">currentWeatherCode'])
 				self.skinSearchAndReplace.append(['convert  type="KravenVBWeather">forecastTomorrowPicon', 'convert  type="KravenVBWeather">forecastTomorrowCode'])
 				self.skinSearchAndReplace.append(['convert  type="KravenVBWeather">forecastTomorrow1Picon', 'convert  type="KravenVBWeather">forecastTomorrow1Code'])
 				self.skinSearchAndReplace.append(['convert  type="KravenVBWeather">forecastTomorrow2Picon', 'convert  type="KravenVBWeather">forecastTomorrow2Code'])
 				self.skinSearchAndReplace.append(['convert  type="KravenVBWeather">forecastTomorrow3Picon', 'convert  type="KravenVBWeather">forecastTomorrow3Code'])
-			
+
 			### Meteo-Font
 			if config.plugins.KravenVB.MeteoColor.value == "meteo-dark":
-				self.skinSearchAndReplace.append(['name="KravenMeteoFont" value="#00fff0e0"', 'name="KravenMeteoFont" value="#00000000"'])
-			
+				self.skinSearchAndReplace.append(['name="KravenMeteo" value="#00fff0e0"', 'name="KravenMeteo" value="#00000000"'])
+
 			### Progress
 			if config.plugins.KravenVB.Progress.value == "progress2":
 				self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress18.png"',' pixmap="KravenVB/progress/progress18_2.png"'])
@@ -2150,13 +2042,13 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress858.png"'," "])
 				self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress990.png"'," "])
 				self.skinSearchAndReplace.append(['name="KravenProgress" value="#00C3461B', 'name="KravenProgress" value="#' + config.plugins.KravenVB.Progress.value])
-			
+
 			### Border
 			self.skinSearchAndReplace.append(['name="KravenBorder" value="#00ffffff', 'name="KravenBorder" value="#' + config.plugins.KravenVB.Border.value])
-			
+
 			### Line
 			self.skinSearchAndReplace.append(['name="KravenLine" value="#00ffffff', 'name="KravenLine" value="#' + config.plugins.KravenVB.Line.value])
-			
+
 			### Runningtext
 			if config.plugins.KravenVB.RunningText.value == "movetype=none":
 				self.skinSearchAndReplace.append(["movetype=running", "movetype=none"])
@@ -2171,7 +2063,7 @@ class KravenVB(ConfigListScreen, Screen):
 					self.skinSearchAndReplace.append(["steptime=80", "steptime=22"])
 				elif config.plugins.KravenVB.RunningTextSpeed.value == "steptime=50":
 					self.skinSearchAndReplace.append(["steptime=80", "steptime=17"])
-			
+
 			### Scrollbar
 			if config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0":
 				self.skinSearchAndReplace.append(['scrollbarMode="showOnDemand"', 'scrollbarMode="showNever"'])
@@ -2180,52 +2072,45 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(['scrollbarWidth="5"', 'scrollbarWidth="10"'])
 			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=15":
 				self.skinSearchAndReplace.append(['scrollbarWidth="5"', 'scrollbarWidth="15"'])
-			
+
 			### Selectionborder
 			if not config.plugins.KravenVB.SelectionBorder.value == "none":
 				self.selectionbordercolor = config.plugins.KravenVB.SelectionBorder.value
 				self.borset = ("borset_" + self.selectionbordercolor + ".png")
 				self.skinSearchAndReplace.append(["borset.png", self.borset])
-			
+
 			### IB Color visible
-			if config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=0":
-				if config.plugins.KravenVB.IBColor.value == "only-infobar":
-					if config.plugins.KravenVB.BackgroundColor.value == "self":
-						self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + self.skincolorbackgroundcolor])
-					else:
-						self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
-					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />'," "])
-					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'," "])
-					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="380,400" alphatest="blend" zPosition="-9" />'," "])
-					self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="380,443" alphatest="blend" zPosition="-9" />'," "])
-				elif config.plugins.KravenVB.IBColor.value == "all-screens":
-					self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + "797979"])
-					self.skinSearchAndReplace.append(['backgroundColor="KravenInfobar2Background" font="Regular2;34" foregroundColor="KravenFont2"', 'backgroundColor="KravenInfobar2Background" font="Regular2;34" foregroundColor="KravenIBFont2"'])
-					self.skinSearchAndReplace.append(['position="1138,22" size="100,28" foregroundColor="KravenFont1"', 'position="1138,22" size="100,28" foregroundColor="KravenIBFont1"'])
-			elif config.plugins.KravenVB.ScrollBar.value in ("scrollbarWidth=5","scrollbarWidth=10","scrollbarWidth=15"):
-				if config.plugins.KravenVB.BackgroundColor.value == "self":
-					self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + self.skincolorbackgroundcolor])
-				else:
-					self.skinSearchAndReplace.append(['name="KravenInfobar2Background" value="#00000000', 'name="KravenInfobar2Background" value="#' + config.plugins.KravenVB.BackgroundColorTrans.value + config.plugins.KravenVB.BackgroundColor.value])
+			if not config.plugins.KravenVB.IBColor.value == "all-screens":
+				self.skinSearchAndReplace.append(['backgroundColor="KravenMbg"', 'backgroundColor="Kravenbg"'])
+				self.skinSearchAndReplace.append(['foregroundColor="KravenMFont1"', 'foregroundColor="KravenFont1"'])
+				self.skinSearchAndReplace.append(['foregroundColor="KravenMFont2"', 'foregroundColor="KravenFont2"'])
+				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />'," "])
 				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />'," "])
 				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />'," "])
-				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="380,400" alphatest="blend" zPosition="-9" />'," "])
+				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="380,400" alphatest="blend" zPosition="-9" />'," "])
 				self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="380,443" alphatest="blend" zPosition="-9" />'," "])
-			
+			else:
+				self.skinSearchAndReplace.append(['backgroundColor="KravenMbg"', 'backgroundColor="KravenIBbg2"'])
+				self.skinSearchAndReplace.append(['foregroundColor="KravenMFont1"', 'foregroundColor="KravenIBFont1"'])
+				self.skinSearchAndReplace.append(['foregroundColor="KravenMFont2"', 'foregroundColor="KravenIBFont2"'])
+			self.skinSearchAndReplace.append(['backgroundColor="KravenSIBbg2"', 'backgroundColor="KravenIBbg2"'])
+			self.skinSearchAndReplace.append(['foregroundColor="KravenSIBFont1"', 'foregroundColor="KravenIBFont1"'])
+			self.skinSearchAndReplace.append(['foregroundColor="KravenSIBFont2"', 'foregroundColor="KravenIBFont2"'])
+
 			### Clock Analog Style
 			self.analogstylecolor = config.plugins.KravenVB.AnalogStyle.value
 			self.analog = ("analog_" + self.analogstylecolor + ".png")
 			self.skinSearchAndReplace.append(["analog.png", self.analog])
-			
+
 			### Header
 			self.appendSkinFile(self.daten + "header_begin.xml")
 			if not config.plugins.KravenVB.SelectionBorder.value == "none":
 				self.appendSkinFile(self.daten + "header_middle.xml")
 			self.appendSkinFile(self.daten + "header_end.xml")
-			
+
 			### Volume
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.Volume.value + ".xml")
-			
+
 			### ChannelSelection
 			self.appendSkinFile(self.daten + self.actChannelselectionstyle + ".xml")
 			if self.actChannelselectionstyle in ("channelselection-style-minitv33","channelselection-style-nobile-minitv33","channelselection-style-minitv2","channelselection-style-minitv22"):
@@ -2277,13 +2162,13 @@ class KravenVB(ConfigListScreen, Screen):
 			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x1","infobar-style-x2","infobar-style-z1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
 				if config.plugins.KravenVB.Infobox.value == "cpu":
 					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
-					self.skinSearchAndReplace.append(['foregroundColor="KravenButtonStyleFont" />-->', 'foregroundColor="KravenButtonStyleFont" />'])
+					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
 					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBExtServiceInfo">OrbitalPosition', 'convert  type="KravenVBCpuUsage">$0'])
 				elif config.plugins.KravenVB.Infobox.value == "temp":
 					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
-					self.skinSearchAndReplace.append(['foregroundColor="KravenButtonStyleFont" />-->', 'foregroundColor="KravenButtonStyleFont" />'])
+					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
 					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBExtServiceInfo">OrbitalPosition', 'convert  type="KravenVBTempFanInfo">TempInfo'])
@@ -2308,25 +2193,21 @@ class KravenVB(ConfigListScreen, Screen):
 
 			### Channelname
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,510"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,450"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2":
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2"):
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zz4"):
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,474"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,414"'])
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz2","infobar-style-zz3"):
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="435,534" size="565,50"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName3.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName4.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName5.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName6.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName7.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName8.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName9.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName10.value + ".xml")
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="446,464" size="754,50"'])
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
 
 			### clock-style_ib
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
@@ -2335,7 +2216,7 @@ class KravenVB(ConfigListScreen, Screen):
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ClockStyle2.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zzz1"):
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ClockStyle3.value + ".xml")
-				
+
 			### FTA
 			if config.plugins.KravenVB.FTA.value == "none":
 				self.skinSearchAndReplace.append(['FTAVisible</convert>', 'FTAInvisible</convert>'])
@@ -2375,8 +2256,16 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SystemInfo.value + ".xml")
 
 			### weather-style
+			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x1","infobar-style-x3","infobar-style-z2","infobar-style-zz1","infobar-style-zz2","infobar-style-zz3","infobar-style-zz4","infobar-style-zzz1"):
+				self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle.value
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+				if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py"):
+					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle3.value
+				else:
+					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle2.value
 			self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
-			if self.actWeatherstyle == "none" and self.actClockstyle != "clock-android":
+			
+			if self.actWeatherstyle == "none" and self.actClockstyle != "clock-android" and config.plugins.KravenVB.SIB.value != "sib6":
 				config.plugins.KravenVB.refreshInterval.value = "0"
 				config.plugins.KravenVB.refreshInterval.save()
 			elif config.plugins.KravenVB.refreshInterval.value == "0":
@@ -2397,34 +2286,36 @@ class KravenVB(ConfigListScreen, Screen):
 			### SIB_main
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
 				self.appendSkinFile(self.daten + "infobar-style-x1_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2":
 				self.appendSkinFile(self.daten + "infobar-style-x2_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB1.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3":
 				self.appendSkinFile(self.daten + "infobar-style-x3_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB2.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1":
 				self.appendSkinFile(self.daten + "infobar-style-z1_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB3.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
 				self.appendSkinFile(self.daten + "infobar-style-z2_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB4.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
+				self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+				self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
 				self.appendSkinFile(self.daten + "infobar-style-zz1_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB5.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
+				self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+				self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
 				self.appendSkinFile(self.daten + "infobar-style-zz2_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB6.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
+				self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+				self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
 				self.appendSkinFile(self.daten + "infobar-style-zz3_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB7.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+				self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+				self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
 				self.appendSkinFile(self.daten + "infobar-style-zz4_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB8.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
+				self.skinSearchAndReplace.append(['size="570,396">', 'size="570,330">'])
+				self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,124">'])
+				self.skinSearchAndReplace.append(['size="297">', 'size="231">'])
 				self.appendSkinFile(self.daten + "infobar-style-zzz1_main.xml")
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB9.value + ".xml")
+			self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB.value + ".xml")
 			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SecondInfoBar/plugin.py"):
 				config.plugins.SecondInfoBar.HideNormalIB.value = True
 				config.plugins.SecondInfoBar.HideNormalIB.save()
@@ -2439,13 +2330,13 @@ class KravenVB(ConfigListScreen, Screen):
 				self.appendSkinFile(self.daten + "timeshift-begin-zz1.xml")
 			else:
 				self.appendSkinFile(self.daten + "timeshift-begin.xml")
-				
-			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1","weather-big"):
+
+			if self.actWeatherstyle in ("weather-big","weather-left","netatmobar"):
 				if config.plugins.KravenVB.SystemInfo.value == "systeminfo-bigsat":
 					self.appendSkinFile(self.daten + "timeshift-begin-leftlow.xml")
 				else:
 					self.appendSkinFile(self.daten + "timeshift-begin-low.xml")
-			elif config.plugins.KravenVB.WeatherStyle.value == "weather-small":
+			elif self.actWeatherstyle == "weather-small":
 				self.appendSkinFile(self.daten + "timeshift-begin-left.xml")
 			else:
 				self.appendSkinFile(self.daten + "timeshift-begin-high.xml")
@@ -2462,25 +2353,21 @@ class KravenVB(ConfigListScreen, Screen):
 
 			### Timeshift_Channelname
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,510"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,450"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x2":
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2"):
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zz4"):
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,474"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,414"'])
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz2","infobar-style-zz3"):
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="435,534" size="565,50"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z1":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName3.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName4.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName5.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName6.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName7.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x3":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName8.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName9.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName10.value + ".xml")
+				self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="446,464" size="754,50"'])
+				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
 
 			### Timeshift_clock-style_ib
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
@@ -2489,7 +2376,7 @@ class KravenVB(ConfigListScreen, Screen):
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ClockStyle2.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1""infobar-style-zzz1"):
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ClockStyle3.value + ".xml")
-				
+
 			### Timeshift_FTA
 			if config.plugins.KravenVB.FTA.value == "none":
 				self.skinSearchAndReplace.append(['FTAVisible</convert>', 'FTAInvisible</convert>'])
@@ -2529,26 +2416,19 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SystemInfo.value + ".xml")
 
 			### Timeshift_weather-style
-			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x1","infobar-style-x3","infobar-style-z2","infobar-style-zz1","infobar-style-zz2","infobar-style-zz3","infobar-style-zz4","infobar-style-zzz1"):
-				self.appendSkinFile(self.daten + config.plugins.KravenVB.WeatherStyle.value + ".xml")
-			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
-				if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py"):
-					if config.plugins.KravenVB.WeatherStyle3.value == "weather-left":
-						self.appendSkinFile(self.daten + "weather-left.xml")
-				else:
-					self.appendSkinFile(self.daten + config.plugins.KravenVB.WeatherStyle2.value + ".xml")
+			self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
 
 			### Timeshift_end
 			self.appendSkinFile(self.daten + "timeshift-end.xml")
-			
+
 			### Plugins XML
 			self.appendSkinFile(self.daten + "plugins.xml")
 			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PermanentTimeshift/plugin.py"):
 				config.plugins.pts.showinfobar.value = False
 				config.plugins.pts.showinfobar.save()
-			
+
 			### InfobarTunerState
-			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1","weather-big"):
+			if self.actWeatherstyle in ("weather-big","weather-left","netatmobar"):
 				if config.plugins.KravenVB.SystemInfo.value == "systeminfo-bigsat":
 					self.appendSkinFile(self.daten + "infobartunerstate-low.xml")
 				else:
@@ -2563,7 +2443,7 @@ class KravenVB(ConfigListScreen, Screen):
 						self.appendSkinFile(self.daten + "netatmobar.xml")
 
 			### EMCSTYLE
-			self.appendSkinFile(self.daten + config.plugins.KravenVB.EMCStyle.value + ".xml")			
+			self.appendSkinFile(self.daten + config.plugins.KravenVB.EMCStyle.value + ".xml")
 
 			### NumberZapExtStyle
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.NumberZapExt.value + ".xml")
@@ -2578,6 +2458,9 @@ class KravenVB(ConfigListScreen, Screen):
 
 			### MovieSelection XML
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.MovieSelection.value + ".xml")
+
+			### SerienRecorder XML
+			self.appendSkinFile(self.daten + config.plugins.KravenVB.SerienRecorder.value + ".xml")
 
 			### skin-user
 			try:
@@ -2606,9 +2489,9 @@ class KravenVB(ConfigListScreen, Screen):
 			self.makeRectpng(self.skincolorinfobarcolor, config.plugins.KravenVB.InfobarColorTrans.value, 400, 375, "info") # sysinfo bigsat
 
 		self.makeRectpng(self.skincolorinfobarcolor, config.plugins.KravenVB.InfobarColorTrans.value, 905, 170, "shift") # timeshift bar
-		
+
 		self.makeRectpng(self.skincolorinfobarcolor, config.plugins.KravenVB.InfobarColorTrans.value, 400, 200, "wsmall") # weather small
-			
+
 		self.restart()
 
 	def restart(self):
@@ -2667,76 +2550,89 @@ class KravenVB(ConfigListScreen, Screen):
 			self.mylist()
 
 	def reset(self):
-		askReset = self.session.openWithCallback(self.doReset,MessageBox,_("Do you really want to reset all values to their defaults?"), MessageBox.TYPE_YESNO)
+		askReset = self.session.openWithCallback(self.doReset,MessageBox,_("Do you really want to reset all values to the selected default profile?"), MessageBox.TYPE_YESNO)
 		askReset.setTitle(_("Reset profile"))
 
 	def doReset(self,answer):
 		if answer is True:
-			for name in config.plugins.KravenVB.dict():
-				if name is not "customProfile":
-					item=(getattr(config.plugins.KravenVB,name))
-					item.value=item.default
+			if config.plugins.KravenVB.defaultProfile.value == "0":
+				for name in config.plugins.KravenVB.dict():
+					if name is not "customProfile":
+						item=(getattr(config.plugins.KravenVB,name))
+						item.value=item.default
+			else:
+				self.loadProfile(loadDefault=True)
 		self.mylist()
 
 	def showColor(self,actcolor):
 		c = self["Canvas"]
-		c.fill(0, 0, 368, 207, actcolor)
+		c.fill(0,0,368,207,actcolor)
 		c.flush()
 
-	def loadProfile(self):
-		profile=config.plugins.KravenVB.customProfile.value
-		if profile:
+	def showText(self,fontsize,text):
+		from enigma import gFont,RT_HALIGN_CENTER,RT_VALIGN_CENTER
+		c = self["Canvas"]
+		c.fill(0,0,368,207,self.RGB(0,0,0))
+		c.writeText(0,0,368,207,self.RGB(255,255,255),self.RGB(0,0,0),gFont("Regular",fontsize),text,RT_HALIGN_CENTER+RT_VALIGN_CENTER)
+		c.flush()
+
+	def loadProfile(self,loadDefault=False):
+		if loadDefault:
+			profile=config.plugins.KravenVB.defaultProfile.value
+			fname=self.profiles+"kraven_default_"+profile
+		else:
+			profile=config.plugins.KravenVB.customProfile.value
 			fname=self.profiles+"kraven_profile_"+profile
-			if fileExists(fname):
-				print ("KravenPlugin: Load profile "+str(profile))
-				pFile=open(fname,"r")
-				for line in pFile:
-					try:
-						line=line.split("|")
-						name=line[0]
-						value=line[1]
-						type=line[2].strip('\n')
-						if name != "customProfile":
-							if type == "<type 'int'>":
-								getattr(config.plugins.KravenVB,name).value=int(value)
-							elif type == "<type 'hex'>":
-								getattr(config.plugins.KravenVB,name).value=hex(value)
-							elif type == "<type 'list'>":
-								getattr(config.plugins.KravenVB,name).value=eval(value)
-							else:
-								getattr(config.plugins.KravenVB,name).value=str(value)
-					except:
-						pass
-				pFile.close()
-				# fix possible inconsistencies between boxes
-				if SystemInfo.get("NumVideoDecoders",1)>1:
-					if config.plugins.KravenVB.ChannelSelectionStyle.value!=config.plugins.KravenVB.ChannelSelectionStyle.default:
-						config.plugins.KravenVB.ChannelSelectionStyle2.value=config.plugins.KravenVB.ChannelSelectionStyle.value
-						config.plugins.KravenVB.ChannelSelectionStyle.value=config.plugins.KravenVB.ChannelSelectionStyle.default
-				else:
-					if config.plugins.KravenVB.ChannelSelectionStyle2.value!=config.plugins.KravenVB.ChannelSelectionStyle2.default:
-						if config.plugins.KravenVB.ChannelSelectionStyle2.value in ("channelselection-style-minitv33","channelselection-style-minitv2","channelselection-style-minitv22"):
-							config.plugins.KravenVB.ChannelSelectionStyle.value="channelselection-style-minitv3"
-						elif config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile-minitv33":
-							config.plugins.KravenVB.ChannelSelectionStyle.value="channelselection-style-nobile-minitv3"
+		if profile and fileExists(fname):
+			print ("KravenPlugin: Load profile "+fname)
+			pFile=open(fname,"r")
+			for line in pFile:
+				try:
+					line=line.split("|")
+					name=line[0]
+					value=line[1]
+					type=line[2].strip('\n')
+					if not (name in ("customProfile","DebugNames") or (loadDefault and name in ("defaultProfile","weather_city"))):
+						if type == "<type 'int'>":
+							getattr(config.plugins.KravenVB,name).value=int(value)
+						elif type == "<type 'hex'>":
+							getattr(config.plugins.KravenVB,name).value=hex(value)
+						elif type == "<type 'list'>":
+							getattr(config.plugins.KravenVB,name).value=eval(value)
 						else:
-							config.plugins.KravenVB.ChannelSelectionStyle.value=config.plugins.KravenVB.ChannelSelectionStyle2.value
-						config.plugins.KravenVB.ChannelSelectionStyle2.value=config.plugins.KravenVB.ChannelSelectionStyle2.default
-				if not fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py") and config.plugins.KravenVB.WeatherStyle3.value=="netatmobar":
-					config.plugins.KravenVB.WeatherStyle3.value=config.plugins.KravenVB.WeatherStyle3.default
+							getattr(config.plugins.KravenVB,name).value=str(value)
+				except:
+					pass
+			pFile.close()
+			# fix possible inconsistencies between boxes
+			if SystemInfo.get("NumVideoDecoders",1)>1:
+				if config.plugins.KravenVB.ChannelSelectionStyle.value!=config.plugins.KravenVB.ChannelSelectionStyle.default:
+					config.plugins.KravenVB.ChannelSelectionStyle2.value=config.plugins.KravenVB.ChannelSelectionStyle.value
+					config.plugins.KravenVB.ChannelSelectionStyle.value=config.plugins.KravenVB.ChannelSelectionStyle.default
 			else:
-				print ("KravenPlugin: Create profile "+str(profile))
-				self.saveProfile(msg=False)
+				if config.plugins.KravenVB.ChannelSelectionStyle2.value!=config.plugins.KravenVB.ChannelSelectionStyle2.default:
+					if config.plugins.KravenVB.ChannelSelectionStyle2.value in ("channelselection-style-minitv33","channelselection-style-minitv2","channelselection-style-minitv22"):
+						config.plugins.KravenVB.ChannelSelectionStyle.value="channelselection-style-minitv3"
+					elif config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile-minitv33":
+						config.plugins.KravenVB.ChannelSelectionStyle.value="channelselection-style-nobile-minitv3"
+					else:
+						config.plugins.KravenVB.ChannelSelectionStyle.value=config.plugins.KravenVB.ChannelSelectionStyle2.value
+					config.plugins.KravenVB.ChannelSelectionStyle2.value=config.plugins.KravenVB.ChannelSelectionStyle2.default
+			if not fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py") and config.plugins.KravenVB.WeatherStyle3.value=="netatmobar":
+				config.plugins.KravenVB.WeatherStyle3.value=config.plugins.KravenVB.WeatherStyle3.default
+		elif not loadDefault:
+			print ("KravenPlugin: Create profile "+fname)
+			self.saveProfile(msg=False)
 
 	def saveProfile(self,msg=True):
 		profile=config.plugins.KravenVB.customProfile.value
 		if profile:
-			print ("KravenPlugin: Save profile "+str(profile))
 			try:
 				fname=self.profiles+"kraven_profile_"+profile
+				print ("KravenPlugin: Save profile "+fname)
 				pFile=open(fname,"w")
 				for name in config.plugins.KravenVB.dict():
-					if name != "customProfile":
+					if not name in ("customProfile","DebugNames"):
 						value=getattr(config.plugins.KravenVB,name).value
 						pFile.writelines(name+"|"+str(value)+"|"+str(type(value))+"\n")
 				pFile.close()
@@ -2746,25 +2642,25 @@ class KravenVB(ConfigListScreen, Screen):
 				self.session.open(MessageBox,_("Profile ")+str(profile)+_(" could not be saved!"), MessageBox.TYPE_INFO, timeout=15)
 
 	def makeIbarpng(self, newcolor, newtrans):
-		
+
 		width = 1280 # width of the png file
 		gradientspeed = 2.0 # look of the gradient. 1 is flat (linear), higher means rounder
-		
+
 		ibarheight = 310 # height of ibar
 		ibargradientstart = 50 # start of ibar gradient (from top)
 		ibargradientsize = 100 # size of ibar gradient
-		
+
 		ibaroheight = 165 # height of ibaro
 		ibarogradientstart = 65 # start of ibaro gradient (from top)
 		ibarogradientsize = 100 # size of ibaro gradient
-		
+
 		newcolor = newcolor[-6:]
 		r = int(newcolor[0:2], 16)
 		g = int(newcolor[2:4], 16)
 		b = int(newcolor[4:6], 16)
-		
+
 		trans = (255-int(newtrans,16))/255.0
-		
+
 		img = Image.new("RGBA",(width,ibarheight),(r,g,b,0))
 		gradient = Image.new("L",(1,ibarheight),int(255*trans))
 		for pos in range(0,ibargradientstart):
@@ -2774,7 +2670,7 @@ class KravenVB(ConfigListScreen, Screen):
 		alpha = gradient.resize(img.size)
 		img.putalpha(alpha)
 		img.save("/usr/share/enigma2/KravenVB/ibar.png")
-		
+
 		img = Image.new("RGBA",(width,ibaroheight),(r,g,b,0))
 		gradient = Image.new("L",(1,ibaroheight),0)
 		for pos in range(0,ibarogradientstart):
@@ -2784,25 +2680,25 @@ class KravenVB(ConfigListScreen, Screen):
 		alpha = gradient.resize(img.size)
 		img.putalpha(alpha)
 		img.save("/usr/share/enigma2/KravenVB/ibaro.png")
-			
+
 	def makeRectpng(self, newcolor, newtrans, width, height, pngname):
-		
+
 		gradientspeed = 2.0 # look of the gradient. 1 is flat (linear), higher means rounder
 		gradientsize = 80 # size of gradient
-		
+
 		newcolor = newcolor[-6:]
 		r = int(newcolor[0:2], 16)
 		g = int(newcolor[2:4], 16)
 		b = int(newcolor[4:6], 16)
-		
+
 		trans = (255-int(newtrans,16))/255.0
-		
+
 		img = Image.new("RGBA",(width,height),(r,g,b,int(255*trans)))
-		
+
 		gradient = Image.new("RGBA",(1,gradientsize),(r,g,b,0))
 		for pos in range(0,gradientsize):
 			gradient.putpixel((0,pos),(r,g,b,int((self.dexpGradient(gradientsize,gradientspeed,pos))*trans)))
-			
+
 		hgradient = gradient.resize((width-2*gradientsize, gradientsize))
 		img.paste(hgradient, (gradientsize,0,width-gradientsize,gradientsize))
 		hgradient = hgradient.transpose(Image.ROTATE_180)
@@ -2813,7 +2709,7 @@ class KravenVB(ConfigListScreen, Screen):
 		img.paste(vgradient, (0,gradientsize,gradientsize,height-gradientsize))
 		vgradient = vgradient.transpose(Image.ROTATE_180)
 		img.paste(vgradient, (width-gradientsize,gradientsize,width,height-gradientsize))
-		
+
 		corner = Image.new("RGBA",(gradientsize,gradientsize),(r,g,b,0))
 		for xpos in range(0,gradientsize):
 			for ypos in range(0,gradientsize):
@@ -2829,7 +2725,7 @@ class KravenVB(ConfigListScreen, Screen):
 		img.paste(corner, (0,height-gradientsize,gradientsize,height))
 
 		img.save("/usr/share/enigma2/KravenVB/"+pngname+".png")
-			
+
 	def dexpGradient(self,len,spd,pos):
 		if pos < 0:
 			pos = 0
@@ -2842,7 +2738,7 @@ class KravenVB(ConfigListScreen, Screen):
 			f = a-((len-pos)**spd)
 		e = int((f/a)*255)
 		return e
-		
+
 	def makeBackpng(self):
 		# this makes a transparent png
 		# not needed above, use it manually
@@ -2850,12 +2746,37 @@ class KravenVB(ConfigListScreen, Screen):
 		height = 720 # height of the png file
 		img = Image.new("RGBA",(width,height),(0,0,0,0))
 		img.save("/usr/share/enigma2/KravenVB/backg.png")
-			
+
+	def calcBrightness(self,color,factor):
+		f = int(int(factor)*25.5-255)
+		color = color[-6:]
+		r = int(color[0:2],16)+f
+		g = int(color[2:4],16)+f
+		b = int(color[4:6],16)+f
+		if r<0:
+			r=0
+		if g<0:
+			g=0
+		if b<0:
+			b=0
+		if r>255:
+			r=255
+		if g>255:
+			g=255
+		if b>255:
+			b=255
+		return str(hex(r)[2:4]).zfill(2)+str(hex(g)[2:4]).zfill(2)+str(hex(b)[2:4]).zfill(2)
+
+	def calcTransparency(self,trans1,trans2):
+		t1 = int(trans1,16)
+		t2 = int(trans2,16)
+		return str(hex(min(t1,t2))[2:4]).zfill(2)
+		
 	def hexRGB(self,color):
 		color = color[-6:]
-		r = int(color[0:2], 16)
-		g = int(color[2:4], 16)
-		b = int(color[4:6], 16)
+		r = int(color[0:2],16)
+		g = int(color[2:4],16)
+		b = int(color[4:6],16)
 		return (r<<16)|(g<<8)|b
 
 	def RGB(self,r,g,b):

@@ -52,14 +52,14 @@
   </widget>
   <ePixmap pixmap="KravenVB/ibaro.png" position="0,-20" size="1280,165" zPosition="-9" alphatest="blend"/>
   <ePixmap pixmap="KravenVB/icons-light/infobar/aufloesung.png" position="1029,23" size="112,22" zPosition="1" alphatest="blend" />
-  <widget source="session.CurrentService" render="Label" zPosition="3" position="1029,21" size="110,22" font="Regular; 19" halign="center" backgroundColor="KravenInfobarBackground" foregroundColor="KravenButtonStyleFont" transparent="1">
+  <widget source="session.CurrentService" render="Label" zPosition="3" position="1029,21" size="110,22" font="Regular; 19" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
     <convert type="KravenVBExtraInfo">Resolution</convert>
   </widget>
   <ePixmap pixmap="KravenVB/icons-light/infobar/aufloesung2.png" position="1149,23" size="116,22" zPosition="1" alphatest="blend" />
-  <widget backgroundColor="KravenInfobarBackground" font="Regular;19" foregroundColor="KravenButtonStyleFont" halign="left" position="1151,21" size="55,22" render="Label" source="session.CurrentService" transparent="1">
+  <widget backgroundColor="KravenIBbg" font="Regular;19" foregroundColor="KravenIcon" halign="left" position="1151,21" size="55,22" render="Label" source="session.CurrentService" transparent="1">
     <convert  type="KravenVBExtServiceInfo">OrbitalPosition</convert>
   </widget>
-  <widget render="Label" font="Regular; 19" position="1194,21" size="67,22" halign="right" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenButtonStyleFont"  source="session.FrontendStatus">
+  <widget render="Label" font="Regular; 19" position="1194,21" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIcon"  source="session.FrontendStatus">
     <convert  type="KravenVBFrontendInfo">SNR</convert>
   </widget>
-  <!--<eLabel text="  S:"  font="Regular; 19" position="1199,21" size="40,22" halign="left" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenButtonStyleFont" />-->
+  <!--<eLabel text="  S:"  font="Regular; 19" position="1199,21" size="40,22" halign="left" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIcon" />-->

@@ -1,16 +1,15 @@
 <!-- /* Weather -->
   <ePixmap pixmap="KravenVB/wsmall.png" position="890,-10" size="400,210" zPosition="-9" alphatest="blend"/>
-  
   <widget source="session.CurrentService" position="960,55" transparent="1" zPosition="8" size="70,70" render="KravenVBPiconUni" alphatest="blend" path="WetterIcons">
     <convert  type="KravenVBWeather">currentWeatherPicon</convert>
   </widget>
-  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular2; 36" foregroundColor="KravenIBFont2" render="Label" position="1030,55" size="115,70" source="session.CurrentService" zPosition="3" halign="right" valign="center" transparent="1">
-    <convert type="KravenVBWeather">currentWeatherTemp</convert>
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular2; 36" foregroundColor="KravenIBFont2" render="Label" position="1030,55" size="115,70" source="session.CurrentService" zPosition="3" halign="right" valign="center" transparent="1">
+    <convert type="KravenVBWeather">currentWeatherTempWithNA</convert>
   </widget>
-  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 24" foregroundColor="KravenIBFont1" render="Label" position="1145,55" size="75,35" source="session.CurrentService" zPosition="8" halign="right" valign="center" transparent="1">
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 24" foregroundColor="KravenIBFont1" render="Label" position="1145,55" size="75,35" source="session.CurrentService" zPosition="8" halign="right" valign="center" transparent="1">
     <convert type="KravenVBWeather">forecastTodayTempMax</convert>
   </widget>
-  <widget noWrap="1" backgroundColor="KravenInfobarBackground" font="Regular; 24" foregroundColor="KravenIBFont1" render="Label" position="1145,90" size="75,35" source="session.CurrentService" zPosition="8" halign="right" valign="center" transparent="1">
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 24" foregroundColor="KravenIBFont1" render="Label" position="1145,90" size="75,35" source="session.CurrentService" zPosition="8" halign="right" valign="center" transparent="1">
     <convert type="KravenVBWeather">forecastTodayTempMin</convert>
   </widget>
 <!-- Weather */-->

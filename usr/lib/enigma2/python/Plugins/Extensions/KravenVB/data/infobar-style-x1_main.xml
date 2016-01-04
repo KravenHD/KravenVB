@@ -1,26 +1,26 @@
   <widget alphatest="blend" position="20,580" size="220,132" render="KravenVBXPicon" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
-  <widget font="Regular;30" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="439,559" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
+  <widget font="Regular;30" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="439,559" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
-  <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenIBFont1" halign="right" position="913,564" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular; 22" foregroundColor="KravenIBFont1" halign="right" position="913,564" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">Remaining</convert>
     <convert type="KravenVBRemainingToText">InMinutes</convert>
   </widget>
-  <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenIBFont1" halign="right" noWrap="1" position="253,564" render="Label" size="70,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular; 22" foregroundColor="KravenIBFont1" halign="right" noWrap="1" position="253,564" render="Label" size="70,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">StartTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <eLabel backgroundColor="KravenInfobarBackground" font="Regular; 20" foregroundColor="KravenIBFont1" halign="center" noWrap="1" position="325,564" size="40,35" text="bis" transparent="1" valign="center" zPosition="1" />
-  <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="367,564" render="Label" size="70,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+  <eLabel backgroundColor="KravenIBbg" font="Regular; 20" foregroundColor="KravenIBFont1" halign="center" noWrap="1" position="325,564" size="40,35" text="bis" transparent="1" valign="center" zPosition="1" />
+  <widget backgroundColor="KravenIBbg" font="Regular; 22" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="367,564" render="Label" size="70,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <widget font="Regular; 30" foregroundColor="KravenIBFont2" halign="left" position="439,650" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Next" valign="top" backgroundColor="KravenInfobarBackground" transparent="1" zPosition="1">
+  <widget font="Regular; 30" foregroundColor="KravenIBFont2" halign="left" position="439,650" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Next" valign="top" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
-  <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenIBFont2" valign="center" halign="right" position="914,656" render="Label" size="107,35" source="session.Event_Next" transparent="1" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular; 22" foregroundColor="KravenIBFont2" valign="center" halign="right" position="914,656" render="Label" size="107,35" source="session.Event_Next" transparent="1" zPosition="1">
     <convert type="KravenVBEventTime">Duration</convert>
     <convert type="ClockToText">InMinutes</convert>
   </widget>
@@ -92,29 +92,29 @@
     <convert type="ValueBitTest">8</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenIBFont2" halign="left" noWrap="1" position="367,656" render="Label" size="70,35" source="session.Event_Next" transparent="1" valign="center" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular; 22" foregroundColor="KravenIBFont2" halign="left" noWrap="1" position="367,656" render="Label" size="70,35" source="session.Event_Next" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <widget backgroundColor="KravenInfobarBackground" font="Regular; 22" foregroundColor="KravenIBFont2" halign="right" noWrap="1" position="253,656" render="Label" size="70,35" source="session.Event_Next" transparent="1" valign="center" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular; 22" foregroundColor="KravenIBFont2" halign="right" noWrap="1" position="253,656" render="Label" size="70,35" source="session.Event_Next" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">StartTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <eLabel backgroundColor="KravenInfobarBackground" font="Regular; 20" foregroundColor="KravenIBFont2" halign="center" noWrap="1" position="325,656" size="40,35" text="bis" transparent="1" valign="center" zPosition="1" />
-  <eLabel backgroundColor="KravenInfobarBackground" foregroundColor="KravenIBFont1" font="Regular; 20" halign="center" noWrap="1" position="261,614" size="190,35" text="Sendung läuft seit" transparent="1" valign="center" zPosition="1" />
-  <widget backgroundColor="KravenInfobarBackground" foregroundColor="KravenIBFont1" font="Regular; 20" halign="left" position="445,612" render="Label" size="150,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+  <eLabel backgroundColor="KravenIBbg" font="Regular; 20" foregroundColor="KravenIBFont2" halign="center" noWrap="1" position="325,656" size="40,35" text="bis" transparent="1" valign="center" zPosition="1" />
+  <eLabel backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular; 20" halign="center" noWrap="1" position="261,614" size="190,35" text="Sendung läuft seit" transparent="1" valign="center" zPosition="1" />
+  <widget backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular; 20" halign="left" position="445,612" render="Label" size="150,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">RunTime</convert>
     <convert type="KravenVBRemainingToText">InMinutes</convert>
   </widget>
   <ePixmap pixmap="KravenVB/icons-light/infobar/aufloesung.png" position="786,696" size="112,22" zPosition="1" alphatest="blend" />
-  <widget source="session.CurrentService" render="Label" zPosition="3" position="787,694" size="110,22" font="Regular; 19" halign="center" backgroundColor="KravenInfobarBackground" foregroundColor="KravenButtonStyleFont" transparent="1">
+  <widget source="session.CurrentService" render="Label" zPosition="3" position="787,694" size="110,22" font="Regular; 19" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
     <convert type="KravenVBExtraInfo">Resolution</convert>    
   </widget>
   <ePixmap pixmap="KravenVB/icons-light/infobar/aufloesung2.png" position="906,696" size="116,22" zPosition="1" alphatest="blend" />
-  <widget backgroundColor="KravenInfobarBackground" font="Regular;19" foregroundColor="KravenButtonStyleFont" halign="left" position="909,694" size="55,22" render="Label" source="session.CurrentService" transparent="1">
+  <widget backgroundColor="KravenIBbg" font="Regular;19" foregroundColor="KravenIcon" halign="left" position="909,694" size="55,22" render="Label" source="session.CurrentService" transparent="1">
     <convert  type="KravenVBExtServiceInfo">OrbitalPosition</convert>
   </widget>
-  <widget render="Label" font="Regular; 19" position="952,694" size="67,22" halign="right" backgroundColor="KravenInfobarBackground" transparent="1" noWrap="1" foregroundColor="KravenButtonStyleFont"  source="session.FrontendStatus">
+  <widget render="Label" font="Regular; 19" position="952,694" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIcon"  source="session.FrontendStatus">
     <convert  type="KravenVBFrontendInfo">SNR</convert>
   </widget>
-  <!--<eLabel text="  S:"  font="Regular; 19" position="958,694" size="30,22" halign="left" backgroundColor="KravenInfobarBackground" transparent="1" foregroundColor="KravenButtonStyleFont" />-->
+  <!--<eLabel text="  S:"  font="Regular; 19" position="958,694" size="30,22" halign="left" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIcon" />-->

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-12-18 18:20+0100\n"
+"PO-Revision-Date: 2016-01-03 13:07+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -708,7 +708,7 @@ msgstr "Wählen Sie den Grad der Hintergrundtransparenz für die Kanallisten."
 
 #: KravenVB.py
 msgid "This option is not available for extended preview styles."
-msgstr "Diese Option ist nicht verfügbar für 'Erweiterte Vorschau' Kanallisten."
+msgstr "Diese Option ist nicht verfügbar für Kanallisten vom Typ \"Erweiterte Vorschau\"."
 
 #: KravenVB.py
 msgid "Primetime"
@@ -759,8 +759,8 @@ msgid "Secondary-Font"
 msgstr "Sekundär-Schrift"
 
 #: KravenVB.py
-msgid "Selection-Font"
-msgstr "Auswahl-Schrift"
+msgid "Listselection-Font"
+msgstr "Auswahlbalken-Schrift"
 
 #: KravenVB.py
 msgid "Marking-Font"
@@ -835,8 +835,8 @@ msgid "Do you really want to reboot now?"
 msgstr "Wollen Sie jetzt neu starten?"
 
 #: KravenVB.py
-msgid "Do you really want to reset all values to their defaults?"
-msgstr "Wollen Sie wirklich alle Werte auf ihren Standard zurücksetzen?"
+msgid "Do you really want to reset all values to the selected default profile?"
+msgstr "Wollen Sie wirklich alle Werte auf das ausgewählte Standardprofil zurücksetzen?"
 
 #: KravenVB.py
 msgid "Do you really want to exit without saving?"
@@ -950,31 +950,23 @@ msgstr "Tuneranzahl/Aufnahme"
 
 #: KravenVB.py
 msgid "Infobar-Icons"
-msgstr "Infobar-Icons"
+msgstr "Infoleisten-Icons"
 
 #: KravenVB.py
 msgid "Icons (except Infobar)"
-msgstr "Icons (ausgenommen Infobar)"
+msgstr "Icons (außer Infoleiste)"
 
 #: KravenVB.py
 msgid "Infobar-Background"
-msgstr "Infobar-Hintergrund"
+msgstr "Infoleisten-Hintergrund"
 
 #: KravenVB.py
 msgid "Infobar-Transparency"
-msgstr "Infobar-Transparenz"
-
-#: KravenVB.py
-msgid "Icons + 4 Tuner + Resolution + Infobox"
-msgstr "Icons + 4 Tuner + Auflösung + Infobox"
-
-#: KravenVB.py
-msgid "Icons + REC + 2 Tuner + Resolution + Infobox"
-msgstr "Icons + REC + 2 Tuner + Auflösung + Infobox"
+msgstr "Infoleisten-Transparenz"
 
 #: KravenVB.py
 msgid "Show Infobar-Background"
-msgstr "Zeige Infobar-Hintergrund"
+msgstr "Infoleisten-Hintergrund"
 
 #: KravenVB.py
 msgid "in all Screens"
@@ -982,7 +974,7 @@ msgstr "in allen Screens"
 
 #: KravenVB.py
 msgid "only Infobar, SecondInfobar & Players"
-msgstr "nur Infobar, SecondInfobar & Players"
+msgstr "nur Infoleiste, \"SecondInfobar\" & Wiedergabe"
 
 #: KravenVB.py
 msgid "light"
@@ -1006,7 +998,7 @@ msgstr "breit"
 
 #: KravenVB.py
 msgid "Infobar-Style"
-msgstr "Infobar-Stil"
+msgstr "Infoleisten-Stil"
 
 #: KravenVB.py
 msgid "Scrollbars"
@@ -1065,12 +1057,12 @@ msgid "This option is not available because running text is deactivated."
 msgstr "Diese Option ist nicht verfügbar, da die Laufschrift deaktiviert ist."
 
 #: KravenVB.py
-msgid "Choose the width of scrollbars in lists or deactivate scrollbars completely. Active scrollbars deactivate the option \"show the infobar background in all screens (bicolored background)\"."
-msgstr "Wählen Sie die Breite der Bildlaufleisten in Listen oder deaktivieren Sie diese komplett. Aktive Bildlaufleisten deaktivieren die Option \"Anzeige des Infoleisten-Hintergrunds in allen Seiten (zweifarbiger Hintergrund)\"."
+msgid "Choose the width of scrollbars in lists or deactivate scrollbars completely."
+msgstr "Wählen Sie die Breite der Bildlaufleisten in Listen oder deaktivieren Sie diese komplett."
 
 #: KravenVB.py
-msgid "Choose between MiniTV or Kraven logo in system menus."
-msgstr "Wählen Sie zwischen MiniTV und  Kraven-Logo in Systemmenüs."
+msgid "Choose from different options to display the system menus. Press OK for the FAQs with details on installing menu icons."
+msgstr "Wählen Sie eine von verschiedenen Varianten für die Darstellung der Systemmenüs. Drücken Sie OK für die FAQs mit Details zur Installation von Menü-Symbolen."
 
 #: KravenVB.py
 msgid "Choose the background color for all screens. You can choose from a list of predefined colors or create your own color using RGB sliders."
@@ -1238,7 +1230,7 @@ msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"CoolTVG
 
 #: KravenVB.py
 msgid "only available for 'Custom EMC-Selection-Colors'"
-msgstr "nur verfügbar für 'Eigene EMC-Auswahl-Farben'"
+msgstr "nur verfügbar für \"Eigene EMC-Auswahl-Farben\""
 
 #: KravenVB.py
 msgid "EMC-Style"
@@ -1270,7 +1262,7 @@ msgstr "Wählen Sie die Farbe der Schrift in Auswahlbalken für EnhancedMovieCen
 
 #: KravenVB.py
 msgid "This option is not available because 'Custom EMC-Selection-Colors' is deactivated."
-msgstr "Diese Option ist nicht verfügbar, da 'Eigene EMC-Auswahl-Farben' deaktiviert ist."
+msgstr "Diese Option ist nicht verfügbar, da \"Eigene EMC-Auswahl-Farben\" deaktiviert ist."
 
 #: KravenVB.py
 msgid "Choose from different styles for EnhancedMovieCenter."
@@ -1330,7 +1322,7 @@ msgstr "eigene RGB-Farbe"
 
 #: KravenVB.py
 msgid "only available for self-colors"
-msgstr "nur verfügbar für 'eigene RGB-Farbe'"
+msgstr "nur verfügbar für \"eigene RGB-Farbe\""
 
 #: KravenVB.py
 msgid "          red"
@@ -1481,7 +1473,7 @@ msgid "only available when weather activated"
 msgstr "nur verfügbar bei aktiviertem Wetter"
 
 #: KravenVB.py
-msgid "This option is not available because weather is deactivated." 
+msgid "This option is not available because weather is deactivated."
 msgstr "Diese Option ist nicht verfügbar, da die Wetteranzeige deaktiviert ist."
 
 #: KravenVB.py
@@ -1516,4 +1508,62 @@ msgstr "Wählen Sie die Farbe der primären Infoleisten-Schrift."
 msgid "Choose the color of the secondary infobar font."
 msgstr "Wählen Sie die Farbe der sekundären Infoleisten-Schrift."
 
+#: KravenVB.py
+msgid "ANTIALIASING BRIGHTNESS ________________________________________________________________"
+msgstr "KANTENGLÄTTUNGS-HELLIGKEIT ________________________________________________________________"
 
+#: KravenVB.py
+msgid "INFOBAR ______________________________________________________________"
+msgstr "INFOLEISTE ______________________________________________________________"
+
+#: KravenVB.py
+msgid "Infobar"
+msgstr "Infoleiste"
+
+#: KravenVB.py
+msgid "ECM Infos"
+msgstr "ECM-Infos"
+
+#: KravenVB.py
+msgid "Screens"
+msgstr "Bildschirmseiten"
+
+#: KravenVB.py
+msgid "Reduce distortions (faint/blurry) or color frames around fonts in the infobar and widgets by adjusting the antialiasing brightness."
+msgstr "Verringern Sie Störungen (undeutlich/verschwommen) oder farbige Rahmen um Schriften in der Infoleiste und in Infofenstern durch Anpassen der Kantenglättungs-Helligkeit."
+
+#: KravenVB.py
+msgid "Reduce distortions (faint/blurry) or color frames around the ecm information in the infobar by adjusting the antialiasing brightness."
+msgstr "Verringern Sie Störungen (undeutlich/verschwommen) oder farbige Rahmen um die ECM-Informationen in der Infoleiste durch Anpassen der Kantenglättungs-Helligkeit."
+
+#: KravenVB.py
+msgid "Reduce distortions (faint/blurry) or color frames around fonts at top and bottom of screens by adjusting the antialiasing brightness."
+msgstr "Verringern Sie Störungen (undeutlich/verschwommen) oder farbige Rahmen um Schriften im oberen und unteren Bereich von Bildschirmseiten durch Anpassen der Kantenglättungs-Helligkeit."
+
+#: KravenVB.py
+msgid "Default Profile for Reset"
+msgstr "Standardprofil fürs Zurücksetzen"
+
+#: KravenVB.py
+msgid "Select the default profile you want to use when resetting the active profile (blue button). You can add your own default profiles under /etc/kraven_default_nn (nn<=20)."
+msgstr "Wählen Sie das Standardprofil, das Sie zum Zurücksetzen des aktiven Profils nutzen möchten (blaue Taste). Sie können Ihre eigenen Standardprofile unter /etc/kraven_default_nn (nn<=20) hinzufügen."
+
+#: KravenVB.py
+msgid "hardcoded"
+msgstr "fest programmiert"
+
+#: KravenVB.py
+msgid "0 (hardcoded)"
+msgstr "0 (fest programmiert)"
+
+#: KravenVB.py
+msgid "Choose whether you want the Kraven skin to be applied to 'Serienrecorder' or not. Activation of this option prohibits the skin selection in the SR-plugin."
+msgstr "Wählen Sie, ob der Kraven Skin auf \"Serienrecorder\" angewendet werden soll. Aktivieren dieser Option verhindert die Skin-Auswahl im SR-Plugin."
+
+#: KravenVB.py
+msgid "Icons"
+msgstr "Symbole"
+
+#: KravenVB.py
+msgid "MiniTV + Icons"
+msgstr "MiniTV + Symbole"

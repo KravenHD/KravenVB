@@ -160,6 +160,11 @@ class KravenVBWeather(Poll, Converter, object):
 				return WeatherInfo[self.type] + "°C"
 			else:
 				return ""
+		elif self.type == "currentWeatherTempWithNA":
+			if WeatherInfo[self.type] != "N/A":
+				return WeatherInfo[self.type] + "°C"
+			else:
+				return "N/A"
 		elif self.type == "currentWeatherText":
 			if WeatherInfo["currentWeatherPicon"] == '0':
 				return _('Tornado')
@@ -258,7 +263,7 @@ class KravenVBWeather(Poll, Converter, object):
 			elif WeatherInfo["currentWeatherPicon"] == '47':
 				return _('Isolated\n thundershowers')
 			elif WeatherInfo["currentWeatherPicon"] == '3200':
-				return _('Not\n available')
+				return _(' ')
 			else:
 				return "N/A"
 		elif self.type == "currentWeatherPicon":
@@ -375,7 +380,7 @@ class KravenVBWeather(Poll, Converter, object):
 			elif WeatherInfo["forecastTodayPicon"] == '47':
 				return _('Isolated\n thundershowers')
 			elif WeatherInfo["forecastTodayPicon"] == '3200':
-				return _('Not\n available')
+				return _(' ')
 			else:
 				return "N/A"
 		elif self.type == "forecastTodayPicon":
@@ -490,7 +495,7 @@ class KravenVBWeather(Poll, Converter, object):
 			elif WeatherInfo["forecastTomorrowPicon"] == '47':
 				return _('Isolated\n thundershowers')
 			elif WeatherInfo["forecastTomorrowPicon"] == '3200':
-				return _('Not\n available')
+				return _(' ')
 			else:
 				return "N/A"
 		elif self.type == "forecastTomorrowPicon":
@@ -605,7 +610,7 @@ class KravenVBWeather(Poll, Converter, object):
 			elif WeatherInfo["forecastTomorrow1Picon"] == '47':
 				return _('Isolated\n thundershowers')
 			elif WeatherInfo["forecastTomorrow1Picon"] == '3200':
-				return _('Not\n available')
+				return _(' ')
 			else:
 				return "N/A"
 		elif self.type == "forecastTomorrow1Picon":
@@ -720,7 +725,7 @@ class KravenVBWeather(Poll, Converter, object):
 			elif WeatherInfo["forecastTomorrow2Picon"] == '47':
 				return _('Isolated\n thundershowers')
 			elif WeatherInfo["forecastTomorrow2Picon"] == '3200':
-				return _('Not\n available')
+				return _(' ')
 			else:
 				return "N/A"
 		elif self.type == "forecastTomorrow2Picon":
@@ -835,7 +840,7 @@ class KravenVBWeather(Poll, Converter, object):
 			elif WeatherInfo["forecastTomorrow3Picon"] == '47':
 				return _('Isolated\n thundershowers')
 			elif WeatherInfo["forecastTomorrow3Picon"] == '3200':
-				return _('Not\n available')
+				return _(' ')
 			else:
 				return "N/A"
 		elif self.type == "forecastTomorrow3Picon":
@@ -862,6 +867,7 @@ class WeatherData:
 			"currentWeatherText": "N/A",
 			"currentWeatherPicon": "3200",
 			"currentWeatherTemp": "",
+			"currentWeatherTempWithNA": "N/A",
 			"forecastTodayCode": "(",
 			"forecastTodayText": "N/A",
 			"forecastTodayPicon": "3200",
@@ -1022,6 +1028,7 @@ class WeatherData:
 			weather = dom.getElementsByTagName('yweather:condition')[0]
 			self.WeatherInfo["currentWeatherCode"] = self.ConvertCondition(weather.getAttributeNode('code').nodeValue)
 			self.WeatherInfo["currentWeatherTemp"] = self.getTemp(weather.getAttributeNode('temp').nodeValue)
+			self.WeatherInfo["currentWeatherTempWithNA"] = self.getTemp(weather.getAttributeNode('temp').nodeValue)
 			self.WeatherInfo["currentWeatherText"] = _(str(weather.getAttributeNode('text').nodeValue))
 			self.WeatherInfo["currentWeatherPicon"] = _(str(weather.getAttributeNode('code').nodeValue))
 
