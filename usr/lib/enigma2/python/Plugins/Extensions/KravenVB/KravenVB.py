@@ -96,7 +96,7 @@ for i in range(1,21):
 		elif i==4:
 			name="4 (@Linkstar)"
 		elif i==5:
-			name="5 (@rene67)"
+			name="5 (@Rene67)"
 		profList.append((n,_(name)))
 config.plugins.KravenVB.defaultProfile = ConfigSelection(default="default", choices = profList)
 				
@@ -1257,7 +1257,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <eLabel position="830,70" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" name="," />
   <eLabel position="830,125" size="402,34" text="for VTi-Image" font="Regular; 26" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
-  <eLabel position="845,165" size="372,40" text="Version: 4.0.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
+  <eLabel position="845,165" size="372,40" text="Version: 4.0.1" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
   <widget name="helperimage" position="847,220" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,220" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,450" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="center" valign="top" transparent="1" />
@@ -1361,12 +1361,12 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("Background-Transparency"), config.plugins.KravenVB.BackgroundColorTrans, _("Choose the degree of background transparency for all screens except system menus and channellists.")))
 		list.append(getConfigListEntry(_("Listselection"), config.plugins.KravenVB.SelectionBackground, _("Choose the background color of selection bars.")))
 		list.append(getConfigListEntry(_("Listselection-Border"), config.plugins.KravenVB.SelectionBorder, _("Choose the border color of selection bars or deactivate borders completely.")))
+		list.append(getConfigListEntry(_("Listselection-Font"), config.plugins.KravenVB.SelectionFont, _("Choose the color of the font in selection bars.")))
 		list.append(getConfigListEntry(_("Progress-/Volumebar"), config.plugins.KravenVB.Progress, _("Choose the color of progress bars.")))
 		list.append(getConfigListEntry(_("Progress-Border"), config.plugins.KravenVB.Border, _("Choose the border color of progress bars.")))
 		list.append(getConfigListEntry(_("Lines"), config.plugins.KravenVB.Line, _("Choose the color of all lines. This affects dividers as well as the line in the center of some progress bars.")))
 		list.append(getConfigListEntry(_("Primary-Font"), config.plugins.KravenVB.Font1, _("Choose the color of the primary font. The primary font is used for list items, textboxes and other important information.")))
 		list.append(getConfigListEntry(_("Secondary-Font"), config.plugins.KravenVB.Font2, _("Choose the color of the secondary font. The secondary font is used for headers, labels and other additional information.")))
-		list.append(getConfigListEntry(_("Listselection-Font"), config.plugins.KravenVB.SelectionFont, _("Choose the color of the font in selection bars.")))
 		list.append(getConfigListEntry(_("Marking-Font"), config.plugins.KravenVB.MarkedFont, _("Choose the font color of marked list items.")))
 		list.append(getConfigListEntry(_("Colorbutton-Font"), config.plugins.KravenVB.ButtonText, _("Choose the font color of the color button labels.")))
 		list.append(getConfigListEntry(_(" "), ))
@@ -1510,7 +1510,7 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("MovieSelection"), config.plugins.KravenVB.MovieSelection, _("Choose from different styles for MovieSelection.")))
 		list.append(getConfigListEntry(_("SecondInfobar"), config.plugins.KravenVB.SIB, _("Choose from different styles for SecondInfobar.")))
 		list.append(getConfigListEntry(_("SerienRecorder"), config.plugins.KravenVB.SerienRecorder, _("Choose whether you want the Kraven skin to be applied to 'Serienrecorder' or not. Activation of this option prohibits the skin selection in the SR-plugin.")))
-		list.append(getConfigListEntry(_("ExtNumberZap"), config.plugins.KravenVB.NumberZapExt, _("Choose from different styles for ExtNumberZap")))
+		list.append(getConfigListEntry(_("NumberZap"), config.plugins.KravenVB.NumberZapExt, _("Choose from different styles for NumberZap")))
 		list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("ANTIALIASING BRIGHTNESS ________________________________________________________________"), ))
 		list.append(getConfigListEntry(_(" "), ))
@@ -1542,10 +1542,10 @@ class KravenVB(ConfigListScreen, Screen):
 		elif option == config.plugins.KravenVB.customProfile:
 			self.showText(33,"/etc/kraven_profile_"+str(config.plugins.KravenVB.customProfile.value))
 		elif option == config.plugins.KravenVB.defaultProfile:
-			if option.value == "0":
-				self.showText(33,_("hardcoded"))
-			else:
+			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/"+str(config.plugins.KravenVB.defaultProfile.value)+".jpg"):
 				self["helperimage"].show()
+			else:
+				self.showText(33,"/etc/kraven_default_"+str(config.plugins.KravenVB.defaultProfile.value))
 		elif option == config.plugins.KravenVB.IBtop:
 			if option.value == "infobar-x2-z1_top":
 				self.showText(50,_("4 Tuner"))
@@ -1843,7 +1843,7 @@ class KravenVB(ConfigListScreen, Screen):
 			self.skinSearchAndReplace.append(['name="KravenECMbg" value="#F1325698', 'name="KravenECMbg" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.ECMLineAntialias.value)])
 
 			##### Infobar. Transparency of infobar, color of infobar
-			self.skinSearchAndReplace.append(['name="KravenIBbg" value="#001B1775', 'name="KravenIBbg" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.calcBrightness(self.skincolorinfobarcolor,config.plugins.KravenVB.InfobarAntialias.value)])
+			self.skinSearchAndReplace.append(['name="KravenIBbg" value="#001B1775', 'name="KravenIBbg" value="#' + config.plugins.KravenVB.InfobarColorTrans.value + self.skincolorinfobarcolor])
 
 			##### CoolTV. color of infobar or color of background, if ibar invisible
 			if config.plugins.KravenVB.IBColor.value == "all-screens":
