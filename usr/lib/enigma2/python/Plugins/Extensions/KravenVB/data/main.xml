@@ -2477,16 +2477,12 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="70,525" size="80,25" text="BER:" transparent="1" />
     <widget borderWidth="1" name="ber_bar" position="160,525" size="200,25" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="ber_value" position="370,525" size="80,25" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="70,595" size="80,25" text="Status:" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="status_bar" position="160,595" size="290,25" transparent="1" />
     <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="490,490" size="150,25" text="Frequency:" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="frequency_value" position="650,490" size="150,25" transparent="1" />
     <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="490,525" size="150,25" text="Symbolrate:" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="symbolrate_value" position="650,525" size="150,25" transparent="1" />
     <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="490,560" size="150,25" text="FEC:" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="fec_value" position="650,560" size="150,25" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="490,595" size="150,25" text="Polarisation:" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="polarisation" position="650,595" size="150,25" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="lock_state" position="160,560" size="200,25" transparent="1" />
     <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="70,560" size="80,25" text="Lock:" transparent="1" />
     <widget backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />

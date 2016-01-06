@@ -1257,7 +1257,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <eLabel position="830,70" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" name="," />
   <eLabel position="830,125" size="402,34" text="for VTi-Image" font="Regular; 26" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
-  <eLabel position="845,165" size="372,40" text="Version: 4.0.1" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
+  <eLabel position="845,165" size="372,40" text="Version: 4.0.2" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" name="," />
   <widget name="helperimage" position="847,220" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,220" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,450" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="center" valign="top" transparent="1" />
@@ -2263,7 +2263,8 @@ class KravenVB(ConfigListScreen, Screen):
 					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle3.value
 				else:
 					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle2.value
-			self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
+			if self.actWeatherstyle != "netatmobar":
+				self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
 			
 			if self.actWeatherstyle == "none" and self.actClockstyle != "clock-android" and config.plugins.KravenVB.SIB.value != "sib6":
 				config.plugins.KravenVB.refreshInterval.value = "0"
@@ -2416,7 +2417,8 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SystemInfo.value + ".xml")
 
 			### Timeshift_weather-style
-			self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
+			if self.actWeatherstyle != "netatmobar":
+				self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
 
 			### Timeshift_end
 			self.appendSkinFile(self.daten + "timeshift-end.xml")
@@ -2555,9 +2557,9 @@ class KravenVB(ConfigListScreen, Screen):
 
 	def doReset(self,answer):
 		if answer is True:
-			if config.plugins.KravenVB.defaultProfile.value == "0":
+			if config.plugins.KravenVB.defaultProfile.value == "default":
 				for name in config.plugins.KravenVB.dict():
-					if name is not "customProfile":
+					if not name in ("customProfile","DebugNames"):
 						item=(getattr(config.plugins.KravenVB,name))
 						item.value=item.default
 			else:

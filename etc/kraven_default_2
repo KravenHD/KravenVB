@@ -40,7 +40,7 @@ Border|00ffffff|<type 'str'>
 ChannelSelectionServiceSize|size-24|<type 'str'>
 Primetime|[20, 15]|<type 'list'>
 RunningTextSpeedNA|not-available|<type 'str'>
-ScreensAntialias|7|<type 'int'>
+ScreensAntialias|10|<type 'int'>
 Font1|00ffffff|<type 'str'>
 Font2|00F0A30A|<type 'str'>
 Infobox|sat|<type 'str'>

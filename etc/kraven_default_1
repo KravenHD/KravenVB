@@ -18,7 +18,7 @@ WeatherStyle2|weather-left|<type 'str'>
 WeatherStyle3|none|<type 'str'>
 ClockStyle2|clock-classic2|<type 'str'>
 ClockStyle3|clock-android|<type 'str'>
-ChannelSelectionStyle2|channelselection-style-minitv3|<type 'str'>
+ChannelSelectionStyle2|channelselection-style-minitv|<type 'str'>
 ChannelSelectionTransNA|not-available|<type 'str'>
 EMCSelectionBackgroundNA|not-available|<type 'str'>
 Line|00ffffff|<type 'str'>
@@ -68,7 +68,7 @@ ECMLine3|none|<type 'str'>
 ECMLine2|VeryLong|<type 'str'>
 MarkedFont|001BA1E2|<type 'str'>
 ChannelSelectionTrans|32|<type 'str'>
-ChannelSelectionStyle|channelselection-style-minitv|<type 'str'>
+ChannelSelectionStyle|channelselection-style-minitv3|<type 'str'>
 EMCStyle|emc-minitv|<type 'str'>
 ECMFontNA|not-available|<type 'str'>
 SerienRecorder|serienrecorder|<type 'str'>
