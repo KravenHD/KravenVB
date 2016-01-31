@@ -23,7 +23,7 @@ class KravenVBMenuIconPath(Poll,Converter,object):
 		self.poll_interval = 1000
 		self.poll_enabled = True
 		self.logo = "/usr/share/enigma2/KravenVB/logo.png"
-		self.path = "/usr/share/enigma2/KravenVB-menu-icons/"
+		self.path = "/usr/share/enigma2/Kraven-menu-icons/"
 		self.type = str(type)
 		
 		self.names=[

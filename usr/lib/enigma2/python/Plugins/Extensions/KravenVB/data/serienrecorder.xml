@@ -6,6 +6,11 @@
         <convert type="ClockToText">Format:%A, %d.%m.%Y  %H:%M</convert>
     </widget>
     <widget name="video" position="938,120" size="322,182" zPosition="5" backgroundColor="transparent" />
+    <eLabel backgroundColor="#00000000" position="938,120" size="322,182" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="938,120" size="322,3" transparent="0" zPosition="6" />
+    <eLabel backgroundColor="KravenBorder2" position="938,299" size="322,3" transparent="0" zPosition="6" />
+    <eLabel backgroundColor="KravenBorder2" position="938,120" size="3,182" transparent="0" zPosition="6" />
+    <eLabel backgroundColor="KravenBorder2" position="1257,120" size="3,182" transparent="0" zPosition="6" />
     <widget name="list" position="20,150" size="880,470" zPosition="5" backgroundColor="Kravenbg2" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget name="config" position="20,120" size="870,500" zPosition="5" backgroundColor="Kravenbg2" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget name="menu_list" position="20,120" size="870,500" zPosition="5" backgroundColor="Kravenbg2" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />

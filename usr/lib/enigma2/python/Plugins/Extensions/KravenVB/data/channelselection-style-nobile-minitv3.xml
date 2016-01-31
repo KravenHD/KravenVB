@@ -1,12 +1,12 @@
 <!-- /* ChannelSelection - Nobile Preview -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
-    <widget backgroundColor="Kravenbg2" scrollbarMode="showNever" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="yellow" name="list" position="17,287" serviceInfoFont="Regular;20" serviceItemHeight="28" serviceNameFont="Regular;20" serviceNumberFont="Regular;20" size="439,364" transparent="1" />
+    <widget backgroundColor="Kravenbg2" scrollbarMode="showNever" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" name="list" position="17,287" serviceInfoFont="Regular;20" serviceItemHeight="28" serviceNameFont="Regular;20" serviceNumberFont="Regular;20" size="439,364" transparent="1" />
     <widget source="ServiceEvent" render="KravenVBPig" position="41,55" size="391,220" zPosition="3" backgroundColor="transparent" />
     <eLabel backgroundColor="#00000000" position="41,55" size="391,220" transparent="0" zPosition="2" />
-    <eLabel backgroundColor="#001F1F1F" position="41,55" size="391,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="#001F1F1F" position="41,272" size="391,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="#001F1F1F" position="41,55" size="3,220" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="#001F1F1F" position="429,55" size="3,220" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="41,55" size="391,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="41,272" size="391,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="41,55" size="3,220" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="429,55" size="3,220" transparent="0" zPosition="4" />
     <widget source="ServiceEvent" render="Label" position="475,60" size="446,27" font="Regular;22" halign="left" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont2">
       <convert type="KravenVBEventName">Name</convert>
     </widget>
@@ -60,9 +60,9 @@
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="297,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="547,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="797,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <ePixmap pixmap="KravenVB/icons-light/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/icons-light/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/icons-light/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="ChannelSelection - Nobile Preview" position="42,0" />-->
   </screen>
   <!-- ChannelSelection Nobile Mini TV */-->

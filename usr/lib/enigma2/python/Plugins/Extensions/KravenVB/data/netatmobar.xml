@@ -42,26 +42,26 @@
       <convert type="Netatmo">station.name</convert>
     </widget>
     <widget backgroundColor="KravenIBbg" font="Regular;17" foregroundColor="KravenIBFont1" halign="center" position="98,4" render="Label" size="100,25" source="session.CurrentService" transparent="1" zPosition="10">
-      <convert type="Netatmo">indoor.module_name</convert>
+      <convert type="Netatmo">station.module_name</convert>
     </widget>
     <eLabel text="Temp:" position="200,4" size="50,25" zPosition="5" halign="left" font="Regular; 17" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
     <widget backgroundColor="KravenIBbg" font="Regular;17" foregroundColor="KravenIBFont1" position="257,4" render="Label" size="60,30" source="session.CurrentService" transparent="1" zPosition="10">
-      <convert type="Netatmo">indoor.temperature</convert>
+      <convert type="Netatmo">station.temperature</convert>
     </widget>
     <eLabel text="Luftf:" position="317,4" size="55,25" zPosition="5" halign="left" font="Regular; 17" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
     <widget backgroundColor="KravenIBbg" font="Regular;17" foregroundColor="KravenIBFont1" position="367,4" render="Label" size="40,30" source="session.CurrentService" transparent="1" zPosition="10">
-      <convert type="Netatmo">indoor.humidity</convert>
+      <convert type="Netatmo">station.humidity</convert>
     </widget>
     <widget backgroundColor="KravenIBbg" font="Regular;17" foregroundColor="KravenIBFont1" halign="center" position="98,30" render="Label" size="100,25" source="session.CurrentService" transparent="1" zPosition="10">
-      <convert type="Netatmo">outdoor.module_name</convert>
+      <convert type="Netatmo">module.module_name</convert>
     </widget>
     <eLabel text="Temp:" position="200,30" size="50,25" zPosition="5" halign="left" font="Regular; 17" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
     <widget backgroundColor="KravenIBbg" font="Regular;17" foregroundColor="KravenIBFont1" position="257,30" render="Label" size="60,25" source="session.CurrentService" transparent="1" zPosition="10">
-      <convert type="Netatmo">outdoor.temperature</convert>
+      <convert type="Netatmo">module.temperature</convert>
     </widget>
     <eLabel text="Luftf:" position="317,30" size="50,25" zPosition="5" halign="left" font="Regular; 17" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
     <widget backgroundColor="KravenIBbg" font="Regular;17" foregroundColor="KravenIBFont1" position="367,30" render="Label" size="40,25" source="session.CurrentService" transparent="1" zPosition="10">
-      <convert type="Netatmo">outdoor.humidity</convert>
+      <convert type="Netatmo">module.humidity</convert>
     </widget>
     <widget alphatest="blend" pixmaps="co2_1.png,co2_2.png,co2_3.png,co2_4.png,co2_5.png,co2_6.png,co2_7.png,co2_8.png,co2_9.png,co2_10.png" pixtype="co2" plugin_pixmaps="images" position="58,25" render="NetatmoPixmap" size="30,30" source="session.CurrentService" zPosition="10">
     </widget>

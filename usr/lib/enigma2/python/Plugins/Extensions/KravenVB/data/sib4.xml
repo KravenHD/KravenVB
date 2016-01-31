@@ -1,9 +1,9 @@
   <widget source="session.VideoPicture" render="KravenVBPig3" position="40,70" size="288,162" zPosition="3" backgroundColor="transparent" />
   <eLabel backgroundColor="#00000000" position="40,70" size="288,162" transparent="0" zPosition="2" />
-  <eLabel backgroundColor="#001F1F1F" position="40,70" size="288,3" transparent="0" zPosition="4" />
-  <eLabel backgroundColor="#001F1F1F" position="40,229" size="288,3" transparent="0" zPosition="4" />
-  <eLabel backgroundColor="#001F1F1F" position="40,70" size="3,162" transparent="0" zPosition="4" />
-  <eLabel backgroundColor="#001F1F1F" position="325,70" size="3,162" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="40,70" size="288,3" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="40,229" size="288,3" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="40,70" size="3,162" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="325,70" size="3,162" transparent="0" zPosition="4" />
   <widget backgroundColor="Kravenbg2" font="Regular2; 30" foregroundColor="KravenFont2" halign="left" noWrap="1" position="368,86" render="Label" size="872,38" source="session.CurrentService" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBExtServiceInfo">ServiceName</convert>
   </widget>

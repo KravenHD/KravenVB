@@ -1,9 +1,9 @@
 Package: enigma2-plugin-skin-kravenvb
-Version: 4.0.2
+Version: 4.2.0
 Section: misc
 Priority: optional
 Architecture: all
-Depends: python-imaging, enigma2-plugin-systemplugins-mphelp
+Depends: python-imaging, python-subprocess, python-requests, python-xml, enigma2-plugin-systemplugins-mphelp
 Maintainer: Team Kraven
 Description: Skin for Enigma2
 Source:

@@ -7,11 +7,11 @@
     <convert type="KravenVBLayoutInfo">FlashInfo,Free</convert>
   </widget>
   <eLabel text="HDD:" position="270,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2" />
-  <widget source="session.CurrentService" render="Label" font="Regular;16" position="308,16" size="160,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+  <widget source="session.CurrentService" render="Label" font="Regular;16" position="308,16" size="170,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
     <convert type="KravenVBLayoutInfo">HddInfo,Free</convert>
   </widget>
-  <eLabel text="Video:" position="480,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2" />
-  <widget source="session.CurrentService" render="Label" font="Regular;16" position="525,16" size="260,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+  <eLabel text="Video:" position="490,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2" />
+  <widget source="session.CurrentService" render="Label" font="Regular;16" position="535,16" size="250,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
     <convert type="KravenVBExtraInfo">VideoInfo</convert>
   </widget>
   <eLabel text="SYS:" position="796,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2" />

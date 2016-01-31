@@ -20,43 +20,43 @@
     <convert type="ClockToText">Default</convert>
   </widget>
   <eLabel position="438,660" size="581,1" backgroundColor="KravenLine" />
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_rec_off.png" position="515,673" size="43,22" zPosition="2" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_rec_on.png" position="515,673" render="Pixmap" size="43,22" source="session.RecordState" zPosition="5">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="515,673" size="43,22" zPosition="2" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="515,673" render="Pixmap" size="43,22" source="session.RecordState" zPosition="5">
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hbbtv_off.png" position="570,673" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hbbtv_on.png" position="570,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hbbtv_off.png" position="570,673" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hbbtv_on.png" position="570,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
     <convert type="KravenVBServiceInfoEX">HasHBBTV</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_sub_off.png" position="625,673" size="43,22" zPosition="1" />
-  <widget source="session.CurrentService" render="Pixmap" pixmap="KravenVB/icons-light/infobar/ico_sub_on.png" position="625,673" size="43,22" zPosition="2" alphatest="blend">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_sub_off.png" position="625,673" size="43,22" zPosition="1" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_sub_on.png" position="625,673" size="43,22" zPosition="2" alphatest="blend">
     <convert type="VServiceInfo">SubtitlesAvailable</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_txt_off.png" position="680,673" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_txt_on.png" position="680,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_txt_off.png" position="680,673" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_txt_on.png" position="680,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
     <convert type="ServiceInfo">HasTelext</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_dolby_off.png" position="735,673" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_dolby_on.png" position="735,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="735,673" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="735,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
     <convert type="ServiceInfo">IsMultichannel</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_format_off.png" position="790,673" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_format_on.png" position="790,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="790,673" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_on.png" position="790,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
     <convert type="ServiceInfo">IsWidescreen</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hd_off.png" position="845,673" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_hd_on.png" position="845,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_off.png" position="845,673" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_on.png" position="845,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
     <convert type="ServiceInfo">VideoWidth</convert>
     <convert type="ValueRange">721,1980</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_crypt_off.png" position="900,673" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/icons-light/infobar/ico_crypt_on.png" position="900,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_crypt_off.png" position="900,673" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_crypt_on.png" position="900,673" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
     <convert type="ServiceInfo">IsCrypted</convert>
     <convert type="ConditionalShowHide" />
   </widget>

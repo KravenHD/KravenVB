@@ -1,13 +1,13 @@
   <widget source="session.VideoPicture" render="KravenVBPig3" position="40,75" size="256,144" zPosition="3" backgroundColor="transparent" />
   <eLabel backgroundColor="#00000000" position="40,75" size="256,144" transparent="0" zPosition="2" />
-  <eLabel backgroundColor="#001F1F1F" position="40,75" size="256,3" transparent="0" zPosition="4" />
-  <eLabel backgroundColor="#001F1F1F" position="40,216" size="256,3" transparent="0" zPosition="4" />
-  <eLabel backgroundColor="#001F1F1F" position="40,75" size="3,144" transparent="0" zPosition="4" />
-  <eLabel backgroundColor="#001F1F1F" position="293,75" size="3,144" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="40,75" size="256,3" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="40,216" size="256,3" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="40,75" size="3,144" transparent="0" zPosition="4" />
+  <eLabel backgroundColor="KravenBorder2" position="293,75" size="3,144" transparent="0" zPosition="4" />
   <widget backgroundColor="Kravenbg2" font="Regular2; 30" foregroundColor="KravenFont1" halign="left" noWrap="1" position="320,70" render="Label" size="420,38" source="session.CurrentService" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBExtServiceInfo">ServiceName</convert>
   </widget>
-  <widget backgroundColor="Kravenbg2" font="Regular2; 28" foregroundColor="KravenFont1" halign="left" valign="top" position="320,114" render="Label" size="420,72" source="session.Event_Now" transparent="1">
+  <widget backgroundColor="Kravenbg2" font="Regular2; 28" foregroundColor="KravenFont1" halign="left" noWrap="1" valign="top" position="320,114" render="Label" size="420,72" source="session.Event_Now" transparent="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="Kravenbg2" font="Regular2; 26" foregroundColor="KravenFont1" halign="left" noWrap="1" position="320,189" render="Label" size="420,33" source="session.Event_Now" transparent="1">

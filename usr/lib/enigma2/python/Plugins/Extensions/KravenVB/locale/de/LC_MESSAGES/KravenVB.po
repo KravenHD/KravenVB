@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2016-01-03 13:07+0100\n"
+"PO-Revision-Date: 2016-01-30 21:52+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -603,16 +603,32 @@ msgid "Weather"
 msgstr "Wetter"
 
 #: KravenVB.py
+msgid "Weather2"
+msgstr "Wetter2"
+
+#: KravenVB.py
 msgid "standard"
-msgstr "standard"
+msgstr "Standard"
 
 #: KravenVB.py
 msgid "standard big"
-msgstr "standard groß"
+msgstr "Standard groß"
+
+#: KravenVB.py
+msgid "analog"
+msgstr "Analog"
+
+#: KravenVB.py
+msgid "android"
+msgstr "Android"
+
+#: KravenVB.py
+msgid "flip"
+msgstr "Flip"
 
 #: KravenVB.py
 msgid "colored"
-msgstr "farbig"
+msgstr "Farbig"
 
 #: KravenVB.py
 msgid "colorfull"
@@ -1113,12 +1129,8 @@ msgid "Choose the font color of the color button labels."
 msgstr "Wählen Sie die Schriftfarbe der Farbtastenbeschriftungen."
 
 #: KravenVB.py
-msgid "Specify the weather ID for your location. You can find it at https://weather.yahoo.com. Just enter your ZIP or city and get your weather. The number at the end of the URL is your ID."
-msgstr "Geben Sie die Wetter-ID für Ihre Position an. Sie finden Sie unter https://weather.yahoo.com. Geben Sie Ihre PLZ oder Stadt ein und rufen Sie Ihr Wetter ab. Die Zahl am Ende der URL ist Ihre ID."
-
-#: KravenVB.py
-msgid "Choose the frequency of loading weather data from the internet. Please note that it can take some time to show the weather after a reboot."
-msgstr "Wählen Sie die Häufigkeit für das Laden von Wetterdaten aus dem Internet. Bitte beachten Sie, dass es nach einem Neustart einige Zeit dauern kann, bis das Wetter angezeigt wird."
+msgid "Choose the frequency of loading weather data from the internet."
+msgstr "Wählen Sie die Häufigkeit für das Laden von Wetterdaten aus dem Internet."
 
 #: KravenVB.py
 msgid "Choose between graphical weather symbols and Meteo symbols."
@@ -1301,8 +1313,8 @@ msgid "Choose from different styles for SecondInfobar."
 msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"SecondInfoBar\"."
 
 #: KravenVB.py
-msgid "Choose from different styles for ExtNumberZap"
-msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"ExtNumberZap\""
+msgid "Choose from different styles for NumberZap."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"NumberZap\"."
 
 #: KravenVB.py
 msgid "Activate or deactivate small screen names for debugging purposes."
@@ -1545,8 +1557,8 @@ msgid "Default Profile for Reset"
 msgstr "Standardprofil fürs Zurücksetzen"
 
 #: KravenVB.py
-msgid "Select the default profile you want to use when resetting the active profile (blue button). You can add your own default profiles under /etc/kraven_default_nn (nn<=20)."
-msgstr "Wählen Sie das Standardprofil, das Sie zum Zurücksetzen des aktiven Profils nutzen möchten (blaue Taste). Sie können Ihre eigenen Standardprofile unter /etc/kraven_default_nn (nn<=20) hinzufügen."
+msgid "Select the default profile you want to use when resetting the active profile (blue button). You can add your own default profiles under /etc/enigma2/kraven_default_n (n<=20)."
+msgstr "Wählen Sie das Standardprofil, das Sie zum Zurücksetzen des aktiven Profils nutzen möchten (blaue Taste). Sie können Ihre eigenen Standardprofile unter /etc/enigma2/kraven_default_n (n<=20) hinzufügen."
 
 #: KravenVB.py
 msgid "hardcoded"
@@ -1567,3 +1579,143 @@ msgstr "Symbole"
 #: KravenVB.py
 msgid "MiniTV + Icons"
 msgstr "MiniTV + Symbole"
+
+#: KravenVB.py
+msgid "only available for Menu with Icons"
+msgstr "nur verfügbar für Menüs mit Symbolen"
+
+#: KravenVB.py
+msgid "Choose from different icon sets for the menu screens. Many thanks to rennmaus and kleiner.teufel for their icon set."
+msgstr "Wählen Sie einen von verschiedenen Symbol-Sätzen für die System-Menüs. Vielen Dank an rennmaus und kleiner.teufel für ihren Symbol-Satz."
+
+#: KravenVB.py
+msgid "This option is not available for the selected menu style."
+msgstr "Diese Option ist für die ausgewählte Darstellungs-Variante der Menüs nicht verfügbar."
+
+#: KravenVB.py
+msgid "MiniTV-Border"
+msgstr "MiniTV-Rahmen"
+
+#: KravenVB.py
+msgid "Choose the border color of MiniTV's."
+msgstr "Wählen Sie die Rahmenfarbe für MiniTV's."
+
+#: KravenVB.py
+msgid "Choose whether you want the Kraven skin to be applied to 'MediaPortal' or not. To remove it again, you must deactivate it here and activate another skin in 'MediaPortal'."
+msgstr "Wählen Sie, ob der Kraven Skin auf \"MediaPortal\" angewendet werden soll. Um ihn wieder zu entfernen, müssen Sie ihn hier deaktivieren und in \"MediaPortal\" einen anderen Skin aktivieren."
+
+#: KravenVB.py
+msgid "MediaPortal not installed"
+msgstr "MediaPortal nicht installiert"
+
+#: KravenVB.py
+msgid "This option is not available because 'MediaPortal' is not installed."
+msgstr "Diese Option ist nicht verfügbar, da \"MediaPortal\" nicht installiert ist."
+
+#: KravenVB.py
+msgid "'not available'-Font"
+msgstr "'nicht verfügbar'-Schrift"
+
+#: KravenVB.py
+msgid "Choose the font color of channels that are unavailable at the moment."
+msgstr "Wählen Sie die Schriftfarbe von Kanälen, die derzeit nicht verfügbar sind."
+
+#: KravenVB.py
+msgid "Choose from different options to display the PVR state."
+msgstr "Wählen Sie eine von verschiedenen Varianten für die Darstellung des PVR-Zustands."
+
+#: KravenVB.py
+msgid "center big"
+msgstr "mittig groß"
+
+#: KravenVB.py
+msgid "center small"
+msgstr "mittig klein"
+
+#: KravenVB.py
+msgid "left small"
+msgstr "links klein"
+
+#: KravenVB.py
+msgid "Search by"
+msgstr "Suchen über"
+
+#: KravenVB.py
+msgid "Search String"
+msgstr "Suchbegriff"
+
+#: KravenVB.py
+msgid "Choose from different servers for the weather data."
+msgstr "Wählen Sie einen von verschiedenen Servern für die Wetterdaten."
+
+#: KravenVB.py
+msgid "Choose from different options to specify your location."
+msgstr "Wählen Sie eine von verschiedenen Varianten, um Ihren Standort anzugeben."
+
+#: KravenVB.py
+msgid "Specify any search string for your location (zip/city/district/state single or combined). Press OK to use the virtual keyboard. Step up or down in the menu to start the search."
+msgstr "Geben Sie einen beliebigen Suchbegriff für Ihren Standort ein (PLZ/Stadt/Ortsteil/Land einzeln oder kombiniert). Drücken Sie OK, um die virtuelle Tastatur zu nutzen. Gehen Sie im Menü hoch oder runter, um die Suche zu starten."
+
+#: KravenVB.py
+msgid "Specify the GM code for your location. You can find it at https://weather.codes. Press OK to use the virtual keyboard. Step up or down in the menu to start the search."
+msgstr "Geben Sie den GM-Code für Ihren Standort an. Sie finden diesen unter https://weather.codes. Drücken Sie OK, um die virtuelle Tastatur zu nutzen. Gehen Sie im Menü hoch oder runter, um die Suche zu starten."
+
+#: KravenVB.py
+msgid "Specify the language for the weather output."
+msgstr "Wählen Sie die Sprache für die Wetter-Anzeige."
+
+#: KravenVB.py
+msgid "Enter the search string for your location:"
+msgstr "Geben Sie den Suchbegriff für Ihren Standort ein:"
+
+#: KravenVB.py
+msgid "Enter the GM code for your location:"
+msgstr "Geben Sie den GM-Code für Ihren Standort ein:"
+
+#: KravenVBYWeather.py
+msgid "TU"
+msgstr "DI"
+
+#: KravenVBYWeather.py
+msgid "WE"
+msgstr "MI"
+
+#: KravenVBYWeather.py
+msgid "TH"
+msgstr "DO"
+
+#: KravenVBYWeather.py
+msgid "SU"
+msgstr "SO"
+
+#: KravenVBYWeather.py
+msgid "No data for IP"
+msgstr "Keine Daten für IP"
+
+#: KravenVBYWeather.py
+msgid ""
+"\n"
+"\n"
+"No data for search string,\n"
+"fallback to IP"
+msgstr ""
+"\n"
+"\n"
+"Keine Daten für Suchbegriff,\n"
+"Rückgriff auf IP"
+
+#: KravenVBYWeather.py
+msgid ""
+"\n"
+"\n"
+"No data for GM code,\n"
+"fallback to IP"
+msgstr ""
+"\n"
+"\n"
+"Keine Daten für GM-Code,\n"
+"Rückgriff auf IP"
+
+#: KravenVBYWeather.py
+msgid "No Accu ID found"
+msgstr "Keine Accu-ID gefunden"

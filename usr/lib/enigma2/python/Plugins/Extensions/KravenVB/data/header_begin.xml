@@ -19,6 +19,7 @@
     <color name="Kravenbg2" value="#00000000" />
     <color name="Kravenbg3" value="#00000000" />
     <color name="Kravenbg4" value="#00000000" />
+    <color name="Kravenbg5" value="#00000000" />
     <color name="KravenIBbg" value="#001B1775" />
     <color name="KravenIBbg2" value="#00000000" />
     <color name="KravenIBbg3" value="#00000000" />
@@ -34,6 +35,7 @@
     <color name="KravenButton" value="#00ffffff" />
     <color name="KravenIcon" value="#00fff0e0" />
     <color name="KravenBorder" value="#00ffffff" />
+    <color name="KravenBorder2" value="#003F3F3F" />
     <color name="KravenLine" value="#00ffffff" />
     <color name="KravenProgress" value="#00C3461B" />
     <color name="KravenSelection" value="#000050EF" />
@@ -42,6 +44,7 @@
     <color name="KravenEMCSelFont" value="#00ffffff" />
     <color name="KravenMarked" value="#00ffffff" />
     <color name="KravenECM" value="#00ffffff" />
+	<color name="KravenNotAvailable" value="#00FFEA04" />
     <color name="KravenPrime" value="#0070AD11" />
     <color name="KravenMeteo" value="#00fff0e0" />
     <color name="selectedFG" value="#00ffffff" />
@@ -146,6 +149,8 @@
     <font filename="KravenVB/fonts/OpenSans-Regular.ttf" name="Regular" scale="95" />
     <font filename="KravenVB/fonts/OpenSans-Semibold.ttf" name="Regular2" scale="95" />
     <font filename="KravenVB/fonts/meteocons.ttf" name="Meteo" scale="100" />
+	<font filename="KravenVB/fonts/owfont-regular.ttf" name="Meteo2" scale="100" />
+	<font filename="KravenVB/fonts/accuweather_tbx.otf" name="Meteo3" scale="100" />
   </fonts>
   <subtitles>
     <sub font="Regular;30" name="Subtitle_TTX" shadowColor="shadow" shadowOffset="3,3" />
