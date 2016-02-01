@@ -8,73 +8,73 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2016-02-01 11:07+0100\n"
+"PO-Revision-Date: 2016-02-01 20:20+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.7.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "N-NE"
 msgstr "N-NO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "NE"
 msgstr "NO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "E-NE"
 msgstr "O-NO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "E"
 msgstr "O"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "E-SE"
 msgstr "O-SO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "SE"
 msgstr "SO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "S-SE"
 msgstr "S-SO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Mon"
 msgstr "MO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Tue"
 msgstr "DI"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Wed"
 msgstr "MI"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Thu"
 msgstr "DO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Fri"
 msgstr "FR"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Sat"
 msgstr "SA"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Sun"
 msgstr "SO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Tropical\n"
 " storm"
@@ -82,11 +82,11 @@ msgstr ""
 "Tropischer\n"
 " Sturm"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Hurricane"
 msgstr "Hurrikan"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Severe\n"
 " thunderstorms"
@@ -94,11 +94,11 @@ msgstr ""
 "Schwere\n"
 " Gewitter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Thunderstorms"
 msgstr "Gewitter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Mixed rain\n"
 " and snow"
@@ -106,7 +106,7 @@ msgstr ""
 "Regen\n"
 " und Schnee"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Mixed rain\n"
 " and sleet"
@@ -114,7 +114,7 @@ msgstr ""
 "Regen\n"
 " und Schneeregen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Mixed snow\n"
 " and sleet"
@@ -122,7 +122,7 @@ msgstr ""
 "Schnee\n"
 " und Graupel"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Freezing\n"
 " drizzle"
@@ -130,31 +130,31 @@ msgstr ""
 "Frierender\n"
 " Nieselregen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Drizzle"
 msgstr "Nieselregen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Freezing\n"
 " rain"
 msgstr "Eisregen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Showers"
 msgstr "Regen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Rain"
 msgstr "Regen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Snow\n"
 " flurries"
 msgstr "Schneetreiben"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Light\n"
 " snow showers"
@@ -162,57 +162,57 @@ msgstr ""
 "Leichte\n"
 " Schneeschauer"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Blowing\n"
 " snow"
 msgstr "Schneetreiben"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Snow"
 msgstr "Schnee"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Hail"
 msgstr "Hagel"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Sleet"
 msgstr "Schneeregen"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Dust"
 msgstr "Staub"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Foggy"
 msgstr "Nebelig"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Haze"
 msgstr "Nebel"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Smoky"
 msgstr "Qualmig"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Blustery"
 msgstr "Stürmisch"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Windy"
 msgstr "Windig"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Cold"
 msgstr "Kalt"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Cloudy"
 msgstr "Wolkig"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Mostly\n"
 " cloudy"
@@ -220,7 +220,7 @@ msgstr ""
 "Überwiegend\n"
 " bewölkt"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Partly\n"
 " cloudy"
@@ -228,19 +228,19 @@ msgstr ""
 "Teilweise\n"
 " bewölkt"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Clear"
 msgstr "Klar"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Sunny"
 msgstr "Sonnig"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Fair"
 msgstr "Heiter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Mixed rain\n"
 " and hail"
@@ -248,11 +248,11 @@ msgstr ""
 "Regen\n"
 " und Hagel"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Hot"
 msgstr "Heiss"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Isolated\n"
 " thunderstorms"
@@ -260,7 +260,7 @@ msgstr ""
 "Vereinzelte\n"
 " Gewitter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Scattered\n"
 " thunderstorms"
@@ -268,7 +268,7 @@ msgstr ""
 "Vereinzelte\n"
 " Gewitter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Scattered\n"
 " showers"
@@ -276,13 +276,13 @@ msgstr ""
 "Vereinzelte\n"
 " Regenschauer"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Heavy snow"
 msgstr ""
 "Starker\n"
 " Schneefall"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Scattered\n"
 " snow showers"
@@ -290,15 +290,15 @@ msgstr ""
 "Vereinzelte\n"
 " Schneeschauer"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Thundershowers"
 msgstr "Gewitter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "Snow showers"
 msgstr "Schneeschauer"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Isolated\n"
 " thundershowers"
@@ -306,7 +306,7 @@ msgstr ""
 "Vereinzelt\n"
 " Gewitter"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "Not\n"
 " available"
@@ -314,15 +314,15 @@ msgstr ""
 "Nicht\n"
 " verfügbar"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid " from "
 msgstr " aus "
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "% humidity"
 msgstr "% Luftfeuchte"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ", feels "
 msgstr ", gefühlt "
 
@@ -1660,27 +1660,27 @@ msgstr "Geben Sie den Suchbegriff für Ihren Standort ein:"
 msgid "Enter the GM code for your location:"
 msgstr "Geben Sie den GM-Code für Ihren Standort ein:"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "TU"
 msgstr "DI"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "WE"
 msgstr "MI"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "TH"
 msgstr "DO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "SU"
 msgstr "SO"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid "No data for IP"
 msgstr "Keine Daten für IP"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "\n"
 "\n"
@@ -1692,7 +1692,7 @@ msgstr ""
 "Keine Daten für Suchbegriff,\n"
 "Rückgriff auf IP"
 
-#: KravenVBYWeather.py
+#: KravenVBWeather.py
 msgid ""
 "\n"
 "\n"
@@ -1704,11 +1704,11 @@ msgstr ""
 "Keine Daten für GM-Code,\n"
 "Rückgriff auf IP"
 
-#: KravenVBYWeather.py
+#: KravenVB.py
 msgid "No Accu ID found"
 msgstr "Keine Accu-ID gefunden"
 
-#: KravenVBYWeather.py
+#: KravenVB.py
 msgid "Choose the font color of android-clock temperature."
 msgstr "Wählen Sie die Schriftfarbe für die Temperatur-Anzeige der Android-Uhr."
 
