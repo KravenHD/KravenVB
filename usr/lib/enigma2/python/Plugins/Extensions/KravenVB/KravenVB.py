@@ -331,6 +331,8 @@ config.plugins.KravenVB.PrimetimeFont = ConfigSelection(default="0070AD11", choi
 
 config.plugins.KravenVB.ButtonText = ConfigSelection(default="00ffffff", choices = ColorList)
 
+config.plugins.KravenVB.Android = ConfigSelection(default="00000000", choices = ColorList)
+
 config.plugins.KravenVB.Border = ConfigSelection(default="00ffffff", choices = ColorList)
 
 config.plugins.KravenVB.Progress = ConfigSelection(default="progress", choices = [
@@ -519,10 +521,6 @@ config.plugins.KravenVB.ChannelSelectionServiceSize = ConfigSelection(default="s
 				("size-30", _("30"))
 				])
 
-config.plugins.KravenVB.ChannelSelectionServiceSizeNA = ConfigSelection(default="not-available", choices = [
-				("not-available", _("not available for Nobile-Styles"))
-				])
-
 config.plugins.KravenVB.ChannelSelectionInfoSize = ConfigSelection(default="size-24", choices = [
 				("size-16", _("16")),
 				("size-18", _("18")),
@@ -534,8 +532,22 @@ config.plugins.KravenVB.ChannelSelectionInfoSize = ConfigSelection(default="size
 				("size-30", _("30"))
 				])
 
-config.plugins.KravenVB.ChannelSelectionInfoSizeNA = ConfigSelection(default="not-available", choices = [
-				("not-available", _("not available for Nobile-Styles"))
+config.plugins.KravenVB.ChannelSelectionServiceSize1 = ConfigSelection(default="size-20", choices = [
+				("size-16", _("16")),
+				("size-18", _("18")),
+				("size-20", _("20")),
+				("size-22", _("22")),
+				("size-24", _("24")),
+				("size-26", _("26"))
+				])
+
+config.plugins.KravenVB.ChannelSelectionInfoSize1 = ConfigSelection(default="size-20", choices = [
+				("size-16", _("16")),
+				("size-18", _("18")),
+				("size-20", _("20")),
+				("size-22", _("22")),
+				("size-24", _("24")),
+				("size-26", _("26"))
 				])
 
 config.plugins.KravenVB.ChannelSelectionServiceNA = ConfigSelection(default="00FFEA04", choices = ColorList)
@@ -729,10 +741,6 @@ config.plugins.KravenVB.ClockStyleNA = ConfigSelection(default="not-available", 
 				("not-available", _("not available in this style"))
 				])
 
-config.plugins.KravenVB.AnalogStyleNA = ConfigSelection(default="not-available", choices = [
-				("not-available", _("only available for Clock Analog"))
-				])
-
 config.plugins.KravenVB.IBtopNA = ConfigSelection(default="not-available", choices = [
 				("not-available", _("not available in this style"))
 				])
@@ -891,7 +899,7 @@ class KravenVB(ConfigListScreen, Screen):
     <convert type="ClockToText">Default</convert>
   </widget>
   <eLabel position="830,80" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" />
-  <eLabel position="845,139" size="372,40" text="Version: 4.2.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+  <eLabel position="845,139" size="372,40" text="Version: 4.2.3" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" />
   <widget name="helperimage" position="847,210" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,210" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,440" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="left" valign="top" transparent="1" />
@@ -1058,9 +1066,11 @@ class KravenVB(ConfigListScreen, Screen):
 			self.actClockstyle="none"
 		if self.actClockstyle == "clock-analog":
 			list.append(getConfigListEntry(_("Analog-Clock-Color"), config.plugins.KravenVB.AnalogStyle, _("Choose from different colors for the analog type clock in the infobar.")))
-		else:
-			list.append(getConfigListEntry(_("Analog-Clock-Color"), config.plugins.KravenVB.AnalogStyleNA, _("This option is not available for the selected clock type.")))
+		if self.actClockstyle == "clock-android":
+			list.append(getConfigListEntry(_("Android-Temp-Color"), config.plugins.KravenVB.Android, _("Choose the font color of android-clock temperature.")))
 		list.append(getConfigListEntry(_("System-Infos"), config.plugins.KravenVB.SystemInfo, _("Choose from different additional windows with system informations or deactivate them completely.")))
+		if not self.actClockstyle in ("clock-analog","clock-android"):
+			list.append(getConfigListEntry(_(" "), ))
 		list.append(getConfigListEntry(_("ECM INFOS ____________________________________________________________"), config.plugins.KravenVB.About, _(" ")))
 		list.append(getConfigListEntry(_(" "), ))
 		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
@@ -1134,8 +1144,8 @@ class KravenVB(ConfigListScreen, Screen):
 		else:
 			list.append(getConfigListEntry(_("Channellist-Transparenz"), config.plugins.KravenVB.ChannelSelectionTransNA, _("This option is not available for MiniTV, Preview and DualTV channellist styles.")))
 		if self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
-			list.append(getConfigListEntry(_("Servicenumber/-name Fontsize"), config.plugins.KravenVB.ChannelSelectionServiceSizeNA, _("This option is not available for Nobile-Styles.")))
-			list.append(getConfigListEntry(_("Serviceinfo Fontsize"), config.plugins.KravenVB.ChannelSelectionInfoSizeNA, _("This option is not available for Nobile-Styles.")))
+			list.append(getConfigListEntry(_("Servicenumber/-name Fontsize"), config.plugins.KravenVB.ChannelSelectionServiceSize1, _("Choose the font size of channelnumber and channelname.")))
+			list.append(getConfigListEntry(_("Serviceinfo Fontsize"), config.plugins.KravenVB.ChannelSelectionInfoSize1, _("Choose the font size of serviceinformation.")))
 		else:
 			list.append(getConfigListEntry(_("Servicenumber/-name Fontsize"), config.plugins.KravenVB.ChannelSelectionServiceSize, _("Choose the font size of channelnumber and channelname.")))
 			list.append(getConfigListEntry(_("Serviceinfo Fontsize"), config.plugins.KravenVB.ChannelSelectionInfoSize, _("Choose the font size of serviceinformation.")))
@@ -1273,6 +1283,12 @@ class KravenVB(ConfigListScreen, Screen):
 		elif option == config.plugins.KravenVB.ChannelSelectionInfoSize:
 			size=config.plugins.KravenVB.ChannelSelectionInfoSize.value
 			self.showText(int(size[-2:]),size[-2:]+" Pixel")
+		elif option == config.plugins.KravenVB.ChannelSelectionServiceSize1:
+			size=config.plugins.KravenVB.ChannelSelectionServiceSize1.value
+			self.showText(int(size[-2:]),size[-2:]+" Pixel")
+		elif option == config.plugins.KravenVB.ChannelSelectionInfoSize1:
+			size=config.plugins.KravenVB.ChannelSelectionInfoSize1.value
+			self.showText(int(size[-2:]),size[-2:]+" Pixel")
 		elif option in (config.plugins.KravenVB.InfobarAntialias,config.plugins.KravenVB.ECMLineAntialias,config.plugins.KravenVB.ScreensAntialias):
 			if option.value == 10:
 				self.showText(50,"+/- 0%")
@@ -1324,6 +1340,8 @@ class KravenVB(ConfigListScreen, Screen):
 			self.showColor(self.hexRGB(config.plugins.KravenVB.MarkedFont.value))
 		elif option == config.plugins.KravenVB.ButtonText:
 			self.showColor(self.hexRGB(config.plugins.KravenVB.ButtonText.value))
+		elif option == config.plugins.KravenVB.Android:
+			self.showColor(self.hexRGB(config.plugins.KravenVB.Android.value))
 		elif option == config.plugins.KravenVB.ChannelSelectionServiceNA:
 			self.showColor(self.hexRGB(config.plugins.KravenVB.ChannelSelectionServiceNA.value))
 		elif option == config.plugins.KravenVB.InfobarColor:
@@ -1599,6 +1617,7 @@ class KravenVB(ConfigListScreen, Screen):
 		self.skinSearchAndReplace.append(['name="KravenECM" value="#00ffffff', 'name="KravenECM" value="#' + config.plugins.KravenVB.ECMFont.value])
 		self.skinSearchAndReplace.append(['name="KravenName" value="#00ffffff', 'name="KravenName" value="#' + config.plugins.KravenVB.ChannelnameFont.value])
 		self.skinSearchAndReplace.append(['name="KravenButton" value="#00ffffff', 'name="KravenButton" value="#' + config.plugins.KravenVB.ButtonText.value])
+		self.skinSearchAndReplace.append(['name="KravenAndroid" value="#00ffffff', 'name="KravenAndroid" value="#' + config.plugins.KravenVB.Android.value])
 
 		### ChannelSelection Font-Size
 		if not self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
@@ -1642,6 +1661,32 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;23"', 'serviceInfoFont="Regular;28"'])
 			elif config.plugins.KravenVB.ChannelSelectionInfoSize.value == "size-30":
 				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;23"', 'serviceInfoFont="Regular;30"'])
+		else:
+			if config.plugins.KravenVB.ChannelSelectionServiceSize1.value == "size-16":
+				self.skinSearchAndReplace.append(['serviceNumberFont="Regular;20"', 'serviceNumberFont="Regular;16"'])
+				self.skinSearchAndReplace.append(['serviceNameFont="Regular;20"', 'serviceNameFont="Regular;16"'])
+			elif config.plugins.KravenVB.ChannelSelectionServiceSize1.value == "size-18":
+				self.skinSearchAndReplace.append(['serviceNumberFont="Regular;20"', 'serviceNumberFont="Regular;18"'])
+				self.skinSearchAndReplace.append(['serviceNameFont="Regular;20"', 'serviceNameFont="Regular;18"'])
+			elif config.plugins.KravenVB.ChannelSelectionServiceSize1.value == "size-22":
+				self.skinSearchAndReplace.append(['serviceNumberFont="Regular;20"', 'serviceNumberFont="Regular;22"'])
+				self.skinSearchAndReplace.append(['serviceNameFont="Regular;20"', 'serviceNameFont="Regular;22"'])
+			elif config.plugins.KravenVB.ChannelSelectionServiceSize1.value == "size-24":
+				self.skinSearchAndReplace.append(['serviceNumberFont="Regular;20"', 'serviceNumberFont="Regular;24"'])
+				self.skinSearchAndReplace.append(['serviceNameFont="Regular;20"', 'serviceNameFont="Regular;24"'])
+			elif config.plugins.KravenVB.ChannelSelectionServiceSize1.value == "size-26":
+				self.skinSearchAndReplace.append(['serviceNumberFont="Regular;20"', 'serviceNumberFont="Regular;26"'])
+				self.skinSearchAndReplace.append(['serviceNameFont="Regular;20"', 'serviceNameFont="Regular;26"'])
+			if config.plugins.KravenVB.ChannelSelectionInfoSize1.value == "size-16":
+				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;20"', 'serviceInfoFont="Regular;16"'])
+			elif config.plugins.KravenVB.ChannelSelectionInfoSize1.value == "size-18":
+				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;20"', 'serviceInfoFont="Regular;18"'])
+			elif config.plugins.KravenVB.ChannelSelectionInfoSize1.value == "size-22":
+				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;20"', 'serviceInfoFont="Regular;22"'])
+			elif config.plugins.KravenVB.ChannelSelectionInfoSize1.value == "size-24":
+				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;20"', 'serviceInfoFont="Regular;24"'])
+			elif config.plugins.KravenVB.ChannelSelectionInfoSize1.value == "size-26":
+				self.skinSearchAndReplace.append(['serviceInfoFont="Regular;20"', 'serviceInfoFont="Regular;26"'])
 
 		### ChannelSelection 'not available' Font
 		self.skinSearchAndReplace.append(['name="KravenNotAvailable" value="#00FFEA04', 'name="KravenNotAvailable" value="#' + config.plugins.KravenVB.ChannelSelectionServiceNA.value])

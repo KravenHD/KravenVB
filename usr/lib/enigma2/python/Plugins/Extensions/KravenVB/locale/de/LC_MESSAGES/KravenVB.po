@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2016-01-30 21:52+0100\n"
+"PO-Revision-Date: 2016-02-01 11:07+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: KravenVBYWeather.py
@@ -1021,10 +1021,6 @@ msgid "Scrollbars"
 msgstr "Scrollbalken"
 
 #: KravenVB.py
-msgid "only available for Clock Analog"
-msgstr "nur verfügbar für Analog-Uhr"
-
-#: KravenVB.py
 msgid "not available in this style"
 msgstr "in diesem Stil nicht verfügbar"
 
@@ -1281,20 +1277,12 @@ msgid "Choose from different styles for EnhancedMovieCenter."
 msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"EnhancedMovieCenter\"."
 
 #: KravenVB.py
-msgid "not available for Nobile-Styles"
-msgstr "nicht verfügbar für Nobile-Listen"
-
-#: KravenVB.py
 msgid "Servicenumber/-name Fontsize"
 msgstr "Sendernummer/-name Schriftgrösse"
 
 #: KravenVB.py
 msgid "Serviceinfo Fontsize"
 msgstr "Sendungsinfo Schriftgrösse"
-
-#: KravenVB.py
-msgid "This option is not available for nobile styles."
-msgstr "Diese Option ist nicht verfügbar für Nobile-Listen."
 
 #: KravenVB.py
 msgid "Choose the font size of channelnumber and channelname."
@@ -1719,3 +1707,11 @@ msgstr ""
 #: KravenVBYWeather.py
 msgid "No Accu ID found"
 msgstr "Keine Accu-ID gefunden"
+
+#: KravenVBYWeather.py
+msgid "Choose the font color of android-clock temperature."
+msgstr "Wählen Sie die Schriftfarbe für die Temperatur-Anzeige der Android-Uhr."
+
+#: KravenVB.py
+msgid "Android-Temp-Color"
+msgstr "Android-Temperatur-Farbe"
