@@ -1010,12 +1010,11 @@ newwidth = wsize[0]
 self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
 	</applet>
   </screen>
-  <screen name="PinInputExt" position="center,center" size="500,250" title="PIN code needed" flags="wfNoBorder" zPosition="1">
-	<widget source="title" render="Label" backgroundColor="Kravenbg" font="Regular;26" foregroundColor="KravenFont2" position="10,8" size="480,32" halign="center" noWrap="1" transparent="1"/>
-	<widget name="text" position="10,55" size="480,27" font="Regular;22" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
-	<widget name="service" position="10,100" size="480,32" font="Regular;26" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont2" />
-	<widget name="tries" position="10,145" size="480,27" font="Regular;22" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
-	<widget name="input" position="10,190" size="480,40" font="Regular;26" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
+  <screen name="PinInputExt" position="center,center" size="500,210" title="PIN code needed" flags="wfNoBorder" zPosition="1">
+	<widget name="text" position="10,15" size="480,27" font="Regular;22" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
+	<widget name="service" position="10,60" size="480,32" font="Regular;26" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont2" />
+	<widget name="tries" position="10,105" size="480,27" font="Regular;22" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
+	<widget name="input" position="10,150" size="480,40" font="Regular;26" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
   </screen>
   <screen backgroundColor="transparent" flags="wfNoBorder" name="Console" position="0,0" size="1280,720" title="Command execution...">
     <widget backgroundColor="Kravenbg3" font="Console;18" name="text" scrollbarWidth="5" position="70,120" size="708,500" transparent="1" foregroundColor="KravenFont1" />
