@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2016-02-01 23:15+0100\n"
+"PO-Revision-Date: 2016-02-07 19:26+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -1719,3 +1719,7 @@ msgstr "Android-Temperatur-Farbe"
 #: KravenVB.py
 msgid "PVRState"
 msgstr "PVR-Status"
+
+#: KravenVB.py
+msgid "Menu-Icons"
+msgstr "Menü-Symbole"

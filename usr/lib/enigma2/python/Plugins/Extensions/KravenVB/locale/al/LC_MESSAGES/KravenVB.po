@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2015-12-05 17:22+0100\n"
+"PO-Revision-Date: 2016-02-04 18:06+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
-"Language-Team: kraven & mike99\n"
+"Language-Team: kqiqi1,kraven & mike99\n"
 "Language: al\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -473,6 +473,14 @@ msgstr "Gjelbërt shum e mbyllur"
 #: KravenVB.py
 msgid "Kraven dark"
 msgstr "Kraven e mbyllur"
+
+#: KravenVB.py
+msgid "Auswahlfenster"
+msgstr "Dritarja përzgjedhëse"
+
+#: KravenVB.py
+msgid "Auswahl"
+msgstr "Përzgjedhje"
 
 #: KravenVB.py
 msgid "Kraven very dark"
@@ -1355,3 +1363,343 @@ msgstr "Ky opcion nuk është në dispozicion, sepse opcioni për tregimin e inf
 #: KravenVB.py
 msgid "This option is not available because displaying primetime information is deactivated."
 msgstr "Ky opcion nuk është në dispozicion, sepse opcioni për tregimin e kanalëve kryësore është jo aktiv."
+
+#: KravenVBLayoutInfo.py
+msgid "free"
+msgstr "Pa pages"
+
+#: KravenVBLayoutInfo.py
+msgid "used"
+msgstr "Në perdorim"
+
+#: KravenVBLayoutInfo.py
+msgid "Free"
+msgstr "Pa pages"
+
+#: KravenVBLayoutInfo.py
+msgid "Used"
+msgstr "Në perdorim"
+
+#: KravenVB.py
+msgid "Active Profile"
+msgstr "Profili aktiv"
+
+#: KravenVB.py
+msgid "Save profile"
+msgstr "Ruaje profilin"
+
+#: KravenVB.py
+msgid "Select the profile you want to work with. Profiles are saved automatically on switching them or by pressing the yellow button. New profiles will be generated based on the actual one. Profiles are interchangeable between boxes."
+msgstr "Zgjidhni profilin, të cilin doni ta shfrytëzoni. Profili ndrrohet autiomatikisht ose me shtypjen e butonit të verdh. Profilët e ri krijohen në bazë. Profilët  mund të ndrrohën në mes të dy paisjeve."
+
+#: KravenVB.py
+msgid "Profile "
+msgstr "Profili "
+
+#: KravenVB.py
+msgid " saved successfully."
+msgstr " U ruajt me sukses."
+
+#: KravenVB.py
+msgid " could not be saved!"
+msgstr " nuk mund të ruhet!"
+
+#: KravenVB.py
+msgid "Cancel"
+msgstr "Anulo"
+
+#: KravenVB.py
+msgid "Save skin"
+msgstr "Memorizo lëkurën"
+
+#: KravenVB.py
+msgid "Reset profile"
+msgstr "Profil zurücksetzen"
+
+#: KravenVB.py
+msgid "not available for this channellist style"
+msgstr "Për kë stil liste nuk ka servis"
+
+#: KravenVB.py
+msgid "Zap (1xOK)"
+msgstr "Ndrrimi me (1xOK)"
+
+#: KravenVB.py
+msgid "Dual TV"
+msgstr "Dyfisht-TV"
+
+#: KravenVB.py
+msgid "Dual TV 2"
+msgstr "Dyfisht-TV 2"
+
+#: KravenVB.py
+msgid "Preview (2xOK)"
+msgstr "Parashije (2xOK)"
+
+#: KravenVB.py
+msgid "Channellist-Mode"
+msgstr "Modusi i lisatave të kanaleve"
+
+#: KravenVB.py
+msgid "Choose between direct zapping (1xOK) and zapping after preview (2xOK)."
+msgstr "Zgjidh në mes ndrrimit me (1xOK) dhe ndrrimit mbas parashijes me (2xOK)."
+
+#: KravenVB.py
+msgid "This option is only available for MiniTV, Extended Preview and DualTV channellist styles."
+msgstr "Ky opcion funksinon vetëm me lista kanalesh \"MiniTV\", \"Parashije e zgjëruar\" dhe \"TV e dyfisht."
+
+#: KravenVB.py
+msgid "This option is not available for MiniTV, Preview and DualTV channellist styles."
+msgstr "Ky opcion funksinon vetëm me lista kanalesh \"MiniTV\", \"Parashije\" dhe \"TV e dyfisht."
+
+#: KravenVB.py
+msgid "not available for MiniTV"
+msgstr "Nuk ka shërbim për MiniTV"
+
+#: KravenVB.py
+msgid "This option is not available because MiniTV for system menus is activated."
+msgstr "Ky funksion nuk është në dispozicion! arsyëja, MiniTV ësht aktiv."
+
+#: KravenVB.py
+msgid "press OK for the FAQs"
+msgstr "Shtyp butonin OK për FAQs"
+
+#: KravenVB.py
+msgid "only available when weather activated"
+msgstr "Në shërbim vetëm nëse është Moti aktiv"
+
+#: KravenVB.py
+msgid "This option is not available because weather is deactivated."
+msgstr "Ky funksion nuk është në dispozicion! arsyëja, Moti ësht deaktivuar."
+
+#: KravenVB.py
+msgid "Choose the degree of background transparency for system menu screens."
+msgstr "Zgjidhni gradin e transparences për menyn sistemore."
+
+#: KravenVB.py
+msgid "Menu-Transparency"
+msgstr "Transparenca Meny"
+
+#: KravenVB.py
+msgid "not available (channellist style)"
+msgstr "Pa shërbim (Stili i listës së kanaleve)"
+
+#: KravenVB.py
+msgid "This option is not available because the channellist style is Preview, Extended Preview or DualTV."
+msgstr "Ky funksion nuk është në dispozicion, sepse stili i listës \"Parashije, parashije e zgjëruar ose TV i dyfisht."
+
+#: KravenVB.py
+msgid "Primary-Infobar-Font"
+msgstr "Shkrimi primar i infobarit"
+
+#: KravenVB.py
+msgid "Secondary-Infobar-Font"
+msgstr "Shkrimi sekondar i infobari"
+
+#: KravenVB.py
+msgid "Choose the color of the primary infobar font."
+msgstr "Zgjidh ngjyren primare të infobarit."
+
+#: KravenVB.py
+msgid "Choose the color of the secondary infobar font."
+msgstr "Zgjidh ngjyren sekondare të infobarit."
+
+#: KravenVB.py
+msgid "ANTIALIASING BRIGHTNESS ________________________________________________________________"
+msgstr "NDRIQIMI I QOSHEVE ________________________________________________________________"
+
+#: KravenVB.py
+msgid "INFOBAR ______________________________________________________________"
+msgstr "INFOBARI ______________________________________________________________"
+
+#: KravenVB.py
+msgid "Infobar"
+msgstr "Infobari"
+
+#: KravenVB.py
+msgid "ECM Infos"
+msgstr "ECM-Infos"
+
+#: KravenVB.py
+msgid "Screens"
+msgstr "Faqet e ekranit"
+
+#: KravenVB.py
+msgid "Reduce distortions (faint/blurry) or color frames around fonts in the infobar and widgets by adjusting the antialiasing brightness."
+msgstr "Reduduktoni pengesat,paqarsit ose ngjyrat e shkrimit në Infobar duke rregulluar ndriqimin e qosheve."
+
+#: KravenVB.py
+msgid "Reduce distortions (faint/blurry) or color frames around the ecm information in the infobar by adjusting the antialiasing brightness."
+msgstr "Reduduktoni pengesat,paqarsit ose ngjyrat e shkrimit rreth informacioneve ECM duke rregulluar ndriqimin e qosheve."
+
+#: KravenVB.py
+msgid "Reduce distortions (faint/blurry) or color frames around fonts at top and bottom of screens by adjusting the antialiasing brightness."
+msgstr "VReduduktoni pengesat,paqarsit ose ngjyrat e shkrimit lart në ekran dhe posht duke rregulluar ndriqimin e qosheve."
+
+#: KravenVB.py
+msgid "Default Profile for Reset"
+msgstr "Profili standart për riset"
+
+#: KravenVB.py
+msgid "Select the default profile you want to use when resetting the active profile (blue button). You can add your own default profiles under /etc/enigma2/kraven_default_n (n<=20)."
+msgstr "Zgjidhni një profil standard, të cilin doni ta përdorni për riset (Butoni blu). ju mund të vendosni një standard profil në /etc/enigma2/kraven_default_n (n<=20)."
+
+#: KravenVB.py
+msgid "hardcoded"
+msgstr "Programim i ngurët"
+
+#: KravenVB.py
+msgid "0 (hardcoded)"
+msgstr "0 (Programim i ngurët)"
+
+#: KravenVB.py
+msgid "Choose whether you want the Kraven skin to be applied to 'Serienrecorder' or not. Activation of this option prohibits the skin selection in the SR-plugin."
+msgstr "Zgjidhni nëse doni apo sdoni që Kraven të ket qasje në SerienRecorder. Aktivimi i këtij opcioni ndalon qasjen e Kraven në regjistruesin e serialeve."
+
+#: KravenVB.py
+msgid "Icons"
+msgstr "Simbole"
+
+#: KravenVB.py
+msgid "MiniTV + Icons"
+msgstr "MiniTV + Simbole"
+
+#: KravenVB.py
+msgid "only available for Menu with Icons"
+msgstr "Funksionon vetëm m meny me simbole"
+
+#: KravenVB.py
+msgid "Choose from different icon sets for the menu screens. Many thanks to rennmaus and kleiner.teufel for their icon set."
+msgstr "Zgjidhe një simbol nga dosja për meny sistemi. Faleminderit nga rennmaus dhe kleiner.teufel për simbolet."
+
+#: KravenVB.py
+msgid "This option is not available for the selected menu style."
+msgstr "Ky opcion nuk është në dispozicion për kët stil."
+
+#: KravenVB.py
+msgid "MiniTV-Border"
+msgstr "Qoshet e MiniTV"
+
+#: KravenVB.py
+msgid "Choose the border color of MiniTV's."
+msgstr "Zgjidhni një ngjyr për qoshet MiniTV's."
+
+#: KravenVB.py
+msgid "Choose whether you want the Kraven skin to be applied to 'MediaPortal' or not. To remove it again, you must deactivate it here and activate another skin in 'MediaPortal'."
+msgstr "Zgjidhni nëse doni apo sdoni që Kraven të ket qasje në Mediaportal. Për deaktivim, duhet ju ta daktivoni këtu \"MediaPortal\" dhe zgjidhni një tjetër lëkur."
+
+#: KravenVB.py
+msgid "MediaPortal not installed"
+msgstr "MediaPortal nuk është instaluar"
+
+#: KravenVB.py
+msgid "This option is not available because 'MediaPortal' is not installed."
+msgstr "ky funksion nuk është në shërbim, sepse MediaPortal nuk është instaluar."
+
+#: KravenVB.py
+msgid "'not available'-Font"
+msgstr "'Nuk është në shërbim'-Shkrimi"
+
+#: KravenVB.py
+msgid "Choose the font color of channels that are unavailable at the moment."
+msgstr "Zgjidhni një ngjyr shkrimi për kanale eë nuk ekzistojn më."
+
+#: KravenVB.py
+msgid "Choose from different options to display the PVR state."
+msgstr "Zgjidhni një stil nga ato ekzistuëse për dukjen e PVR's."
+
+#: KravenVB.py
+msgid "center big"
+msgstr "Mes e madhe"
+
+#: KravenVB.py
+msgid "center small"
+msgstr "Mes e vogël"
+
+#: KravenVB.py
+msgid "left small"
+msgstr "Majtas e vogël"
+
+#: KravenVB.py
+msgid "Search by"
+msgstr "Kërkim për"
+
+#: KravenVB.py
+msgid "Search String"
+msgstr "Term kërkuës"
+
+#: KravenVB.py
+msgid "Choose from different servers for the weather data."
+msgstr "Zgjidhni një ga kompanit për informacione meteorologjike."
+
+#: KravenVB.py
+msgid "Choose from different options to specify your location."
+msgstr "Zgjidhni një metod për vendosjen e parametrave meteorologjik."
+
+#: KravenVB.py
+msgid "Specify any search string for your location (zip/city/district/state single or combined). Press OK to use the virtual keyboard. Step up or down in the menu to start the search."
+msgstr "Vendoseni një term kërkuës sipas dëshirës (NPS/Qytet/Vend/Shtet separat ose një m mbas një). Shtypëni OK, për të shfrytëzuar taststiererin virtual. Rrëshqisni në meny posht lart, për të filluar kërkimin."
+
+#: KravenVB.py
+msgid "Specify the GM code for your location. You can find it at https://weather.codes. Press OK to use the virtual keyboard. Step up or down in the menu to start the search."
+msgstr "Vendosni një kod GM për vendndodhjen tuaj. këtë mund ta gjeni në https://weather.codes. Shtypëni OK, për të shfrytëzuar taststiererin virtual. Rrëshqisni në meny posht lart, për të filluar kërkimin."
+
+#: KravenVB.py
+msgid "Specify the language for the weather output."
+msgstr "Zgjidhni gjuhën për menyn meteorologjike."
+
+#: KravenVB.py
+msgid "Enter the search string for your location:"
+msgstr "Vendoseni një term kërkuës për vendndodhjen tuaj:"
+
+#: KravenVB.py
+msgid "Enter the GM code for your location:"
+msgstr "Vendosni një kod GM për vendndodhjen tuaj:"
+
+#: KravenVBYWeather.py
+msgid "TU"
+msgstr "MAR"
+
+#: KravenVBYWeather.py
+msgid "WE"
+msgstr "MER"
+
+#: KravenVBYWeather.py
+msgid "TH"
+msgstr "ENJ"
+
+#: KravenVBYWeather.py
+msgid "SU"
+msgstr "DIE"
+
+#: KravenVBYWeather.py
+msgid "No data for IP"
+msgstr "Asnjë rezultat për IP"
+
+#: KravenVBYWeather.py
+msgid ""
+"\n"
+"\n"
+"No data for search string,\n"
+"fallback to IP"
+msgstr ""
+"\n"
+"\n"
+"Asnjë rezultat për term kërkuës,\n"
+"Rikthim tek IP"
+
+#: KravenVBYWeather.py
+msgid ""
+"\n"
+"\n"
+"No data for GM code\n"
+"fallback to IP"
+msgstr ""
+"\n"
+"\n"
+"Asnjë rezultat për kod GM\n"
+"Rikthim tek IP"
+
+#: KravenVBYWeather.py
+msgid "No Accu ID found"
+msgstr "Nuk ka asnjë identitet Accu-ID"
