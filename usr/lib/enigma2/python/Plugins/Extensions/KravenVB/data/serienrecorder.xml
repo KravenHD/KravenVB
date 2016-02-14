@@ -59,4 +59,5 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
   </screen>

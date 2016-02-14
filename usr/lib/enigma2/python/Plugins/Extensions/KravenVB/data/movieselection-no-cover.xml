@@ -27,6 +27,7 @@
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- EMC -->
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />

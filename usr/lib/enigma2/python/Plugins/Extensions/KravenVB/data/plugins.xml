@@ -12,7 +12,7 @@
     <eLabel position="847,417" size="368,2" backgroundColor="KravenBorder" />
     <eLabel position="845,208" size="2,211" backgroundColor="KravenBorder" />
     <eLabel position="1215,208" size="2,211" backgroundColor="KravenBorder" />
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-9" />
+    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
     <ePixmap pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
     <ePixmap pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
@@ -27,8 +27,9 @@
     <widget name="helperimage" position="847,210" size="368,207" zPosition="1" backgroundColor="Kravenbg" />
     <widget source="Canvas" render="Canvas" position="847,210" size="368,207" zPosition="-1" backgroundColor="Kravenbg" />
     <widget source="help" render="Label" position="847,440" size="368,196" font="Regular2;20" backgroundColor="Kravenbg" foregroundColor="KravenFont2" halign="left" valign="top" transparent="1" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,310" alphatest="blend" zPosition="-9" />
+    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="KravenVB" position="70,0" />-->
@@ -94,6 +95,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="CutListEditor" position="70,0" />-->
@@ -144,7 +146,7 @@
   </screen>
   <!-- EcmInfoScreen -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="EcmInfoScreen" position="600,150" size="600,80" zPosition="1">
-    <eLabel backgroundColor="Kravenbg" position="0,1" size="600,80" zPosition="-9" />
+    <eLabel backgroundColor="Kravenbg" position="0,1" size="600,80" zPosition="-10" />
     <widget font="Regular;16" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" name="irdeto" position="149,14" size="18, 25" text="I" transparent="1" valign="center" zPosition="3" />
     <widget font="Regular;16" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" name="seca" position="172,14" size="18, 25" text="S" transparent="1" valign="center" zPosition="3" />
     <widget font="Regular;16" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" name="nagra" position="217,14" size="18, 25" text="N" transparent="1" valign="center" zPosition="3" />
@@ -265,6 +267,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <!--<text="EMCImdbScan" position="70,0" />-->
   </screen>
   <!-- imdbSetup -->
@@ -286,7 +289,6 @@
     <ePixmap  pixmap="KravenVB/global-icons/key_menu.png" position="1111,435" size="43,22" alphatest="blend" />
     <widget name="menulist" position="100,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg" transparent="1" />
     <widget name="info" position="70,544" size="708,27" font="Regular2; 23" halign="center" backgroundColor="Kravenbg" transparent="1" foregroundColor="KravenFont2" />
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-9" />
     <widget name="poster" position="998,167" size="156,260" zPosition="4" alphatest="on" />
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
@@ -295,6 +297,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <!--<text="getCover" position="70,0" />-->
   </screen>
   <!-- DownloadMovieInfo -->
@@ -316,13 +319,13 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <!--<text="DownloadMovieInfo" position="70,0" />-->
   </screen>
   <!-- MovieInfoPreview -->
   <screen name="MovieInfoPreview" position="0,0" size="1280,720" title="Movie Info Preview" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="movie_name" position="70,80" size="708,35" font="Regular2; 30" foregroundColor="KravenFont2" backgroundColor="Kravenbg" transparent="1" />
     <widget name="previewtext" position="70,135" size="708,500" backgroundColor="Kravenbg" font="Regular; 20" foregroundColor="KravenFont1" transparent="1" />
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-9" />
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
@@ -330,6 +333,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="MovieInfoPreview" position="70,0" />-->
   </screen>
@@ -522,6 +526,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -553,7 +558,6 @@
     <widget position="71,410" render="Progress" size="300,5" source="session.CurrentService" transparent="1" zPosition="1" foregroundColor="orange">
       <convert type="ServicePosition">Position</convert>
     </widget>
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-9" />
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
       <convert type="ClockToText">Default</convert>
@@ -561,6 +565,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -725,6 +730,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -808,6 +814,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <!--<text="WebradioFSScreen_12" position="70,0" />-->
   </screen>
   <!-- menu_12 -->
@@ -828,6 +835,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="menu_12" position="70,0" />-->
@@ -873,6 +881,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="genre_anzeige_12" position="70,0" />-->
@@ -895,6 +904,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="groups_12" position="70,0" />-->
@@ -915,6 +925,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="WebradioFSSetup_12" position="70,0" />-->
@@ -935,6 +946,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="WebradioFS_FB_Setup_12" position="70,0" />-->
@@ -955,6 +967,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="rec_menu_12" position="70,0" />-->
@@ -975,6 +988,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="col_set_12" position="70,0" />-->
@@ -995,6 +1009,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="Fav_edit_12" position="70,0" />-->
@@ -1040,6 +1055,7 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <widget font="Regular; 20" halign="left" valign="center" name="buttonred" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="buttongreen" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="buttonyellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -1169,6 +1185,7 @@
     </widget>
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="picshow" position="70,0" />-->
@@ -1497,6 +1514,7 @@
     </widget>
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />

@@ -46,6 +46,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -95,6 +96,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -141,6 +143,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -196,6 +199,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -242,6 +246,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -289,6 +294,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -344,6 +350,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -390,6 +397,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -441,6 +449,7 @@
     <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- CoolTV -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />

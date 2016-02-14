@@ -1,5 +1,5 @@
     <ePixmap pixmap="KravenVB/shift.png" position="190,5" size="905,170" zPosition="-9" alphatest="blend"/>
-    <widget name="state" position="260,74" size="100,24" font="Regular;30" foregroundColor="KravenIBFont1" halign="center" backgroundColor="KravenIBbg" transparent="1" zPosition="15" valign="center" />
+    <widget name="state" position="255,75" size="110,24" font="Regular;28" foregroundColor="KravenIBFont1" halign="center" backgroundColor="KravenIBbg" transparent="1" zPosition="15" valign="center" />
     <widget source="session.CurrentService" render="Label" position="867,70" size="100,30" font="Regular;24" halign="right" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" transparent="1" zPosition="15" valign="top">
       <convert type="ServicePosition">Remaining</convert>
     </widget>

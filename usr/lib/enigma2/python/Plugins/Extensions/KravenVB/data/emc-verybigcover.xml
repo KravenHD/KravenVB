@@ -1,5 +1,5 @@
-<!-- /* EMC VeryBigCover -->
-<screen name="EMCSelection" position="0,0" size="1280,720" title="Enhanced Movie Center" flags="wfNoBorder" backgroundColor="transparent">
+  <!-- /* EMC VeryBigCover -->
+  <screen name="EMCSelection" position="0,0" size="1280,720" title="Enhanced Movie Center" flags="wfNoBorder" backgroundColor="transparent">
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <eLabel backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" position="42,12" size="708,46" text="Enhanced Movie Center" transparent="1" />
     <widget name="Cover" position="64,70" size="342,513" zPosition="4" backgroundColor="Kravenbg" alphatest="on" transparent="0" />
@@ -36,6 +36,7 @@
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="792,692" size="200,5" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,570" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- EMC -->
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="297,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="547,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -44,5 +45,5 @@
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="EMCSelection - very big Cover" position="42,0" />-->
-</screen>
-<!-- EMC VeryBigCover */-->
+  </screen>
+  <!-- EMC VeryBigCover */-->
