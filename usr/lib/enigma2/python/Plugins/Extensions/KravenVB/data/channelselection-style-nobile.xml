@@ -22,8 +22,8 @@
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>
     <eLabel text="es folgt:" position="474,387" size="180,27" font="Regular;22" halign="left" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" transparent="1" zPosition="2" />
-    <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,572" position="937,58" font="Regular;17" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
-    <!--<widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;17" source="ServiceEvent" render="Label" position="937,630" size="339,22" transparent="1" noWrap="1">
+    <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,572" position="937,60" font="Regular;17" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+    <!--<widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;17" source="ServiceEvent" render="Label" position="937,632" size="339,22" transparent="1" noWrap="1">
       <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
     </widget>-->
     <widget source="ServiceEvent" render="Label" position="474,419" zPosition="1" size="446,25" font="Regular; 20" halign="left" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont2">
@@ -36,8 +36,8 @@
       <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
     </widget>
     <eLabel position="474,380" size="446,1" backgroundColor="KravenLine" />
-    <eLabel position="465,57" size="1,599" backgroundColor="KravenLine" />
-    <eLabel position="928,57" size="1,599" backgroundColor="KravenLine" />
+    <eLabel position="465,60" size="1,590" backgroundColor="KravenLine" />
+    <eLabel position="928,60" size="1,590" backgroundColor="KravenLine" />
     <widget backgroundColor="KravenIBbg4" font="Regular2;34" foregroundColor="KravenMFont2" position="42,12" render="Label" size="800,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <ePixmap backgroundColor="Kravenbg4" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg4" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,692" size="200,5" />

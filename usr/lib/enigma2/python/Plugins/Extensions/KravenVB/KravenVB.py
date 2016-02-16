@@ -915,7 +915,7 @@ class KravenVB(ConfigListScreen, Screen):
     <convert type="ClockToText">Default</convert>
   </widget>
   <eLabel position="830,80" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" />
-  <eLabel position="845,139" size="372,40" text="Version: 4.4.4" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+  <eLabel position="845,139" size="372,40" text="Version: 4.5.0" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" />
   <widget name="helperimage" position="847,210" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,210" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,440" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="left" valign="top" transparent="1" />
@@ -1673,7 +1673,18 @@ class KravenVB(ConfigListScreen, Screen):
 			### SIB (top) - Background
 			self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibaro.png" position="0,-50" size="1280,443" alphatest="blend" zPosition="-9" />','<eLabel position="0,0" size="1280,55" backgroundColor="KravenIBbg" zPosition="-9" /><eLabel position="0,54" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />'])
 			### weather-small - Background
-			self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/wsmall.png" position="890,-10" size="400,210" zPosition="-9" alphatest="blend"/>','<eLabel position="920,0" size="360,160" backgroundColor="KravenIBbg" zPosition="-9" />'])
+			self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/wsmall.png" position="890,-10" size="400,210" zPosition="-9" alphatest="blend"/>','<eLabel position="980,0" size="300,120" backgroundColor="KravenIBbg" zPosition="-9" /><eLabel position="980,0" size="2,120" backgroundColor="KravenIBLine" zPosition="-8" /><eLabel position="982,118" size="298,2" backgroundColor="KravenIBLine" zPosition="-8" />'])
+			### weather-small - Position
+			self.skinSearchAndReplace.append(['position="960,55" size="70,70"', 'position="1000,25" size="70,70"'])
+			self.skinSearchAndReplace.append(['position="1030,55" size="115,70"', 'position="1070,25" size="115,70"'])
+			self.skinSearchAndReplace.append(['position="1145,55" size="75,35"', 'position="1185,25" size="75,35"'])
+			self.skinSearchAndReplace.append(['position="1145,90" size="75,35"', 'position="1185,60" size="75,35"'])
+			### clock-android - Background
+			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2") and self.actClockstyle == "clock-android":
+				self.skinSearchAndReplace.append(['position="0,576" size="1280,144"', 'position="0,566" size="1280,154"'])
+				self.skinSearchAndReplace.append(['position="0,576" size="1280,2"', 'position="0,566" size="1280,2"'])
+				self.skinSearchAndReplace.append(['position="0,580" size="1280,140"', 'position="0,566" size="1280,154"'])
+				self.skinSearchAndReplace.append(['position="0,580" size="1280,2"', 'position="0,566" size="1280,2"'])
 			### EMCMediaCenter, MoviePlayer, DVDPlayer - Background
 			self.skinSearchAndReplace.append(['<ePixmap pixmap="KravenVB/ibar.png" position="0,490" size="1280,400" zPosition="-9" />','<eLabel position="0,610" size="1280,110" backgroundColor="KravenIBbg" zPosition="-9" /><eLabel position="0,610" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />'])
 			### ChannelSelectionRadio
@@ -2128,20 +2139,19 @@ class KravenVB(ConfigListScreen, Screen):
 
 		### Channelname
 		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
-			self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,510"'])
-			self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,450"'])
+			self.skinSearchAndReplace.append(['"KravenName" position="20,510"', '"KravenName" position="20,500"'])
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
 		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2"):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
 		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zz4"):
-			self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,474"'])
-			self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,414"'])
+			self.skinSearchAndReplace.append(['"KravenName" position="20,510"', '"KravenName" position="20,474"'])
+			self.skinSearchAndReplace.append(['"KravenName" position="20,450"', '"KravenName" position="20,414"'])
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
 		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz2","infobar-style-zz3"):
-			self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="435,534" size="565,50"'])
+			self.skinSearchAndReplace.append(['"KravenName" position="20,510" size="1240,60"', '"KravenName" position="435,534" size="565,50"'])
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-			self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="446,464" size="754,50"'])
+			self.skinSearchAndReplace.append(['"KravenName" position="20,510" size="1240,60"', '"KravenName" position="446,474" size="754,50"'])
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
 
 		### clock-style_ib
@@ -2271,24 +2281,24 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + "infobar-style-z2_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
 			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
-			self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
+			self.skinSearchAndReplace.append(['size="1200,297">', 'size="1200,264">'])
 			self.appendSkinFile(self.daten + "infobar-style-zz1_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
 			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
-			self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
+			self.skinSearchAndReplace.append(['size="1200,297">', 'size="1200,264">'])
 			self.appendSkinFile(self.daten + "infobar-style-zz2_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
 			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
-			self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
+			self.skinSearchAndReplace.append(['size="1200,297">', 'size="1200,264">'])
 			self.appendSkinFile(self.daten + "infobar-style-zz3_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
 			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
-			self.skinSearchAndReplace.append(['size="297">', 'size="264">'])
+			self.skinSearchAndReplace.append(['size="1200,297">', 'size="1200,264">'])
 			self.appendSkinFile(self.daten + "infobar-style-zz4_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
 			self.skinSearchAndReplace.append(['size="570,396">', 'size="570,330">'])
 			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,124">'])
-			self.skinSearchAndReplace.append(['size="297">', 'size="231">'])
+			self.skinSearchAndReplace.append(['size="1200,297">', 'size="1200,231">'])
 			self.appendSkinFile(self.daten + "infobar-style-zzz1_main.xml")
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB.value + ".xml")
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SecondInfoBar/plugin.py"):
@@ -2298,7 +2308,6 @@ class KravenVB(ConfigListScreen, Screen):
 		### Main XML
 		self.appendSkinFile(self.daten + "main.xml")
 
-		
 		if config.plugins.KravenVB.IBStyle.value == "gradient":
 			### Timeshift_begin
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
@@ -2329,20 +2338,19 @@ class KravenVB(ConfigListScreen, Screen):
 
 			### Timeshift_Channelname
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
-				self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,510"'])
-				self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,450"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,510"', '"KravenName" position="20,500"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2"):
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zz4"):
-				self.skinSearchAndReplace.append(['"KravenName" position="20,527"', '"KravenName" position="20,474"'])
-				self.skinSearchAndReplace.append(['"KravenName" position="20,452"', '"KravenName" position="20,414"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,510"', '"KravenName" position="20,474"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,450"', '"KravenName" position="20,414"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz2","infobar-style-zz3"):
-				self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="435,534" size="565,50"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,510" size="1240,60"', '"KravenName" position="435,534" size="565,50"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
 			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-				self.skinSearchAndReplace.append(['"KravenName" position="20,527" size="1240,60"', '"KravenName" position="446,464" size="754,50"'])
+				self.skinSearchAndReplace.append(['"KravenName" position="20,510" size="1240,60"', '"KravenName" position="446,474" size="754,50"'])
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.InfobarChannelName2.value + ".xml")
 
 			### Timeshift_clock-style_ib

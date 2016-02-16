@@ -1,12 +1,12 @@
 <!-- /* ChannelSelection - Nobile Preview -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
     <widget backgroundColor="Kravenbg2" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" name="list" position="17,287" serviceInfoFont="Regular;20" serviceItemHeight="28" serviceNameFont="Regular;20" serviceNumberFont="Regular;20" size="439,364" transparent="1" />
-    <widget source="ServiceEvent" render="KravenVBPig" position="41,63" size="384,216" zPosition="3" backgroundColor="transparent" />
-    <eLabel backgroundColor="#00000000" position="41,63" size="384,216" transparent="0" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder2" position="41,63" size="384,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="41,279" size="384,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="41,63" size="3,216" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="422,63" size="3,216" transparent="0" zPosition="4" />
+    <widget source="ServiceEvent" render="KravenVBPig" position="60,63" size="384,216" zPosition="3" backgroundColor="transparent" />
+    <eLabel backgroundColor="#00000000" position="60,63" size="384,216" transparent="0" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder2" position="60,63" size="384,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="60,279" size="384,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="60,63" size="3,216" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="441,63" size="3,216" transparent="0" zPosition="4" />
     <widget source="ServiceEvent" render="Label" position="475,60" size="446,27" font="Regular;22" halign="left" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont2">
       <convert type="KravenVBEventName">Name</convert>
     </widget>

@@ -85,7 +85,7 @@
   </screen>
   <!-- InfoBarZapHistory -->
   <screen name="InfoBarZapHistory" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
-    <eLabel text="zapHistory" position="70,12" size="708,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+    <widget backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <widget alphatest="blend" position="70,90" render="Picon" size="100,60" source="ServiceEvent" transparent="1" zPosition="4">
       <convert type="ServiceName">Reference</convert>
     </widget>
@@ -1175,15 +1175,15 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
   <!-- EventView -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="EventView" position="0,0" size="1280,720" title="Eventview">
     <widget backgroundColor="Kravenbg" font="Regular2; 26" name="epg_description" scrollbarWidth="5" position="42,155" size="1196,443" transparent="1" />
-    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_dolby_on.png" position="42,615" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_dolby_on.png" position="42,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
       <convert type="ServiceInfo">IsMultichannel</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_format_on.png" position="92,615" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_format_on.png" position="92,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_hd_on.png" position="142,615" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_hd_on.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
       <convert type="ServiceInfo">VideoWidth</convert>
       <convert type="ValueRange">721,1980</convert>
       <convert type="ConditionalShowHide" />

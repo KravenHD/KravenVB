@@ -115,8 +115,8 @@
     <convert  type="KravenVBFrontendInfo">SNR</convert>
   </widget>
   <!--<eLabel text="  S:"  font="Regular; 19" position="723,685" size="30,22" halign="left" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIcon" />-->
-  <widget alphatest="blend" position="20,472" size="400,240" render="KravenVBXPicon" source="session.CurrentService" transparent="1" zPosition="4">
+  <widget alphatest="blend" position="20,476" size="400,240" render="KravenVBXPicon" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
-  <!--<eLabel position="0,455" size="1280,265" backgroundColor="KravenIBbg" zPosition="-9" />
-  <eLabel position="0,455" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />-->
+  <!--<eLabel position="0,473" size="1280,247" backgroundColor="KravenIBbg" zPosition="-9" />
+  <eLabel position="0,473" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />-->
