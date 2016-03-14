@@ -26,7 +26,7 @@
     </widget>
     <widget name="helperimage" position="847,210" size="368,207" zPosition="1" backgroundColor="Kravenbg" />
     <widget source="Canvas" render="Canvas" position="847,210" size="368,207" zPosition="-1" backgroundColor="Kravenbg" />
-    <widget source="help" render="Label" position="847,440" size="368,196" font="Regular2;20" backgroundColor="Kravenbg" foregroundColor="KravenFont2" halign="left" valign="top" transparent="1" />
+    <widget source="help" render="Label" position="847,440" size="368,196" font="Regular2;20" backgroundColor="Kravenbg" foregroundColor="KravenFont2" halign="center" valign="top" transparent="1" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
 	<!-- Menü -->
@@ -103,17 +103,17 @@
   <!-- ********** DVDPlayer ********** -->
   <!-- DVDPlayer -->
  <screen backgroundColor="transparent" flags="wfNoBorder" name="DVDPlayer" position="0,0" size="1280,720" title="InfoBar">
-    <widget backgroundColor="KravenIBbg" foregroundColor="KravenMFont2" font="Regular2; 30" noWrap="1" position="212,621" render="Label" size="619,35" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
+    <widget backgroundColor="KravenIBbg" foregroundColor="KravenIBFont2" font="Regular2; 30" noWrap="1" position="212,621" render="Label" size="619,35" source="session.CurrentService" transparent="1" valign="top" zPosition="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" font="Regular; 22" halign="left" position="850,671" render="Label" size="120,40" source="session.CurrentService" transparent="1" zPosition="1">
+    <widget backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular; 22" halign="left" position="850,671" render="Label" size="120,40" source="session.CurrentService" transparent="1" zPosition="1">
       <convert type="ServicePosition">Length</convert>
     </widget>
-    <eLabel backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" font="Regular; 22" halign="center" position="800,671" size="50,40" text="von" transparent="1" zPosition="1" />
-    <widget backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" font="Regular; 22" halign="right" position="680,671" render="Label" size="120,40" source="session.CurrentService" transparent="1" zPosition="1">
+    <eLabel backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular; 22" halign="center" position="800,671" size="50,40" text="von" transparent="1" zPosition="1" />
+    <widget backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular; 22" halign="right" position="680,671" render="Label" size="120,40" source="session.CurrentService" transparent="1" zPosition="1">
       <convert type="ServicePosition">Position</convert>
     </widget>
-    <widget backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" font="Regular; 20" halign="right" position="948,632" render="Label" size="122,25" source="session.CurrentService" transparent="1" valign="Center" zPosition="1">
+    <widget backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular; 20" halign="right" position="948,632" render="Label" size="122,25" source="session.CurrentService" transparent="1" valign="Center" zPosition="1">
       <convert type="ServicePosition">Remaining</convert>
     </widget>
     <widget position="212,660" render="PositionGauge" size="858,7" source="session.CurrentService" transparent="1">
@@ -126,7 +126,7 @@
     <widget name="subtitleLabel" position="329,671" size="110,40" font="Regular; 18" backgroundColor="KravenIBbg" transparent="1" />
     <widget name="audioLabel" position="212,671" size="110,40" font="Regular; 18" backgroundColor="KravenIBbg" transparent="1" />
     <widget name="chapterLabel" position="447,672" size="225,40" font="Regular; 18" backgroundColor="KravenIBbg" transparent="1" />
-    <widget source="global.CurrentTime" position="976,671" size="94,40" font="Regular; 22" render="Label" halign="right" zPosition="12" backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" transparent="1">
+    <widget source="global.CurrentTime" position="976,671" size="94,40" font="Regular; 22" render="Label" halign="right" zPosition="12" backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" transparent="1">
       <convert type="ClockToText">Default</convert>
     </widget>
     <ePixmap pixmap="KravenVB/ibar.png" position="0,490" size="1280,400" zPosition="-9" />
@@ -159,64 +159,6 @@
     <widget font="Regular;16" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" name="ecmInfo" noWrap="1" position="18,44" size="560,25" transparent="1" valign="center" zPosition="3" />
   </screen>
   <!-- ********** EMC ********** -->
-  <!-- EMCMediaCenter -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="EMCMediaCenter" position="0,0" size="1280,720" title="InfoBar">
-	<widget source="global.CurrentTime" position="957,678" size="110,30" font="Regular; 20" render="Label" halign="right" valign="center" zPosition="12" backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" transparent="1">
-	  <convert type="ClockToText">Default</convert>
-	</widget>
-    <widget backgroundColor="KravenIBbg" font="Regular; 30" foregroundColor="KravenMFont2" noWrap="1" position="210,620" render="Label" size="708,40" source="session.CurrentService" transparent="1" valign="center" zPosition="1">
-      <convert type="ServiceName">Name</convert>
-    </widget>
-    <widget backgroundColor="KravenIBbg" font="Regular; 18" halign="left" position="676,681" render="Label" size="80,25" source="Service" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1">
-      <convert type="EMCServicePosition">Length</convert>
-    </widget>
-    <eLabel backgroundColor="KravenIBbg" font="Regular; 18" halign="center" position="655,681" size="20,25" text="/" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1" />
-    <widget backgroundColor="KravenIBbg" font="Regular; 18" halign="right" position="536,681" render="Label" size="120,25" source="Service" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1">
-      <convert type="EMCServicePosition">Position</convert>
-    </widget>
-    <widget backgroundColor="KravenIBbg" font="Regular; 20" halign="right" position="926,629" render="Label" size="100,35" source="Service" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1">
-      <convert type="EMCServicePosition">Remaining</convert>
-    </widget>
-    <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="360,680" size="43,22" zPosition="1" />
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="360,680" render="Pixmap" size="43,22" source="session.RecordState" zPosition="5">
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="210,680" size="43,22" zPosition="1" />
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="210,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">IsMultichannel</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="260,680" size="43,22" zPosition="1" />
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_on.png" position="260,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">IsWidescreen</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_off.png" position="310,680" size="43,22" zPosition="1" />
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_on.png" position="310,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <ePixmap pixmap="KravenVB/infobar-icons/aufloesung3.png" position="410,680" size="124,22" zPosition="1" alphatest="blend" />
-    <widget source="session.CurrentService" render="Label" zPosition="3" position="411,677" size="122,30" font="Regular; 20" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
-      <convert type="KravenVBExtraInfo">Resolution</convert>
-	</widget>
-    <widget position="210,666" render="EMCPositionGauge" size="858,9" source="Service" transparent="1">
-      <convert type="EMCServicePosition">Gauge</convert>
-    </widget>
-    <widget borderWidth="0" position="210,668" render="Progress" size="858,5" source="Service" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress858.png">
-      <convert type="EMCServicePosition">Position</convert>
-    </widget>
-    <eLabel backgroundColor="KravenIBbg" font="Regular; 20" foregroundColor="KravenMFont1" halign="right" position="1017,629" size="50,35" text="min" transparent="1" valign="center" zPosition="1" />
-    <eLabel backgroundColor="KravenLine" position="210,670" size="858,1" zPosition="-1" />
-    <widget source="session.CurrentService" render="Label" position="858,678" size="60,30" font="Regular; 20" halign="center" valign="center" backgroundColor="KravenIBbg" transparent="1" zPosition="1" text="13:45" foregroundColor="KravenMFont1">
-      <convert type="KravenVBServiceEndTime">EndTime</convert>
-    </widget>
-    <eLabel backgroundColor="KravenIBbg" font="Regular; 20" halign="left" position="918,677" size="60,30" text="Uhr" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1" />
-    <eLabel backgroundColor="KravenIBbg" font="Regular; 20" halign="right" position="737,677" size="120,30" text="läuft bis " transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1" />
-    <widget name="Cover" position="1124,560" size="100,150" zPosition="1" alphatest="on" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,490" size="1280,400" zPosition="-9" />
-  </screen>
   <!-- EnhancedMovieCenterMenu -->
   <screen name="EnhancedMovieCenterMenu" position="0,0" size="1280,720" title="EnhancedMovieCenterMenu" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="config" position="70,80" size="708,375" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1" font="Regular; 20" />
@@ -596,64 +538,6 @@
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="MediaPlayerSettings" position="70,0" />-->
   </screen>
-  <!-- MoviePlayer -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="MoviePlayer" position="0,0" size="1280,720" title="InfoBar">
-	<widget source="global.CurrentTime" position="957,678" size="110,30" font="Regular; 20" render="Label" halign="right" valign="center" zPosition="12" backgroundColor="KravenIBbg" foregroundColor="KravenMFont1" transparent="1">
-	  <convert type="ClockToText">Default</convert>
-	</widget>
-	<widget backgroundColor="KravenIBbg" font="Regular; 30" foregroundColor="KravenMFont2" noWrap="1" position="210,620" render="Label" size="708,40" source="session.CurrentService" transparent="1" valign="center" zPosition="1">
-	  <convert type="ServiceName">Name</convert>
-	</widget>
-	<widget backgroundColor="KravenIBbg" font="Regular; 18" halign="left" position="676,681" render="Label" size="80,25" source="session.CurrentService" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1">
-	  <convert type="ServicePosition">Length</convert>
-	</widget>
-	<eLabel backgroundColor="KravenIBbg" font="Regular; 18" halign="center" position="655,681" size="20,25" text="/" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1" />
-	<widget backgroundColor="KravenIBbg" font="Regular; 18" halign="right" position="536,681" render="Label" size="120,25" source="session.CurrentService" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1">
-	  <convert type="ServicePosition">Position</convert>
-	</widget>
-	<widget backgroundColor="KravenIBbg" font="Regular; 20" halign="right" position="926,629" render="Label" size="100,35" source="session.CurrentService" transparent="1" valign="center" zPosition="1">
-	  <convert type="ServicePosition">Remaining</convert>
-	</widget>
-	<ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="360,680" size="43,22" zPosition="1" />
-	<widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="360,680" render="Pixmap" size="43,22" source="session.RecordState" zPosition="5">
-	  <convert type="ConditionalShowHide" />
-	</widget>
-	<ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="210,680" size="43,22" zPosition="1" />
-	<widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="210,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-	  <convert type="ServiceInfo">IsMultichannel</convert>
-	  <convert type="ConditionalShowHide" />
-	</widget>
-	<ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="260,680" size="43,22" zPosition="1" />
-	<widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_on.png" position="260,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-	  <convert type="ServiceInfo">IsWidescreen</convert>
-	  <convert type="ConditionalShowHide" />
-	</widget>
-	<ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_off.png" position="310,680" size="43,22" zPosition="1" />
-	<widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_on.png" position="310,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
-	  <convert type="ConditionalShowHide" />
-	</widget>
-    <ePixmap pixmap="KravenVB/infobar-icons/aufloesung3.png" position="410,680" size="124,22" zPosition="1" alphatest="blend" />
-    <widget source="session.CurrentService" render="Label" zPosition="3" position="411,677" size="122,30" font="Regular; 20" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
-      <convert type="KravenVBExtraInfo">Resolution</convert>
-	</widget>
-	<widget position="210,666" render="PositionGauge" size="858,9" source="session.CurrentService" transparent="1">
-	  <convert type="ServicePosition">Gauge</convert>
-	</widget>
-	<widget borderWidth="0" position="210,668" render="Progress" size="858,5" source="session.CurrentService" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress858.png">
-	  <convert type="ServicePosition">Position</convert>
-	</widget>
-	<eLabel backgroundColor="KravenIBbg" font="Regular; 20" halign="right" position="1017,629" size="50,35" text="min" transparent="1" valign="center" zPosition="1" />
-	<eLabel backgroundColor="KravenLine" position="210,670" size="858,1" zPosition="-1" />
-	<widget source="session.CurrentService" render="Label" position="858,678" size="60,30" font="Regular; 20" halign="center" valign="center" backgroundColor="KravenIBbg" transparent="1" zPosition="1" text="13:45" foregroundColor="KravenMFont1">
-	  <convert type="KravenVBServiceEndTime">EndTime</convert>
-	</widget>
-	<eLabel backgroundColor="KravenIBbg" font="Regular; 20" halign="left" position="918,677" size="60,30" text="Uhr" transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1" />
-	<eLabel backgroundColor="KravenIBbg" font="Regular; 20" halign="right" position="737,677" size="120,30" text="läuft bis " transparent="1" valign="center" zPosition="1" foregroundColor="KravenMFont1" />
-    <widget source="session.CurrentService" render="Cover" position="1124,560" size="100,150" zPosition="1" alphatest="on" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,490" size="1280,400" zPosition="-9" />
-  </screen>
   <!-- MovieEpgSetup -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="MovieEpgSetup" position="0,0" size="1280,720" title="MovieEpg Setup">
     <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="700,400" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -793,20 +677,47 @@
     <!--<text="BrowserLauncher" position="70,0" />-->
   </screen>
   <!-- ********** WebRadioFS ********** -->
-  <!-- WebradioFSScreen_12 -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFSScreen_12" position="0,0" size="1280,720" title="">
-    <widget name="rec_pic" alphatest="blend" position="1036,672" size="34,22" zPosition="2" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="rec_txt" position="70,620" size="708,26" transparent="1" valign="center" zPosition="2" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="rec_txt2" position="70,620" size="708,26" transparent="1" valign="center" zPosition="3" />
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="streamlist" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,477" transparent="1" zPosition="2" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" name="help" position="70,80" size="708,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" name="info" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont2" halign="center" source="playtext" render="Label" position="70,565" size="708,56" transparent="1" valign="center" zPosition="2" />
+  <!-- WebradioFSScreen_13 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFSScreen_13" position="0,0" size="1280,720" title="">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt2" position="70,80" size="708,27" transparent="1" valign="center" zPosition="3" />
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="streamlist" render="Listbox" position="70,110" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,390" transparent="1" zPosition="2" >
+		<convert type="TemplatedMultiContent" transparent="0">
+			{"templates": 
+                               {"default": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (0, 2), size = (30, 30), png = 2), # index 2: picture
+					MultiContentEntryText(pos = (40, 3), size = (660, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+                               "info": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (260, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 1: text
+					MultiContentEntryText(pos = (260, 3), size = (440, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
+					],False),
+			"menus": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+			"about": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
+					],False),
+			"genre": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
+					])
+			},		
+			"fonts": [gFont("Regular", 22),gFont("Regular", 20)],
+			"itemHeight": 30,
+			
+			}
+		</convert>
+	</widget>
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" source="playtext" render="Label" position="70,520" size="708,108" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="help" position="70,520" size="708,108" transparent="1" valign="center" zPosition="3" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red2" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green2" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	<widget name="buttons_abdeck" position="570,665" zPosition="2" size="470,26" font="Regular; 20" valign="center" halign="left" foregroundColor="KravenButton" backgroundColor="KravenIBbg2" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -814,20 +725,51 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+    <widget name="rec_pic" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/webradioFS/skin/images/rec1.png" position="1030,668" size="40,30" zPosition="2" />
 	<!-- Menü -->
-    <!--<text="WebradioFSScreen_12" position="70,0" />-->
+    <!--<text="WebradioFSScreen_13" position="70,0" />-->
   </screen>
-  <!-- menu_12 -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="menu_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="streamlist" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="690,510" transparent="1" zPosition="2" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" name="help" position="70,80" size="690,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="info" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="690,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
+  <!-- genre_anzeige_13 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="genre_anzeige_13" position="0,0" size="1280,720" title="">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt2" position="70,80" size="708,27" transparent="1" valign="center" zPosition="3" />
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="streamlist" render="Listbox" position="70,110" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,390" transparent="1" zPosition="2" >
+		<convert type="TemplatedMultiContent" transparent="0">
+			{"templates": 
+                               {"default": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (0, 2), size = (30, 30), png = 2), # index 2: picture
+					MultiContentEntryText(pos = (40, 3), size = (660, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+                               "info": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (260, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 1: text
+					MultiContentEntryText(pos = (260, 3), size = (440, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
+					],False),
+			"menus": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+			"about": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
+					],False),
+			"genre": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
+					])
+			},		
+			"fonts": [gFont("Regular", 22),gFont("Regular", 20)],
+			"itemHeight": 30,
+			
+			}
+		</convert>
+	</widget>
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" source="playtext" render="Label" position="70,520" size="708,108" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="help" position="70,520" size="708,108" transparent="1" valign="center" zPosition="3" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red2" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green2" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	<widget name="buttons_abdeck" position="570,665" zPosition="2" size="470,26" font="Regular; 20" valign="center" halign="left" foregroundColor="KravenButton" backgroundColor="KravenIBbg2" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -835,18 +777,121 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+    <widget name="rec_pic" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/webradioFS/skin/images/rec1.png" position="1030,668" size="40,30" zPosition="2" />
 	<!-- Menü -->
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<text="menu_12" position="70,0" />-->
+    <!--<text="genre_anzeige_13" position="70,0" />-->
   </screen>
-    <!-- wbrFS_r_site -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="wbrFS_r_site" position="900,0" size="380,640">
+  <!-- menu_13 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="menu_13" position="0,0" size="1280,720" title="">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt2" position="70,80" size="708,27" transparent="1" valign="center" zPosition="3" />
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="streamlist" render="Listbox" position="70,110" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,390" transparent="1" zPosition="2" >
+		<convert type="TemplatedMultiContent" transparent="0">
+			{"templates": 
+                               {"default": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (0, 2), size = (30, 30), png = 2), # index 2: picture
+					MultiContentEntryText(pos = (40, 3), size = (660, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+                               "info": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (260, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 1: text
+					MultiContentEntryText(pos = (260, 3), size = (440, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
+					],False),
+			"menus": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+			"about": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
+					],False),
+			"genre": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
+					])
+			},		
+			"fonts": [gFont("Regular", 22),gFont("Regular", 20)],
+			"itemHeight": 30,
+			
+			}
+		</convert>
+	</widget>
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" source="playtext" render="Label" position="70,520" size="708,108" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="help" position="70,520" size="708,108" transparent="1" valign="center" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red2" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green2" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	<widget name="buttons_abdeck" position="570,665" zPosition="2" size="470,26" font="Regular; 20" valign="center" halign="left" foregroundColor="KravenButton" backgroundColor="KravenIBbg2" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
+    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
+    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+    <widget name="rec_pic" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/webradioFS/skin/images/rec1.png" position="1030,668" size="40,30" zPosition="2" />
+	<!-- Menü -->
+    <!--<text="menu_13" position="70,0" />-->
+  </screen>
+  <!-- groups_13 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="groups_13" position="0,0" size="1280,720" title="">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt2" position="70,80" size="708,27" transparent="1" valign="center" zPosition="3" />
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="streamlist" render="Listbox" position="70,110" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,390" transparent="1" zPosition="2" >
+		<convert type="TemplatedMultiContent" transparent="0">
+			{"templates": 
+                               {"default": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (0, 2), size = (30, 30), png = 2), # index 2: picture
+					MultiContentEntryText(pos = (40, 3), size = (660, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+                               "info": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (260, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 1: text
+					MultiContentEntryText(pos = (260, 3), size = (440, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
+					],False),
+			"menus": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+			"about": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
+					],False),
+			"genre": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
+					])
+			},		
+			"fonts": [gFont("Regular", 22),gFont("Regular", 20)],
+			"itemHeight": 30,
+			
+			}
+		</convert>
+	</widget>
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" source="playtext" render="Label" position="70,520" size="708,108" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="help" position="70,520" size="708,108" transparent="1" valign="center" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red2" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green2" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	<widget name="buttons_abdeck" position="570,665" zPosition="2" size="470,26" font="Regular; 20" valign="center" halign="left" foregroundColor="KravenButton" backgroundColor="KravenIBbg2" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
+    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
+    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+    <widget name="rec_pic" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/webradioFS/skin/images/rec1.png" position="1030,668" size="40,30" zPosition="2" />
+	<!-- Menü -->
+    <!--<text="groups_13" position="70,0" />-->
+  </screen>
+    <!-- wbrFS_r_site13 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="wbrFS_r_site13" position="900,0" size="380,640">
     <widget alphatest="blend" backgroundColor="Kravenbg" name="picture" position="0,80" size="280,278" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile1b" position="0,390" size="280,20" transparent="1" noWrap="1" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile2b" position="0,410" size="280,20" transparent="1" noWrap="1" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile3b" position="0,430" size="280,20" transparent="1" noWrap="1" />
-    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile4b" position="0,450" size="280,20" transparent="1" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile1b" position="0,380" size="280,22" transparent="1" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile2b" position="0,402" size="280,22" transparent="1" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile3b" position="0,424" size="280,22" transparent="1" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile4b" position="0,446" size="280,22" transparent="1" noWrap="1" />
     <widget alphatest="blend" backgroundColor="Kravenbg" name="streamlogo" position="0,500" size="280,140" />
     <widget backgroundColor="Kravenbg" font="Regular2;20" foregroundColor="KravenFont2" halign="center" name="fav_name" position="0,530" size="280,140" transparent="1" />
     <widget foregroundColor="KravenFont2" name="playline2" pointer="skin_default/position_pointer.png:540,0" position="0,510" size="280,21" transparent="1">
@@ -861,63 +906,18 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="380,640" transparent="0" zPosition="-10" />
     <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="380,400" alphatest="blend" zPosition="-9" />
     <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="380,443" alphatest="blend" zPosition="-9" />
-    <!--<text="wbrFS_r_site" position="70,0" />-->
-  </screen>
-  <!-- genre_anzeige_12 -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="genre_anzeige_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="transparent" foregroundColor="KravenFont1" name="streamlist" position="70,80" size="690,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="2" />
-    <widget backgroundColor="transparent" font="Regular;18" foregroundColor="KravenFont1" name="help" position="70,80" size="690,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="transparent" foregroundColor="KravenFont1" name="info" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="690,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="transparent" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
-    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
-	<!-- Menü -->
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<text="genre_anzeige_12" position="70,0" />-->
-  </screen>
-  <!-- groups_12 -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="groups_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="transparent" foregroundColor="KravenFont1" name="streamlist" position="70,80" size="690,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="2" />
-    <widget backgroundColor="transparent" font="Regular;18" foregroundColor="KravenFont1" name="help" position="70,80" size="690,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="transparent" foregroundColor="KravenFont1" name="info" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="690,510" transparent="1" zPosition="3" />
-    <widget backgroundColor="transparent" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
-    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
-	<!-- Menü -->
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<text="groups_12" position="70,0" />-->
+    <!--<text="wbrFS_r_site13" position="70,0" />-->
   </screen>
   <!-- WebradioFSSetup_12 -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFSSetup_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="690,503" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -932,13 +932,14 @@
   </screen>
   <!-- WebradioFS_FB_Setup_12 -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFS_FB_Setup_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="690,503" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -951,15 +952,38 @@
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="WebradioFS_FB_Setup_12" position="70,0" />-->
   </screen>
-  <!-- rec_menu_12 -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="rec_menu_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="690,490" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
+  <!-- Fav_edit_12 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Fav_edit_12" position="0,0" size="1280,720" title="webradioFS">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
+    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
+    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
+    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+    <!--<text="Fav_edit_12" position="70,0" />-->
+  </screen>
+  <!-- rec_menu_12 -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="rec_menu_12" position="0,0" size="1280,720" title="webradioFS">
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -974,13 +998,14 @@
   </screen>
   <!-- col_set_12 -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="col_set_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="690,490" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -993,15 +1018,12 @@
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="col_set_12" position="70,0" />-->
   </screen>
-  <!-- Fav_edit_12 -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="Fav_edit_12" position="0,0" size="1280,720" title="webradioFS">
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="690,490" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="playtext" position="70,608" size="708,30" transparent="1" valign="center" zPosition="2" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+  <!-- webradioFSsetDisplay -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="webradioFSsetDisplay" position="0,0" size="1280,720" title="webradioFS - Display-Settings">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="708,46" name="titel" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
+    <widget font="Regular; 20" halign="left" valign="center" name="label_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="label_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
@@ -1012,7 +1034,48 @@
 	<!-- Menü -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<text="Fav_edit_12" position="70,0" />-->
+    <!--<text="webradioFSsetDisplay" position="70,0" />-->
+  </screen>
+  <!-- wbrfs_set_we -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="wbrfs_set_we" position="0,0" size="1280,720" title="Info">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,80" size="708,390" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
+    <widget backgroundColor="Kravenbg" name="warn" foregroundColor="KravenFont2" font="Regular2;22" position="70,490" size="708,135" transparent="1" halign="center" valign="center" zPosition="2" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
+    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
+    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
+    <!--<text="wbrfs_set_we" position="70,0" />-->
+  </screen>
+  <!-- wbrfs_cs -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="wbrfs_cs" position="0,0" size="1280,720" title="Save from cache">
+    <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="song_liste" render="Listbox" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,448" transparent="1" zPosition="2" >
+      <convert type="TemplatedMultiContent">
+		{"template": [ MultiContentEntryText(pos = (0, 2), size = (700, 29), flags = RT_HALIGN_LEFT, text = 0) ],
+		"fonts": [gFont("Regular", 22)],
+		"itemHeight": 32
+		}
+	  </convert>
+	</widget>
+    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+    <ePixmap backgroundColor="Kravenbg" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
+    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
+    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
+	<!-- Menü -->
+    <!--<text="wbrfs_cs" position="70,0" />-->
   </screen>
   <!-- ********** WebInterface ********** -->
   <!-- WebIfConfigScreen -->
@@ -1691,26 +1754,6 @@
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="AutoTimerSettings" position="70,0" />-->
-  </screen>
-  <!-- EPG Share Setup -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="EPG Share Setup" position="0,0" size="1280,720" title="EPG Share Setup">
-    <widget backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-	<widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,54" foregroundColor="KravenFont1" font="Regular;22" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" />
-	<widget backgroundColor="Kravenbg3" name="list2" position="70,140" size="708,420" foregroundColor="KravenFont1" font="Regular;22" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" />
-	<widget backgroundColor="Kravenbg3" name="info" position="70,580" size="708,54" halign="left" foregroundColor="KravenFont2" font="Regular2;22" transparent="1" />
-	<!-- Logo -->
-    <ePixmap backgroundColor="Kravenbg3" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg3" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg3" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
-    <ePixmap backgroundColor="Kravenbg3" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<text="EPG Share Setup" position="70,0" />-->
   </screen>
   <!-- EPG Share -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="epgShareScreen" position="0,0" size="1280,720" title="EPG Share">

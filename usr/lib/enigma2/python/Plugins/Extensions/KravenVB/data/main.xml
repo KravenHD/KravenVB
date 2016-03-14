@@ -955,29 +955,18 @@
   <!-- Ipkg -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="Ipkg" position="0,0" size="1280,720" title="Installing Software...">
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-    <widget borderWidth="1" name="activityslider" position="70,160" size="708,15" transparent="1" />
+    <widget name="activityslider" position="70,160" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="package" position="80,190" size="688,25" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="status" position="80,230" size="688,50" transparent="1" />
-    <widget borderWidth="1" name="slider" position="70,320" size="708,20" transparent="1" />
+    <widget name="slider" position="70,320" size="708,20" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
 	<!-- Logo -->
     <!--<text="Ipkg" position="70,0" />-->
   </screen>
  <!-- ChoiceBox -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="ChoiceBox" position="0,0" size="1280,720">
-    <eLabel text="Auswahlfenster" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="708,46" halign="left" valign="center" zPosition="1" transparent="1" />
-	<widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="70,80" size="708,27" render="Label" source="Title" halign="left" valign="center" transparent="1" />
-	<widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" position="70,107" size="708,110" halign="left" valign="center" name="text" transparent="1" />
-	<widget backgroundColor="Kravenbg3" enableWrapAround="1" itemHeight="30" name="list" position="70,220" size="708,420" transparent="1" />
-	<!-- Logo -->
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-    <!--<text="ChoiceBox" position="70,0" />-->
-  </screen>
- <!-- ChoiceBoxExt -->
-  <screen name="ChoiceBoxExt" position="130,140" size="600,400" title="Input" flags="wfNoBorder">
-    <widget name="title" backgroundColor="Kravenbg" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="530,32" halign="left" valign="center" transparent="1" />
+  <screen name="ChoiceBox" position="130,140" size="600,400" title="Input" flags="wfNoBorder">
+    <widget source="Title" render="Label" backgroundColor="Kravenbg" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="530,32" halign="left" valign="center" transparent="1" />
 	<widget name="text" position="20,45" size="530,27" backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" />
-	<widget name="list" position="0,80" size="550,300" itemHeight="25" scrollbarMode="showOnDemand" transparent="1"/>
+	<widget name="list" position="0,80" size="550,360" backgroundColor="Kravenbg" itemHeight="30" scrollbarMode="showOnDemand" transparent="1"/>
 	<applet type="onLayoutFinish">
 # this should be factored out into some helper code, but currently demonstrates applets.
 from enigma import eSize, ePoint
@@ -989,9 +978,9 @@ textsize = self["text"].getSize()
 # y size still must be fixed in font stuff...
 textsize = (textsize[0] + 70, textsize[1] + 70)
 count = len(self.list)
-if count &gt; 10:
-        count = 10
-offset = 25 * count
+if count &gt; 15:
+        count = 15
+offset = 30 * count
 wsizex = textsize[0] + 30
 wsizey = textsize[1] + offset + 20
 
@@ -1006,7 +995,7 @@ self.instance.resize(eSize(*wsize))
 self["text"].instance.resize(eSize(*textsize))
 
 # move list
-listsize = (wsizex - 20, 25 * count)
+listsize = (wsizex - 20, 30 * count)
 self["list"].instance.move(ePoint(10, textsize[1]))
 self["list"].instance.resize(eSize(*listsize))
 
@@ -1014,12 +1003,6 @@ self["list"].instance.resize(eSize(*listsize))
 newwidth = wsize[0]
 self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
 	</applet>
-  </screen>
-  <screen name="PinInputExt" position="center,center" size="500,210" title="PIN code needed" flags="wfNoBorder" zPosition="1">
-	<widget name="text" position="10,15" size="480,27" font="Regular;22" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
-	<widget name="service" position="10,60" size="480,32" font="Regular;26" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont2" />
-	<widget name="tries" position="10,105" size="480,27" font="Regular;22" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
-	<widget name="input" position="10,150" size="480,40" font="Regular;26" halign="center" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
   </screen>
   <screen backgroundColor="transparent" flags="wfNoBorder" name="Console" position="0,0" size="1280,720" title="Command execution...">
     <widget backgroundColor="Kravenbg3" font="Console;18" name="text" scrollbarWidth="5" position="70,120" size="708,500" transparent="1" foregroundColor="KravenFont1" />
@@ -1075,7 +1058,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="ManualFancontrol" position="70,0" />-->
   </screen>
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="Mute" position="49,40" size="70,70" title="Mute" zPosition="11">
+  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="Mute" position="49,40" size="70,70" title="Mute" zPosition="11">
     <ePixmap alphatest="blend" borderColor="transparent" borderWidth="0" pixmap="KravenVB/global-icons/mute.png" position="3,3" size="64,64" transparent="1" zPosition="-1" />
     <eLabel backgroundColor="Kravenbg" position="0,0" size="70,70" zPosition="-10" />
   </screen>
@@ -1110,7 +1093,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
     <!--<text="SkinSelector" position="70,0" />-->
   </screen>
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="UnhandledKey" position="49,40" size="70,70" title="UnhandledKey" zPosition="100">
+  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="UnhandledKey" position="49,40" size="70,70" title="UnhandledKey" zPosition="100">
     <widget alphatest="blend" name="UnhandledKeyPixmap" pixmap="KravenVB/global-icons/error.png" position="3,3" size="64,64" zPosition="2" />
     <eLabel backgroundColor="Kravenbg" position="0,0" size="70,70" zPosition="1" />
   </screen>
@@ -1127,20 +1110,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <eLabel backgroundColor="KravenBorder" position="0,0" size="2,350" zPosition="2" />
     <eLabel backgroundColor="KravenBorder" position="713,0" size="2,350" zPosition="2" />
   </screen>
-  <screen name="VirtualKeyBoardExt" position="center,center" backgroundColor="Kravenbg" flags="wfNoBorder" size="766,468" zPosition="9999" title="VirtualKeyBoard">
-    <widget name="title" backgroundColor="Kravenbg" font="Regular2;26" foregroundColor="KravenFont2" position="10,8" size="530,32" halign="left" valign="center" transparent="1" />
-    <ePixmap pixmap="skin_default/vkey_text.png" position="10,80" zPosition="-4" size="542,52" alphatest="on" />
-    <widget name="header" position="10,50" size="500,25" font="Regular;20" transparent="1" noWrap="1" foregroundColor="KravenFont1" />
-    <widget name="text" position="12,80" size="535,52" font="Regular;40" transparent="1" noWrap="1" halign="left" foregroundColor="KravenFont1" />
-    <widget name="list" position="10,145" size="695,225" selectionDisabled="1" itemHeight="45" foregroundColor="white" backgroundColor="#00151515" transparent="1" />
-    <widget source="country" render="Pixmap" position="643,86" size="60,40" alphatest="on" borderWidth="2" borderColor="KravenBorder" zPosition="1">
-      <convert type="ValueToPixmap">LanguageCode</convert>
-    </widget>
-    <eLabel backgroundColor="KravenBorder" position="0,0" size="766,2" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder" position="0,466" size="766,2" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder" position="0,0" size="2,468" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder" position="764,0" size="2,468" zPosition="2" />
-  </screen>
   <!-- ********** EPG ********** -->
     <!-- EPGSelection -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="EPGSelection" position="0,0" size="1280,720" title="EPG Selection">
@@ -1148,7 +1117,10 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
       <convert type="ServiceName">Reference</convert>
     </widget>
 	<widget name="list" position="70,75" size="708,550" zPosition="3" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg" foregroundColor="KravenFont1" font="Regular; 22" enableWrapAround="1" transparent="1" />
-    <widget backgroundColor="Kravenbg" font="Regular; 22" foregroundColor="KravenFont1" position="820,80" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,540" source="Event" valign="top" transparent="1" zPosition="-8">
+    <widget font="Regular2; 24" backgroundColor="Kravenbg" halign="left" noWrap="1" foregroundColor="KravenFont2" position="820,75" size="418,30" render="Label" source="Service" transparent="1" valign="center" zPosition="1">
+      <convert type="ServiceName">Name</convert>
+    </widget>
+    <widget backgroundColor="Kravenbg" font="Regular; 22" foregroundColor="KravenFont1" position="820,110" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,513" source="Event" valign="top" transparent="1" zPosition="-8">
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
@@ -2324,47 +2296,6 @@ newwidth = wsize[0]
 self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
 		</applet>
   </screen>
-  <!-- MessageBoxExt -->
-  <screen name="MessageBoxExt" flags="wfNoBorder" position="240,177" size="800,10" zPosition="1" title="Message" backgroundColor="Kravenbg">
-    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" position="7,4" render="Label" size="514,28" source="Title" transparent="1" zPosition="1" />
-    <widget name="text" position="94,49" size="680,0" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" />
-    <widget name="ErrorPixmap" pixmap="KravenVB/global-icons/attention.png" position="20,50" size="53,53" alphatest="blend" />
-    <widget name="QuestionPixmap" pixmap="KravenVB/global-icons/question.png" position="20,50" size="53,53" alphatest="blend" />
-    <widget name="InfoPixmap" pixmap="KravenVB/global-icons/info.png" position="20,50" size="53,53" alphatest="blend" />
-    <widget name="list" position="21,136" size="760,320" itemHeight="32" transparent="1" />
-    <applet type="onLayoutFinish">
-# this should be factored out into some helper code,but currently demonstrates applets.
-from enigma import eSize,ePoint
-orgwidth = self.instance.size().width()
-orgpos = self.instance.position()
-textsize = self["text"].getSize()
-
-textsize = (textsize[0] + 60,textsize[1] + 60)
-offset = 30
-if self.type == self.TYPE_YESNO:
-	offset = 107
-wsizex = textsize[0] + 107
-wsizey = textsize[1] + offset
-if (280 &gt; wsizex):
-	wsizex = 280
-wsize = (wsizex,wsizey)
-
-# resize
-self.instance.resize(eSize(*wsize))
-
-# resize label
-self["text"].instance.resize(eSize(*textsize))
-
-# move list
-listsize = (wsizex - 20,64)
-self["list"].instance.move(ePoint(10,textsize[1] + 27))
-self["list"].instance.resize(eSize(*listsize))
-
-# center window
-newwidth = wsize[0]
-self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
-		</applet>
-  </screen>
    <!-- PluginDownloadBrowser -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginDownloadBrowser" position="0,0" size="1280,720" title="Downloadable plugins">
     <widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,550" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="4" />
@@ -2820,10 +2751,10 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
   </screen>
   <!-- UpdatePlugin -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="UpdatePlugin" position="0,0" size="1280,720" title="Software Update...">
-    <widget borderWidth="1" name="activityslider" position="70,160" size="708,15" transparent="1" />
+    <widget name="activityslider" position="70,160" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="80,190" render="Label" size="688,25" source="package" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="80,230" render="Label" size="688,50" source="status" transparent="1" />
-    <widget borderWidth="1" name="slider" position="70,320" size="708,20" transparent="1" />
+    <widget name="slider" position="70,320" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
     <widget backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="708,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
 	<!-- Logo -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
@@ -3373,50 +3304,5 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <widget font="Regular; 20" halign="left" valign="center" source="key_blue" render="Label" position="820,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
 	<!-- Logo -->
     <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
-  </screen>
-	<!-- SplitScreen -->
-  <screen name="SplitScreen" position="0,0" zPosition="-1" size="1280,720" flags="wfNoBorder" backgroundColor="Kravenbg2" >
-    <widget source="MasterService" render="Picon" position="42,15" zPosition="1" size="130,78" transparent="1" alphatest="blend">
-      <convert type="ServiceName">Reference</convert>
-    </widget>
-    <widget source="MasterService" render="Label" position="192,15" size="426,78" font="Regular;26" backgroundColor="KravenIBbg2" transparent="1" foregroundColor="KravenMFont2" valign="center" halign="left">
-      <convert type="ServiceName" />
-    </widget>
-    <widget name="video1" position="42,105" size="576,324" zPosition="3" backgroundColor="transparent" />
-    <eLabel backgroundColor="#00000000" position="42,105" size="576,324" transparent="0" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder2" position="42,105" size="576,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="42,426" size="576,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="42,105" size="3,324" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="615,105" size="3,324" transparent="0" zPosition="4" />
-    <widget source="MasterService" render="Label" position="42,445" size="576,30" font="Regular2;24" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont2" halign="left">
-      <convert type="EventName" />
-    </widget>
-    <widget source="MasterService" render="Label" position="42,485" size="576,156" font="Regular;20" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" halign="left" transparent="1">
-      <convert type="EventName">ExtendedDescription</convert>
-    </widget>
-    <widget source="SlaveService" render="Picon" position="662,15" zPosition="1" size="130,78" transparent="1" alphatest="blend">
-      <convert type="ServiceName">Reference</convert>
-    </widget>
-    <widget source="SlaveService" render="Label" position="812,15" size="426,78" font="Regular;26" backgroundColor="KravenIBbg2" transparent="1" foregroundColor="KravenMFont2" valign="center" halign="left">
-      <convert type="ServiceName" />
-    </widget>
-    <widget name="video2" position="662,105" size="576,324" zPosition="3" backgroundColor="transparent" />
-    <eLabel backgroundColor="#00000000" position="662,105" size="576,324" transparent="0" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder2" position="662,105" size="576,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="662,426" size="576,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="662,105" size="3,324" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="1235,105" size="3,324" transparent="0" zPosition="4" />
-    <widget source="SlaveService" render="Label" position="662,445" size="576,30" font="Regular2;24" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont2" halign="left">
-      <convert type="EventName" />
-    </widget>
-    <widget source="SlaveService" render="Label" position="662,485" size="576,156" font="Regular;20" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" halign="left" transparent="1">
-      <convert type="EventName">ExtendedDescription</convert>
-    </widget>
-    <widget name="zap_focus" position="42,670" size="576,30" font="Regular2;24" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
-    <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
-    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
-	<!-- Split -->
-    <!--<text="SplitScreen" position="70,0" />-->
   </screen>
   <!-- Main */ -->

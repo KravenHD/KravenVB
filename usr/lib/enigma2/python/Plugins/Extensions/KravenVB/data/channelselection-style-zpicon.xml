@@ -30,7 +30,7 @@
     </widget>
     <eLabel position="39,545" size="368,1" backgroundColor="KravenLine" />
     <eLabel position="39,260" size="368,1" backgroundColor="KravenLine" />
-    <widget backgroundColor="KravenIBbg4" font="Regular2;34" foregroundColor="KravenMFont2" position="42,12" render="Label" size="800,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+    <widget backgroundColor="KravenIBbg4" font="Regular2;34" foregroundColor="KravenMFont2" position="42,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
     <ePixmap backgroundColor="Kravenbg4" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg4" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,692" size="200,5" />
     <ePixmap backgroundColor="Kravenbg4" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="542,692" size="200,5" />

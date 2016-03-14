@@ -21,7 +21,6 @@ from enigma import eVideoWidget,eTimer,getDesktop,eServiceCenter,iServiceInforma
 from Screens.InfoBar import InfoBar
 from Components.SystemInfo import SystemInfo
 from Components.config import config
-from enigma import eActionMap
 
 fbtool=None
 init_PiG=None
@@ -57,6 +56,8 @@ class KravenVBPig(Renderer):
 						self.decoder=0
 		else:
 			self.decoder=0
+			
+			
 		self.prev_fb_info=fbtool.getFBSize()
 		if self.decoder>0:
 			self.prev_fb_info_second_dec=fbtool.getFBSize(decoder=1)
@@ -142,10 +143,16 @@ class KravenVBPig(Renderer):
 	def changed(self,what):
 		if InfoBar.instance:
 			current=self.source.getCurrentService()
-			if InfoBar.instance.session.pipshown:
-				InfoBar.instance.session.pip.playService(current)
+			service=current and current.toString()
+			radio=service and service.startswith("1:0:2")
+			if radio and InfoBar.instance.session.pipshown:
+				InfoBar.instance.servicelist.setCurrentSelection(current)
+				InfoBar.instance.servicelist.zap()
 			else:
-				InfoBar.instance.session.nav.playService(current)
+				if InfoBar.instance.session.pipshown:
+					InfoBar.instance.session.pip.playService(current)
+				else:
+					InfoBar.instance.session.nav.playService(current)
 
 	def destroy(self):
 		if self.first_PiG and InfoBar.instance.session.pipshown:
