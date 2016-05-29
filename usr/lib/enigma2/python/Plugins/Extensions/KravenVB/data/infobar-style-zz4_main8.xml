@@ -1,0 +1,222 @@
+  <widget alphatest="blend" position="20,542" render="KravenVBXPicon" size="400,170" source="session.CurrentService" transparent="1" zPosition="4">
+    <convert type="ServiceName">Reference</convert>
+  </widget>
+  <widget font="Regular;30" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="603,544" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="484,40" source="session.Event_Now" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
+    <convert type="KravenVBEventName">Name</convert>
+  </widget>
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="right" position="1089,549" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+    <convert type="KravenVBEventTime">Remaining</convert>
+    <convert type="KravenVBRemainingToText">InMinutes</convert>
+  </widget>
+  <widget position="446,589" render="Progress" size="749,5" source="session.Event_Now" transparent="1" zPosition="7" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress749.png">
+    <convert type="KravenVBEventTime">Progress</convert>
+  </widget>
+  <eLabel position="446,591" size="749,1" backgroundColor="KravenLine" />
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="446,549" render="Label" size="60,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+    <convert type="KravenVBEventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="KravenIBbg" font="Regular;20" foregroundColor="KravenIBFont1" halign="center" noWrap="1" position="506,549" size="10,35" text="-" transparent="1" valign="center" zPosition="1" />
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="right" noWrap="1" position="516,549" render="Label" size="60,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+    <convert type="KravenVBEventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <widget font="Regular;30" foregroundColor="KravenIBFont2" halign="left" position="603,644" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="484,40" source="session.Event_Next" valign="top" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
+    <convert type="KravenVBEventName">Name</convert>
+  </widget>
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" valign="center" halign="right" position="1088,649" render="Label" size="107,35" source="session.Event_Next" transparent="1" zPosition="1">
+    <convert type="KravenVBEventTime">Duration</convert>
+    <convert type="ClockToText">InMinutes</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="803,611" size="43,22" zPosition="2" />
+  <widget source="session.RecordState" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="803,611" zPosition="2" size="43,22" alphatest="blend">
+    <convert type="ConditionalShowHide">recordblink</convert>
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hbbtv_off.png" position="853,611" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hbbtv_on.png" position="853,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+    <convert type="KravenVBServiceInfoEX">HasHBBTV</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_sub_off.png" position="903,611" size="43,22" zPosition="1" />
+  <widget source="session.CurrentService" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_sub_on.png" position="903,611" size="43,22" zPosition="2" alphatest="blend">
+    <convert type="VServiceInfo">SubtitlesAvailable</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_txt_off.png" position="953,611" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_txt_on.png" position="953,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+    <convert type="ServiceInfo">HasTelext</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="1003,611" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="1003,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsMultichannel</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="1053,611" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_on.png" position="1053,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">IsWidescreen</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_off.png" position="1103,611" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_on.png" position="1103,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
+    <convert type="ServiceInfo">VideoWidth</convert>
+    <convert type="ValueRange">721,1980</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_crypt_off.png" position="1153,611" size="43,22" zPosition="1" />
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_crypt_on.png" position="1153,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="5">
+    <convert type="ServiceInfo">IsCrypted</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="left" noWrap="1" position="446,649" render="Label" size="60,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+    <convert type="KravenVBEventTime">StartTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="KravenIBbg" font="Regular;20" foregroundColor="KravenIBFont2" halign="center" noWrap="1" position="506,649" size="10,35" text="-" transparent="1" valign="center" zPosition="1" />
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="right" noWrap="1" position="516,649" render="Label" size="60,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+    <convert type="KravenVBEventTime">EndTime</convert>
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <eLabel backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular;20" halign="center" noWrap="1" position="433,602" size="190,35" text="Sendung läuft seit" transparent="1" valign="center" zPosition="1" />
+  <widget backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" font="Regular;20" halign="left" position="617,600" render="Label" size="150,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+    <convert type="KravenVBEventTime">RunTime</convert>
+    <convert type="KravenVBRemainingToText">InMinutes</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="709,687" size="350,23" font="Regular;19" foregroundColor="KravenIBFont1" halign="right" backgroundColor="KravenIBbg" transparent="1">
+    <convert type="ClockToText">Format:%A, %d.%m.%Y</convert>
+  </widget>
+  <widget source="global.CurrentTime" render="Label" position="1090,687" size="100,23" font="Regular;19" foregroundColor="KravenIBFont1" halign="left" backgroundColor="KravenIBbg" transparent="1">
+    <convert type="ClockToText">Default</convert>
+  </widget>
+  <ePixmap pixmap="KravenVB/infobar-icons/a_off2.png" position="446,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/b_off2.png" position="466,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/c_off2.png" position="486,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/d_off2.png" position="506,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/e_off2.png" position="526,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/f_off2.png" position="546,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/g_off2.png" position="566,690" size="15,22" zPosition="1" alphatest="blend" />
+  <ePixmap pixmap="KravenVB/infobar-icons/h_off2.png" position="586,690" size="15,22" zPosition="1" alphatest="blend" />
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/a_on2.png" position="446,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/b_on2.png" position="466,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/c_on2.png" position="486,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/d_on2.png" position="506,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">8</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/e_on2.png" position="526,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">16</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/f_on2.png" position="546,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">32</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/g_on2.png" position="566,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">64</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.TunerInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/h_on2.png" position="586,690" zPosition="2" size="15,22" alphatest="blend">
+    <convert type="TunerInfo">TunerUseMask</convert>
+    <convert type="ValueBitTest">128</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/a_green2.png" position="446,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">0,0</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/b_green2.png" position="466,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">1,1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/c_green2.png" position="486,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">2,2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/d_green2.png" position="506,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">3,3</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/e_green2.png" position="526,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">4,4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/f_green2.png" position="546,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">5,5</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/g_green2.png" position="566,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">6,6</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/h_green2.png" position="586,690" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">7,7</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <!--  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/a_red2.png" position="446,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_0</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/b_red2.png" position="466,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_1</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/c_red2.png" position="486,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_2</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/d_red2.png" position="506,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_3</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/e_red2.png" position="526,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_4</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/f_red2.png" position="546,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_5</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/g_red2.png" position="566,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_6</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/h_red2.png" position="586,690" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_7</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>  -->
+  <ePixmap pixmap="KravenVB/infobar-icons/aufloesung.png" position="609,690" size="112,22" zPosition="1" alphatest="blend" />
+  <widget source="session.CurrentService" render="Label" zPosition="3" position="610,688" size="110,22" font="Regular;19" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
+    <convert type="KravenVBExtraInfo">Resolution</convert>    
+  </widget>
+  <ePixmap pixmap="KravenVB/infobar-icons/aufloesung2.png" position="729,690" size="116,22" zPosition="1" alphatest="blend" />
+  <widget backgroundColor="KravenIBbg" font="Regular;19" foregroundColor="KravenIcon" halign="left" position="732,688" size="55,22" render="Label" source="session.CurrentService" transparent="1">
+    <convert  type="KravenVBServiceName2">OrbitalPos</convert>
+  </widget>
+  <widget render="Label" font="Regular;19" position="775,688" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIcon"  source="session.FrontendStatus">
+    <convert  type="KravenVBFrontendInfo">SNR</convert>
+  </widget>
+  <!--<eLabel text="  S:"  font="Regular;19" position="781,688" size="30,22" halign="left" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIcon" />-->

@@ -90,5 +90,5 @@
   <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,80" size="215,22" source="session.CurrentService" zPosition="3" halign="left" transparent="1">
     <convert type="KravenVBWeather">Day_0,City</convert>
   </widget>
-  <ePixmap pixmap="KravenVB/ibaro.png" position="0,0" size="1280,165" zPosition="-9" alphatest="blend"/>
+  <constant-widget name="gradient-weather-big"/>
 <!-- Weather */-->

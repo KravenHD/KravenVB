@@ -77,56 +77,88 @@
     <convert type="ValueBitTest">128</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/a_green2.png" position="868,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">0,0</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/b_green2.png" position="888,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">1,1</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/c_green2.png" position="908,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">2,2</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/d_green2.png" position="928,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">3,3</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/e_green2.png" position="948,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">4,4</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/f_green2.png" position="968,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">5,5</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/g_green2.png" position="988,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">6,6</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-    <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/h_green2.png" position="1008,23" zPosition="3" size="15,22" alphatest="blend">
-      <convert type="FrontendInfo">NUMBER</convert>
-      <convert type="ValueRange">7,7</convert>
-      <convert type="ConditionalShowHide" />
-    </widget>
-  <ePixmap pixmap="KravenVB/ibaro.png" position="0,-20" size="1280,165" zPosition="-9" alphatest="blend"/>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/a_green2.png" position="868,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">0,0</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/b_green2.png" position="888,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">1,1</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/c_green2.png" position="908,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">2,2</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/d_green2.png" position="928,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">3,3</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/e_green2.png" position="948,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">4,4</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/f_green2.png" position="968,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">5,5</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/g_green2.png" position="988,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">6,6</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="session.FrontendInfo" zPosition="3" render="Pixmap" pixmap="KravenVB/infobar-icons/h_green2.png" position="1008,23" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">NUMBER</convert>
+    <convert type="ValueRange">7,7</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <!--  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/a_red2.png" position="868,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_0</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/b_red2.png" position="888,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_1</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/c_red2.png" position="908,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_2</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/d_red2.png" position="928,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_3</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/e_red2.png" position="948,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_4</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/f_red2.png" position="968,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_5</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/g_red2.png" position="988,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_6</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>
+  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/h_red2.png" position="1008,23" zPosition="4" size="15,22" alphatest="blend">
+    <convert type="KravenVBFrontendInfo">REC_7</convert>
+    <convert type="ConditionalShowHide">tunerblink</convert>
+  </widget>  -->
   <ePixmap pixmap="KravenVB/infobar-icons/aufloesung.png" position="1030,23" size="112,22" zPosition="1" alphatest="blend" />
-  <widget source="session.CurrentService" render="Label" zPosition="3" position="1031,21" size="110,22" font="Regular; 19" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
+  <widget source="session.CurrentService" render="Label" zPosition="3" position="1031,21" size="110,22" font="Regular;19" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
     <convert type="KravenVBExtraInfo">Resolution</convert>
   </widget>
   <ePixmap pixmap="KravenVB/infobar-icons/aufloesung2.png" position="1148,23" size="116,22" zPosition="1" alphatest="blend" />
   <widget backgroundColor="KravenIBbg" font="Regular;19" foregroundColor="KravenIcon" halign="left" position="1150,21" size="55,22" render="Label" source="session.CurrentService" transparent="1">
-    <convert  type="KravenVBExtServiceInfo">OrbitalPosition</convert>
+    <convert  type="KravenVBServiceName2">OrbitalPos</convert>
   </widget>
-  <widget render="Label" font="Regular; 19" position="1193,21" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIcon"  source="session.FrontendStatus">
+  <widget render="Label" font="Regular;19" position="1193,21" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIcon"  source="session.FrontendStatus">
     <convert  type="KravenVBFrontendInfo">SNR</convert>
   </widget>
-  <!--<eLabel text="  S:"  font="Regular; 19" position="1198,21" size="40,22" halign="left" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIcon" />-->
+  <!--<eLabel text="  S:"  font="Regular;19" position="1198,21" size="40,22" halign="left" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIcon" />-->
+  <constant-widget name="gradient-ib-top"/>

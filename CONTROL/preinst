@@ -1,5 +1,9 @@
 #!/bin/sh
 echo "Checking for previous installations..."
+if [ -f /usr/share/enigma2/KravenVB/graphics/ibar.png ]; then
+    mkdir /tmp/graphics
+    cp /usr/share/enigma2/KravenVB/graphics/*.* /tmp/graphics
+fi
 if [ -f /usr/share/enigma2/KravenVB/ibar.png ]; then
     cp /usr/share/enigma2/KravenVB/ibar.png /tmp
 fi
@@ -8,6 +12,15 @@ if [ -f /usr/share/enigma2/KravenVB/ibaro.png ]; then
 fi
 if [ -f /usr/share/enigma2/KravenVB/backg.png ]; then
     cp /usr/share/enigma2/KravenVB/backg.png /tmp
+fi
+if [ -f /usr/share/enigma2/KravenVB/info.png ]; then
+    cp /usr/share/enigma2/KravenVB/info.png /tmp
+fi
+if [ -f /usr/share/enigma2/KravenVB/shift.png ]; then
+    cp /usr/share/enigma2/KravenVB/shift.png /tmp
+fi
+if [ -f /usr/share/enigma2/KravenVB/wsmall.png ]; then
+    cp /usr/share/enigma2/KravenVB/wsmall.png /tmp
 fi
 if [ -f /etc/kraven_profile_1 ]; then
     mv /etc/kraven_profile_* /etc/enigma2

@@ -33,7 +33,7 @@
     </widget>
     <widget alphatest="blend" pixmaps="battery_unknown.png,battery_verylow.png,battery_low.png,battery_medium.png,battery_high.png,battery_full.png" pixtype="battery_vp" plugin_pixmaps="images" position="482,21" render="NetatmoPixmap" size="50,30" source="session.CurrentService" zPosition="10">
     </widget>
-    <ePixmap pixmap="KravenVB/ibaro.png" position="0,0" size="532,443" zPosition="-9" />
+    <constant-widget name="gradient-netatmo"/>
   </screen>
   <!--/* NetatmoBar V1-->
   <!--/* NetatmoBar V5-->
@@ -71,6 +71,6 @@
     </widget>
     <widget alphatest="blend" pixmaps="battery_unknown.png,battery_verylow.png,battery_low.png,battery_medium.png,battery_high.png,battery_full.png" pixtype="battery_vp" plugin_pixmaps="images" position="482,21" render="NetatmoPixmap" size="50,30" source="session.CurrentService" zPosition="10">
     </widget>
-    <ePixmap pixmap="KravenVB/ibaro.png" position="0,0" size="532,443" zPosition="-9" />
+    <constant-widget name="gradient-netatmo"/>
   </screen>
   <!--/* NetatmoBar V5-->

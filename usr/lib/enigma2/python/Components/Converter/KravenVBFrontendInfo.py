@@ -1,7 +1,10 @@
 from Components.Converter.Converter import Converter
 from Components.Element import cached
 
-class KravenVBFrontendInfo(Converter, object):
+from Poll import Poll
+import NavigationInstance
+
+class KravenVBFrontendInfo(Poll, Converter, object):
 	BER = 0
 	SNR = 1
 	AGC = 2
@@ -9,9 +12,13 @@ class KravenVBFrontendInfo(Converter, object):
 	SNRdB = 4
 	SLOT_NUMBER = 5
 	TUNER_TYPE = 6
+	REC_TUNER = 7
 
 	def __init__(self, type):
+		Poll.__init__(self)
 		Converter.__init__(self, type)
+		self.poll_interval = 1000
+		self.poll_enabled = True
 		if type == "BER":
 			self.type = self.BER
 		elif type == "SNR":
@@ -24,6 +31,9 @@ class KravenVBFrontendInfo(Converter, object):
 			self.type = self.SLOT_NUMBER
 		elif type == "TYPE":
 			self.type = self.TUNER_TYPE
+		elif type.split("_")[0] == "REC":
+			self.type = self.REC_TUNER
+			self.tunernum = type.split("_")[1]
 		else:
 			self.type = self.LOCK
 
@@ -43,7 +53,7 @@ class KravenVBFrontendInfo(Converter, object):
 			percent = self.source.snr
 		elif self.type == self.SNRdB:
 			if self.source.snr_db is not None:
-				return "%3.02f dB" % (self.source.snr_db / 100.0)
+				return "%3.01f" % (self.source.snr_db / 100.0) + _("dB")
 			elif self.source.snr is not None: #fallback to normal SNR...
 				percent = self.source.snr
 		elif self.type == self.TUNER_TYPE:
@@ -54,20 +64,30 @@ class KravenVBFrontendInfo(Converter, object):
 
 	@cached
 	def getBool(self):
-		assert self.type in (self.LOCK, self.BER), "the boolean output of FrontendInfo can only be used for lock or BER info"
+		assert self.type in (self.LOCK, self.BER, self.REC_TUNER), "the boolean output of FrontendInfo can only be used for lock or BER info or Tuner-Rec"
 		if self.type == self.LOCK:
 			lock = self.source.lock
 			if lock is None:
 				lock = False
 			return lock
-		else:
+		elif self.type == self.BER:
 			ber = self.source.ber
 			if ber is None:
 				ber = 0
 			return ber > 0
+		elif self.type == self.REC_TUNER:
+			for timer in NavigationInstance.instance.RecordTimer.timer_list:
+				if timer.isRunning() and not timer.justplay:
+					service = timer.record_service
+					feinfo = service and service.frontendInfo()
+					data = feinfo and feinfo.getAll(False)
+					if data:
+						tuner = data.get('tuner_number', -1)
+						if tuner is not None and tuner > -1 and tuner == int(self.tunernum):
+							return True
+			return False
 
 	text = property(getText)
-
 	boolean = property(getBool)
 
 	@cached
@@ -97,3 +117,5 @@ class KravenVBFrontendInfo(Converter, object):
 
 	range = 65536
 	value = property(getValue)
+	
+

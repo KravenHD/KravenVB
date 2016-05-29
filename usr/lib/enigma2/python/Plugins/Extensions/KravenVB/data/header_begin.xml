@@ -20,6 +20,7 @@
     <color name="Kravenbg3" value="#00000000" />
     <color name="Kravenbg4" value="#00000000" />
     <color name="Kravenbg5" value="#00000000" />
+    <color name="background" value="#00000000" />
     <color name="KravenIBbg" value="#001B1775" />
     <color name="KravenIBbg2" value="#00000000" />
     <color name="KravenIBbg3" value="#00000000" />
@@ -28,6 +29,7 @@
     <color name="KravenIBCoolbg" value="#00000000" />
     <color name="KravenFont1" value="#00ffffff" />
     <color name="KravenFont2" value="#00F0A30A" />
+    <color name="foreground" value="#00dddddd" />
     <color name="KravenIBFont1" value="#00ffffff" />
     <color name="KravenIBFont2" value="#00F0A30A" />
     <color name="KravenName" value="#00ffffff" />
@@ -60,7 +62,6 @@
     <color name="transparent" value="#ff000000" />
     <color name="white" value="#00ffffff" />
     <color name="yellow" value="#00e5b243" />
-    <color name="background" value="#00000000" />
     <color name="blue2" value="#00010b52" />
     <color name="cyan" value="#000090e6" />
     <color name="cyan1" value="#0000deff" />
@@ -70,7 +71,6 @@
     <color name="darkgrey" value="#00999999" />
     <color name="epg" value="#002f4974" />
     <color name="epgselected" value="#00021943" />
-    <color name="foreground" value="#00dddddd" />
     <color name="green2" value="#00095201" />
     <color name="grey2" value="#00aaaaaa" />
     <color name="myblue" value="#004895fd" />
@@ -78,8 +78,6 @@
     <color name="pink" value="#00ec03c8" />
     <color name="rds_text_bg" value="#00003258" />
     <color name="red2" value="#00350000" />
-    <color name="rssviewtop" value="#45005050" />
-    <color name="transparent" value="#ffffffff" />
     <color name="transpBlack" value="#80000000" />
     <color name="transpWhite" value="#77ffffff" />
     <color name="transpyellow" value="#33bab329" />
@@ -145,6 +143,36 @@
     <color name="unff6600" value="#00ff6600" />
     <color name="unfff000" value="#00fff000" />
   </colors>
+  <parameters>
+    <!-- Choicelist -->
+    <parameter name="ChoicelistItemHeight" value="30" />
+    <parameter name="ChoicelistFont" value="Regular;22" />
+    <parameter name="ChoicelistFontSize" value="20" />
+    <parameter name="ChoicelistName" value="47,1,1147,28" />
+    <parameter name="ChoicelistIcon" value="7,3,40,27" />
+    <parameter name="ChoicelistDash" value="0,24,1147,20" />
+    <!-- TimerList -->
+    <parameter name="TimerListItemHeight" value="77" />
+    <parameter name="TimerListNoStyleName" value="0,2,690,27" />
+    <parameter name="TimerListNoStyleDesc" value="0,28,690,24" />
+    <parameter name="TimerListTime" value="0,53,520,24" />
+    <parameter name="TimerListFont1" value="Regular;22" />
+    <parameter name="TimerListFont2" value="Regular;20" />
+    <parameter name="TimerListState" value="534,51,157,24" />
+    <parameter name="TimerListIcon" value="4,32,28,28" />
+    <parameter name="TimerListIconHOffset" value="40" />
+    <parameter name="TimerListNoIconHOffset" value="7" />
+    <parameter name="TimerListTrimLength" value="47" />
+    <parameter name="TimerListPngTimer" value="4,4,28,28" />
+    <parameter name="TimerListZapTimer" value="4,4,28,28" />
+    <parameter name="TimerListDisabledTimer" value="4,4,28,28" />
+    <parameter name="TimerListInstantRecord" value="0, 0, 0, 0" />
+    <parameter name="TimerListRedTimer" value="367,4,28,28" />
+    <!-- PiconManagerList -->
+    <parameter name="PiconManagerList" value="7,4,1117,27" />
+    <parameter name="PiconManagerListFont" value="Regular;22" />
+    <parameter name="PiconManagerListItemHeight" value="30" />
+  </parameters>
   <fonts>
     <font filename="lcd.ttf" name="LCD" scale="100" />
     <font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
@@ -173,8 +201,8 @@
     <color color="KravenMarked" name="ListboxMarkedForeground" />
     <color color="KravenSelection" name="ListboxMarkedAndSelectedBackground" />
     <color color="KravenMarked" name="ListboxMarkedAndSelectedForeground" />
-    <color color="KravenFont1" name="WindowTitleForeground" />
-    <color color="Kravenbg" name="WindowTitleBackground" />
+    <color color="white" name="WindowTitleForeground" />
+    <color color="black" name="WindowTitleBackground" />
     <borderset name="bsWindow">
       <pixmap filename="KravenVB/bsWindow/bs_tl.png" pos="bpTopLeft" />
       <pixmap filename="KravenVB/bsWindow/bs_t.png" pos="bpTop" />

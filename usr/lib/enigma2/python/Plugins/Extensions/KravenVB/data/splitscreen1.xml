@@ -31,9 +31,7 @@
     <widget source="SlaveService" render="Label" position="662,545" size="576,30" font="Regular2;24" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont2" halign="left">
       <convert type="EventName" />
     </widget>
-    <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,550" size="1280,400" alphatest="blend" zPosition="-9" />
-    <ePixmap pixmap="KravenVB/ibaro.png" position="0,-60" size="1280,443" alphatest="blend" zPosition="-9" />
-	<!-- Split1 -->
+    <!-- nontransbg */-->
+    <constant-widget name="gradient-split1"/>
     <!--<text="SplitScreen - without description" position="70,0" />-->
   </screen>

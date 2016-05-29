@@ -44,10 +44,10 @@ class KravenVBPig2(Renderer):
 		self.first_PiG=False
 		self.is_channelselection=False
 
-		self.x2=97
-		self.y2=369
-		self.w2=400
-		self.h2=220
+		self.x2=69
+		self.y2=354
+		self.w2=363
+		self.h2=204
 		self.x2=format(int(float(self.x2)/self.fb_w*720.0),'x').zfill(8)
 		self.y2=format(int(float(self.y2)/self.fb_h*576.0),'x').zfill(8)
 		self.w2=format(int(float(self.w2)/self.fb_w*720.0),'x').zfill(8)

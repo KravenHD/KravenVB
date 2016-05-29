@@ -6,6 +6,7 @@ from Renderer import Renderer
 from enigma import ePixmap
 from enigma import iServiceInformation, iPlayableService, iPlayableServicePtr
 from Tools.Directories import fileExists, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN, resolveFilename
+from Tools.Alternatives import GetWithAlternative
 
 class KravenVBXPicon(Renderer):
 	searchPaths = ('/media/usb/XPicons/%s/','/media/usb/%s/','/%s/','/%sx/','/usr/share/enigma2/XPicons/%s/','/usr/share/enigma2/%s/','/usr/%s/','/media/hdd/XPicons/%s/','/media/hdd/%s/')
@@ -33,6 +34,14 @@ class KravenVBXPicon(Renderer):
 			pngname = ""
 			if what[0] != self.CHANGED_CLEAR:
 				sname = self.source.text
+				if sname.startswith("1:134"):
+					sname = GetWithAlternative(self.source.text)
+				for protocol in ("http", "rtmp", "rtsp", "mms", "rtp"):
+					pos = sname.rfind(':' + protocol )
+					if pos != -1:
+						sname = sname.split(protocol)[0]
+						break
+				# strip all after last :
 				pos = sname.rfind(':')
 				if pos != -1:
 					sname = sname[:pos].rstrip(':').replace(':','_')
@@ -50,16 +59,9 @@ class KravenVBXPicon(Renderer):
 					if pngname != "":
 						self.nameCache[sname] = pngname
 			if pngname == "": # no picon for service found
-				pngname = self.nameCache.get("default", "")
-				if pngname == "": # no default yet in cache..
-					pngname = self.findPicon("picon_default")
-					if pngname == "":
-						tmp = resolveFilename(SCOPE_CURRENT_SKIN, "picon_default.png")
-						if fileExists(tmp):
-							pngname = tmp
-						else:
-							pngname = resolveFilename(SCOPE_SKIN_IMAGE, "skin_default/picon_default.png")
-					self.nameCache["default"] = pngname
+				self.instance.hide()
+			else:
+				self.instance.show()
 			if self.pngname != pngname:
 				self.instance.setScale(1)
 				self.instance.setPixmapFromFile(pngname)

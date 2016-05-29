@@ -34,7 +34,7 @@
     <convert type="KravenVBLayoutInfo">LoadAvg</convert>
   </widget>
   <widget source="session.CurrentService" render="Label" font="Regular;16" position="1080,345" size="50,20" halign="right" valign="bottom" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIBFont1">
-    <convert type="KravenVBExtServiceInfo">OrbitalPosition</convert>
+    <convert type="KravenVBServiceName2">OrbitalPos</convert>
   </widget>
   <widget source="session.FrontendStatus" render="Label" font="Regular;16" position="1220,345" size="40,20" halign="right" valign="bottom" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIBFont1">
     <convert type="KravenVBFrontendInfo">SNR</convert>
@@ -58,4 +58,4 @@
   <eLabel backgroundColor="KravenIBLine" position="980,205" size="300,2" zPosition="-8" />
   <eLabel backgroundColor="KravenIBLine" position="980,463" size="300,2" zPosition="-8" />
   <eLabel backgroundColor="KravenIBLine" position="980,207" size="2,256" zPosition="-8" />
-  <eLabel position="980,205" size="300,260" backgroundColor="KravenIBbg" zPosition="-9" />
+  <constant-widget name="systeminfo-bigsat-bg"/>

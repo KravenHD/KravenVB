@@ -1,5 +1,4 @@
 <!-- /* Weather -->
-  <ePixmap pixmap="KravenVB/wsmall.png" position="890,-10" size="400,210" zPosition="-9" alphatest="blend"/>
   <widget backgroundColor="KravenIBbg" source="session.CurrentService" transparent="1" zPosition="8" position="960,55" size="70,70" render="KravenVBWetterPicon" alphatest="blend" path="WetterIcons">
     <convert  type="KravenVBWeather">Day_0,MeteoIcon</convert>
   </widget>
@@ -12,4 +11,5 @@
   <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 24" foregroundColor="KravenIBFont1" render="Label" position="1145,90" size="75,35" source="session.CurrentService" zPosition="8" halign="right" valign="center" transparent="1">
     <convert type="KravenVBWeather">Day_0,MinTemp</convert>
   </widget>
+  <constant-widget name="gradient-weather-small"/>
 <!-- Weather */-->

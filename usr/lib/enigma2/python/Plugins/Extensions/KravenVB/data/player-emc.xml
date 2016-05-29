@@ -50,5 +50,8 @@
       <convert type="KravenVBServiceEndTime">EndTime</convert>
     </widget>
     <eLabel backgroundColor="KravenIBbg" font="Regular; 20" halign="right" position="1028,677" size="40,30" text="Uhr" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1" />
-    <widget name="Cover" zPosition="1" alphatest="on" position="25,470" size="160,240" />
-    <ePixmap pixmap="KravenVB/ibar.png" position="0,490" size="1280,400" zPosition="-9" />
+    <widget source="session.CurrentService" render="KravenVBXPicon" alphatest="blend" position="25,618" size="160,96" transparent="1" zPosition="1">
+      <convert type="KravenVBMovieReference" />
+    </widget>
+    <widget name="Cover" zPosition="1" alphatest="on" position="25,366" size="160,240" />
+    <constant-widget name="gradient-player"/>

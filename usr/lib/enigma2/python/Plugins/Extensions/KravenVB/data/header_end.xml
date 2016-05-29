@@ -14,3 +14,1592 @@
     <color color="black" name="WindowTitleBackground" />
     <color color="white" name="WindowTitleForeground" />
   </windowstyle>
+  
+  <constant-widgets>
+	<constant-widget name="Logo1">
+	  <!-- menubg */-->
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%H</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%M</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%S</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%A</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%e. %B</convert>
+	  </widget>
+	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="3,234" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="1235,80" size="3,234" transparent="0" zPosition="4" />
+	  <ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo2.png" position="980,489" size="100,100" alphatest="blend" />
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Logo2">
+	  <!-- menubg */-->
+	  <ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%H</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%M</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%S</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%A</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%e. %B</convert>
+	  </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Logo3">
+	  <!-- menubg */-->
+	  <widget position="902,72" size="256,256" render="KravenVBMenuIcon" source="Title" alphatest="blend">
+	    <convert type="KravenVBMenuIconPath"></convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%H</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%M</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%S</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%A</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%e. %B</convert>
+	  </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Logo4">
+	  <!-- menubg */-->
+	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
+	  <eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="3,234" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="1235,80" size="3,234" transparent="0" zPosition="4" />
+	  <widget position="902,349" size="256,256" render="KravenVBMenuIcon" source="Title" alphatest="blend">
+	    <convert type="KravenVBMenuIconPath"></convert>
+	  </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Icons1">
+	  <!-- menubg */-->
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%H</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%M</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%S</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%A</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%e. %B</convert>
+	  </widget>
+	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="3,234" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="1235,80" size="3,234" transparent="0" zPosition="4" />
+	  <ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo2.png" position="980,489" size="100,100" alphatest="blend" />
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Icons2">
+	  <!-- menubg */-->
+	  <ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%H</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%M</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%S</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%A</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%e. %B</convert>
+	  </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Icons3">
+	  <!-- menubg */-->
+	  <widget position="902,72" size="256,256" render="KravenVBMenuIcon" source="menu" alphatest="blend">
+	    <convert type="KravenVBMenuIconPath"></convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%H</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%M</convert>
+	  </widget>
+	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
+	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%S</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%A</convert>
+	  </widget>
+	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+	    <convert type="ClockToText">Format:%e. %B</convert>
+	  </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Icons4">
+	  <!-- menubg */-->
+	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
+	  <eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="3,234" transparent="0" zPosition="4" />
+	  <eLabel backgroundColor="KravenBorder2" position="1235,80" size="3,234" transparent="0" zPosition="4" />
+	  <widget position="902,349" size="256,256" render="KravenVBMenuIcon" source="menu" alphatest="blend">
+	    <convert type="KravenVBMenuIconPath"></convert>
+	  </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Colorbuttons">
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+	</constant-widget>
+	
+	<constant-widget name="NameRedGreen">
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="240,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	</constant-widget>
+	
+	<constant-widget name="NameRedGreenYellowBlue">
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="240,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	</constant-widget>
+	
+	<constant-widget name="SourceRedGreen">
+      <widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" source="key_green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	</constant-widget>
+	
+	<constant-widget name="SourceRedGreenYellow">
+      <widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" source="key_green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	</constant-widget>
+	
+	<constant-widget name="SourceRedGreenYellowBlue">
+      <widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" source="key_green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" source="key_blue" position="820,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	</constant-widget>
+	
+	<constant-widget name="Title-big">
+	  <widget backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+	</constant-widget>
+	
+	<constant-widget name="Title-big2">
+	  <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+	</constant-widget>
+	
+	<constant-widget name="title-small">
+	  <widget backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="title" transparent="1" halign="left" valign="center" noWrap="1" />
+	</constant-widget>
+	
+	<constant-widget name="MenuOKExit">
+	  <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="OKExit">
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="Exit">
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="Background">
+      <!-- globalbg */-->
+	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+        <convert type="ClockToText">Default</convert>
+      </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="BackgroundWR">
+      <!-- globalbg */-->
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="Webradio1">
+	  <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt2" position="70,80" size="708,27" transparent="1" valign="center" zPosition="3" />
+	  <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="streamlist" render="Listbox" position="70,110" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,390" transparent="1" zPosition="2" >
+		<convert type="TemplatedMultiContent" transparent="0">
+			{"templates": 
+                               {"default": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (0, 2), size = (30, 30), png = 2), # index 2: picture
+					MultiContentEntryText(pos = (40, 3), size = (660, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+                               "info": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (260, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 1: text
+					MultiContentEntryText(pos = (260, 3), size = (440, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
+					],False),
+			"menus": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					]),
+			"about": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
+					],False),
+			"genre": (30,[
+					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
+					])
+			},		
+			"fonts": [gFont("Regular", 22),gFont("Regular", 20)],
+			"itemHeight": 30,
+			
+			}
+		</convert>
+	  </widget>
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" source="playtext" render="Label" position="70,520" size="708,108" transparent="1" valign="center" zPosition="2" />
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="help" position="70,520" size="708,108" transparent="1" valign="center" zPosition="3" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red2" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green2" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="3" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	  <widget name="buttons_abdeck" position="570,665" zPosition="2" size="470,26" font="Regular;20" valign="center" halign="left" foregroundColor="KravenButton" backgroundColor="KravenIBbg2" />
+      <widget name="rec_pic" alphatest="blend" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/webradioFS/skin/images/rec1.png" position="1030,668" size="40,30" zPosition="2" />
+	</constant-widget>
+	
+	<constant-widget name="Webradio2">
+      <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+      <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+	</constant-widget>
+	
+	<constant-widget name="EMCSelection">
+	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
+	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,692" size="200,5" />
+	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="542,692" size="200,5" />
+	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="792,692" size="200,5" />
+	  <widget font="Regular;20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	  <widget font="Regular;20" halign="left" valign="center" name="key_green" position="297,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	  <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="547,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	  <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="797,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="MovieSelection">
+      <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+        <convert type="ClockToText">Default</convert>
+      </widget>
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="CoolTV">
+      <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,17" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+        <convert type="ClockToText">Default</convert>
+      </widget>
+      <ePixmap backgroundColor="Kravenbg2" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,697" size="200,5" />
+      <ePixmap backgroundColor="Kravenbg2" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,697" size="200,5" />
+      <ePixmap backgroundColor="Kravenbg2" alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="542,697" size="200,5" />
+      <ePixmap backgroundColor="Kravenbg2" alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="792,697" size="200,5" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="47,670" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="297,670" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="547,670" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="797,670" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+      <!-- nontransbg */-->
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,675" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,675" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,675" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="GraphMultiEPG">
+      <eLabel text="Electronic Program Guide" position="70,12" size="708,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+      <widget backgroundColor="Kravenbg" font="Regular2;28" foregroundColor="KravenFont2" position="70,80" render="Label" size="1140,39" source="Event" transparent="1">
+        <convert type="KravenVBEventName">Name</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="left" position="70,121" render="Label" size="65,22" source="Event" transparent="1">
+        <convert type="KravenVBEventTime">StartTime</convert>
+        <convert type="ClockToText">Format:%H:%M </convert>
+      </widget>
+      <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" position="1132,121" render="Label" size="65,22" source="Event" transparent="1">
+        <convert type="KravenVBEventTime">EndTime</convert>
+        <convert type="ClockToText">Format:%H:%M</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg" borderWidth="0" position="132,131" render="Progress" size="990,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress990.png">
+        <convert type="KravenVBEventTime">Progress</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg" font="Regular;19" position="70,150" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1153,150" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <eLabel backgroundColor="KravenLine" position="132,133" size="990,1" />
+	  <widget name="timeline_text" position="5,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
+      <widget name="timeline0" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline1" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline2" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline3" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline4" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+	</constant-widget>
+	
+	<constant-widget name="ChannelSelection">
+	  <widget backgroundColor="KravenIBbg4" font="Regular2;34" foregroundColor="KravenMFont2" position="42,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
+	  <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenMFont1" font="Regular;26" halign="right" backgroundColor="KravenIBbg4" transparent="1" valign="center">
+        <convert type="ClockToText">Default</convert>
+      </widget>
+	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="542,692" size="200,5" />
+      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="792,692" size="200,5" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="47,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_green" position="297,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="547,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="797,665" size="220,26" backgroundColor="KravenIBbg4" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_menu.png" position="1095,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_ok.png" position="1145,670" size="43,22" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/infobar-global-icons/key_exit.png" position="1195,670" size="43,22" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="CSLEPG22">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="42,364" size="416,162" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,526" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSLEPG24">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="42,363" size="416,150" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,513" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSLEPG22Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="42,364" size="416,162" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,526" size="416,81" transparent="1" noWrap="1">
+      </widget>
+	  <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,607" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSLEPG24Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="42,363" size="416,150" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,513" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,603" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSREPG22">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="822,364" size="416,162" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,526" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSREPG24">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="822,363" size="416,150" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,513" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSREPG22Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="822,364" size="416,162" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,526" size="416,81" transparent="1" noWrap="1">
+      </widget>
+	  <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="822,607" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSREPG24Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="822,363" size="416,150" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,513" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="822,603" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSEPEPG22">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="42,364" size="416,162" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,526" size="416,162" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSEPEPG24">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="42,362" size="416,180" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,542" size="416,90" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSEPEPG22Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="42,364" size="416,162" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,526" size="416,135" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,661" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSEPEPG24Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="42,362" size="416,180" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,542" size="416,60" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,602" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT2EPG22">
+      <eLabel position="500,496" size="738,2" backgroundColor="KravenLine" />
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="500,512" size="738,135" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,566" size="416,81" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT2EPG24">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="500,495" size="738,150" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,556" size="416,90" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT2EPG22Prime">
+      <eLabel position="500,496" size="738,2" backgroundColor="KravenLine" />
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="500,512" size="738,135" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,566" size="416,54" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,620" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT2EPG24Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="500,495" size="738,150" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,556" size="416,60" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,616" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT22EPG22">
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,556" size="416,81" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT22EPG24">
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,556" size="416,90" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT22EPG22Prime">
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,556" size="416,54" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,610" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMT22EPG24Prime">
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,556" size="416,60" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,616" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNEPG19">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;19" position="474,135" size="446,225" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;19" position="474,445" size="446,200" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" position="937,70" size="339,575" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+	</constant-widget>
+	
+	<constant-widget name="CSNEPG22">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="474,140" size="446,216" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;22" position="474,447" size="446,189" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" position="937,70" size="339,572" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+	</constant-widget>
+	
+	<constant-widget name="CSNEPG19Prime">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;19" position="474,135" size="446,225" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;19" position="474,445" size="446,200" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" position="937,70" size="339,552" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;18" source="ServiceEvent" render="Label" position="937,622" size="339,23" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNEPG22Prime">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="474,140" size="446,216" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;22" position="474,447" size="446,189" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" position="937,70" size="339,546" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;20" source="ServiceEvent" render="Label" position="937,616" size="339,26" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSN2EPG19">
+      <widget source="ServiceEvent" render="KravenVBSingleEpgList" size="474,299" position="795,67" font="Regular;18" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <eLabel position="795,377" size="474,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont1" font="Regular;19" position="795,389" size="474,250" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSN2EPG22">
+      <widget source="ServiceEvent" render="KravenVBSingleEpgList" size="474,312" position="795,67" font="Regular;20" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <eLabel position="795,388" size="474,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont1" font="Regular;22" position="795,396" size="474,243" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSN2EPG19Prime">
+      <widget source="ServiceEvent" render="KravenVBSingleEpgList" size="474,276" position="795,67" font="Regular;18" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;18" source="ServiceEvent" render="Label" position="795,343" size="474,23" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+      <eLabel position="795,377" size="474,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont1" font="Regular;19" position="795,389" size="474,250" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSN2EPG22Prime">
+      <widget source="ServiceEvent" render="KravenVBSingleEpgList" size="474,286" position="795,67" font="Regular;20" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;20" source="ServiceEvent" render="Label" position="795,353" size="474,26" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+      <eLabel position="795,388" size="474,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont1" font="Regular;22" position="795,396" size="474,243" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPG19">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;19" position="474,133" size="446,225" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;19" position="474,460" size="446,175" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,575" position="937,70" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" noWrap="1" transparent="1" />
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPG22">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="474,128" size="446,243" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;22" position="474,452" size="446,189" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,572" position="937,71" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" noWrap="1" transparent="1" />
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPG19Prime">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;19" position="474,133" size="446,225" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;19" position="474,460" size="446,175" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,552" position="937,71" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;18" source="ServiceEvent" render="Label" position="937,623" size="416,23" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPG22Prime">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="474,128" size="446,243" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;22" position="474,452" size="446,189" backgroundColor="Kravenbg2" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,546" position="937,71" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;20" source="ServiceEvent" render="Label" position="937,617" size="339,26" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPEPG19">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;19" position="474,133" size="446,225" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;19" position="474,460" size="446,175" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,575" position="937,70" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPEPG22">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="474,128" size="446,243" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;22" position="474,452" size="446,189" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,572" position="937,71" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPEPG19Prime">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;19" position="474,133" size="446,225" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;19" position="474,460" size="446,175" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,552" position="937,71" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;18" source="ServiceEvent" render="Label" position="937,623" size="416,23" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNMTEPEPG22Prime">
+      <widget source="ServiceEvent" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="474,128" size="446,243" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="ServiceEvent" render="Label" zPosition="1" font="Regular;22" position="474,452" size="446,189" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
+        <convert type="KravenVBServiceNameEventNobile">ExtendedDescription</convert>
+      </widget>
+      <widget source="ServiceEvent" render="KravenVBSingleEpgListNobile" size="339,546" position="937,71" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg4" noWrap="1" transparent="1" />
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;20" source="ServiceEvent" render="Label" position="937,617" size="339,26" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNPEPG22">
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,163" size="416,351" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNPEPG24">
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,168" size="416,330" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNPEPG22Prime">
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,163" size="416,351" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,81" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,603" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNPEPG24Prime">
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,168" size="416,330" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSXEPG22">
+      <widget alphatest="blend" position="140,152" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSXEPG24">
+      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,291" size="416,210" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSXEPG22Prime">
+      <widget alphatest="blend" position="140,152" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,81" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,603" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSXEPG24Prime">
+      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,291" size="416,210" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZEPG22">
+      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,247" size="416,270" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZEPG24">
+      <widget alphatest="blend" position="140,150" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,260" size="416,240" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZEPG22Prime">
+      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,247" size="416,270" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,81" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,603" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZEPG24Prime">
+      <widget alphatest="blend" position="140,150" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,260" size="416,240" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZEPG22">
+      <widget alphatest="blend" position="50,145" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZEPG24">
+      <widget alphatest="blend" position="50,162" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,322" size="416,180" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZEPG22Prime">
+      <widget alphatest="blend" position="50,145" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,522" size="416,81" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,603" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZEPG24Prime">
+      <widget alphatest="blend" position="50,162" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+        <convert type="KravenVBRefString">ServicelistRef</convert>
+      </widget>
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,322" size="416,180" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZZEPG22">
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,409" size="416,135" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,549" size="416,81" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZZEPG24">
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,414" size="416,120" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="41,540" size="416,90" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZZEPG22Prime">
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="42,409" size="416,135" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,549" size="416,54" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,603" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSZZZEPG24Prime">
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="42,414" size="416,120" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="41,540" size="416,60" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="gradient-menu">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,550" size="1280,400" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-menu">
+	  <eLabel position="0,640" size="1280,80" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,640" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="1280,59" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-menu">
+	  <ePixmap pixmap="KravenVB/graphics/ibar4.png" position="0,640" size="1280,80" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,640" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-cs">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,570" size="1280,400" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-cs">
+	  <eLabel position="0,654" size="1280,66" backgroundColor="KravenIBbg4" zPosition="-9" />
+	  <eLabel position="0,654" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="1280,59" backgroundColor="KravenIBbg4" zPosition="-9" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-cs">
+	  <ePixmap pixmap="KravenVB/graphics/ibar3.png" position="0,654" size="1280,66" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,654" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-cooltv">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,570" size="1280,400" zPosition="-9" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-cooltv">
+	  <eLabel position="0,660" size="1280,60" backgroundColor="KravenIBCoolbg" zPosition="-9" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="1280,59" backgroundColor="KravenIBCoolbg" zPosition="-9" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-cooltv">
+	  <ePixmap pixmap="KravenVB/graphics/ibar2.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-emc">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,570" size="1280,400" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-emc">
+	  <eLabel position="0,660" size="1280,60" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="1280,59" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-emc">
+	  <ePixmap pixmap="KravenVB/graphics/ibar2.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-wrr">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,550" size="380,400" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="380,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-wrr">
+	  <eLabel position="0,640" size="380,80" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,640" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="380,59" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,58" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-wrr">
+	  <ePixmap pixmap="KravenVB/graphics/ibar4.png" position="0,640" size="380,80" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,640" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="380,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-split1">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,550" size="1280,400" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-split1">
+	  <eLabel position="0,660" size="1280,60" backgroundColor="KravenIBbg3" zPosition="-9" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="1280,59" backgroundColor="KravenIBbg3" zPosition="-9" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-split1">
+	  <ePixmap pixmap="KravenVB/graphics/ibar2.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-split2">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,550" size="1280,400" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-split2">
+	  <eLabel position="0,650" size="1280,70" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,650" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="0,0" size="1280,98" backgroundColor="KravenIBbg2" zPosition="-9" />
+	  <eLabel position="0,97" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-split2">
+	  <ePixmap pixmap="KravenVB/graphics/ibar3.png" position="0,650" size="1280,70" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,650" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,97" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-sib">
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-50" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-sib">
+	  <eLabel position="0,0" size="1280,55" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,54" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-sib">
+	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,55" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,54" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-csr">
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,665" size="1280,443" zPosition="-9" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-csr">
+	  <eLabel position="0,665" size="1280,55" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,0" size="1280,59" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-csr">
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,665" size="1280,55" zPosition="-9" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-rib">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,45" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-rib">
+	  <eLabel position="0,150" size="1280,110" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-rib">
+      <ePixmap pixmap="KravenVB/graphics/ibar5.png" position="0,150" size="1280,110" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-player">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,490" size="1280,400" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="box-player">
+	  <eLabel position="0,610" size="1280,110" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,610" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-player">
+      <ePixmap pixmap="KravenVB/graphics/ibar5.png" position="0,610" size="1280,110" zPosition="-9" />
+	  <eLabel position="0,610" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-EPGBar">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,0" size="1280,310" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="box-EPGBar">
+	  <eLabel position="0,104" size="1280,206" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,104" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-EPGBar">
+      <ePixmap pixmap="KravenVB/graphics/ibar6.png" position="0,104" size="1280,206" zPosition="-9" />
+	  <eLabel position="0,104" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-weather-small">
+      <ePixmap pixmap="KravenVB/graphics/wsmall.png" position="890,-10" size="400,210" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-weather-small">
+	  <eLabel position="980,0" size="300,120" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="980,0" size="2,120" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="982,118" size="298,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-weather-small">
+      <ePixmap pixmap="KravenVB/graphics/wsmall.png" position="980,0" size="300,120" zPosition="-9" alphatest="blend" />
+	  <eLabel position="980,0" size="2,120" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="982,118" size="298,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-weather-big">
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,165" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-weather-big">
+	  <eLabel position="0,0" size="1280,115" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,114" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-weather-big">
+      <ePixmap pixmap="KravenVB/graphics/ibaro3.png" position="0,0" size="1280,115" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,114" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-np-x1">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,440" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-np-x1">
+	  <eLabel position="0,555" size="1280,165" backgroundColor="KravenIBbg" zPosition="-9" />
+      <eLabel position="0,555" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-np-x1">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,555" size="1280,165" zPosition="-9" alphatest="blend" />
+      <eLabel position="0,555" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-x2-x3">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,470" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-x2-x3">
+	  <eLabel position="0,576" size="1280,144" backgroundColor="KravenIBbg" zPosition="-9" />
+      <eLabel position="0,576" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-x2-x3">
+	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,576" size="1280,144" zPosition="-9" alphatest="blend" />
+      <eLabel position="0,576" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-z1-z2">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,470" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-z1-z2">
+	  <eLabel position="0,580" size="1280,140" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,580" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-z1-z2">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,580" size="1280,140" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,580" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-top">
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-20" size="1280,165" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-top">
+	  <eLabel position="0,0" size="1280,70" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,69" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-top">
+      <ePixmap pixmap="KravenVB/graphics/ibaro2.png" position="0,0" size="1280,70" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,69" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-netatmo">
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="532,443" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="box-netatmo">
+      <eLabel position="0,0" size="532,70" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,69" size="532,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-netatmo">
+      <ePixmap pixmap="KravenVB/graphics/ibaro2.png" position="0,0" size="532,70" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,69" size="532,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-zz1-zz4">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,410" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-zz1-zz4">
+	  <eLabel position="0,522" size="1280,198" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,522" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-zz1-zz4">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,522" size="1280,198" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,522" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-zz2-zz3">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,470" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-zz2-zz3">
+	  <eLabel position="0,535" size="1280,185" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,535" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-zz2-zz3">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,535" size="1280,185" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,535" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ib-zzz1">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,410" size="1280,310" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="box-ib-zzz1">
+	  <eLabel position="0,473" size="1280,247" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,473" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ib-zzz1">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,473" size="1280,247" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,473" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="msm22">
+      <widget backgroundColor="Kravenbg2" font="Regular;22" foregroundColor="KravenFont1" position="822,340" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,243" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msm24">
+      <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" position="822,340" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,270" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msmc22">
+      <widget backgroundColor="Kravenbg2" font="Regular;22" foregroundColor="KravenFont1" position="822,272" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,324" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msmc24">
+      <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" position="822,272" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,330" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msnc22">
+      <widget backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" position="822,150" render="Label" size="418,432" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msnc24">
+      <widget backgroundColor="Kravenbg" font="Regular;24" foregroundColor="KravenFont1" position="822,150" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,450" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="mssc22">
+      <widget backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" position="822,237" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,351" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">ExtendedDescription</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="mssc24">
+      <widget backgroundColor="Kravenbg" font="Regular;24" foregroundColor="KravenFont1" position="822,237" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,360" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">ExtendedDescription</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msbc22">
+      <widget backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" position="822,114" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,216" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="msbc24">
+      <widget backgroundColor="Kravenbg" font="Regular;24" foregroundColor="KravenFont1" position="822,115" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="418,210" source="Service" transparent="1" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcmbc22">
+	  <widget source="Service" render="KravenVBRunningText" position="490,476" size="755,162" font="Regular;22" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcmbc24">
+	  <widget source="Service" render="KravenVBRunningText" position="490,460" size="755,180" font="Regular;24" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcm2bc222">
+      <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,476" size="755,162" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcm2bc224">
+      <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,460" size="755,180" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcnc22">
+	  <widget source="Service" render="KravenVBRunningText" position="42,210" size="432,378" font="Regular;22" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcnc24">
+	  <widget source="Service" render="KravenVBRunningText" position="42,210" size="432,390" font="Regular;24" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcnc222">
+	  <widget source="Service" render="KravenVBRunningText" position="816,210" size="432,378" font="Regular;22" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcnc224">
+	  <widget source="Service" render="KravenVBRunningText" position="816,210" size="432,390" font="Regular;24" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcsc22">
+	  <widget source="Service" render="KravenVBRunningText" position="42,237" size="432,351" font="Regular;22" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcsc24">
+	  <widget source="Service" render="KravenVBRunningText" position="42,237" size="432,360" font="Regular;24" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcsc222">
+	  <widget source="Service" render="KravenVBRunningText" position="816,237" size="432,351" font="Regular;22" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcsc224">
+	  <widget source="Service" render="KravenVBRunningText" position="816,237" size="432,360" font="Regular;24" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcvbc22">
+	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="461,506" size="777,135" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcvbc24">
+	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="461,497" size="777,150" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcvbc222">
+	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,454" size="755,189" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="emcvbc224">
+	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,460" size="755,180" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="box-mp">
+	  <!-- MediaPortal ibarcolor */-->
+	</constant-widget>
+	
+	<constant-widget name="mp-background">
+	  <!-- nontransbg */-->
+	</constant-widget>
+	
+	<constant-widget name="box-mpplayer">
+	  <!-- MediaPortal playercolor */-->
+	</constant-widget>
+	
+	<constant-widget name="timeshift-bg">
+	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="785,62" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="timeshift-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/timeshift.png" position="0,0" size="785,62" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="ibts-bg">
+	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="1280,32" zPosition="-2" />
+	</constant-widget>
+	
+	<constant-widget name="ibts-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/ibts.png" position="0,0" size="1280,32" zPosition="-2" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="autoresolution-bg">
+	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="252,62" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="autoresolution-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/autoresolution.png" position="0,0" size="252,62" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="pvrstate-bg">
+	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="220,90" transparent="0" zPosition="-10" />
+	</constant-widget>
+	
+	<constant-widget name="pvrstate-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/pvrstate.png" position="0,0" size="220,90" zPosition="-10" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="pvrstate2-bg">
+	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="110,45" transparent="0" zPosition="-10" />
+	</constant-widget>
+	
+	<constant-widget name="pvrstate2-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/pvrstate.png" position="0,0" size="110,45" zPosition="-10" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-small-bg">
+	  <eLabel position="980,315" size="300,80" backgroundColor="KravenIBbg" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-small-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/info.png" position="980,315" size="300,80" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-big-bg">
+	  <eLabel position="980,265" size="300,170" backgroundColor="KravenIBbg" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-big-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/info.png" position="980,265" size="300,170" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-bigsat-bg">
+	  <eLabel position="980,205" size="300,260" backgroundColor="KravenIBbg" zPosition="-9" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-bigsat-bg-box2">
+	  <ePixmap pixmap="KravenVB/graphics/info.png" position="980,205" size="300,260" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+  </constant-widgets>
