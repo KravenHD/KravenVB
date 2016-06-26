@@ -806,7 +806,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <widget font="Regular;40" backgroundColor="#7F7F7F7F" halign="left" noWrap="1" foregroundColor="KravenIBFont2" position="65,46" size="1000,52" render="Label" source="Service" transparent="1" zPosition="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget backgroundColor="KravenIBbg2" alphatest="blend" position="65,119" render="KravenVBXPicon" size="200,120" source="Service" transparent="1" zPosition="4">
+    <widget backgroundColor="KravenIBbg2" alphatest="blend" position="65,119" render="Picon" size="200,120" source="Service" transparent="1" zPosition="4">
       <convert type="ServiceName">Reference</convert>
     </widget>
 	<widget backgroundColor="KravenIBbg2" name="list" font="Regular;22" foregroundColor="KravenIBFont2" itemHeight="30" position="292,119" size="498,120" zPosition="3" transparent="1" />

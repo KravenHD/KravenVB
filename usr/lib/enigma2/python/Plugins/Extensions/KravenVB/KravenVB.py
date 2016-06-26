@@ -523,6 +523,16 @@ config.plugins.KravenVB.EPGSelection = ConfigSelection(default="epgselection-sta
 				("epgselection-minitv", _("MiniTV"))
 				])
 
+config.plugins.KravenVB.EPGSelectionEPGSize = ConfigSelection(default="small", choices = [
+				("small", _("small")),
+				("big", _("big"))
+				])
+
+config.plugins.KravenVB.EPGListSize = ConfigSelection(default="small", choices = [
+				("small", _("small")),
+				("big", _("big"))
+				])
+
 config.plugins.KravenVB.EMCStyle = ConfigSelection(default="emc-minitv", choices = [
 				("emc-nocover", _("no Cover")),
 				("emc-nocover2", _("no Cover2")),
@@ -848,6 +858,10 @@ config.plugins.KravenVB.CategoryMovieSelection = ConfigSelection(default="catego
 				("category", _(" "))
 				])
 
+config.plugins.KravenVB.CategoryEPGSelection = ConfigSelection(default="category", choices = [
+				("category", _(" "))
+				])
+
 config.plugins.KravenVB.CategoryChannellist = ConfigSelection(default="category", choices = [
 				("category", _(" "))
 				])
@@ -908,7 +922,7 @@ class KravenVB(ConfigListScreen, Screen):
     <convert type="ClockToText">Default</convert>
   </widget>
   <eLabel position="830,80" size="402,46" text="KravenVB" font="Regular; 36" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00f0a30a" />
-  <eLabel position="845,139" size="372,40" text="Version: 5.0.2" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" />
+  <eLabel position="845,139" size="372,40" text="Version: 5.1.1" font="Regular; 30" valign="center" halign="center" transparent="1" backgroundColor="#00000000" foregroundColor="#00ffffff" />
   <widget name="helperimage" position="847,210" size="368,207" zPosition="1" backgroundColor="#00000000" />
   <widget source="Canvas" render="Canvas" position="847,210" size="368,207" zPosition="-1" backgroundColor="#00000000" />
   <widget source="help" render="Label" position="847,440" size="368,196" font="Regular;20" backgroundColor="#00000000" foregroundColor="#00f0a30a" halign="center" valign="top" transparent="1" />
@@ -1207,9 +1221,8 @@ class KravenVB(ConfigListScreen, Screen):
 			emptyLines+=1
 		list.append(getConfigListEntry(_("NumberZap"), config.plugins.KravenVB.NumberZapExt, _("Choose from different styles for NumberZap.")))
 		list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.SplitScreen, _("Choose from different styles to display SplitScreen.")))
-		list.append(getConfigListEntry(_("EPGSelection"), config.plugins.KravenVB.EPGSelection, _("Choose from different styles to display EPGSelection.")))
 		list.append(getConfigListEntry(_("PermanentClock"), config.plugins.KravenVB.PermanentClock, _("Choose the colors of PermanentClock.")))
-		for i in range(emptyLines+2):
+		for i in range(emptyLines+3):
 			list.append(getConfigListEntry(_(" "), ))
 		
 		# page 6
@@ -1253,13 +1266,11 @@ class KravenVB(ConfigListScreen, Screen):
 		
 		# page 6 (category 2)
 		emptyLines=0
-		list.append(getConfigListEntry(_("MOVIESELECTION ____________________________________________________________"), config.plugins.KravenVB.CategoryMovieSelection, _("This sections offers all settings for MovieSelection.")))
-		list.append(getConfigListEntry(_("MovieSelection-Style"), config.plugins.KravenVB.MovieSelection, _("Choose from different styles for MovieSelection.")))
-		list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.MovieSelectionEPGSize, _("Choose the font size of event description.")))
-		list.append(getConfigListEntry(_("Unwatched Color"), config.plugins.KravenVB.UnwatchedColor, _("Choose the font color of unwatched movies.")))
-		list.append(getConfigListEntry(_("Watching Color"), config.plugins.KravenVB.WatchingColor, _("Choose the font color of watching movies.")))
-		list.append(getConfigListEntry(_("Finished Color"), config.plugins.KravenVB.FinishedColor, _("Choose the font color of watched movies.")))
-		for i in range(emptyLines):
+		list.append(getConfigListEntry(_("EPGSELECTION ____________________________________________________________"), config.plugins.KravenVB.CategoryEPGSelection, _("This sections offers all settings for EPGSelection.")))
+		list.append(getConfigListEntry(_("EPGSelection-Style"), config.plugins.KravenVB.EPGSelection, _("Choose from different styles to display EPGSelection.")))
+		list.append(getConfigListEntry(_("EPG-List Fontsize"), config.plugins.KravenVB.EPGListSize, _("Choose the font size of EPG-List.")))
+		list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.EPGSelectionEPGSize, _("Choose the font size of event description.")))
+		for i in range(emptyLines+2):
 			list.append(getConfigListEntry(_(" "), ))
 		
 		# page 7
@@ -1278,6 +1289,17 @@ class KravenVB(ConfigListScreen, Screen):
 		
 		# page 7 (category 2)
 		emptyLines=0
+		list.append(getConfigListEntry(_("MOVIESELECTION ____________________________________________________________"), config.plugins.KravenVB.CategoryMovieSelection, _("This sections offers all settings for MovieSelection.")))
+		list.append(getConfigListEntry(_("MovieSelection-Style"), config.plugins.KravenVB.MovieSelection, _("Choose from different styles for MovieSelection.")))
+		list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.MovieSelectionEPGSize, _("Choose the font size of event description.")))
+		list.append(getConfigListEntry(_("Unwatched Color"), config.plugins.KravenVB.UnwatchedColor, _("Choose the font color of unwatched movies.")))
+		list.append(getConfigListEntry(_("Watching Color"), config.plugins.KravenVB.WatchingColor, _("Choose the font color of watching movies.")))
+		list.append(getConfigListEntry(_("Finished Color"), config.plugins.KravenVB.FinishedColor, _("Choose the font color of watched movies.")))
+		for i in range(emptyLines+1):
+			list.append(getConfigListEntry(_(" "), ))
+		
+		# page 7 (category 3)
+		emptyLines=0
 		list.append(getConfigListEntry(_("PLAYER ____________________________________________________________________"), config.plugins.KravenVB.CategoryPlayers, _("This sections offers all settings for the movie players.")))
 		list.append(getConfigListEntry(_("Clock"), config.plugins.KravenVB.PlayerClock, _("Choose from different options to show the clock in the players.")))
 		if config.plugins.KravenVB.PlayerClock.value == "player-android":
@@ -1285,22 +1307,23 @@ class KravenVB(ConfigListScreen, Screen):
 		else:
 			emptyLines+=1
 		list.append(getConfigListEntry(_("PVRState"), config.plugins.KravenVB.PVRState, _("Choose from different options to display the PVR state.")))
-		for i in range(emptyLines+1):
+		for i in range(emptyLines):
 			list.append(getConfigListEntry(_(" "), ))
 		
-		# page 7 (category 3)
+		# page 8
 		emptyLines=0
 		if config.plugins.KravenVB.IBStyle.value == "gradient":
 			list.append(getConfigListEntry(_("ANTIALIASING BRIGHTNESS ________________________________________________________________"), config.plugins.KravenVB.CategoryAntialiasing, _("This sections offers all antialiasing settings. Distortions or color frames around fonts can be reduced by this settings.")))
 			list.append(getConfigListEntry(_("Infobar"), config.plugins.KravenVB.InfobarAntialias, _("Reduce distortions (faint/blurry) or color frames around fonts in the infobar and widgets by adjusting the antialiasing brightness.")))
 			list.append(getConfigListEntry(_("ECM Infos"), config.plugins.KravenVB.ECMLineAntialias, _("Reduce distortions (faint/blurry) or color frames around the ECM information in the infobar by adjusting the antialiasing brightness.")))
 			list.append(getConfigListEntry(_("Screens"), config.plugins.KravenVB.ScreensAntialias, _("Reduce distortions (faint/blurry) or color frames around fonts at top and bottom of screens by adjusting the antialiasing brightness.")))
+			emptyLines=1
 		else:
-			emptyLines+=4
-		for i in range(emptyLines+2):
+			emptyLines+=0
+		for i in range(emptyLines):
 			list.append(getConfigListEntry(_(" "), ))
 
-		# page 8
+		# page 8 (category 2)
 		list.append(getConfigListEntry(_("DEBUG _____________________________________________________________________"), config.plugins.KravenVB.CategoryDebug, _("This sections offers all debug settings.")))
 		list.append(getConfigListEntry(_("Screennames"), config.plugins.KravenVB.DebugNames, _("Activate or deactivate small screen names for debugging purposes.")))
 
@@ -1311,67 +1334,72 @@ class KravenVB(ConfigListScreen, Screen):
 		self.ShowPicture()
 
 		position = self["config"].instance.getCurrentIndex()
-		if position == 0:
+		if position == 0: # about
 			self["key_yellow"].setText("<< " + _("debug"))
 			self["key_blue"].setText(_("profiles") + " >>")
-		if (2 <= position <= 4):
+		if (2 <= position <= 4): # profiles
 			self["key_yellow"].setText("<< " + _("about"))
 			self["key_blue"].setText(_("system") + " >>")
-		if (6 <= position <= 17):
+		if (6 <= position <= 17): # system
 			self["key_yellow"].setText("<< " + _("profiles"))
 			self["key_blue"].setText(_("global colors") + " >>")
-		if (18 <= position <= 35):
+		if (18 <= position <= 35): # global colors
 			self["key_yellow"].setText("<< " + _("system"))
 			self["key_blue"].setText(_("infobar") + " >>")
-		if (36 <= position <= 53):
+		if (36 <= position <= 53): # infobar
 			self["key_yellow"].setText("<< " + _("global colors"))
 			self["key_blue"].setText(_("weather") + " >>")
 		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			if (54 <= position <= 62):
+			if (54 <= position <= 62): # weather
 				self["key_yellow"].setText("<< " + _("infobar"))
 				self["key_blue"].setText(_("ECM infos") + " >>")
 		else:
-			if (54 <= position <= 62):
+			if (54 <= position <= 62): # weather
 				self["key_yellow"].setText("<< " + _("infobar"))
 				self["key_blue"].setText(_("clock") + " >>")
-		if (64 <= position <= 66):
+		if (64 <= position <= 66): # clock
 			self["key_yellow"].setText("<< " + _("weather"))
 			self["key_blue"].setText(_("ECM infos") + " >>")
-		if (72 <= position <= 76):
+		if (72 <= position <= 76): # ecm infos
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
 				self["key_yellow"].setText("<< " + _("weather"))
 			else:
 				self["key_yellow"].setText("<< " + _("clock"))
 			self["key_blue"].setText(_("views") + " >>")
-		if (78 <= position <= 89):
+		if (78 <= position <= 89): # views
 			self["key_yellow"].setText("<< " + _("ECM infos"))
 			self["key_blue"].setText(_("channellist") + " >>")
-		if (90 <= position <= 100):
+		if (90 <= position <= 100): # channellist
 			self["key_yellow"].setText("<< " + _("views"))
-			self["key_blue"].setText(_("MovieSelection") + " >>")
-		if (102 <= position <= 107):
+			self["key_blue"].setText(_("EPGSelection") + " >>")
+		if (102 <= position <= 107): # epgselection
 			self["key_yellow"].setText("<< " + _("channellist"))
 			self["key_blue"].setText(_("EMC") + " >>")
-		if (108 <= position <= 113):
-			self["key_yellow"].setText("<< " + _("MovieSelection"))
+		if (108 <= position <= 113): # emc
+			self["key_yellow"].setText("<< " + _("EPGSelection"))
+			self["key_blue"].setText(_("MovieSelection") + " >>")
+		if (115 <= position <= 120): # movieselection
+			self["key_yellow"].setText("<< " + _("EMC"))
 			self["key_blue"].setText(_("player") + " >>")
 		if config.plugins.KravenVB.IBStyle.value == "box":
-			if (115 <= position <= 118):
-				self["key_yellow"].setText("<< " + _("EMC"))
+			if (122 <= position <= 125): # player
+				self["key_yellow"].setText("<< " + _("MovieSelection"))
 				self["key_blue"].setText(_("debug") + " >>")
 		else:
-			if (115 <= position <= 118):
-				self["key_yellow"].setText("<< " + _("EMC"))
+			if (122 <= position <= 125): # player
+				self["key_yellow"].setText("<< " + _("MovieSelection"))
 				self["key_blue"].setText(_("antialiasing") + " >>")
-		if (120 <= position <= 123):
-			self["key_yellow"].setText("<< " + _("player"))
-			self["key_blue"].setText(_("debug") + " >>")
-		if (126 <= position <= 127):
-			if config.plugins.KravenVB.IBStyle.value == "box":
+		if config.plugins.KravenVB.IBStyle.value == "box":
+			if (126 <= position <= 127): # debug
 				self["key_yellow"].setText("<< " + _("player"))
-			else:
+				self["key_blue"].setText(_("about") + " >>")
+		else:
+			if (126 <= position <= 129): # antialiasing
+				self["key_yellow"].setText("<< " + _("player"))
+				self["key_blue"].setText(_("debug") + " >>")
+			if (131 <= position <= 132): # debug
 				self["key_yellow"].setText("<< " + _("antialiasing"))
-			self["key_blue"].setText(_("about") + " >>")
+				self["key_blue"].setText(_("about") + " >>")
 
 		option = self["config"].getCurrent()[1]
 		if option == config.plugins.KravenVB.customProfile:
@@ -1499,6 +1527,16 @@ class KravenVB(ConfigListScreen, Screen):
 			if config.plugins.KravenVB.MovieSelectionEPGSize.value == "small":
 				self.showText(22,_("22 Pixel"))
 			elif config.plugins.KravenVB.MovieSelectionEPGSize.value == "big":
+				self.showText(24,_("24 Pixel"))
+		elif option == config.plugins.KravenVB.EPGSelectionEPGSize:
+			if config.plugins.KravenVB.EPGSelectionEPGSize.value == "small":
+				self.showText(22,_("22 Pixel"))
+			elif config.plugins.KravenVB.EPGSelectionEPGSize.value == "big":
+				self.showText(24,_("24 Pixel"))
+		elif option == config.plugins.KravenVB.EPGListSize:
+			if config.plugins.KravenVB.EPGListSize.value == "small":
+				self.showText(22,_("22 Pixel"))
+			elif config.plugins.KravenVB.EPGListSize.value == "big":
 				self.showText(24,_("24 Pixel"))
 		elif option == config.plugins.KravenVB.EMCEPGSize:
 			if config.plugins.KravenVB.EMCEPGSize.value == "small":
@@ -1727,84 +1765,93 @@ class KravenVB(ConfigListScreen, Screen):
 
 	def categoryDown(self):
 		position = self["config"].instance.getCurrentIndex()
-		if position == 0:
-			self["config"].instance.moveSelectionTo(126)
-		if (2 <= position <= 4):
+		if config.plugins.KravenVB.IBStyle.value == "box":
+			if position == 0: # about
+				self["config"].instance.moveSelectionTo(126)
+		else:
+			if position == 0: # about
+				self["config"].instance.moveSelectionTo(131)
+		if (2 <= position <= 4): # profiles
 			self["config"].instance.moveSelectionTo(0)
-		if (6 <= position <= 17):
+		if (6 <= position <= 17): # system
 			self["config"].instance.moveSelectionTo(2)
-		if (18 <= position <= 35):
+		if (18 <= position <= 35): # global colors
 			self["config"].instance.moveSelectionTo(6)
-		if (36 <= position <= 53):
+		if (36 <= position <= 53): # infobar
 			self["config"].instance.moveSelectionTo(18)
-		if (54 <= position <= 62):
+		if (54 <= position <= 62): # weather
 			self["config"].instance.moveSelectionTo(36)
-		if (64 <= position <= 66):
+		if (64 <= position <= 66): # clock
 			self["config"].instance.moveSelectionTo(54)
-		if (72 <= position <= 76):
+		if (72 <= position <= 76): # ecm infos
 			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
 				self["config"].instance.moveSelectionTo(54)
 			else:
 				self["config"].instance.moveSelectionTo(64)
-		if (78 <= position <= 89):
+		if (78 <= position <= 89): # views
 			self["config"].instance.moveSelectionTo(72)
-		if (90 <= position <= 100):
+		if (90 <= position <= 100): # channellist
 			self["config"].instance.moveSelectionTo(78)
-		if (102 <= position <= 107):
+		if (102 <= position <= 107): # epgselection
 			self["config"].instance.moveSelectionTo(90)
-		if (108 <= position <= 113):
+		if (108 <= position <= 113): # emc
 			self["config"].instance.moveSelectionTo(102)
-		if (115 <= position <= 118):
+		if (115 <= position <= 120): # movieselection
 			self["config"].instance.moveSelectionTo(108)
-		if (120 <= position <= 123):
+		if (122 <= position <= 125): # player
 			self["config"].instance.moveSelectionTo(115)
-		if (126 <= position <= 127):
-			if config.plugins.KravenVB.IBStyle.value == "box":
-				self["config"].instance.moveSelectionTo(115)
-			else:
-				self["config"].instance.moveSelectionTo(120)
+		if config.plugins.KravenVB.IBStyle.value == "box":
+			if (126 <= position <= 127): # debug
+				self["config"].instance.moveSelectionTo(122)
+		else:
+			if (126 <= position <= 129): # antialiasing
+				self["config"].instance.moveSelectionTo(122)
+			if (131 <= position <= 132): # debug
+				self["config"].instance.moveSelectionTo(126)
 		self.mylist()
 
 	def categoryUp(self):
 		position = self["config"].instance.getCurrentIndex()
-		if position == 0:
+		if position == 0: # about
 			self["config"].instance.moveSelectionTo(2)
-		if (2 <= position <= 4):
+		if (2 <= position <= 4): # profiles
 			self["config"].instance.moveSelectionTo(6)
-		if (6 <= position <= 17):
+		if (6 <= position <= 17): # system
 			self["config"].instance.moveSelectionTo(18)
-		if (18 <= position <= 35):
+		if (18 <= position <= 35): # global colors
 			self["config"].instance.moveSelectionTo(36)
-		if (36 <= position <= 53):
+		if (36 <= position <= 53): # infobar
 			self["config"].instance.moveSelectionTo(54)
 		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			if (54 <= position <= 63):
+			if (54 <= position <= 63): # weather
 				self["config"].instance.moveSelectionTo(72)
 		else:
-			if (54 <= position <= 63):
+			if (54 <= position <= 63): # weather
 				self["config"].instance.moveSelectionTo(64)
-		if (64 <= position <= 66):
+		if (64 <= position <= 66): # clock
 			self["config"].instance.moveSelectionTo(72)
-		if (72 <= position <= 76):
+		if (72 <= position <= 76): # ecm infos
 			self["config"].instance.moveSelectionTo(78)
-		if (78 <= position <= 89):
+		if (78 <= position <= 89): # views
 			self["config"].instance.moveSelectionTo(90)
-		if (90 <= position <= 100):
+		if (90 <= position <= 100): # channellist
 			self["config"].instance.moveSelectionTo(102)
-		if (102 <= position <= 107):
+		if (102 <= position <= 107): # epgselection
 			self["config"].instance.moveSelectionTo(108)
-		if (108 <= position <= 113):
+		if (108 <= position <= 113): # emc
 			self["config"].instance.moveSelectionTo(115)
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			if (115 <= position <= 118):
-					self["config"].instance.moveSelectionTo(126)
-		else:
-			if (115 <= position <= 118):
-				self["config"].instance.moveSelectionTo(120)
-		if (120 <= position <= 123):
+		if (115 <= position <= 120): # movieselection
+			self["config"].instance.moveSelectionTo(122)
+		if (122 <= position <= 125): # player
 			self["config"].instance.moveSelectionTo(126)
-		if (126 <= position <= 127):
-			self["config"].instance.moveSelectionTo(0)
+		if config.plugins.KravenVB.IBStyle.value == "box":
+			if (126 <= position <= 127): # debug
+				self["config"].instance.moveSelectionTo(0)
+		else:
+			if (126 <= position <= 129): # antialiasing
+				self["config"].instance.moveSelectionTo(131)
+			if (131 <= position <= 132): # debug
+				self["config"].instance.moveSelectionTo(0)
 		self.mylist()
 
 	def keyVirtualKeyBoardCallBack(self, callback):
@@ -2580,7 +2627,7 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(['position="1037,666"','position="1037,671"'])
 
 				### EPGSelection - Position
-				self.skinSearchAndReplace.append(['position="820,16" render="KravenVBXPicon"','position="820,11" render="KravenVBXPicon"'])
+				self.skinSearchAndReplace.append(['position="820,16" render="Picon"','position="820,11" render="Picon"'])
 
 			else:
 				### Menu
@@ -2612,6 +2659,8 @@ class KravenVB(ConfigListScreen, Screen):
 		self.skinSearchAndReplace.append(["analog.png", self.analog])
 
 		### Header
+		if config.plugins.KravenVB.EPGListSize.value == "big":
+			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;24" />'])
 		self.appendSkinFile(self.daten + "header_begin.xml")
 		if not config.plugins.KravenVB.SelectionBorder.value == "none":
 			self.appendSkinFile(self.daten + "header_middle.xml")
@@ -3042,8 +3091,8 @@ class KravenVB(ConfigListScreen, Screen):
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-z2":
 			self.appendSkinFile(self.daten + "infobar-style-z2_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz1":
-			self.skinSearchAndReplace.append(['size="1798,276">', 'size="1798,230">'])
-			self.skinSearchAndReplace.append([',441">', ',392">'])
+			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+			self.skinSearchAndReplace.append([',297">', ',264">'])
 			if config.plugins.KravenVB.tuner.value == "2-tuner":
 				self.appendSkinFile(self.daten + "infobar-style-zz1_main2.xml")
 			elif config.plugins.KravenVB.tuner.value == "4-tuner":
@@ -3051,16 +3100,16 @@ class KravenVB(ConfigListScreen, Screen):
 			elif config.plugins.KravenVB.tuner.value == "8-tuner":
 				self.appendSkinFile(self.daten + "infobar-style-zz1_main8.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
-			self.skinSearchAndReplace.append(['size="1798,276">', 'size="1798,230">'])
-			self.skinSearchAndReplace.append([',441">', ',392">'])
+			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+			self.skinSearchAndReplace.append([',297">', ',264">'])
 			self.appendSkinFile(self.daten + "infobar-style-zz2_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz3":
-			self.skinSearchAndReplace.append(['size="1798,276">', 'size="1798,230">'])
-			self.skinSearchAndReplace.append([',441">', ',392">'])
+			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+			self.skinSearchAndReplace.append([',297">', ',264">'])
 			self.appendSkinFile(self.daten + "infobar-style-zz3_main.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			self.skinSearchAndReplace.append(['size="1798,276">', 'size="1798,230">'])
-			self.skinSearchAndReplace.append([',441">', ',392">'])
+			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,155">'])
+			self.skinSearchAndReplace.append([',297">', ',264">'])
 			if config.plugins.KravenVB.tuner.value == "2-tuner":
 				self.appendSkinFile(self.daten + "infobar-style-zz4_main2.xml")
 			elif config.plugins.KravenVB.tuner.value == "4-tuner":
@@ -3068,9 +3117,9 @@ class KravenVB(ConfigListScreen, Screen):
 			elif config.plugins.KravenVB.tuner.value == "8-tuner":
 				self.appendSkinFile(self.daten + "infobar-style-zz4_main8.xml")
 		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zzz1":
-			self.skinSearchAndReplace.append(['size="855,588">', 'size="855,490">'])
-			self.skinSearchAndReplace.append(['size="1798,276">', 'size="1798,184">'])
-			self.skinSearchAndReplace.append([',441">', ',343">'])
+			self.skinSearchAndReplace.append(['size="570,396">', 'size="570,330">'])
+			self.skinSearchAndReplace.append(['size="1199,186">', 'size="1199,124">'])
+			self.skinSearchAndReplace.append([',297">', ',231">'])
 			if config.plugins.KravenVB.tuner.value == "2-tuner":
 				self.appendSkinFile(self.daten + "infobar-style-zzz1_main2.xml")
 			elif config.plugins.KravenVB.tuner.value == "4-tuner":
@@ -3341,6 +3390,20 @@ class KravenVB(ConfigListScreen, Screen):
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.SplitScreen.value + ".xml")
 
 		### EPGSelection
+		if config.plugins.KravenVB.EPGListSize.value == "big":
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;24" foregroundColor="KravenFont1" itemHeight="36"'])
+		else:
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;22" foregroundColor="KravenFont1" itemHeight="30"'])
+		if config.plugins.KravenVB.EPGSelectionEPGSize.value == "big":
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,329" size="418,270"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,329" size="418,270"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,294" size="418,297"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,294" size="418,300"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,110" size="418,486"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,110" size="418,480"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,75" size="418,532"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,75" size="418,510"'])
+		else:
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,329" size="418,270"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,329" size="418,270"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,294" size="418,297"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,294" size="418,297"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,110" size="418,486"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,110" size="418,486"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,75" size="418,532"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,75" size="418,532"'])
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.EPGSelection.value + ".xml")
 
 		### cooltv
