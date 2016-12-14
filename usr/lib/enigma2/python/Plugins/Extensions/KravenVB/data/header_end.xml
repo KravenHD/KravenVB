@@ -386,26 +386,32 @@
 	</constant-widget>
 	
 	<constant-widget name="GraphMultiEPG">
-      <eLabel text="Electronic Program Guide" position="70,12" size="708,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+      <eLabel text="Multi-EPG" position="70,12" size="300,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+      <widget backgroundColor="KravenIBbg2" source="Title" render="Label" font="Regular;24" foregroundColor="KravenMFont2" position="440,16" size="400,30" halign="center" transparent="1" zPosition="3" />
       <widget backgroundColor="Kravenbg" font="Regular2;28" foregroundColor="KravenFont2" position="70,80" render="Label" size="1140,39" source="Event" transparent="1">
         <convert type="KravenVBEventName">Name</convert>
       </widget>
-      <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="left" position="70,121" render="Label" size="65,22" source="Event" transparent="1">
+      <widget backgroundColor="Kravenbg" font="Regular;20" foregroundColor="KravenFont1" halign="left" position="70,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">StartTime</convert>
         <convert type="ClockToText">Format:%H:%M </convert>
       </widget>
-      <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" position="1132,121" render="Label" size="65,22" source="Event" transparent="1">
+      <widget backgroundColor="Kravenbg" borderWidth="0" position="135,131" render="Progress" size="888,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress888.png">
+        <convert type="KravenVBEventTime">Progress</convert>
+      </widget>
+      <eLabel backgroundColor="KravenLine" position="135,133" size="888,1" />
+      <widget backgroundColor="Kravenbg" font="Regular;20" foregroundColor="KravenFont1" halign="right" position="1023,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">EndTime</convert>
         <convert type="ClockToText">Format:%H:%M</convert>
       </widget>
-      <widget backgroundColor="Kravenbg" borderWidth="0" position="132,131" render="Progress" size="990,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress990.png">
-        <convert type="KravenVBEventTime">Progress</convert>
-      </widget>
-      <widget backgroundColor="Kravenbg" font="Regular;19" position="70,150" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1153,150" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+	  <widget backgroundColor="Kravenbg" font="Regular2;20" foregroundColor="KravenFont2" halign="right" position="1088,120" render="Label" size="150,24" source="Event" transparent="1">
+	    <convert type="EventTime">StartTime</convert>
+	    <convert type="ClockToText">Format:%a %d.%b</convert>
+	  </widget>
+      <widget backgroundColor="Kravenbg" font="Regular;22" position="70,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1153,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
         <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
       </widget>
-      <eLabel backgroundColor="KravenLine" position="132,133" size="990,1" />
-	  <widget name="timeline_text" position="5,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
+	  <widget name="timeline_text" position="2,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
+	  <widget name="JumpInterval" position="1038,304" size="200,25" font="Regular;21" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" halign="right" />
       <widget name="timeline0" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
       <widget name="timeline1" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
       <widget name="timeline2" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
@@ -413,14 +419,112 @@
       <widget name="timeline4" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
       <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
 	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
-      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
-      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
-      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" />
-      <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" />
       <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+	</constant-widget>
+	
+	<constant-widget name="GraphMultiEPG-MiniTV">
+      <eLabel text="Multi-EPG" position="70,12" size="300,46" backgroundColor="KravenIBCoolbg" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+      <widget backgroundColor="KravenIBCoolbg" source="Title" render="Label" font="Regular;24" foregroundColor="KravenMFont2" position="440,16" size="400,30" halign="center" transparent="1" zPosition="3" />
+      <widget backgroundColor="Kravenbg2" font="Regular2;28" foregroundColor="KravenFont2" position="70,75" render="Label" size="760,39" source="Event" transparent="1">
+        <convert type="KravenVBEventName">Name</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="left" position="70,119" render="Label" size="65,22" source="Event" transparent="1">
+        <convert type="KravenVBEventTime">StartTime</convert>
+        <convert type="ClockToText">Format:%H:%M </convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" borderWidth="0" position="135,131" render="Progress" size="480,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress480.png">
+        <convert type="KravenVBEventTime">Progress</convert>
+      </widget>
+      <eLabel backgroundColor="KravenLine" position="135,133" size="480,1" />
+      <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="right" position="615,119" render="Label" size="65,22" source="Event" transparent="1">
+        <convert type="KravenVBEventTime">EndTime</convert>
+        <convert type="ClockToText">Format:%H:%M</convert>
+      </widget>
+	  <widget backgroundColor="Kravenbg2" render="Label" source="Event" font="Regular2;20" foregroundColor="KravenFont2" position="680,120" size="150,24" halign="right" transparent="1">
+	    <convert type="EventTime">StartTime</convert>
+	    <convert type="ClockToText">Format:%a %d.%b</convert>
+	  </widget>
+      <widget backgroundColor="Kravenbg2" font="Regular;22" position="70,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="session.VideoPicture" render="Pig" position="870,80" size="368,207" zPosition="3" backgroundColor="transparent" />
+      <eLabel backgroundColor="#00000000" position="870,80" size="368,207" transparent="0" zPosition="2" />
+      <eLabel backgroundColor="KravenBorder2" position="870,80" size="368,3" transparent="0" zPosition="4" />
+      <eLabel backgroundColor="KravenBorder2" position="870,284" size="368,3" transparent="0" zPosition="4" />
+      <eLabel backgroundColor="KravenBorder2" position="870,80" size="3,207" transparent="0" zPosition="4" />
+      <eLabel backgroundColor="KravenBorder2" position="1235,80" size="3,207" transparent="0" zPosition="4" />
+	  <widget name="timeline_text" position="2,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" />
+	  <widget name="JumpInterval" position="1038,304" size="200,25" font="Regular;21" backgroundColor="Kravenbg2" foregroundColor="KravenFont2" transparent="1" halign="right" />
+      <widget name="timeline0" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline1" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline2" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline3" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline4" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+      <!-- nontransbg */-->
+	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+        <convert type="ClockToText">Default</convert>
+      </widget>
+	  <!-- Menu ibar -->
+	</constant-widget>
+	
+	<constant-widget name="GraphMultiEPG-MiniTV2">
+      <eLabel text="Multi-EPG" position="70,12" size="300,46" backgroundColor="KravenIBCoolbg" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+      <widget backgroundColor="KravenIBCoolbg" source="Title" render="Label" font="Regular;24" foregroundColor="KravenMFont2" position="478,16" size="400,30" halign="left" transparent="1" zPosition="3" />
+      <widget backgroundColor="Kravenbg2" font="Regular2;28" foregroundColor="KravenFont2" position="478,75" render="Label" size="760,39" source="Event" transparent="1">
+        <convert type="KravenVBEventName">Name</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="left" position="478,119" render="Label" size="65,22" source="Event" transparent="1">
+        <convert type="KravenVBEventTime">StartTime</convert>
+        <convert type="ClockToText">Format:%H:%M </convert>
+      </widget>
+      <widget backgroundColor="Kravenbg2" borderWidth="0" position="543,131" render="Progress" size="480,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress480.png">
+        <convert type="KravenVBEventTime">Progress</convert>
+      </widget>
+      <eLabel backgroundColor="KravenLine" position="543,133" size="480,1" />
+      <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="right" position="1023,119" render="Label" size="65,22" source="Event" transparent="1">
+        <convert type="KravenVBEventTime">EndTime</convert>
+        <convert type="ClockToText">Format:%H:%M</convert>
+      </widget>
+	  <widget backgroundColor="Kravenbg2" font="Regular2;20" foregroundColor="KravenFont2" halign="right" position="1088,120" render="Label" size="150,24" source="Event" transparent="1">
+	    <convert type="EventTime">StartTime</convert>
+	    <convert type="ClockToText">Format:%a %d.%b</convert>
+	  </widget>
+      <widget backgroundColor="Kravenbg2" font="Regular;22" position="478,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget source="session.VideoPicture" render="Pig" position="70,80" size="368,207" zPosition="3" backgroundColor="transparent" />
+      <eLabel backgroundColor="#00000000" position="70,80" size="368,207" transparent="0" zPosition="2" />
+      <eLabel backgroundColor="KravenBorder2" position="70,80" size="368,3" transparent="0" zPosition="4" />
+      <eLabel backgroundColor="KravenBorder2" position="70,284" size="368,3" transparent="0" zPosition="4" />
+      <eLabel backgroundColor="KravenBorder2" position="70,80" size="3,207" transparent="0" zPosition="4" />
+      <eLabel backgroundColor="KravenBorder2" position="435,80" size="3,207" transparent="0" zPosition="4" />
+	  <widget name="timeline_text" position="2,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" />
+	  <widget name="JumpInterval" position="1038,304" size="200,25" font="Regular;21" backgroundColor="Kravenbg2" foregroundColor="KravenFont2" transparent="1" halign="right" />
+      <widget name="timeline0" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline1" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline2" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline3" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline4" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+      <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
+	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+      <!-- nontransbg */-->
+	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+        <convert type="ClockToText">Default</convert>
+      </widget>
+	  <!-- Menu ibar -->
 	</constant-widget>
 	
 	<constant-widget name="ChannelSelection">
@@ -836,7 +940,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSXEPG22">
-      <widget alphatest="blend" position="140,152" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,152" render="Picon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -847,7 +951,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSXEPG24">
-      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,145" render="Picon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;24" position="42,291" size="416,210" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -858,7 +962,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSXEPG22Prime">
-      <widget alphatest="blend" position="140,152" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,152" render="Picon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -872,7 +976,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSXEPG24Prime">
-      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,145" render="Picon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;24" position="42,291" size="416,210" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -886,7 +990,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZEPG22">
-      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,145" render="Picon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;22" position="42,247" size="416,270" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -897,7 +1001,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZEPG24">
-      <widget alphatest="blend" position="140,150" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,150" render="Picon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;24" position="42,260" size="416,240" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -908,7 +1012,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZEPG22Prime">
-      <widget alphatest="blend" position="140,145" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,145" render="Picon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;22" position="42,247" size="416,270" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -922,7 +1026,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZEPG24Prime">
-      <widget alphatest="blend" position="140,150" render="KravenVBXPicon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="140,150" render="Picon" size="220,94" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;24" position="42,260" size="416,240" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -936,7 +1040,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZZEPG22">
-      <widget alphatest="blend" position="50,145" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="50,145" render="Picon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -947,7 +1051,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZZEPG24">
-      <widget alphatest="blend" position="50,162" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="50,162" render="Picon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;24" position="42,322" size="416,180" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -958,7 +1062,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZZEPG22Prime">
-      <widget alphatest="blend" position="50,145" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="50,145" render="Picon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;22" position="42,300" size="416,216" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -972,7 +1076,7 @@
 	</constant-widget>
 	
 	<constant-widget name="CSZZEPG24Prime">
-      <widget alphatest="blend" position="50,162" render="KravenVBXPicon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
+      <widget alphatest="blend" position="50,162" render="Picon" size="400,150" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
       </widget>
       <widget foregroundColor="KravenFont1" font="Regular;24" position="42,322" size="416,180" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
@@ -1042,6 +1146,13 @@
 	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-menu">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,640" size="1280,80" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,640" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-cs">
 	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,570" size="1280,400" zPosition="-9" alphatest="blend" />
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
@@ -1058,6 +1169,13 @@
 	  <ePixmap pixmap="KravenVB/graphics/ibar3.png" position="0,654" size="1280,66" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,654" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-cs">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,654" size="1280,66" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,654" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1080,6 +1198,13 @@
 	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-cooltv">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-emc">
 	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,570" size="1280,400" zPosition="-9" alphatest="blend" />
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
@@ -1096,6 +1221,13 @@
 	  <ePixmap pixmap="KravenVB/graphics/ibar2.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-emc">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1118,6 +1250,13 @@
 	  <eLabel position="0,58" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-wrr">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,640" size="380,80" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,640" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="380,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="380,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-split1">
 	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,550" size="1280,400" zPosition="-9" alphatest="blend" />
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-60" size="1280,443" zPosition="-9" alphatest="blend" />
@@ -1134,6 +1273,13 @@
 	  <ePixmap pixmap="KravenVB/graphics/ibar2.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-split1">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,660" size="1280,60" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,660" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1156,6 +1302,13 @@
 	  <eLabel position="0,97" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-split2">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,650" size="1280,70" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,650" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,97" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-sib">
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-50" size="1280,443" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1167,6 +1320,11 @@
 	
 	<constant-widget name="box2-sib">
 	  <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,55" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,54" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-sib">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,55" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,54" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1187,6 +1345,12 @@
 	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-csr">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,665" size="1280,55" zPosition="-9" alphatest="blend" />
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,59" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,58" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-rib">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,45" size="1280,310" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1198,6 +1362,11 @@
 	
 	<constant-widget name="box2-rib">
       <ePixmap pixmap="KravenVB/graphics/ibar5.png" position="0,150" size="1280,110" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-rib">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,150" size="1280,110" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1215,6 +1384,11 @@
 	  <eLabel position="0,610" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-player">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,610" size="1280,110" zPosition="-9" />
+	  <eLabel position="0,610" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-EPGBar">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,0" size="1280,310" zPosition="-9" />
 	</constant-widget>
@@ -1226,6 +1400,11 @@
 	
 	<constant-widget name="box2-EPGBar">
       <ePixmap pixmap="KravenVB/graphics/ibar6.png" position="0,104" size="1280,206" zPosition="-9" />
+	  <eLabel position="0,104" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-EPGBar">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,104" size="1280,206" zPosition="-9" />
 	  <eLabel position="0,104" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1245,6 +1424,12 @@
 	  <eLabel position="982,118" size="298,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-weather-small">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="980,0" size="300,120" zPosition="-9" alphatest="blend" />
+	  <eLabel position="980,0" size="2,120" backgroundColor="KravenIBLine" zPosition="-8" />
+	  <eLabel position="982,118" size="298,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-weather-big">
       <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,165" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1256,6 +1441,11 @@
 	
 	<constant-widget name="box2-weather-big">
       <ePixmap pixmap="KravenVB/graphics/ibaro3.png" position="0,0" size="1280,115" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,114" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-weather-big">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,115" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,114" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1273,6 +1463,11 @@
       <eLabel position="0,555" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-ib-np-x1">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,555" size="1280,165" zPosition="-9" alphatest="blend" />
+      <eLabel position="0,555" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-ib-x2-x3">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,470" size="1280,310" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1284,6 +1479,11 @@
 	
 	<constant-widget name="box2-ib-x2-x3">
 	  <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,576" size="1280,144" zPosition="-9" alphatest="blend" />
+      <eLabel position="0,576" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-ib-x2-x3">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,576" size="1280,144" zPosition="-9" alphatest="blend" />
       <eLabel position="0,576" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1301,6 +1501,11 @@
 	  <eLabel position="0,580" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-ib-z1-z2">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,580" size="1280,140" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,580" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-ib-top">
       <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,-20" size="1280,165" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1312,6 +1517,11 @@
 	
 	<constant-widget name="box2-ib-top">
       <ePixmap pixmap="KravenVB/graphics/ibaro2.png" position="0,0" size="1280,70" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,69" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-ib-top">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,70" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,69" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1329,6 +1539,11 @@
 	  <eLabel position="0,69" size="532,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-netatmo">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="532,70" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,69" size="532,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-ib-zz1-zz4">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,410" size="1280,310" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1340,6 +1555,11 @@
 	
 	<constant-widget name="box2-ib-zz1-zz4">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,522" size="1280,198" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,522" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-ib-zz1-zz4">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,522" size="1280,198" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,522" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1357,6 +1577,11 @@
 	  <eLabel position="0,535" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="texture-ib-zz2-zz3">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,535" size="1280,185" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,535" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-ib-zzz1">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,410" size="1280,310" zPosition="-9" alphatest="blend" />
 	</constant-widget>
@@ -1368,6 +1593,11 @@
 	
 	<constant-widget name="box2-ib-zzz1">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,473" size="1280,247" zPosition="-9" alphatest="blend" />
+	  <eLabel position="0,473" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-ib-zzz1">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,473" size="1280,247" zPosition="-9" alphatest="blend" />
 	  <eLabel position="0,473" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
@@ -1544,7 +1774,11 @@
 	</constant-widget>
 	
 	<constant-widget name="timeshift-bg-box2">
-	  <ePixmap pixmap="KravenVB/graphics/timeshift.png" position="0,0" size="785,62" zPosition="-9" alphatest="blend" />
+	  <ePixmap pixmap="KravenVB/graphics/shift.png" position="0,0" size="785,62" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="timeshift-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="785,62" zPosition="-9" alphatest="blend" />
 	</constant-widget>
 	
 	<constant-widget name="ibts-bg">
@@ -1555,12 +1789,20 @@
 	  <ePixmap pixmap="KravenVB/graphics/ibts.png" position="0,0" size="1280,32" zPosition="-2" alphatest="blend" />
 	</constant-widget>
 	
+	<constant-widget name="ibts-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,32" zPosition="-2" alphatest="blend" />
+	</constant-widget>
+	
 	<constant-widget name="autoresolution-bg">
 	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="252,62" zPosition="-9" />
 	</constant-widget>
 	
 	<constant-widget name="autoresolution-bg-box2">
 	  <ePixmap pixmap="KravenVB/graphics/autoresolution.png" position="0,0" size="252,62" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="autoresolution-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="252,62" zPosition="-9" alphatest="blend" />
 	</constant-widget>
 	
 	<constant-widget name="pvrstate-bg">
@@ -1571,12 +1813,20 @@
 	  <ePixmap pixmap="KravenVB/graphics/pvrstate.png" position="0,0" size="220,90" zPosition="-10" alphatest="blend" />
 	</constant-widget>
 	
+	<constant-widget name="pvrstate-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="220,90" zPosition="-10" alphatest="blend" />
+	</constant-widget>
+	
 	<constant-widget name="pvrstate2-bg">
 	  <eLabel backgroundColor="KravenIBbg" position="0,0" size="110,45" transparent="0" zPosition="-10" />
 	</constant-widget>
 	
 	<constant-widget name="pvrstate2-bg-box2">
 	  <ePixmap pixmap="KravenVB/graphics/pvrstate.png" position="0,0" size="110,45" zPosition="-10" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="pvrstate2-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="110,45" zPosition="-10" alphatest="blend" />
 	</constant-widget>
 	
 	<constant-widget name="systeminfo-small-bg">
@@ -1587,6 +1837,10 @@
 	  <ePixmap pixmap="KravenVB/graphics/info.png" position="980,315" size="300,80" zPosition="-9" alphatest="blend" />
 	</constant-widget>
 	
+	<constant-widget name="systeminfo-small-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="980,315" size="300,80" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
 	<constant-widget name="systeminfo-big-bg">
 	  <eLabel position="980,265" size="300,170" backgroundColor="KravenIBbg" zPosition="-9" />
 	</constant-widget>
@@ -1595,11 +1849,19 @@
 	  <ePixmap pixmap="KravenVB/graphics/info.png" position="980,265" size="300,170" zPosition="-9" alphatest="blend" />
 	</constant-widget>
 	
+	<constant-widget name="systeminfo-big-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="980,265" size="300,170" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
 	<constant-widget name="systeminfo-bigsat-bg">
 	  <eLabel position="980,205" size="300,260" backgroundColor="KravenIBbg" zPosition="-9" />
 	</constant-widget>
 	
 	<constant-widget name="systeminfo-bigsat-bg-box2">
 	  <ePixmap pixmap="KravenVB/graphics/info.png" position="980,205" size="300,260" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="systeminfo-bigsat-bg-texture">
+	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="980,205" size="300,260" zPosition="-9" alphatest="blend" />
 	</constant-widget>
   </constant-widgets>

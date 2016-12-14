@@ -1,0 +1,54 @@
+  <!-- GraphMultiEPG -->
+  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="GraphMultiEPG" position="0,0" size="1280,720" title="Electronic Program Guide">
+	<widget name="list" position="70,332" size="1168,300" valign="top" FontSize1="20" FontSize2="22" itemHeight="60" piconWidth="101" ServiceNameForegroundColor="KravenFont1" ServiceNameBackgroundColor="Kravenbg2" EntryBorderColor="KravenGMEBorder" EntryBackgroundColor="Kravenbg2" EntryBackgroundColorSelected="KravenSelection" EntryNowForegroundColorSelected="KravenSelFont" EntryNowBackgroundColor="KravenGMErunningbg" EntryNowBackgroundColorSelected="KravenSelection" EntryRecColor="red" EntryPreColor="yellow" />
+    <constant-widget name="GraphMultiEPG-MiniTV2"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="GraphMultiEPG" position="70,0" />-->
+  </screen>
+  <!-- GraphMultiEPG1 -->
+  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="GraphMultiEPG1" position="0,0" size="1280,720" title="Electronic Program Guide">
+	<widget name="list" position="70,332" size="1168,300" valign="top" FontSize1="20" FontSize2="20" itemHeight="50" piconWidth="85" ServiceNameForegroundColor="KravenFont1" ServiceNameBackgroundColor="Kravenbg2" EntryBorderColor="KravenGMEBorder" EntryBackgroundColor="Kravenbg2" EntryBackgroundColorSelected="KravenSelection" EntryNowForegroundColorSelected="KravenSelFont" EntryNowBackgroundColor="KravenGMErunningbg" EntryNowBackgroundColorSelected="KravenSelection" EntryRecColor="red" EntryPreColor="yellow" />
+    <constant-widget name="GraphMultiEPG-MiniTV2"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="GraphMultiEPG1" position="70,0" />-->
+  </screen>
+  <!-- GraphMultiEPG2 -->
+  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="GraphMultiEPG2" position="0,0" size="1280,720" title="Electronic Program Guide">
+	<widget name="list" position="70,332" size="1168,300" valign="top" FontSize1="20" FontSize2="22" itemHeight="30" piconWidth="50" ServiceNameForegroundColor="KravenFont1" ServiceNameBackgroundColor="Kravenbg2" EntryBorderColor="KravenGMEBorder" EntryBackgroundColor="Kravenbg2" EntryBackgroundColorSelected="KravenSelection" EntryNowForegroundColorSelected="KravenSelFont" EntryNowBackgroundColor="KravenGMErunningbg" EntryNowBackgroundColorSelected="KravenSelection" EntryRecColor="red" EntryPreColor="yellow" />
+    <constant-widget name="GraphMultiEPG-MiniTV2"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="GraphMultiEPG2" position="70,0" />-->
+  </screen>
+  <!-- GraphMultiEPG3 -->
+  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="GraphMultiEPG3" position="0,0" size="1280,720" title="Electronic Program Guide">
+	<eLabel text="Multi-EPG" position="70,12" size="300,46" backgroundColor="KravenIBCoolbg" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+    <widget backgroundColor="KravenIBCoolbg" source="Title" render="Label" font="Regular;24" foregroundColor="KravenMFont2" position="478,16" size="400,30" halign="left" transparent="1" zPosition="3" />
+	<widget name="list" position="70,107" size="1168,510" valign="top" FontSize1="20" FontSize2="22" itemHeight="30" piconWidth="50" ServiceNameForegroundColor="KravenFont1" ServiceNameBackgroundColor="Kravenbg2" EntryBorderColor="KravenGMEBorder" EntryBackgroundColor="Kravenbg2" EntryBackgroundColorSelected="KravenSelection" EntryNowForegroundColorSelected="KravenSelFont" EntryNowBackgroundColor="KravenGMErunningbg" EntryNowBackgroundColorSelected="KravenSelection" EntryRecColor="red" EntryPreColor="yellow" />
+	<widget name="timeline_text" position="2,80" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" />
+	<widget source="Event" render="Label" position="1088,79" size="150,25" font="Regular;21" backgroundColor="Kravenbg2" foregroundColor="KravenFont2" transparent="1" halign="right">
+	  <convert type="EventTime">StartTime</convert>
+	  <convert type="ClockToText">Format:%a %d.%b</convert>
+	</widget>
+    <widget name="timeline0" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
+    <widget name="timeline1" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
+    <widget name="timeline2" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
+    <widget name="timeline3" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
+    <widget name="timeline4" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
+    <widget name="timeline5" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
+	<widget name="timeline_now" position="0,102" zPosition="2" size="15,520" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+    <!-- nontransbg */-->
+	<widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+	<!-- Menu ibar -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="GraphMultiEPG3" position="70,0" />-->
+  </screen>

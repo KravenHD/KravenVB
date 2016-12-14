@@ -1,46 +1,12 @@
 #!/bin/sh
-if [ -f /tmp/graphics/ibar.png ]; then
+if [ -d /tmp/graphics ]; then
     mv -f /tmp/graphics/*.* /usr/share/enigma2/KravenVB/graphics
-fi
-if [ -f /tmp/ibar.png ]; then
-    mv -f /tmp/ibar.png /usr/share/enigma2/KravenVB
-fi
-if [ -f /tmp/ibaro.png ]; then
-    mv -f /tmp/ibaro.png /usr/share/enigma2/KravenVB
-fi
-if [ -f /tmp/backg.png ]; then
-    mv -f /tmp/backg.png /usr/share/enigma2/KravenVB
-fi
-if [ -f /tmp/info.png ]; then
-    mv -f /tmp/info.png /usr/share/enigma2/KravenVB
-fi
-if [ -f /tmp/shift.png ]; then
-    mv -f /tmp/shift.png /usr/share/enigma2/KravenVB
-fi
-if [ -f /tmp/wsmall.png ]; then
-    mv -f /tmp/wsmall.png /usr/share/enigma2/KravenVB
 fi
 if [ -f /tmp/skin-user.xml ]; then
     mv -f /tmp/skin-user.xml /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data
 fi
-if [ -f /tmp/icons-dark/icons/key_ok.png ]; then
-	mkdir /usr/share/enigma2/KravenVB/icons-dark/icons
-	mkdir /usr/share/enigma2/KravenVB/icons-dark/infobar
-	mkdir /usr/share/enigma2/KravenVB/icons-dark/message
-	mv -f /tmp/icons-dark/icons/*.* /usr/share/enigma2/KravenVB/icons-dark/icons
-	mv -f /tmp/icons-dark/infobar/*.* /usr/share/enigma2/KravenVB/icons-dark/infobar
-	mv -f /tmp/icons-dark/message/*.* /usr/share/enigma2/KravenVB/icons-dark/message
-	rm -rf /tmp/icons-dark
-	mkdir /usr/share/enigma2/KravenVB/icons-light/icons
-	mkdir /usr/share/enigma2/KravenVB/icons-light/infobar
-	mkdir /usr/share/enigma2/KravenVB/icons-light/message
-	mv -f /tmp/icons-light/icons/*.* /usr/share/enigma2/KravenVB/icons-light/icons
-	mv -f /tmp/icons-light/infobar/*.* /usr/share/enigma2/KravenVB/icons-light/infobar
-	mv -f /tmp/icons-light/message/*.* /usr/share/enigma2/KravenVB/icons-light/message
-	rm -rf /tmp/icons-light
-fi
 if [ -f /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/plugin.py ]; then
-    wget -O /dev/null 'http://127.0.0.1/web/message?type=1&text=KravenVB%20wurde%20erfolgreich%20installiert.%0A%0AZur%20Nutzung%20rufen%20Sie%20das%20Plugin%20auf,%20speichern%20Ihre%20Einstellungen%20und%20starten%20die%20Oberfl%C3%A4che%20neu.&timeout=13'
+    wget -O /dev/null 'http://127.0.0.1/web/message?type=1&text=KravenVB%20wurde%20erfolgreich%20installiert.%0A%0AZur%20Nutzung%20rufen%20Sie%20das%20Plugin%20auf,%20speichern%20Ihre%20Einstellungen%0Aund%20starten%20die%20Oberfl%C3%A4che%20neu.&timeout=13'
 fi
 echo "                                                          "
 echo "             ...Skin successful installed.                "

@@ -1,4 +1,4 @@
-  <widget alphatest="blend" position="20,542" render="KravenVBXPicon" size="400,170" source="session.CurrentService" transparent="1" zPosition="4">
+  <widget alphatest="blend" position="20,542" render="Picon" size="400,170" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
   <widget font="Regular;30" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="438,615" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="472,40" source="session.Event_Now" backgroundColor="KravenIBbg" transparent="1" zPosition="1">

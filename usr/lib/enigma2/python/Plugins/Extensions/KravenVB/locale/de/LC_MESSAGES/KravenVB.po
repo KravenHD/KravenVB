@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2016-05-24 22:31+0100\n"
+"PO-Revision-Date: 2016-12-04 12:12+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -1049,8 +1049,8 @@ msgid "Choose from different options to display the system menus. Press red butt
 msgstr "Wählen Sie eine von verschiedenen Varianten für die Darstellung der Systemmenüs. Drücken Sie die rote Taste für die FAQs mit Details zur Installation von Menü-Symbolen."
 
 #: KravenVB.py
-msgid "Choose the background color for all screens. You can choose from a list of predefined colors or create your own color using RGB sliders."
-msgstr "Wählen Sie die Hintergrundfarbe für alle Seiten. Sie können aus einer Liste von vordefinierten Farben wählen oder Ihre eigene Farbe mit RGB-Reglern erzeugen."
+msgid "Choose the background for all screens. You can choose from a list of predefined colors or textures, create your own color using RGB sliders or define a color gradient."
+msgstr "Wählen Sie den Hintergrund für alle Seiten. Sie können aus einer Liste von vordefinierten Farben oder Texturen wählen, Ihre eigene Farbe mit RGB-Reglern erzeugen oder einen Farbverlauf definieren."
 
 #: KravenVB.py
 msgid "Choose the degree of background transparency for all screens except system menus and channellists."
@@ -1113,8 +1113,12 @@ msgid "Choose from different infobar styles. Please note that not every style pr
 msgstr "Wählen Sie eine von verschiedenen Infoleisten-Varianten. Bitte beachten Sie, dass nicht jede Variante jede Funktion bietet. Deshalb sind einige Funktionen für die ausgewählte Variante möglicherweise nicht verfügbar."
 
 #: KravenVB.py
-msgid "Choose the background color of the infobars. You can choose from a list of predefined colors or create your own color using RGB sliders."
-msgstr "Wählen Sie die Hintergrundfarbe der Infoleisten. Sie können aus einer Liste von vordefinierten Farben wählen oder Ihre eigene Farbe mit RGB-Reglern erzeugen."
+msgid "Choose the background for the infobars. You can choose from a list of predefined colors or textures or create your own color using RGB sliders."
+msgstr "Wählen Sie den Hintergrund für die Infoleisten. Sie können aus einer Liste von vordefinierten Farben oder Texturen wählen oder Ihre eigene Farbe mit RGB-Reglern erzeugen."
+
+#: KravenVB.py
+msgid "Choose the background for the infobars. You can choose from a list of predefined colors or textures, create your own color using RGB sliders or define a color gradient."
+msgstr "Wählen Sie den Hintergrund für die Infoleisten. Sie können aus einer Liste von vordefinierten Farben oder Texturen wählen, Ihre eigene Farbe mit RGB-Reglern erzeugen oder einen Farbverlauf definieren."
 
 #: KravenVB.py
 msgid "Choose the degree of background transparency for the infobars."
@@ -1473,8 +1477,8 @@ msgid "This option is not available because 'MediaPortal' is not installed."
 msgstr "Diese Option ist nicht verfügbar, da \"MediaPortal\" nicht installiert ist."
 
 #: KravenVB.py
-msgid "'not available'-Font"
-msgstr "'nicht verfügbar'-Schrift"
+msgid "'Not available'-Font"
+msgstr "'Nicht verfügbar'-Schrift"
 
 #: KravenVB.py
 msgid "Choose the font color of channels that are unavailable at the moment."
@@ -1897,8 +1901,8 @@ msgid "Record-State"
 msgstr "Aufnahmezustand"
 
 #: KravenVB.py
-msgid "unskinned Colors"
-msgstr "ungeskinnte Farben"
+msgid "Unskinned Colors"
+msgstr "Ungeskinnte Farben"
 
 #: KravenVB.py
 msgid "Choose whether some foreground and background colors of unskinned screens are changed or not."
@@ -1906,15 +1910,15 @@ msgstr "Wählen Sie, ob einige Schrift- und Hintergrundfarben von ungeskinnten S
 
 #: KravenVB.py
 msgid "Unwatched Color"
-msgstr "ungesehene Filme"
+msgstr "Farbe ungesehener Filme"
 
 #: KravenVB.py
 msgid "Watching Color"
-msgstr "teils gesehene Filme"
+msgstr "Farbe teils gesehener Filme"
 
 #: KravenVB.py
 msgid "Finished Color"
-msgstr "gesehene Filme"
+msgstr "Farbe gesehener Filme"
 
 #: KravenVB.py
 msgid "Choose the font color of unwatched movies."
@@ -1930,11 +1934,19 @@ msgstr "Wählen Sie die Schriftfarbe für gesehene Filme."
 
 #: KravenVB.py
 msgid "infobar colors"
-msgstr "Infoleisten Farben"
+msgstr "Infoleisten-Farben"
 
 #: KravenVB.py
 msgid "Choose the colors of PermanentClock."
 msgstr "Wählen Sie die Farben für 'PermanentClock'."
+
+#: KravenVB.py
+msgid "PermanentClock-Font"
+msgstr "PermanentClock-Schrift"
+
+#: KravenVB.py
+msgid "Choose the fontcolor of PermanentClock."
+msgstr "Wählen Sie die Schriftfarbe für 'PermanentClock'."
 
 #: KravenVB.py
 msgid "          Primary Color"
@@ -1967,3 +1979,131 @@ msgstr "          Infofelder"
 #: KravenVB.py
 msgid "Choose gradient or color for the info panels (Sysinfos, Timeshiftbar etc.)."
 msgstr "Wählen Sie Verlauf oder eine Farbe für die Infofelder (Sysinfos, Timeshiftbar etc.)."
+
+#: KravenVB.py
+msgid "This sections offers all settings for EPGSelection."
+msgstr "In diesem Abschnitt finden Sie alle Einstellungen zu EPGSelection."
+
+#: KravenVB.py
+msgid "EPGSelection-Style"
+msgstr "EPGSelection-Stil"
+
+#: KravenVB.py
+msgid "EPG-List Fontsize"
+msgstr "EPG-Liste Schriftgrösse"
+
+#: KravenVB.py
+msgid "Choose the font size of EPG-List."
+msgstr "Wählen Sie die Schriftgrösse für die EPG-Liste."
+
+#: KravenVB.py
+msgid "texture"
+msgstr "Textur"
+
+#: KravenVB.py
+msgid "user texture"
+msgstr "Benutzer-Textur"
+
+#: KravenVB.py
+msgid "          Texture"
+msgstr "          Textur"
+
+#: KravenVB.py
+msgid "          Alternate Color"
+msgstr "          Ersatz-Farbe"
+
+#: KravenVB.py
+msgid "Choose the texture for the background."
+msgstr "Wählen Sie die Textur für den Hintergrund."
+
+#: KravenVB.py
+msgid "Choose the alternate color for the background. It should match the texture at the best."
+msgstr "Wählen Sie die Ersatz-Farbe für den Hintergrund. Diese sollte der Textur bestmöglich entsprechen."
+
+#: KravenVB.py
+msgid "Choose the texture for the infobars."
+msgstr "Wählen Sie die Textur für die Infoleisten."
+
+#: KravenVB.py
+msgid "Choose the alternate color for the infobars. It should match the texture at the best."
+msgstr "Wählen Sie die Ersatz-Farbe für die Infoleisten. Diese sollte der Textur bestmöglich entsprechen."
+
+#: KravenVB.py
+msgid "This sections offers all settings for PermanentClock."
+msgstr "In diesem Abschnitt finden Sie alle Einstellungen zu PermanentClock."
+
+#: KravenVB.py
+msgid "This sections offers all settings for NumberZap."
+msgstr "In diesem Abschnitt finden Sie alle Einstellungen zu NumberZap."
+
+#: KravenVB.py
+msgid "NumberZap-Style"
+msgstr "NumberZap-Stil"
+
+#: KravenVB.py
+msgid "Choose the border color for NumberZap."
+msgstr "Wählen Sie die Rahmenfarbe für \"NumberZap\"."
+
+#: KravenVB.py
+msgid "Border Color"
+msgstr "Rahmenfarbe"
+
+#: KravenVB.py
+msgid "This sections offers all settings for GraphMultiEPG."
+msgstr "In diesem Abschnitt finden Sie alle Einstellungen zu GraphMultiEPG."
+
+#: KravenVB.py
+msgid "Choose from different styles for GraphMultiEPG."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"GraphMultiEPG\"."
+
+#: KravenVB.py
+msgid "GraphMultiEPG-Style"
+msgstr "GraphMultiEPG-Stil"
+
+#: KravenVB.py
+msgid "no MiniTV"
+msgstr "kein MiniTV"
+
+#: KravenVB.py
+msgid "Choose the border color for GraphMultiEPG."
+msgstr "Wählen Sie die Rahmenfarbe für \"GraphMultiEPG\"."
+
+#: KravenVB.py
+msgid "Running-Background"
+msgstr "laufender Hintergrund"
+
+#: KravenVB.py
+msgid "Choose the background color of running events for GraphMultiEPG."
+msgstr "Wählen Sie die Hintergrundfarbe der laufenden Sendung für \"GraphMultiEPG\"."
+
+#: KravenVB.py
+msgid "This sections offers all settings for VerticalEPG."
+msgstr "In diesem Abschnitt finden Sie alle Einstellungen zu Spalten-EPG."
+
+#: KravenVB.py
+msgid "Choose from different styles for VerticalEPG."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"Spalten-EPG\"."
+
+#: KravenVB.py
+msgid "VerticalEPG-Style"
+msgstr "Spalten-EPG-Stil"
+
+#: KravenVB.py
+msgid "Choose the border color for VerticalEPG."
+msgstr "Wählen Sie die Rahmenfarbe für \"Spalten-EPG\"."
+
+#: KravenVB.py
+msgid "VERTICALEPG ______________________________________________________________"
+msgstr "SPALTEN-EPG ______________________________________________________________"
+
+#: KravenVB.py
+msgid "VerticalEPG"
+msgstr "Spalten-EPG"
+
+#: KravenVB.py
+msgid "description"
+msgstr "Sendungsbeschreibung"
+
+#: KravenVB.py
+msgid "full"
+msgstr "voll"

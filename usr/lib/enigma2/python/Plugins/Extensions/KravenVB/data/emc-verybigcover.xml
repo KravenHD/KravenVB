@@ -1,5 +1,5 @@
   <!-- /* EMC VeryBigCover -->
-  <screen name="EMCSelection" position="0,0" size="1280,720" title="Enhanced Movie Center" flags="wfNoBorder" backgroundColor="transparent">
+  <screen name="EMCSelection" position="0,0" size="1280,720" title="Enhanced Movie Center" flags="wfNoBorder" backgroundColor="Kravenbg">
     <eLabel backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" position="42,12" size="708,46" text="Enhanced Movie Center" transparent="1" />
     <widget name="Cover" position="64,70" size="342,513" zPosition="4" backgroundColor="Kravenbg" alphatest="on" transparent="0" />
     <widget source="Service" render="Label" position="64,592" size="80,24" font="Regular;20" foregroundColor="KravenFont2" backgroundColor="Kravenbg" transparent="1" noWrap="1" halign="left">
@@ -16,7 +16,7 @@
     <widget source="Service" render="Label" position="310,620" size="95,24" font="Regular;20" foregroundColor="KravenFont2" backgroundColor="Kravenbg" transparent="1" noWrap="1" halign="right">
       <convert type="EMCMovieInfo">FileSize</convert>
     </widget>
-    <widget name="list" position="461,102" size="777,392" itemHeight="28" CoolFont="Regular;20" CoolSelectFont="Regular;20" CoolDateFont="Regular;20" CoolProgressPos="474" CoolBarPos="474" CoolBarHPos="8" CoolBarSize="50,10" CoolBarSizeSa="110,16" CoolMoviePos="35" CoolMovieSize="424" CoolFolderSize="550" CoolDatePos="584" CoolDateWidth="187" CoolTitleColor="0" CoolDateColor="0" CoolHighlightColor="0" DefaultColor="KravenFont1" UnwatchedColor="KravenFont1" WatchingColor="blue" FinishedColor="green" RecordingColor="red" BackColor="Kravenbg" BackColorSel="KravenEMCSelection" FrontColorSel="KravenEMCSelFont" backgroundColorSelected="KravenEMCSelection" foregroundColorSelected="KravenEMCSelFont" backgroundColor="Kravenbg" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget name="list" position="461,102" size="777,392" itemHeight="28" CoolFont="Regular;20" CoolSelectFont="Regular;20" CoolDateFont="Regular;20" CoolProgressPos="474" CoolBarPos="474" CoolBarHPos="8" CoolBarSize="50,10" CoolBarSizeSa="110,16" CoolMoviePos="35" CoolMovieSize="424" CoolFolderSize="550" CoolDatePos="584" CoolDateWidth="187" CoolTitleColor="0" CoolDateColor="0" CoolHighlightColor="0" DefaultColor="KravenFont1" UnwatchedColor="KravenFont1" WatchingColor="blue" FinishedColor="green" RecordingColor="red" BackColorSel="KravenEMCSelection" FrontColorSel="KravenEMCSelFont" backgroundColorSelected="KravenEMCSelection" foregroundColorSelected="KravenEMCSelFont" backgroundColor="Kravenbg" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget source="Service" render="Label" position="467,70" size="474,27" font="Regular; 22" foregroundColor="KravenFont2" backgroundColor="Kravenbg" transparent="1" noWrap="1" halign="left">
 	  <convert type="KravenVBDiskSpace">path</convert>
     </widget>

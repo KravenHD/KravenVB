@@ -1,0 +1,47 @@
+  <!-- VerticalEPGView -->
+  <screen flags="wfNoBorder" name="VerticalEPGView" position="0,0" size="1280,720" title="Programm Guide" backgroundColor="Kravenbg">
+	<eLabel text="Spalten-EPG" position="63,12" size="350,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
+    <widget backgroundColor="KravenIBbg2" source="Title" render="Label" font="Regular;24" foregroundColor="KravenMFont2" position="440,16" size="400,30" halign="center" transparent="1" zPosition="3" />
+	<widget position="69,85" size="60,36" source="Service1" render="Picon" alphatest="blend" zPosition="1">
+	  <convert type="ServiceName">Reference</convert>
+	</widget>
+	<widget position="306,85" size="60,36" source="Service2" render="Picon" alphatest="blend" zPosition="1">
+	  <convert type="ServiceName">Reference</convert>
+	</widget>
+	<widget position="543,85" size="60,36" source="Service3" render="Picon" alphatest="blend" zPosition="1">
+	  <convert type="ServiceName">Reference</convert>
+	</widget>
+	<widget position="780,85" size="60,36" source="Service4" render="Picon" alphatest="blend" zPosition="1">
+	  <convert type="ServiceName">Reference</convert>
+	</widget>
+	<widget position="1017,85" size="60,36" source="Service5" render="Picon" alphatest="blend" zPosition="1">
+	  <convert type="ServiceName">Reference</convert>
+	</widget>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;20" halign="center" valign="center" name="currCh1" position="134,76" size="160,54" transparent="1" zPosition="2"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;20" halign="center" valign="center" name="currCh2" position="371,76" size="160,54" transparent="1" zPosition="2"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;20" halign="center" valign="center" name="currCh3" position="608,76" size="160,54" transparent="1" zPosition="2"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;20" halign="center" valign="center" name="currCh4" position="845,76" size="160,54" transparent="1" zPosition="2"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;20" halign="center" valign="center" name="currCh5" position="1082,76" size="160,54" transparent="1" zPosition="2"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" itemHeight="82" name="epg_list1" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="64,130" size="227,492" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" itemHeight="82" name="epg_list2" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="301,130" size="227,492" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" itemHeight="82" name="epg_list3" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="538,130" size="227,492" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" itemHeight="82" name="epg_list4" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="775,130" size="227,492" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
+	<widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" itemHeight="82" name="epg_list5" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="1012,130" size="227,492" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
+	<eLabel backgroundColor="KravenVEPGBorder" position="63,77" size="1175,1" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="63,129" size="1175,1" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="63,622" size="1175,1" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="63,77" size="1,545" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="290,77" size="1,545" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="527,77" size="1,545" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="764,77" size="1,545" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="1001,77" size="1,545" zPosition="4" />
+	<eLabel backgroundColor="KravenVEPGBorder" position="1238,77" size="1,545" zPosition="4" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="240,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="Background"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="VerticalEPGView" position="70,0" />-->
+  </screen>

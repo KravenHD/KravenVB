@@ -1,48 +1,8 @@
 #!/bin/sh
 echo "Checking for previous installations..."
-if [ -f /usr/share/enigma2/KravenVB/graphics/ibar.png ]; then
+if [ -d /usr/share/enigma2/KravenVB/graphics ]; then
     mkdir /tmp/graphics
     cp /usr/share/enigma2/KravenVB/graphics/*.* /tmp/graphics
-fi
-if [ -f /usr/share/enigma2/KravenVB/ibar.png ]; then
-    cp /usr/share/enigma2/KravenVB/ibar.png /tmp
-fi
-if [ -f /usr/share/enigma2/KravenVB/ibaro.png ]; then
-    cp /usr/share/enigma2/KravenVB/ibaro.png /tmp
-fi
-if [ -f /usr/share/enigma2/KravenVB/backg.png ]; then
-    cp /usr/share/enigma2/KravenVB/backg.png /tmp
-fi
-if [ -f /usr/share/enigma2/KravenVB/info.png ]; then
-    cp /usr/share/enigma2/KravenVB/info.png /tmp
-fi
-if [ -f /usr/share/enigma2/KravenVB/shift.png ]; then
-    cp /usr/share/enigma2/KravenVB/shift.png /tmp
-fi
-if [ -f /usr/share/enigma2/KravenVB/wsmall.png ]; then
-    cp /usr/share/enigma2/KravenVB/wsmall.png /tmp
-fi
-if [ -f /etc/kraven_profile_1 ]; then
-    mv /etc/kraven_profile_* /etc/enigma2
-fi
-if [ -f /etc/kraven_default_1 ]; then
-    cp /etc/kraven_default_* /etc/enigma2
-fi
-if [ -f /usr/share/enigma2/KravenVB/icons-dark/icons/key_ok.png ]; then
-    mkdir /tmp/icons-dark
-    mkdir /tmp/icons-dark/icons
-    mkdir /tmp/icons-dark/infobar
-    mkdir /tmp/icons-dark/message
-	cp /usr/share/enigma2/KravenVB/icons-dark/icons/*.* /tmp/icons-dark/icons
-	cp /usr/share/enigma2/KravenVB/icons-dark/infobar/*.* /tmp/icons-dark/infobar
-	cp /usr/share/enigma2/KravenVB/icons-dark/message/*.* /tmp/icons-dark/message
-    mkdir /tmp/icons-light
-    mkdir /tmp/icons-light/icons
-    mkdir /tmp/icons-light/infobar
-    mkdir /tmp/icons-light/message
-	cp /usr/share/enigma2/KravenVB/icons-light/icons/*.* /tmp/icons-light/icons
-	cp /usr/share/enigma2/KravenVB/icons-light/infobar/*.* /tmp/icons-light/infobar
-	cp /usr/share/enigma2/KravenVB/icons-light/message/*.* /tmp/icons-light/message
 fi
 if [ -f /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/skin-user.xml ]; then
     cp /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/skin-user.xml /tmp

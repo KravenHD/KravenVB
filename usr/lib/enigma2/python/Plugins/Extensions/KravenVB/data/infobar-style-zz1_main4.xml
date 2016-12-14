@@ -125,12 +125,12 @@
     <convert type="KravenVBFrontendInfo">REC_3</convert>
     <convert type="ConditionalShowHide">tunerblink</convert>
   </widget>  -->
-  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="left" noWrap="1" position="446,645" render="Label" size="60,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="left" noWrap="1" position="446,645" render="Label" size="60,35" source="session.Event_Next" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">StartTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
   <eLabel backgroundColor="KravenIBbg" font="Regular;20" foregroundColor="KravenIBFont2" halign="center" noWrap="1" position="506,645" size="10,35" text="-" transparent="1" valign="center" zPosition="1" />
-  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="right" noWrap="1" position="516,645" render="Label" size="60,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
+  <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="right" noWrap="1" position="516,645" render="Label" size="60,35" source="session.Event_Next" transparent="1" valign="center" zPosition="1">
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
@@ -139,7 +139,7 @@
     <convert type="KravenVBEventTime">RunTime</convert>
     <convert type="KravenVBRemainingToText">InMinutes</convert>
   </widget>
-  <widget alphatest="blend" position="20,542" size="400,170" render="KravenVBXPicon" source="session.CurrentService" transparent="1" zPosition="4">
+  <widget alphatest="blend" position="20,542" size="400,170" render="Picon" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
   <ePixmap pixmap="KravenVB/infobar-icons/aufloesung.png" position="550,687" size="112,22" zPosition="1" alphatest="blend" />
