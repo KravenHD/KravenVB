@@ -48,7 +48,7 @@
     <!-- KravenVBMenuEntryID-Converter -->
   </screen>
   <!-- ChannelContextMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="ChannelContextMenu" position="center,center" size="1280,720" title="Channellist menu" transparent="0">
+  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="ChannelContextMenu" position="center,center" size="1280,720" title="Channellist menu" transparent="0" zPosition="2">
     <eLabel text="Channel Selection" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
     <widget backgroundColor="Kravenbg3" name="menu" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
 	<!-- Logo -->
@@ -469,20 +469,16 @@
   <!-- VTI Info-->
   <screen name="InfoPanel" position="0,0" size="1280,720" title="VTI Panel" flags="wfNoBorder" backgroundColor="Kravenbg3">
     <constant-widget name="title-small"/>
-	<widget name="vtiversion" position="70,80" size="320,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
-	<widget name="kernel" position="70,110" size="320,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
-	<widget name="uptime" position="70,140" size="320,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
-	<widget name="load" position="70,170" size="320,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
-	<widget name="temp" position="465,330" size="300,24" font="Regular;18" halign="center" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
-	<widget name="fan" position="465,360" size="300,24" font="Regular;18" halign="center" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
-	<widget source="storagelist" render="Listbox" position="70,400" size="708,216" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
+	<widget name="vtiversion" position="70,80" size="360,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
+	<widget name="kernel" position="70,110" size="360,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
+	<widget name="uptime" position="70,140" size="360,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
+	<widget name="load" position="70,170" size="360,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
+	<widget source="netdev" render="Listbox" position="440,108" size="338,72" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
 	  <convert type="TemplatedMultiContent" transparent="0">
 			{"template": [
-					MultiContentEntryText(pos = (5, 2), size = (210, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
-					MultiContentEntryText(pos = (220, 2), size = (185, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
-					MultiContentEntryText(pos = (410, 2), size = (45, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
-					MultiContentEntryText(pos = (460, 2), size = (95, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 3),
-					MultiContentEntryText(pos = (570, 2), size = (100, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 4),
+					MultiContentEntryText(pos = (0, 2), size = (72, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+					MultiContentEntryText(pos = (85, 2), size = (120, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (218, 2), size = (120, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
 				],
 			"fonts": [gFont("Regular", 18),gFont("Regular", 16)],
 			"itemHeight": 24,
@@ -490,39 +486,43 @@
 			}
 	  </convert>
 	</widget>
-	<widget source="netdev" render="Listbox" position="415,115" size="355,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
+	<widget source="proclist" render="Listbox" position="70,202" size="380,144" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
 	  <convert type="TemplatedMultiContent" transparent="0">
 			{"template": [
-					MultiContentEntryText(pos = (5, 2), size = (80, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
-					MultiContentEntryText(pos = (100, 2), size = (110, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 1),
-					MultiContentEntryText(pos = (225, 2), size = (110, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
-				],
-			"fonts": [gFont("Regular", 18),gFont("Regular", 16)],
-			"itemHeight": 24,
-			"selectionEnabled": False
-			}
-	  </convert>
-	</widget>
-	<widget source="memory" render="Listbox" position="465,210" size="305,96" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
-	  <convert type="TemplatedMultiContent" transparent="0">
-			{"template": [
-					MultiContentEntryText(pos = (5, 2), size = (85, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
-					MultiContentEntryText(pos = (90, 2), size = (95, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 1),
-					MultiContentEntryText(pos = (205, 2), size = (95, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
-				],
-			"fonts": [gFont("Regular", 18),gFont("Regular", 16)],
-			"itemHeight": 24,
-			"selectionEnabled": False
-			}
-	  </convert>
-	</widget>
-	<widget source="proclist" render="Listbox" position="70,210" size="385,168" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
-	  <convert type="TemplatedMultiContent" transparent="0">
-			{"template": [
-					MultiContentEntryText(pos = (5, 2), size = (100, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+					MultiContentEntryText(pos = (0, 2), size = (100, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
 					MultiContentEntryText(pos = (110, 2), size = (100, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 1),
 					MultiContentEntryText(pos = (205, 2), size = (80, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
 					MultiContentEntryText(pos = (320, 2), size = (60, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 3),
+				],
+			"fonts": [gFont("Regular", 18),gFont("Regular", 16)],
+			"itemHeight": 24,
+			"selectionEnabled": False
+			}
+	  </convert>
+	</widget>
+	<widget source="memory" render="Listbox" position="480,202" size="298,96" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
+	  <convert type="TemplatedMultiContent" transparent="0">
+			{"template": [
+					MultiContentEntryText(pos = (0, 2), size = (80, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+					MultiContentEntryText(pos = (94, 2), size = (95, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (203, 2), size = (95, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 2),
+				],
+			"fonts": [gFont("Regular", 18),gFont("Regular", 16)],
+			"itemHeight": 24,
+			"selectionEnabled": False
+			}
+	  </convert>
+	</widget>
+	<widget name="temp" position="70,354" size="300,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
+	<widget name="fan" position="70,384" size="300,24" font="Regular;18" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" />
+	<widget source="storagelist" render="Listbox" position="70,414" size="708,192" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
+	  <convert type="TemplatedMultiContent" transparent="0">
+			{"template": [
+					MultiContentEntryText(pos = (0, 2), size = (210, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+					MultiContentEntryText(pos = (220, 2), size = (205, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+					MultiContentEntryText(pos = (439, 2), size = (46, 20), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
+					MultiContentEntryText(pos = (499, 2), size = (95, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 3),
+					MultiContentEntryText(pos = (608, 2), size = (100, 20), font=0, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER, text = 4),
 				],
 			"fonts": [gFont("Regular", 18),gFont("Regular", 16)],
 			"itemHeight": 24,
@@ -844,19 +844,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <constant-widget name="MenuOKExit"/>
     <!--<text="EPGSelectionMulti" position="70,0" />-->
-  </screen>
-  <!-- PluginBrowser -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="PluginBrowser" position="0,0" size="1280,720" title="Plugin browser">
-    <widget backgroundColor="Kravenbg3" name="list" itemHeight="50" font="Regular;22" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,550" transparent="1" />
-    <constant-widget name="Title-big"/>
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <widget font="Regular;20" halign="left" valign="center" name="red" position="70,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="green" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="blue" position="820,665" size="300,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="OKExit"/>
-    <!--<text="PluginBrowser" position="70,0" />-->
   </screen>
   <!-- NumericalTextInputHelpDialog -->
   <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="NumericalTextInputHelpDialog" position="130,525" size="614,135" zPosition="8">
@@ -1210,33 +1197,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <constant-widget name="OKExit"/>
     <!--<text="NetworkAdapterTest" position="70,0" />-->
   </screen>
-  <!-- NetworkBrowser -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="NetworkBrowser" position="0,0" size="1280,720" title="Network Neighbourhood">
-    <widget position="70,80" render="Listbox" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" source="list" transparent="1" zPosition="3">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-						MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 1), # index 1 is the expandable/expanded/verticalline icon
-						MultiContentEntryText(pos = (70, 4), size = (600, 26), font=2, flags = RT_HALIGN_LEFT, text = 2), # index 2 is the Hostname
-						MultiContentEntryText(pos = (160, 5), size = (510, 25), font=0, flags = RT_HALIGN_LEFT, text = 3), # index 3 is the sharename
-						MultiContentEntryText(pos = (160, 32), size = (510, 17), font=1, flags = RT_HALIGN_LEFT, text = 4), # index 4 is the sharedescription
-						MultiContentEntryPixmapAlphaTest(pos = (65, 6), size = (48, 48), png = 5), # index 5 is the nfs/cifs icon
-						MultiContentEntryPixmapAlphaTest(pos = (110, 6), size = (48, 48), png = 6), # index 6 is the isMounted icon
-					],
-				"fonts": [gFont("Regular", 22),gFont("Regular2", 17),gFont("Regular2", 24)],
-				"itemHeight": 60
-				}
-			</convert>
-    </widget>
-    <widget font="Regular2;22" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" halign="center" position="70,585" render="Label" size="708,30" source="infotext" transparent="1" zPosition="3" />
-    <constant-widget name="Title-big"/>
-    <constant-widget name="Colorbuttons"/>
-    <constant-widget name="SourceRedGreen"/>
-    <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,639" size="220,52" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" source="key_blue" position="820,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-	<!-- Logo -->
-    <constant-widget name="OKExit"/>
-    <!--<text="NetworkBrowser" position="70,0" />-->
-  </screen>
   <!-- ScanIP -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="ScanIP" position="0,0" size="1280,720" title="Scan IP">
     <constant-widget name="Title-big"/>
@@ -1485,91 +1445,6 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <constant-widget name="SourceRedGreenYellow"/>
     <constant-widget name="OKExit"/>
     <!--<text="NameserverSetup" position="70,0" />-->
-  </screen>
-  <!-- ********** Timer ********** -->
-  <!-- TimeInput -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimeInput" position="0,0" size="1280,720" title="Time Input">
-    <constant-widget name="Title-big"/>
-    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,90" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <constant-widget name="NameRedGreen"/>
-    <constant-widget name="OKExit"/>
-    <!--<text="TimeInput" position="70,0" />-->
-  </screen>
-  <!-- TimerSelection -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerSelection" position="0,0" size="1280,720" title="Timer selection">
-    <eLabel text="Timer Editor" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
-    <widget name="timerlist" position="70,80" size="708,539" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-	<!-- Logo -->
-    <constant-widget name="OKExit"/>
-    <!--<text="TimerSelection" position="70,0" />-->
-  </screen>
-  <!-- TimerEditList -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerEditList" position="0,0" size="1280,720" title="Timer Editor">
-    <widget name="timerlist" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-    <constant-widget name="Title-big"/>
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <constant-widget name="NameRedGreenYellowBlue"/>
-    <constant-widget name="OKExit"/>
-    <!--<text="TimerEditList" position="70,0" />-->
-  </screen>
-  <!-- TimerEntry -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerEntry" position="0,0" size="1280,720" title="Timer entry">
-	<eLabel text="Timer entry" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,390" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="canceltext" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="oktext" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <constant-widget name="OKExit"/>
-    <!--<text="TimerEntry" position="70,0" />-->
-  </screen>
-  <!-- TimerLog -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerLog" position="0,0" size="1280,720" title="Timer log">
-    <widget backgroundColor="Kravenbg3" name="loglist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,270" transparent="1" />
-    <widget font="Regular2;20" foregroundColor="KravenFont2" name="logentry" position="70,372" size="708,130" transparent="1" />
-    <constant-widget name="Title-big"/>
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <constant-widget name="NameRedGreenYellowBlue"/>
-    <constant-widget name="Exit"/>
-    <!--<text="TimerLog" position="70,0" />-->
-  </screen>
-  <!-- TimerSanityConflict -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerSanityConflict" position="0,0" size="1280,720" title="Timer sanity error">
-    <widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,90" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="timer1" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,190" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,90" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="timer2" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,380" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,90" transparent="1" />
-    <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="70,347" size="200,5" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_green1.png" position="370,347" size="200,5" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_yellow1.png" position="70,537" size="200,5" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_blue1.png" position="370,537" size="200,5" alphatest="blend" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_red" position="75,320" size="220,26" foregroundColor="KravenButton" backgroundColor="Kravenbg3" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_green" position="375,320" size="220,26" foregroundColor="KravenButton" backgroundColor="Kravenbg3" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="75,510" size="220,26" foregroundColor="KravenButton" backgroundColor="Kravenbg3" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="375,510" size="220,26" foregroundColor="KravenButton" backgroundColor="Kravenbg3" transparent="1" zPosition="1" />
-    <constant-widget name="Title-big"/>
-	<!-- Logo -->
-    <constant-widget name="Exit"/>
-    <!--<text="TimerSanityConflict" position="70,0" />-->
-  </screen>
-  <!-- SleepTimerEdit -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="SleepTimerEdit" position="0,0" size="1280,720" title="Sleep Timer">
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="pretext" position="100,140" size="250,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="input" position="350,140" size="50,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="aftertext" position="400,140" size="120,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="current_status" position="100,180" size="690,30" transparent="1" />
-    <constant-widget name="Title-big"/>
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <widget font="Regular;20" halign="left" valign="center" name="red_text" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="green_text" position="320,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="yellow_text" position="570,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="blue_text" position="820,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <constant-widget name="Exit"/>
-    <!--<text="SleepTimerEdit" position="70,0" />-->
   </screen>
   <!-- ********** Common Interface ********** -->
   <!-- CiSelection -->
@@ -2025,7 +1900,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="transponder" position="70,150" size="600,25" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="scan_state" position="70,180" size="600,25" transparent="1" zPosition="2" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="pass" position="70,210" size="600,25" transparent="1" />
-    <widget borderColor="KravenFont1" borderWidth="1" name="scan_progress" position="70,250" size="600,15" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="scan_progress" foregroundColor="KravenProgress" position="70,250" size="599,15" pixmap="KravenVB/progress/progress599.png" borderColor="KravenBorder" borderWidth="1" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="servicelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="120,300" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" selectionDisabled="1" size="600,300" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
@@ -2076,35 +1951,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
 	<!-- Logo -->
     <constant-widget name="Exit"/>
     <!--<text="CableScanStatus" position="70,0" />-->
-  </screen>
-  <!-- UpdatePluginMenu -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="UpdatePluginMenu" position="0,0" size="1280,720" title="Softwaremanager...">
-    <widget position="70,80" render="Listbox" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,520" source="menu" transparent="1">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-					MultiContentEntryText(pos = (15, 6), size = (383, 30), flags = RT_HALIGN_LEFT, text = 1), # index 0 is the MenuText,
-					],
-					"fonts": [gFont("Regular", 22)],
-					"itemHeight": 40
-				}
-			</convert>
-    </widget>
-    <widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" position="901,80" render="Listbox" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" selectionDisabled="1" size="355,540" source="menu" transparent="1" zPosition="3">
-      <convert type="TemplatedMultiContent">
-				{"template": [
-					MultiContentEntryText(pos = (0, 0), size = (355, 180), flags = RT_HALIGN_LEFT|RT_VALIGN_TOP|RT_WRAP, text = 2), # index 2 is the Description,
-					],
-					"fonts": [gFont("Regular2", 22)],
-					"itemHeight": 180
-				}
-			</convert>
-    </widget>
-    <constant-widget name="Title-big2"/>
-    <constant-widget name="Colorbuttons"/>
-    <constant-widget name="Background"/>
-    <widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="OKExit"/>
-    <!--<text="UpdatePluginMenu" position="70,0" />-->
   </screen>
   <!-- UpdatePlugin -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="UpdatePlugin" position="0,0" size="1280,720" title="Software Update...">
@@ -2177,17 +2023,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <constant-widget name="SourceRedGreen"/>
     <constant-widget name="OKExit"/>
     <!--<text="InputDeviceSelection" position="70,0" />-->
-  </screen>
-  <!-- ********** Cron Manager ********** -->
-  <!-- CronManager -->
-  <screen flags="wfNoBorder" name="CronManager" position="0,0" size="1280,720" title="CronManager" backgroundColor="Kravenbg3">
-    <widget backgroundColor="Kravenbg3" name="showjobs" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-    <constant-widget name="title-small"/>
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <constant-widget name="SourceRedGreenYellowBlue"/>
-    <constant-widget name="Exit"/>
-    <!--<text="CronManager" position="70,0" />-->
   </screen>
   <!-- addJob -->
   <screen flags="wfNoBorder" name="addJob" position="0,0" size="1280,720" title="Add Cron Job" backgroundColor="Kravenbg3">
@@ -2478,7 +2313,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <constant-widget name="OKExit"/>
     <!--<text="AnimationSetupConfig" position="70,0" />-->
   </screen>
-  <!-- ButtonSetup -->
+  <!-- HotkeySetup -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="HotkeySetup" position="0,0" size="1280,720" title="Tasteneinstellungen">
     <constant-widget name="Title-big"/>
 	<widget name="list" position="70,80" size="490,532" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" font="Regular;22" itemHeight="28" transparent="1" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" zPosition="-8" />
@@ -2530,17 +2365,5 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
 	<widget name="scan_progress" position="320,16" size="200,15" borderColor="KravenBorder" borderWidth="2" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress200.png" transparent="1" />
 	<widget name="scan_state" position="600,13" size="650,25" font="Regular;20" foregroundColor="KravenSIBFont1" backgroundColor="KravenSIBbg2" valign="center" transparent="1" />
     <constant-widget name="gradient-sib"/>
-  </screen>
-  <!-- ChannelSelectionHorizontal -->
-  <screen name="ChannelSelectionHorizontal" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
-	<eLabel position="56,425" size="194,200" backgroundColor="Kravenbg5" />
-	<eLabel position="251,425" size="194,200" backgroundColor="Kravenbg5" />
-	<eLabel position="446,425" size="194,200" backgroundColor="Kravenbg5" />
-	<eLabel position="641,425" size="194,200" backgroundColor="Kravenbg5" />
-	<eLabel position="836,425" size="194,200" backgroundColor="Kravenbg5" />
-	<eLabel position="1031,425" size="194,200" backgroundColor="Kravenbg5" />
-	<widget name="list" itemWidth="195" position="55,415" size="1170,210" zPosition="3" backgroundColor="Kravenbg5" boxOrientation="horizontal" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" enableWrapAround="1" foregroundColorSelected="KravenSelFont" foregroundColorServiceNotAvail="KravenNotAvailable" colorServiceRecording="red" onlyFullListEntries="true" scrollbarMode="showNever" serviceInfoAlign="center" serviceInfoFont="Regular;22" serviceNameAlign="center" serviceNameFont="Regular2;24" serviceNumberAlign="right" transparent="1" />
-	<eLabel position="56,630" size="1169,43" backgroundColor="Kravenbg5" />
-	<widget source="Title" render="Label" position="55,635" size="1170,33" halign="center" valign="center" foregroundColor="KravenFont2" font="Regular2;26" backgroundColor="Kravenbg5" transparent="1" zPosition="3" />
   </screen>
   <!-- Main */ -->

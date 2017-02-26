@@ -1,0 +1,12 @@
+  <!-- ChannelSelectionHorizontal -->
+  <screen name="ChannelSelectionHorizontal" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+	<eLabel position="56,425" size="194,200" backgroundColor="Kravenbg5" />
+	<eLabel position="251,425" size="194,200" backgroundColor="Kravenbg5" />
+	<eLabel position="446,425" size="194,200" backgroundColor="Kravenbg5" />
+	<eLabel position="641,425" size="194,200" backgroundColor="Kravenbg5" />
+	<eLabel position="836,425" size="194,200" backgroundColor="Kravenbg5" />
+	<eLabel position="1031,425" size="194,200" backgroundColor="Kravenbg5" />
+	<widget name="list" itemWidth="195" position="55,415" size="1170,210" zPosition="3" backgroundColor="Kravenbg5" boxOrientation="horizontal" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" enableWrapAround="1" foregroundColorSelected="KravenSelFont" foregroundColorServiceNotAvail="KravenNotAvailable" colorServiceRecording="red" onlyFullListEntries="true" scrollbarMode="showNever" serviceInfoAlign="center" serviceInfoFont="Regular;22" serviceNameAlign="center" serviceNameFont="Regular2;24" serviceNumberAlign="right" transparent="1" />
+	<eLabel position="56,630" size="1169,43" backgroundColor="Kravenbg5" />
+	<widget source="Title" render="Label" position="55,635" size="1170,33" halign="center" valign="center" foregroundColor="KravenFont2" font="Regular2;26" backgroundColor="Kravenbg5" transparent="1" zPosition="3" />
+  </screen>

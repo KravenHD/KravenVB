@@ -156,23 +156,6 @@
     <parameter name="ChoicelistName" value="47,1,1147,28" />
     <parameter name="ChoicelistIcon" value="7,3,40,27" />
     <parameter name="ChoicelistDash" value="0,24,1147,20" />
-    <!-- TimerList -->
-    <parameter name="TimerListItemHeight" value="77" />
-    <parameter name="TimerListNoStyleName" value="0,2,690,27" />
-    <parameter name="TimerListNoStyleDesc" value="0,28,690,24" />
-    <parameter name="TimerListTime" value="0,53,520,24" />
-    <parameter name="TimerListFont1" value="Regular;22" />
-    <parameter name="TimerListFont2" value="Regular;20" />
-    <parameter name="TimerListState" value="534,51,157,24" />
-    <parameter name="TimerListIcon" value="4,32,28,28" />
-    <parameter name="TimerListIconHOffset" value="40" />
-    <parameter name="TimerListNoIconHOffset" value="7" />
-    <parameter name="TimerListTrimLength" value="47" />
-    <parameter name="TimerListPngTimer" value="4,4,28,28" />
-    <parameter name="TimerListZapTimer" value="4,4,28,28" />
-    <parameter name="TimerListDisabledTimer" value="4,4,28,28" />
-    <parameter name="TimerListInstantRecord" value="0, 0, 0, 0" />
-    <parameter name="TimerListRedTimer" value="367,4,28,28" />
     <!-- PiconManagerList -->
     <parameter name="PiconManagerList" value="7,4,1117,27" />
     <parameter name="PiconManagerListFont" value="Regular;22" />

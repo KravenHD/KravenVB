@@ -1,4 +1,4 @@
-  <widget font="Regular;30" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="430,615" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="481,40" source="session.Event_Now" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
+  <widget backgroundColor="KravenIBbg" source="session.Event_Now" render="KravenVBEmptyEpg" foregroundColor="KravenIBFont1" font="Regular;30" position="430,615" size="481,40" halign="left" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="right" position="914,620" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
@@ -18,7 +18,7 @@
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <widget font="Regular;30" foregroundColor="KravenIBFont2" halign="left" position="430,667" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="481,40" source="session.Event_Next" valign="top" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
+  <widget backgroundColor="KravenIBbg" source="session.Event_Next" render="KravenVBEmptyEpg" foregroundColor="KravenIBFont2" font="Regular;30" position="430,667" size="481,40" halign="left" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" valign="center" halign="right" position="914,671" render="Label" size="107,35" source="session.Event_Next" transparent="1" zPosition="1">

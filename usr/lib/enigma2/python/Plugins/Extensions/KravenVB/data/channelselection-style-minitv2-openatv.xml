@@ -1,0 +1,41 @@
+  <!-- /* ChannelSelection - Dual TV -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+    <widget font="Regular;30" foregroundColor="KravenFont2" position="42,66" halign="center" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=1,always=0,repeat=5,oneshot=1" size="416,40" source="ServiceEvent" backgroundColor="Kravenbg2" transparent="1" >
+      <convert type="KravenVBEventName">Name</convert>
+    </widget>
+    <widget source="ServiceEvent" render="Label" position="69,109" size="57,24" font="Regular;19" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1" halign="left">
+      <convert type="KravenVBEventTime">StartTime</convert>
+      <convert type="ClockToText">
+      </convert>
+    </widget>
+    <widget position="126,119" render="Progress" size="248,5" source="ServiceEvent" transparent="1" zPosition="7" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress248.png">
+      <convert type="KravenVBEventTime">Progress</convert>
+    </widget>
+    <eLabel position="126,121" size="248,1" backgroundColor="KravenLine" />
+    <widget source="ServiceEvent" render="Label" position="375,109" size="57,24" font="Regular;18" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1" halign="right">
+      <convert type="KravenVBEventTime">EndTime</convert>
+      <convert type="ClockToText">Format:%H:%M</convert>
+    </widget>
+    <widget source="ServiceEvent" render="KravenVBPig4" position="69,140" size="363,204" backgroundColor="transparent" zPosition="-11" />
+    <eLabel backgroundColor="#00000000" position="69,140" size="363,204" transparent="0" zPosition="-12" />
+    <eLabel backgroundColor="KravenBorder2" position="69,140" size="363,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="69,341" size="363,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="69,140" size="3,204" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="429,140" size="3,204" transparent="0" zPosition="4" />
+    <eLabel position="69,354" size="363,204" backgroundColor="transparent" zPosition="-11" />
+    <eLabel backgroundColor="#00000000" position="69,354" size="363,204" transparent="0" zPosition="-12" />
+    <eLabel backgroundColor="KravenBorder2" position="69,354" size="363,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="69,555" size="363,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="69,354" size="3,204" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="429,354" size="3,204" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,140" transparent="0" zPosition="-10" />
+    <eLabel backgroundColor="Kravenbg2" position="0,558" size="1280,162" transparent="0" zPosition="-10" />
+    <eLabel backgroundColor="Kravenbg2" position="0,140" size="69,418" transparent="0" zPosition="-10" />
+    <eLabel backgroundColor="Kravenbg2" position="432,140" size="848,418" transparent="0" zPosition="-10" />
+    <eLabel backgroundColor="Kravenbg2" position="69,344" size="363,10" transparent="0" zPosition="-10" />
+    <widget backgroundColor="Kravenbg2" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" itemHeight="50" name="list" position="500,70" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="738,420" transparent="1" />
+    <constant-widget name="ChannelSelection"/>
+    <constant-widget name="gradient-cs"/>
+    <constant-widget name="CSMT2EPG22"/>
+    <!--<text="ChannelSelection - Dual TV" position="42,0" />-->
+  </screen>

@@ -35,7 +35,7 @@
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
 	    <convert type="ClockToText">Format:%e. %B</convert>
 	  </widget>
-	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
+	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="3,234" transparent="0" zPosition="4" />
@@ -97,7 +97,7 @@
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
 	    <convert type="ClockToText">Default</convert>
 	  </widget>
-	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
+	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
 	  <eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
@@ -128,7 +128,7 @@
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
 	    <convert type="ClockToText">Format:%e. %B</convert>
 	  </widget>
-	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
+	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="3,234" transparent="0" zPosition="4" />
@@ -190,7 +190,7 @@
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
 	    <convert type="ClockToText">Default</convert>
 	  </widget>
-	  <widget source="session.VideoPicture" render="KravenVBPig3" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
+	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
 	  <eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,311" size="416,3" transparent="0" zPosition="4" />
@@ -1863,5 +1863,54 @@
 	
 	<constant-widget name="systeminfo-bigsat-bg-texture">
 	  <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="980,205" size="300,260" zPosition="-9" alphatest="blend" />
+	</constant-widget>
+	
+	<constant-widget name="permanentclock-infobar-big">
+      <widget backgroundColor="KravenIBbg" source="global.CurrentTime" render="Label" position="0,0" size="120,30" font="Regular;26" foregroundColor="KravenIBFont1" valign="center" halign="center" transparent="1">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="permanentclock-infobar-small">
+      <widget backgroundColor="KravenIBbg" source="global.CurrentTime" render="Label" position="0,0" size="80,20" font="Regular;18" foregroundColor="KravenIBFont1" valign="center" halign="center" transparent="1">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="permanentclock-global-big">
+      <widget backgroundColor="Kravenbg" source="global.CurrentTime" render="Label" position="0,0" size="120,30" font="Regular;26" foregroundColor="KravenFont1" valign="center" halign="center" transparent="1">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="permanentclock-global-small">
+      <widget backgroundColor="Kravenbg" source="global.CurrentTime" render="Label" position="0,0" size="80,20" font="Regular;18" foregroundColor="KravenFont1" valign="center" halign="center" transparent="1">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="permanentclock-transparent-big">
+      <widget backgroundColor="#7F7F7F7F" source="global.CurrentTime" render="Label" position="0,0" size="120,30" font="Regular;26" foregroundColor="KravenPermanentClock" valign="center" halign="center" transparent="1">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="permanentclock-transparent-small">
+      <widget backgroundColor="#7F7F7F7F" source="global.CurrentTime" render="Label" position="0,0" size="80,20" font="Regular;18" foregroundColor="KravenPermanentClock" valign="center" halign="center" transparent="1">
+	    <convert type="ClockToText">Default</convert>
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSHORMT">
+	  <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;21" source="ServiceEvent" render="KravenVBSingleEpgList" position="70,340" size="1168,78" transparent="1" noWrap="1">
+	  </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSHORMTPrime">
+	  <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;21" source="ServiceEvent" render="KravenVBSingleEpgList" position="70,340" size="1168,52" transparent="1" noWrap="1">
+	  </widget>
+	  <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;21" source="ServiceEvent" render="Label" position="70,392" size="1168,26" transparent="1" noWrap="1">
+	    <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
 	</constant-widget>
   </constant-widgets>

@@ -1,13 +1,13 @@
   <widget backgroundColor="KravenSIBbg" font="Regular2; 30" halign="center" noWrap="1" position="37,55" render="Label" size="1199,38" source="session.Event_Now" transparent="1" foregroundColor="KravenFont1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
-  <widget backgroundColor="KravenSIBbg" font="Regular2; 24" foregroundColor="KravenFont1" halign="center" position="37,97" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1199,186" source="session.Event_Now" transparent="1">
+  <widget backgroundColor="KravenSIBbg" font="Regular2;24" foregroundColor="KravenFont1" halign="center" position="37,97" size="1199,186" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" source="session.Event_Now" transparent="1">
     <convert type="KravenVBEventName">ExtendedDescription</convert>
   </widget>
   <widget backgroundColor="KravenSIBbg" font="Regular2; 30" halign="center" noWrap="1" position="37,292" render="Label" size="1199,38" source="session.Event_Next" transparent="1" foregroundColor="KravenFont2">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
-  <widget backgroundColor="KravenSIBbg" font="Regular2; 24" foregroundColor="KravenFont2" halign="center" position="37,334" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" source="session.Event_Next" transparent="1" size="1199,186">
+  <widget backgroundColor="KravenSIBbg" foregroundColor="KravenFont2" halign="center" position="37,334" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" source="session.Event_Next" transparent="1" font="Regular2; 24" size="1199,186">
     <convert type="KravenVBEventName">ExtendedDescription</convert>
   </widget>
   <!-- sibbg */-->

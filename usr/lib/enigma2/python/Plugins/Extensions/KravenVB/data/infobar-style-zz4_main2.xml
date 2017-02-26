@@ -1,7 +1,7 @@
   <widget alphatest="blend" position="20,542" render="Picon" size="400,170" source="session.CurrentService" transparent="1" zPosition="4">
     <convert type="ServiceName">Reference</convert>
   </widget>
-  <widget font="Regular;30" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="603,544" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="484,40" source="session.Event_Now" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
+  <widget backgroundColor="KravenIBbg" source="session.Event_Now" render="KravenVBEmptyEpg" foregroundColor="KravenIBFont1" font="Regular;30" position="603,544" size="484,40" halign="left" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="right" position="1089,549" render="Label" size="107,35" source="session.Event_Now" transparent="1" valign="center" zPosition="1">
@@ -21,7 +21,7 @@
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="ClockToText">Default</convert>
   </widget>
-  <widget font="Regular;30" foregroundColor="KravenIBFont2" halign="left" position="603,644" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=0,always=0,repeat=2,oneshot=1" size="484,40" source="session.Event_Next" valign="top" backgroundColor="KravenIBbg" transparent="1" zPosition="1">
+  <widget backgroundColor="KravenIBbg" source="session.Event_Next" render="KravenVBEmptyEpg" foregroundColor="KravenIBFont2" font="Regular;30" position="603,644" size="484,40" halign="left" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" valign="center" halign="right" position="1088,649" render="Label" size="107,35" source="session.Event_Next" transparent="1" zPosition="1">
@@ -47,9 +47,16 @@
     <convert type="ServiceInfo">HasTelext</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="1003,611" size="43,22" zPosition="1" />
-  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="1003,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-    <convert type="ServiceInfo">IsMultichannel</convert>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="1003,611" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="1">
+    <convert type="KravenVBEventName">Dolby_off</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_51.png" position="1003,611" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="2">
+    <convert type="KravenVBEventName">Dolby51</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_20.png" position="1003,611" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="3">
+    <convert type="KravenVBEventName">Dolby20</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="1053,611" size="43,22" zPosition="1" />
