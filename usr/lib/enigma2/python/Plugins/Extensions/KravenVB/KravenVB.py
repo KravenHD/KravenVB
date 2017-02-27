@@ -1951,7 +1951,7 @@ class KravenVB(ConfigListScreen, Screen):
 			if config.plugins.KravenVB.EPGListSize.value == "small":
 				self.showText(22,_("22 Pixel"))
 			elif config.plugins.KravenVB.EPGListSize.value == "big":
-				self.showText(24,_("24 Pixel"))
+				self.showText(26,_("26 Pixel"))
 		elif option == config.plugins.KravenVB.EMCEPGSize:
 			if config.plugins.KravenVB.EMCEPGSize.value == "small":
 				self.showText(22,_("22 Pixel"))
@@ -3273,7 +3273,7 @@ class KravenVB(ConfigListScreen, Screen):
 		if config.usage.movielist_show_picon.value == True:
 			self.skinSearchAndReplace.append(['<parameter name="MovieListMinimalVTITitle" value="27,0,620,27" />', '<parameter name="MovieListMinimalVTITitle" value="27,0,535,27" />'])
 		if config.plugins.KravenVB.EPGListSize.value == "big":
-			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;24" />'])
+			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;26" />'])
 		self.appendSkinFile(self.daten + "header_begin.xml")
 		if not config.plugins.KravenVB.SelectionBorder.value == "none":
 			self.appendSkinFile(self.daten + "header_middle.xml")
@@ -4208,7 +4208,7 @@ class KravenVB(ConfigListScreen, Screen):
 
 		### EPGSelection
 		if config.plugins.KravenVB.EPGListSize.value == "big":
-			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;24" foregroundColor="KravenFont1" itemHeight="36"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;26" foregroundColor="KravenFont1" itemHeight="36"'])
 		else:
 			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;22" foregroundColor="KravenFont1" itemHeight="30"'])
 		if config.plugins.KravenVB.EPGSelectionEPGSize.value == "big":
