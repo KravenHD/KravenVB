@@ -404,7 +404,7 @@
       <convert type="KravenVBEventName">ExtendedDescription</convert>
     </widget>
     <widget name="timeline_text" position="25,260" selectionDisabled="1" size="1230,25" transparent="1" />
-    <widget EntryBackgroundColor="Kravenbg" EntryBackgroundColorSelected="KravenFont1" EntryBorderColor="KravenFont1" itemHeight="60" name="list" position="25,287" size="1230,345" transparent="1" />
+    <widget EntryBackgroundColor="Kravenbg" EntryBackgroundColorSelected="KravenSelection" EntryBorderColor="KravenBorder" itemHeight="60" name="list" position="25,287" size="1230,345" transparent="1" />
     <widget name="timeline_now" position="80,284" zPosition="2" size="13,355" pixmap="KravenVB/epg/timeline-now.png" alphatest="blend" />
     <eLabel position="101,119" size="990,1" backgroundColor="KravenFont1" />
     <constant-widget name="Background" />
