@@ -624,11 +624,12 @@
   <!-- Ipkg -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="Ipkg" position="0,0" size="1280,720" title="Installing Software...">
 	<eLabel text="Installing Software..." position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
-    <widget name="activityslider" borderColor="KravenBorder" borderWidth="2" position="70,160" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
-    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" name="package" position="80,190" size="688,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" name="status" position="80,230" size="688,50" transparent="1" />
-    <widget name="slider" borderColor="KravenBorder" borderWidth="2" position="70,320" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
+    <widget name="activityslider" borderColor="KravenBorder" borderWidth="2" position="70,80" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
+    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" name="package" position="80,110" size="688,25" transparent="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" name="status" position="80,150" size="688,50" transparent="1" />
+    <widget name="slider" borderColor="KravenBorder" borderWidth="2" position="70,240" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
 	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
     <!--<text="Ipkg" position="70,0" />-->
   </screen>
  <!-- ChoiceBox -->
@@ -677,11 +678,12 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <widget backgroundColor="Kravenbg3" font="Console;18" name="text" scrollbarWidth="5" position="70,120" size="708,500" transparent="1" foregroundColor="KravenFont1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
     <constant-widget name="OKExit"/>
     <!--<text="Console" position="70,0" />-->
   </screen>
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="LanguageSelection" position="0,0" size="1280,720" title="Language selection">
-    <widget position="70,120" render="Listbox" size="708,420" source="languages" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3">
+    <widget position="70,80" render="Listbox" size="708,540" source="languages" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3">
       <convert type="TemplatedMultiContent">
 				{"template": [
 				MultiContentEntryText(pos = (130, 17), size = (550, 60), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
@@ -694,6 +696,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     </widget>
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
     <constant-widget name="OKExit"/>
     <!--<text="LanguageSelection" position="70,0" />-->
   </screen>
@@ -1258,13 +1261,25 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <constant-widget name="OKExit"/>
     <!--<text="AutoMountView" position="70,0" />-->
   </screen>
+  <!-- UserDialog -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="UserDialog" position="0,0" size="1280,720" title="UserDialog">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,300" scrollbarMode="showOnDemand" transparent="1" />
+    <widget alphatest="blend" name="HelpWindow" position="120,400" size="1,1" transparent="1" zPosition="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" halign="center" position="70,558" render="Label" size="708,27" source="introduction" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="UserDialog" position="70,0" />-->
+  </screen>
   <!-- UserManager -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="UserManager" position="0,0" size="1280,720" title="UserManager">
     <constant-widget name="Title-big"/>
     <widget position="70,80" render="Listbox" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" source="config" transparent="1">
       <convert type="TemplatedMultiContent">
 			{"template": [
-					MultiContentEntryText(pos = (80, 5), size = (400, 50), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+					MultiContentEntryText(pos = (80, 4), size = (400, 50), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
 					MultiContentEntryPixmapAlphaTest(pos = (0, 0), size = (48, 48), png = 3), # index 4 is the status pixmap
 				],
 			"fonts": [gFont("Regular", 40)],
@@ -1949,17 +1964,19 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <widget backgroundColor="Kravenbg3" name="scan_progress" foregroundColor="KravenProgress" position="173,554" size="400,5" pixmap="KravenVB/progress/progress410.png" borderWidth="1" borderColor="KravenBorder" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
     <constant-widget name="Exit"/>
     <!--<text="CableScanStatus" position="70,0" />-->
   </screen>
   <!-- UpdatePlugin -->
   <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="UpdatePlugin" position="0,0" size="1280,720" title="Software Update...">
-    <widget name="activityslider" borderColor="KravenBorder" borderWidth="2" position="70,160" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
-    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" position="80,190" render="Label" size="688,25" source="package" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" position="80,230" render="Label" size="688,50" source="status" transparent="1" />
-    <widget name="slider" borderColor="KravenBorder" borderWidth="2" position="70,320" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
+    <widget name="activityslider" borderColor="KravenBorder" borderWidth="2" position="70,80" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
+    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" position="80,110" render="Label" size="688,25" source="package" transparent="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular;20" foregroundColor="KravenFont1" position="80,150" render="Label" size="688,50" source="status" transparent="1" />
+    <widget name="slider" borderColor="KravenBorder" borderWidth="2" position="70,240" size="708,15" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
     <constant-widget name="Exit"/>
     <!--<text="UpdatePlugin" position="70,0" />-->
   </screen>

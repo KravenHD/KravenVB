@@ -1081,14 +1081,35 @@
   </screen>
   <!-- Volume_adjust -->
   <screen name="Volume_adjust" position="0,0" size="1280,720" title="Volume Adjust" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="ServiceList" position="70,80" size="708,450" scrollbarMode="showOnDemand" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
-    <widget source="press_menu" render="Label" position="70,585" zPosition="1" size="708,28" font="Regular2;22" foregroundColor="KravenFont2" halign="left" valign="center" backgroundColor="Kravenbg3" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="ServiceList" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,450" scrollbarMode="showOnDemand" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="press_menu" render="Label" position="70,550" size="708,54" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="SourceRedGreenYellowBlue"/>
-    <constant-widget name="Exit"/>
+    <constant-widget name="MenuOKExit"/>
     <!--<text="Volume_adjust" position="70,0" />-->
+  </screen>
+  <!-- Volume_Config -->
+  <screen name="Volume_Config" position="0,0" size="1280,720" title="Volume Config" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,240" scrollbarMode="showOnDemand" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="infotext" position="70,340" size="70,252" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="Volume_Config" position="70,0" />-->
+  </screen>
+  <!-- Change_volume -->
+  <screen name="Change_volume" position="0,0" size="1280,720" title="Change Volume offset" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="Change_volume" position="70,0" />-->
   </screen>
   <!-- CronManager -->
   <screen flags="wfNoBorder" name="CronManager" position="0,0" size="1280,720" title="CronManager" backgroundColor="Kravenbg3">
@@ -1099,6 +1120,20 @@
     <constant-widget name="SourceRedGreenYellowBlue"/>
     <constant-widget name="Exit"/>
     <!--<text="CronManager" position="70,0" />-->
+  </screen>
+  <!-- ScriptRunner -->
+  <screen name="ScriptRunner" position="0,0" size="1280,720" title="Script Runner" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="lab1" position="70,80" size="708,27" font="Regular2;22" alphatest="blend" transparent="1" foregroundColor="KravenFont2" />
+    <widget backgroundColor="Kravenbg3" name="list" position="70,140" size="708,375" scrollbarMode="showOnDemand" alphatest="blend" transparent="1" />
+	  <applet type="onLayoutFinish">
+			self["list"].instance.setItemHeight(25)
+	  </applet>
+    <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
+	<!-- Logo -->
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="ScriptRunner" position="70,0" />-->
   </screen>
     <!-- MerlinMusicPlayerFileList -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerFileList" position="0,0" size="1280,710" title="Merlin Music Player">
