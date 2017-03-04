@@ -407,9 +407,6 @@
 	    <convert type="EventTime">StartTime</convert>
 	    <convert type="ClockToText">Format:%a %d.%b</convert>
 	  </widget>
-      <widget backgroundColor="Kravenbg" font="Regular;22" position="70,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1153,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
-        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
-      </widget>
 	  <widget name="timeline_text" position="2,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
 	  <widget name="JumpInterval" position="1038,304" size="200,25" font="Regular;21" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" halign="right" />
       <widget name="timeline0" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
@@ -447,9 +444,6 @@
 	    <convert type="EventTime">StartTime</convert>
 	    <convert type="ClockToText">Format:%a %d.%b</convert>
 	  </widget>
-      <widget backgroundColor="Kravenbg2" font="Regular;22" position="70,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
-        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
-      </widget>
       <widget source="session.VideoPicture" render="Pig" position="870,80" size="368,207" zPosition="3" backgroundColor="transparent" />
       <eLabel backgroundColor="#00000000" position="870,80" size="368,207" transparent="0" zPosition="2" />
       <eLabel backgroundColor="KravenBorder2" position="870,80" size="368,3" transparent="0" zPosition="4" />
@@ -498,9 +492,6 @@
 	    <convert type="EventTime">StartTime</convert>
 	    <convert type="ClockToText">Format:%a %d.%b</convert>
 	  </widget>
-      <widget backgroundColor="Kravenbg2" font="Regular;22" position="478,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
-        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
-      </widget>
       <widget source="session.VideoPicture" render="Pig" position="70,80" size="368,207" zPosition="3" backgroundColor="transparent" />
       <eLabel backgroundColor="#00000000" position="70,80" size="368,207" transparent="0" zPosition="2" />
       <eLabel backgroundColor="KravenBorder2" position="70,80" size="368,3" transparent="0" zPosition="4" />
@@ -1911,6 +1902,42 @@
 	  </widget>
 	  <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;21" source="ServiceEvent" render="Label" position="70,392" size="1168,26" transparent="1" noWrap="1">
 	    <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="GE22">
+      <widget backgroundColor="Kravenbg" font="Regular;22" position="70,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1153,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="GE24">
+      <widget backgroundColor="Kravenbg" font="Regular;24" position="70,155" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1153,120" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="GEMTR22">
+      <widget backgroundColor="Kravenbg2" font="Regular;22" position="70,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="GEMTR24">
+      <widget backgroundColor="Kravenbg2" font="Regular;24" position="70,155" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,120" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="GEMTL22">
+      <widget backgroundColor="Kravenbg2" font="Regular;22" position="478,152" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,135" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="GEMTL24">
+      <widget backgroundColor="Kravenbg2" font="Regular;24" position="478,155" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,120" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
       </widget>
 	</constant-widget>
   </constant-widgets>
