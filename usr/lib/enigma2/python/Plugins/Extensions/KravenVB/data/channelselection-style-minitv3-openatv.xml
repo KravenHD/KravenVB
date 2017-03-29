@@ -1,5 +1,5 @@
   <!-- /* ChannelSelection - Preview -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
     <widget font="Regular;30" foregroundColor="KravenFont2" position="42,70" halign="left" render="KravenVBRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=1,always=0,repeat=5,oneshot=1" size="416,40" source="ServiceEvent" backgroundColor="Kravenbg2" transparent="1" valign="bottom">
       <convert type="KravenVBEventName">Name</convert>
     </widget>
@@ -16,17 +16,14 @@
       <convert type="KravenVBEventTime">EndTime</convert>
       <convert type="ClockToText">Format:%H:%M</convert>
     </widget>
-    <widget source="ServiceEvent" render="KravenVBPig4" position="42,144" size="384,216" backgroundColor="transparent" zPosition="-11" />
-    <eLabel backgroundColor="#00000000" position="42,144" size="384,216" transparent="0" zPosition="-12" />
+    <widget source="ServiceEvent" render="KravenVBPig4" position="42,144" size="384,216" backgroundColor="transparent" zPosition="3" />
+    <eLabel backgroundColor="#00000000" position="42,144" size="384,216" transparent="0" zPosition="2" />
     <eLabel backgroundColor="KravenBorder2" position="42,144" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="KravenBorder2" position="42,357" size="384,3" transparent="0" zPosition="4" />
     <eLabel backgroundColor="KravenBorder2" position="42,144" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="KravenBorder2" position="423,144" size="3,216" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="Kravenbg2" position="0,0" size="1280,144" transparent="0" zPosition="-10" />
-    <eLabel backgroundColor="Kravenbg2" position="0,360" size="1280,360" transparent="0" zPosition="-10" />
-    <eLabel backgroundColor="Kravenbg2" position="0,144" size="42,216" transparent="0" zPosition="-10" />
-    <eLabel backgroundColor="Kravenbg2" position="426,144" size="854,216" transparent="0" zPosition="-10" />
-    <widget backgroundColor="Kravenbg2" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" itemHeight="50" name="list" position="500,77" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="738,560" transparent="1" />
+    <widget backgroundColor="Kravenbg2" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" itemHeight="50" name="list" position="500,77" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="738,560" name="giopet" transparent="1" />
+    <!-- nontransbg */-->
     <constant-widget name="ChannelSelection"/>
     <constant-widget name="gradient-cs"/>
     <constant-widget name="CSLEPG22"/>

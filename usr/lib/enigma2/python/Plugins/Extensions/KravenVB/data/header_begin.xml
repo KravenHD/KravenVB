@@ -269,6 +269,8 @@
     <font filename="KravenVB/fonts/OpenSans-Semibold.ttf" name="Regular2" scale="95" />
     <font filename="KravenVB/fonts/meteocons.ttf" name="Meteo" scale="100" />
 	<font filename="KravenVB/fonts/owfont-regular.ttf" name="Meteo2" scale="100" />
+	<alias name="MaxCubeRoom" font="Regular" size="18" height="50"/>
+	<alias name="MaxCubeTemp" font="Regular2" size="30" height="50"/>
   </fonts>
   <subtitles>
     <sub font="Regular;30" name="Subtitle_TTX" shadowColor="shadow" shadowOffset="3,3" />

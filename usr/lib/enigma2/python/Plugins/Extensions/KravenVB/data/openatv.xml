@@ -13,18 +13,29 @@
   </screen>
   <!-- AboutOE -->
   <screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="Kravenbg3">
-    <!--widget source="lab1" render="Label" position="70,123" size="369,35" font="Regular;30" transparent="1" zPosition="2" />
-    <widget source="lab2" render="Label" position="70,173" size="370,25" font="Regular;19" transparent="1" zPosition="2" />
-    <widget source="lab3" render="Label" position="70,213" size="369,25" font="Regular;19" transparent="1" zPosition="1" /-->
-    <eLabel text="OPEN SOURCE" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
-    <eLabel text="https://github.com/openatv" position="70,90" size="352,25" font="Regular; 19" transparent="1" zPosition="1" foregroundColor="KravenFont2" />
-    <eLabel text="https://github.com/oe-alliance" position="70,120" size="354,25" font="Regular; 19" transparent="1" zPosition="1" foregroundColor="KravenFont2" />
-    <widget name="FullAbout" position="70,170" size="708,540" font="Regular;18" halign="left" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" scrollbarWidth="5" transparent="1" />
+    <eLabel text="OPEN SOURCE" position="70,80" size="708,36" font="Regular2;26" foregroundColor="KravenFont2" transparent="1" valign="center" />
+    <eLabel backgroundColor="Kravenbg3" text="https://github.com/openatv" font="Regular;20" foregroundColor="KravenFont2" position="70,127" size="352,25" transparent="1" zPosition="1" />
+    <eLabel backgroundColor="Kravenbg3" text="https://github.com/oe-alliance" font="Regular;20" foregroundColor="KravenFont2" position="70,157" size="354,25" transparent="1" zPosition="1" />
+    <widget backgroundColor="Kravenbg3" source="Title" render="Label" font="Regular;20" foregroundColor="KravenFont1" position="70,207" size="708,384" transparent="1">
+      <convert type="KravenVBAboutOE">AboutOE</convert>
+    </widget>
+    <constant-widget name="Title-big"/>
 	<!-- Logo -->
 	<constant-widget name="Colorbuttons"/>
 	<constant-widget name="SourceRedGreen"/>
 	<constant-widget name="Exit"/>
-	<!--<text="About" position="70,0" />-->
+	<!--<text="AboutOE" position="70,0" />-->
+  </screen>
+  <!-- TranslationInfo -->
+  <screen name="TranslationInfo" position="0,0" size="1280,720" title="Translation" flags="wfNoBorder" backgroundColor="Kravenbg3">
+    <widget backgroundColor="Kravenbg3" source="TranslatorName" render="Label" font="Regular;26" foregroundColor="KravenFont1" position="70,80" size="708,174" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="TranslationInfo" render="Label" font="Regular;22" foregroundColor="KravenFont1" position="70,280" size="708,324" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+	<constant-widget name="Colorbuttons"/>
+	<constant-widget name="NameRedGreen"/>
+	<constant-widget name="Exit"/>
+	<!--<text="TranslationInfo" position="70,0" />-->
   </screen>
   <!-- SystemMemoryInfo -->
   <screen name="SystemMemoryInfo" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="transparent">
@@ -386,6 +397,7 @@
   </screen>
   <!-- GraphicalEPG -->
   <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="GraphicalEPG" position="0,0" size="1280,720" title="Electronic Program Guide">
+    <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="Kravenbg" backgroundColor="Kravenbg" />
     <widget backgroundColor="Kravenbg" font="Regular2;28" foregroundColor="KravenFont2" position="70,75" render="Label" size="1140,39" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
     </widget>
@@ -414,6 +426,7 @@
   </screen>
   <!-- GraphicalEPGPIG -->
   <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="GraphicalEPGPIG" position="0,0" size="1280,720" title="Electronic Program Guide">
+    <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="Kravenbg2" backgroundColor="Kravenbg2" />
     <widget backgroundColor="Kravenbg2" font="Regular2;28" foregroundColor="KravenFont2" position="70,75" render="Label" size="760,39" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
     </widget>
@@ -452,6 +465,7 @@
   </screen>
   <!-- GraphicalInfoBarEPG -->
   <screen name="GraphicalInfoBarEPG" title="InfoBar" position="0,435" size="1280,285" backgroundColor="Kravenbg" flags="wfNoBorder">
+    <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="Kravenbg" backgroundColor="Kravenbg" />
     <widget source="global.CurrentTime" render="Label" position="1140,18" size="110,42" backgroundColor="Kravenbg" transparent="1" zPosition="1" font="Regular; 32" valign="center" halign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
@@ -466,7 +480,6 @@
     </widget>
     <widget name="lab1" position="9,75" size="1256,145" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="Kravenbg" transparent="1" />
     <widget name="timeline_text" position="10,75" size="1260,25" foregroundColor="KravenFont1" font="Regular; 20" transparent="0" zPosition="21" />
-    <widget name="bouquetlist" position="8,99" size="1260,120" itemHeight="40" foregroundColor="KravenFont1" backgroundColor="Kravenbg" foregroundColorSelected="white" backgroundColorSelected="Kravenbg" scrollbarMode="showNever" zPosition="6" transparent="1" />
     <widget name="list" position="10,100" size="1260,120" backgroundColor="Kravenbg" scrollbarMode="showNever" zPosition="1" EntryFontWrap="no" transparent="1" />
     <widget name="timeline_now" position="10,100" zPosition="2" size="15,120" pixmap="KravenVB/epg/timeline-ge.png" alphatest="blend" />
     <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="65,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
@@ -1173,12 +1186,13 @@
     <!--<text="ScriptRunner" position="70,0" />-->
   </screen>
     <!-- MerlinMusicPlayerFileList -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerFileList" position="0,0" size="1280,710" title="Merlin Music Player">
-    <widget name="headertext" position="70,80" size="708,38" zPosition="3" halign="left" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" font="Regular2; 35" transparent="1" />
-    <widget name="list" position="70,137" size="708,450" scrollbarMode="showOnDemand" backgroundColor="Kravenbg3" transparent="1" />
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerFileList" position="0,0" size="1280,720" title="Merlin Music Player">
+    <widget backgroundColor="Kravenbg3" name="headertext" font="Regular2;26" foregroundColor="KravenFont2" position="70,80" size="708,36" zPosition="3" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,130" size="708,486" scrollbarMode="showOnDemand" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
     <!--<text="MerlinMusicPlayerFileList" position="70,0" />-->
   </screen>
   <!-- MerlinMusicPlayerLyrics -->
@@ -1209,14 +1223,17 @@
     <widget source="session.CurrentService" render="Label" position="645,585" size="100,22" font="Regular;20" halign="right" backgroundColor="Kravenbg" transparent="1">
       <convert type="ServicePosition">Remaining</convert>
     </widget>
-    <eLabel text="next" position="80,623" size="60,25" font="Regular2; 18" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" />
-    <widget name="nextTitle" position="140,620" size="680,26" font="Regular2; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" />
+    <eLabel text="next" position="80,614" size="60,25" font="Regular2;20" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" />
+    <widget name="nextTitle" position="140,614" size="680,25" font="Regular2;20" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" />
     <widget name="shuffle" position="630,120" size="50,25" pixmaps="KravenVB/backg.png,KravenVB/mmp/shuffle.png" alphatest="blend" />
     <widget name="repeat" position="700,120" size="50,25" pixmaps="KravenVB/backg.png,KravenVB/mmp/repeat.png" alphatest="blend" />
     <widget name="PositionGauge" position="0,0" size="0,0" />
     <widget name="coverArt" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/no_coverArt.png" position="789,140" size="470,470" transparent="1" alphatest="blend" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Background"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="MerlinMusicPlayerScreen" position="70,0" />-->
   </screen>
   <!-- MerlinMusicPlayerScreenSaver -->
   <screen name="MerlinMusicPlayerScreenSaver" position="0,0" size="1280,720" title="Merlin Music Player ScreenSaver" flags="wfNoBorder" backgroundColor="Kravenbg">
@@ -1224,13 +1241,15 @@
     <widget name="display" position="200,371" size="1280,24" zPosition="1" transparent="1" font="Regular;20" foregroundColor="KravenFont1" />
   </screen>
   <!-- MerlinMusicPlayerSetup -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerSetup" position="0,0" size="1280,710" title="Merlin Music Player">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerSetup" position="0,0" size="1280,720" title="Merlin Music Player">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" transparent="1" />
     <eLabel text="Cancel" position="70,665" size="220,26" zPosition="1" font="Regular;20" halign="left" valign="center" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" />
     <eLabel text="OK" position="320,665" size="220,26" zPosition="1" font="Regular;20" halign="left" valign="center" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreen"/>
+	<constant-widget name="OKExit"/>
     <!--<text="MerlinMusicPlayerSetup" position="70,0" />-->
   </screen>
   <!-- MerlinMusicPlayerSongList -->
@@ -1240,6 +1259,7 @@
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
+	<constant-widget name="Exit"/>
     <!--<text="MerlinMusicPlayerSongList" position="70,0" />-->
   </screen>
   <!-- SelectPath -->
@@ -1249,16 +1269,18 @@
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
-	<constant-widget name="NameRedGreenYellowBlue"/>
+	<constant-widget name="SourceRedGreen"/>
+	<constant-widget name="OKExit"/>
     <!--<text="SelectPath" position="70,0" />-->
   </screen>
   <!-- iDreamAddToDatabase -->
   <screen name="iDreamAddToDatabase" position="0,0" size="1280,720" title="Add music files to iDream database" flags="wfNoBorder" backgroundColor="transparent">
-    <widget backgroundColor="Kravenbg3" name="output" font="Regular;22" foregroundColor="KravenFont1" position="70,80" size="708,540" scrollbarMode="showOnDemand" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="output" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
-	<constant-widget name="NameRedGreenYellowBlue"/>
+	<constant-widget name="SourceRedGreen"/>
+	<constant-widget name="OKExit"/>
     <!--<text="iDreamAddToDatabase" position="70,0" />-->
   </screen>
   <!-- iDreamMerlin -->
@@ -1267,7 +1289,8 @@
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
-	<constant-widget name="NameRedGreenYellowBlue"/>
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+	<constant-widget name="MenuOKExit"/>
     <!--<text="iDreamMerlin" position="70,0" />-->
   </screen>
   <!-- MSNWeatherPluginEntriesListConfigScreen -->
