@@ -521,6 +521,7 @@ config.plugins.KravenVB.ChannellistPicon = ConfigSelection(default="none", choic
 
 config.plugins.KravenVB.ChannelSelectionStyle = ConfigSelection(default="channelselection-style-minitv", choices = [
 				("channelselection-style-nopicon", _("no Picon")),
+				("channelselection-style-nopicon2", _("no Picon2")),
 				("channelselection-style-xpicon", _("X-Picons")),
 				("channelselection-style-zpicon", _("Z-Picons")),
 				("channelselection-style-zzpicon", _("ZZ-Picons")),
@@ -536,6 +537,7 @@ config.plugins.KravenVB.ChannelSelectionStyle = ConfigSelection(default="channel
 
 config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channelselection-style-minitv", choices = [
 				("channelselection-style-nopicon", _("no Picon")),
+				("channelselection-style-nopicon2", _("no Picon2")),
 				("channelselection-style-xpicon", _("X-Picons")),
 				("channelselection-style-zpicon", _("Z-Picons")),
 				("channelselection-style-zzpicon", _("ZZ-Picons")),
@@ -1194,7 +1196,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <widget backgroundColor="#00000000" name="config" font="Regular;22" foregroundColor="#00ffffff" itemHeight="30" position="70,85" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
   <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;36" foregroundColor="#00f0a30a" position="830,80" size="402,46" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00000000" text="Version: 6.3.0" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
+  <eLabel backgroundColor="#00000000" text="Version: 6.3.1" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
   <eLabel backgroundColor="#00f0a30a" position="847,208" size="368,2" />
   <eLabel backgroundColor="#00f0a30a" position="847,417" size="368,2" />
   <eLabel backgroundColor="#00f0a30a" position="845,208" size="2,211" />
@@ -1222,7 +1224,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <widget backgroundColor="#00000000" name="config" font="Regular;32" foregroundColor="#00ffffff" itemHeight="45" position="105,127" size="1062,810" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
   <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;54" foregroundColor="#00f0a30a" position="1245,120" size="603,69" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00000000" text="Version: 6.3.0" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
+  <eLabel backgroundColor="#00000000" text="Version: 6.3.1" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
   <eLabel backgroundColor="#00f0a30a" position="1313,337" size="466,3" />
   <eLabel backgroundColor="#00f0a30a" position="1313,599" size="466,3" />
   <eLabel backgroundColor="#00f0a30a" position="1313,340" size="3,259" />
@@ -3338,6 +3340,13 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(['<constant-widget name="CSNPEPG22"/>', '<constant-widget name="CSNPEPG24"/>'])
 			elif config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "small":
 				self.skinSearchAndReplace.append(['<constant-widget name="CSNPEPG22"/>', '<constant-widget name="CSNPEPG22Prime"/>'])
+		elif self.actChannelselectionstyle == "channelselection-style-nopicon2":
+			if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "big":
+				self.skinSearchAndReplace.append(['<constant-widget name="CSNP2EPG22"/>', '<constant-widget name="CSNP2EPG24Prime"/>'])
+			elif config.plugins.KravenVB.Primetimeavailable.value == "none" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "big":
+				self.skinSearchAndReplace.append(['<constant-widget name="CSNP2EPG22"/>', '<constant-widget name="CSNP2EPG24"/>'])
+			elif config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "small":
+				self.skinSearchAndReplace.append(['<constant-widget name="CSNP2EPG22"/>', '<constant-widget name="CSNP2EPG22Prime"/>'])
 		elif self.actChannelselectionstyle == "channelselection-style-xpicon":
 			if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "big":
 				self.skinSearchAndReplace.append(['<constant-widget name="CSXEPG22"/>', '<constant-widget name="CSXEPG24Prime"/>'])
@@ -3794,7 +3803,7 @@ class KravenVB(ConfigListScreen, Screen):
 		### ChannelSelection - openatv
 		elif self.E2DistroVersion == "openatv":
 			self.skinSearchAndReplace.append(['name="giopet"', 'fieldMargins="15" nonplayableMargins="15" itemsDistances="8" progressBarWidth="70" progressPercentWidth="80" progressbarHeight="12"'])
-			if self.actChannelselectionstyle in ("channelselection-style-nopicon","channelselection-style-xpicon","channelselection-style-zpicon","channelselection-style-zzpicon","channelselection-style-zzzpicon","channelselection-style-minitv3","channelselection-style-nobile-minitv3") or config.plugins.KravenVB.ChannelSelectionMode.value == "zap":
+			if self.actChannelselectionstyle in ("channelselection-style-nopicon","channelselection-style-nopicon2","channelselection-style-xpicon","channelselection-style-zpicon","channelselection-style-zzpicon","channelselection-style-zzzpicon","channelselection-style-minitv3","channelselection-style-nobile-minitv3") or config.plugins.KravenVB.ChannelSelectionMode.value == "zap":
 				config.usage.servicelistpreview_mode.value = False
 			else:
 				config.usage.servicelistpreview_mode.value = True
@@ -4618,6 +4627,10 @@ class KravenVB(ConfigListScreen, Screen):
 		### SplitScreen
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SplitScreen.value + ".xml")
+
+		### SleepTimerEdit - Buttons
+		if self.E2DistroVersion == "openatv":
+			self.skinSearchAndReplace.append(['<constant-widget name="STEVTI"/>', '<constant-widget name="SourceRedGreen"/>'])
 
 		### TimerEditScreen
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.TimerEditScreen.value + ".xml")

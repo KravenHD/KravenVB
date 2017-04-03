@@ -930,6 +930,44 @@
       </widget>
 	</constant-widget>
 	
+	<constant-widget name="CSNP2EPG22">
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="822,163" size="416,351" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,522" size="416,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNP2EPG24">
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="822,168" size="416,330" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,510" size="416,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNP2EPG22Prime">
+      <widget foregroundColor="KravenFont1" font="Regular;22" position="822,163" size="416,351" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,522" size="416,81" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="822,603" size="416,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSNP2EPG24Prime">
+      <widget foregroundColor="KravenFont1" font="Regular;24" position="822,168" size="416,330" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" source="ServiceEvent" valign="top" backgroundColor="Kravenbg4" transparent="1">
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="822,510" size="416,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="822,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
 	<constant-widget name="CSXEPG22">
       <widget alphatest="blend" position="140,152" render="Picon" size="220,132" source="ServiceEvent" transparent="1" zPosition="4">
         <convert type="KravenVBRefString">ServicelistRef</convert>
@@ -1945,5 +1983,12 @@
       <widget backgroundColor="Kravenbg2" font="Regular;24" position="478,155" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="760,120" source="Event" valign="top" zPosition="-8" foregroundColor="KravenFont1" transparent="1">
         <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
       </widget>
+	</constant-widget>
+	
+	<constant-widget name="STEVTI">
+      <widget font="Regular;20" halign="left" valign="center" name="red_text" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="green_text" position="320,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="yellow_text" position="570,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+      <widget font="Regular;20" halign="left" valign="center" name="blue_text" position="820,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="2" />
 	</constant-widget>
   </constant-widgets>

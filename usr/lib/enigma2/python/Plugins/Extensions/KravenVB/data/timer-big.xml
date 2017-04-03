@@ -137,12 +137,9 @@
     <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="aftertext" position="400,140" size="120,25" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="current_status" position="100,180" size="690,30" transparent="1" />
     <constant-widget name="Title-big"/>
-    <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
-    <widget font="Regular;20" halign="left" valign="center" name="red_text" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="green_text" position="320,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="yellow_text" position="570,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="blue_text" position="820,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="STEVTI"/>
     <constant-widget name="Exit"/>
     <!--<text="SleepTimerEdit" position="70,0" />-->
   </screen>
