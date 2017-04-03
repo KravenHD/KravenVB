@@ -130,17 +130,4 @@
     <constant-widget name="Exit"/>
     <!--<text="TimerSanityConflict" position="70,0" />-->
   </screen>
-  <!-- SleepTimerEdit -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="SleepTimerEdit" position="0,0" size="1280,720" title="Sleep Timer">
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="pretext" position="100,140" size="250,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="input" position="350,140" size="50,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="aftertext" position="400,140" size="120,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="current_status" position="100,180" size="690,30" transparent="1" />
-    <constant-widget name="Title-big"/>
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <constant-widget name="STEVTI"/>
-    <constant-widget name="Exit"/>
-    <!--<text="SleepTimerEdit" position="70,0" />-->
-  </screen>
   <!-- Timer standard layout */ -->
