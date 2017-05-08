@@ -1,0 +1,2069 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kraven VB\n"
+"POT-Creation-Date: 2017-03-20 18:45+0100\n"
+"PO-Revision-Date: 2017-05-07 19:33+0100\n"
+"Last-Translator: \n"
+"Language-Team: vu+ <blu8@>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: D:\\Decoder\\VU+\\OpenATV\\OATV6\\Kraven VB\n"
+
+msgid "Exit"
+msgstr "Esci"
+
+msgid "Save Color"
+msgstr "Salva colore"
+
+msgid "Color Selection"
+msgstr "Selezione colore"
+
+msgid "red"
+msgstr "rosso"
+
+msgid "green"
+msgstr "verde"
+
+msgid "blue"
+msgstr "blu"
+
+msgid "amber"
+msgstr "ambra"
+
+msgid "amber dark"
+msgstr "ambra scuro"
+
+msgid "blue dark"
+msgstr "blu scuro"
+
+msgid "brown"
+msgstr "marrone"
+
+msgid "brown dark"
+msgstr "marrone scuro"
+
+msgid "cobalt"
+msgstr "cobalto"
+
+msgid "cobalt dark"
+msgstr "cobalto scuro"
+
+msgid "cyan"
+msgstr "ciano"
+
+msgid "cyan dark"
+msgstr "ciano scuro"
+
+msgid "yellow"
+msgstr "giallo"
+
+msgid "grey"
+msgstr "grigio"
+
+msgid "grey dark"
+msgstr "grigio scuro"
+
+msgid "green dark"
+msgstr "verde scuro"
+
+msgid "Kraven"
+msgstr "Kraven"
+
+msgid "Kraven dark"
+msgstr "Kraven scuro"
+
+msgid "olive"
+msgstr "oliva"
+
+msgid "olive dark"
+msgstr "oliva scuro"
+
+msgid "orange"
+msgstr "arancione"
+
+msgid "orange dark"
+msgstr "arancione scuro"
+
+msgid "pink"
+msgstr "rosa"
+
+msgid "pink dark"
+msgstr "rosa scuro"
+
+msgid "red dark"
+msgstr "rosso scuro"
+
+msgid "black"
+msgstr "nero"
+
+msgid "emerald"
+msgstr "smeraldo"
+
+msgid "steel"
+msgstr "acciaio"
+
+msgid "steel dark"
+msgstr "acciaio scuro"
+
+msgid "violet"
+msgstr "violetta"
+
+msgid "violet dark"
+msgstr "viola scuro"
+
+msgid "white"
+msgstr "bianco"
+
+msgid "amber very dark"
+msgstr "ambra molto scuro"
+
+msgid "self"
+msgstr "auto"
+
+msgid "blue very dark"
+msgstr "blu molto scuro"
+
+msgid "brown very dark"
+msgstr "marrone molto scuro"
+
+msgid "cobalt very dark"
+msgstr "cobalto molto scuro"
+
+msgid "cyan very dark"
+msgstr "ciano molto scuro"
+
+msgid "grey very dark"
+msgstr "grigio molto scuro"
+
+msgid "green very dark"
+msgstr "verde molto scuro"
+
+msgid "Kraven very dark"
+msgstr "Kraven molto scuro"
+
+msgid "olive very dark"
+msgstr "oliva molto scuro"
+
+msgid "orange very dark"
+msgstr "arancione molto scuro"
+
+msgid "pink very dark"
+msgstr "rosa molto scuro"
+
+msgid "red very dark"
+msgstr "rosso molto scuro"
+
+msgid "steel very dark"
+msgstr "acciaio molto scuro"
+
+msgid "violet very dark"
+msgstr "viola molto scuro"
+
+msgid "user texture"
+msgstr "struttura utente"
+
+msgid "texture"
+msgstr "struttura"
+
+msgid "off"
+msgstr "off"
+
+msgid "gradient"
+msgstr "gradiente"
+
+msgid "Deutsch"
+msgstr "Tedesco"
+
+msgid "English"
+msgstr "Inglese"
+
+msgid "Russian"
+msgstr "Russo"
+
+msgid "Italian"
+msgstr "Italiano"
+
+msgid "Spanish (es)"
+msgstr "Spagnolo (es)"
+
+msgid "Spanish (sp)"
+msgstr "Spagnolo (sp)"
+
+msgid "Ukrainian (uk)"
+msgstr "Ucraino (uk)"
+
+msgid "Ukrainian (ua)"
+msgstr "Ucraino (ua)"
+
+msgid "Portuguese"
+msgstr "Portoghese"
+
+msgid "Romanian"
+msgstr "Romeno"
+
+msgid "Polish"
+msgstr "Polacco"
+
+msgid "Finnish"
+msgstr "Finlandese"
+
+msgid "Dutch"
+msgstr "Olandese"
+
+msgid "French"
+msgstr "Francese"
+
+msgid "Bulgarian"
+msgstr "Bulgaro"
+
+msgid "Swedish (sv)"
+msgstr "Svedese (sv)"
+
+msgid "Swedish (se)"
+msgstr "Svedese (se)"
+
+msgid "Chinese Traditional"
+msgstr "Cinese (tradizionale)"
+
+msgid "Chinese Simplified (zh)"
+msgstr "Cinese semplificato (zh)"
+
+msgid "Chinese Simplified (zh_cn)"
+msgstr "Cinese semplificato (zh_cn)"
+
+msgid "Turkish"
+msgstr "Turco"
+
+msgid "Croatian"
+msgstr "Croato"
+
+msgid "Catalan"
+msgstr "Catalano"
+
+msgid "1"
+msgstr "1"
+
+msgid "2"
+msgstr "2"
+
+msgid "3"
+msgstr "3"
+
+msgid "4"
+msgstr "4"
+
+msgid "5"
+msgstr "5"
+
+msgid "0 (hardcoded)"
+msgstr "0 (non modificabile)"
+
+msgid "0"
+msgstr "0"
+
+msgid "15"
+msgstr "15"
+
+msgid "30"
+msgstr "30"
+
+msgid "60"
+msgstr "60"
+
+msgid "120"
+msgstr "120"
+
+msgid "240"
+msgstr "240"
+
+msgid "480"
+msgstr "480"
+
+msgid "original"
+msgstr "originale"
+
+msgid "with Border"
+msgstr "con bordo"
+
+msgid "left"
+msgstr "sinistra"
+
+msgid "right"
+msgstr "destra"
+
+msgid "top"
+msgstr "superiore"
+
+msgid "center"
+msgstr "centro"
+
+msgid "colorfull"
+msgstr "colore pieno"
+
+msgid "colorfull2"
+msgstr "colore pieno2"
+
+msgid "box"
+msgstr "box"
+
+msgid "          Primary Color"
+msgstr "          Colore principale"
+
+msgid "          Secondary Color"
+msgstr "          Colore secondario"
+
+msgid "no Picon"
+msgstr "nessun Picon"
+
+msgid "X1"
+msgstr "X1"
+
+msgid "X2"
+msgstr "X2"
+
+msgid "X3"
+msgstr "X3"
+
+msgid "Z1"
+msgstr "Z1"
+
+msgid "Z2"
+msgstr "Z2"
+
+msgid "ZZ1"
+msgstr "ZZ1"
+
+msgid "ZZ2"
+msgstr "ZZ2"
+
+msgid "ZZ3"
+msgstr "ZZ3"
+
+msgid "ZZ4"
+msgstr "ZZ4"
+
+msgid "ZZZ1"
+msgstr "ZZZ1"
+
+msgid "Name small"
+msgstr "Nome piccolo"
+
+msgid "Name & Number small"
+msgstr "Nome & numero piccolo"
+
+msgid "Name big"
+msgstr "Nome grande"
+
+msgid "Name & Number big"
+msgstr "Nome & numero grande"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Name & Number"
+msgstr "Nome & Numero"
+
+msgid "small"
+msgstr "piccolo"
+
+msgid "middle"
+msgstr "medio"
+
+msgid "big"
+msgstr "grande"
+
+msgid "typewriter"
+msgstr "macchina da scrivere"
+
+msgid "runningtext"
+msgstr "testo in esecuzione"
+
+msgid "on"
+msgstr "on"
+
+msgid "transparent"
+msgstr "trasparente"
+
+msgid "MiniTV"
+msgstr "MiniTV"
+
+msgid "no Picon2"
+msgstr "Nessun Picon2"
+
+msgid "X-Picons"
+msgstr "X-Picons"
+
+msgid "Z-Picons"
+msgstr "Z-Picons"
+
+msgid "ZZ-Picons"
+msgstr "ZZ-Picons"
+
+msgid "ZZZ-Picons"
+msgstr "ZZZ-Picons"
+
+msgid "MiniTV left"
+msgstr "MiniTV sinistra"
+
+msgid "MiniTV right"
+msgstr "MiniTV destra"
+
+msgid "Preview"
+msgstr "Anteprima"
+
+msgid "Nobile"
+msgstr "Nobile"
+
+msgid "Nobile 2"
+msgstr "Nobile 2"
+
+msgid "Nobile MiniTV"
+msgstr "MiniTV nobile"
+
+msgid "Nobile Preview"
+msgstr "Anteprima nobile"
+
+msgid "Extended Preview"
+msgstr "Anteprima estesa"
+
+msgid "Dual TV"
+msgstr "Dual TV"
+
+msgid "Dual TV 2"
+msgstr "Dual TV 2"
+
+msgid "Nobile Extended Preview"
+msgstr "Anteprima nobile estesa"
+
+msgid "Zap (1xOK)"
+msgstr "Zap (1xOK)"
+
+msgid "Preview (2xOK)"
+msgstr "Anteprima (2 x OK)"
+
+msgid "16"
+msgstr "16"
+
+msgid "18"
+msgstr "18"
+
+msgid "20"
+msgstr "20"
+
+msgid "22"
+msgstr "22"
+
+msgid "24"
+msgstr "24"
+
+msgid "26"
+msgstr "26"
+
+msgid "28"
+msgstr "28"
+
+msgid "Picon"
+msgstr "Picon"
+
+msgid "no MiniTV"
+msgstr "nessuna MiniTV"
+
+msgid "Text"
+msgstr "Testo"
+
+msgid "Text with MiniTV"
+msgstr "Testo con MiniTV"
+
+msgid "graphical"
+msgstr "grafico"
+
+msgid "graphical with MiniTV"
+msgstr "grafico con MiniTV"
+
+msgid "global selection background"
+msgstr "sfondo selezione globale"
+
+msgid "description"
+msgstr "descrizione"
+
+msgid "full"
+msgstr "pieno"
+
+msgid "no Cover"
+msgstr "nessuna Cover"
+
+msgid "small Cover"
+msgstr "copertina piccola"
+
+msgid "big Cover"
+msgstr "Copertina grande"
+
+msgid "MiniTV + Cover"
+msgstr "MiniTV + copertina"
+
+msgid "standard"
+msgstr "predefinito"
+
+msgid "no Cover2"
+msgstr "nessuna Cover2"
+
+msgid "small Cover2"
+msgstr "copertina piccola 2"
+
+msgid "big Cover2"
+msgstr "Copertina 2 grande"
+
+msgid "very big Cover"
+msgstr "copertina molto grande"
+
+msgid "very big Cover2"
+msgstr "copertina2 molto grande"
+
+msgid "MiniTV2"
+msgstr "MiniTV2"
+
+msgid "2 sec"
+msgstr "2 sec"
+
+msgid "4 sec"
+msgstr "4 sec"
+
+msgid "6 sec"
+msgstr "6 sec"
+
+msgid "8 sec"
+msgstr "8 sec"
+
+msgid "10 sec"
+msgstr "10 sec"
+
+msgid "15 sec"
+msgstr "15 sec"
+
+msgid "20 sec"
+msgstr "20 sec"
+
+msgid "5 px/sec"
+msgstr "5 px/sec"
+
+msgid "10 px/sec"
+msgstr "10 px/sec"
+
+msgid "15 px/sec"
+msgstr "15 px/sec"
+
+msgid "20 px/sec"
+msgstr "20 px/sec"
+
+msgid "thin"
+msgstr "sottile"
+
+msgid "wide"
+msgstr "largo"
+
+msgid "light"
+msgstr "luminose"
+
+msgid "dark"
+msgstr "scure"
+
+msgid "standard big"
+msgstr "predefinito grande"
+
+msgid "analog"
+msgstr "analogico"
+
+msgid "android"
+msgstr "android"
+
+msgid "colored"
+msgstr "colorato"
+
+msgid "flip"
+msgstr "flip"
+
+msgid "weather icon"
+msgstr "icona Meteo"
+
+msgid "96"
+msgstr "96"
+
+msgid "128"
+msgstr "128"
+
+msgid "NetatmoBar"
+msgstr "NetatmoBar"
+
+msgid "Infobar"
+msgstr "Barra informazioni"
+
+msgid "SecondInfobar"
+msgstr "Seconda Infobar"
+
+msgid "Infobar & SecondInfobar"
+msgstr "Infobar & Seconda Infobar"
+
+msgid "short with CAID"
+msgstr "breve con CAID"
+
+msgid "short with source"
+msgstr "breve con sorgente"
+
+msgid "compact"
+msgstr "compatto"
+
+msgid "balanced"
+msgstr "bilanciato"
+
+msgid "extensive"
+msgstr "dettagliata"
+
+msgid "complete"
+msgstr "completo"
+
+msgid "big + Sat"
+msgstr "grande + Sat"
+
+msgid "top/bottom"
+msgstr "superiore/inferiore"
+
+msgid "left/right"
+msgstr "sinistra/destra"
+
+msgid "single"
+msgstr "singolo"
+
+msgid "Weather"
+msgstr "Meteo"
+
+msgid "Weather2"
+msgstr "Meteo2"
+
+msgid "2 Tuner"
+msgstr "2 Tuner"
+
+msgid "4 Tuner"
+msgstr "4 Tuner"
+
+msgid "8 Tuner"
+msgstr "8 Tuner"
+
+msgid "Tuner/Satellite + SNR"
+msgstr "Tuner/Satellite + SNR"
+
+msgid "CPU + Load"
+msgstr "CPU + carico sistema"
+
+msgid "Temperature + Fan"
+msgstr "Temperatura + Fan"
+
+msgid "Tuner/Satellite + dB"
+msgstr "Tuner/Satellite + dB"
+
+msgid "10 Tuner"
+msgstr "10 Tuner"
+
+msgid "record blink"
+msgstr "registrazione lampeggiante"
+
+msgid "record shine"
+msgstr "registrazione brillante"
+
+msgid "record blink, tuner shine"
+msgstr "registrazione lampeggiante, tuner brillante"
+
+msgid "record shine, tuner blink"
+msgstr "registrazione brillante, tuner lampeggiante"
+
+msgid "record & tuner blink"
+msgstr "registrazione & tuner lampeggiante"
+
+msgid "record & tuner shine"
+msgstr "registrazione & tuner brillante"
+
+msgid "record blink, no record tuner"
+msgstr "registrazione lampeggiante, nessun tuner registrazione"
+
+msgid "record shine, no record tuner"
+msgstr "registrazione brillante, nessun tuner registrazione"
+
+msgid "tuner blink"
+msgstr "tuner lampeggiante"
+
+msgid "tuner shine"
+msgstr "tuner brillante"
+
+msgid "no record tuner"
+msgstr "nessuna tuner registrazione"
+
+msgid "in all Screens"
+msgstr "in tutte le schermate"
+
+msgid "only Infobar, SecondInfobar & Players"
+msgstr "solo Infobar, SecondInfobar & Players"
+
+msgid "KravenVB"
+msgstr "KravenVB"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Icons"
+msgstr "Icone"
+
+msgid "MiniTV + Icons"
+msgstr "MiniTV + Icone"
+
+msgid "stony272"
+msgstr "stony272"
+
+msgid "stony272-metal"
+msgstr "stony272-metallo"
+
+msgid "stony272-gold-round"
+msgstr "stony272 oro rotonda"
+
+msgid "stony272-gold-square"
+msgstr "stony272 oro quadrata"
+
+msgid "rennmaus-kleiner.teufel"
+msgstr "topo da corsa-piccolo diavolo"
+
+msgid "Icon"
+msgstr "Icona"
+
+msgid "Meteo"
+msgstr "Meteo"
+
+msgid "center big"
+msgstr "centro grande"
+
+msgid "center small"
+msgstr "centro piccolo"
+
+msgid "left small"
+msgstr "piccolo sinistra"
+
+msgid "without description"
+msgstr "senza descrizione"
+
+msgid "with description"
+msgstr "con descrizione"
+
+msgid "standard layout"
+msgstr "layout predefinito"
+
+msgid "medium font with EPG Info"
+msgstr "carattere medio con EPG Info"
+
+msgid "big font with EPG Info"
+msgstr "Carattere grande con EPG Info"
+
+msgid "Style 1"
+msgstr "Stile 1"
+
+msgid "Style 2"
+msgstr "Stile 2"
+
+msgid "Style 3"
+msgstr "Stile 3"
+
+msgid "Style 4"
+msgstr "Stile 4"
+
+msgid "Style 5"
+msgstr "Stile 5"
+
+msgid "OpenWeatherMap"
+msgstr "OpenWeatherMap"
+
+msgid "Accuweather"
+msgstr "Accuweather"
+
+msgid "RealTek"
+msgstr "RealTek"
+
+msgid "Auto (IP)"
+msgstr "Auto (IP)"
+
+msgid "Search String"
+msgstr "Cerca stringa"
+
+msgid "GM Code"
+msgstr "GM codice"
+
+msgid " "
+msgstr " "
+
+msgid "infobar colors big"
+msgstr "colori grande infobar"
+
+msgid "infobar colors small"
+msgstr "colori piccola infobar"
+
+msgid "global colors big"
+msgstr "colori globali grandi"
+
+msgid "global colors small"
+msgstr "colori globali piccoli"
+
+msgid "transparent big"
+msgstr "trasparente grande"
+
+msgid "transparent small"
+msgstr "piccolo trasparente"
+
+msgid "not available for openATV"
+msgstr "non disponibile per openATV"
+
+msgid "FAQs"
+msgstr "FAQ"
+
+msgid "Save skin"
+msgstr "Salvare la Skin"
+
+msgid "Configuration tool for KravenVB"
+msgstr "Strumento di configurazione per KravenVB"
+
+msgid "About"
+msgstr "Su di noi"
+
+msgid ""
+"The KravenVB skin will be generated by this plugin according to your preferences. Make "
+"your settings and watch the changes in the preview window above. When finished, save your "
+"skin by pressing the green button and restart the GUI."
+msgstr ""
+"La Skin KravenHD verrà generata da questo plugin in base alle proprie preferenze. "
+"Effettuare le impostazioni e osservare i cambiamenti nella finestra di anteprima. Al "
+"termine, salvare la Skin premendo il tasto verde e riavviare la GUI."
+
+msgid "PROFILES __________________________________________________________________"
+msgstr "PROFILI_____________________________________________________________________"
+
+msgid ""
+"This sections offers all profile settings. Different settings can be saved, modified, "
+"shared and cloned. Read the FAQs."
+msgstr ""
+"Questa sezione offre tutte le impostazioni profili. Diverse impostazioni possono essere "
+"salvate, modificate, condivise e clonate. Leggere le FAQ."
+
+msgid "Active Profile / Save"
+msgstr "Profilo attivo / Salva"
+
+msgid ""
+"Select the profile you want to work with. Profiles are saved automatically on switching "
+"them or by pressing the OK button. New profiles will be generated based on the actual one. "
+"Profiles are interchangeable between boxes."
+msgstr ""
+"Selezionare il profilo di lavoro. I profili vengono salvati automaticamente commutando o "
+"premendo il tasto OK. I nuovi profili vengono generati sulla base di quello attuale. I "
+"profili sono intercambiabili tra i decoder."
+
+msgid "Default Profile / Reset"
+msgstr "Profilo predefinito / Ripristino"
+
+msgid ""
+"Select the default profile you want to use when resetting the active profile (OK button). "
+"You can add your own default profiles under /etc/enigma2/kraven_default_n (n<=20)."
+msgstr ""
+"Selezionare il profilo predefinito da utilizzare al ripristino del profilo attivo (Tasto "
+"OK). È possibile aggiungere i propri profili predefiniti in /etc/enigma2 / "
+"kraven_default_n (n<=20)."
+
+msgid "SYSTEM ____________________________________________________________________"
+msgstr "SISTEMA ___________________________________________________________________"
+
+msgid "This sections offers all basic settings."
+msgstr "Questa sezione offre tutte le impostazioni di base."
+
+msgid "Icons (except Infobar)"
+msgstr "Icone (ad eccezione di Infobar)"
+
+msgid ""
+"Choose between light and dark icons in system screens. The icons in the infobars are not "
+"affected."
+msgstr ""
+"Scegliere tra icone chiaro/scure nelle schermate di sistema. Le icone della infobar non "
+"sono interessate."
+
+msgid "Running Text (Delay)"
+msgstr "Esecuzione del testo (ritardo)"
+
+msgid "Choose the start delay for running text."
+msgstr "Scegliere il ritardo di avvio per l'esecuzione testo."
+
+msgid "Running Text (Speed)"
+msgstr "Esecuzione del testo (velocità)"
+
+msgid "Choose the speed for running text."
+msgstr "Scegliere la velocità di esecuzione testo."
+
+msgid "Scrollbars"
+msgstr "Barre di scorrimento"
+
+msgid "Choose the width of scrollbars in lists or deactivate scrollbars completely."
+msgstr ""
+"Scegli la larghezza delle barre scorrevoli negli elenchi o disattivarle completamente."
+
+msgid "Choose whether scrollbars should be shown."
+msgstr "Scegliere se visualizzare la barra scorrevole."
+
+msgid "Show Infobar-Background"
+msgstr "Visualizza infobar nello sfondo"
+
+msgid ""
+"Choose whether you want to see the infobar background in all screens (bicolored "
+"background)."
+msgstr ""
+"Scegliere se si desidera vedere lo sfondo barra informazioni in tutte le schermate (sfondo "
+"bicolore)."
+
+msgid "Menus"
+msgstr "Menu"
+
+msgid ""
+"Choose from different options to display the system menus. Press red button for the FAQs "
+"with details on installing menu icons."
+msgstr ""
+"Scegliere tra diverse opzioni per visualizzare i menu di sistema. Premere il pulsante "
+"rosso per le FAQ con dettagli sull'installazione icone del menu."
+
+msgid "Menu-Icons"
+msgstr "Menu icone"
+
+msgid ""
+"Choose from different icon sets for the menu screens. Many thanks to rennmaus and kleiner."
+"teufel for their icon set."
+msgstr ""
+"Scegliere set di icone diverse per le schermate dei menu. Molte grazie a rennmaus e "
+"kleiner.teufel per i loro set di icone."
+
+msgid "Menu-Transparency"
+msgstr "Trasparenza menu"
+
+msgid "Choose the degree of background transparency for system menu screens."
+msgstr "Scegliere il grado di trasparenza di sfondo per le schermate del menu di sistema."
+
+msgid "GLOBAL COLORS _____________________________________________________________"
+msgstr "COLORI GLOBALI  _____________________________________________________________"
+
+msgid "This sections offers offers all basic color settings."
+msgstr "Questo sezione offre tutte le impostazioni di base dei colori."
+
+msgid "Background"
+msgstr "Sfondo"
+
+msgid ""
+"Choose the background for all screens. You can choose from a list of predefined colors or "
+"textures, create your own color using RGB sliders or define a color gradient."
+msgstr ""
+"Scegliere lo sfondo per tutti gli schermi. È possibile scegliere da un elenco di colori o "
+"strutture predefiniti, creare il proprio colore usando i cursori RGB o definire una "
+"sfumatura di colore."
+
+msgid ""
+"Choose the primary color for the background gradient. Press OK to define your own RGB "
+"color."
+msgstr ""
+"Scegliere il colore principale per la sfumatura di sfondo. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid ""
+"Choose the secondary color for the background gradient. Press OK to define your own RGB "
+"color."
+msgstr ""
+"Scegliere il colore secondario per la sfumatura di sfondo. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "          Texture"
+msgstr "          Struttura"
+
+msgid "Choose the texture for the background."
+msgstr "Scegliere la struttura per lo sfondo."
+
+msgid "          Alternate Color"
+msgstr "          Colore alternativo"
+
+msgid ""
+"Choose the alternate color for the background. It should match the texture at the best."
+msgstr ""
+"Scegliere il colore alternativo per l'infobar. Dovrebbe corrispondere al meglio alla "
+"struttura."
+
+msgid "Background-Transparency"
+msgstr "Trasparenza sfondo"
+
+msgid ""
+"Choose the degree of background transparency for all screens except system menus and "
+"channellists."
+msgstr ""
+"Scegliere il grado di trasparenza sfondo per tutti gli schermi tranne i menu di sistema e "
+"liste canali."
+
+msgid "Listselection"
+msgstr "Selezione liste"
+
+msgid "Choose the background color of selection bars. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore di sfondo delle barre di selezione. Premere OK per definire il proprio "
+"colore RGB."
+
+msgid "Listselection-Border"
+msgstr "Bordo selezione liste"
+
+msgid ""
+"Choose the border color of selection bars or deactivate borders completely. Press OK to "
+"define your own RGB color."
+msgstr "Scegliere il colore bordo della barre selezione o disattivarlo completamente."
+
+msgid "Listselection-Font"
+msgstr "Carattere selezione liste"
+
+msgid ""
+"Choose the color of the font in selection bars. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere nella barra di selezione. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "Progress-/Volumebar"
+msgstr "Avanzamento barra volume"
+
+msgid "Choose the color of progress bars. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore della barra di avanzamento. Premere OK per definire il proprio colore "
+"RGB."
+
+msgid "Progress-Border"
+msgstr "Bordo barra avanzamento"
+
+msgid "Choose the border color of progress bars. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del bordo delle barre di avanzamento. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "MiniTV-Border"
+msgstr " Bordo MiniTV"
+
+msgid "Choose the border color of MiniTV's. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del bordo di MiniTV. Premere OK per definire il proprio colore RGB."
+
+msgid "Lines"
+msgstr "Linee"
+
+msgid ""
+"Choose the color of all lines. This affects dividers as well as the line in the center of "
+"some progress bars. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore di tutte le linee. Questo riguarda i divisori nonché la linea centrale "
+"di alcune barre di avanzamento."
+
+msgid "Primary-Font"
+msgstr "Carattere principale"
+
+msgid ""
+"Choose the color of the primary font. The primary font is used for list items, textboxes "
+"and other important information. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere principale. Il carattere principale viene utilizzato per "
+"le voci d'elenco, caselle di testo e altre informazioni importanti."
+
+msgid "Secondary-Font"
+msgstr "Carattere secondario"
+
+msgid ""
+"Choose the color of the secondary font. The secondary font is used for headers, labels and "
+"other additional information. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere secondario. Il carattere secondario viene utilizzato per "
+"le intestazioni, etichette e altre informazioni supplementari."
+
+msgid "Marking-Font"
+msgstr "Carattere contrassegnato"
+
+msgid "Choose the font color of marked list items. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere degli elementi dell'elenco contrassegnato. Premere OK "
+"per definire il proprio colore RGB."
+
+msgid "Colorbutton-Font"
+msgstr "Carattere colore tasti"
+
+msgid ""
+"Choose the font color of the color button labels. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere del tasto. Premere OK per definire il proprio colore RGB."
+
+msgid "Unskinned Colors"
+msgstr "Colori non skinnati"
+
+msgid ""
+"Choose whether some foreground and background colors of unskinned screens are changed or "
+"not."
+msgstr ""
+"Scegliere se alcuni colori di sfondo e primo piano di schermi non skinnati vengono o no "
+"modificati."
+
+msgid "INFOBAR-LOOK _________________________________________________________________"
+msgstr "ASPETTO INFOBAR _____________________________________________________________"
+
+msgid "This sections offers all settings for the infobar-look."
+msgstr "Questa sezione offre tutte le impostazioni per l'aspetto Infobar."
+
+msgid "Infobar-Style"
+msgstr "Stile barra informazioni"
+
+msgid ""
+"Choose from different infobar styles. Please note that not every style provides every "
+"feature. Therefore some features might be unavailable for the chosen style."
+msgstr ""
+"Scegliere tra diversi stili Infobar. Ogni stile fornisce tutte le funzionalità. Pertanto "
+"alcune funzioni potrebbero non essere disponibili per lo stile scelto."
+
+msgid "Infobar-Background-Style"
+msgstr "Stile sfondo infobar"
+
+msgid "Choose from different infobar background styles."
+msgstr "Scegliere tra diversi stili di sfondo per la barra informazioni."
+
+msgid "Infobar-Box-Line"
+msgstr "Linea infobar"
+
+msgid "Choose the color of the infobar box lines. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore delle linee di dialogo della barra info. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "Infobar-Background"
+msgstr "Sfondo infobar"
+
+msgid ""
+"Choose the background for the infobars. You can choose from a list of predefined colors or "
+"textures or create your own color using RGB sliders."
+msgstr ""
+"Scegliere il colore sfondo delle infobars . È possibile scegliere da un elenco di colori "
+"predefiniti o creare il proprio colore utilizzando i cursori RGB."
+
+msgid ""
+"Choose the background for the infobars. You can choose from a list of predefined colors or "
+"textures, create your own color using RGB sliders or "
+msgstr ""
+"Scegliere lo sfondo per l'infobar. È possibile scegliere da un elenco di colori "
+"predefiniti o strutture, creare il proprio colore utilizzando i cursori RGB o definire una "
+"sfumatura di colore."
+
+msgid ""
+"Choose the primary color for the infobar gradient. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore principale per la sfumatura barra di sfondo. Premere OK per definire "
+"il proprio colore RGB."
+
+msgid ""
+"Choose the secondary color for the infobar gradient. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore secondario per la sfumatura barra di sfondo. Premere OK per definire "
+"il proprio colore RGB."
+
+msgid "          Info Panels"
+msgstr "          Pannelli informativi"
+
+msgid "Choose gradient or color for the info panels (Sysinfos, Timeshiftbar etc.)."
+msgstr ""
+"Scegliere la sfumatura o il colore per i pannelli di informazioni (Sysinfos, Timeshiftbar "
+"etc.)."
+
+msgid "Choose the texture for the infobars."
+msgstr "Scegliere la struttura per l'infobar."
+
+msgid "Choose the alternate color for the infobars. It should match the texture at the best."
+msgstr ""
+"Scegliere il colore alternativo per l'infobar. Questo dovrebbe corrispondere al meglio "
+"alla struttura."
+
+msgid "Infobar-Transparency"
+msgstr "Trasparenza barra informazioni"
+
+msgid "Choose the degree of background transparency for the infobars."
+msgstr "Scegliere il grado di trasparenza di sfondo per le barre informazioni."
+
+msgid "Primary-Infobar-Font"
+msgstr "Carattere Infobar primaria"
+
+msgid "Choose the color of the primary infobar font. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere della barra informazioni primaria. Premere OK per definire "
+"il proprio colore RGB."
+
+msgid "Secondary-Infobar-Font"
+msgstr "Carattere Infobar secondaria"
+
+msgid ""
+"Choose the color of the secondary infobar font. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere della barra informazioni secondaria. Premere OK per definire "
+"il proprio colore RGB."
+
+msgid "Infobar-Icons"
+msgstr "Icone barra informazioni"
+
+msgid "Choose between light and dark infobar icons."
+msgstr "Scegliere tra icone chiare/scure nella barra delle informazioni."
+
+msgid "Eventname Fontsize"
+msgstr "Dimensione carattere nome evento"
+
+msgid "Choose the font size of eventname."
+msgstr "Scegliere la dimensione carattere nome evento."
+
+msgid "Eventname effect"
+msgstr "Effetto nome evento"
+
+msgid "Choose from different effects to display eventname."
+msgstr "Scegli tra diversi effetti per visualizzare il nome eventi."
+
+msgid "INFOBAR-CONTENTS _____________________________________________________________"
+msgstr "SOMMARIO INFOBAR _____________________________________________________________"
+
+msgid "This sections offers all settings for infobar-contents."
+msgstr "Questa sezione offre tutte le impostazioni dei contenuti della barra informazioni"
+
+msgid "Tuner number"
+msgstr "Numero TUNER"
+
+msgid "Choose from different options to display tuner."
+msgstr "Scegliere tra diverse opzioni per visualizzare il Tuner."
+
+msgid "Record-State"
+msgstr "Stato registrazione"
+
+msgid "Choose from different options to display recording state."
+msgstr "Scegliere tra le diverse opzioni per visualizzare lo stato di registrazione."
+
+msgid "Infobox-Contents"
+msgstr "Contenuti Infobox"
+
+msgid "Choose which informations will be shown in the info box."
+msgstr "Scegliere quali informazioni verranno mostrate nella finestra info."
+
+msgid "Channelname/-number"
+msgstr "Nome canale / Numero"
+
+msgid "Choose from different options to show the channel name and number in the infobar."
+msgstr ""
+"Scegliere tra diverse opzioni per visualizzare il nome e numero del canale nella barra "
+"informazioni."
+
+msgid "Channelname/-number-Font"
+msgstr "Nome canale / Carattere Numero "
+
+msgid ""
+"Choose the font color of channel name and number. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere del nome e numero del canale . Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "System-Infos"
+msgstr "Informazioni di sistema"
+
+msgid ""
+"Choose from different additional windows with system informations or deactivate them "
+"completely."
+msgstr ""
+"Scegliere tra diverse finestre aggiuntive con informazioni di sistema o disattivarle "
+"completamente."
+
+msgid "SECONDINFOBAR _____________________________________________________________"
+msgstr "SECONDA INFOBAR ___________________________________________________________"
+
+msgid "This sections offers all settings for SecondInfobar."
+msgstr "Questa sezione offre tutte le impostazioni per la ll infobar"
+
+msgid "SecondInfobar-Style"
+msgstr "Stile seconda infobar"
+
+msgid "Choose from different styles for SecondInfobar."
+msgstr "Scegliere tra stili diversi per SecondInfobar."
+
+msgid "SecondInfobar Fontsize"
+msgstr "Dimensione carattere seconda infobar"
+
+msgid "Choose the font size of SecondInfobar."
+msgstr "Scegliere la dimensione carattere della seconda Infobar."
+
+msgid "WEATHER ___________________________________________________________________"
+msgstr "METEO______________________________________________________________________"
+
+msgid "This sections offers all weather settings."
+msgstr "Questa sezione offre tutte le impostazioni Meteo."
+
+msgid "Choose from different options to show the weather in the infobar."
+msgstr "Scegliere tra le diverse opzioni per visualizzare il meteo nella barra informazioni."
+
+msgid "Activate or deactivate displaying the weather in the infobar."
+msgstr "Attivare o disattivare la visualizzazione del meteo nella barra informazioni."
+
+msgid "Search by"
+msgstr "Cerca per:"
+
+msgid "Choose from different options to specify your location."
+msgstr "Scegliere tra le diverse opzioni per specificare la posizione."
+
+msgid ""
+"Specify any search string for your location (zip/city/district/state single or combined). "
+"Press OK to use the virtual keyboard. Step up or down in the menu to start the search."
+msgstr ""
+"Specificare qualsiasi stringa di ricerca per la località (zip / città / quartiere / città "
+"singolo o combinato). Premere OK per utilizzare la tastiera virtuale. Passo su/giù nel "
+"menu per avviare la ricerca."
+
+msgid ""
+"Specify the GM code for your location. You can find it at https://weather.codes. Press OK "
+"to use the virtual keyboard. Step up or down in the menu to start the search."
+msgstr ""
+"Specificare il codice GM per la vostra località. Lo si può trovare a https://weather."
+"codes. Premere OK per utilizzare la tastiera virtuale. Passo su/giù nel menu per avviare "
+"la ricerca."
+
+msgid "Server"
+msgstr "Server"
+
+msgid "Choose from different servers for the weather data."
+msgstr "Scegliere tra diversi server per i dati meteo."
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "Specify the language for the weather output."
+msgstr "Specificare la lingua per le previsioni meteo."
+
+msgid "Refresh interval (in minutes)"
+msgstr "Intervallo aggiornamento (in minuti)"
+
+msgid "Choose the frequency of loading weather data from the internet."
+msgstr "Scegliere la frequenza di caricamento dati meteo da internet."
+
+msgid "Weather-Style"
+msgstr "Stile Meteo"
+
+msgid "Choose between graphical weather symbols and Meteo symbols."
+msgstr "Scegliere tra simboli grafici meteo e simboli Meteo."
+
+msgid "Meteo-Color"
+msgstr "Colore Meteo"
+
+msgid "Choose between light and dark Meteo symbols."
+msgstr "Scegliere tra le icone chiare/scure meteo."
+
+msgid "You have no internet connection. This function is disabled."
+msgstr "Non si dispone di alcuna connessione a internet. Questa funzione è disabilitata."
+
+msgid "CLOCK _____________________________________________________________________"
+msgstr "OROLOGIO"
+
+msgid "This sections offers all settings for the different clocks."
+msgstr "Questa sezione offre tutte le impostazioni per differenti orologi."
+
+msgid "Clock-Style"
+msgstr "Stile Orologio"
+
+msgid "Choose from different options to show the clock in the infobar."
+msgstr ""
+"Scegliere tra le diverse opzioni per visualizzare l'orologio nella barra informazioni."
+
+msgid "Analog-Clock-Color"
+msgstr "Colore Orologio Analogico"
+
+msgid "Choose from different colors for the analog type clock in the infobar."
+msgstr ""
+"Scegliere tra i diversi colori per l'orologio analogico nella barra delle informazioni."
+
+msgid "Android-Temp-Color"
+msgstr "Colore Temperatura Android "
+
+msgid ""
+"Choose the font color of android-clock temperature. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere di android-orologio- temperatura. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "Weather-Icon-Size"
+msgstr "Dimensioni icona meteo"
+
+msgid "Choose the size of the icon for 'weather icon' clock."
+msgstr "Scegliere le dimensioni icona per orologio 'icona meteo'."
+
+msgid "ECM INFOS _________________________________________________________________"
+msgstr "INFO ECM  _________________________________________________________________"
+
+msgid "This sections offers all settings for showing the decryption infos."
+msgstr ""
+"Questa sezione offre tutte le impostazioni per visualizzare le info di decrittografia."
+
+msgid "Show ECM Infos"
+msgstr "Visualizza informazioni ECM"
+
+msgid "Choose from different options where to display the ECM informations."
+msgstr "Scegliere tra diverse opzioni dove poter visualizzare le informazioni ECM."
+
+msgid "ECM Infos"
+msgstr "Informazioni ECM"
+
+msgid "Choose from different options to display the ECM informations."
+msgstr "Scegliere tra diverse opzioni per visualizzare le informazioni ECM."
+
+msgid "Show 'free to air'"
+msgstr "Visualizza 'free to air'"
+
+msgid "Choose whether 'free to air' is displayed or not for unencrypted channels."
+msgstr "Scegliere se visualizzare 'free to air' per canali non crittografati."
+
+msgid "ECM-Font"
+msgstr "Carattere ECM"
+
+msgid "Choose the font color of the ECM information. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere delle informazioni ECM. Premere OK per definire il proprio "
+"colore RGB."
+
+msgid "VIEWS _____________________________________________________________________"
+msgstr "Visualizza"
+
+msgid "This sections offers all settings for skinned plugins."
+msgstr "Questa sezione offre tutte le impostazioni per Skin Plugin."
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Choose from different styles for the volume display."
+msgstr "Scegliere tra stili diversi per la visualizzazione del volume."
+
+msgid "CoolTVGuide"
+msgstr "CoolTVGuide"
+
+msgid "Choose from different styles for CoolTVGuide."
+msgstr "Scegliere tra stili diversi per CoolTVGuide."
+
+msgid "SerienRecorder"
+msgstr "SerienRecorder"
+
+msgid ""
+"Choose whether you want the Kraven skin to be applied to 'Serienrecorder' or not. "
+"Activation of this option prohibits the skin selection in the SR-plugin."
+msgstr ""
+"Scegliere se applicare la Skin Kraven a 'Serienrecorder'. L'attivazione di questa opzione "
+"impedisce la selezione della Skin nel SR-plugin."
+
+msgid "MediaPortal"
+msgstr "MediaPortal"
+
+msgid ""
+"Choose whether you want the Kraven skin to be applied to 'MediaPortal' or not. To remove "
+"it again, you must deactivate it here and activate another skin in 'MediaPortal'."
+msgstr ""
+"Scegliere se applicare la Skin Kraven a 'MediaPortal'. Per rimuoverla, è necessario "
+"disattivarla e attivare un'altra Skin in 'MediaPortal'."
+
+msgid "SplitScreen"
+msgstr "Finestra divisa"
+
+msgid "Choose from different styles to display SplitScreen."
+msgstr "Scegliere tra stili diversi per schermo diviso."
+
+msgid "PERMANENTCLOCK __________________________________________________________"
+msgstr "OROLOGIO PERMANENTE ____________________________________________________"
+
+msgid "This sections offers all settings for PermanentClock."
+msgstr "Questa sezione offre tutte le impostazioni PermanentClock."
+
+msgid "PermanentClock-Color"
+msgstr "Colore orologio permanente"
+
+msgid "Choose the colors of PermanentClock."
+msgstr "Scegliere i colori di PermanentClock."
+
+msgid "PermanentClock-Font"
+msgstr "Carattere orologio permanente"
+
+msgid "Choose the font color of PermanentClock. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere per PermanentClock. Premere OK per definire il proprio "
+"colore RGB."
+
+msgid "CHANNELLIST _______________________________________________________________"
+msgstr "LISTA CANALI __________________________________________________________"
+
+msgid "This sections offers all channellist settings."
+msgstr "Questa sezione offre tutte le impostazioni liste canali."
+
+msgid "use alternative (horizontal) channellist"
+msgstr "uso alternativo lista canali (orizzontale)"
+
+msgid "Choose whether use alternative horizontal channellist or not."
+msgstr "Scegliere se usare o no in alternativo la lista canali orizzontale."
+
+msgid "Channellist-Style"
+msgstr "Stile lista canali"
+
+msgid "Choose from different styles for the channel selection screen."
+msgstr "Scegliere tra stili diversi per la schermata di selezione del canale."
+
+msgid "Channellist-Mode"
+msgstr "Modalità lista canali"
+
+msgid "Choose between direct zapping (1xOK) and zapping after preview (2xOK)."
+msgstr "Scegliere tra zap diretto (1xOK) e zap dopo l'anteprima (2xOK)."
+
+msgid "Channellist-Transparenz"
+msgstr "Trasparenza lista canali"
+
+msgid "Choose the degree of background transparency for the channellists."
+msgstr "Scegliere il grado di trasparenza di sfondo per le liste canali."
+
+msgid "Servicenumber/-name Fontsize"
+msgstr "Nome dimensione carattere / Numero canale"
+
+msgid "Choose the font size of channelnumber and channelname."
+msgstr "Scegliere la dimensione carattere del numero e nome canale."
+
+msgid "Serviceinfo Fontsize"
+msgstr "Dimensione carattere ServiceInfo"
+
+msgid "Choose the font size of serviceinformation."
+msgstr "Scegliere la dimensione carattere di informazione servizio."
+
+msgid "EPG Fontsize"
+msgstr "Dimensione del Carattere"
+
+msgid "Choose the font size of event description, EPG list and primetime."
+msgstr "Scegliere la dimensione carattere descrizione evento, elenco EPG e primaserata."
+
+msgid "Choose the font size of EPG list and primetime."
+msgstr "Scegliere la dimensione del carattere della lista EPG e primaserata."
+
+msgid "show Picons in channellist"
+msgstr "Visualizza Picons in lista canali"
+
+msgid "Choose whether picons are shown in channellist or not."
+msgstr "Scegliere se mostrare i picons in elenco canali."
+
+msgid "'Not available'-Font"
+msgstr "Carattere 'non disponibile'"
+
+msgid ""
+"Choose the font color of channels that are unavailable at the moment. Press OK to define "
+"your own RGB color."
+msgstr ""
+"Scegliere il colore carattere dei canali momentaneamente non disponibili. Premere OK per "
+"definire il proprio colore RGB."
+
+msgid "Primetime"
+msgstr "Prima serata"
+
+msgid "Choose whether primetime program information is displayed or not."
+msgstr "Scegliere se mostrare le informazioni sul programma di prima serata."
+
+msgid "Primetime-Time"
+msgstr "Orario prima serata"
+
+msgid "Specify the time for your primetime."
+msgstr "Specificare l'orario per prima serata."
+
+msgid "Primetime-Font"
+msgstr "Carattere prima serata"
+
+msgid ""
+"Choose the font color of the primetime information. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore carattere delle informazioni prima serata. Premere OK per definire il "
+"proprio colore RGB."
+
+msgid "NUMBERZAP ________________________________________________________________"
+msgstr "NUMERI ZAP ________________________________________________________________"
+
+msgid "This sections offers all settings for NumberZap."
+msgstr "Questa sezione offre tutte le impostazioni per NumberZap."
+
+msgid "NumberZap-Style"
+msgstr "Stile numeri zap"
+
+msgid "Choose from different styles for NumberZap."
+msgstr "Scegliere tra stili diversi per NumberZap."
+
+msgid "Border Color"
+msgstr "Colore Bordo"
+
+msgid "Choose the border color for NumberZap. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore bordo per NumberZap. Premere OK per definire il proprio colore RGB."
+
+msgid "EPGSELECTION ____________________________________________________________"
+msgstr "SELEZIONE EPG ____________________________________________________________"
+
+msgid "This sections offers all settings for EPGSelection."
+msgstr "Questa sezione offre tutte le impostazioni EPGSelection."
+
+msgid "EPGSelection-Style"
+msgstr "Stile selezione EPG"
+
+msgid "Choose from different styles to display EPGSelection."
+msgstr "Scegliere tra stili diversi per visualizzare EPGSelection."
+
+msgid "EPG-List Fontsize"
+msgstr "Dimensione carattere lista EPG"
+
+msgid "Choose the font size of EPG-List."
+msgstr "Scegliere la dimensione carattere della lista EPG."
+
+msgid "Choose the font size of event description."
+msgstr "Scegliere la dimensione carattere della descrizione evento."
+
+msgid "GRAPHMULTIEPG ___________________________________________________________"
+msgstr "MULTIEPG GRAFICO ________________________________________________________"
+
+msgid "This sections offers all settings for GraphMultiEPG."
+msgstr "Questa sezione offre tutte le impostazioni GraphMultiEPG."
+
+msgid "GraphMultiEPG-Style"
+msgstr "Stile GraphMultiEPG"
+
+msgid "Choose from different styles for GraphMultiEPG."
+msgstr "Scegliere tra stili diversi per GraphMultiEPG."
+
+msgid "Event Description Fontsize"
+msgstr "Dimensione carattere descrizione eventi"
+
+msgid "Choose the border color for GraphMultiEPG. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore bordo per GraphMultiEPG. Premere OK per definire il proprio colore RGB."
+
+msgid "Selected Event Background"
+msgstr "Sfondo selezione eventi"
+
+msgid ""
+"Choose the background color of selected events for GraphMultiEPG. Press OK to define your "
+"own RGB color."
+msgstr ""
+"Scegliere il colore sfondo degli eventi selezionati per GraphMultiEPG. Premere OK per "
+"definire il proprio colore RGB."
+
+msgid "GRAPHICALEPG _____________________________________________________________"
+msgstr "EPG GRAFICO________________________________________________________________"
+
+msgid "This sections offers all settings for GraphicalEPG."
+msgstr "Questa sezione offre tutte le impostazioni GraphicalEPG."
+
+msgid "GraphicalEPG-Style"
+msgstr "Stile EPG grafico"
+
+msgid "Choose from different styles for GraphicalEPG."
+msgstr "Scegliere tra stili diversi per GraphicalEPG."
+
+msgid "Choose the border color for GraphicalEPG. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore bordo per GraphicalEPG. Premere OK per definire il proprio colore RGB."
+
+msgid ""
+"Choose the background color of selected events for GraphicalEPG. Press OK to define your "
+"own RGB color."
+msgstr ""
+"Scegliere il colore sfondo degli eventi selezionati GraphicalEPG. Premere OK per definire "
+"il proprio colore RGB."
+
+msgid "VERTICALEPG ______________________________________________________________"
+msgstr "EPG VERTICALE _____________________________________________________________"
+
+msgid "This sections offers all settings for VerticalEPG."
+msgstr "Questa sezione offre tutte le impostazioni EPG verticale"
+
+msgid "VerticalEPG-Style"
+msgstr "Stile EPG verticale"
+
+msgid "Choose from different styles for VerticalEPG."
+msgstr "Scegliere tra stili diversi per VerticalEPG."
+
+msgid "Choose the border color for VerticalEPG. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore bordo per VerticalEPG. Premere OK per definire il proprio colore RGB."
+
+msgid "TIMEREDITSCREEN ___________________________________________________________"
+msgstr "SCHERMATA MODIFICA TIMER ______________________________________________"
+
+msgid "This sections offers all settings for TimerEditScreen."
+msgstr "Questa sezione offre tutte le impostazioni TimerEditScreen."
+
+msgid "TimerEdit-Style"
+msgstr "Stile TimerEdit"
+
+msgid "Choose from different styles to display TimerEditScreen."
+msgstr "Scegliere tra stili diversi per visualizzare TimerEditScreen."
+
+msgid "TimerList-Style"
+msgstr "Stile TimerList"
+
+msgid "Choose from different styles to display TimerList."
+msgstr "Scegliere tra stili diversi per visualizzare TimerList."
+
+msgid "ENHANCED MOVIE CENTER _____________________________________________________"
+msgstr "MOVIE CENTER AVANZATO_____________________________________________________"
+
+msgid "This sections offers all settings for EMC ('EnhancedMovieCenter')."
+msgstr "Questa sezione offre tutte le impostazioni per EMC ('EnhancedMovieCenter')."
+
+msgid "EMC-Style"
+msgstr "Stile EMC"
+
+msgid "Choose from different styles for EnhancedMovieCenter."
+msgstr "Scegliere tra stili diversi per EnhancedMovieCenter."
+
+msgid "Custom EMC-Selection-Colors"
+msgstr "Selezione colori EMC personalizzata"
+
+msgid "Choose whether you want to customize the selection-colors for EnhancedMovieCenter."
+msgstr ""
+"Scegliere se si desidera personalizzare i colori di selezione per EnhancedMovieCenter."
+
+msgid "EMC-Listselection"
+msgstr "Lista selezione EMC"
+
+msgid ""
+"Choose the background color of selection bars for EnhancedMovieCenter. Press OK to define "
+"your own RGB color."
+msgstr "Scegliere il colore sfondo delle barre di selezione per EnhancedMovieCenter ."
+
+msgid "EMC-Selection-Font"
+msgstr "Carattere selezione EMC"
+
+msgid ""
+"Choose the color of the font in selection bars for EnhancedMovieCenter. Press OK to define "
+"your own RGB color."
+msgstr ""
+"Scegliere il colore carattere nella barra di selezione per EnhancedMovieCenter. Premere OK "
+"per definire il proprio colore RGB."
+
+msgid "MOVIESELECTION ____________________________________________________________"
+msgstr "SELEZIONE MOVIE ____________________________________________________________"
+
+msgid "This sections offers all settings for MovieSelection."
+msgstr "Questa sezione offre tutte le impostazioni MovieSelection."
+
+msgid "MovieSelection-Style"
+msgstr "Stile selezione movie"
+
+msgid "Choose from different styles for MovieSelection."
+msgstr "Scegliere tra stili diversi per MovieSelection."
+
+msgid "Unwatched Color"
+msgstr "Colori non visti"
+
+msgid "Choose the font color of unwatched movies. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere dei film non visti. Premere OK per definire il proprio "
+"colore RGB."
+
+msgid "Watching Color"
+msgstr "Colori visualizzati"
+
+msgid "Choose the font color of watching movies. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere dei film da vedere. Premere OK per definire il proprio "
+"colore RGB."
+
+msgid "Finished Color"
+msgstr "Colore finito"
+
+msgid "Choose the font color of watched movies. Press OK to define your own RGB color."
+msgstr ""
+"Scegliere il colore del carattere dei film visti. Premere OK per definire il proprio "
+"colore RGB."
+
+msgid "PLAYER ____________________________________________________________________"
+msgstr "PLAYER ____________________________________________________________________"
+
+msgid "This sections offers all settings for the movie players."
+msgstr "Questa sezione offre tutte le impostazioni Movie Players."
+
+msgid "Clock"
+msgstr "Orologio"
+
+msgid "Choose from different options to show the clock in the players."
+msgstr "Scegliere tra diverse opzioni per visualizzare l'orologio nel Player."
+
+msgid "PVRState"
+msgstr "Stato PVR"
+
+msgid "Choose from different options to display the PVR state."
+msgstr "Scegliere tra le diverse opzioni per visualizzare lo stato del PVR."
+
+msgid ""
+"ANTIALIASING BRIGHTNESS ________________________________________________________________"
+msgstr ""
+"ANTIALIASING LUMINOSITÀ ________________________________________________________________"
+
+msgid ""
+"This sections offers all antialiasing settings. Distortions or color frames around fonts "
+"can be reduced by this settings."
+msgstr ""
+"Questa sezione offre le impostazioni antialiasing. Distorsioni intorno ai caratteri etc. "
+"possono essere ridotte con questa impostazione."
+
+msgid ""
+"Reduce distortions (faint/blurry) or color frames around fonts in the infobar and widgets "
+"by adjusting the antialiasing brightness."
+msgstr ""
+"Ridurre le distorsioni (debole / sfocata) o frames di colore attorno ai caratteri nella "
+"barra info /widget regolando la luminosità antialiasing."
+
+msgid ""
+"Reduce distortions (faint/blurry) or color frames around the ECM information in the "
+"infobar by adjusting the antialiasing brightness."
+msgstr ""
+"Ridurre le distorsioni (debole / sfocata) o frames di colore attorno alle informazioni ECM "
+"della barra info regolando la luminosità antialiasing."
+
+msgid "Screens"
+msgstr "Schermi"
+
+msgid ""
+"Reduce distortions (faint/blurry) or color frames around fonts at top and bottom of "
+"screens by adjusting the antialiasing brightness."
+msgstr ""
+"Ridurre le distorsioni (debole / sfocata) o frames di colore attorno ai caratteri nella "
+"parte superiore /inferiore schermo regolando la luminosità antialiasing."
+
+msgid "DEBUG _____________________________________________________________________"
+msgstr "DEBUG _____________________________________________________________________"
+
+msgid "This sections offers all debug settings."
+msgstr "Questa sezione offre tutte le impostazioni di debug."
+
+msgid "Screennames"
+msgstr "Nome Screen"
+
+msgid "Activate or deactivate small screen names for debugging purposes."
+msgstr "Attivare o disattivare i nomi nello schermo piccolo per scopi di debug."
+
+msgid "debug"
+msgstr "debug"
+
+msgid "profiles"
+msgstr "profili"
+
+msgid "about"
+msgstr "su di noi"
+
+msgid "system"
+msgstr "sistema"
+
+msgid "global colors"
+msgstr "colori globali"
+
+msgid "infobar-look"
+msgstr "aspetto barra informazioni"
+
+msgid "infobar-contents"
+msgstr "contenuto infobar"
+
+msgid "weather"
+msgstr "meteo"
+
+msgid "ECM infos"
+msgstr "Informazioni ECM"
+
+msgid "clock"
+msgstr "orologio"
+
+msgid "views"
+msgstr "visualizza"
+
+msgid "PermanentClock"
+msgstr "Orologio permanente"
+
+msgid "channellist"
+msgstr "lista canali"
+
+msgid "NumberZap"
+msgstr "NumberZap"
+
+msgid "EPGSelection"
+msgstr "Selezione EPG"
+
+msgid "GraphEPG"
+msgstr "GraphEPG"
+
+msgid "VerticalEPG"
+msgstr "EPG Verticale"
+
+msgid "TimerEditScreen"
+msgstr "TimerEditScreen"
+
+msgid "EMC"
+msgstr "EMC"
+
+msgid "MovieSelection"
+msgstr "MovieSelection"
+
+msgid "player"
+msgstr "player"
+
+msgid "antialiasing"
+msgstr "antigradinatura"
+
+msgid "Off"
+msgstr "OFF (Spento)"
+
+msgid "On"
+msgstr "ON (Acceso)"
+
+msgid "RTL"
+msgstr "RTL"
+
+msgid "5 - RTL"
+msgstr "5 - RTL"
+
+msgid "free to air"
+msgstr "free to air"
+
+msgid ""
+"description - 19 Pixel \n"
+"EPG list - 18 Pixel \n"
+"primetime - 18 Pixel"
+msgstr ""
+"Descrizione - 19 Pixel \n"
+"Lista EPG - 18 Pixel \n"
+"Primaserata - 18 Pixel"
+
+msgid ""
+"description - 22 Pixel \n"
+"EPG list - 20 Pixel \n"
+"primetime - 20 Pixel"
+msgstr ""
+"Descrizione - 22 Pixel \n"
+"Lista EPG - 20 Pixel \n"
+"Primaserata - 20 Pixel"
+
+msgid ""
+"EPG list - 22 Pixel \n"
+"primetime - 22 Pixel"
+msgstr ""
+"Lista EPG - 22 Pixel \n"
+"Primaserata - 22 Pixel"
+
+msgid ""
+"EPG list - 24 Pixel \n"
+"primetime - 24 Pixel"
+msgstr ""
+"Lista EPG - 24 Pixel \n"
+"Primaserata - 24 Pixel"
+
+msgid ""
+"description - 22 Pixel \n"
+"EPG list - 22 Pixel \n"
+"primetime - 22 Pixel"
+msgstr ""
+"Descrizione - 22 Pixel \n"
+"Lista EPG - 22 Pixel \n"
+"Primaserata - 22 Pixel"
+
+msgid ""
+"description - 24 Pixel \n"
+"EPG list - 24 Pixel \n"
+"primetime - 24 Pixel"
+msgstr ""
+"Descrizione - 24 Pixel \n"
+"Lista EPG - 24 Pixel \n"
+"Primaserata - 24 Pixel"
+
+msgid "22 Pixel"
+msgstr "22 Pixel"
+
+msgid "24 Pixel"
+msgstr "24 Pixel"
+
+msgid "26 Pixel"
+msgstr "26 Pixel"
+
+msgid "30 Pixel"
+msgstr "30 Pixel"
+
+msgid "96 Pixel"
+msgstr "96 Pixel"
+
+msgid "128 Pixel"
+msgstr "128 Pixel"
+
+msgid ""
+"Infobar & \n"
+"SecondInfobar"
+msgstr ""
+"Infobar & \n"
+"Seconda Infobar"
+
+msgid "Use the sliders to define your color:"
+msgstr "Utilizzare i cursori per definire il colore:"
+
+msgid "Enter the city name of your location:"
+msgstr "Inserisci qui il nome della tua località:"
+
+msgid "Enter the GM code for your location:"
+msgstr "Immettere il codice GM per la tua località:"
+
+msgid "Do you really want to reboot now?"
+msgstr "Riavviare ora?"
+
+msgid "Restart GUI"
+msgstr "Riavviare la GUI"
+
+msgid ""
+"GUI needs a restart to apply a new skin.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"L'attivazione della skin richiede il riavvio della GUI.\n"
+"Riavviare ora?"
+
+msgid "Do you really want to exit without saving?"
+msgstr "Uscire senza salvare?"
+
+msgid "Do you really want to reset all values to the selected default profile?"
+msgstr "Ripristinare le impostazioni predefinite?"
+
+msgid "Reset profile"
+msgstr "Reimpostare il profilo"
+
+msgid "Profile "
+msgstr "Profilo"
+
+msgid " saved successfully."
+msgstr "salvato con successo."
+
+msgid " could not be saved!"
+msgstr "impossibile salvare"
+
+msgid "No data for IP"
+msgstr "nessun dato per IP"
+
+msgid ""
+"\n"
+"\n"
+"No data for search string,\n"
+"fallback to IP"
+msgstr ""
+"\n"
+"\n"
+"Nessun dato per stringa di ricerca,\n"
+"Ripiego su IP"
+
+msgid ""
+"\n"
+"\n"
+"No data for GM code,\n"
+"fallback to IP"
+msgstr ""
+"\n"
+"\n"
+"Nessun dato per GM-Code,\n"
+"Ripiego su IP"
