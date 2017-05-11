@@ -1,4 +1,4 @@
-  <!-- /* Main -->
+﻿  <!-- /* Main -->
   <!-- ********** Screens ********** -->
   <screen name="AtileHD_Config" position="0,0" size="1280,720" title="KravenVB Setup" backgroundColor="Kravenbg3" flags="wfNoBorder">
     <eLabel text="KravenVB" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
@@ -1598,8 +1598,8 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
   <!-- MessageBoxSimple -->
   <screen name="MessageBoxSimple" flags="wfNoBorder" position="240,177" size="800,10" zPosition="1" title="Message" backgroundColor="Kravenbg">
     <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" position="13,4" render="Label" size="514,28" source="Title" transparent="1" zPosition="1" />
-    <widget name="text" position="94,49" size="680,0" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" />
-    <widget name="ErrorPixmap" pixmap="KravenVB/global-icons/attention.png" position="20,50" size="53,53" alphatest="blend" />
+    <widget name="text" position="130,58" size="680,0" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" />
+    <widget name="ErrorPixmap" pixmap="KravenVB/global-icons/attention.png" position="24,50" size="53,53" alphatest="blend" />
     <widget name="QuestionPixmap" pixmap="KravenVB/global-icons/question.png" position="20,50" size="53,53" alphatest="blend" />
     <widget name="InfoPixmap" pixmap="KravenVB/global-icons/info.png" position="20,50" size="53,53" alphatest="blend" />
     <widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="13,136" size="760,300" transparent="1" />
@@ -1610,7 +1610,7 @@ orgwidth = self.instance.size().width()
 orgpos = self.instance.position()
 textsize = self["text"].getSize()
 
-textsize = (textsize[0] + 60,textsize[1] + 60)
+textsize = (textsize[0] + 100,textsize[1] + 100)
 offset = 30
 if self.type == self.TYPE_YESNO:
 	offset = 107
@@ -1627,8 +1627,8 @@ self.instance.resize(eSize(*wsize))
 self["text"].instance.resize(eSize(*textsize))
 
 # move list
-listsize = (wsizex - 27, 64)
-self["list"].instance.move(ePoint(13,textsize[1] + 40))
+listsize = (wsizex - 27, 164)
+self["list"].instance.move(ePoint(13,textsize[1] - 20))
 self["list"].instance.resize(eSize(*listsize))
 
 # center window
