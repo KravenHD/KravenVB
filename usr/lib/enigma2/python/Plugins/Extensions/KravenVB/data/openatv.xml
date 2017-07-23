@@ -344,8 +344,8 @@
   <!-- HdmiCECSetupScreen -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="HdmiCECSetupScreen" position="0,0" size="1280,720" title="HDMI CEC setup">
     <widget name="config" itemHeight="30" font="Regular;22" position="70,80" size="708,480" scrollbarMode="showOnDemand" transparent="1" zPosition="2" foregroundColor="KravenFont1" />
-    <widget source="current_address" render="Label" position="161,585" size="500,27" zPosition="10" font="Regular2;22" halign="center" valign="center" backgroundColor="Kravenbg3" transparent="1" foregroundColor="KravenFont2" />
-    <widget source="fixed_address" render="Label" position="161,585" size="500,27" zPosition="10" font="Regular2;22" halign="center" valign="center" backgroundColor="Kravenbg3" transparent="1" foregroundColor="KravenFont2" />
+    <widget source="current_address" render="Label" position="161,545" size="500,27" zPosition="10" font="Regular2;22" halign="center" valign="center" backgroundColor="Kravenbg3" transparent="1" foregroundColor="KravenFont2" />
+    <widget source="fixed_address" render="Label" position="161,580" size="500,27" zPosition="10" font="Regular2;22" halign="center" valign="center" backgroundColor="Kravenbg3" transparent="1" foregroundColor="KravenFont2" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
