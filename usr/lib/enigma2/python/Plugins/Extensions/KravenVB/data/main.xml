@@ -1820,7 +1820,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
   <!-- ********** Audio and Video  ********** -->
   <!-- VideoFinetune -->
   <screen name="VideoFinetune" position="0,0" size="1280,720" backgroundColor="Kravenbg" flags="wfNoBorder">
-	<widget source="Canvas" render="Canvas" position="280,70" size="720,576" />
+	<widget source="Canvas" render="Canvas" position="142,74" size="998,576" />
 	<eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
   </screen>
   <!-- AudioSelection -->
