@@ -697,6 +697,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
+	<constant-widget name="NameRedGreenYellowBlue"/>
     <constant-widget name="OKExit"/>
     <!--<text="LanguageSelection" position="70,0" />-->
   </screen>
