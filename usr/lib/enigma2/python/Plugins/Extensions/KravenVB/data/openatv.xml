@@ -1163,7 +1163,9 @@
   </screen>
   <!-- CronManager -->
   <screen flags="wfNoBorder" name="CronManager" position="0,0" size="1280,720" title="CronManager" backgroundColor="Kravenbg3">
-    <widget backgroundColor="Kravenbg3" name="showjobs" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="list" render="Listbox" position="70,120" size="708,450" scrollbarMode="showOnDemand" transparent="1" >
+      <convert type="StringList" />
+    </widget>
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
