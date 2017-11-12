@@ -58,7 +58,7 @@
     <eLabel backgroundColor="KravenLine" position="210,670" size="858,1" zPosition="-1" />
     <eLabel backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="852,677" size="120,30" text="läuft bis " transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1" />
     <widget source="session.CurrentService" render="Label" position="973,678" size="55,30" font="Regular;20" halign="right" valign="center" backgroundColor="KravenIBbg" transparent="1" zPosition="1" text="13:45" foregroundColor="KravenIBFont1">
-      <convert type="ServicePosition">EndTime,ShowNoSeconds</convert>
+      <convert type="KravenVBServiceEndTime">EndTime</convert>
     </widget>
     <eLabel backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="1028,677" size="40,30" text="Uhr" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1" />
     <widget source="session.CurrentService" render="Picon" alphatest="blend" position="25,618" size="160,96" transparent="1" zPosition="1">
