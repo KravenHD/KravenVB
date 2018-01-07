@@ -259,8 +259,7 @@ for i in range(1,21):
 		profList.append((n,_(name)))
 config.plugins.KravenVB.defaultProfile = ConfigSelection(default="default", choices = profList)
 				
-config.plugins.KravenVB.refreshInterval = ConfigSelection(default="15", choices = [
-				("0", _("0")),
+config.plugins.KravenVB.refreshInterval = ConfigSelection(default="60", choices = [
 				("15", _("15")),
 				("30", _("30")),
 				("60", _("60")),
@@ -532,7 +531,8 @@ config.plugins.KravenVB.ChannelSelectionStyle = ConfigSelection(default="channel
 				("channelselection-style-nobile", _("Nobile")),
 				("channelselection-style-nobile2", _("Nobile 2")),
 				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
-				("channelselection-style-nobile-minitv3", _("Nobile Preview"))
+				("channelselection-style-nobile-minitv3", _("Nobile Preview")),
+				("channelselection-style-minitv-picon", _("MiniTV Picon"))
 				])
 
 config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channelselection-style-minitv", choices = [
@@ -552,7 +552,8 @@ config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channe
 				("channelselection-style-nobile2", _("Nobile 2")),
 				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
 				("channelselection-style-nobile-minitv3", _("Nobile Preview")),
-				("channelselection-style-nobile-minitv33", _("Nobile Extended Preview"))
+				("channelselection-style-nobile-minitv33", _("Nobile Extended Preview")),
+				("channelselection-style-minitv-picon", _("MiniTV Picon"))
 				])
 
 config.plugins.KravenVB.ChannelSelectionMode = ConfigSelection(default="zap", choices = [
@@ -742,6 +743,11 @@ config.plugins.KravenVB.RunningTextSpeed = ConfigSelection(default="steptime=100
 				("steptime=100", _("10 px/sec")),
 				("steptime=66", _("15 px/sec")),
 				("steptime=50", _("20 px/sec"))
+				])
+
+config.plugins.KravenVB.RunningTextRenderer = ConfigSelection(default="Kraven", choices = [
+				("vti", _("VTi")),
+				("kraven", _("Kraven"))
 				])
 
 config.plugins.KravenVB.ScrollBar = ConfigSelection(default="scrollbarWidth=0", choices = [
@@ -1196,7 +1202,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <widget backgroundColor="#00000000" name="config" font="Regular;22" foregroundColor="#00ffffff" itemHeight="30" position="70,85" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
   <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;36" foregroundColor="#00f0a30a" position="830,80" size="402,46" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00000000" text="Version: 6.3.1" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
+  <eLabel backgroundColor="#00000000" text="Version: 6.4.16" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
   <eLabel backgroundColor="#00f0a30a" position="847,208" size="368,2" />
   <eLabel backgroundColor="#00f0a30a" position="847,417" size="368,2" />
   <eLabel backgroundColor="#00f0a30a" position="845,208" size="2,211" />
@@ -1224,7 +1230,7 @@ class KravenVB(ConfigListScreen, Screen):
   </widget>
   <widget backgroundColor="#00000000" name="config" font="Regular;32" foregroundColor="#00ffffff" itemHeight="45" position="105,127" size="1062,810" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
   <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;54" foregroundColor="#00f0a30a" position="1245,120" size="603,69" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00000000" text="Version: 6.3.1" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
+  <eLabel backgroundColor="#00000000" text="Version: 6.4.16" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
   <eLabel backgroundColor="#00f0a30a" position="1313,337" size="466,3" />
   <eLabel backgroundColor="#00f0a30a" position="1313,599" size="466,3" />
   <eLabel backgroundColor="#00f0a30a" position="1313,340" size="3,259" />
@@ -1340,6 +1346,10 @@ class KravenVB(ConfigListScreen, Screen):
 		else:
 			emptyLines+=1
 		if self.E2DistroVersion == "VTi":
+			list.append(getConfigListEntry(_("Running Text Renderer"), config.plugins.KravenVB.RunningTextRenderer, _("Choose the version for running text renderer.")))
+		else:
+			emptyLines+=1
+		if self.E2DistroVersion == "VTi":
 			list.append(getConfigListEntry(_("Scrollbars"), config.plugins.KravenVB.ScrollBar, _("Choose the width of scrollbars in lists or deactivate scrollbars completely.")))
 		elif self.E2DistroVersion == "openatv":
 			list.append(getConfigListEntry(_("Scrollbars"), config.plugins.KravenVB.ScrollBar2, _("Choose whether scrollbars should be shown.")))
@@ -1354,7 +1364,7 @@ class KravenVB(ConfigListScreen, Screen):
 				list.append(getConfigListEntry(_("Menu-Transparency"), config.plugins.KravenVB.MenuColorTrans, _("Choose the degree of background transparency for system menu screens.")))
 			else:
 				emptyLines+=1
-			for i in range(emptyLines+3):
+			for i in range(emptyLines+2):
 				list.append(getConfigListEntry(_(" "), ))
 		else:
 			list.append(getConfigListEntry(_("Menus"), config.plugins.KravenVB.LogoNoInternet, _("Choose from different options to display the system menus. Press red button for the FAQs with details on installing menu icons.")))
@@ -1362,7 +1372,7 @@ class KravenVB(ConfigListScreen, Screen):
 				list.append(getConfigListEntry(_("Menu-Transparency"), config.plugins.KravenVB.MenuColorTrans, _("Choose the degree of background transparency for system menu screens.")))
 			else:
 				emptyLines+=1
-			for i in range(emptyLines+4):
+			for i in range(emptyLines+3):
 				list.append(getConfigListEntry(_(" "), ))
 		
 		# page 2
@@ -1612,11 +1622,11 @@ class KravenVB(ConfigListScreen, Screen):
 				else:
 					list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle, _("Choose from different styles for the channel selection screen.")))
 					self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
-				if self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv33"):
+				if self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv33","channelselection-style-minitv-picon"):
 					list.append(getConfigListEntry(_("Channellist-Mode"), config.plugins.KravenVB.ChannelSelectionMode, _("Choose between direct zapping (1xOK) and zapping after preview (2xOK).")))
 				else:
 					emptyLines+=1
-				if not self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv3","channelselection-style-minitv4","channelselection-style-minitv22","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3"):
+				if not self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv3","channelselection-style-minitv4","channelselection-style-minitv22","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-minitv-picon"):
 					list.append(getConfigListEntry(_("Channellist-Transparenz"), config.plugins.KravenVB.ChannelSelectionTrans, _("Choose the degree of background transparency for the channellists.")))
 				else:
 					emptyLines+=1
@@ -1664,11 +1674,11 @@ class KravenVB(ConfigListScreen, Screen):
 			else:
 				list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle, _("Choose from different styles for the channel selection screen.")))
 				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
-			if self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv33"):
+			if self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv33","channelselection-style-minitv-picon"):
 				list.append(getConfigListEntry(_("Channellist-Mode"), config.plugins.KravenVB.ChannelSelectionMode, _("Choose between direct zapping (1xOK) and zapping after preview (2xOK).")))
 			else:
 				emptyLines+=1
-			if not self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv3","channelselection-style-minitv4","channelselection-style-minitv22","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3"):
+			if not self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv3","channelselection-style-minitv4","channelselection-style-minitv22","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-minitv-picon"):
 				list.append(getConfigListEntry(_("Channellist-Transparenz"), config.plugins.KravenVB.ChannelSelectionTrans, _("Choose the degree of background transparency for the channellists.")))
 			else:
 				emptyLines+=1
@@ -2106,6 +2116,11 @@ class KravenVB(ConfigListScreen, Screen):
 				self.showText(48,_("runningtext"))
 			elif option.value == "typewriter":
 				self.showText(48,_("typewriter"))
+		elif option == config.plugins.KravenVB.RunningTextRenderer:
+			if option.value == "vti":
+				self.showText(36,_("VRunningText"))
+			elif option.value == "kraven":
+				self.showText(36,_("KravenVBRunningText"))
 		elif option == config.plugins.KravenVB.IBtop:
 			if option.value == "infobar-x2-z1_top":
 				self.showText(50,_("4 Tuner"))
@@ -2159,9 +2174,7 @@ class KravenVB(ConfigListScreen, Screen):
 		elif option == config.plugins.KravenVB.weather_language:
 			self.showText(60,option.value)
 		elif option == config.plugins.KravenVB.refreshInterval:
-			if option.value == "0":
-				self.showText(50,_("Off"))
-			elif option.value == "15":
+			if option.value == "15":
 				self.showText(50,"00:15")
 			elif option.value == "30":
 				self.showText(50,"00:30")
@@ -3375,6 +3388,13 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(['<constant-widget name="CSZZZEPG22"/>', '<constant-widget name="CSZZZEPG24"/>'])
 			elif config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "small":
 				self.skinSearchAndReplace.append(['<constant-widget name="CSZZZEPG22"/>', '<constant-widget name="CSZZZEPG22Prime"/>'])
+		elif self.actChannelselectionstyle == "channelselection-style-minitv-picon":
+			if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "big":
+				self.skinSearchAndReplace.append(['<constant-widget name="CSMTP22"/>', '<constant-widget name="CSMTP22Prime"/>'])
+			elif config.plugins.KravenVB.Primetimeavailable.value == "none" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "big":
+				self.skinSearchAndReplace.append(['<constant-widget name="CSMTP22"/>', '<constant-widget name="CSMTP24"/>'])
+			elif config.plugins.KravenVB.Primetimeavailable.value == "primetime-on" and config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "small":
+				self.skinSearchAndReplace.append(['<constant-widget name="CSMTP22"/>', '<constant-widget name="CSMTP24Prime"/>'])
 
 		### ChannelSelection horizontal Primetime
 		if self.E2DistroVersion == "VTi" and config.plugins.KravenVB.alternativeChannellist.value == "on" and config.plugins.KravenVB.ChannelSelectionHorStyle.value == "cshor-minitv" and config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
@@ -3532,6 +3552,11 @@ class KravenVB(ConfigListScreen, Screen):
 		self.skinSearchAndReplace.append(['name="KravenLine" value="#00ffffff', 'name="KravenLine" value="#00' + config.plugins.KravenVB.Line.value])
 
 		### Runningtext
+		if self.E2DistroVersion == "VTi":
+			if config.plugins.KravenVB.RunningTextRenderer.value == "vti":
+				self.skinSearchAndReplace.append(["KravenRunningText", "VRunningText"])
+			else:
+				self.skinSearchAndReplace.append(["KravenRunningText", "KravenVBRunningText"])
 		if config.plugins.KravenVB.RunningText.value == "none":
 			self.skinSearchAndReplace.append(["movetype=running", "movetype=none"])
 		if not config.plugins.KravenVB.RunningText.value == "none":
@@ -3758,7 +3783,7 @@ class KravenVB(ConfigListScreen, Screen):
 					else:
 						config.usage.servicelist_preview_mode.value = True
 						config.usage.servicelist_preview_mode.save()
-				elif self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv4","channelselection-style-nobile-minitv"):
+				elif self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-minitv-picon"):
 					config.usage.use_pig.value = True
 					config.usage.use_pig.save()
 					config.usage.use_extended_pig.value = False
@@ -3802,6 +3827,8 @@ class KravenVB(ConfigListScreen, Screen):
 		
 		### ChannelSelection - openatv
 		elif self.E2DistroVersion == "openatv":
+			config.usage.servicelist_mode.value = "standard"
+			config.usage.servicelist_mode.save()
 			self.skinSearchAndReplace.append(['name="giopet"', 'fieldMargins="15" nonplayableMargins="15" itemsDistances="8" progressBarWidth="70" progressPercentWidth="80" progressbarHeight="12"'])
 			if self.actChannelselectionstyle in ("channelselection-style-nopicon","channelselection-style-nopicon2","channelselection-style-xpicon","channelselection-style-zpicon","channelselection-style-zzpicon","channelselection-style-zzzpicon","channelselection-style-minitv3","channelselection-style-nobile-minitv3") or config.plugins.KravenVB.ChannelSelectionMode.value == "zap":
 				config.usage.servicelistpreview_mode.value = False
@@ -4122,10 +4149,7 @@ class KravenVB(ConfigListScreen, Screen):
 				self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle2.value
 		if self.actWeatherstyle != "netatmobar":
 			self.appendSkinFile(self.daten + self.actWeatherstyle + ".xml")
-		if self.actWeatherstyle == "none" and self.actClockstyle != "clock-android" and self.actClockstyle != "clock-weather" and config.plugins.KravenVB.SIB.value != "sib6" and config.plugins.KravenVB.SIB.value != "sib7" and config.plugins.KravenVB.PlayerClock.value != "player-android" and config.plugins.KravenVB.PlayerClock.value != "player-weather":
-			config.plugins.KravenVB.refreshInterval.value = "0"
-			config.plugins.KravenVB.refreshInterval.save()
-		elif config.plugins.KravenVB.refreshInterval.value == "0":
+		if config.plugins.KravenVB.refreshInterval.value == "0":
 			config.plugins.KravenVB.refreshInterval.value = config.plugins.KravenVB.refreshInterval.default
 			config.plugins.KravenVB.refreshInterval.save()
 
@@ -4741,7 +4765,10 @@ class KravenVB(ConfigListScreen, Screen):
 
 		### MediaPortal
 		console = eConsoleAppContainer()
+		console1 = eConsoleAppContainer()
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/plugin.py"):
+			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/haupt_Screen.xml"):
+				console1.execute("rm -r /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/")
 			if config.plugins.KravenVB.MediaPortal.value == "mediaportal":
 				if config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle.value == "icons-light" and config.plugins.KravenVB.IBStyle.value == "grad":
 					console.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
@@ -4895,8 +4922,8 @@ class KravenVB(ConfigListScreen, Screen):
 
 	def getInternetAvailable(self):
 		import ping
-		r = ping.doOne("8.8.8.8",0.5)
-		if r != None and r <= 0.5:
+		r = ping.doOne("8.8.8.8",1.5)
+		if r != None and r <= 1.5:
 			return True
 		else:
 			return False

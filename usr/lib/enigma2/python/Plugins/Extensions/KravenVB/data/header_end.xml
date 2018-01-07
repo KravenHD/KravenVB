@@ -281,32 +281,58 @@
 	
 	<constant-widget name="Webradio1">
 	  <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
-      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt2" position="70,80" size="708,27" transparent="1" valign="center" zPosition="3" />
+	  <widget name="dummy" position="3,35" zPosition="0" size="96,30" backgroundColor="Kravenbg" alphatest="blend" />
 	  <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" source="streamlist" render="Listbox" position="70,110" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,390" transparent="1" zPosition="2" >
 		<convert type="TemplatedMultiContent" transparent="0">
 			{"templates": 
-                               {"default": (30,[
-					MultiContentEntryPixmapAlphaTest(pos = (0, 2), size = (30, 30), png = 2), # index 2: picture
-					MultiContentEntryText(pos = (40, 3), size = (660, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
-					]),
-                               "info": (30,[
-					MultiContentEntryText(pos = (0, 3), size = (260, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 1: text
-					MultiContentEntryText(pos = (260, 3), size = (440, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
+                            {"default": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (5, 0), size = (30, 30), png = 2), # index 2: status-picture
+					MultiContentEntryText(pos = (40, 2), size = (535, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+	                MultiContentEntryPixmapAlphaTest(pos = (590, 0), size = (96, 30), png = 5), # index 5: stream-logo
+						]),
+                             "default_without_picon": (30,[
+					MultiContentEntryPixmapAlphaTest(pos = (5, 0), size = (30, 30), png = 2), # index 2: status-picture
+					MultiContentEntryText(pos = (40, 2), size = (535, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					],True),
+                             "info": (30,[
+					MultiContentEntryText(pos = (5, 2), size = (250, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), # index 0: text
+					MultiContentEntryText(pos = (260, 2), size = (430, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19 , text = 1)
 					],False),
-			"menus": (30,[
-					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
-					]),
-			"about": (30,[
-					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
+				             "menus": (30,[
+					MultiContentEntryText(pos = (5, 2), size = (680, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 1: text
+					],True),
+				             "about": (30,[
+					MultiContentEntryText(pos = (5, 2), size = (680, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, color=0xf47d19,color_sel=0xf47d19, border_width = 0, text = 0)
 					],False),
-			"genre": (30,[
-					MultiContentEntryText(pos = (0, 3), size = (700, 24), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
+				             "genre": (30,[
+					MultiContentEntryText(pos = (5, 2), size = (680, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, border_width = 0, text = 1)
 					])
-			},		
-			"fonts": [gFont("Regular", 22),gFont("Regular", 20)],
-			"itemHeight": 30,
-			
+				             }, "fonts": [gFont("Regular", 22),gFont("Regular", 22)],"itemHeight": 30
+			}
+		</convert>
+	  </widget>
+	  <widget source="rec_text_new" render="Listbox" position="70,80" size="708,28" zPosition="1" selectionDisabled="1" backgroundColor="Kravenbg" foregroundColor="KravenFont2" enableWrapAround="1" >
+		<convert type="TemplatedMultiContent">
+			{"templates": 
+                        {"default": (30,[
+					MultiContentEntryText(pos = (5, 0), size = (695, 28), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, color=0xB5B5B5, text = 0), # top-line over list 
+					],False),
+                        "cache": (30,[
+					MultiContentEntryText(pos = (35, 0), size = (655, 28), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, color=0x58B74, text = 0), #cache-info 
+					],False),
+			"record": (30,[
+					MultiContentEntryText(pos = (35, 0), size = (655, 28), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, color=0xFF4500, text = 0), # record-info
+					],False),
+			"timer": (30,[
+					MultiContentEntryText(pos = (35, 0), size = (555, 28), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, color=0xFFD800, text = 0), #record-timer-info
+					],False),
+
+			"titel": (30,[
+					MultiContentEntryText(pos = (5, 0), size = (695, 28), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, color=0xf47d19, text = 0), #for list-titles
+					],False),
+				},		
+			"fonts": [gFont("Regular2", 22)],
+			"itemHeight": 30
 			}
 		</convert>
 	  </widget>
@@ -324,7 +350,7 @@
 	
 	<constant-widget name="Webradio2">
       <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="left" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
+      <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="rec_txt" position="70,80" size="708,27" transparent="1" valign="center" zPosition="2" />
       <widget backgroundColor="Kravenbg" foregroundColor="KravenFont1" name="config" position="70,110" size="708,425" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="0" zPosition="3" />
       <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="playtext" position="70,545" size="708,81" transparent="1" valign="center" zPosition="2" />
       <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -1152,6 +1178,48 @@
       <widget backgroundColor="Kravenbg4" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="41,540" size="416,60" transparent="1" noWrap="1">
       </widget>
       <widget backgroundColor="Kravenbg4" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,600" size="416,30" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMTP22">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="42,215" size="468,270" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <eLabel position="42,499" size="468,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,514" size="468,108" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMTP22Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;22" position="42,215" size="468,270" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <eLabel position="42,499" size="468,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;22" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,514" size="468,81" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;22" source="ServiceEvent" render="Label" position="42,595" size="468,27" transparent="1" noWrap="1">
+        <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMTP24">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="42,212" size="468,270" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <eLabel position="42,495" size="468,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,506" size="468,120" transparent="1" noWrap="1">
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="CSMTP24Prime">
+	  <widget foregroundColor="KravenFont1" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=5,oneshot=1" font="Regular;24" position="42,212" size="468,270" source="ServiceEvent" valign="top" backgroundColor="Kravenbg2" transparent="1" >
+        <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
+      </widget>
+      <eLabel position="42,495" size="468,1" backgroundColor="KravenLine" />
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenFont2" font="Regular;24" source="ServiceEvent" render="KravenVBSingleEpgList" position="42,506" size="468,90" transparent="1" noWrap="1">
+      </widget>
+      <widget backgroundColor="Kravenbg2" foregroundColor="KravenPrime" font="Regular;24" source="ServiceEvent" render="Label" position="42,596" size="468,30" transparent="1" noWrap="1">
         <convert type="KravenVBEventsInfo">PrimeTime,noDuration</convert>
       </widget>
 	</constant-widget>

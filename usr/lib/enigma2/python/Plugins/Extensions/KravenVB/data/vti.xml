@@ -74,3 +74,21 @@
     <constant-widget name="Exit"/>
     <!--<text="SleepTimerEdit" position="70,0" />-->
   </screen>
+  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="LanguageSelection" position="0,0" size="1280,720" title="Language selection">
+    <widget position="70,80" render="Listbox" size="708,540" source="languages" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3">
+      <convert type="TemplatedMultiContent">
+				{"template": [
+				MultiContentEntryText(pos = (130, 17), size = (550, 60), flags = RT_HALIGN_LEFT, text = 1), # index 1 is the language name,
+				MultiContentEntryPixmap(pos = (20, 10), size = (60, 40), png = 2), # index 2 is the pixmap
+				],
+				"fonts": [gFont("Regular", 24)],
+				"itemHeight": 60
+				}
+			</convert>
+    </widget>
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="LanguageSelection" position="70,0" />-->
+  </screen>
