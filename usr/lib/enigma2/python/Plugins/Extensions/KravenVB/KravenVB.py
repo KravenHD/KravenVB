@@ -1196,13 +1196,13 @@ class KravenVB(ConfigListScreen, Screen):
 	if DESKTOP_WIDTH <= 1280:
 	  skin = """
 <screen name="KravenVB" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="#00000000">
-  <widget backgroundColor="#00000000" source="Title" render="Label" font="Regular;35" foregroundColor="#00ffffff" position="70,12" size="708,46" valign="center" transparent="1" />
+  <widget backgroundColor="#00000000" source="Title" render="Label" font="Regular;35" foregroundColor="#00f0a30a" position="70,12" size="708,46" valign="center" transparent="1" />
   <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="#00000000" transparent="1" valign="center" foregroundColor="#00ffffff">
     <convert type="ClockToText">Default</convert>
   </widget>
   <widget backgroundColor="#00000000" name="config" font="Regular;22" foregroundColor="#00ffffff" itemHeight="30" position="70,85" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
   <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;36" foregroundColor="#00f0a30a" position="830,80" size="402,46" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00000000" text="Version: 6.4.16" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
+  <eLabel backgroundColor="#00000000" text="Version: 6.4.21" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
   <eLabel backgroundColor="#00f0a30a" position="847,208" size="368,2" />
   <eLabel backgroundColor="#00f0a30a" position="847,417" size="368,2" />
   <eLabel backgroundColor="#00f0a30a" position="845,208" size="2,211" />
@@ -1224,13 +1224,13 @@ class KravenVB(ConfigListScreen, Screen):
 	else:
 	  skin = """
 <screen name="KravenVB" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#00000000">
-  <widget backgroundColor="#00000000" source="Title" render="Label" font="Regular;51" foregroundColor="#00ffffff" position="105,18" size="1500,69" valign="center" transparent="1" />
+  <widget backgroundColor="#00000000" source="Title" render="Label" font="Regular;51" foregroundColor="#00f0a30a" position="105,18" size="1500,69" valign="center" transparent="1" />
   <widget source="global.CurrentTime" render="Label" position="1707,33" size="150,42" font="Regular;39" halign="right" backgroundColor="#00000000" transparent="1" valign="center" foregroundColor="#00ffffff">
     <convert type="ClockToText">Default</convert>
   </widget>
   <widget backgroundColor="#00000000" name="config" font="Regular;32" foregroundColor="#00ffffff" itemHeight="45" position="105,127" size="1062,810" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
   <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;54" foregroundColor="#00f0a30a" position="1245,120" size="603,69" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00000000" text="Version: 6.4.16" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
+  <eLabel backgroundColor="#00000000" text="Version: 6.4.21" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
   <eLabel backgroundColor="#00f0a30a" position="1313,337" size="466,3" />
   <eLabel backgroundColor="#00f0a30a" position="1313,599" size="466,3" />
   <eLabel backgroundColor="#00f0a30a" position="1313,340" size="3,259" />
@@ -1753,10 +1753,11 @@ class KravenVB(ConfigListScreen, Screen):
 		# page 8 (category 4)
 		emptyLines=0
 		list.append(getConfigListEntry(_("TIMEREDITSCREEN ___________________________________________________________"), config.plugins.KravenVB.CategoryTimerEdit, _("This sections offers all settings for TimerEditScreen.")))
-		list.append(getConfigListEntry(_("TimerEdit-Style"), config.plugins.KravenVB.TimerEditScreen, _("Choose from different styles to display TimerEditScreen.")))
 		if self.E2DistroVersion == "VTi":
+			list.append(getConfigListEntry(_("TimerEdit-Style"), config.plugins.KravenVB.TimerEditScreen, _("Choose from different styles to display TimerEditScreen.")))
 			list.append(getConfigListEntry(_("TimerList-Style"), config.plugins.KravenVB.TimerListStyle, _("Choose from different styles to display TimerList.")))
 		elif self.E2DistroVersion == "openatv":
+			list.append(getConfigListEntry(_("TimerEdit-Style"), config.plugins.KravenVB.ATVna, _("")))
 			list.append(getConfigListEntry(_("TimerList-Style"), config.plugins.KravenVB.ATVna, _("")))
 		for i in range(emptyLines):
 			list.append(getConfigListEntry(_(" "), ))
@@ -3750,6 +3751,10 @@ class KravenVB(ConfigListScreen, Screen):
 		self.analog = ("analog_" + self.analogstylecolor + ".png")
 		self.skinSearchAndReplace.append(["analog.png", self.analog])
 
+		### HelpMenu
+		if self.E2DistroVersion == "openatv":
+			self.skinSearchAndReplace.append(['skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png', 'skin_default/rc.png,skin_default/rcold.png'])
+
 		### Header
 		if config.usage.movielist_show_picon.value == True:
 			self.skinSearchAndReplace.append(['<parameter name="MovieListMinimalVTITitle" value="27,0,620,27" />', '<parameter name="MovieListMinimalVTITitle" value="27,0,535,27" />'])
@@ -4653,7 +4658,10 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SplitScreen.value + ".xml")
 
 		### TimerEditScreen
-		self.appendSkinFile(self.daten + config.plugins.KravenVB.TimerEditScreen.value + ".xml")
+		if self.E2DistroVersion == "VTi":
+			self.appendSkinFile(self.daten + config.plugins.KravenVB.TimerEditScreen.value + ".xml")
+		elif self.E2DistroVersion == "openatv":
+			self.appendSkinFile(self.daten + "timer-openatv.xml")
 
 		### TimerListStyle
 		if self.E2DistroVersion == "VTi":

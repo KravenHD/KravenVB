@@ -36,7 +36,7 @@
   <!-- ********** Screens ********** -->
   <!-- ********** Timer ********** -->
   <!-- TimeInput -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimeInput" position="0,0" size="1280,720" title="Time Input">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="TimeInput" position="0,0" size="1280,720" title="Time Input">
     <constant-widget name="Title-big"/>
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,90" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -46,15 +46,15 @@
     <!--<text="TimeInput" position="70,0" />-->
   </screen>
   <!-- TimerSelection -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerSelection" position="0,0" size="1280,720" title="Timer selection">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerSelection" position="0,0" size="1280,720" title="Timer selection">
     <eLabel text="Timer Editor" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
-    <widget name="timerlist" position="70,80" size="708,539" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="timerlist" position="70,80" size="708,528" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
     <constant-widget name="OKExit"/>
     <!--<text="TimerSelection" position="70,0" />-->
   </screen>
   <!-- TimerEditList -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerEditList" position="0,0" size="1280,720" title="Timer Editor">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerEditList" position="0,0" size="1280,720" title="Timer Editor">
     <widget backgroundColor="Kravenbg3" name="timerlist" font="Regular;24" foregroundColor="KravenFont1" position="42,300" size="1196,330" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
@@ -91,7 +91,7 @@
     <!--<text="TimerEditList" position="105,0" />-->
   </screen>
   <!-- TimerEntry -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerEntry" position="0,0" size="1280,720" title="Timer entry">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerEntry" position="0,0" size="1280,720" title="Timer entry">
 	<eLabel text="Timer entry" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,390" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget font="Regular;20" halign="left" valign="center" name="canceltext" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -102,7 +102,7 @@
     <!--<text="TimerEntry" position="70,0" />-->
   </screen>
   <!-- TimerLog -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerLog" position="0,0" size="1280,720" title="Timer log">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerLog" position="0,0" size="1280,720" title="Timer log">
     <widget backgroundColor="Kravenbg3" name="loglist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,270" transparent="1" />
     <widget font="Regular2;20" foregroundColor="KravenFont2" name="logentry" position="70,372" size="708,130" transparent="1" />
     <constant-widget name="Title-big"/>
@@ -113,7 +113,7 @@
     <!--<text="TimerLog" position="70,0" />-->
   </screen>
   <!-- TimerSanityConflict -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="TimerSanityConflict" position="0,0" size="1280,720" title="Timer sanity error">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerSanityConflict" position="0,0" size="1280,720" title="Timer sanity error">
     <widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,90" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="timer1" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,190" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,90" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="timer2" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,380" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,90" transparent="1" />

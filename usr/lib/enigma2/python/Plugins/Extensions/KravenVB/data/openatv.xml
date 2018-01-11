@@ -1,5 +1,5 @@
   <!-- PluginBrowser -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="PluginBrowser" position="0,0" size="1280,720" title="Plugin browser">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginBrowser" position="0,0" size="1280,720" title="Plugin browser">
     <widget backgroundColor="Kravenbg3" name="list" itemHeight="50" font="Regular;22" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,550" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
@@ -12,7 +12,7 @@
     <!--<text="PluginBrowser" position="70,0" />-->
   </screen>
   <!-- AboutOE -->
-  <screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="AboutOE" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
     <eLabel text="OPEN SOURCE" position="70,80" size="708,36" font="Regular2;26" foregroundColor="KravenFont2" transparent="1" valign="center" />
     <eLabel backgroundColor="Kravenbg3" text="https://github.com/openatv" font="Regular;20" foregroundColor="KravenFont2" position="70,127" size="352,25" transparent="1" zPosition="1" />
     <eLabel backgroundColor="Kravenbg3" text="https://github.com/oe-alliance" font="Regular;20" foregroundColor="KravenFont2" position="70,157" size="354,25" transparent="1" zPosition="1" />
@@ -27,7 +27,7 @@
 	<!--<text="AboutOE" position="70,0" />-->
   </screen>
   <!-- TranslationInfo -->
-  <screen name="TranslationInfo" position="0,0" size="1280,720" title="Translation" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="TranslationInfo" position="0,0" size="1280,720" title="Translation" flags="wfNoBorder" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" source="TranslatorName" render="Label" font="Regular;26" foregroundColor="KravenFont1" position="70,80" size="708,174" transparent="1" />
     <widget backgroundColor="Kravenbg3" source="TranslationInfo" render="Label" font="Regular;22" foregroundColor="KravenFont1" position="70,280" size="708,324" transparent="1" />
     <constant-widget name="Title-big"/>
@@ -47,7 +47,7 @@
     <!--<text="SystemMemoryInfo" position="70,0" />-->
   </screen>
   <!-- SystemNetworkInfo -->
-  <screen name="SystemNetworkInfo" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="SystemNetworkInfo" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="transparent">
 	<widget backgroundColor="Kravenbg3" name="AboutScrollLabel" position="70,80" size="708,432" font="Regular;22" halign="left" foregroundColor="KravenFont1" scrollbarWidth="5" transparent="1" />
 	<widget source="IFtext" render="Label" position="70,550" size="200,30" zPosition="10" font="Regular;22" halign="left" backgroundColor="Kravenbg3" transparent="1" />
 	<widget source="IF" render="Label" position="370,550" size="500,30" zPosition="10" font="Regular;22" halign="left" backgroundColor="Kravenbg3" transparent="1" />
@@ -60,20 +60,20 @@
 	<!--<text="SystemNetworkInfo" position="70,0" />-->
   </screen>
   <!-- Devices -->
-  <screen name="Devices" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="Kravenbg3">
-    <widget source="TunerHeader" render="Label" position="70,115" size="708,30" font="Regular2;24" backgroundColor="Kravenbg3" transparent="1" zPosition="1" foregroundColor="KravenFont2" />
-    <widget source="nims" render="Label" position="70,150" size="708,120" font="Regular;20" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" zPosition="1" enableWrapAround="0" />
-    <widget source="HDDHeader" render="Label" position="70,275" size="708,30" font="Regular2;24" transparent="1" zPosition="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" />
-    <widget source="hdd" render="Label" position="70,310" size="708,120" font="Regular;20" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" zPosition="1" enableWrapAround="0" />
-    <widget source="MountsHeader" render="Label" position="70,435" size="708,30" font="Regular2;24" transparent="1" zPosition="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" />
-    <widget source="mounts" render="Label" position="70,470" size="708,120" font="Regular;20" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" zPosition="1" enableWrapAround="0" />
+  <screen name="Devices" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="transparent">
+    <widget source="TunerHeader" render="Label" position="70,80" size="708,30" font="Regular2;24" backgroundColor="Kravenbg3" transparent="1" zPosition="1" foregroundColor="KravenFont2" />
+    <widget source="nims" render="Label" position="70,120" size="708,120" font="Regular;20" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" zPosition="1" enableWrapAround="0" />
+    <widget source="HDDHeader" render="Label" position="70,250" size="708,30" font="Regular2;24" transparent="1" zPosition="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" />
+    <widget source="hdd" render="Label" position="70,290" size="708,120" font="Regular;20" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" zPosition="1" enableWrapAround="0" />
+    <widget source="MountsHeader" render="Label" position="70,420" size="708,30" font="Regular2;24" transparent="1" zPosition="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" />
+    <widget source="mounts" render="Label" position="70,460" size="708,120" font="Regular;20" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" zPosition="1" enableWrapAround="0" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
 	<constant-widget name="Exit"/>
 	<!--<text="Devices" position="70,0" />-->
   </screen>
   <!-- Info -->
-  <screen name="Info" position="0,0" size="1280,720" title="Panel-Info" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="Info" position="0,0" size="1280,720" title="Panel-Info" flags="wfNoBorder" backgroundColor="transparent">
 	<widget name="label2" position="70,80" size="708,40" font="Regular;30" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" transparent="1" halign="center" />
 	<widget name="label1" position="70,130" size="708,480" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" halign="left" />
     <constant-widget name="Title-big"/>
@@ -84,7 +84,7 @@
 	<!--<text="Info" position="70,0" />-->
   </screen>
   <!-- QuickMenu -->
-  <screen name="QuickMenu" position="0,0" size="1280,720" title="Quickmenu" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="QuickMenu" position="0,0" size="1280,720" title="Quickmenu" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="list" position="70,80" size="320,450" scrollbarMode="showOnDemand" backgroundColor="Kravenbg3" itemHeight="50" transparent="1" />
     <widget name="description" position="70,565" size="708,110" zPosition="1" font="Regular2;22" foregroundColor="KravenFont2" halign="center" backgroundColor="Kravenbg3" transparent="1" />
     <widget name="sublist" position="397,80" size="381,450" backgroundColor="Kravenbg3" itemHeight="50" transparent="1" />
@@ -96,7 +96,7 @@
 	<!--<text="Quickmenu" position="70,0" />-->
   </screen>
   <!-- QuickMenuDevices -->
-  <screen name="QuickMenuDevices" position="0,0" size="1280,720" title="Devices" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="QuickMenuDevices" position="0,0" size="1280,720" title="Devices" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="lab1" position="125,148" size="618,50" font="Regular2; 20" alphatest="blend" transparent="1" halign="center" foregroundColor="KravenFont2" />
     <widget source="devicelist" render="Listbox" position="70,127" size="708,450" scrollbarMode="showOnDemand" zPosition="3" transparent="1">
       <convert type="TemplatedMultiContent">
@@ -118,7 +118,7 @@
 	<!--<text="QuickmenuDevices" position="70,0" />-->
   </screen>
   <!-- Infopanel -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="Infopanel" position="0,0" size="1280,720" title="InfoPanel" transparent="0">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Infopanel" position="0,0" size="1280,720" title="InfoPanel" transparent="0">
 	<widget name="Mlist" position="70,80" size="708,540" font="Regular;20" halign="left" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
@@ -155,7 +155,7 @@
     <!--<text="SoftwarePanel" position="70,0" />-->
   </screen>
   <!-- SoftcamPanel -->
-  <screen name="SoftcamPanel" position="0,0" size="1280,720" title="SoftcamPanel" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="SoftcamPanel" position="0,0" size="1280,720" title="SoftcamPanel" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="config" font="Regular; 20" position="70,126" size="500,100" enableWrapAround="1" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" />
     <widget font="Regular2; 22" name="enigma2" position="591,164" size="185,25" transparent="1" backgroundColor="Kravenbg" foregroundColor="KravenFont2" />
     <widget font="Regular2; 20" name="actifcam" position="70,235" size="352,64" transparent="1" backgroundColor="Kravenbg" foregroundColor="KravenFont2" />
@@ -169,7 +169,7 @@
 	<!--<text="SoftcamPanel" position="70,0" />-->
   </screen>
   <!-- ShowSoftcamPanelExtensions -->
-  <screen name="ShowSoftcamPanelExtensions" position="0,0" size="1280,720" title="Softcam-Panel Setup" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="ShowSoftcamPanelExtensions" position="0,0" size="1280,720" title="Softcam-Panel Setup" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="config" position="70,80" size="708,540" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="Kravenbg3" transparent="1" />
     <constant-widget name="Title-big"/>
   	<!-- Logo -->
@@ -179,7 +179,7 @@
     <!--<text="ShowSoftcamPanelExtensions" position="70,0" />-->
   </screen>
   <!-- ShowSoftcamPackages -->
-  <screen name="ShowSoftcamPackages" position="0,0" size="1280,720" title="New Packages" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="ShowSoftcamPackages" position="0,0" size="1280,720" title="New Packages" flags="wfNoBorder" backgroundColor="transparent">
     <widget source="list" render="Listbox" position="70,80" size="708,540" scrollbarMode="showOnDemand" transparent="1" foregroundColorSelected="white">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -201,7 +201,7 @@
     <!--<text="ShowSoftcamPackages" position="70,0" />-->
   </screen>
   <!-- DevicePanelConf -->
-  <screen name="DevicePanelConf" position="0,0" size="1280,720" title="DevicePanelConf" backgroundColor="Kravenbg3" flags="wfNoBorder">
+  <screen name="DevicePanelConf" position="0,0" size="1280,720" title="DevicePanelConf" backgroundColor="transparent" flags="wfNoBorder">
     <widget name="config" position="70,120" size="708,360" scrollbarMode="showOnDemand" enableWrapAround="1" backgroundColor="Kravenbg3" transparent="1" />
     <widget name="Linconn" position="70,505" size="708,27" font="Regular2; 22" halign="center" valign="center" foregroundColor="KravenFont2" />
     <constant-widget name="Title-big"/>
@@ -212,7 +212,7 @@
     <!--<text="DevicePanelConf" position="70,0" />-->
   </screen>
   <!-- HddMount -->
-  <screen name="HddMount" position="0,0" size="1280,720" title="HddMount" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="HddMount" position="0,0" size="1280,720" title="HddMount" flags="wfNoBorder" backgroundColor="transparent">
     <widget source="list" render="Listbox" position="70,120" size="700,371" scrollbarMode="showOnDemand" font="Regular;16" transparent="1">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -234,7 +234,7 @@
     <!--<text="HddMount" position="70,0" />-->
   </screen>
   <!-- ButtonSetupSelect -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="ButtonSetupSelect" position="0,0" size="1280,720" title="Tasteneinstellungen">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ButtonSetupSelect" position="0,0" size="1280,720" title="Tasteneinstellungen">
     <widget name="list" position="40,99" size="385,529" scrollbarMode="showOnDemand" font="Regular;22" itemHeight="28" transparent="1" foregroundColor="white" enableWrapAround="1" backgroundColor="Kravenbg" zPosition="-8" />
     <widget name="choosen" position="427,99" size="385,530" scrollbarMode="showOnDemand" font="Regular2;22" itemHeight="28" foregroundColor="KravenFont1" backgroundColor="Kravenbg" zPosition="-8" />
     <widget name="description" position="880,156" size="358,378" font="Regular2;22" foregroundColor="KravenFont2" valign="center" halign="center" backgroundColor="Kravenbg" zPosition="-8" />
@@ -246,7 +246,7 @@
     <!--<text="ButtonSetupSelect" position="70,0" />-->
   </screen>
   <!-- ButtonSetup -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="ButtonSetup" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ButtonSetup" position="0,0" size="1280,720" title="">
     <widget backgroundColor="Kravenbg3" name="list" itemHeight="30" font="Regular;22" foregroundColor="KravenFont1" position="70,80" size="708,420" scrollbarMode="showOnDemand" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="description" position="70,548" size="708,67" zPosition="2" font="Regular2;22" foregroundColor="KravenFont2" valign="center" halign="center" transparent="1" />
     <constant-widget name="Title-big"/>
@@ -257,7 +257,7 @@
     <!--<text="ButtonSetup" position="70,0" />-->
   </screen>
   <!-- Extensionslist -->
-  <screen name="ExtensionsList" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="ExtensionsList" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="transparent">
     <eLabel text="Please choose an extension..." position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
 	<widget backgroundColor="Kravenbg3" name="list" itemHeight="30" font="Regular;22" foregroundColor="KravenFont1" position="70,80" size="708,540" scrollbarWidth="5" transparent="1" />
   	<!-- Logo -->
@@ -266,7 +266,7 @@
 	<!--<text="ExtensionsList" position="70,0" />-->
   </screen>
   <!-- SoftwareManagerSetup -->
-  <screen name="SoftwareManagerSetup" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="SoftwareManagerSetup" position="0,0" size="1280,720" title="SystemInfo" flags="wfNoBorder" backgroundColor="transparent">
     <eLabel text="Software manager setup" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
 	<widget name="config" position="70,80" size="708,540" font="Regular;22" halign="left" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -276,7 +276,7 @@
 	<!--<text="SoftwareManagerSetup" position="70,0" />-->
   </screen>
   <!-- CIHelper -->
-  <screen name="CIHelper" title="CIHelper Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="CIHelper" title="CIHelper Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
  	<widget name="autostart" position="70,80" size="150,30" font="Regular;22" valign="center" halign="left" backgroundColor="Kravenbg3" foregroundColor="KravenFont1" transparent="1" />
  	<widget name="labdisabled" position="320,80" size="172,30" font="Regular;22" valign="center" halign="center" backgroundColor="red" zPosition="1" />
  	<widget name="labactive" position="320,80" size="172,30" font="Regular;22" valign="center" halign="center" backgroundColor="green" zPosition="2" />
@@ -297,7 +297,7 @@
 	<!--<text="CIHelper" position="70,0" />-->
   </screen>
   <!-- CIHelperSetup -->
-  <screen name="CIHelperSetup" title="CIHelper Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="CIHelperSetup" title="CIHelper Setup" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
  	<widget name="config" position="70,80" size="708,540" font="Regular;22" halign="left" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
  	<!-- Logo -->
@@ -307,7 +307,7 @@
 	<!--<text="CIHelperSetup" position="70,0" />-->
   </screen>
   <!-- Animation Setup -->
-  <screen name="AnimationSetupScreen" position="0,0" size="1280,720" title="Animation Setup" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="AnimationSetupScreen" position="0,0" size="1280,720" title="Animation Setup" flags="wfNoBorder" backgroundColor="transparent">
 	<eLabel text="Animation Setup" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -317,7 +317,7 @@
     <!--<text="AnimationSetupScreen" position="70,0" />-->
   </screen>
   <!-- NetworkBrowser -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="NetworkBrowser" position="0,0" size="1280,720" title="Network Neighbourhood">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="NetworkBrowser" position="0,0" size="1280,720" title="Network Neighbourhood">
     <widget position="70,80" render="Listbox" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" source="list" transparent="1" zPosition="3">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -396,7 +396,7 @@
     <!--<text="Swap" position="70,0" />-->
   </screen>
   <!-- GraphicalEPG -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="GraphicalEPG" position="0,0" size="1280,720" title="Electronic Program Guide">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="GraphicalEPG" position="0,0" size="1280,720" title="Electronic Program Guide">
     <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="Kravenbg" backgroundColor="Kravenbg" />
     <widget backgroundColor="Kravenbg" font="Regular2;28" foregroundColor="KravenFont2" position="70,75" render="Label" size="1140,39" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -425,7 +425,7 @@
     <!--<text="GraphicalEPG" position="70,0" />-->
   </screen>
   <!-- GraphicalEPGPIG -->
-  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="GraphicalEPGPIG" position="0,0" size="1280,720" title="Electronic Program Guide">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="GraphicalEPGPIG" position="0,0" size="1280,720" title="Electronic Program Guide">
     <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="Kravenbg2" backgroundColor="Kravenbg2" />
     <widget backgroundColor="Kravenbg2" font="Regular2;28" foregroundColor="KravenFont2" position="70,75" render="Label" size="760,39" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -966,7 +966,7 @@
     <!--<text="IPKGSource" position="70,0" />-->
   </screen>
   <!-- UpdatePluginMenu -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="UpdatePluginMenu" position="0,0" size="1280,720" title="Softwaremanager...">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="UpdatePluginMenu" position="0,0" size="1280,720" title="Softwaremanager...">
     <widget position="70,80" render="Listbox" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,520" source="menu" transparent="1">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1162,7 +1162,7 @@
     <!--<text="Change_volume" position="70,0" />-->
   </screen>
   <!-- CronManager -->
-  <screen flags="wfNoBorder" name="CronManager" position="0,0" size="1280,720" title="CronManager" backgroundColor="Kravenbg3">
+  <screen flags="wfNoBorder" name="CronManager" position="0,0" size="1280,720" title="CronManager" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" source="list" render="Listbox" position="70,120" size="708,450" scrollbarMode="showOnDemand" transparent="1" >
       <convert type="StringList" />
     </widget>
@@ -1328,7 +1328,7 @@
     <!--<text="MSNWeatherPluginSearch" position="70,0" />-->
   </screen>
   <!-- SleepTimerEdit -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="SleepTimerEdit" position="0,0" size="1280,720" title="Sleep Timer">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SleepTimerEdit" position="0,0" size="1280,720" title="Sleep Timer">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" zPosition="1" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
@@ -1337,7 +1337,8 @@
     <constant-widget name="Exit"/>
     <!--<text="SleepTimerEdit" position="70,0" />-->
   </screen>
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="LanguageSelection" position="0,0" size="1280,720" title="Language selection">
+  <!-- LanguageSelection -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="LanguageSelection" position="0,0" size="1280,720" title="Language selection">
     <widget position="70,80" render="Listbox" size="708,540" source="languages" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3">
       <convert type="TemplatedMultiContent">
 				{"template": [
@@ -1355,4 +1356,34 @@
 	<constant-widget name="NameRedGreenYellowBlue"/>
     <constant-widget name="OKExit"/>
     <!--<text="LanguageSelection" position="70,0" />-->
+  </screen>
+  <!-- RestorePlugins -->
+  <screen name="RestorePlugins" position="0,0" size="1280,720" title="Select Plugins" backgroundColor="transparent" flags="wfNoBorder">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" source="menu" render="Listbox" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1">
+      <convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (42, 1), size = (660, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0),
+					MultiContentEntryPixmapAlphaTest(pos = (5, 3), size = (24, 24), png = 1),
+					],
+					"fonts": [gFont("Regular", 22), gFont("Regular", 18)],
+					"itemHeight": 30
+				}
+	  </convert>
+    </widget>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreen"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="RestorePlugins" position="70,0" />-->
+  </screen>
+  <!-- AutoTimerOverview -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerOverview" position="0,0" size="1280,720" title="AutoTimer Overview">
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" name="entries" itemHeight="53" rowSplit1="27" rowSplit2="27" rowHeight="26" iconMargin="8" DayNameFont="Regular;20" EventNameFont="Regular;22" ServiceNameFont="Regular;20" foregroundColor="KravenFont1" position="70,80" size="708,530" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="AutoTimerOverview" position="70,0" />-->
   </screen>

@@ -1,8 +1,13 @@
     <!-- MovieSelection -->
-  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="MovieSelection" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MovieSelection" position="0,0" size="1280,720" title="">
     <widget name="waitingtext" position="0,0" size="0,0" />
 	<eLabel text="MovieSelection" position="70,12" size="708,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
-    <widget backgroundColor="Kravenbg2" font="Regular;19" foregroundColor="KravenFont2" halign="right" name="freeDiskSpace" position="70,75" size="708,25" transparent="1" valign="center" />
+    <widget source="Service" render="Label" position="70,75" size="434,25" font="Regular;19" foregroundColor="KravenFont2" backgroundColor="Kravenbg2" transparent="1" noWrap="1" halign="left">
+	  <convert type="KravenVBDiskSpace">path</convert>
+    </widget>
+    <widget source="Service" render="Label" position="512,75" size="266,25" font="Regular;19" foregroundColor="KravenFont2" backgroundColor="Kravenbg2" transparent="1" halign="right">
+	  <convert type="KravenVBDiskSpace">both</convert>
+    </widget>
     <widget name="list" position="70,105" size="708,540" UnwatchedColor="unwatched" WatchingColor="watching" FinishedColor="finished" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget source="session.VideoPicture" render="KravenVBPig3" position="822,75" size="272,153" zPosition="3" backgroundColor="transparent" />
     <eLabel backgroundColor="#00000000" position="822,75" size="272,153" transparent="0" zPosition="2" />

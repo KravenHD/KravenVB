@@ -1,5 +1,5 @@
   <!-- /* ChannelSelection - MiniTV Picon -->
-  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
     <widget alphatest="blend" position="42,78" render="Picon" size="74,44" source="ServiceEvent" transparent="1" zPosition="4">
       <convert type="KravenVBRefString">ServicelistRef</convert>
     </widget>

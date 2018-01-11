@@ -1,7 +1,7 @@
 
 <!-- plugins -->
   <!-- KravenVB -->
-  <screen name="KravenVB" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="KravenVB" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
     <widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" source="key_green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -28,7 +28,7 @@
     <!--<text="KravenVB" position="70,0" />-->
   </screen>
   <!-- KravenFHD -->
-  <screen name="KravenFHD" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="KravenFHD" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
     <widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" source="key_green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -86,7 +86,7 @@
   </screen>
   <!-- ********** BitrateViewer ********** -->
   <!-- BitrateViewer -->
-  <screen name="BitrateViewer" backgroundColor="Kravenbg3" position="0,0" size="1280,720" title="Bitrate viewer" flags="wfBorder">
+  <screen name="BitrateViewer" backgroundColor="transparent" position="0,0" size="1280,720" title="Bitrate viewer" flags="wfBorder">
 	<widget source="video" render="Label" position="85,120" zPosition="1" size="80,20" font="Regular;20" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" transparent="1" />
 	<widget source="min" render="Label" position="85,150" zPosition="1" size="80,20" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
 	<widget name="vmin" position="85,170" size="80,20" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
@@ -114,7 +114,7 @@
   </screen>
   <!-- ********** CutListEditor ********** -->
   <!-- CutListEditor -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CutListEditor" position="0,0" size="1280,720" title="Cutlist editor">
 	<eLabel text="Cutlist editor" position="70,12" size="1000,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <eLabel backgroundColor="white" position="70,130" size="700,381" zPosition="1" />
     <eLabel backgroundColor="transparent" position="72,132" size="696,377" zPosition="3" />
@@ -175,7 +175,7 @@
     <constant-widget name="gradient-player"/>
   </screen>
   <!-- FileBrowser -->
-  <screen name="FileBrowser" position="0,0" size="1280,720" title="DVD File Browser" flags="wfNoBorder" NoAnimationAfter="1" backgroundColor="Kravenbg3">
+  <screen name="FileBrowser" position="0,0" size="1280,720" title="DVD File Browser" flags="wfNoBorder" NoAnimationAfter="1" backgroundColor="transparent">
 	<eLabel text="DVD File Browser" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="filelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,510" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -185,7 +185,7 @@
     <!--<text="FileBrowser" position="70,0" />-->
   </screen>
   <!-- EcmInfoScreen -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="EcmInfoScreen" position="600,150" size="600,80" zPosition="1">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="EcmInfoScreen" position="600,150" size="600,80" zPosition="1">
     <eLabel backgroundColor="Kravenbg" position="0,1" size="600,80" zPosition="-10" />
     <widget font="Regular;16" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" name="irdeto" position="149,14" size="18, 25" text="I" transparent="1" valign="center" zPosition="3" />
     <widget font="Regular;16" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" name="seca" position="172,14" size="18, 25" text="S" transparent="1" valign="center" zPosition="3" />
@@ -200,7 +200,7 @@
   </screen>
   <!-- ********** EMC ********** -->
   <!-- EnhancedMovieCenterMenu -->
-  <screen name="EnhancedMovieCenterMenu" position="0,0" size="1280,720" title="EnhancedMovieCenterMenu" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="EnhancedMovieCenterMenu" position="0,0" size="1280,720" title="EnhancedMovieCenterMenu" flags="wfNoBorder" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,360" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget source="help" render="Label" position="70,492" size="708,108" font="Regular2;20" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" transparent="1" />
     <eLabel text="Enhanced Movie Center Menu" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
@@ -211,7 +211,7 @@
     <!--<text="EnhancedMovieCenterMenu" position="70,0" />-->
   </screen>
   <!-- MovieMenu -->
-  <screen name="MovieMenu" position="0,0" size="1280,720" title="Movie Menu" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="MovieMenu" position="0,0" size="1280,720" title="Movie Menu" flags="wfNoBorder" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" source="menu" render="Listbox" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1">
       <convert type="StringList" />
     </widget>
@@ -221,7 +221,7 @@
     <!--<text="MovieMenu" position="70,0" />-->
   </screen>
   <!-- EMCImdbScan -->
-  <screen name="EMCImdbScan" position="0,0" size="1280,720" title="EMC Cover Search" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="EMCImdbScan" position="0,0" size="1280,720" title="EMC Cover Search" flags="wfNoBorder" backgroundColor="transparent">
 	<widget name="poster" position="70,103" size="156,260" zPosition="4" backgroundColor="Kravenbg" alphatest="on" transparent="0" />
     <widget backgroundColor="Kravenbg" name="menulist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="400,105" size="800,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget name="done_msg" position="400,542" size="800,65" font="Regular2;20" foregroundColor="KravenFont2" halign="center" backgroundColor="Kravenbg" transparent="1" />
@@ -242,7 +242,7 @@
     <!--<text="EMCImdbScan" position="70,0" />-->
   </screen>
   <!-- imdbSetup -->
-  <screen name="imdbSetup" position="0,0" size="1280,720" title="EMC imdb Setup" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="imdbSetup" position="0,0" size="1280,720" title="EMC imdb Setup" flags="wfNoBorder" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
@@ -270,7 +270,7 @@
     <!--<text="IMDB" position="70,0" />-->
   </screen>
   <!-- getCover -->
-  <screen name="getCover" position="0,0" size="1280,720" title="EMC Cover Selecter" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="getCover" position="0,0" size="1280,720" title="EMC Cover Selecter" flags="wfNoBorder" backgroundColor="transparent">
     <ePixmap  pixmap="KravenVB/global-icons/key_ok.png" position="998,435" size="43,22" alphatest="blend" />
     <ePixmap  pixmap="KravenVB/global-icons/key_menu.png" position="1111,435" size="43,22" alphatest="blend" />
     <widget backgroundColor="Kravenbg" name="menulist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="100,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -281,7 +281,7 @@
     <!--<text="getCover" position="70,0" />-->
   </screen>
   <!-- DownloadMovieInfo -->
-  <screen name="DownloadMovieInfo" position="0,0" size="1280,720" title="Download Movie Info" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="DownloadMovieInfo" position="0,0" size="1280,720" title="Download Movie Info" flags="wfNoBorder" backgroundColor="transparent">
     <ePixmap  pixmap="KravenVB/infobar-global-icons/key_epg.png" position="22,675" size="43,22" alphatest="blend" />
     <ePixmap  pixmap="KravenVB/infobar-global-icons/key_ok.png" position="233,675" size="43,22" alphatest="blend" />
     <widget backgroundColor="Kravenbg" name="movielist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,164" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -306,7 +306,7 @@
     <!--<text="MovieInfoPreview" position="70,0" />-->
   </screen>
   <!-- MovieInfoSetup -->
-  <screen name="MovieInfoSetup" position="0,0" size="1280,720" title="Movie Info Setup" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="MovieInfoSetup" position="0,0" size="1280,720" title="Movie Info Setup" flags="wfNoBorder" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
@@ -317,7 +317,7 @@
   </screen>
   <!-- ********** EPGRefresh ********** -->
   <!-- EPGRefreshServiceEditor -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="EPGRefreshServiceEditor" position="0,0" size="1280,720" title="Edit Services to refresh">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="EPGRefreshServiceEditor" position="0,0" size="1280,720" title="Edit Services to refresh">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,540" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
@@ -327,7 +327,7 @@
     <!--<text="EPGRefreshServiceEditor" position="70,0" />-->
   </screen>
   <!-- EPGRefreshConfiguration -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="EPGRefreshConfiguration" position="0,0" size="1280,720" title="Configure EPGRefresh">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="EPGRefreshConfiguration" position="0,0" size="1280,720" title="Configure EPGRefresh">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,420" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;22" position="70,530" render="Label" size="708,84" source="help" transparent="1" foregroundColor="KravenFont2" />
     <constant-widget name="Title-big"/>
@@ -338,7 +338,7 @@
     <!--<text="EPGRefreshConfiguration" position="70,0" />-->
   </screen>
   <!-- StreamTVList -->
-  <screen name="StreamTVList" position="0,0" size="1280,720" flags="wfNoBorder" title="StreamTV List" backgroundColor="Kravenbg3">
+  <screen name="StreamTVList" position="0,0" size="1280,720" flags="wfNoBorder" title="StreamTV List" backgroundColor="transparent">
     <constant-widget name="Title-big"/>
     <widget backgroundColor="Kravenbg3" name="streamlist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,450" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="infolabel" position="70,555" size="60,28" foregroundColor="KravenFont1" font="Regular2;22" halign="left" />
@@ -349,7 +349,7 @@
   </screen>
   <!-- ********** FritzCall ********** -->
   <!-- FritzCallSetup -->
-  <screen name="FritzCallSetup" position="0,0" size="1280,720" flags="wfNoBorder" title="FritzCallSetup" backgroundColor="Kravenbg3">
+  <screen name="FritzCallSetup" position="0,0" size="1280,720" flags="wfNoBorder" title="FritzCallSetup" backgroundColor="transparent">
 	<eLabel text="FritzCall Setup" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget name="consideration" position="70,80" size="708,90" font="Regular2;20" backgroundColor="Kravenbg3" transparent="1" foregroundColor="KravenFont2" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="71,190" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -360,7 +360,7 @@
     <!--<text="FritzCallSetup" position="70,0" />-->
   </screen>
   <!-- FritzDisplayCalls -->
-  <screen name="FritzDisplayCalls" position="0,0" size="1280,720" flags="wfNoBorder" title="Fritz Display Calls" backgroundColor="Kravenbg3">
+  <screen name="FritzDisplayCalls" position="0,0" size="1280,720" flags="wfNoBorder" title="Fritz Display Calls" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" name="statusbar" foregroundColor="KravenFont2" font="Regular2;22" position="70,74" size="708,54" transparent="1" />
     <widget backgroundColor="Kravenbg3" source="entries" render="Listbox" position="70,135" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" zPosition="3" transparent="1">
       <convert type="TemplatedMultiContent">
@@ -384,7 +384,7 @@
     <!--<text="FritzDisplayCalls" position="70,0" />-->
   </screen>
   <!-- FritzDisplayPhonebook -->
-  <screen name="FritzDisplayPhonebook" position="0,0" size="1280,720" flags="wfNoBorder" title="Fritz Display Phonebook" backgroundColor="Kravenbg3">
+  <screen name="FritzDisplayPhonebook" position="0,0" size="1280,720" flags="wfNoBorder" title="Fritz Display Phonebook" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" source="entries" render="Listbox" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1">
       <convert type="TemplatedMultiContent">
 					{"template": [
@@ -404,7 +404,7 @@
     <!--<text="FritzDisplayPhonebook" position="70,0" />-->
   </screen>
   <!-- AddScreen -->
-  <screen name="AddScreen" position="0,0" size="1280,720" flags="wfNoBorder" title="Add Screen" backgroundColor="Kravenbg3">
+  <screen name="AddScreen" position="0,0" size="1280,720" flags="wfNoBorder" title="Add Screen" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
@@ -414,7 +414,7 @@
     <!--<text="AddScreen" position="70,0" />-->
   </screen>
   <!-- FritzAbout -->
-  <screen name="FritzAbout" position="0,0" size="1280,720" flags="wfNoBorder" title="About Fritz Call" backgroundColor="Kravenbg3">
+  <screen name="FritzAbout" position="0,0" size="1280,720" flags="wfNoBorder" title="About Fritz Call" backgroundColor="transparent">
     <widget name="url" position="70,338" size="708,50" font="Regular2;18" backgroundColor="Kravenbg3" transparent="1" halign="center" foregroundColor="KravenFont2" />
     <widget name="text" position="70,80" size="708,230" font="Regular;18" backgroundColor="Kravenbg3" transparent="1" foregroundColor="KravenFont1" halign="center" />
     <constant-widget name="Title-big"/>
@@ -423,7 +423,7 @@
     <!--<text="FritzAbout" position="70,0" />-->
   </screen>
   <!-- FritzMenu -->
-  <screen name="FritzMenu" position="0,0" size="1280,720" flags="wfNoBorder" title="Fritz Menu" backgroundColor="Kravenbg">
+  <screen name="FritzMenu" position="0,0" size="1280,720" flags="wfNoBorder" title="Fritz Menu" backgroundColor="transparent">
     <widget name="FBFRufuml" position="130,440" size="760,25" font="Regular;20" backgroundColor="Kravenbg" transparent="1" />
     <widget name="FBFInternet" position="130,259" size="760,80" font="Regular;20" backgroundColor="Kravenbg" transparent="1" foregroundColor="KravenFont1" />
     <widget name="FBFDsl" position="130,360" size="760,25" font="Regular;20" backgroundColor="Kravenbg" transparent="1" />
@@ -456,7 +456,7 @@
   </screen>
   <!-- ********** MediaPlayer ********** -->
   <!-- MediaPlayer -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="MediaPlayer" position="center,center" size="1280,720" title="MediaPlayer" transparent="0">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MediaPlayer" position="center,center" size="1280,720" title="MediaPlayer" transparent="0">
     <eLabel backgroundColor="Kravenbg" font="Regular2;22" position="432,325" size="500,28" text="Playlist:" transparent="1" />
     <eLabel backgroundColor="KravenLine" position="71,412" size="300,1" zPosition="-1" />
     <widget backgroundColor="Kravenbg" name="filelist" font="Regular;20" foregroundColor="KravenFont1" itemHeight="28" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="430,80" size="780,224" transparent="1" />
@@ -484,7 +484,7 @@
     <!--<text="MediaPlayer" position="70,0" />-->
   </screen>
   <!-- DirectoryBrowser -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="DirectoryBrowser" position="0,0" size="1280,720" title="Directorybrowser">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="DirectoryBrowser" position="0,0" size="1280,720" title="Directorybrowser">
     <widget backgroundColor="Kravenbg3" name="filelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" size="708,540" transparent="1" zPosition="3" />
     <eLabel text="Cancel" position="70,665" size="220,26" zPosition="1" font="Regular;20" halign="left" valign="center" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" />
     <eLabel text="Save" position="320,665" size="220,26" zPosition="1" font="Regular;20" halign="left" valign="center" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" />
@@ -495,7 +495,7 @@
     <!--<text="DirectoryBrowser" position="70,0" />-->
   </screen>
   <!-- MediaPlayerSettings -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MediaPlayerSettings" position="0,0" size="1280,720" title="Edit Settings">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MediaPlayerSettings" position="0,0" size="1280,720" title="Edit Settings">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
     <eLabel text="Cancel" position="70,665" size="220,26" zPosition="1" font="Regular;20" halign="left" valign="center" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" />
     <eLabel text="Save" position="320,665" size="220,26" zPosition="1" font="Regular;20" halign="left" valign="center" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" />
@@ -506,7 +506,7 @@
     <!--<text="MediaPlayerSettings" position="70,0" />-->
   </screen>
   <!-- MovieEpgSetup -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MovieEpgSetup" position="0,0" size="1280,720" title="MovieEpg Setup">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MovieEpgSetup" position="0,0" size="1280,720" title="MovieEpg Setup">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;20" position="70,525" render="Label" size="708,88" source="help" transparent="1" foregroundColor="KravenFont2" />
     <constant-widget name="Title-big"/>
@@ -517,7 +517,7 @@
     <!--<text="MovieEpgSetup" position="70,0" />-->
   </screen>
   <!-- MovieContextMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MovieContextMenu" position="0,0" size="1280,720" title="Movielist menu">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MovieContextMenu" position="0,0" size="1280,720" title="Movielist menu">
     <eLabel backgroundColor="Kravenbg3" font="Regular2;23" position="70,80" size="708,28" text="Movielist menu" transparent="1" foregroundColor="KravenFont2" />
     <widget backgroundColor="Kravenbg3" name="menu" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,123" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
     <constant-widget name="Title-big"/>
@@ -527,7 +527,7 @@
   </screen>
   <!-- ********** openWebif ********** -->
     <!-- OpenWebifConfig -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="OpenWebifConfig" position="0,0" size="1280,720" title="OpenWebif Configuration">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="OpenWebifConfig" position="0,0" size="1280,720" title="OpenWebif Configuration">
     <widget backgroundColor="Kravenbg3" font="Regular2;24" halign="center" name="lab1" position="70,80" size="708,60" transparent="1" valign="top" zPosition="1" foregroundColor="KravenFont2" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,161" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
@@ -539,7 +539,7 @@
   </screen>
   <!-- ********** PiconManager ********** -->
   <!-- PiconManagerScreen -->
-  <screen name="PiconManagerScreen" backgroundColor="Kravenbg" flags="wfNoBorder" title="PiconManager" position="0,0" size="1280,720">
+  <screen name="PiconManagerScreen" backgroundColor="transparent" flags="wfNoBorder" title="PiconManager" position="0,0" size="1280,720">
     <widget backgroundColor="Kravenbg" name="piconpath" position="80,80" size="690,26" font="Regular;20" foregroundColor="KravenFont1" transparent="1" zPosition="1" halign="left" />
     <widget backgroundColor="Kravenbg" name="piconpath2" position="260,80" size="500,26" font="Regular;20" foregroundColor="KravenFont1" transparent="1" zPosition="1" halign="left" />
     <widget backgroundColor="Kravenbg" name="piconspace" position="80,110" size="690,26" font="Regular;20" foregroundColor="KravenFont1" transparent="1" zPosition="1" halign="left" />
@@ -571,7 +571,7 @@
     <!--<text="PiconManagerScreen" position="70,0" />-->
   </screen>
   <!-- PiconManagerFolderScreen -->
-  <screen name="PiconManagerFolderScreen" position="0,0" size="1280,720" title="" backgroundColor="Kravenbg3" flags="wfNoBorder">
+  <screen name="PiconManagerFolderScreen" position="0,0" size="1280,720" title="" backgroundColor="transparent" flags="wfNoBorder">
     <widget name="media" position="70,80" size="540,30" valign="top" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="folderlist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,140" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="SourceRedGreen"/>
@@ -581,7 +581,7 @@
     <constant-widget name="OKExit"/>
     <!--<text="PiconManagerFolderScreen" position="70,0" />-->
   </screen>
-  <screen name="pm_conf" position="0,0" size="1280,720" title="Picon Manager" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="pm_conf" position="0,0" size="1280,720" title="Picon Manager" flags="wfNoBorder" backgroundColor="transparent">
 	<eLabel text="PiconManager Config" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -591,7 +591,7 @@
     <!--<text="pm_conf" position="70,0" />-->
   </screen>
   <!-- TranscodingSetup -->
-  <screen name="TranscodingSetup" position="0,0" size="1280,720" title="Transcoding Setup" flags="wfNoBorder" backgroundColor="Kravenbg3">
+  <screen name="TranscodingSetup" position="0,0" size="1280,720" title="Transcoding Setup" flags="wfNoBorder" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" zPosition="1" size="708,360" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget source="description" render="Label" position="70,485" size="708,60" font="Regular2;22" foregroundColor="KravenFont2" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" />
     <widget source="text" render="Label" position="70,560" size="708,30" font="Regular2;22" foregroundColor="KravenFont2" halign="left" valign="center" backgroundColor="Kravenbg3" transparent="1" />
@@ -604,7 +604,7 @@
   </screen>
   <!-- ********** Web Browser by Maggy ********** -->
   <!-- BrowserLauncher -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="BrowserLauncher" position="0,0" size="1280,720" title="Web Browser">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="BrowserLauncher" position="0,0" size="1280,720" title="Web Browser">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="108,112" size="309,90" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <ePixmap alphatest="blend" pixmap="KravenVB/menu/rc_wb_desc.png" position="87,224" size="358,324" />
     <widget font="Regular2;18" foregroundColor="red" halign="center" name="info" position="100,550" size="309,70" transparent="1" />
@@ -616,35 +616,35 @@
   </screen>
   <!-- ********** WebRadioFS ********** -->
   <!-- WebradioFSScreen_16 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="WebradioFSScreen_16" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFSScreen_16" position="0,0" size="1280,720" title="">
     <constant-widget name="Webradio1"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
     <!--<text="WebradioFSScreen_16" position="70,0" />-->
   </screen>
   <!-- genre_anzeige_13 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="genre_anzeige_13" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="genre_anzeige_13" position="0,0" size="1280,720" title="">
     <constant-widget name="Webradio1"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
     <!--<text="genre_anzeige_13" position="70,0" />-->
   </screen>
   <!-- menu_13 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="menu_13" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="menu_13" position="0,0" size="1280,720" title="">
     <constant-widget name="Webradio1"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
     <!--<text="menu_13" position="70,0" />-->
   </screen>
   <!-- groups_13 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="groups_13" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="groups_13" position="0,0" size="1280,720" title="">
     <constant-widget name="Webradio1"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
     <!--<text="groups_13" position="70,0" />-->
   </screen>
     <!-- wbrFS_r_site15 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="wbrFS_r_site15" position="900,0" size="380,640">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="wbrFS_r_site15" position="900,0" size="380,640">
     <widget alphatest="blend" backgroundColor="Kravenbg" name="picture" position="0,80" size="280,278" />
     <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile1b" position="0,380" size="280,22" transparent="1" noWrap="1" />
     <widget backgroundColor="Kravenbg" font="Regular;18" foregroundColor="KravenFont1" halign="center" name="zeile2b" position="0,402" size="280,22" transparent="1" noWrap="1" />
@@ -666,7 +666,7 @@
     <!--<text="wbrFS_r_site15" position="70,0" />-->
   </screen>
   <!-- WebradioFSSetup_13 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="WebradioFSSetup_13" position="0,0" size="1280,720" title="webradioFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFSSetup_13" position="0,0" size="1280,720" title="webradioFS">
     <constant-widget name="Webradio2"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
@@ -674,7 +674,7 @@
     <!--<text="WebradioFSSetup_13" position="70,0" />-->
   </screen>
   <!-- WebradioFS_FB_Setup_12 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="WebradioFS_FB_Setup_12" position="0,0" size="1280,720" title="webradioFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebradioFS_FB_Setup_12" position="0,0" size="1280,720" title="webradioFS">
     <constant-widget name="Webradio2"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
@@ -682,7 +682,7 @@
     <!--<text="WebradioFS_FB_Setup_12" position="70,0" />-->
   </screen>
   <!-- Fav_edit_12 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="Fav_edit_12" position="0,0" size="1280,720" title="webradioFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Fav_edit_12" position="0,0" size="1280,720" title="webradioFS">
     <constant-widget name="Webradio2"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
@@ -690,7 +690,7 @@
     <!--<text="Fav_edit_12" position="70,0" />-->
   </screen>
   <!-- rec_menu_12 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="rec_menu_12" position="0,0" size="1280,720" title="webradioFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="rec_menu_12" position="0,0" size="1280,720" title="webradioFS">
     <constant-widget name="Webradio2"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
@@ -698,7 +698,7 @@
     <!--<text="rec_menu_12" position="70,0" />-->
   </screen>
   <!-- col_set_12 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="col_set_12" position="0,0" size="1280,720" title="webradioFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="col_set_12" position="0,0" size="1280,720" title="webradioFS">
     <constant-widget name="Webradio2"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="BackgroundWR"/>
@@ -706,7 +706,7 @@
     <!--<text="col_set_12" position="70,0" />-->
   </screen>
   <!-- webradioFSsetDisplay -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="webradioFSsetDisplay" position="0,0" size="1280,720" title="webradioFS - Display-Settings">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="webradioFSsetDisplay" position="0,0" size="1280,720" title="webradioFS - Display-Settings">
     <widget backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" name="titel" transparent="1" halign="left" valign="center" noWrap="1" />
     <widget backgroundColor="Kravenbg" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
     <widget font="Regular;20" halign="left" valign="center" name="label_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -717,7 +717,7 @@
     <!--<text="webradioFSsetDisplay" position="70,0" />-->
   </screen>
   <!-- wbrfs_set_we -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="wbrfs_set_we" position="0,0" size="1280,720" title="Info">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="wbrfs_set_we" position="0,0" size="1280,720" title="Info">
     <constant-widget name="Title-big2"/>
     <widget backgroundColor="Kravenbg" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,390" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
     <widget backgroundColor="Kravenbg" name="warn" foregroundColor="KravenFont2" font="Regular2;22" position="70,490" size="708,135" transparent="1" halign="center" valign="center" zPosition="2" />
@@ -747,7 +747,7 @@
   </screen>
   <!-- ********** WebInterface ********** -->
   <!-- WebIfConfigScreen -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="WebIfConfigScreen" position="0,0" size="1280,720" title="Main Setup">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebIfConfigScreen" position="0,0" size="1280,720" title="Main Setup">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="SourceRedGreen"/>
     <constant-widget name="Title-big"/>
@@ -757,7 +757,7 @@
     <!--<text="WebIfConfigScreen" position="70,0" />-->
   </screen>
   <!-- WebcamViewer -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="WebcamViewer" position="0,0" size="1280,720" title="WebcamViewer">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebcamViewer" position="0,0" size="1280,720" title="WebcamViewer">
     <widget backgroundColor="Kravenbg3" name="menu" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
@@ -765,7 +765,7 @@
     <!--<text="WebcamViewer" position="70,0" />-->
   </screen>
   <!-- PictureViewer -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="PictureViewer" position="0,0" size="1280,720" title="PictureViewer">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PictureViewer" position="0,0" size="1280,720" title="PictureViewer">
     <eLabel backgroundColor="Kravenbg" text="Source:" font="Regular2;24" foregroundColor="KravenFont2" position="60,80" size="320,30" halign="left" valign="center" zPosition="1" transparent="1" />
     <widget backgroundColor="Kravenbg" name="menu" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="60,130" size="340,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget name="pixmap" position="448,160" size="352,270" backgroundColor="Kravenbg" />
@@ -782,7 +782,7 @@
     <!--<text="PictureViewer" position="70,0" />-->
   </screen>
   <!-- PictureViewer Settings -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="WebcamViewerMenu" position="0,0" size="1280,720" title="Setup">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WebcamViewerMenu" position="0,0" size="1280,720" title="Setup">
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,240" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
@@ -793,7 +793,7 @@
     <!--<text="WebcamViewerMenu" position="70,0" />-->
   </screen>
   <!-- DLNADeviceBrowser Config -->
-  <screen name="DLNADeviceBrowser" position="0,0" size="1280,720" title="Device Browser" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="DLNADeviceBrowser" position="0,0" size="1280,720" title="Device Browser" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="devicelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -803,7 +803,7 @@
     <!--<text="DLNADeviceBrowser" position="70,0" />-->
   </screen>
   <!-- DLNADeviceBrowser Config -->
-  <screen name="DLNAFileBrowser" position="0,0" size="1280,720" title="Device Browser" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="DLNAFileBrowser" position="0,0" size="1280,720" title="Device Browser" backgroundColor="transparent" flags="wfNoBorder" >
     <widget name="directory" position="70,80" size="708,25" valign="center" foregroundColor="KravenFont1" font="Regular;20" />
 	<widget backgroundColor="Kravenbg3" name="filelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,110" size="708,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
@@ -814,7 +814,7 @@
     <!--<text="DLNAFileBrowser" position="70,0" />-->
   </screen>
   <!-- DLNA FileBrowser Config -->
-  <screen name="DLNAClientConfig" position="0,0" size="1280,720" title="Mini DLNA Runcher" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="DLNAClientConfig" position="0,0" size="1280,720" title="Mini DLNA Runcher" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -824,7 +824,7 @@
     <!--<text="DLNAClientConfig" position="70,0" />-->
   </screen>
   <!-- DLNA Server -->
-  <screen name="DLNAServer" position="0,0" size="1280,720" title="DLNA Server" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="DLNAServer" position="0,0" size="1280,720" title="DLNA Server" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -834,7 +834,7 @@
     <!--<text="DLNAServer" position="70,0" />-->
   </screen>
   <!-- AC3LipSyncSetup -->
-  <screen name="AC3LipSyncSetup" position="0,0" size="1280,720" title="AC3 Lip Sync Setup" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="AC3LipSyncSetup" position="0,0" size="1280,720" title="AC3 Lip Sync Setup" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget name="PluginInfo" position="70,585" size="708,28" zPosition="4" font="Regular2;22" halign="center" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" transparent="1" />
@@ -845,7 +845,7 @@
     <!--<text="AC3LipSyncSetup" position="70,0" />-->
   </screen>
   <!--- Picture Player -->
-  <screen name="picshow" position="0,0" size="1280,720" title="Picture Player" backgroundColor="Kravenbg" flags="wfNoBorder">
+  <screen name="picshow" position="0,0" size="1280,720" title="Picture Player" backgroundColor="transparent" flags="wfNoBorder">
     <constant-widget name="Title-big2"/>
 	<widget backgroundColor="Kravenbg" name="filelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="555,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget name="thn" position="840,80" size="380,260" backgroundColor="Kravenbg" zPosition="2" transparent="1" />
@@ -860,7 +860,7 @@
     <!--<text="picshow" position="70,0" />-->
   </screen>
   <!-- CrossEPG Menu -->
-  <screen name="CrossEPG_Menu" position="0,0" size="1280,720" title="CrossEPG Menu" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="CrossEPG_Menu" position="0,0" size="1280,720" title="CrossEPG Menu" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget source="list" render="Listbox" position="40,80" size="670,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1" >
 			<convert type="TemplatedMultiContent">
@@ -878,7 +878,7 @@
     <!--<text="CrossEPG_Menu" position="70,0" />-->
   </screen>
   <!-- CrossEPG Configuration -->
-  <screen name="CrossEPG_Setup" position="0,0" size="1280,720" title="CrossEPG Config" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="CrossEPG_Setup" position="0,0" size="1280,720" title="CrossEPG Config" backgroundColor="transparent" flags="wfNoBorder" >
 	<constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,390" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" zPosition="1" transparent="1" />
 	<widget name="information" position="70,500" size="708,120" halign="center" valign="center" font="Regular2;22" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" transparent="1" />
@@ -889,7 +889,7 @@
     <!--<text="CrossEPG_Setup" position="70,0" />-->
   </screen>
   <!-- CrossEPG Providers -->
-  <screen name="CrossEPG_Providers" position="0,0" size="1280,720" title="CrossEPG Provider" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="CrossEPG_Providers" position="0,0" size="1280,720" title="CrossEPG Provider" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget source="list" render="Listbox" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1" >
 	  <convert type="TemplatedMultiContent">
@@ -910,7 +910,7 @@
     <!--<text="CrossEPG_Providers" position="70,0" />-->
   </screen>
   <!-- CrossEPG Order List -->
-  <screen name="CrossEPG_Ordering" position="0,0" size="1280,720" title="CrossEPG Provider" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="CrossEPG_Ordering" position="0,0" size="1280,720" title="CrossEPG Provider" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget source="list" render="Listbox" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1" >
 	  <convert type="TemplatedMultiContent">
@@ -931,7 +931,7 @@
     <!--<text="CrossEPG_Ordering" position="70,0" />-->
   </screen>
   <!-- CrossEPG Information -->
-  <screen name="CrossEPG_Info" position="0,0" size="1280,720" title="CrossEPG DB Info" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="CrossEPG_Info" position="0,0" size="1280,720" title="CrossEPG DB Info" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget name="version" position="70,80" size="670,40" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
 	<widget name="create" position="70,120" size="580,40" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
@@ -955,7 +955,7 @@
     <!--<text="CrossEPG_Info" position="70,0" />-->
   </screen>
   <!-- CrossEPG About -->
-  <screen name="CrossEPG_About" position="0,0" size="1280,720" title="CrossEPG DB Info" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="CrossEPG_About" position="0,0" size="1280,720" title="CrossEPG DB Info" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget name="about" position="70,100" size="708,500" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -966,7 +966,7 @@
     <!--<text="CrossEPG_About" position="70,0" />-->
   </screen>
   <!-- YouTube Tv Setting -->
-  <screen name="YoutubeTVSettings" position="0,0" size="1280,720" title="YouTube TV Settings" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="YoutubeTVSettings" position="0,0" size="1280,720" title="YouTube TV Settings" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -976,7 +976,7 @@
     <!--<text="YoutubeTVSettings" position="70,0" />-->
   </screen>
   <!-- YouTubeTv Window -->
-  <screen name="YoutubeTVWindow" position="0,0" size="1280,720" title="Start YouTube TV" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="YoutubeTVWindow" position="0,0" size="1280,720" title="Start YouTube TV" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget name="infomation" position="70,80" size="708,80" valign="center" halign="center" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" zPosition="1" />
 	<widget name="startdesc" position="70,200" size="708,40" valign="center" font="Regular;20" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" transparent="1" zPosition="1" />
@@ -989,7 +989,7 @@
     <!--<text="YoutubeTVWindow" position="70,0" />-->
   </screen>
   <!-- EPGImport Filter Config -->
-  <screen name="Config" position="0,0" size="1280,720" title="EPG Import Configuration" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="Config" position="0,0" size="1280,720" title="EPG Import Configuration" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />	
 	<widget name="statusbar" position="70,590" halign="center" size="708,30" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" transparent="1" font="Regular;22" />
@@ -1001,7 +1001,7 @@
     <!--<text="Config" position="70,0" />-->
   </screen>
   <!-- EPGImportSources -->
-  <screen name="EPGImportSources" position="0,0" size="1280,720" title="EPG Import Sources" backgroundColor="Kravenbg3" flags="wfNoBorder" >
+  <screen name="EPGImportSources" position="0,0" size="1280,720" title="EPG Import Sources" backgroundColor="transparent" flags="wfNoBorder" >
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -1011,7 +1011,7 @@
     <!--<text="EPGImportSources" position="70,0" />-->
   </screen>
   <!-- SIBsetupScreen -->
-  <screen name="SIBsetupScreen" position="0,0" zPosition="2" size="1280,720" title="Second-InfoBar setup" backgroundColor="Kravenbg3">
+  <screen name="SIBsetupScreen" position="0,0" zPosition="2" size="1280,720" title="Second-InfoBar setup" backgroundColor="transparent">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -1022,7 +1022,7 @@
     <!--<text="SIBsetupScreen" position="70,0" />-->
   </screen>
     <!-- MultiQuickButton -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MultiQuickButton" position="0,0" size="1280,720" title="">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MultiQuickButton" position="0,0" size="1280,720" title="">
 	<eLabel text="MultiQuickButton" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1043,7 +1043,7 @@
     <!--<text="MultiQuickButton" position="70,0" />-->
   </screen>
     <!-- QuickButton -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="QuickButton" position="0,0" size="1280,720" title="QuickButton">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="QuickButton" position="0,0" size="1280,720" title="QuickButton">
 	<eLabel text="QuickButton" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -1054,7 +1054,7 @@
     <!--<text="QuickButton" position="70,0" />-->
   </screen>
     <!-- MultiQuickButtonMacro -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MultiQuickButtonMacro" position="0,0" size="1280,720" title="MultiQuickButton macro configuration">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MultiQuickButtonMacro" position="0,0" size="1280,720" title="MultiQuickButton macro configuration">
 	<eLabel text="MultiQuickButton macro" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget source="menu" render="Listbox" position="70,80" size="708,540" backgroundColor="Kravenbg3" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" >
 	  <convert type="TemplatedMultiContent" transparent="1">
@@ -1075,7 +1075,7 @@
     <!--<text="MultiQuickButtonMacro" position="70,0" />-->
   </screen>
     <!-- InputMacroName -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="InputMacroName" position="0,0" size="1280,720" title="Input macro name">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="InputMacroName" position="0,0" size="1280,720" title="Input macro name">
 	<eLabel text="Input macro name" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" zPosition="2" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -1084,7 +1084,7 @@
     <!--<text="InputMacroName" position="70,0" />-->
   </screen>
     <!-- MultiQuickButtonScript -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MultiQuickButtonScript" position="0,0" size="1280,720" title="Select file to execute">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MultiQuickButtonScript" position="0,0" size="1280,720" title="Select file to execute">
 	<eLabel text="Select file to execute" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget name="executable" position="70,80" size="708,28" valign="center" halign="left" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" noWrap="1" />
 	<widget backgroundColor="Kravenbg3" name="filelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,120" zPosition="1" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1"/>
@@ -1095,7 +1095,7 @@
     <!--<text="MultiQuickButtonScript" position="70,0" />-->
   </screen>
     <!-- CoolTVGuideSetup -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CoolTVGuideSetup" position="0,0" size="1280,720">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CoolTVGuideSetup" position="0,0" size="1280,720">
 	<eLabel text="CoolTV Guide Setup" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" transparent="1" />
     <constant-widget name="Colorbuttons"/>
@@ -1105,7 +1105,7 @@
     <!--<text="CoolTVGuideSetup" position="70,0" />-->
   </screen>
     <!-- FilebrowserVTi_ver -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="FilebrowserVTi_ver" position="0,0" size="1280,720">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="FilebrowserVTi_ver" position="0,0" size="1280,720">
     <eLabel text="Filebrowser VTi" position="70,12" size="1000,46" backgroundColor="KravenIBbg2" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
 	<widget backgroundColor="Kravenbg" name="list_left_head_name" foregroundColor="KravenFont2" position="70,80" size="550,50" font="Regular;20" transparent="1" />
 	<widget backgroundColor="Kravenbg" name="list_left" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="60,135" size="560,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1123,7 +1123,7 @@
     <!--<text="FilebrowserVTi_ver" position="70,0" />-->
   </screen>
     <!-- FilebrowserVTi_hor -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="FilebrowserVTi_hor" position="0,0" size="1280,720">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="FilebrowserVTi_hor" position="0,0" size="1280,720">
     <eLabel text="Filebrowser VTi" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
 	<widget backgroundColor="Kravenbg3" name="list_left_head_name" foregroundColor="KravenFont2" position="70,80" size="708,25" font="Regular;20" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list_left" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="60,110" size="718,180" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1139,7 +1139,7 @@
     <!--<text="FilebrowserVTi_hor" position="70,0" />-->
   </screen>
     <!-- FilebrowserConfigScreenVTi -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="FilebrowserConfigScreenVTi" position="0,0" size="1280,720">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="FilebrowserConfigScreenVTi" position="0,0" size="1280,720">
     <eLabel text="Filebrowser VTi Config" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,110" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="help" foregroundColor="KravenFont2" position="70,80" size="708,25" font="Regular;20" transparent="1" />
@@ -1151,7 +1151,7 @@
   </screen>
   <!-- ********** AutoTimer ********** -->
   <!-- AutoTimerEditor -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerEditor" position="0,0" size="1280,720" title="Edit AutoTimer">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerEditor" position="0,0" size="1280,720" title="Edit AutoTimer">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" source="help" render="Label" foregroundColor="KravenFont2" position="70,517" size="708,112" halign="center" font="Regular2;22" />
@@ -1162,7 +1162,7 @@
     <!--<text="AutoTimerEditor" position="70,0" />-->
   </screen>
   <!-- AutoTimerFilterEditor -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerFilterEditor" position="0,0" size="1280,720" title="Edit AutoTimer Filters">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerFilterEditor" position="0,0" size="1280,720" title="Edit AutoTimer Filters">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1172,7 +1172,7 @@
     <!--<text="AutoTimerFilterEditor" position="70,0" />-->
   </screen>
   <!-- AutoTimerServiceEditor -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerServiceEditor" position="0,0" size="1280,720" title="Edit AutoTimer Services">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerServiceEditor" position="0,0" size="1280,720" title="Edit AutoTimer Services">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1182,7 +1182,7 @@
     <!--<text="AutoTimerServiceEditor" position="70,0" />-->
   </screen>
   <!-- AutoTimerImporter -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerImporter" position="0,0" size="1280,720" title="Import AutoTimer">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerImporter" position="0,0" size="1280,720" title="Import AutoTimer">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1191,20 +1191,8 @@
     <constant-widget name="OKExit"/>
     <!--<text="AutoTimerImporter" position="70,0" />-->
   </screen>
-  <!-- AutoTimerOverview -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerOverview" position="0,0" size="1280,720" title="AutoTimer Overview">
-    <constant-widget name="Title-big"/>
-	<widget backgroundColor="Kravenbg3" name="entries" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <widget font="Regular;20" halign="left" valign="center" source="key_green" render="Label" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" source="key_yellow" render="Label" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" source="key_blue" render="Label" position="820,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="MenuOKExit"/>
-    <!--<text="AutoTimerOverview" position="70,0" />-->
-  </screen>
   <!-- AutoTimerPreview -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerPreview" position="0,0" size="1280,720" title="Preview AutoTimer">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerPreview" position="0,0" size="1280,720" title="Preview AutoTimer">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" source="timerlist" render="Listbox" foregroundColor="KravenFont1" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5">
 	  <convert type="TemplatedMultiContent">
@@ -1227,7 +1215,7 @@
     <!--<text="AutoTimerPreview" position="70,0" />-->
   </screen>
   <!-- AutoTimerSettings -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="AutoTimerSettings" position="0,0" size="1280,720" title="AutoTimer Settings">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerSettings" position="0,0" size="1280,720" title="AutoTimer Settings">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" source="help" render="Label" foregroundColor="KravenFont2" position="70,517" size="708,112" halign="center" font="Regular2;22" />
@@ -1238,7 +1226,7 @@
     <!--<text="AutoTimerSettings" position="70,0" />-->
   </screen>
   <!-- EPG Share -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="epgShareScreen" position="0,0" size="1280,720" title="EPG Share">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="epgShareScreen" position="0,0" size="1280,720" title="EPG Share">
 	<widget backgroundColor="KravenIBbg3" name="info" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" noWrap="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1248,7 +1236,7 @@
     <!--<text="epgShareScreen" position="70,0" />-->
   </screen>
   <!-- EPG Share Setup -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="epgShareSetup" position="0,0" size="1280,720" title="EPG Share Setup">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="epgShareSetup" position="0,0" size="1280,720" title="EPG Share Setup">
 	<widget backgroundColor="KravenIBbg3" name="info" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" noWrap="1" />
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1258,7 +1246,7 @@
     <!--<text="epgShareSetup" position="70,0" />-->
   </screen>
   <!-- PermanentClockMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="PermanentClockMenu" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PermanentClockMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="Permanent Clock" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1267,7 +1255,7 @@
     <!--<text="PermanentClockMenu" position="70,0" />-->
   </screen>
   <!-- OscamButler -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="OscamButler" position="0,0" size="1280,720" title="OscamButler">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="OscamButler" position="0,0" size="1280,720" title="OscamButler">
     <widget backgroundColor="KravenIBbg3" name="title" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" noWrap="1" />
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="info_txt" font="Regular2;22" foregroundColor="KravenFont2" position="70,540" size="708,54" valign="center" halign="center" zPosition="2" />
@@ -1280,7 +1268,7 @@
     <!--<text="OscamButler" position="70,0" />-->
   </screen>
   <!-- EcmInfoConfigMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="EcmInfoConfigMenu" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="EcmInfoConfigMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="Ecm Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1289,7 +1277,7 @@
     <!--<text="EcmInfoConfigMenu" position="70,0" />-->
   </screen>
   <!-- CCcamInfoMain -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoMain" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoMain" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="menu" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1298,7 +1286,7 @@
     <!--<text="CCcamInfoMain" position="70,0" />-->
   </screen>
   <!-- CCcamInfoEcmInfoSelection -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoEcmInfoSelection" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1307,7 +1295,7 @@
     <!--<text="CCcamInfoEcmInfoSelection" position="70,0" />-->
   </screen>
   <!-- CCcamInfoInfoScreen -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoInfoScreen" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoInfoScreen" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="text" font="Regular;22" foregroundColor="KravenFont1" position="70,80" size="708,540" transparent="1" />
 	<!-- Logo -->
@@ -1316,7 +1304,7 @@
     <!--<text="CCcamInfoInfoScreen" position="70,0" />-->
   </screen>
   <!-- CCcamShareViewMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamShareViewMenu" position="0,0" size="1280,720" title="Share View">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamShareViewMenu" position="0,0" size="1280,720" title="Share View">
     <widget backgroundColor="KravenIBbg3" name="title" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" noWrap="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,360" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="uphops" font="Regular;22" foregroundColor="KravenFont1" position="70,470" size="334,27" />
@@ -1329,7 +1317,7 @@
     <!--<text="CCcamShareViewMenu" position="70,0" />-->
   </screen>
   <!-- CCcamInfoSubMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoSubMenu" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoSubMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,300" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="info" font="Regular2;22" foregroundColor="KravenFont2" position="70,410" size="708,210" halign="center" valign="center" />
@@ -1339,7 +1327,7 @@
     <!--<text="CCcamInfoSubMenu" position="70,0" />-->
   </screen>
   <!-- CCcamInfoServerMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoServerMenu" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoServerMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,300" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="info" font="Regular2;22" foregroundColor="KravenFont2" position="70,410" size="708,210" halign="center" valign="center" />
@@ -1349,7 +1337,7 @@
     <!--<text="CCcamInfoServerMenu" position="70,0" />-->
   </screen>
   <!-- CCcamInfoConfigMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoConfigMenu" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoConfigMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1358,7 +1346,7 @@
     <!--<text="CCcamInfoConfigMenu" position="70,0" />-->
   </screen>
   <!-- CCcamInfoRemoteBoxMenu -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoRemoteBoxMenu" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoRemoteBoxMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1368,7 +1356,7 @@
     <!--<text="CCcamInfoRemoteBoxMenu" position="70,0" />-->
   </screen>
   <!-- CCcamInfoShareInfo -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoShareInfo" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoShareInfo" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1378,7 +1366,7 @@
     <!--<text="CCcamInfoShareInfo" position="70,0" />-->
   </screen>
   <!-- CCcamInfoConfigSwitcher -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoConfigSwitcher" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoConfigSwitcher" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1388,7 +1376,7 @@
     <!--<text="CCcamInfoConfigSwitcher" position="70,0" />-->
   </screen>
   <!-- CCcamInfoMenuConfig -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="CCcamInfoMenuConfig" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CCcamInfoMenuConfig" position="0,0" size="1280,720" title=" ">
 	<eLabel text="CCcam Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1399,7 +1387,7 @@
     <!--<text="CCcamInfoMenuConfig" position="70,0" />-->
   </screen>
   <!-- SeriesPluginConfiguration -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="SeriesPluginConfiguration" position="0,0" size="1280,720" title="SeriesPlugin Setup">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SeriesPluginConfiguration" position="0,0" size="1280,720" title="SeriesPlugin Setup">
 	<widget backgroundColor="Kravenbg" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="1168,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Background"/>
@@ -1409,7 +1397,7 @@
     <!--<text="SeriesPluginConfiguration" position="70,0" />-->
   </screen>
   <!-- SeriesPluginChannelEditor -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="SeriesPluginChannelEditor" position="0,0" size="1280,720" title="Channel Editor">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SeriesPluginChannelEditor" position="0,0" size="1280,720" title="Channel Editor">
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
@@ -1419,7 +1407,7 @@
     <!--<text="SeriesPluginChannelEditor" position="70,0" />-->
   </screen>
   <!-- SeriesPluginInfoScreen -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="SeriesPluginInfoScreen" position="0,0" size="1280,720" title="SeriesPlugin">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SeriesPluginInfoScreen" position="0,0" size="1280,720" title="SeriesPlugin">
 	<widget name="logo" position="70,80" size="267,43" alphatest="on" />
 	<widget name="cover" position="70,80" size="360,54" alphatest="on" />
 	<widget name="state" position="70,80" size="360,54" alphatest="on" />
@@ -1437,7 +1425,7 @@
     <!--<text="SeriesPluginInfoScreen" position="70,0" />-->
   </screen>
   <!-- PictureCenterFS7 -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="PictureCenterFS7" position="0,0" size="1280,720" title="PictureCenterFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PictureCenterFS7" position="0,0" size="1280,720" title="PictureCenterFS">
     <constant-widget name="Title-big2"/>
     <constant-widget name="Background"/>
 	<widget backgroundColor="Kravenbg" source="pc_list" render="Listbox" foregroundColor="KravenFont1" foregroundColorSelected="KravenSelFont" backgroundColorSelected="KravenSelection" position="70,80" size="708,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" zPosition="2" transparent="1" >
@@ -1472,7 +1460,7 @@
     <!--<text="PictureCenterFS7" position="70,0" />-->
   </screen>
   <!-- PictureCenterFS7_Setup2 -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="PictureCenterFS7_Setup2" position="0,0" size="1280,720" title="PictureCenterFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PictureCenterFS7_Setup2" position="0,0" size="1280,720" title="PictureCenterFS">
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="balken" font="Regular2;22" foregroundColor="KravenFont2" position="70,514" size="708,81" halign="center" valign="center" />
     <constant-widget name="Title-big"/>
@@ -1483,7 +1471,7 @@
     <!--<text="PictureCenterFS7_Setup2" position="70,0" />-->
   </screen>
   <!-- PictureCenterFS7_Edit -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="PictureCenterFS7_Edit" position="0,0" size="1280,720" title="PictureCenterFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PictureCenterFS7_Edit" position="0,0" size="1280,720" title="PictureCenterFS">
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,420" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="balken" font="Regular2;22" foregroundColor="KravenFont2" position="70,514" size="708,81" halign="center" valign="center" />
     <constant-widget name="Title-big"/>
@@ -1494,7 +1482,7 @@
     <!--<text="PictureCenterFS7_Edit" position="70,0" />-->
   </screen>
   <!-- PictureCenterFS_Filemenue -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="PictureCenterFS_Filemenue" position="0,0" size="1280,720" title="PictureCenterFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PictureCenterFS_Filemenue" position="0,0" size="1280,720" title="PictureCenterFS">
 	<eLabel text="PictureCenterFS" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1503,7 +1491,7 @@
     <!--<text="PictureCenterFS_Filemenue" position="70,0" />-->
   </screen>
   <!-- Show_Exif -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="Show_Exif" position="0,0" size="1280,720" title="PictureCenterFS">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Show_Exif" position="0,0" size="1280,720" title="PictureCenterFS">
     <widget source="menu" render="Listbox" position="70,80" size="708,420" scrollbarMode="showOnDemand" selectionDisabled="1" transparent="1" >
 		<convert type="TemplatedMultiContent">
 		{
@@ -1524,7 +1512,7 @@
     <!--<text="Show_Exif" position="70,0" />-->
   </screen>
   <!-- MediaInfoConfigScreen -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MediaInfoConfigScreen" position="0,0" size="1280,720" title="MediaInfo Config">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MediaInfoConfigScreen" position="0,0" size="1280,720" title="MediaInfo Config">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1534,7 +1522,7 @@
     <!--<text="MediaInfoConfigScreen" position="70,0" />-->
   </screen>
   <!-- MediaInfoFolderScreen -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MediaInfoFolderScreen" position="0,0" size="1280,720" title="MediaInfo Folder">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MediaInfoFolderScreen" position="0,0" size="1280,720" title="MediaInfo Folder">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="media" font="Regular2;24" foregroundColor="KravenFont2" position="70,80" size="708,30" zPosition="5" />
 	<widget backgroundColor="Kravenbg3" name="folderlist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,115" size="708,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1545,7 +1533,7 @@
     <!--<text="MediaInfoFolderScreen" position="70,0" />-->
   </screen>
   <!-- MediaInfo -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="MediaInfo" position="0,0" size="1280,720" title="MediaInfo">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MediaInfo" position="0,0" size="1280,720" title="MediaInfo">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="head" font="Regular2;24" foregroundColor="KravenFont2" position="70,80" size="708,30" zPosition="5" />
 	<widget backgroundColor="Kravenbg3" name="downloadList" font="Regular;22" foregroundColor="KravenFont1" itemHeight="50" position="70,115" size="708,500" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1556,7 +1544,7 @@
     <!--<text="MediaInfo" position="70,0" />-->
   </screen>
   <!-- tmdbConfigScreen -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="tmdbConfigScreen" position="0,0" size="1280,720" title="TMDb - The Movie Database">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="tmdbConfigScreen" position="0,0" size="1280,720" title="TMDb - The Movie Database">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
 	<!-- Logo -->
@@ -1566,7 +1554,7 @@
     <!--<text="tmdbConfigScreen" position="70,0" />-->
   </screen>
   <!-- tmdbScreen -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="tmdbScreen" position="0,0" size="1280,720" title="TMDb - The Movie Database">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="tmdbScreen" position="0,0" size="1280,720" title="TMDb - The Movie Database">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg" name="searchinfo" font="Regular2;24" foregroundColor="KravenFont2" position="70,80" size="708,30" />
 	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,115" size="708,510" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1578,7 +1566,7 @@
     <!--<text="tmdbScreen" position="70,0" />-->
   </screen>
   <!-- tmdbScreenMovie -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="tmdbScreenMovie" position="0,0" size="1280,720" title="TMDb - The Movie Database">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="tmdbScreenMovie" position="0,0" size="1280,720" title="TMDb - The Movie Database">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg" name="searchinfo" font="Regular2;24" foregroundColor="KravenFont2" position="70,80" size="1000,30" />
 	<widget backgroundColor="Kravenbg" name="fulldescription" font="Regular;22" foregroundColor="KravenFont1" position="70,115" size="600,486" />
@@ -1612,7 +1600,7 @@
     <!--<text="tmdbScreenMovie" position="70,0" />-->
   </screen>
   <!-- tmdbScreenPeople -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="tmdbScreenPeople" position="0,0" size="1280,720" title="TMDb - The Movie Database">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="tmdbScreenPeople" position="0,0" size="1280,720" title="TMDb - The Movie Database">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg" name="searchinfo" font="Regular2;24" foregroundColor="KravenFont2" position="70,80" size="708,30" />
 	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,115" size="708,300" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1626,7 +1614,7 @@
     <!--<text="tmdbScreenPeople" position="70,0" />-->
   </screen>
   <!-- tmdbScreenSeason -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="tmdbScreenSeason" position="0,0" size="1280,720" title="TMDb - The Movie Database">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="tmdbScreenSeason" position="0,0" size="1280,720" title="TMDb - The Movie Database">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg" name="searchinfo" font="Regular2;24" foregroundColor="KravenFont2" position="70,80" size="708,30" />
 	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,115" size="708,300" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
@@ -1640,7 +1628,7 @@
     <!--<text="tmdbScreenSeason" position="70,0" />-->
   </screen>
   <!-- NachrichtenZentrale -->
-  <screen backgroundColor="Kravenbg3" name="NachrichtenZentrale" title="NachrichtenZentrale" flags="wfNoBorder" zPosition="0" position="0,0" size="1280,720">
+  <screen backgroundColor="transparent" name="NachrichtenZentrale" title="NachrichtenZentrale" flags="wfNoBorder" zPosition="0" position="0,0" size="1280,720">
 	<eLabel text="NachrichtenZentrale" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
 	<widget backgroundColor="Kravenbg3" render="Listbox" source="menu" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="5" >
 	  <convert type="TemplatedMultiContent">
@@ -1712,7 +1700,7 @@
     <!--<text="PicSetup" position="70,0" />-->
   </screen>
   <!-- FCCSetup -->
-  <screen backgroundColor="Kravenbg3" flags="wfNoBorder" name="FCCSetup" position="0,0" size="1280,720" title="Fast Channel Change Setup">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="FCCSetup" position="0,0" size="1280,720" title="Fast Channel Change Setup">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" />
 	<!-- Logo -->
@@ -1726,7 +1714,7 @@
     <constant-widget name="permanentclock-infobar-big"/>
   </screen>
   <!-- movieBrowserConfig -->
-  <screen name="movieBrowserConfig" position="0,0" size="1280,720" flags="wfNoBorder" title="Movie Browser Setup" backgroundColor="Kravenbg">
+  <screen name="movieBrowserConfig" position="0,0" size="1280,720" flags="wfNoBorder" title="Movie Browser Setup" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,85" size="708,540" transparent="1" enableWrapAround="1" scrollbarMode="showAlways" scrollbarWidth="6" zPosition="1" />
     <eLabel position="847,208" size="368,2" backgroundColor="KravenBorder" />
     <eLabel position="847,417" size="368,2" backgroundColor="KravenBorder" />
@@ -1742,7 +1730,7 @@
     <!--<text="movieBrowserConfig" position="70,0" />-->
   </screen>
   <!-- FolderSelection -->
-  <screen name="FolderSelection" position="0,0" size="1280,720" flags="wfNoBorder" title="Movie Browser Setup" backgroundColor="Kravenbg">
+  <screen name="FolderSelection" position="0,0" size="1280,720" flags="wfNoBorder" title="Movie Browser Setup" backgroundColor="transparent">
     <widget backgroundColor="Kravenbg" name="folderlist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,85" size="708,540" transparent="1" enableWrapAround="1" scrollbarMode="showAlways" scrollbarWidth="6" zPosition="1" />
     <eLabel position="847,208" size="368,2" backgroundColor="KravenBorder" />
     <eLabel position="847,417" size="368,2" backgroundColor="KravenBorder" />
@@ -1758,7 +1746,7 @@
     <!--<text="FolderSelection" position="70,0" />-->
   </screen>
   <!-- MovieInfoTMDb -->
-  <screen backgroundColor="Kravenbg" flags="wfNoBorder" name="MovieInfoTMDb" position="0,0" size="1280,720" title="Movie Information TMDb">
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="MovieInfoTMDb" position="0,0" size="1280,720" title="Movie Information TMDb">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg" name="movie_name" position="70,80" size="708,60" font="Regular;24" foregroundColor="KravenFont2" valign="top" transparent="1" />
 	<widget backgroundColor="Kravenbg" name="previewlist" position="70,146" size="708,459" font="Regular;22" foregroundColor="KravenFont1" itemHeight="27" scrollbarMode="showOnDemand" transparent="1" />
@@ -1783,10 +1771,16 @@
     <!--<text="MovieInfoTMDb" position="70,0" />-->
   </screen>
   <!-- SpinnerSelectionBox -->
-  <screen backgroundColor="Kravenbg" name="SpinnerSelectionBox" position="0,0" size="1280,720" title=" ">
+  <screen backgroundColor="transparent" name="SpinnerSelectionBox" position="0,0" size="1280,720" title=" ">
 	<widget backgroundColor="KravenIBbg3" name="text" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
-	<widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,390" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
-	<widget backgroundColor="Kravenbg3" name="bild" position="70,490" zPosition="1" size="200,133" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="list" position="70,80" size="354,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <eLabel backgroundColor="Kravenbg3" text="Vorschau:" position="508,80" size="200,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="bild" position="508,130" size="200,144" zPosition="1" transparent="1" />
+	<eLabel backgroundColor="transparent" position="508,130" size="200,144" transparent="1" zPosition="1" />
+	<eLabel backgroundColor="KravenBorder" position="505,127" size="206,3" transparent="0" zPosition="3" />
+	<eLabel backgroundColor="KravenBorder" position="505,274" size="206,3" transparent="0" zPosition="3" />
+	<eLabel backgroundColor="KravenBorder" position="505,127" size="3,150" transparent="0" zPosition="3" />
+	<eLabel backgroundColor="KravenBorder" position="708,127" size="3,150" transparent="0" zPosition="3" />
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="OKExit"/>
