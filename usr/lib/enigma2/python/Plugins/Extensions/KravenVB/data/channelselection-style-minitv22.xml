@@ -1,6 +1,6 @@
   <!-- /* ChannelSelection - Dual TV 2 -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
-    <widget font="Regular;30" foregroundColor="KravenFont2" position="42,66" halign="center" render="KravenRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=1,always=0,repeat=5,oneshot=1" size="416,40" source="ServiceEvent" backgroundColor="Kravenbg2" transparent="1" >
+    <widget font="Regular;30" foregroundColor="KravenFont2" position="42,66" halign="center" render="KravenVBEmptyEpg2" size="416,40" source="ServiceEvent" backgroundColor="Kravenbg2" transparent="1" >
       <convert type="KravenVBEventName">Name</convert>
     </widget>
     <widget source="ServiceEvent" render="Label" position="69,109" size="57,24" font="Regular;19" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1" halign="left">

@@ -6,7 +6,7 @@
     <widget source="ServiceEvent" render="Label" position="140,84" size="370,34" font="Regular;26" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" noWrap="1" transparent="1" halign="left">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget font="Regular;26" foregroundColor="KravenFont2" position="42,136" halign="left" render="KravenRunningText" options="movetype=running,startpoint=0,startdelay=5000,steptime=80,wrap=1,always=0,repeat=5,oneshot=1" size="468,34" source="ServiceEvent" backgroundColor="Kravenbg2" transparent="1" >
+    <widget font="Regular;26" foregroundColor="KravenFont2" position="42,136" halign="left" render="KravenVBEmptyEpg2" size="468,34" source="ServiceEvent" backgroundColor="Kravenbg2" transparent="1" >
       <convert type="KravenVBEventName">Name</convert>
     </widget>
     <widget source="ServiceEvent" render="Label" position="42,179" size="60,24" font="Regular;19" foregroundColor="KravenFont1" backgroundColor="Kravenbg2" transparent="1" halign="left">
