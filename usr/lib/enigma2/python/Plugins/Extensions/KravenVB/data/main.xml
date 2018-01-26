@@ -30,14 +30,7 @@
   <!-- ********** Menu ********** -->
   <!-- Menu -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="Menu" position="0,0" size="1280,720" title="Main menu">
-    <widget position="70,80" render="Listbox" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" source="menu" transparent="1">
-      <convert type="TemplatedMultiContent">
-				{"template": [ MultiContentEntryText(pos = (16, 10), size = (500, 50), flags = RT_HALIGN_LEFT, text = 0) ],
-				"fonts": [gFont("Regular", 30)],
-				"itemHeight": 60
-				}
-	  </convert>
-    </widget>
+    <constant-widget name="mainmenu-big"/>
     <constant-widget name="title-small"/>
     <constant-widget name="Colorbuttons"/>
     <widget font="Regular;20" halign="left" valign="center" name="green" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -45,7 +38,6 @@
     <widget font="Regular;20" halign="left" valign="center" name="blue" position="820,665" size="300,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
 	<!-- Metrix-Icons -->
     <constant-widget name="OKExit"/>
-    <!-- KravenVBMenuEntryID-Converter -->
   </screen>
   <!-- ChannelContextMenu -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="ChannelContextMenu" position="center,center" size="1280,720" title="Channellist menu" transparent="0" zPosition="2">

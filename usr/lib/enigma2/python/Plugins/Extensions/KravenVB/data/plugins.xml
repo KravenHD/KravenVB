@@ -595,7 +595,7 @@
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" zPosition="1" size="708,360" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget source="description" render="Label" position="70,485" size="708,60" font="Regular2;22" foregroundColor="KravenFont2" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" />
     <widget source="text" render="Label" position="70,560" size="708,30" font="Regular2;22" foregroundColor="KravenFont2" halign="left" valign="center" backgroundColor="Kravenbg3" transparent="1" />
-    <constant-widget name="SourceRedGreenYellow"/>
+    <constant-widget name="SourceRedGreenYellowBlue"/>
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
