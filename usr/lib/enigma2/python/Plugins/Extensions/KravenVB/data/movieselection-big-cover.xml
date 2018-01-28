@@ -8,7 +8,7 @@
     <widget source="Service" render="Label" position="512,75" size="266,25" font="Regular;19" foregroundColor="KravenFont2" backgroundColor="Kravenbg" transparent="1" halign="right">
 	  <convert type="KravenVBDiskSpace">both</convert>
     </widget>
-    <widget name="list" position="70,105" size="708,540" UnwatchedColor="unwatched" WatchingColor="watching" FinishedColor="finished" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget name="list" position="70,105" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="Kravenbg" font="Regular2;24" foregroundColor="KravenFont2" noWrap="1" position="822,75" render="Label" size="416,30" source="Service" transparent="1" zPosition="1">
       <convert type="KravenVBEventName">Name</convert>
     </widget>

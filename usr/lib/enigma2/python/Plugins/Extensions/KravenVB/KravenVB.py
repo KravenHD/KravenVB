@@ -1771,6 +1771,9 @@ class KravenVB(ConfigListScreen, Screen):
 			list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.EMCEPGSize, _("Choose the font size of event description.")))
 		else:
 			emptyLines+=1
+		list.append(getConfigListEntry(_("Unwatched Color"), config.plugins.KravenVB.UnwatchedColorList, _("Choose the font color of unwatched movies. Press OK to define your own RGB color.")))
+		list.append(getConfigListEntry(_("Watching Color"), config.plugins.KravenVB.WatchingColorList, _("Choose the font color of watching movies. Press OK to define your own RGB color.")))
+		list.append(getConfigListEntry(_("Finished Color"), config.plugins.KravenVB.FinishedColorList, _("Choose the font color of watched movies. Press OK to define your own RGB color.")))
 		list.append(getConfigListEntry(_("Custom EMC-Selection-Colors"), config.plugins.KravenVB.EMCSelectionColors, _("Choose whether you want to customize the selection-colors for EnhancedMovieCenter.")))
 		if config.plugins.KravenVB.EMCSelectionColors.value == "emc-colors-on":
 			list.append(getConfigListEntry(_("EMC-Listselection"), config.plugins.KravenVB.EMCSelectionBackgroundList, _("Choose the background color of selection bars for EnhancedMovieCenter. Press OK to define your own RGB color.")))
@@ -1785,12 +1788,6 @@ class KravenVB(ConfigListScreen, Screen):
 		list.append(getConfigListEntry(_("MOVIESELECTION ____________________________________________________________"), config.plugins.KravenVB.CategoryMovieSelection, _("This sections offers all settings for MovieSelection.")))
 		list.append(getConfigListEntry(_("MovieSelection-Style"), config.plugins.KravenVB.MovieSelection, _("Choose from different styles for MovieSelection.")))
 		list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.MovieSelectionEPGSize, _("Choose the font size of event description.")))
-		if not fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SerienFilm/plugin.py"):
-			list.append(getConfigListEntry(_("Unwatched Color"), config.plugins.KravenVB.UnwatchedColorList, _("Choose the font color of unwatched movies. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("Watching Color"), config.plugins.KravenVB.WatchingColorList, _("Choose the font color of watching movies. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("Finished Color"), config.plugins.KravenVB.FinishedColorList, _("Choose the font color of watched movies. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=3
 		for i in range(emptyLines+1):
 			list.append(getConfigListEntry(_(" "), ))
 		
@@ -2073,10 +2070,10 @@ class KravenVB(ConfigListScreen, Screen):
 		if (141 <= position <= 143): # timereditscreen
 			self["key_yellow"].setText("<< " + _("VerticalEPG"))
 			self["key_blue"].setText(_("EMC") + " >>")
-		if (144 <= position <= 149): # emc
+		if (144 <= position <= 152): # emc
 			self["key_yellow"].setText("<< " + _("TimerEditScreen"))
 			self["key_blue"].setText(_("MovieSelection") + " >>")
-		if (151 <= position <= 156): # movieselection
+		if (154 <= position <= 156): # movieselection
 			self["key_yellow"].setText("<< " + _("EMC"))
 			self["key_blue"].setText(_("player") + " >>")
 		if config.plugins.KravenVB.IBStyle.value == "box":
@@ -2599,9 +2596,9 @@ class KravenVB(ConfigListScreen, Screen):
 			self["config"].instance.moveSelectionTo(131)
 		if (141 <= position <= 143): # timereditscreen
 			self["config"].instance.moveSelectionTo(137)
-		if (144 <= position <= 149): # emc
+		if (144 <= position <= 152): # emc
 			self["config"].instance.moveSelectionTo(141)
-		if (151 <= position <= 156): # movieselection
+		if (154 <= position <= 156): # movieselection
 			self["config"].instance.moveSelectionTo(144)
 		if (158 <= position <= 161): # player
 			self["config"].instance.moveSelectionTo(151)
@@ -2657,9 +2654,9 @@ class KravenVB(ConfigListScreen, Screen):
 			self["config"].instance.moveSelectionTo(141)
 		if (141 <= position <= 143): # timereditscreen
 			self["config"].instance.moveSelectionTo(144)
-		if (144 <= position <= 149): # emc
+		if (144 <= position <= 152): # emc
 			self["config"].instance.moveSelectionTo(151)
-		if (151 <= position <= 156): # movieselection
+		if (154 <= position <= 156): # movieselection
 			self["config"].instance.moveSelectionTo(158)
 		if (158 <= position <= 161): # player
 			self["config"].instance.moveSelectionTo(162)
@@ -4644,6 +4641,11 @@ class KravenVB(ConfigListScreen, Screen):
 			if config.plugins.KravenVB.EMCEPGSize.value == "big":
 				self.skinSearchAndReplace.append(['<constant-widget name="emcvbc222"/>', '<constant-widget name="emcvbc224"/>'])
 
+		### EMC (MovieList) Font-Colors
+		self.skinSearchAndReplace.append(['UnwatchedColor="unwatched"', 'UnwatchedColor="#00' + config.plugins.KravenVB.UnwatchedColor.value + '"'])
+		self.skinSearchAndReplace.append(['WatchingColor="watching"', 'WatchingColor="#00' + config.plugins.KravenVB.WatchingColor.value + '"'])
+		self.skinSearchAndReplace.append(['FinishedColor="finished"', 'FinishedColor="#00' + config.plugins.KravenVB.FinishedColor.value + '"'])
+
 		### EMC
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.EMCStyle.value + ".xml")
 
@@ -4755,14 +4757,6 @@ class KravenVB(ConfigListScreen, Screen):
 		### VerticalEPG
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.VerticalEPG.value + ".xml")
-
-		### MovieSelection (MovieList) Font-Colors
-		if not fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SerienFilm/plugin.py"):
-			self.skinSearchAndReplace.append(['UnwatchedColor="unwatched"', 'UnwatchedColor="#00' + config.plugins.KravenVB.UnwatchedColor.value + '"'])
-			self.skinSearchAndReplace.append(['WatchingColor="watching"', 'WatchingColor="#00' + config.plugins.KravenVB.WatchingColor.value + '"'])
-			self.skinSearchAndReplace.append(['FinishedColor="finished"', 'FinishedColor="#00' + config.plugins.KravenVB.FinishedColor.value + '"'])
-		else:
-			self.skinSearchAndReplace.append(['UnwatchedColor="unwatched" WatchingColor="watching" FinishedColor="finished"', ''])
 
 		### MovieSelection (Event-Description) Font-Size
 		if config.plugins.KravenVB.MovieSelection.value == "movieselection-no-cover":
