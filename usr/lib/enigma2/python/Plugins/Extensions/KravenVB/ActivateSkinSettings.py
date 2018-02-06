@@ -1,47 +1,29 @@
 # -*- coding: utf-8 -*-
-
 #######################################################################
 #
-# KravenVB by Team-Kraven
 #
-# Thankfully inspired by:
-# MyMetrix
-# Coded by iMaxxx (c) 2013
+#  This plugin is licensed under the Creative Commons
+#  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+#  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/
+#  or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
 #
-# This plugin is licensed under the Creative Commons
-# Attribution-NonCommercial-ShareAlike 3.0 Unported License.
-# To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/
-# or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
+#  This plugin is NOT free software. It is open source, you are allowed to
+#  modify it (if you keep the license), but it may not be commercially
+#  distributed other than under the conditions noted above.
+#
 #
 #######################################################################
 
-from Plugins.Plugin import PluginDescriptor
-from Screens.Screen import Screen
-from Screens.MessageBox import MessageBox
-from Screens.ChoiceBox import ChoiceBox
-from Screens.Console import Console
-from Screens.Standby import TryQuitMainloop
-from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Components.ActionMap import ActionMap
-from Components.AVSwitch import AVSwitch
 from Components.config import config, configfile, ConfigYesNo, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigNumber, ConfigText, ConfigInteger, ConfigClock, ConfigSlider, ConfigBoolean
-from Components.ConfigList import ConfigListScreen
-from Components.Sources.StaticText import StaticText
-from Components.Label import Label
-from Components.Language import language
-from os import environ, listdir, remove, rename, system, popen, path
-from shutil import move, rmtree
-from skin import parseColor
-from Components.Pixmap import Pixmap
-from Components.Label import Label
-from Components.Sources.CanvasSource import CanvasSource
 from Components.SystemInfo import SystemInfo
+from Components.PluginComponent import plugins
+from shutil import move, rmtree
+from os import environ, listdir, remove, rename, system, popen, path
 from PIL import Image, ImageFilter
-import gettext, time, subprocess, re, requests
-from enigma import ePicLoad, getDesktop, eConsoleAppContainer, eTimer
-from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
+from boxbranding import getBoxType
 from copy import deepcopy
-from ColorSelection import KravenVBColorSelection
+import time, subprocess, re, requests
+from Tools.Directories import fileExists
 
 try:
 	from boxbranding import getImageDistro
@@ -53,29 +35,7 @@ except ImportError:
 	from xml import etree
 	from xml.etree.cElementTree import fromstring
 
-#############################################################
-
-DESKTOP_WIDTH = getDesktop(0).size().width()
-
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("KravenVB", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/KravenVB/locale/"))
-
-def _(txt):
-	t = gettext.dgettext("KravenVB", txt)
-	if t == txt:
-		t = gettext.gettext(txt)
-	return t
-
-def translateBlock(block):
-	for x in TranslationHelper:
-		if block.__contains__(x[0]):
-			block = block.replace(x[0], x[1])
-	return block
-
-#############################################################
+#######################################################################
 
 ColorSelfList = [
 	("F0A30A", _("amber")),
@@ -435,9 +395,9 @@ config.plugins.KravenVB.InfoStyle = ConfigSelection(default="gradient", choices 
 				])
 
 config.plugins.KravenVB.InfobarTexture = ConfigSelection(default="texture1", choices = TextureList)
-				
+
 config.plugins.KravenVB.BackgroundTexture = ConfigSelection(default="texture1", choices = TextureList)
-				
+
 config.plugins.KravenVB.SelectionBorderList = ConfigSelection(default="ffffff", choices = BorderSelfList)
 config.plugins.KravenVB.SelectionBorderSelf = ConfigText(default="ffffff")
 config.plugins.KravenVB.SelectionBorder = ConfigText(default="ffffff")
@@ -1186,784 +1146,39 @@ config.plugins.KravenVB.BackgroundSelfColorG = ConfigSlider(default=0, increment
 config.plugins.KravenVB.BackgroundSelfColorB = ConfigSlider(default=75, increment=15, limits=(0,255))
 config.plugins.KravenVB.OldColorsCopied = ConfigBoolean(default = False)
 
-#######################################################################
+#############################################################
 
-class KravenVB(ConfigListScreen, Screen):
+class ActivateSkinSettings:
 
-	if DESKTOP_WIDTH <= 1280:
-	  skin = """
-<screen name="KravenVB" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="#00000000">
-  <widget backgroundColor="#00000000" source="Title" render="Label" font="Regular;35" foregroundColor="#00f0a30a" position="70,12" size="708,46" valign="center" transparent="1" />
-  <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" font="Regular;26" halign="right" backgroundColor="#00000000" transparent="1" valign="center" foregroundColor="#00ffffff">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget backgroundColor="#00000000" name="config" font="Regular;22" foregroundColor="#00ffffff" itemHeight="30" position="70,85" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
-  <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;36" foregroundColor="#00f0a30a" position="830,80" size="402,46" halign="center" valign="center" transparent="1" />
-  <widget backgroundColor="#00000000" source="version" render="Label" font="Regular;30" foregroundColor="#00ffffff" position="845,139" size="372,40" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00f0a30a" position="847,208" size="368,2" />
-  <eLabel backgroundColor="#00f0a30a" position="847,417" size="368,2" />
-  <eLabel backgroundColor="#00f0a30a" position="845,208" size="2,211" />
-  <eLabel backgroundColor="#00f0a30a" position="1215,208" size="2,211" />
-  <widget backgroundColor="#00000000" name="helperimage" position="847,210" size="368,207" zPosition="1" />
-  <widget backgroundColor="#00000000" source="Canvas" render="Canvas" position="847,210" size="368,207" zPosition="-1" />
-  <widget backgroundColor="#00000000" source="help" render="Label" font="Regular;20" foregroundColor="#00f0a30a" position="847,440" size="368,196" halign="center" valign="top" transparent="1" />
-  <widget backgroundColor="#00000000" source="key_red" render="Label" font="Regular;20" foregroundColor="#00ffffff" position="70,665" size="220,26" valign="center" transparent="1" zPosition="1" />
-  <widget backgroundColor="#00000000" source="key_green" render="Label" font="Regular;20" foregroundColor="#00ffffff" position="320,665" size="220,26" valign="center" transparent="1" zPosition="1" />
-  <widget backgroundColor="#00000000" source="key_yellow" render="Label" font="Regular;20" foregroundColor="#00ffffff" position="570,665" size="220,26" valign="center" transparent="1" zPosition="1" />
-  <widget backgroundColor="#00000000" source="key_blue" render="Label" font="Regular;20" foregroundColor="#00ffffff" position="820,665" size="220,26" valign="center" transparent="1" zPosition="1" />
-  <ePixmap backgroundColor="#00000000" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" alphatest="blend" />
-  <ePixmap backgroundColor="#00000000" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" alphatest="blend" />
-  <ePixmap backgroundColor="#00000000" pixmap="KravenVB/buttons/key_yellow1.png" position="565,692" size="200,5" alphatest="blend" />
-  <ePixmap backgroundColor="#00000000" pixmap="KravenVB/buttons/key_blue1.png" position="815,692" size="200,5" alphatest="blend" />
-  <eLabel backgroundColor="#00000000" position="0,0" size="1280,720" transparent="0" zPosition="-9" />
-</screen>
-"""
-	else:
-	  skin = """
-<screen name="KravenVB" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#00000000">
-  <widget backgroundColor="#00000000" source="Title" render="Label" font="Regular;51" foregroundColor="#00f0a30a" position="105,18" size="1500,69" valign="center" transparent="1" />
-  <widget source="global.CurrentTime" render="Label" position="1707,33" size="150,42" font="Regular;39" halign="right" backgroundColor="#00000000" transparent="1" valign="center" foregroundColor="#00ffffff">
-    <convert type="ClockToText">Default</convert>
-  </widget>
-  <widget backgroundColor="#00000000" name="config" font="Regular;32" foregroundColor="#00ffffff" itemHeight="45" position="105,127" size="1062,810" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1" zPosition="1" />
-  <eLabel backgroundColor="#00000000" text="KravenVB" font="Regular;54" foregroundColor="#00f0a30a" position="1245,120" size="603,69" halign="center" valign="center" transparent="1" />
-  <widget backgroundColor="#00000000" source="version" render="Label" font="Regular;45" foregroundColor="#00ffffff" position="1267,208" size="558,60" halign="center" valign="center" transparent="1" />
-  <eLabel backgroundColor="#00f0a30a" position="1313,337" size="466,3" />
-  <eLabel backgroundColor="#00f0a30a" position="1313,599" size="466,3" />
-  <eLabel backgroundColor="#00f0a30a" position="1313,340" size="3,259" />
-  <eLabel backgroundColor="#00f0a30a" position="1776,340" size="3,259" />
-  <widget backgroundColor="#00000000" name="helperimage" position="1316,340" size="460,259" zPosition="1" />
-  <widget backgroundColor="#00000000" source="Canvas" render="Canvas" position="1316,340" size="460,259" zPosition="-1" />
-  <widget backgroundColor="#00000000" source="help" render="Label" font="Regular;30" foregroundColor="#00f0a30a" position="1270,660" size="552,294" halign="center" valign="top" transparent="1" />
-  <widget backgroundColor="#00000000" source="key_red" render="Label" font="Regular;30" foregroundColor="#00ffffff" position="105,997" size="330,39" valign="center" transparent="1" zPosition="1" />
-  <widget backgroundColor="#00000000" source="key_green" render="Label" font="Regular;30" foregroundColor="#00ffffff" position="480,997" size="330,39" valign="center" transparent="1" zPosition="1" />
-  <widget backgroundColor="#00000000" source="key_yellow" render="Label" font="Regular;30" foregroundColor="#00ffffff" position="855,997" size="330,39" valign="center" transparent="1" zPosition="1" />
-  <widget backgroundColor="#00000000" source="key_blue" render="Label" font="Regular;30" foregroundColor="#00ffffff" position="1230,997" size="330,39" valign="center" transparent="1" zPosition="1" />
-  <eLabel backgroundColor="#00E61805" position="97,1038" size="225,7" />
-  <eLabel backgroundColor="#005FE500" position="472,1038" size="225,7" />
-  <eLabel backgroundColor="#00E5DD00" position="847,1038" size="225,7" />
-  <eLabel backgroundColor="#000082E5" position="1222,1038" size="225,7" />
-  <eLabel backgroundColor="#00000000" position="0,0" size="1920,1080" transparent="0" zPosition="-9" />
-</screen>
-"""
-
-	def __init__(self, session, args = None, picPath = None):
-		self.skin_lines = []
-		Screen.__init__(self, session)
-		self.session = session
+	def __init__(self):
 		self.datei = "/usr/share/enigma2/KravenVB/skin.xml"
 		self.dateiTMP = self.datei + ".tmp"
 		self.daten = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/"
 		self.komponente = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/comp/"
 		self.picPath = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/"
 		self.profiles = "/etc/enigma2/"
-		self.Scale = AVSwitch().getFramebufferScale()
-		self.PicLoad = ePicLoad()
-		self["helperimage"] = Pixmap()
-		self["Canvas"] = CanvasSource()
-		self["help"] = StaticText()
-		self["version"] = StaticText()
-
-		list = []
-		ConfigListScreen.__init__(self, list)
-
-		self["actions"] = ActionMap(["KravenVBConfigActions", "OkCancelActions", "DirectionActions", "ColorActions", "InputActions"],
-		{
-			"upUp": self.keyUpLong,
-			"downUp": self.keyDownLong,
-			"up": self.keyUp,
-			"down": self.keyDown,
-			"left": self.keyLeft,
-			"right": self.keyRight,
-			"red": self.faq,
-			"green": self.save,
-			"yellow": self.categoryDown,
-			"blue": self.categoryUp,
-			"cancel": self.exit,
-			"pageup": self.pageUp,
-			"papedown": self.pageDown,
-			"ok": self.OK
-		}, -1)
-
-		self["key_red"] = StaticText(_("FAQs"))
-		self["key_green"] = StaticText(_("Save skin"))
-		self["key_yellow"] = StaticText()
-		self["key_blue"] = StaticText()
-		self["Title"] = StaticText(_("Configuration tool for KravenVB"))
-
-		self.UpdatePicture()
-
-		self.timer = eTimer()
-		self.timer.callback.append(self.updateMylist)
-		self.onLayoutFinish.append(self.updateMylist)
-
-		self.lastProfile="0"
-
-		self.actClockstyle=""
-		self.actWeatherstyle=""
-		self.actChannelselectionstyle=""
-		self.actCity=""
-		
-		self.skincolorinfobarcolor=""
-		self.skincolorbackgroundcolor=""
-		
-		self.actListColorSelection=None
-		self.actSelfColorSelection=None
-
 		self.E2DistroVersion=self.getE2DistroVersion()
 		self.InternetAvailable=self.getInternetAvailable()
-		self.UserMenuIconsAvailable=self.getUserMenuIconsAvailable()
 
-		if config.plugins.KravenVB.OldColorsCopied.value==False:
-			self.copyOldColors()
-			config.plugins.KravenVB.OldColorsCopied.value=True
+	def WriteSkin(self, silent=False):
+		#silent = True  -> returned 0 or 1 (no gui mode)
+		#silent = False -> returned some optional code for messages or another things in gui mode
 
-	def mylist(self):
-		self.timer.start(100, True)
+		#error codes for silent mode 
+		#0:"No Error"
+		#1:"Error occurred"
 
-	def updateMylist(self):
-		
-		if config.plugins.KravenVB.customProfile.value!=self.lastProfile:
-			self.loadProfile()
-			self.lastProfile=config.plugins.KravenVB.customProfile.value
-			
-		# page 1
-		emptyLines=0
-		list = []
-		list.append(getConfigListEntry(_("About"), config.plugins.KravenVB.About, _("The KravenVB skin will be generated by this plugin according to your preferences. Make your settings and watch the changes in the preview window above. When finished, save your skin by pressing the green button and restart the GUI.")))
-		list.append(getConfigListEntry(_(" "), ))
-		list.append(getConfigListEntry(_("PROFILES __________________________________________________________________"), config.plugins.KravenVB.CategoryProfiles, _("This sections offers all profile settings. Different settings can be saved, modified, shared and cloned. Read the FAQs.")))
-		list.append(getConfigListEntry(_("Active Profile / Save"), config.plugins.KravenVB.customProfile, _("Select the profile you want to work with. Profiles are saved automatically on switching them or by pressing the OK button. New profiles will be generated based on the actual one. Profiles are interchangeable between boxes.")))
-		list.append(getConfigListEntry(_("Default Profile / Reset"), config.plugins.KravenVB.defaultProfile, _("Select the default profile you want to use when resetting the active profile (OK button). You can add your own default profiles under /etc/enigma2/kraven_default_n (n<=20).")))
-		list.append(getConfigListEntry(_(" "), ))
-		list.append(getConfigListEntry(_("SYSTEM ____________________________________________________________________"), config.plugins.KravenVB.CategorySystem, _("This sections offers all basic settings.")))
-		list.append(getConfigListEntry(_("Icons (except Infobar)"), config.plugins.KravenVB.IconStyle2, _("Choose between light and dark icons in system screens. The icons in the infobars are not affected.")))
-		list.append(getConfigListEntry(_("Running Text (Delay)"), config.plugins.KravenVB.RunningText, _("Choose the start delay for running text.")))
-		if not config.plugins.KravenVB.RunningText.value == "none":
-			list.append(getConfigListEntry(_("Running Text (Speed)"), config.plugins.KravenVB.RunningTextSpeed, _("Choose the speed for running text.")))
-		else:
-			emptyLines+=1
-		if self.E2DistroVersion == "VTi":
-			list.append(getConfigListEntry(_("Scrollbars"), config.plugins.KravenVB.ScrollBar, _("Choose the width of scrollbars in lists or deactivate scrollbars completely.")))
-		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("Scrollbars"), config.plugins.KravenVB.ScrollBar2, _("Choose whether scrollbars should be shown.")))
-		list.append(getConfigListEntry(_("Show Infobar-Background"), config.plugins.KravenVB.IBColor, _("Choose whether you want to see the infobar background in all screens (bicolored background).")))
-		if self.InternetAvailable or self.UserMenuIconsAvailable:
-			list.append(getConfigListEntry(_("Menus"), config.plugins.KravenVB.Logo, _("Choose from different options to display the system menus. Press red button for the FAQs with details on installing menu icons.")))
-			if config.plugins.KravenVB.Logo.value in ("metrix-icons","minitv-metrix-icons") and self.InternetAvailable:
-				list.append(getConfigListEntry(_("Menu-Icons"), config.plugins.KravenVB.MenuIcons, _("Choose from different icon sets for the menu screens. Many thanks to rennmaus and kleiner.teufel for their icon set.")))
-			else:
-				emptyLines+=1
-			if config.plugins.KravenVB.Logo.value in ("logo","metrix-icons"):
-				list.append(getConfigListEntry(_("Menu-Transparency"), config.plugins.KravenVB.MenuColorTrans, _("Choose the degree of background transparency for system menu screens.")))
-			else:
-				emptyLines+=1
-			list.append(getConfigListEntry(_("Mainmenu Fontsize"), config.plugins.KravenVB.MainmenuFontsize, _("Choose the font size of mainmenus.")))
-			for i in range(emptyLines+2):
-				list.append(getConfigListEntry(_(" "), ))
-		else:
-			list.append(getConfigListEntry(_("Menus"), config.plugins.KravenVB.LogoNoInternet, _("Choose from different options to display the system menus. Press red button for the FAQs with details on installing menu icons.")))
-			if config.plugins.KravenVB.LogoNoInternet.value == "logo":
-				list.append(getConfigListEntry(_("Menu-Transparency"), config.plugins.KravenVB.MenuColorTrans, _("Choose the degree of background transparency for system menu screens.")))
-			else:
-				emptyLines+=1
-			list.append(getConfigListEntry(_("Mainmenu Fontsize"), config.plugins.KravenVB.MainmenuFontsize, _("Choose the font size of mainmenus.")))
-			for i in range(emptyLines+3):
-				list.append(getConfigListEntry(_(" "), ))
-		
-		# page 2
-		emptyLines=0
-		list.append(getConfigListEntry(_("GLOBAL COLORS _____________________________________________________________"), config.plugins.KravenVB.CategoryGlobalColors, _("This sections offers offers all basic color settings.")))
-		list.append(getConfigListEntry(_("Background"), config.plugins.KravenVB.BackgroundListColor, _("Choose the background for all screens. You can choose from a list of predefined colors or textures, create your own color using RGB sliders or define a color gradient.")))
-		if config.plugins.KravenVB.BackgroundListColor.value == "gradient":
-			list.append(getConfigListEntry(_("          Primary Color"), config.plugins.KravenVB.BackgroundGradientListColorPrimary, _("Choose the primary color for the background gradient. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("          Secondary Color"), config.plugins.KravenVB.BackgroundGradientListColorSecondary, _("Choose the secondary color for the background gradient. Press OK to define your own RGB color.")))
-			emptyLines+=1
-		elif config.plugins.KravenVB.BackgroundListColor.value == "texture":
-			list.append(getConfigListEntry(_("          Texture"), config.plugins.KravenVB.BackgroundTexture, _("Choose the texture for the background.")))
-			list.append(getConfigListEntry(_("          Alternate Color"), config.plugins.KravenVB.BackgroundAlternateListColor, _("Choose the alternate color for the background. It should match the texture at the best. Press OK to define your own RGB color.")))
-			emptyLines+=1
-		else:
-			emptyLines+=3
-		list.append(getConfigListEntry(_("Background-Transparency"), config.plugins.KravenVB.BackgroundColorTrans, _("Choose the degree of background transparency for all screens except system menus and channellists.")))
-		list.append(getConfigListEntry(_("Listselection"), config.plugins.KravenVB.SelectionBackgroundList, _("Choose the background color of selection bars. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Listselection-Border"), config.plugins.KravenVB.SelectionBorderList, _("Choose the border color of selection bars or deactivate borders completely. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Listselection-Font"), config.plugins.KravenVB.SelectionFontList, _("Choose the color of the font in selection bars. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Progress-/Volumebar"), config.plugins.KravenVB.ProgressList, _("Choose the color of progress bars. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Progress-Border"), config.plugins.KravenVB.BorderList, _("Choose the border color of progress bars. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("MiniTV-Border"), config.plugins.KravenVB.MiniTVBorderList, _("Choose the border color of MiniTV's. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Lines"), config.plugins.KravenVB.LineList, _("Choose the color of all lines. This affects dividers as well as the line in the center of some progress bars. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Primary-Font"), config.plugins.KravenVB.Font1List, _("Choose the color of the primary font. The primary font is used for list items, textboxes and other important information. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Secondary-Font"), config.plugins.KravenVB.Font2List, _("Choose the color of the secondary font. The secondary font is used for headers, labels and other additional information. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Marking-Font"), config.plugins.KravenVB.MarkedFontList, _("Choose the font color of marked list items. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Colorbutton-Font"), config.plugins.KravenVB.ButtonTextList, _("Choose the font color of the color button labels. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Unskinned Colors"), config.plugins.KravenVB.Unskinned, _("Choose whether some foreground and background colors of unskinned screens are changed or not.")))
-		for i in range(emptyLines):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 3
-		emptyLines=0
-		list.append(getConfigListEntry(_("INFOBAR-LOOK _________________________________________________________________"), config.plugins.KravenVB.CategoryInfobarLook, _("This sections offers all settings for the infobar-look.")))
-		list.append(getConfigListEntry(_("Infobar-Style"), config.plugins.KravenVB.InfobarStyle, _("Choose from different infobar styles. Please note that not every style provides every feature. Therefore some features might be unavailable for the chosen style.")))
-		list.append(getConfigListEntry(_("Infobar-Background-Style"), config.plugins.KravenVB.IBStyle, _("Choose from different infobar background styles.")))
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			list.append(getConfigListEntry(_("Infobar-Box-Line"), config.plugins.KravenVB.IBLineList, _("Choose the color of the infobar box lines. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=1
-		if config.plugins.KravenVB.IBStyle.value == "grad":
-			list.append(getConfigListEntry(_("Infobar-Background"), config.plugins.KravenVB.InfobarGradientListColor, _("Choose the background for the infobars. You can choose from a list of predefined colors or textures or create your own color using RGB sliders.")))
-		else:
-			list.append(getConfigListEntry(_("Infobar-Background"), config.plugins.KravenVB.InfobarBoxListColor, _("Choose the background for the infobars. You can choose from a list of predefined colors or textures, create your own color using RGB sliders or define a color gradient.")))
-		if config.plugins.KravenVB.IBStyle.value == "box" and config.plugins.KravenVB.InfobarBoxListColor.value == "gradient":
-			list.append(getConfigListEntry(_("          Primary Color"), config.plugins.KravenVB.InfobarGradientListColorPrimary, _("Choose the primary color for the infobar gradient. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("          Secondary Color"), config.plugins.KravenVB.InfobarGradientListColorSecondary, _("Choose the secondary color for the infobar gradient. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("          Info Panels"), config.plugins.KravenVB.InfoStyle, _("Choose gradient or color for the info panels (Sysinfos, Timeshiftbar etc.).")))
-		elif config.plugins.KravenVB.IBStyle.value == "box" and config.plugins.KravenVB.InfobarBoxListColor.value == "texture":
-			list.append(getConfigListEntry(_("          Texture"), config.plugins.KravenVB.InfobarTexture, _("Choose the texture for the infobars.")))
-			list.append(getConfigListEntry(_("          Alternate Color"), config.plugins.KravenVB.InfobarAlternateListColor, _("Choose the alternate color for the infobars. It should match the texture at the best. Press OK to define your own RGB color.")))
-			emptyLines+=1
-		elif config.plugins.KravenVB.IBStyle.value == "grad" and config.plugins.KravenVB.InfobarGradientListColor.value == "texture":
-			list.append(getConfigListEntry(_("          Texture"), config.plugins.KravenVB.InfobarTexture, _("Choose the texture for the infobars.")))
-			list.append(getConfigListEntry(_("          Alternate Color"), config.plugins.KravenVB.InfobarAlternateListColor, _("Choose the alternate color for the infobars. It should match the texture at the best. Press OK to define your own RGB color.")))
-			emptyLines+=1
-		else:
-			emptyLines+=3
-		list.append(getConfigListEntry(_("Infobar-Transparency"), config.plugins.KravenVB.InfobarColorTrans, _("Choose the degree of background transparency for the infobars.")))
-		list.append(getConfigListEntry(_("Primary-Infobar-Font"), config.plugins.KravenVB.IBFont1List, _("Choose the color of the primary infobar font. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Secondary-Infobar-Font"), config.plugins.KravenVB.IBFont2List, _("Choose the color of the secondary infobar font. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Infobar-Icons"), config.plugins.KravenVB.IconStyle, _("Choose between light and dark infobar icons.")))
-		list.append(getConfigListEntry(_("Eventname Fontsize"), config.plugins.KravenVB.IBFontSize, _("Choose the font size of eventname.")))
-		list.append(getConfigListEntry(_("Eventname effect"), config.plugins.KravenVB.TypeWriter, _("Choose from different effects to display eventname.")))
-		for i in range(emptyLines+4):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 4
-		emptyLines=0
-		list.append(getConfigListEntry(_("INFOBAR-CONTENTS _____________________________________________________________"), config.plugins.KravenVB.CategoryInfobarContents, _("This sections offers all settings for infobar-contents.")))
-		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
-			list.append(getConfigListEntry(_("Tuner number"), config.plugins.KravenVB.IBtop, _("Choose from different options to display tuner.")))
-		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1"):
-			list.append(getConfigListEntry(_("Tuner number"), config.plugins.KravenVB.tuner2, _("Choose from different options to display tuner.")))
-		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
-			list.append(getConfigListEntry(_("Tuner number"), config.plugins.KravenVB.tuner, _("Choose from different options to display tuner.")))
-		else:
-			emptyLines+=1
-		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
-			list.append(getConfigListEntry(_("Record-State"), config.plugins.KravenVB.record2, _("Choose from different options to display recording state.")))
-		elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz2":
-			list.append(getConfigListEntry(_("Record-State"), config.plugins.KravenVB.record, _("Choose from different options to display recording state.")))
-		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
-			if config.plugins.KravenVB.IBtop.value == "infobar-x2-z1_top2":
-				list.append(getConfigListEntry(_("Record-State"), config.plugins.KravenVB.record2, _("Choose from different options to display recording state.")))
-			else:
-				list.append(getConfigListEntry(_("Record-State"), config.plugins.KravenVB.record3, _("Choose from different options to display recording state.")))
-		else:
-			emptyLines+=1
-		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-z1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
-			if self.E2DistroVersion == "VTi":
-				list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.Infobox, _("Choose which informations will be shown in the info box.")))
-			elif self.E2DistroVersion == "openatv":
-				list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.Infobox2, _("Choose which informations will be shown in the info box.")))
-		else:
-			emptyLines+=1
-		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2","infobar-style-zz1","infobar-style-zz4"):
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName, _("Choose from different options to show the channel name and number in the infobar.")))
-			if not config.plugins.KravenVB.InfobarChannelName.value == "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontList, _("Choose the font color of channel name and number. Press OK to define your own RGB color.")))
-			else:
-				emptyLines+=1
-		else:
-			list.append(getConfigListEntry(_("Channelname/-number"), config.plugins.KravenVB.InfobarChannelName2, _("Choose from different options to show the channel name and number in the infobar.")))
-			if not config.plugins.KravenVB.InfobarChannelName2.value == "none":
-				list.append(getConfigListEntry(_("Channelname/-number-Font"), config.plugins.KravenVB.ChannelnameFontList, _("Choose the font color of channel name and number. Press OK to define your own RGB color.")))
-			else:
-				emptyLines+=1
-		list.append(getConfigListEntry(_("System-Infos"), config.plugins.KravenVB.SystemInfo, _("Choose from different additional windows with system informations or deactivate them completely.")))
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 4 (category 2)
-		emptyLines=0
-		list.append(getConfigListEntry(_("SECONDINFOBAR _____________________________________________________________"), config.plugins.KravenVB.CategorySIB, _("This sections offers all settings for SecondInfobar.")))
-		list.append(getConfigListEntry(_("SecondInfobar-Style"), config.plugins.KravenVB.SIB, _("Choose from different styles for SecondInfobar.")))
-		list.append(getConfigListEntry(_("SecondInfobar Fontsize"), config.plugins.KravenVB.SIBFont, _("Choose the font size of SecondInfobar.")))
-		for i in range(emptyLines+7):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 5
-		emptyLines=0
-		list.append(getConfigListEntry(_("WEATHER ___________________________________________________________________"), config.plugins.KravenVB.CategoryWeather, _("This sections offers all weather settings.")))
-		if self.InternetAvailable:
-			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x3","infobar-style-z2","infobar-style-zz1","infobar-style-zz2","infobar-style-zz3","infobar-style-zz4","infobar-style-zzz1"):
-				list.append(getConfigListEntry(_("Weather"), config.plugins.KravenVB.WeatherStyle, _("Choose from different options to show the weather in the infobar.")))
-				self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle.value
-			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
-				if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py"):
-					list.append(getConfigListEntry(_("Weather"), config.plugins.KravenVB.WeatherStyle3, _("Activate or deactivate displaying the weather in the infobar.")))
-					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle3.value
-				else:
-					list.append(getConfigListEntry(_("Weather"), config.plugins.KravenVB.WeatherStyle2, _("Activate or deactivate displaying the weather in the infobar.")))
-					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle2.value
-			list.append(getConfigListEntry(_("Search by"), config.plugins.KravenVB.weather_search_over, _("Choose from different options to specify your location.")))
-			if config.plugins.KravenVB.weather_search_over.value == 'name':
-				list.append(getConfigListEntry(_("Search String"), config.plugins.KravenVB.weather_cityname, _("Specify any search string for your location (zip/city/district/state single or combined). Press OK to use the virtual keyboard. Step up or down in the menu to start the search.")))
-			elif config.plugins.KravenVB.weather_search_over.value == 'gmcode':
-				list.append(getConfigListEntry(_("GM Code"), config.plugins.KravenVB.weather_gmcode, _("Specify the GM code for your location. You can find it at https://weather.codes. Press OK to use the virtual keyboard. Step up or down in the menu to start the search.")))
-			else:
-				emptyLines+=1
-			list.append(getConfigListEntry(_("Server"), config.plugins.KravenVB.weather_server, _("Choose from different servers for the weather data.")))
-			list.append(getConfigListEntry(_("Language"), config.plugins.KravenVB.weather_language, _("Specify the language for the weather output.")))
-			list.append(getConfigListEntry(_("Refresh interval (in minutes)"), config.plugins.KravenVB.refreshInterval, _("Choose the frequency of loading weather data from the internet.")))
-			list.append(getConfigListEntry(_("Weather-Style"), config.plugins.KravenVB.WeatherView, _("Choose between graphical weather symbols and Meteo symbols.")))
-			if config.plugins.KravenVB.WeatherView.value == "meteo":
-				list.append(getConfigListEntry(_("Meteo-Color"), config.plugins.KravenVB.MeteoColor, _("Choose between light and dark Meteo symbols.")))
-			else:
-				emptyLines+=1
-		else:
-			list.append(getConfigListEntry(_("Weather"), config.plugins.KravenVB.WeatherStyleNoInternet, _("You have no internet connection. This function is disabled.")))
-			self.actWeatherstyle="none"
-			emptyLines+=7
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 5 (category 2)
-		emptyLines=0
-		if not config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			list.append(getConfigListEntry(_("CLOCK _____________________________________________________________________"), config.plugins.KravenVB.CategoryClock, _("This sections offers all settings for the different clocks.")))
-			if self.InternetAvailable:
-				list.append(getConfigListEntry(_("Clock-Style"), config.plugins.KravenVB.ClockStyle, _("Choose from different options to show the clock in the infobar.")))
-				self.actClockstyle=config.plugins.KravenVB.ClockStyle.value
-				if self.actClockstyle == "clock-analog":
-					list.append(getConfigListEntry(_("Analog-Clock-Color"), config.plugins.KravenVB.AnalogStyle, _("Choose from different colors for the analog type clock in the infobar.")))
-				elif self.actClockstyle == "clock-android":
-					list.append(getConfigListEntry(_("Android-Temp-Color"), config.plugins.KravenVB.AndroidList, _("Choose the font color of android-clock temperature. Press OK to define your own RGB color.")))
-				elif self.actClockstyle == "clock-weather":
-					list.append(getConfigListEntry(_("Weather-Icon-Size"), config.plugins.KravenVB.ClockIconSize, _("Choose the size of the icon for 'weather icon' clock.")))
-				else:
-					emptyLines+=1
-			else:
-				list.append(getConfigListEntry(_("Clock-Style"), config.plugins.KravenVB.ClockStyleNoInternet, _("Choose from different options to show the clock in the infobar.")))
-		else:
-			emptyLines+=3
-			self.actClockstyle="none"
-		for i in range(emptyLines+5):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 6
-		emptyLines=0
-		list.append(getConfigListEntry(_("ECM INFOS _________________________________________________________________"), config.plugins.KravenVB.CategoryECMInfos, _("This sections offers all settings for showing the decryption infos.")))
-		list.append(getConfigListEntry(_("Show ECM Infos"), config.plugins.KravenVB.ECMVisible, _("Choose from different options where to display the ECM informations.")))
-		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1" and not config.plugins.KravenVB.ECMVisible.value == "none":
-			list.append(getConfigListEntry(_("ECM Infos"), config.plugins.KravenVB.ECMLine1, _("Choose from different options to display the ECM informations.")))
-			list.append(getConfigListEntry(_("Show 'free to air'"), config.plugins.KravenVB.FTA, _("Choose whether 'free to air' is displayed or not for unencrypted channels.")))
-			list.append(getConfigListEntry(_("ECM-Font"), config.plugins.KravenVB.ECMFontList, _("Choose the font color of the ECM information. Press OK to define your own RGB color.")))
-		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2") and not config.plugins.KravenVB.ECMVisible.value == "none":
-			list.append(getConfigListEntry(_("ECM Infos"), config.plugins.KravenVB.ECMLine2, _("Choose from different options to display the ECM informations.")))
-			list.append(getConfigListEntry(_("Show 'free to air'"), config.plugins.KravenVB.FTA, _("Choose whether 'free to air' is displayed or not for unencrypted channels.")))
-			list.append(getConfigListEntry(_("ECM-Font"), config.plugins.KravenVB.ECMFontList, _("Choose the font color of the ECM information. Press OK to define your own RGB color.")))
-		elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-zz1","infobar-style-zz2","infobar-style-zz3","infobar-style-zz4","infobar-style-zzz1") and not config.plugins.KravenVB.ECMVisible.value == "none":
-			list.append(getConfigListEntry(_("ECM Infos"), config.plugins.KravenVB.ECMLine3, _("Choose from different options to display the ECM informations.")))
-			list.append(getConfigListEntry(_("Show 'free to air'"), config.plugins.KravenVB.FTA, _("Choose whether 'free to air' is displayed or not for unencrypted channels.")))
-			list.append(getConfigListEntry(_("ECM-Font"), config.plugins.KravenVB.ECMFontList, _("Choose the font color of the ECM information. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=3
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 6 (category 2)
-		emptyLines=0
-		list.append(getConfigListEntry(_("VIEWS _____________________________________________________________________"), config.plugins.KravenVB.CategoryViews, _("This sections offers all settings for skinned plugins.")))
-		list.append(getConfigListEntry(_("Volume"), config.plugins.KravenVB.Volume, _("Choose from different styles for the volume display.")))
-		list.append(getConfigListEntry(_("CoolTVGuide"), config.plugins.KravenVB.CoolTVGuide, _("Choose from different styles for CoolTVGuide.")))
-		list.append(getConfigListEntry(_("SerienRecorder"), config.plugins.KravenVB.SerienRecorder, _("Choose whether you want the Kraven skin to be applied to 'Serienrecorder' or not. Activation of this option prohibits the skin selection in the SR-plugin.")))
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/plugin.py"):
-			list.append(getConfigListEntry(_("MediaPortal"), config.plugins.KravenVB.MediaPortal, _("Choose whether you want the Kraven skin to be applied to 'MediaPortal' or not. To remove it again, you must deactivate it here and activate another skin in 'MediaPortal'.")))
-		else:
-			emptyLines+=1
-		if self.E2DistroVersion == "VTi":
-			list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.SplitScreen, _("Choose from different styles to display SplitScreen.")))
-		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.ATVna, _("  ")))
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 6 (category 3)
-		emptyLines=0
-		list.append(getConfigListEntry(_("PERMANENTCLOCK __________________________________________________________"), config.plugins.KravenVB.CategoryPermanentClock, _("This sections offers all settings for PermanentClock.")))
-		list.append(getConfigListEntry(_("PermanentClock-Color"), config.plugins.KravenVB.PermanentClock, _("Choose the colors of PermanentClock.")))
-		if config.plugins.KravenVB.PermanentClock.value in ("permanentclock-transparent-big","permanentclock-transparent-small"):
-			list.append(getConfigListEntry(_("PermanentClock-Font"), config.plugins.KravenVB.PermanentClockFontList, _("Choose the font color of PermanentClock. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=1
-		for i in range(emptyLines+2):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 7
-		emptyLines=0
-		list.append(getConfigListEntry(_("CHANNELLIST _______________________________________________________________"), config.plugins.KravenVB.CategoryChannellist, _("This sections offers all channellist settings.")))
-		if self.E2DistroVersion == "VTi":
-			list.append(getConfigListEntry(_("use alternative (horizontal) channellist"), config.plugins.KravenVB.alternativeChannellist, _("Choose whether use alternative horizontal channellist or not.")))
-			if config.plugins.KravenVB.alternativeChannellist.value == "none":
-				if SystemInfo.get("NumVideoDecoders",1) > 1:
-					list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle2, _("Choose from different styles for the channel selection screen.")))
-					self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle2.value
-				else:
-					list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle, _("Choose from different styles for the channel selection screen.")))
-					self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
-				if self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv33","channelselection-style-minitv-picon"):
-					list.append(getConfigListEntry(_("Channellist-Mode"), config.plugins.KravenVB.ChannelSelectionMode, _("Choose between direct zapping (1xOK) and zapping after preview (2xOK).")))
-				else:
-					emptyLines+=1
-				if not self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv3","channelselection-style-minitv4","channelselection-style-minitv22","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-minitv-picon"):
-					list.append(getConfigListEntry(_("Channellist-Transparenz"), config.plugins.KravenVB.ChannelSelectionTrans, _("Choose the degree of background transparency for the channellists.")))
-				else:
-					emptyLines+=1
-				if self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
-					list.append(getConfigListEntry(_("Servicenumber/-name Fontsize"), config.plugins.KravenVB.ChannelSelectionServiceSize1, _("Choose the font size of channelnumber and channelname.")))
-					list.append(getConfigListEntry(_("Serviceinfo Fontsize"), config.plugins.KravenVB.ChannelSelectionInfoSize1, _("Choose the font size of serviceinformation.")))
-				else:
-					list.append(getConfigListEntry(_("Servicenumber/-name Fontsize"), config.plugins.KravenVB.ChannelSelectionServiceSize, _("Choose the font size of channelnumber and channelname.")))
-					list.append(getConfigListEntry(_("Serviceinfo Fontsize"), config.plugins.KravenVB.ChannelSelectionInfoSize, _("Choose the font size of serviceinformation.")))
-				if self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
-					list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.ChannelSelectionEPGSize1, _("Choose the font size of event description, EPG list and primetime.")))
-				elif self.actChannelselectionstyle == "channelselection-style-minitv22":
-					list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.ChannelSelectionEPGSize2, _("Choose the font size of EPG list and primetime.")))
-				else:
-					list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.ChannelSelectionEPGSize3, _("Choose the font size of event description, EPG list and primetime.")))
-				list.append(getConfigListEntry(_("'Not available'-Font"), config.plugins.KravenVB.ChannelSelectionServiceNAList, _("Choose the font color of channels that are unavailable at the moment. Press OK to define your own RGB color.")))
-				list.append(getConfigListEntry(_("Primetime"), config.plugins.KravenVB.Primetimeavailable, _("Choose whether primetime program information is displayed or not.")))
-				if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
-					list.append(getConfigListEntry(_("Primetime-Time"), config.plugins.KravenVB.Primetime, _("Specify the time for your primetime.")))
-					list.append(getConfigListEntry(_("Primetime-Font"), config.plugins.KravenVB.PrimetimeFontList, _("Choose the font color of the primetime information. Press OK to define your own RGB color.")))
-				else:
-					emptyLines+=2
-				for i in range(emptyLines+2):
-					list.append(getConfigListEntry(_(" "), ))
-			else:
-				list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionHorStyle, _("Choose from different styles for the channel selection screen.")))
-				list.append(getConfigListEntry(_("'Not available'-Font"), config.plugins.KravenVB.ChannelSelectionServiceNAList, _("Choose the font color of channels that are unavailable at the moment. Press OK to define your own RGB color.")))
-				if config.plugins.KravenVB.ChannelSelectionHorStyle.value == "cshor-minitv":
-					list.append(getConfigListEntry(_("Primetime"), config.plugins.KravenVB.Primetimeavailable, _("Choose whether primetime program information is displayed or not.")))
-					if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
-						list.append(getConfigListEntry(_("Primetime-Time"), config.plugins.KravenVB.Primetime, _("Specify the time for your primetime.")))
-						list.append(getConfigListEntry(_("Primetime-Font"), config.plugins.KravenVB.PrimetimeFontList, _("Choose the font color of the primetime information. Press OK to define your own RGB color.")))
-					else:
-						emptyLines+=2
-				else:
-					emptyLines+=3
-				for i in range(emptyLines+7):
-					list.append(getConfigListEntry(_(" "), ))
-		elif self.E2DistroVersion == "openatv":
-			if SystemInfo.get("NumVideoDecoders",1) > 1:
-				list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle2, _("Choose from different styles for the channel selection screen.")))
-				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle2.value
-			else:
-				list.append(getConfigListEntry(_("Channellist-Style"), config.plugins.KravenVB.ChannelSelectionStyle, _("Choose from different styles for the channel selection screen.")))
-				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
-			if self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv33","channelselection-style-minitv-picon"):
-				list.append(getConfigListEntry(_("Channellist-Mode"), config.plugins.KravenVB.ChannelSelectionMode, _("Choose between direct zapping (1xOK) and zapping after preview (2xOK).")))
-			else:
-				emptyLines+=1
-			if not self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv2","channelselection-style-minitv3","channelselection-style-minitv4","channelselection-style-minitv22","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-minitv-picon"):
-				list.append(getConfigListEntry(_("Channellist-Transparenz"), config.plugins.KravenVB.ChannelSelectionTrans, _("Choose the degree of background transparency for the channellists.")))
-			else:
-				emptyLines+=1
-			if self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
-				list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.ChannelSelectionEPGSize1, _("Choose the font size of event description, EPG list and primetime.")))
-			elif self.actChannelselectionstyle == "channelselection-style-minitv22":
-				list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.ChannelSelectionEPGSize2, _("Choose the font size of EPG list and primetime.")))
-			else:
-				list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.ChannelSelectionEPGSize3, _("Choose the font size of event description, EPG list and primetime.")))
-			list.append(getConfigListEntry(_("'Not available'-Font"), config.plugins.KravenVB.ChannelSelectionServiceNAList, _("Choose the font color of channels that are unavailable at the moment. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("Primetime"), config.plugins.KravenVB.Primetimeavailable, _("Choose whether primetime program information is displayed or not.")))
-			if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
-				list.append(getConfigListEntry(_("Primetime-Time"), config.plugins.KravenVB.Primetime, _("Specify the time for your primetime.")))
-				list.append(getConfigListEntry(_("Primetime-Font"), config.plugins.KravenVB.PrimetimeFontList, _("Choose the font color of the primetime information. Press OK to define your own RGB color.")))
-			else:
-				emptyLines+=2
-			for i in range(emptyLines+5):
-				list.append(getConfigListEntry(_(" "), ))
-		
-		# page 7 (category 2)
-		emptyLines=0
-		list.append(getConfigListEntry(_("NUMBERZAP ________________________________________________________________"), config.plugins.KravenVB.CategoryNumberZap, _("This sections offers all settings for NumberZap.")))
-		list.append(getConfigListEntry(_("NumberZap-Style"), config.plugins.KravenVB.NumberZapExt, _("Choose from different styles for NumberZap.")))
-		if not config.plugins.KravenVB.NumberZapExt.value == "none":
-			list.append(getConfigListEntry(_("Border Color"), config.plugins.KravenVB.NZBorderList, _("Choose the border color for NumberZap. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=1
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 8
-		emptyLines=0
-		list.append(getConfigListEntry(_("EPGSELECTION ____________________________________________________________"), config.plugins.KravenVB.CategoryEPGSelection, _("This sections offers all settings for EPGSelection.")))
-		list.append(getConfigListEntry(_("EPGSelection-Style"), config.plugins.KravenVB.EPGSelection, _("Choose from different styles to display EPGSelection.")))
-		list.append(getConfigListEntry(_("EPG-List Fontsize"), config.plugins.KravenVB.EPGListSize, _("Choose the font size of EPG-List.")))
-		list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.EPGSelectionEPGSize, _("Choose the font size of event description.")))
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 8 (category 2)
-		emptyLines=0
-		if self.E2DistroVersion == "VTi":
-			list.append(getConfigListEntry(_("GRAPHMULTIEPG ___________________________________________________________"), config.plugins.KravenVB.CategoryGraphMultiEPG, _("This sections offers all settings for GraphMultiEPG.")))
-			list.append(getConfigListEntry(_("GraphMultiEPG-Style"), config.plugins.KravenVB.GraphMultiEPG, _("Choose from different styles for GraphMultiEPG.")))
-			list.append(getConfigListEntry(_("Event Description Fontsize"), config.plugins.KravenVB.GMEDescriptionSize, _("Choose the font size of event description.")))
-			list.append(getConfigListEntry(_("Border Color"), config.plugins.KravenVB.GMEBorderList, _("Choose the border color for GraphMultiEPG. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("Selected Event Background"), config.plugins.KravenVB.GMErunningbgList, _("Choose the background color of selected events for GraphMultiEPG. Press OK to define your own RGB color.")))
-		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("GRAPHICALEPG _____________________________________________________________"), config.plugins.KravenVB.CategoryGraphicalEPG, _("This sections offers all settings for GraphicalEPG.")))
-			list.append(getConfigListEntry(_("GraphicalEPG-Style"), config.plugins.KravenVB.GraphicalEPG, _("Choose from different styles for GraphicalEPG.")))
-			list.append(getConfigListEntry(_("Event Description Fontsize"), config.plugins.KravenVB.GMEDescriptionSize, _("Choose the font size of event description.")))
-			if config.plugins.KravenVB.GraphicalEPG.value in ("text","text-minitv"):
-				list.append(getConfigListEntry(_("Border Color"), config.plugins.KravenVB.GMEBorderList, _("Choose the border color for GraphicalEPG. Press OK to define your own RGB color.")))
-				list.append(getConfigListEntry(_("Selected Event Background"), config.plugins.KravenVB.GMErunningbgList, _("Choose the background color of selected events for GraphicalEPG. Press OK to define your own RGB color.")))
-			else:
-				emptyLines+=2
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 8 (category 3)
-		emptyLines=0
-		list.append(getConfigListEntry(_("VERTICALEPG ______________________________________________________________"), config.plugins.KravenVB.CategoryVerticalEPG, _("This sections offers all settings for VerticalEPG.")))
-		if self.E2DistroVersion == "VTi":
-			list.append(getConfigListEntry(_("VerticalEPG-Style"), config.plugins.KravenVB.VerticalEPG, _("Choose from different styles for VerticalEPG.")))
-			list.append(getConfigListEntry(_("Border Color"), config.plugins.KravenVB.VEPGBorderList, _("Choose the border color for VerticalEPG. Press OK to define your own RGB color.")))
-		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("VerticalEPG-Style"), config.plugins.KravenVB.ATVna, _("  ")))
-			list.append(getConfigListEntry(_("Border Color"), config.plugins.KravenVB.ATVna, _("  ")))
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 8 (category 4)
-		emptyLines=0
-		list.append(getConfigListEntry(_("TIMEREDITSCREEN ___________________________________________________________"), config.plugins.KravenVB.CategoryTimerEdit, _("This sections offers all settings for TimerEditScreen.")))
-		if self.E2DistroVersion == "VTi":
-			list.append(getConfigListEntry(_("TimerEdit-Style"), config.plugins.KravenVB.TimerEditScreen, _("Choose from different styles to display TimerEditScreen.")))
-			list.append(getConfigListEntry(_("TimerList-Style"), config.plugins.KravenVB.TimerListStyle, _("Choose from different styles to display TimerList.")))
-		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("TimerEdit-Style"), config.plugins.KravenVB.ATVna, _("  ")))
-			list.append(getConfigListEntry(_("TimerList-Style"), config.plugins.KravenVB.ATVna, _("  ")))
-		for i in range(emptyLines):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 9
-		emptyLines=0
-		list.append(getConfigListEntry(_("ENHANCED MOVIE CENTER _____________________________________________________"), config.plugins.KravenVB.CategoryEMC, _("This sections offers all settings for EMC ('EnhancedMovieCenter').")))
-		list.append(getConfigListEntry(_("EMC-Style"), config.plugins.KravenVB.EMCStyle, _("Choose from different styles for EnhancedMovieCenter.")))
-		if not config.plugins.KravenVB.EMCStyle.value == "emc-full":
-			list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.EMCEPGSize, _("Choose the font size of event description.")))
-		else:
-			emptyLines+=1
-		list.append(getConfigListEntry(_("Unwatched Color"), config.plugins.KravenVB.UnwatchedColorList, _("Choose the font color of unwatched movies. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Watching Color"), config.plugins.KravenVB.WatchingColorList, _("Choose the font color of watching movies. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Finished Color"), config.plugins.KravenVB.FinishedColorList, _("Choose the font color of watched movies. Press OK to define your own RGB color.")))
-		list.append(getConfigListEntry(_("Custom EMC-Selection-Colors"), config.plugins.KravenVB.EMCSelectionColors, _("Choose whether you want to customize the selection-colors for EnhancedMovieCenter.")))
-		if config.plugins.KravenVB.EMCSelectionColors.value == "emc-colors-on":
-			list.append(getConfigListEntry(_("EMC-Listselection"), config.plugins.KravenVB.EMCSelectionBackgroundList, _("Choose the background color of selection bars for EnhancedMovieCenter. Press OK to define your own RGB color.")))
-			list.append(getConfigListEntry(_("EMC-Selection-Font"), config.plugins.KravenVB.EMCSelectionFontList, _("Choose the color of the font in selection bars for EnhancedMovieCenter. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=2
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 9 (category 2)
-		emptyLines=0
-		list.append(getConfigListEntry(_("MOVIESELECTION ____________________________________________________________"), config.plugins.KravenVB.CategoryMovieSelection, _("This sections offers all settings for MovieSelection.")))
-		list.append(getConfigListEntry(_("MovieSelection-Style"), config.plugins.KravenVB.MovieSelection, _("Choose from different styles for MovieSelection.")))
-		list.append(getConfigListEntry(_("EPG Fontsize"), config.plugins.KravenVB.MovieSelectionEPGSize, _("Choose the font size of event description.")))
-		for i in range(emptyLines+1):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 9 (category 3)
-		emptyLines=0
-		list.append(getConfigListEntry(_("PLAYER ____________________________________________________________________"), config.plugins.KravenVB.CategoryPlayers, _("This sections offers all settings for the movie players.")))
-		list.append(getConfigListEntry(_("Clock"), config.plugins.KravenVB.PlayerClock, _("Choose from different options to show the clock in the players.")))
-		if config.plugins.KravenVB.PlayerClock.value == "player-android":
-			list.append(getConfigListEntry(_("Android-Temp-Color"), config.plugins.KravenVB.Android2List, _("Choose the font color of android-clock temperature. Press OK to define your own RGB color.")))
-		else:
-			emptyLines+=1
-		list.append(getConfigListEntry(_("PVRState"), config.plugins.KravenVB.PVRState, _("Choose from different options to display the PVR state.")))
-		for i in range(emptyLines):
-			list.append(getConfigListEntry(_(" "), ))
-		
-		# page 10
-		emptyLines=0
-		if config.plugins.KravenVB.IBStyle.value == "grad":
-			list.append(getConfigListEntry(_("ANTIALIASING BRIGHTNESS ________________________________________________________________"), config.plugins.KravenVB.CategoryAntialiasing, _("This sections offers all antialiasing settings. Distortions or color frames around fonts can be reduced by this settings.")))
-			list.append(getConfigListEntry(_("Infobar"), config.plugins.KravenVB.InfobarAntialias, _("Reduce distortions (faint/blurry) or color frames around fonts in the infobar and widgets by adjusting the antialiasing brightness.")))
-			list.append(getConfigListEntry(_("ECM Infos"), config.plugins.KravenVB.ECMLineAntialias, _("Reduce distortions (faint/blurry) or color frames around the ECM information in the infobar by adjusting the antialiasing brightness.")))
-			list.append(getConfigListEntry(_("Screens"), config.plugins.KravenVB.ScreensAntialias, _("Reduce distortions (faint/blurry) or color frames around fonts at top and bottom of screens by adjusting the antialiasing brightness.")))
-			emptyLines=1
-		else:
-			emptyLines+=0
-		for i in range(emptyLines):
-			list.append(getConfigListEntry(_(" "), ))
+		self.silent = silent
 
-		# page 10 (category 2)
-		list.append(getConfigListEntry(_("DEBUG _____________________________________________________________________"), config.plugins.KravenVB.CategoryDebug, _("This sections offers all debug settings.")))
-		list.append(getConfigListEntry(_("Screennames"), config.plugins.KravenVB.DebugNames, _("Activate or deactivate small screen names for debugging purposes.")))
+		if self.silent:
+			if config.skin.primary_skin.value != "KravenVB/skin.xml":
+				print 'KravenVB is not the primary skin. No restore action needed!'
+				return 0
+			self.E2settings = open("/etc/enigma2/settings", "r").read()
 
-		### Assign list or self color
-		if config.plugins.KravenVB.BackgroundListColor.value == "self":
-			config.plugins.KravenVB.BackgroundColor.value = config.plugins.KravenVB.BackgroundSelfColor.value
-		else:
-			config.plugins.KravenVB.BackgroundColor.value = config.plugins.KravenVB.BackgroundListColor.value
-		if config.plugins.KravenVB.InfobarBoxListColor.value == "self":
-			config.plugins.KravenVB.InfobarBoxColor.value = config.plugins.KravenVB.InfobarBoxSelfColor.value
-		else:
-			config.plugins.KravenVB.InfobarBoxColor.value = config.plugins.KravenVB.InfobarBoxListColor.value
-		if config.plugins.KravenVB.InfobarGradientListColor.value == "self":
-			config.plugins.KravenVB.InfobarGradientColor.value = config.plugins.KravenVB.InfobarGradientSelfColor.value
-		else:
-			config.plugins.KravenVB.InfobarGradientColor.value = config.plugins.KravenVB.InfobarGradientListColor.value
-		if config.plugins.KravenVB.SelectionBackgroundList.value == "self":
-			config.plugins.KravenVB.SelectionBackground.value = config.plugins.KravenVB.SelectionBackgroundSelf.value
-		else:
-			config.plugins.KravenVB.SelectionBackground.value = config.plugins.KravenVB.SelectionBackgroundList.value
-		if config.plugins.KravenVB.SelectionBorderList.value == "self":
-			config.plugins.KravenVB.SelectionBorder.value = config.plugins.KravenVB.SelectionBorderSelf.value
-		else:
-			config.plugins.KravenVB.SelectionBorder.value = config.plugins.KravenVB.SelectionBorderList.value
-		if config.plugins.KravenVB.Font1List.value == "self":
-			config.plugins.KravenVB.Font1.value = config.plugins.KravenVB.Font1Self.value
-		else:
-			config.plugins.KravenVB.Font1.value = config.plugins.KravenVB.Font1List.value
-		if config.plugins.KravenVB.Font2List.value == "self":
-			config.plugins.KravenVB.Font2.value = config.plugins.KravenVB.Font2Self.value
-		else:
-			config.plugins.KravenVB.Font2.value = config.plugins.KravenVB.Font2List.value
-		if config.plugins.KravenVB.IBFont1List.value == "self":
-			config.plugins.KravenVB.IBFont1.value = config.plugins.KravenVB.IBFont1Self.value
-		else:
-			config.plugins.KravenVB.IBFont1.value = config.plugins.KravenVB.IBFont1List.value
-		if config.plugins.KravenVB.IBFont2List.value == "self":
-			config.plugins.KravenVB.IBFont2.value = config.plugins.KravenVB.IBFont2Self.value
-		else:
-			config.plugins.KravenVB.IBFont2.value = config.plugins.KravenVB.IBFont2List.value
-		if config.plugins.KravenVB.BackgroundGradientListColorPrimary.value == "self":
-			config.plugins.KravenVB.BackgroundGradientColorPrimary.value = config.plugins.KravenVB.BackgroundGradientSelfColorPrimary.value
-		else:
-			config.plugins.KravenVB.BackgroundGradientColorPrimary.value = config.plugins.KravenVB.BackgroundGradientListColorPrimary.value
-		if config.plugins.KravenVB.BackgroundGradientListColorSecondary.value == "self":
-			config.plugins.KravenVB.BackgroundGradientColorSecondary.value = config.plugins.KravenVB.BackgroundGradientSelfColorSecondary.value
-		else:
-			config.plugins.KravenVB.BackgroundGradientColorSecondary.value = config.plugins.KravenVB.BackgroundGradientListColorSecondary.value
-		if config.plugins.KravenVB.InfobarGradientListColorPrimary.value == "self":
-			config.plugins.KravenVB.InfobarGradientColorPrimary.value = config.plugins.KravenVB.InfobarGradientSelfColorPrimary.value
-		else:
-			config.plugins.KravenVB.InfobarGradientColorPrimary.value = config.plugins.KravenVB.InfobarGradientListColorPrimary.value
-		if config.plugins.KravenVB.InfobarGradientListColorSecondary.value == "self":
-			config.plugins.KravenVB.InfobarGradientColorSecondary.value = config.plugins.KravenVB.InfobarGradientSelfColorSecondary.value
-		else:
-			config.plugins.KravenVB.InfobarGradientColorSecondary.value = config.plugins.KravenVB.InfobarGradientListColorSecondary.value
-		if config.plugins.KravenVB.BackgroundAlternateListColor.value == "self":
-			config.plugins.KravenVB.BackgroundAlternateColor.value = config.plugins.KravenVB.BackgroundAlternateSelfColor.value
-		else:
-			config.plugins.KravenVB.BackgroundAlternateColor.value = config.plugins.KravenVB.BackgroundAlternateListColor.value
-		if config.plugins.KravenVB.InfobarAlternateListColor.value == "self":
-			config.plugins.KravenVB.InfobarAlternateColor.value = config.plugins.KravenVB.InfobarAlternateSelfColor.value
-		else:
-			config.plugins.KravenVB.InfobarAlternateColor.value = config.plugins.KravenVB.InfobarAlternateListColor.value
-		if config.plugins.KravenVB.MarkedFontList.value == "self":
-			config.plugins.KravenVB.MarkedFont.value = config.plugins.KravenVB.MarkedFontSelf.value
-		else:
-			config.plugins.KravenVB.MarkedFont.value = config.plugins.KravenVB.MarkedFontList.value
-		if config.plugins.KravenVB.SelectionFontList.value == "self":
-			config.plugins.KravenVB.SelectionFont.value = config.plugins.KravenVB.SelectionFontSelf.value
-		else:
-			config.plugins.KravenVB.SelectionFont.value = config.plugins.KravenVB.SelectionFontList.value
-		if config.plugins.KravenVB.PermanentClockFontList.value == "self":
-			config.plugins.KravenVB.PermanentClockFont.value = config.plugins.KravenVB.PermanentClockFontSelf.value
-		else:
-			config.plugins.KravenVB.PermanentClockFont.value = config.plugins.KravenVB.PermanentClockFontList.value
-		if config.plugins.KravenVB.ECMFontList.value == "self":
-			config.plugins.KravenVB.ECMFont.value = config.plugins.KravenVB.ECMFontSelf.value
-		else:
-			config.plugins.KravenVB.ECMFont.value = config.plugins.KravenVB.ECMFontList.value
-		if config.plugins.KravenVB.ChannelnameFontList.value == "self":
-			config.plugins.KravenVB.ChannelnameFont.value = config.plugins.KravenVB.ChannelnameFontSelf.value
-		else:
-			config.plugins.KravenVB.ChannelnameFont.value = config.plugins.KravenVB.ChannelnameFontList.value
-		if config.plugins.KravenVB.PrimetimeFontList.value == "self":
-			config.plugins.KravenVB.PrimetimeFont.value = config.plugins.KravenVB.PrimetimeFontSelf.value
-		else:
-			config.plugins.KravenVB.PrimetimeFont.value = config.plugins.KravenVB.PrimetimeFontList.value
-		if config.plugins.KravenVB.ButtonTextList.value == "self":
-			config.plugins.KravenVB.ButtonText.value = config.plugins.KravenVB.ButtonTextSelf.value
-		else:
-			config.plugins.KravenVB.ButtonText.value = config.plugins.KravenVB.ButtonTextList.value
-		if config.plugins.KravenVB.AndroidList.value == "self":
-			config.plugins.KravenVB.Android.value = config.plugins.KravenVB.AndroidSelf.value
-		else:
-			config.plugins.KravenVB.Android.value = config.plugins.KravenVB.AndroidList.value
-		if config.plugins.KravenVB.BorderList.value == "self":
-			config.plugins.KravenVB.Border.value = config.plugins.KravenVB.BorderSelf.value
-		else:
-			config.plugins.KravenVB.Border.value = config.plugins.KravenVB.BorderList.value
-		if config.plugins.KravenVB.ProgressList.value == "self":
-			config.plugins.KravenVB.Progress.value = config.plugins.KravenVB.ProgressSelf.value
-		else:
-			config.plugins.KravenVB.Progress.value = config.plugins.KravenVB.ProgressList.value
-		if config.plugins.KravenVB.LineList.value == "self":
-			config.plugins.KravenVB.Line.value = config.plugins.KravenVB.LineSelf.value
-		else:
-			config.plugins.KravenVB.Line.value = config.plugins.KravenVB.LineList.value
-		if config.plugins.KravenVB.IBLineList.value == "self":
-			config.plugins.KravenVB.IBLine.value = config.plugins.KravenVB.IBLineSelf.value
-		else:
-			config.plugins.KravenVB.IBLine.value = config.plugins.KravenVB.IBLineList.value
-		if config.plugins.KravenVB.MiniTVBorderList.value == "self":
-			config.plugins.KravenVB.MiniTVBorder.value = config.plugins.KravenVB.MiniTVBorderSelf.value
-		else:
-			config.plugins.KravenVB.MiniTVBorder.value = config.plugins.KravenVB.MiniTVBorderList.value
-		if config.plugins.KravenVB.ChannelSelectionServiceNAList.value == "self":
-			config.plugins.KravenVB.ChannelSelectionServiceNA.value = config.plugins.KravenVB.ChannelSelectionServiceNASelf.value
-		else:
-			config.plugins.KravenVB.ChannelSelectionServiceNA.value = config.plugins.KravenVB.ChannelSelectionServiceNAList.value
-		if config.plugins.KravenVB.NZBorderList.value == "self":
-			config.plugins.KravenVB.NZBorder.value = config.plugins.KravenVB.NZBorderSelf.value
-		else:
-			config.plugins.KravenVB.NZBorder.value = config.plugins.KravenVB.NZBorderList.value
-		if config.plugins.KravenVB.GMErunningbgList.value == "self":
-			config.plugins.KravenVB.GMErunningbg.value = config.plugins.KravenVB.GMErunningbgSelf.value
-		else:
-			config.plugins.KravenVB.GMErunningbg.value = config.plugins.KravenVB.GMErunningbgList.value
-		if config.plugins.KravenVB.GMEBorderList.value == "self":
-			config.plugins.KravenVB.GMEBorder.value = config.plugins.KravenVB.GMEBorderSelf.value
-		else:
-			config.plugins.KravenVB.GMEBorder.value = config.plugins.KravenVB.GMEBorderList.value
-		if config.plugins.KravenVB.VEPGBorderList.value == "self":
-			config.plugins.KravenVB.VEPGBorder.value = config.plugins.KravenVB.VEPGBorderSelf.value
-		else:
-			config.plugins.KravenVB.VEPGBorder.value = config.plugins.KravenVB.VEPGBorderList.value
-		if config.plugins.KravenVB.EMCSelectionBackgroundList.value == "self":
-			config.plugins.KravenVB.EMCSelectionBackground.value = config.plugins.KravenVB.EMCSelectionBackgroundSelf.value
-		else:
-			config.plugins.KravenVB.EMCSelectionBackground.value = config.plugins.KravenVB.EMCSelectionBackgroundList.value
-		if config.plugins.KravenVB.EMCSelectionFontList.value == "self":
-			config.plugins.KravenVB.EMCSelectionFont.value = config.plugins.KravenVB.EMCSelectionFontSelf.value
-		else:
-			config.plugins.KravenVB.EMCSelectionFont.value = config.plugins.KravenVB.EMCSelectionFontList.value
-		if config.plugins.KravenVB.Android2List.value == "self":
-			config.plugins.KravenVB.Android2.value = config.plugins.KravenVB.Android2Self.value
-		else:
-			config.plugins.KravenVB.Android2.value = config.plugins.KravenVB.Android2List.value
-		if config.plugins.KravenVB.UnwatchedColorList.value == "self":
-			config.plugins.KravenVB.UnwatchedColor.value = config.plugins.KravenVB.UnwatchedColorSelf.value
-		else:
-			config.plugins.KravenVB.UnwatchedColor.value = config.plugins.KravenVB.UnwatchedColorList.value
-		if config.plugins.KravenVB.WatchingColorList.value == "self":
-			config.plugins.KravenVB.WatchingColor.value = config.plugins.KravenVB.WatchingColorSelf.value
-		else:
-			config.plugins.KravenVB.WatchingColor.value = config.plugins.KravenVB.WatchingColorList.value
-		if config.plugins.KravenVB.FinishedColorList.value == "self":
-			config.plugins.KravenVB.FinishedColor.value = config.plugins.KravenVB.FinishedColorSelf.value
-		else:
-			config.plugins.KravenVB.FinishedColor.value = config.plugins.KravenVB.FinishedColorList.value
+		return self.save()
 
-		### Calculate Backgrounds
+	def calcBackgrounds(self, bg = None):
 		if config.plugins.KravenVB.BackgroundColor.value == "gradient":
 			self.skincolorbackgroundcolor = config.plugins.KravenVB.BackgroundGradientColorPrimary.value
 		elif config.plugins.KravenVB.BackgroundColor.value == "texture":
@@ -1983,880 +1198,53 @@ class KravenVB(ConfigListScreen, Screen):
 			else:
 				self.skincolorinfobarcolor = config.plugins.KravenVB.InfobarBoxColor.value
 
-		### Build list and define situation
-		self["config"].list = list
-		self["config"].l.setList(list)
-		self.updateHelp()
-		self["helperimage"].hide()
-		self.ShowPicture()
-		option = self["config"].getCurrent()[1]
-		position = self["config"].instance.getCurrentIndex()
-
-		position = self["config"].instance.getCurrentIndex()
-		if position == 0: # about
-			self["key_yellow"].setText("<< " + _("debug"))
-			self["key_blue"].setText(_("profiles") + " >>")
-		if (2 <= position <= 4): # profiles
-			self["key_yellow"].setText("<< " + _("about"))
-			self["key_blue"].setText(_("system") + " >>")
-		if (6 <= position <= 17): # system
-			self["key_yellow"].setText("<< " + _("profiles"))
-			self["key_blue"].setText(_("global colors") + " >>")
-		if (18 <= position <= 35): # global colors
-			self["key_yellow"].setText("<< " + _("system"))
-			self["key_blue"].setText(_("infobar-look") + " >>")
-		if (36 <= position <= 53): # infobar-look
-			self["key_yellow"].setText("<< " + _("global colors"))
-			self["key_blue"].setText(_("infobar-contents") + " >>")
-		if (54 <= position <= 60): # infobar-contents
-			self["key_yellow"].setText("<< " + _("infobar-look"))
-			self["key_blue"].setText(_("SecondInfobar") + " >>")
-		if (62 <= position <= 71): # secondinfobar
-			self["key_yellow"].setText("<< " + _("infobar-contents"))
-			self["key_blue"].setText(_("weather") + " >>")
-		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			if (72 <= position <= 80): # weather
-				self["key_yellow"].setText("<< " + _("SecondInfobar"))
-				self["key_blue"].setText(_("ECM infos") + " >>")
-		else:
-			if (72 <= position <= 80): # weather
-				self["key_yellow"].setText("<< " + _("SecondInfobar"))
-				self["key_blue"].setText(_("clock") + " >>")
-		if (82 <= position <= 84): # clock
-			self["key_yellow"].setText("<< " + _("weather"))
-			self["key_blue"].setText(_("ECM infos") + " >>")
-		if (90 <= position <= 94): # ecm infos
-			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-				self["key_yellow"].setText("<< " + _("weather"))
-			else:
-				self["key_yellow"].setText("<< " + _("clock"))
-			self["key_blue"].setText(_("views") + " >>")
-		if (96 <= position <= 101): # views
-			self["key_yellow"].setText("<< " + _("ECM infos"))
-			self["key_blue"].setText(_("PermanentClock") + " >>")
-		if (103 <= position <= 105): # permanentclock
-			self["key_yellow"].setText("<< " + _("views"))
-			self["key_blue"].setText(_("channellist") + " >>")
-		if (108 <= position <= 119): # channellist
-			self["key_yellow"].setText("<< " + _("PermanentClock"))
-			self["key_blue"].setText(_("NumberZap") + " >>")
-		if (121 <= position <= 123): # numberzap
-			self["key_yellow"].setText("<< " + _("channellist"))
-			self["key_blue"].setText(_("EPGSelection") + " >>")
-		if (126 <= position <= 129): # epgselection
-			self["key_yellow"].setText("<< " + _("NumberZap"))
-			self["key_blue"].setText(_("GraphEPG") + " >>")
-		if (131 <= position <= 135): # graphepg
-			self["key_yellow"].setText("<< " + _("EPGSelection"))
-			self["key_blue"].setText(_("VerticalEPG") + " >>")
-		if (137 <= position <= 139): # verticalepg
-			self["key_yellow"].setText("<< " + _("GraphEPG"))
-			self["key_blue"].setText(_("TimerEditScreen") + " >>")
-		if (141 <= position <= 143): # timereditscreen
-			self["key_yellow"].setText("<< " + _("VerticalEPG"))
-			self["key_blue"].setText(_("EMC") + " >>")
-		if (144 <= position <= 152): # emc
-			self["key_yellow"].setText("<< " + _("TimerEditScreen"))
-			self["key_blue"].setText(_("MovieSelection") + " >>")
-		if (154 <= position <= 156): # movieselection
-			self["key_yellow"].setText("<< " + _("EMC"))
-			self["key_blue"].setText(_("player") + " >>")
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			if (158 <= position <= 161): # player
-				self["key_yellow"].setText("<< " + _("MovieSelection"))
-				self["key_blue"].setText(_("debug") + " >>")
-		else:
-			if (158 <= position <= 161): # player
-				self["key_yellow"].setText("<< " + _("MovieSelection"))
-				self["key_blue"].setText(_("antialiasing") + " >>")
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			if (162 <= position <= 163): # debug
-				self["key_yellow"].setText("<< " + _("player"))
-				self["key_blue"].setText(_("about") + " >>")
-		else:
-			if (162 <= position <= 165): # antialiasing
-				self["key_yellow"].setText("<< " + _("player"))
-				self["key_blue"].setText(_("debug") + " >>")
-			if (167 <= position <= 168): # debug
-				self["key_yellow"].setText("<< " + _("antialiasing"))
-				self["key_blue"].setText(_("about") + " >>")
-
-		### version
-		versionpath = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/version"
-		versionfile = open(versionpath,"r")
-		for line in versionfile:
-			version = line.rstrip()
-			self["version"].setText(version)
-		versionfile.close()
-
-		### preview
-		option = self["config"].getCurrent()[1]
-		
-		if option == config.plugins.KravenVB.customProfile:
-			if config.plugins.KravenVB.customProfile.value==self.lastProfile:
-				self.saveProfile(msg=False)
-				
-		if option.value == "none":
-			self.showText(50,_("Off"))
-		elif option.value == "on":
-			self.showText(50,_("On"))
-		elif option == config.plugins.KravenVB.customProfile:
-			self.showText(23,"/etc/enigma2/kraven_profile_"+str(config.plugins.KravenVB.customProfile.value))
-		elif option == config.plugins.KravenVB.defaultProfile:
-			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/"+str(config.plugins.KravenVB.defaultProfile.value)+".jpg"):
-				self["helperimage"].show()
-			else:
-				self.showText(23,"/etc/enigma2/kraven_default_"+str(config.plugins.KravenVB.defaultProfile.value))
-		elif option == config.plugins.KravenVB.TypeWriter:
-			if option.value == "runningtext":
-				self.showText(48,_("runningtext"))
-			elif option.value == "typewriter":
-				self.showText(48,_("typewriter"))
-		elif option == config.plugins.KravenVB.IBtop:
-			if option.value == "infobar-x2-z1_top":
-				self.showText(50,_("4 Tuner"))
-			elif option.value == "infobar-x2-z1_top2":
-				self.showText(50,_("2 Tuner"))
-			elif option.value == "infobar-x2-z1_top3":
-				self.showText(50,_("8 Tuner"))
-		elif option == config.plugins.KravenVB.tuner:
-			if option.value == "2-tuner":
-				self.showText(50,_("2 Tuner"))
-			elif option.value == "4-tuner":
-				self.showText(50,_("4 Tuner"))
-			elif option.value == "8-tuner":
-				self.showText(50,_("8 Tuner"))
-		elif option == config.plugins.KravenVB.tuner2:
-			if option.value == "2-tuner":
-				self.showText(50,_("2 Tuner"))
-			elif option.value == "4-tuner":
-				self.showText(50,_("4 Tuner"))
-			elif option.value == "8-tuner":
-				self.showText(50,_("8 Tuner"))
-			elif option.value == "10-tuner":
-				self.showText(50,_("10 Tuner"))
-		elif option in (config.plugins.KravenVB.InfobarChannelName,config.plugins.KravenVB.InfobarChannelName2):
-			if option.value == "infobar-channelname-small":
-				self.showText(40,_("RTL"))
-			elif option.value == "infobar-channelname-number-small":
-				self.showText(40,_("5 - RTL"))
-			elif option.value == "infobar-channelname":
-				self.showText(76,_("RTL"))
-			elif option.value == "infobar-channelname-number":
-				self.showText(76,_("5 - RTL"))
-		elif option in (config.plugins.KravenVB.ECMLine1,config.plugins.KravenVB.ECMLine2,config.plugins.KravenVB.ECMLine3):
-			if option.value == "VeryShortCaid":
-				self.showText(17,"CAID - Time")
-			elif option.value == "VeryShortReader":
-				self.showText(17,"Reader - Time")
-			elif option.value == "ShortReader":
-				self.showText(17,"CAID - Reader - Time")
-			elif option.value == "Normal":
-				self.showText(17,"CAID - Reader - Hops - Time")
-			elif option.value == "Long":
-				self.showText(17,"CAID - System - Reader - Hops - Time")
-			elif option.value == "VeryLong":
-				self.showText(17,"CAM - CAID - System - Reader - Hops - Time")
-		elif option == config.plugins.KravenVB.FTA and option.value == "FTAVisible":
-			self.showText(17,_("free to air"))
-		elif option in (config.plugins.KravenVB.weather_gmcode,config.plugins.KravenVB.weather_cityname,config.plugins.KravenVB.weather_server,config.plugins.KravenVB.weather_search_over):
-			self.get_weather_data()
-			self.showText(20,self.actCity)
-		elif option == config.plugins.KravenVB.weather_language:
-			self.showText(60,option.value)
-		elif option == config.plugins.KravenVB.refreshInterval:
-			if option.value == "15":
-				self.showText(50,"00:15")
-			elif option.value == "30":
-				self.showText(50,"00:30")
-			elif option.value == "60":
-				self.showText(50,"01:00")
-			elif option.value == "120":
-				self.showText(50,"02:00")
-			elif option.value == "240":
-				self.showText(50,"04:00")
-			elif option.value == "480":
-				self.showText(50,"08:00")
-		elif option == config.plugins.KravenVB.ChannelSelectionMode:
-			if option.value == "zap":
-				self.showText(50,"1 x OK")
-			elif option.value == "preview":
-				self.showText(50,"2 x OK")
-		elif option == config.plugins.KravenVB.PVRState:
-			if option.value == "pvrstate-center-big":
-				self.showText(44,">> 8x")
-			elif option.value == "pvrstate-center-small":
-				self.showText(22,">> 8x")
-			else:
-				self["helperimage"].show()
-		elif option == config.plugins.KravenVB.record3:
-			if option.value == "no-record-tuner":
-				self.showText(50,_("Off"))
-			else:
-				self["helperimage"].show()
-		elif option == config.plugins.KravenVB.ChannelSelectionServiceSize:
-			size=config.plugins.KravenVB.ChannelSelectionServiceSize.value
-			self.showText(int(size[-2:]),size[-2:]+" Pixel")
-		elif option == config.plugins.KravenVB.ChannelSelectionInfoSize:
-			size=config.plugins.KravenVB.ChannelSelectionInfoSize.value
-			self.showText(int(size[-2:]),size[-2:]+" Pixel")
-		elif option == config.plugins.KravenVB.ChannelSelectionServiceSize1:
-			size=config.plugins.KravenVB.ChannelSelectionServiceSize1.value
-			self.showText(int(size[-2:]),size[-2:]+" Pixel")
-		elif option == config.plugins.KravenVB.ChannelSelectionInfoSize1:
-			size=config.plugins.KravenVB.ChannelSelectionInfoSize1.value
-			self.showText(int(size[-2:]),size[-2:]+" Pixel")
-		elif option == config.plugins.KravenVB.ChannelSelectionEPGSize1:
-			if config.plugins.KravenVB.ChannelSelectionEPGSize1.value == "small":
-				self.showText(24,_("description - 19 Pixel \nEPG list - 18 Pixel \nprimetime - 18 Pixel"))
-			elif config.plugins.KravenVB.ChannelSelectionEPGSize1.value == "big":
-				self.showText(24,_("description - 22 Pixel \nEPG list - 20 Pixel \nprimetime - 20 Pixel"))
-		elif option == config.plugins.KravenVB.ChannelSelectionEPGSize2:
-			if config.plugins.KravenVB.ChannelSelectionEPGSize2.value == "small":
-				self.showText(24,_("EPG list - 22 Pixel \nprimetime - 22 Pixel"))
-			elif config.plugins.KravenVB.ChannelSelectionEPGSize2.value == "big":
-				self.showText(24,_("EPG list - 24 Pixel \nprimetime - 24 Pixel"))
-		elif option == config.plugins.KravenVB.ChannelSelectionEPGSize3:
-			if config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "small":
-				self.showText(24,_("description - 22 Pixel \nEPG list - 22 Pixel \nprimetime - 22 Pixel"))
-			elif config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "big":
-				self.showText(24,_("description - 24 Pixel \nEPG list - 24 Pixel \nprimetime - 24 Pixel"))
-		elif option == config.plugins.KravenVB.MovieSelectionEPGSize:
-			if config.plugins.KravenVB.MovieSelectionEPGSize.value == "small":
-				self.showText(22,_("22 Pixel"))
-			elif config.plugins.KravenVB.MovieSelectionEPGSize.value == "big":
-				self.showText(24,_("24 Pixel"))
-		elif option == config.plugins.KravenVB.EPGSelectionEPGSize:
-			if config.plugins.KravenVB.EPGSelectionEPGSize.value == "small":
-				self.showText(22,_("22 Pixel"))
-			elif config.plugins.KravenVB.EPGSelectionEPGSize.value == "big":
-				self.showText(24,_("24 Pixel"))
-		elif option == config.plugins.KravenVB.EPGListSize:
-			if config.plugins.KravenVB.EPGListSize.value == "small":
-				self.showText(22,_("22 Pixel"))
-			elif config.plugins.KravenVB.EPGListSize.value == "big":
-				self.showText(26,_("26 Pixel"))
-		elif option == config.plugins.KravenVB.GMEDescriptionSize:
-			if config.plugins.KravenVB.GMEDescriptionSize.value == "small":
-				self.showText(22,_("22 Pixel"))
-			elif config.plugins.KravenVB.GMEDescriptionSize.value == "big":
-				self.showText(24,_("24 Pixel"))
-		elif option == config.plugins.KravenVB.EMCEPGSize:
-			if config.plugins.KravenVB.EMCEPGSize.value == "small":
-				self.showText(22,_("22 Pixel"))
-			elif config.plugins.KravenVB.EMCEPGSize.value == "big":
-				self.showText(24,_("24 Pixel"))
-		elif option == config.plugins.KravenVB.IBFontSize:
-			if config.plugins.KravenVB.IBFontSize.value == "size-22":
-				self.showText(22,_("22 Pixel"))
-			elif config.plugins.KravenVB.IBFontSize.value == "size-26":
-				self.showText(26,_("26 Pixel"))
-			elif config.plugins.KravenVB.IBFontSize.value == "size-30":
-				self.showText(30,_("30 Pixel"))
-		elif option == config.plugins.KravenVB.SIBFont:
-			if config.plugins.KravenVB.SIBFont.value == "sibfont-small":
-				self.showText(22,_("small"))
-			else:
-				self.showText(26,_("big"))
-		elif option == config.plugins.KravenVB.ClockIconSize:
-			if config.plugins.KravenVB.ClockIconSize.value == "size-96":
-				self.showText(48,_("96 Pixel"))
-			elif config.plugins.KravenVB.ClockIconSize.value == "size-128":
-				self.showText(64,_("128 Pixel"))
-		elif option in (config.plugins.KravenVB.InfobarAntialias,config.plugins.KravenVB.ECMLineAntialias,config.plugins.KravenVB.ScreensAntialias):
-			if option.value == 10:
-				self.showText(50,"+/- 0%")
-			elif option.value in range(0,10):
-				self.showText(50,"- "+str(100-option.value*10)+"%")
-			elif option.value in range(11,21):
-				self.showText(50,"+ "+str(option.value*10-100)+"%")
-		elif option == config.plugins.KravenVB.DebugNames and option.value == "screennames-on":
-			self.showText(50,"Debug")
-		elif option in (config.plugins.KravenVB.MenuColorTrans,config.plugins.KravenVB.BackgroundColorTrans,config.plugins.KravenVB.InfobarColorTrans,config.plugins.KravenVB.ChannelSelectionTrans) and option.value == "00":
-			self.showText(50,_("Off"))
-		elif option == config.plugins.KravenVB.BackgroundListColor:
-			if config.plugins.KravenVB.BackgroundListColor.value == "gradient":
-				self.showGradient(config.plugins.KravenVB.BackgroundGradientColorPrimary.value,config.plugins.KravenVB.BackgroundGradientColorSecondary.value)
-			elif config.plugins.KravenVB.BackgroundListColor.value == "texture":
-				self["helperimage"].show()
-			else:
-				self.showColor(self.hexRGB(config.plugins.KravenVB.BackgroundColor.value))
-		elif option == config.plugins.KravenVB.BackgroundGradientListColorPrimary:
-			self.showGradient(config.plugins.KravenVB.BackgroundGradientColorPrimary.value,config.plugins.KravenVB.BackgroundGradientColorSecondary.value)
-		elif option == config.plugins.KravenVB.BackgroundGradientListColorSecondary:
-			self.showGradient(config.plugins.KravenVB.BackgroundGradientColorPrimary.value,config.plugins.KravenVB.BackgroundGradientColorSecondary.value)
-		elif option == config.plugins.KravenVB.BackgroundAlternateListColor:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.SelectionBackgroundList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.SelectionBackground.value))
-		elif option == config.plugins.KravenVB.SelectionBorderList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.SelectionBorder.value))
-		elif option == config.plugins.KravenVB.EMCSelectionBackgroundList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.EMCSelectionBackground.value))
-		elif option == config.plugins.KravenVB.ProgressList:
-			if config.plugins.KravenVB.ProgressList.value in ("progress", "progress2"):
-				self["helperimage"].show()
-			else:
-				self.showColor(self.hexRGB(config.plugins.KravenVB.Progress.value))
-		elif option == config.plugins.KravenVB.BorderList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.Border.value))
-		elif option == config.plugins.KravenVB.MiniTVBorderList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.MiniTVBorder.value))
-		elif option == config.plugins.KravenVB.NZBorderList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.NZBorder.value))
-		elif option == config.plugins.KravenVB.GMEBorderList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.GMEBorder.value))
-		elif option == config.plugins.KravenVB.GMErunningbgList:
-			if config.plugins.KravenVB.GMErunningbgList.value == "global":
-				self.showColor(self.hexRGB(config.plugins.KravenVB.SelectionBackground.value))
-			else:
-				self.showColor(self.hexRGB(config.plugins.KravenVB.GMErunningbg.value))
-		elif option == config.plugins.KravenVB.VEPGBorderList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.VEPGBorder.value))
-		elif option == config.plugins.KravenVB.LineList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.Line.value))
-		elif option == config.plugins.KravenVB.Font1List:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.Font1.value))
-		elif option == config.plugins.KravenVB.Font2List:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.Font2.value))
-		elif option == config.plugins.KravenVB.IBFont1List:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.IBFont1.value))
-		elif option == config.plugins.KravenVB.IBFont2List:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.IBFont2.value))
-		elif option == config.plugins.KravenVB.PermanentClockFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.PermanentClockFont.value))
-		elif option == config.plugins.KravenVB.SelectionFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.SelectionFont.value))
-		elif option == config.plugins.KravenVB.EMCSelectionFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.EMCSelectionFont.value))
-		elif option == config.plugins.KravenVB.UnwatchedColorList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.UnwatchedColor.value))
-		elif option == config.plugins.KravenVB.WatchingColorList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.WatchingColor.value))
-		elif option == config.plugins.KravenVB.FinishedColorList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.FinishedColor.value))
-		elif option == config.plugins.KravenVB.MarkedFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.MarkedFont.value))
-		elif option == config.plugins.KravenVB.ButtonTextList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.ButtonText.value))
-		elif option == config.plugins.KravenVB.AndroidList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.Android.value))
-		elif option == config.plugins.KravenVB.Android2List:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.Android2.value))
-		elif option == config.plugins.KravenVB.ChannelSelectionServiceNAList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.ChannelSelectionServiceNA.value))
-		elif option == config.plugins.KravenVB.IBLine:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.InfobarGradientListColor:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.InfobarBoxListColor:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.InfobarGradientListColorPrimary:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.InfobarGradientListColorSecondary:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.InfoStyle:
-			if config.plugins.KravenVB.InfoStyle.value == "primary":
-				self.showColor(self.hexRGB(config.plugins.KravenVB.InfobarGradientColorPrimary.value))
-			elif config.plugins.KravenVB.InfoStyle.value == "secondary":
-				self.showColor(self.hexRGB(config.plugins.KravenVB.InfobarGradientColorSecondary.value))
-			else:
-				self.showGradient(config.plugins.KravenVB.InfobarGradientColorPrimary.value,config.plugins.KravenVB.InfobarGradientColorSecondary.value)
-		elif option == config.plugins.KravenVB.InfobarAlternateListColor:
-			self["helperimage"].show()
-		elif option == config.plugins.KravenVB.ChannelnameFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.ChannelnameFont.value))
-		elif option == config.plugins.KravenVB.ECMFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.ECMFont.value))
-		elif option == config.plugins.KravenVB.PrimetimeFontList:
-			self.showColor(self.hexRGB(config.plugins.KravenVB.PrimetimeFont.value))
-		elif option == config.plugins.KravenVB.ECMVisible:
-			if option.value == "0":
-				self.showText(36,_("Off"))
-			elif option.value == "ib":
-				self.showText(36,_("Infobar"))
-			elif option.value == "sib":
-				self.showText(36,"SecondInfobar")
-			elif option.value == "ib+sib":
-				self.showText(36,_("Infobar & \nSecondInfobar"))
-		else:
-			self["helperimage"].show()
-
-	def updateHelp(self):
-		cur = self["config"].getCurrent()
-		if cur:
-			self["help"].text = cur[2]
-
-	def GetPicturePath(self):
-		try:
-			optionValue = self["config"].getCurrent()[1]
-			returnValue = self["config"].getCurrent()[1].value
-			if optionValue == config.plugins.KravenVB.BackgroundListColor and config.plugins.KravenVB.BackgroundListColor.value == "texture":
-				self.makeTexturePreview(config.plugins.KravenVB.BackgroundTexture.value)
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.BackgroundTexture:
-				self.makeTexturePreview(returnValue)
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.InfobarTexture:
-				self.makePreview()
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.BackgroundAlternateListColor:
-				self.makeAlternatePreview(config.plugins.KravenVB.BackgroundTexture.value,config.plugins.KravenVB.BackgroundAlternateColor.value)
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.InfobarAlternateListColor:
-				self.makeAlternatePreview(config.plugins.KravenVB.InfobarTexture.value,config.plugins.KravenVB.InfobarAlternateColor.value)
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.IBStyle:
-				self.makePreview()
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.IBLineList:
-				self.makePreview()
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.InfobarGradientListColor:
-				self.makePreview()
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue == config.plugins.KravenVB.InfobarBoxListColor:
-				self.makePreview()
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif optionValue in (config.plugins.KravenVB.InfobarGradientListColorPrimary,config.plugins.KravenVB.InfobarGradientListColorSecondary):
-				self.makePreview()
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg"
-			elif returnValue in ("startdelay=2000","startdelay=4000","startdelay=6000","startdelay=8000","startdelay=10000","startdelay=15000","startdelay=20000"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/running-delay.jpg"
-			elif returnValue in ("steptime=200","steptime=100","steptime=66","steptime=50"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/running-speed.jpg"
-			elif returnValue in ("about","about2"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/about.png"
-			elif returnValue == ("meteo-light"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/meteo.jpg"
-			elif returnValue == "progress":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colorfull.jpg"
-			elif returnValue == "progress2":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colorfull2.jpg"
-			elif returnValue in ("self","emc-colors-on","unskinned-colors-on",config.plugins.KravenVB.PermanentClock.value):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/colors.jpg"
-			elif returnValue == ("channelselection-style-minitv3"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/channelselection-style-minitv.jpg"
-			elif returnValue == "channelselection-style-nobile-minitv3":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/channelselection-style-nobile-minitv.jpg"
-			elif returnValue == "all-screens":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/emc-smallcover.jpg"
-			elif returnValue == "player-classic":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/clock-classic.jpg"
-			elif returnValue == "player-android":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/clock-android.jpg"
-			elif returnValue == "player-flip":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/clock-flip.jpg"
-			elif returnValue == "player-weather":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/clock-weather.jpg"
-			elif returnValue in ("zap","preview"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/modus.jpg"
-			elif returnValue == "box":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/2.jpg"
-			elif returnValue == "grad":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/infobar-style-x2.jpg"
-			elif returnValue in ("record-blink","record-blink+no-record-tuner","record-shine+no-record-tuner"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/record-shine.jpg"
-			elif returnValue == "tuner-blink":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/tuner-shine.jpg"
-			elif returnValue in ("record-blink+tuner-shine","record-shine+tuner-blink","record+tuner-blink"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/record+tuner-shine.jpg"
-			elif returnValue == "only-infobar":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/infobar-style-x3.jpg"
-			elif returnValue in ("0C","18","32","58","7E"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/transparent.jpg"
-			elif returnValue == "showOnDemand":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/scrollbarWidth=15.jpg"
-			elif returnValue == "showNever":
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/scrollbarWidth=0.jpg"
-			elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/" + returnValue + ".jpg"):
-				path = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/" + returnValue + ".jpg"
-			if fileExists(path):
-				return path
-			else:
-				return "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/black.jpg"
-		except:
-			return "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/fb.jpg"
-
-	def UpdatePicture(self):
-		self.PicLoad.PictureData.get().append(self.DecodePicture)
-		self.onLayoutFinish.append(self.ShowPicture)
-
-	def ShowPicture(self):
-		self.PicLoad.setPara([self["helperimage"].instance.size().width(),self["helperimage"].instance.size().height(),self.Scale[0],self.Scale[1],0,1,"#00000000"])
-		if self.picPath is not None:
-			if self.E2DistroVersion == "VTi":
-				self.PicLoad.startDecode(self.picPath)
-				self.picPath = None
-			elif self.E2DistroVersion == "openatv":
-				self.picPath = None
-				self.PicLoad.startDecode(self.picPath)
-		else:
-			self.PicLoad.startDecode(self.GetPicturePath())
-
-	def DecodePicture(self, PicInfo = ""):
-		ptr = self.PicLoad.getData()
-		self["helperimage"].instance.setPixmap(ptr)
-
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		self.mylist()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		self.mylist()
-
-	def keyDown(self):
-		if self.E2DistroVersion == "openatv":
-			self["config"].instance.moveSelection(self["config"].instance.moveDown)
-			self.mylist()
-		elif self.E2DistroVersion == "VTi":
-			pass
-
-	def keyUp(self):
-		if self.E2DistroVersion == "openatv":
-			self["config"].instance.moveSelection(self["config"].instance.moveUp)
-			self.mylist()
-		elif self.E2DistroVersion == "VTi":
-			pass
-
-	def keyUpLong(self):
-		self["config"].instance.moveSelection(self["config"].instance.moveUp)
-		self.mylist()
-
-	def keyDownLong(self):
-		self["config"].instance.moveSelection(self["config"].instance.moveDown)
-		self.mylist()
-
-	def pageUp(self):
-		self["config"].instance.moveSelection(self["config"].instance.pageUp)
-		self.mylist()
-
-	def pageDown(self):
-		self["config"].instance.moveSelection(self["config"].instance.pageDown)
-		self.mylist()
-
-	def categoryDown(self):
-		position = self["config"].instance.getCurrentIndex()
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			if position == 0: # about
-				self["config"].instance.moveSelectionTo(162)
-		else:
-			if position == 0: # about
-				self["config"].instance.moveSelectionTo(167)
-		if (2 <= position <= 4): # profiles
-			self["config"].instance.moveSelectionTo(0)
-		if (6 <= position <= 17): # system
-			self["config"].instance.moveSelectionTo(2)
-		if (18 <= position <= 35): # global colors
-			self["config"].instance.moveSelectionTo(6)
-		if (36 <= position <= 53): # infobar-look
-			self["config"].instance.moveSelectionTo(18)
-		if (54 <= position <= 60): # infobar-contents
-			self["config"].instance.moveSelectionTo(36)
-		if (62 <= position <= 64): # secondinfobar
-			self["config"].instance.moveSelectionTo(54)
-		if (72 <= position <= 80): # weather
-			self["config"].instance.moveSelectionTo(62)
-		if (82 <= position <= 84): # clock
-			self["config"].instance.moveSelectionTo(72)
-		if (90 <= position <= 94): # ecm infos
-			if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-				self["config"].instance.moveSelectionTo(72)
-			else:
-				self["config"].instance.moveSelectionTo(82)
-		if (96 <= position <= 101): # views
-			self["config"].instance.moveSelectionTo(90)
-		if (103 <= position <= 105): # permanentclock
-			self["config"].instance.moveSelectionTo(96)
-		if (108 <= position <= 119): # channellist
-			self["config"].instance.moveSelectionTo(103)
-		if (121 <= position <= 123): # numberzap
-			self["config"].instance.moveSelectionTo(108)
-		if (126 <= position <= 129): # epgselection
-			self["config"].instance.moveSelectionTo(121)
-		if (131 <= position <= 135): # graphepg
-			self["config"].instance.moveSelectionTo(126)
-		if (137 <= position <= 139): # verticalepg
-			self["config"].instance.moveSelectionTo(131)
-		if (141 <= position <= 143): # timereditscreen
-			self["config"].instance.moveSelectionTo(137)
-		if (144 <= position <= 152): # emc
-			self["config"].instance.moveSelectionTo(141)
-		if (154 <= position <= 156): # movieselection
-			self["config"].instance.moveSelectionTo(144)
-		if (158 <= position <= 161): # player
-			self["config"].instance.moveSelectionTo(154)
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			if (162 <= position <= 163): # debug
-				self["config"].instance.moveSelectionTo(158)
-		else:
-			if (162 <= position <= 165): # antialiasing
-				self["config"].instance.moveSelectionTo(158)
-			if (167 <= position <= 168): # debug
-				self["config"].instance.moveSelectionTo(162)
-		self.mylist()
-
-	def categoryUp(self):
-		position = self["config"].instance.getCurrentIndex()
-		if position == 0: # about
-			self["config"].instance.moveSelectionTo(2)
-		if (2 <= position <= 4): # profiles
-			self["config"].instance.moveSelectionTo(6)
-		if (6 <= position <= 17): # system
-			self["config"].instance.moveSelectionTo(18)
-		if (18 <= position <= 35): # global colors
-			self["config"].instance.moveSelectionTo(36)
-		if (36 <= position <= 53): # infobar-look
-			self["config"].instance.moveSelectionTo(54)
-		if (54 <= position <= 60): # infobar-contents
-			self["config"].instance.moveSelectionTo(62)
-		if (62 <= position <= 64): # secondinfobar
-			self["config"].instance.moveSelectionTo(72)
-		if config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
-			if (72 <= position <= 81): # weather
-				self["config"].instance.moveSelectionTo(90)
-		else:
-			if (72 <= position <= 81): # weather
-				self["config"].instance.moveSelectionTo(82)
-		if (82 <= position <= 84): # clock
-			self["config"].instance.moveSelectionTo(90)
-		if (90 <= position <= 94): # ecm infos
-			self["config"].instance.moveSelectionTo(96)
-		if (96 <= position <= 101): # views
-			self["config"].instance.moveSelectionTo(103)
-		if (103 <= position <= 105): # permanentclock
-			self["config"].instance.moveSelectionTo(108)
-		if (108 <= position <= 119): # channellist
-			self["config"].instance.moveSelectionTo(121)
-		if (121 <= position <= 123): # numberzap
-			self["config"].instance.moveSelectionTo(126)
-		if (126 <= position <= 129): # epgselection
-			self["config"].instance.moveSelectionTo(131)
-		if (131 <= position <= 135): # graphepg
-			self["config"].instance.moveSelectionTo(137)
-		if (137 <= position <= 139): # verticalepg
-			self["config"].instance.moveSelectionTo(141)
-		if (141 <= position <= 143): # timereditscreen
-			self["config"].instance.moveSelectionTo(144)
-		if (144 <= position <= 152): # emc
-			self["config"].instance.moveSelectionTo(154)
-		if (154 <= position <= 156): # movieselection
-			self["config"].instance.moveSelectionTo(158)
-		if (158 <= position <= 161): # player
-			self["config"].instance.moveSelectionTo(162)
-		if config.plugins.KravenVB.IBStyle.value == "box":
-			if (162 <= position <= 164): # debug
-				self["config"].instance.moveSelectionTo(0)
-		else:
-			if (162 <= position <= 165): # antialiasing
-				self["config"].instance.moveSelectionTo(167)
-			if (167 <= position <= 168): # debug
-				self["config"].instance.moveSelectionTo(0)
-		self.mylist()
-
-	def VirtualKeyBoardCallBack(self, callback):
-		try:
-			if callback:  
-				self["config"].getCurrent()[1].value = callback
-			else:
-				pass
-		except:
-			pass
-
-	def ColorSelectionCallBack(self, callback):
-		try:
-			if callback:
-				self.actSelfColorSelection.value = callback
-				self.actListColorSelection.value = "self"
-				self.mylist()
-			else:
-				pass
-		except:
-			pass
-
-	def OK(self):
-		option = self["config"].getCurrent()[1]
-		optionislistcolor=False
-		
-		if option == config.plugins.KravenVB.BackgroundListColor:
-			if not config.plugins.KravenVB.BackgroundListColor.value in ("gradient", "texture"):
-				optionislistcolor=True
-				self.actSelfColorSelection = config.plugins.KravenVB.BackgroundSelfColor
-		elif option == config.plugins.KravenVB.InfobarBoxListColor:
-			if not config.plugins.KravenVB.InfobarBoxListColor.value in ("gradient", "texture"):
-				optionislistcolor=True
-				self.actSelfColorSelection = config.plugins.KravenVB.InfobarBoxSelfColor
-		elif option == config.plugins.KravenVB.InfobarGradientListColor:
-			if not config.plugins.KravenVB.InfobarGradientListColor.value == "texture":
-				optionislistcolor=True
-				self.actSelfColorSelection = config.plugins.KravenVB.InfobarGradientSelfColor
-		elif option == config.plugins.KravenVB.SelectionBackgroundList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.SelectionBackgroundSelf
-		elif option == config.plugins.KravenVB.SelectionBorderList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.SelectionBorderSelf
-		elif option == config.plugins.KravenVB.Font1List:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.Font1Self
-		elif option == config.plugins.KravenVB.Font2List:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.Font2Self
-		elif option == config.plugins.KravenVB.IBFont1List:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.IBFont1Self
-		elif option == config.plugins.KravenVB.IBFont2List:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.IBFont2Self
-		elif option == config.plugins.KravenVB.BackgroundGradientListColorPrimary:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.BackgroundGradientSelfColorPrimary
-		elif option == config.plugins.KravenVB.BackgroundGradientListColorSecondary:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.BackgroundGradientSelfColorSecondary
-		elif option == config.plugins.KravenVB.InfobarGradientListColorPrimary:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.InfobarGradientSelfColorPrimary
-		elif option == config.plugins.KravenVB.InfobarGradientListColorSecondary:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.InfobarGradientSelfColorSecondary
-		elif option == config.plugins.KravenVB.BackgroundAlternateListColor:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.BackgroundAlternateSelfColor
-		elif option == config.plugins.KravenVB.InfobarAlternateListColor:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.InfobarAlternateSelfColor
-		elif option == config.plugins.KravenVB.MarkedFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.MarkedFontSelf
-		elif option == config.plugins.KravenVB.PermanentClockFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.PermanentClockFontSelf
-		elif option == config.plugins.KravenVB.SelectionFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.SelectionFontSelf
-		elif option == config.plugins.KravenVB.ECMFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.ECMFontSelf
-		elif option == config.plugins.KravenVB.ChannelnameFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.ChannelnameFontSelf
-		elif option == config.plugins.KravenVB.PrimetimeFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.PrimetimeFontSelf
-		elif option == config.plugins.KravenVB.ButtonTextList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.ButtonTextSelf
-		elif option == config.plugins.KravenVB.AndroidList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.AndroidSelf
-		elif option == config.plugins.KravenVB.BorderList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.BorderSelf
-		elif option == config.plugins.KravenVB.ProgressList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.ProgressSelf
-		elif option == config.plugins.KravenVB.LineList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.LineSelf
-		elif option == config.plugins.KravenVB.IBLineList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.IBLineSelf
-		elif option == config.plugins.KravenVB.MiniTVBorderList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.MiniTVBorderSelf
-		elif option == config.plugins.KravenVB.ChannelSelectionServiceNAList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.ChannelSelectionServiceNASelf
-		elif option == config.plugins.KravenVB.NZBorderList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.NZBorderSelf
-		elif option == config.plugins.KravenVB.GMErunningbgList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.GMErunningbgSelf
-		elif option == config.plugins.KravenVB.GMEBorderList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.GMEBorderSelf
-		elif option == config.plugins.KravenVB.VEPGBorderList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.VEPGBorderSelf
-		elif option == config.plugins.KravenVB.EMCSelectionBackgroundList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.EMCSelectionBackgroundSelf
-		elif option == config.plugins.KravenVB.EMCSelectionFontList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.EMCSelectionFontSelf
-		elif option == config.plugins.KravenVB.Android2List:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.Android2Self
-		elif option == config.plugins.KravenVB.UnwatchedColorList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.UnwatchedColorSelf
-		elif option == config.plugins.KravenVB.WatchingColorList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.WatchingColorSelf
-		elif option == config.plugins.KravenVB.FinishedColorList:
-			optionislistcolor=True
-			self.actSelfColorSelection = config.plugins.KravenVB.FinishedColorSelf
-
-		if optionislistcolor:
-			self.actListColorSelection=option
-			title = _("Use the sliders to define your color:")
-			if self.actListColorSelection.value=="self":
-				color = self.actSelfColorSelection.value
-			elif self.actListColorSelection.value=="none":
-				color = "000000"
-			elif self.actListColorSelection.value in ("progress", "progress2"):
-				color = "C3461B"
-			else:
-				color = self.actListColorSelection.value
-			self.session.openWithCallback(self.ColorSelectionCallBack, KravenVBColorSelection, title = title, color = color)
-		elif option in (config.plugins.KravenVB.weather_cityname,config.plugins.KravenVB.weather_gmcode):
-			text = self["config"].getCurrent()[1].value
-			if config.plugins.KravenVB.weather_search_over.value == 'name':
-				title = _("Enter the city name of your location:")
-			elif config.plugins.KravenVB.weather_search_over.value == 'gmcode':
-				title = _("Enter the GM code for your location:")
-			self.session.openWithCallback(self.VirtualKeyBoardCallBack, VirtualKeyBoard, title = title, text = text)
-		elif option == config.plugins.KravenVB.customProfile:
-			self.saveProfile(msg=True)
-		elif option == config.plugins.KravenVB.defaultProfile:
-			self.reset()
-
-	def faq(self):
-		from Plugins.SystemPlugins.MPHelp import PluginHelp, XMLHelpReader
-		reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/KravenVB/faq.xml"))
-		KravenVBFaq = PluginHelp(*reader)
-		KravenVBFaq.open(self.session)
-
-	def reboot(self):
-		restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("Do you really want to reboot now?"), MessageBox.TYPE_YESNO)
-		restartbox.setTitle(_("Restart GUI"))
-
-	def getDataByKey(self, list, key):
-		for item in list:
-			if item["key"] == key:
-				return item
-		return list[0]
-
-	def getFontStyleData(self, key):
-		return self.getDataByKey(channelselFontStyles, key)
-
-	def getFontSizeData(self, key):
-		return self.getDataByKey(channelInfoFontSizes, key)
+		if bg == 'background':
+			return self.skincolorbackgroundcolor
+		elif bg == 'infobar':
+			return self.skincolorinfobarcolor
 
 	def save(self):
-		
-		self.saveProfile(msg=False)
-		for x in self["config"].list:
-			if len(x) > 1:
-					x[1].save()
-			else:
-					pass
+		#refresh internet
+		if not self.silent:
+			self.InternetAvailable=self.getInternetAvailable()
 
+		#clock
+		self.actClockstyle="none"
+		if not config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+			if self.InternetAvailable:
+				self.actClockstyle=config.plugins.KravenVB.ClockStyle.value
+			else:
+				self.actClockstyle=config.plugins.KravenVB.ClockStyleNoInternet.value
+		#weather
+		self.actWeatherstyle="none"
+		if self.InternetAvailable:
+			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x3","infobar-style-z2","infobar-style-zz1","infobar-style-zz2","infobar-style-zz3","infobar-style-zz4","infobar-style-zzz1"):
+				self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle.value
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+				if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py"):
+					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle3.value
+				else:
+					self.actWeatherstyle=config.plugins.KravenVB.WeatherStyle2.value
+		#channelselection
+		self.actChannelselectionstyle="none"
+		if self.E2DistroVersion == "VTi":
+			if config.plugins.KravenVB.alternativeChannellist.value == "none":
+				if SystemInfo.get("NumVideoDecoders",1) > 1:
+					self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle2.value
+				else:
+					self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
+		elif self.E2DistroVersion == "openatv":
+			if SystemInfo.get("NumVideoDecoders",1) > 1:
+				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle2.value
+			else:
+				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
+
+		### Calculate Backgrounds
+		self.calcBackgrounds()
+
+		self.skin_lines = []
 		self.skinSearchAndReplace = []
-					
+
 		### Background
 		self.skinSearchAndReplace.append(['name="Kravenbg" value="#00000000', 'name="Kravenbg" value="#00' + self.skincolorbackgroundcolor])
 
@@ -2990,11 +1378,10 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(['<!-- Metrix-Icons -->', '<constant-widget name="Icons2"/>'])
 
 		### Logo
-		console1 = eConsoleAppContainer()
 		if self.E2DistroVersion == "VTi":
-			console1.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-vti.tar.gz -C /usr/share/enigma2/KravenVB/")
+			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-vti.tar.gz -C /usr/share/enigma2/KravenVB/")
 		else:
-			console1.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-openatv.tar.gz -C /usr/share/enigma2/KravenVB/")
+			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-openatv.tar.gz -C /usr/share/enigma2/KravenVB/")
 
 		### Mainmenu Fontsize
 		if config.plugins.KravenVB.MainmenuFontsize.value == "mainmenu-small":
@@ -3477,11 +1864,10 @@ class KravenVB(ConfigListScreen, Screen):
 				self.skinSearchAndReplace.append(["/infobar-icons/", "/icons-light/"])
 				self.skinSearchAndReplace.append(["/infobar-global-icons/", "/icons-light/"])
 
-		console2 = eConsoleAppContainer()
 		if config.plugins.KravenVB.IconStyle2.value == "icons-light2":
-			console2.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/icons-white.tar.gz -C /usr/share/enigma2/KravenVB/")
+			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/icons-white.tar.gz -C /usr/share/enigma2/KravenVB/")
 		else:
-			console2.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/icons-black.tar.gz -C /usr/share/enigma2/KravenVB/")
+			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/icons-black.tar.gz -C /usr/share/enigma2/KravenVB/")
 
 		### Weather-Server
 		if config.plugins.KravenVB.weather_server.value == "_owm":
@@ -3779,7 +2165,7 @@ class KravenVB(ConfigListScreen, Screen):
 			self.skinSearchAndReplace.append(['skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png,skin_default/rc_vu_4.png,skin_default/rc_vu_5.png', 'skin_default/rc.png,skin_default/rcold.png'])
 
 		### Header
-		if config.usage.movielist_show_picon.value == True:
+		if (not self.silent and config.usage.movielist_show_picon.value == True) or (self.silent and 'config.usage.movielist_show_picon=true' in self.E2settings):
 			self.skinSearchAndReplace.append(['<parameter name="MovieListMinimalVTITitle" value="27,0,620,27" />', '<parameter name="MovieListMinimalVTITitle" value="27,0,535,27" />'])
 		if config.plugins.KravenVB.EPGListSize.value == "big":
 			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;26" />'])
@@ -3796,7 +2182,7 @@ class KravenVB(ConfigListScreen, Screen):
 			self.skinSearchAndReplace.append(['name="giopet"', ' '])
 			if config.plugins.KravenVB.alternativeChannellist.value == "none":
 				self.appendSkinFile(self.daten + self.actChannelselectionstyle + ".xml")
-				if self.actChannelselectionstyle in ("channelselection-style-minitv33","channelselection-style-nobile-minitv33","channelselection-style-minitv2","channelselection-style-minitv22"):
+				if not self.silent and self.actChannelselectionstyle in ("channelselection-style-minitv33","channelselection-style-nobile-minitv33","channelselection-style-minitv2","channelselection-style-minitv22"):
 					config.usage.use_pig.value = True
 					config.usage.use_pig.save()
 					config.usage.use_extended_pig.value = True
@@ -3811,7 +2197,7 @@ class KravenVB(ConfigListScreen, Screen):
 					else:
 						config.usage.servicelist_preview_mode.value = True
 						config.usage.servicelist_preview_mode.save()
-				elif self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-minitv-picon"):
+				elif not self.silent and self.actChannelselectionstyle in ("channelselection-style-minitv","channelselection-style-minitv4","channelselection-style-nobile-minitv","channelselection-style-minitv-picon"):
 					config.usage.use_pig.value = True
 					config.usage.use_pig.save()
 					config.usage.use_extended_pig.value = False
@@ -3824,7 +2210,7 @@ class KravenVB(ConfigListScreen, Screen):
 					else:
 						config.usage.servicelist_preview_mode.value = True
 						config.usage.servicelist_preview_mode.save()
-				elif self.actChannelselectionstyle in ("channelselection-style-minitv3","channelselection-style-nobile-minitv3"):
+				elif not self.silent and self.actChannelselectionstyle in ("channelselection-style-minitv3","channelselection-style-nobile-minitv3"):
 					config.usage.use_pig.value = True
 					config.usage.use_pig.save()
 					config.usage.use_extended_pig.value = False
@@ -3833,30 +2219,34 @@ class KravenVB(ConfigListScreen, Screen):
 					config.usage.use_extended_pig_channelselection.save()
 					config.usage.servicelist_preview_mode.value = False
 					config.usage.servicelist_preview_mode.save()
-				else:
+				elif not self.silent:
 					config.usage.use_pig.value = True
 					config.usage.use_pig.save()
 					config.usage.use_extended_pig.value = False
 					config.usage.use_extended_pig.save()
 					config.usage.use_extended_pig_channelselection.value = False
 					config.usage.use_extended_pig_channelselection.save()
-				config.usage.servicelist_alternative_mode.value = False
-				config.usage.servicelist_alternative_mode.save()
+				if not self.silent:
+					config.usage.servicelist_alternative_mode.value = False
+					config.usage.servicelist_alternative_mode.save()
 			else:
 				self.appendSkinFile(self.daten + config.plugins.KravenVB.ChannelSelectionHorStyle.value + ".xml")
-				config.usage.servicelist_alternative_mode.value = True
-				config.usage.servicelist_alternative_mode.save()
+				if not self.silent:
+					config.usage.servicelist_alternative_mode.value = True
+					config.usage.servicelist_alternative_mode.save()
 		
 		### ChannelSelection - openatv
 		elif self.E2DistroVersion == "openatv":
-			config.usage.servicelist_mode.value = "standard"
-			config.usage.servicelist_mode.save()
+			if not self.silent:
+				config.usage.servicelist_mode.value = "standard"
+				config.usage.servicelist_mode.save()
 			self.skinSearchAndReplace.append(['name="giopet"', 'fieldMargins="15" nonplayableMargins="15" itemsDistances="8" progressBarWidth="52" progressPercentWidth="80" progressbarHeight="10"'])
-			if self.actChannelselectionstyle in ("channelselection-style-nopicon","channelselection-style-nopicon2","channelselection-style-xpicon","channelselection-style-zpicon","channelselection-style-zzpicon","channelselection-style-zzzpicon","channelselection-style-minitv3","channelselection-style-nobile-minitv3") or config.plugins.KravenVB.ChannelSelectionMode.value == "zap":
+			if not self.silent and (self.actChannelselectionstyle in ("channelselection-style-nopicon","channelselection-style-nopicon2","channelselection-style-xpicon","channelselection-style-zpicon","channelselection-style-zzpicon","channelselection-style-zzzpicon","channelselection-style-minitv3","channelselection-style-nobile-minitv3") or config.plugins.KravenVB.ChannelSelectionMode.value == "zap"):
 				config.usage.servicelistpreview_mode.value = False
-			else:
+			elif not self.silent:
 				config.usage.servicelistpreview_mode.value = True
-			config.usage.servicelistpreview_mode.save()
+			if not self.silent:
+				config.usage.servicelistpreview_mode.save()
 			if self.actChannelselectionstyle in ("channelselection-style-minitv2","channelselection-style-minitv22"): #DualTV
 				self.appendSkinFile(self.daten + self.actChannelselectionstyle + "-openatv.xml")
 				config.plugins.KravenVB.PigStyle.value = "DualTV"
@@ -4607,11 +2997,10 @@ class KravenVB(ConfigListScreen, Screen):
 
 		### MSNWeatherPlugin XML
 		if self.E2DistroVersion == "openatv" and self.InternetAvailable:
-			console3 = eConsoleAppContainer()
 			if fileExists("/usr/lib/enigma2/python/Components/Converter/MSNWeather.pyo"):
 				self.appendSkinFile(self.daten + "MSNWeatherPlugin.xml")
 				if not fileExists("/usr/share/enigma2/KravenVB/msn_weather_icons/1.png"):
-					console3.execute("wget -q http://picons.mynonpublic.com/msn-icon.tar.gz -O /tmp/msn-icon.tar.gz; tar xf /tmp/msn-icon.tar.gz -C /usr/share/enigma2/KravenVB/")
+					system("wget -q http://picons.mynonpublic.com/msn-icon.tar.gz -O /tmp/msn-icon.tar.gz; tar xf /tmp/msn-icon.tar.gz -C /usr/share/enigma2/KravenVB/")
 			else:
 				self.appendSkinFile(self.daten + "MSNWeatherPlugin2.xml")
 
@@ -4658,7 +3047,7 @@ class KravenVB(ConfigListScreen, Screen):
 
 		### NumberZapExt
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.NumberZapExt.value + ".xml")
-		if not config.plugins.KravenVB.NumberZapExt.value == "none":
+		if not self.silent and not config.plugins.KravenVB.NumberZapExt.value == "none":
 			config.usage.numberzap_show_picon.value = True
 			config.usage.numberzap_show_picon.save()
 			config.usage.numberzap_show_servicename.value = True
@@ -4689,7 +3078,7 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + "timer-openatv.xml")
 
 		### TimerListStyle
-		if self.E2DistroVersion == "VTi":
+		if not self.silent and self.E2DistroVersion == "VTi":
 			if config.plugins.KravenVB.TimerListStyle.value == "timerlist-standard":
 				config.usage.timerlist_style.value = False
 				config.usage.timerlist_style.save()
@@ -4740,22 +3129,22 @@ class KravenVB(ConfigListScreen, Screen):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.GraphMultiEPG.value + ".xml")
 		elif self.E2DistroVersion == "openatv":
 			self.appendSkinFile(self.daten + "graphmultiepg-minitv.xml")
-			if config.plugins.KravenVB.GraphicalEPG.value == "text":
+			if not self.silent and config.plugins.KravenVB.GraphicalEPG.value == "text":
 				config.epgselection.graph_type_mode.value = False
 				config.epgselection.graph_type_mode.save()
 				config.epgselection.graph_pig.value = False
 				config.epgselection.graph_pig.save()
-			elif config.plugins.KravenVB.GraphicalEPG.value == "text-minitv":
+			elif not self.silent and config.plugins.KravenVB.GraphicalEPG.value == "text-minitv":
 				config.epgselection.graph_type_mode.value = False
 				config.epgselection.graph_type_mode.save()
 				config.epgselection.graph_pig.value = "true"
 				config.epgselection.graph_pig.save()
-			elif config.plugins.KravenVB.GraphicalEPG.value == "graphical":
+			elif not self.silent and config.plugins.KravenVB.GraphicalEPG.value == "graphical":
 				config.epgselection.graph_type_mode.value = "graphics"
 				config.epgselection.graph_type_mode.save()
 				config.epgselection.graph_pig.value = False
 				config.epgselection.graph_pig.save()
-			elif config.plugins.KravenVB.GraphicalEPG.value == "graphical-minitv":
+			elif not self.silent and config.plugins.KravenVB.GraphicalEPG.value == "graphical-minitv":
 				config.epgselection.graph_type_mode.value = "graphics"
 				config.epgselection.graph_type_mode.save()
 				config.epgselection.graph_pig.value = "true"
@@ -4789,28 +3178,26 @@ class KravenVB(ConfigListScreen, Screen):
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.SerienRecorder.value + ".xml")
 
 		### MediaPortal
-		console4 = eConsoleAppContainer()
-		console5 = eConsoleAppContainer()
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/plugin.py"):
 			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/haupt_Screen.xml"):
-				console4.execute("rm -r /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/")
+				system("rm -r /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/")
 			if config.plugins.KravenVB.MediaPortal.value == "mediaportal":
 				if config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle.value == "icons-light" and config.plugins.KravenVB.IBStyle.value == "grad":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle.value == "icons-light" and config.plugins.KravenVB.IBStyle.value == "box":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_box_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_box_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle.value == "icons-dark" and config.plugins.KravenVB.IBStyle.value == "grad":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle.value == "icons-dark" and config.plugins.KravenVB.IBStyle.value == "box":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle.value == "icons-light" and config.plugins.KravenVB.IBStyle.value == "grad":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle.value == "icons-light" and config.plugins.KravenVB.IBStyle.value == "box":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle.value == "icons-dark" and config.plugins.KravenVB.IBStyle.value == "grad":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle.value == "icons-dark" and config.plugins.KravenVB.IBStyle.value == "box":
-					console5.execute("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 
 		### vti - atv
 		if self.E2DistroVersion == "VTi":
@@ -4876,14 +3263,9 @@ class KravenVB(ConfigListScreen, Screen):
 
 		if config.plugins.KravenVB.SerienRecorder.value == "serienrecorder":
 			self.makeSRpng(self.skincolorbackgroundcolor) # serienrecorder
-			
-		# Thats it
-		self.restart()
 
-	def restart(self):
-		configfile.save()
-		restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply a new skin.\nDo you want to Restart the GUI now?"), MessageBox.TYPE_YESNO)
-		restartbox.setTitle(_("Restart GUI"))
+		# Thats it
+		return 0
 
 	def appendSkinFile(self, appendFileName, skinPartSearchAndReplace=None):
 		"""
@@ -4911,30 +3293,6 @@ class KravenVB(ConfigListScreen, Screen):
 				skinLine = skinLine.replace(item[0], item[1])
 			self.skin_lines.append(skinLine)
 
-	def restartGUI(self, answer):
-		if answer is True:
-			config.skin.primary_skin.setValue("KravenVB/skin.xml")
-			config.skin.save()
-			configfile.save()
-			self.session.open(TryQuitMainloop, 3)
-		else:
-			self.close()
-
-	def exit(self):
-		askExit = self.session.openWithCallback(self.doExit,MessageBox,_("Do you really want to exit without saving?"), MessageBox.TYPE_YESNO)
-		askExit.setTitle(_("Exit"))
-
-	def doExit(self,answer):
-		if answer is True:
-			for x in self["config"].list:
-				if len(x) > 1:
-						x[1].cancel()
-				else:
-						pass
-			self.close()
-		else:
-			self.mylist()
-
 	def getE2DistroVersion(self):
 		try:
 			from boxbranding import getImageDistro
@@ -4952,145 +3310,6 @@ class KravenVB(ConfigListScreen, Screen):
 			return True
 		else:
 			return False
-
-	def getUserMenuIconsAvailable(self):
-		userpath="/usr/share/enigma2/Kraven-user-icons"
-		if path.exists(userpath) and any(File.endswith(".png") for File in listdir(userpath)):
-			return True
-		else:
-			return False
-
-	def reset(self):
-		askReset = self.session.openWithCallback(self.doReset,MessageBox,_("Do you really want to reset all values to the selected default profile?"), MessageBox.TYPE_YESNO)
-		askReset.setTitle(_("Reset profile"))
-
-	def doReset(self,answer):
-		if answer is True:
-			if config.plugins.KravenVB.defaultProfile.value == "default":
-				for name in config.plugins.KravenVB.dict():
-					if not name in ("customProfile","DebugNames"):
-						item=(getattr(config.plugins.KravenVB,name))
-						item.value=item.default
-			else:
-				self.loadProfile(loadDefault=True)
-		self.mylist()
-
-	def showColor(self,actcolor):
-		c = self["Canvas"]
-		c.fill(0,0,368,207,actcolor)
-		c.flush()
-
-	def showGradient(self,color1,color2):
-		width=368
-		height=207
-		color1=color1[-6:]
-		r1=int(color1[0:2],16)
-		g1=int(color1[2:4],16)
-		b1=int(color1[4:6],16)
-		color2=color2[-6:]
-		r2=int(color2[0:2],16)
-		g2=int(color2[2:4],16)
-		b2=int(color2[4:6],16)
-		c = self["Canvas"]
-		if color1!=color2:
-			for pos in range(0,height):
-				p=pos/float(height)
-				r=r2*p+r1*(1-p)
-				g=g2*p+g1*(1-p)
-				b=b2*p+b1*(1-p)
-				c.fill(0,pos,width,1,self.RGB(int(r),int(g),int(b)))
-		else:
-			c.fill(0,0,width,height,self.RGB(int(r1),int(g1),int(b1)))
-		c.flush()
-
-	def showText(self,fontsize,text):
-		from enigma import gFont,RT_HALIGN_CENTER,RT_VALIGN_CENTER
-		c = self["Canvas"]
-		c.fill(0,0,368,207,self.RGB(0,0,0))
-		c.writeText(0,0,368,207,self.RGB(255,255,255),self.RGB(0,0,0),gFont("Regular",fontsize),text,RT_HALIGN_CENTER+RT_VALIGN_CENTER)
-		c.flush()
-
-	def loadProfile(self,loadDefault=False):
-		if loadDefault:
-			profile=config.plugins.KravenVB.defaultProfile.value
-			fname=self.profiles+"kraven_default_"+profile
-		else:
-			profile=config.plugins.KravenVB.customProfile.value
-			fname=self.profiles+"kraven_profile_"+profile
-		if profile and fileExists(fname):
-			print ("KravenPlugin: Load profile "+fname)
-			
-			# assume colors are not copied yet
-			config.plugins.KravenVB.OldColorsCopied.value=False
-			
-			pFile=open(fname,"r")
-			for line in pFile:
-				try:
-					line=line.split("|")
-					name=line[0]
-					value=line[1]
-					type=line[2].strip('\n')
-					if not (name in ("customProfile","DebugNames","weather_search_over","weather_owm_latlon","weather_accu_latlon","weather_realtek_latlon","weather_accu_id","weather_foundcity","weather_gmcode","weather_cityname","weather_language","weather_server") or (loadDefault and name == "defaultProfile")):
-						# fix for changed value "gradient"/"grad"
-						if name=="IBStyle" and value=="gradient":
-							value="grad"
-						# fix for changed name "InfobarColor"/"InfobarGradientColor"
-						if name=="InfobarColor":
-							config.plugins.KravenVB.InfobarGradientColor.value=value
-						if type == "<type 'int'>":
-							getattr(config.plugins.KravenVB,name).value=int(value)
-						elif type == "<type 'hex'>":
-							getattr(config.plugins.KravenVB,name).value=hex(value)
-						elif type == "<type 'list'>":
-							getattr(config.plugins.KravenVB,name).value=eval(value)
-						else:
-							getattr(config.plugins.KravenVB,name).value=str(value)
-				except:
-					pass
-			pFile.close()
-
-			# copy old colors
-			if config.plugins.KravenVB.OldColorsCopied.value==False:
-				self.copyOldColors()
-				config.plugins.KravenVB.OldColorsCopied.value=True
-
-			# fix possible inconsistencies between boxes
-			if self.E2DistroVersion == "VTi":
-				if SystemInfo.get("NumVideoDecoders",1)>1:
-					if config.plugins.KravenVB.ChannelSelectionStyle.value!=config.plugins.KravenVB.ChannelSelectionStyle.default:
-						config.plugins.KravenVB.ChannelSelectionStyle2.value=config.plugins.KravenVB.ChannelSelectionStyle.value
-						config.plugins.KravenVB.ChannelSelectionStyle.value=config.plugins.KravenVB.ChannelSelectionStyle.default
-				else:
-					if config.plugins.KravenVB.ChannelSelectionStyle2.value!=config.plugins.KravenVB.ChannelSelectionStyle2.default:
-						if config.plugins.KravenVB.ChannelSelectionStyle2.value in ("channelselection-style-minitv33","channelselection-style-minitv2","channelselection-style-minitv22"):
-							config.plugins.KravenVB.ChannelSelectionStyle.value="channelselection-style-minitv3"
-						elif config.plugins.KravenVB.ChannelSelectionStyle2.value == "channelselection-style-nobile-minitv33":
-							config.plugins.KravenVB.ChannelSelectionStyle.value="channelselection-style-nobile-minitv3"
-						else:
-							config.plugins.KravenVB.ChannelSelectionStyle.value=config.plugins.KravenVB.ChannelSelectionStyle2.value
-						config.plugins.KravenVB.ChannelSelectionStyle2.value=config.plugins.KravenVB.ChannelSelectionStyle2.default
-				if not fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Netatmo/plugin.py") and config.plugins.KravenVB.WeatherStyle3.value=="netatmobar":
-					config.plugins.KravenVB.WeatherStyle3.value=config.plugins.KravenVB.WeatherStyle3.default
-		elif not loadDefault:
-			print ("KravenPlugin: Create profile "+fname)
-			self.saveProfile(msg=False)
-
-	def saveProfile(self,msg=True):
-		profile=config.plugins.KravenVB.customProfile.value
-		if profile:
-			try:
-				fname=self.profiles+"kraven_profile_"+profile
-				print ("KravenPlugin: Save profile "+fname)
-				pFile=open(fname,"w")
-				for name in config.plugins.KravenVB.dict():
-					if not name in ("customProfile","DebugNames","weather_owm_latlon","weather_accu_latlon","weather_realtek_latlon","weather_accu_id","weather_foundcity","weather_gmcode","weather_cityname","weather_language","weather_server"):
-						value=getattr(config.plugins.KravenVB,name).value
-						pFile.writelines(name+"|"+str(value)+"|"+str(type(value))+"\n")
-				pFile.close()
-				if msg:
-					self.session.open(MessageBox,_("Profile ")+str(profile)+_(" saved successfully."), MessageBox.TYPE_INFO, timeout=5)
-			except:
-				self.session.open(MessageBox,_("Profile ")+str(profile)+_(" could not be saved!"), MessageBox.TYPE_INFO, timeout=15)
 
 	def installIcons(self,author):
 
@@ -5143,262 +3362,6 @@ class KravenVB(ConfigListScreen, Screen):
 			else:
 				print ("KravenPlugin: No need to install other iconpack")
 
-	def copyOldColors(self):
-		# list colors with possible "gradient","texture"
-		if config.plugins.KravenVB.BackgroundColor.value in ("gradient","texture"):
-			config.plugins.KravenVB.BackgroundListColor.value = config.plugins.KravenVB.BackgroundColor.value
-		else:
-			config.plugins.KravenVB.BackgroundListColor.value = config.plugins.KravenVB.BackgroundColor.value[-6:]
-		if config.plugins.KravenVB.InfobarBoxColor.value in ("gradient","texture"):
-			config.plugins.KravenVB.InfobarBoxListColor.value = config.plugins.KravenVB.InfobarBoxColor.value
-		else:
-			config.plugins.KravenVB.InfobarBoxListColor.value = config.plugins.KravenVB.InfobarBoxColor.value[-6:]
-		if config.plugins.KravenVB.InfobarGradientColor.value in ("gradient","texture"):
-			config.plugins.KravenVB.InfobarGradientListColor.value = config.plugins.KravenVB.InfobarGradientColor.value
-		else:
-			config.plugins.KravenVB.InfobarGradientListColor.value = config.plugins.KravenVB.InfobarGradientColor.value[-6:]
-		# list colors
-		config.plugins.KravenVB.SelectionBackgroundList.value = config.plugins.KravenVB.SelectionBackground.value[-6:]
-		config.plugins.KravenVB.SelectionBorderList.value = config.plugins.KravenVB.SelectionBorder.value[-6:]
-		config.plugins.KravenVB.Font1List.value = config.plugins.KravenVB.Font1.value[-6:]
-		config.plugins.KravenVB.Font2List.value = config.plugins.KravenVB.Font2.value[-6:]
-		config.plugins.KravenVB.IBFont1List.value = config.plugins.KravenVB.IBFont1.value[-6:]
-		config.plugins.KravenVB.IBFont2List.value = config.plugins.KravenVB.IBFont2.value[-6:]
-		config.plugins.KravenVB.BackgroundGradientListColorPrimary.value = config.plugins.KravenVB.BackgroundGradientColorPrimary.value[-6:]
-		config.plugins.KravenVB.BackgroundGradientListColorSecondary.value = config.plugins.KravenVB.BackgroundGradientColorSecondary.value[-6:]
-		config.plugins.KravenVB.InfobarGradientListColorPrimary.value = config.plugins.KravenVB.InfobarGradientColorPrimary.value[-6:]
-		config.plugins.KravenVB.InfobarGradientListColorSecondary.value = config.plugins.KravenVB.InfobarGradientColorSecondary.value[-6:]
-		config.plugins.KravenVB.BackgroundAlternateListColor.value = config.plugins.KravenVB.BackgroundAlternateColor.value[-6:]
-		config.plugins.KravenVB.InfobarAlternateListColor.value = config.plugins.KravenVB.InfobarAlternateColor.value[-6:]
-		config.plugins.KravenVB.MarkedFontList.value = config.plugins.KravenVB.MarkedFont.value[-6:]
-		config.plugins.KravenVB.PermanentClockFontList.value = config.plugins.KravenVB.PermanentClockFont.value[-6:]
-		config.plugins.KravenVB.SelectionFontList.value = config.plugins.KravenVB.SelectionFont.value[-6:]
-		config.plugins.KravenVB.ECMFontList.value = config.plugins.KravenVB.ECMFont.value[-6:]
-		config.plugins.KravenVB.ChannelnameFontList.value = config.plugins.KravenVB.ChannelnameFont.value[-6:]
-		config.plugins.KravenVB.PrimetimeFontList.value = config.plugins.KravenVB.PrimetimeFont.value[-6:]
-		config.plugins.KravenVB.ButtonTextList.value = config.plugins.KravenVB.ButtonText.value[-6:]
-		config.plugins.KravenVB.AndroidList.value = config.plugins.KravenVB.Android.value[-6:]
-		config.plugins.KravenVB.BorderList.value = config.plugins.KravenVB.Border.value[-6:]
-		config.plugins.KravenVB.ProgressList.value = config.plugins.KravenVB.Progress.value[-6:]
-		config.plugins.KravenVB.LineList.value = config.plugins.KravenVB.Line.value[-6:]
-		config.plugins.KravenVB.IBLineList.value = config.plugins.KravenVB.IBLine.value[-6:]
-		config.plugins.KravenVB.MiniTVBorderList.value = config.plugins.KravenVB.MiniTVBorder.value[-6:]
-		config.plugins.KravenVB.ChannelSelectionServiceNAList.value = config.plugins.KravenVB.ChannelSelectionServiceNA.value[-6:]
-		config.plugins.KravenVB.NZBorderList.value = config.plugins.KravenVB.NZBorder.value[-6:]
-		config.plugins.KravenVB.GMErunningbgList.value = config.plugins.KravenVB.GMErunningbg.value[-6:]
-		config.plugins.KravenVB.GMEBorderList.value = config.plugins.KravenVB.GMEBorder.value[-6:]
-		config.plugins.KravenVB.VEPGBorderList.value = config.plugins.KravenVB.VEPGBorder.value[-6:]
-		config.plugins.KravenVB.EMCSelectionBackgroundList.value = config.plugins.KravenVB.EMCSelectionBackground.value[-6:]
-		config.plugins.KravenVB.EMCSelectionFontList.value = config.plugins.KravenVB.EMCSelectionFont.value[-6:]
-		config.plugins.KravenVB.Android2List.value = config.plugins.KravenVB.Android2.value[-6:]
-		config.plugins.KravenVB.UnwatchedColorList.value = config.plugins.KravenVB.UnwatchedColor.value[-6:]
-		config.plugins.KravenVB.WatchingColorList.value = config.plugins.KravenVB.WatchingColor.value[-6:]
-		config.plugins.KravenVB.FinishedColorList.value = config.plugins.KravenVB.FinishedColor.value[-6:]
-		# self colors
-		config.plugins.KravenVB.BackgroundSelfColor.value = str(hex(config.plugins.KravenVB.BackgroundSelfColorR.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.BackgroundSelfColorG.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.BackgroundSelfColorB.value)[2:4]).zfill(2)
-		config.plugins.KravenVB.InfobarBoxSelfColor.value = str(hex(config.plugins.KravenVB.InfobarSelfColorR.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.InfobarSelfColorG.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.InfobarSelfColorB.value)[2:4]).zfill(2)
-		config.plugins.KravenVB.InfobarGradientSelfColor.value = str(hex(config.plugins.KravenVB.InfobarSelfColorR.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.InfobarSelfColorG.value)[2:4]).zfill(2) + str(hex(config.plugins.KravenVB.InfobarSelfColorB.value)[2:4]).zfill(2)
-
-	def makeTexturePreview(self,style):
-		width=368
-		height=207
-		inpath="/usr/share/enigma2/KravenVB/textures/"
-		usrpath="/usr/share/enigma2/Kraven-user-icons/"
-		outpath="/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/"
-		if fileExists(usrpath+style+".png"):
-			bg=Image.open(usrpath+style+".png")
-		elif fileExists(usrpath+style+".jpg"):
-			bg=Image.open(usrpath+style+".jpg")
-		elif fileExists(inpath+style+".png"):
-			bg=Image.open(inpath+style+".png")
-		elif fileExists(inpath+style+".jpg"):
-			bg=Image.open(inpath+style+".jpg")
-		bg_w,bg_h=bg.size
-		image=Image.new("RGBA",(width,height),(0,0,0,0))
-		for i in xrange(0,width,bg_w):
-			for j in xrange(0,height,bg_h):
-				image.paste(bg,(i,j))
-		image.save(outpath+"preview.jpg")
-		
-	def makeAlternatePreview(self,style,color):
-		width=368
-		height=207
-		inpath="/usr/share/enigma2/KravenVB/textures/"
-		usrpath="/usr/share/enigma2/Kraven-user-icons/"
-		outpath="/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/"
-		if fileExists(usrpath+style+".png"):
-			bg=Image.open(usrpath+style+".png")
-		elif fileExists(usrpath+style+".jpg"):
-			bg=Image.open(usrpath+style+".jpg")
-		elif fileExists(inpath+style+".png"):
-			bg=Image.open(inpath+style+".png")
-		elif fileExists(inpath+style+".jpg"):
-			bg=Image.open(inpath+style+".jpg")
-		bg_w,bg_h=bg.size
-		image=Image.new("RGBA",(width,height),(0,0,0,0))
-		for i in xrange(0,width,bg_w):
-			for j in xrange(0,height,bg_h):
-				image.paste(bg,(i,j))
-		color=color[-6:]
-		r=int(color[0:2],16)
-		g=int(color[2:4],16)
-		b=int(color[4:6],16)
-		image.paste((int(r),int(g),int(b),255),(0,int(height/2),width,height))
-		image.save(outpath+"preview.jpg")
-		
-	def makePreview(self):
-		width=368
-		height=208
-		lineheight=3
-		boxbarheight=40
-		gradbarheight=80
-		
-		inpath="/usr/share/enigma2/KravenVB/textures/"
-		usrpath="/usr/share/enigma2/Kraven-user-icons/"
-			
-		# background
-		if config.plugins.KravenVB.BackgroundColor.value == "texture":
-			style=config.plugins.KravenVB.BackgroundTexture.value
-			if fileExists(usrpath+style+".png"):
-				bg=Image.open(usrpath+style+".png")
-			elif fileExists(usrpath+style+".jpg"):
-				bg=Image.open(usrpath+style+".jpg")
-			elif fileExists(inpath+style+".png"):
-				bg=Image.open(inpath+style+".png")
-			elif fileExists(inpath+style+".jpg"):
-				bg=Image.open(inpath+style+".jpg")
-			bg_w,bg_h=bg.size
-			img=Image.new("RGBA",(width,height),(0,0,0,0))
-			for i in xrange(0,width,bg_w):
-				for j in xrange(0,height,bg_h):
-					img.paste(bg,(i,j))
-		elif config.plugins.KravenVB.BackgroundColor.value == "gradient":
-			c1=config.plugins.KravenVB.BackgroundGradientColorPrimary.value
-			c2=config.plugins.KravenVB.BackgroundGradientColorSecondary.value
-			c1=c1[-6:]
-			r1=int(c1[0:2],16)
-			g1=int(c1[2:4],16)
-			b1=int(c1[4:6],16)
-			c2=c2[-6:]
-			r2=int(c2[0:2],16)
-			g2=int(c2[2:4],16)
-			b2=int(c2[4:6],16)
-			if c1!=c2:
-				img=Image.new("RGBA",(1,height))
-				for pos in range(0,height):
-					p=pos/float(height)
-					r=r2*p+r1*(1-p)
-					g=g2*p+g1*(1-p)
-					b=b2*p+b1*(1-p)
-					img.putpixel((0,pos),(int(r),int(g),int(b),255))
-				img=img.resize((width,height))
-			else:
-				img=Image.new("RGBA",(width,height),(int(r1),int(g1),int(b1),255))
-		else:
-			c=self.skincolorbackgroundcolor
-			c=c[-6:]
-			r=int(c[0:2],16)
-			g=int(c[2:4],16)
-			b=int(c[4:6],16)
-			img=Image.new("RGBA",(width,height),(int(r),int(g),int(b),255))
-		
-		# infobars
-		if config.plugins.KravenVB.IBStyle.value=="grad":
-			if config.plugins.KravenVB.InfobarGradientColor.value == "texture":
-				style=config.plugins.KravenVB.InfobarTexture.value
-				if fileExists(usrpath+style+".png"):
-					bg=Image.open(usrpath+style+".png")
-				elif fileExists(usrpath+style+".jpg"):
-					bg=Image.open(usrpath+style+".jpg")
-				elif fileExists(inpath+style+".png"):
-					bg=Image.open(inpath+style+".png")
-				elif fileExists(inpath+style+".jpg"):
-					bg=Image.open(inpath+style+".jpg")
-				bg_w,bg_h=bg.size
-				ib=Image.new("RGBA",(width,gradbarheight),(0,0,0,0))
-				for i in xrange(0,width,bg_w):
-					for j in xrange(0,gradbarheight,bg_h):
-						ib.paste(bg,(i,j))
-			else:
-				c=self.skincolorinfobarcolor
-				c=c[-6:]
-				r=int(c[0:2],16)
-				g=int(c[2:4],16)
-				b=int(c[4:6],16)
-				ib=Image.new("RGBA",(width,gradbarheight),(int(r),int(g),int(b),255))
-			trans=(255-int(config.plugins.KravenVB.InfobarColorTrans.value,16))/255.0
-			gr=Image.new("L",(1,gradbarheight),int(255*trans))
-			for pos in range(0,gradbarheight):
-				gr.putpixel((0,pos),int(self.dexpGradient(gradbarheight,2.0,pos)*trans))
-			gr=gr.resize(ib.size)
-			img.paste(ib,(0,height-gradbarheight),gr)
-			ib=ib.transpose(Image.ROTATE_180)
-			gr=gr.transpose(Image.ROTATE_180)
-			img.paste(ib,(0,0),gr)
-		else: # config.plugins.KravenVB.IBStyle.value=="box":
-			if config.plugins.KravenVB.InfobarBoxColor.value == "texture":
-				style=config.plugins.KravenVB.InfobarTexture.value
-				if fileExists(usrpath+style+".png"):
-					bg=Image.open(usrpath+style+".png")
-				elif fileExists(usrpath+style+".jpg"):
-					bg=Image.open(usrpath+style+".jpg")
-				elif fileExists(inpath+style+".png"):
-					bg=Image.open(inpath+style+".png")
-				elif fileExists(inpath+style+".jpg"):
-					bg=Image.open(inpath+style+".jpg")
-				bg_w,bg_h=bg.size
-				ib=Image.new("RGBA",(width,boxbarheight),(0,0,0,0))
-				for i in xrange(0,width,bg_w):
-					for j in xrange(0,boxbarheight,bg_h):
-						ib.paste(bg,(i,j))
-				img.paste(ib,(0,0))
-				img.paste(ib,(0,height-boxbarheight))
-			elif config.plugins.KravenVB.InfobarBoxColor.value == "gradient":
-				c1=config.plugins.KravenVB.InfobarGradientColorPrimary.value
-				c2=config.plugins.KravenVB.InfobarGradientColorSecondary.value
-				c1=c1[-6:]
-				r1=int(c1[0:2],16)
-				g1=int(c1[2:4],16)
-				b1=int(c1[4:6],16)
-				c2=c2[-6:]
-				r2=int(c2[0:2],16)
-				g2=int(c2[2:4],16)
-				b2=int(c2[4:6],16)
-				if c1!=c2:
-					ib=Image.new("RGBA",(1,boxbarheight))
-					for pos in range(0,boxbarheight):
-						p=pos/float(boxbarheight)
-						r=r2*p+r1*(1-p)
-						g=g2*p+g1*(1-p)
-						b=b2*p+b1*(1-p)
-						ib.putpixel((0,pos),(int(r),int(g),int(b),255))
-					ib=ib.resize((width,boxbarheight))
-					img.paste(ib,(0,height-boxbarheight))
-					ib=ib.transpose(Image.ROTATE_180)
-					img.paste(ib,(0,0))
-				else:
-					ib=Image.new("RGBA",(width,boxbarheight),(int(r1),int(g1),int(b1),255))
-					img.paste(ib,(0,0))
-					img.paste(ib,(0,height-boxbarheight))
-			else:
-				c=self.skincolorinfobarcolor
-				c=c[-6:]
-				r=int(c[0:2],16)
-				g=int(c[2:4],16)
-				b=int(c[4:6],16)
-				ib=Image.new("RGBA",(width,boxbarheight),(int(r),int(g),int(b),255))
-				img.paste(ib,(0,0))
-				img.paste(ib,(0,height-boxbarheight))
-			c=config.plugins.KravenVB.IBLine.value
-			c=c[-6:]
-			r=int(c[0:2],16)
-			g=int(c[2:4],16)
-			b=int(c[4:6],16)
-			img.paste((int(r),int(g),int(b),255),(0,boxbarheight,width,boxbarheight+lineheight))
-			img.paste((int(r),int(g),int(b),255),(0,height-boxbarheight-lineheight,width,height-boxbarheight))
-				
-		img.save("/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/preview.jpg")
-		
 	def makeIbarColorGradientpng(self, newcolor, newtrans):
 
 		width = 1280 # width of the png file
@@ -5870,16 +3833,6 @@ class KravenVB(ConfigListScreen, Screen):
 		t2 = int(trans2,16)
 		return str(hex(min(t1,t2))[2:4]).zfill(2)
 
-	def hexRGB(self,color):
-		color = color[-6:]
-		r = int(color[0:2],16)
-		g = int(color[2:4],16)
-		b = int(color[4:6],16)
-		return (r<<16)|(g<<8)|b
-
-	def RGB(self,r,g,b):
-		return (r<<16)|(g<<8)|b
-
 	def get_weather_data(self):
 
 			self.city = ''
@@ -5954,7 +3907,7 @@ class KravenVB(ConfigListScreen, Screen):
 
 		if self.InternetAvailable==False: 
 			return
-		
+
 		try:
 			gmcode = config.plugins.KravenVB.weather_gmcode.value
 			res = requests.get('http://wxdata.weather.com/wxdata/weather/local/%s?cc=*' % str(gmcode), timeout=1)
@@ -5992,4 +3945,3 @@ class KravenVB(ConfigListScreen, Screen):
 		config.plugins.KravenVB.weather_owm_latlon.save()
 		config.plugins.KravenVB.weather_accu_latlon.save()
 		config.plugins.KravenVB.weather_realtek_latlon.save()
-

@@ -3,35 +3,35 @@
   <parameters>
     <!-- TimerList -->
     <parameter name="TimerListItemHeight" value="55" />
-    <parameter name="TimerListNoStyleName" value="0,26,354,24" />
-    <parameter name="TimerListNoStyleDesc" value="0,2,1167,24" />
-    <parameter name="TimerListStyle1Name" value="0,2,794,24" />
-    <parameter name="TimerListStyle1Desc" value="813,2,354,24" />
-    <parameter name="TimerListStyle1Desc1" value="0,26,413,24" />
-    <parameter name="TimerListStyle2Name" value="0,2,1167,24" />
-    <parameter name="TimerListStyle2Desc" value="0,26,447,24" />
-    <parameter name="TimerListStyle4Name" value="0,2,500,24" />
-    <parameter name="TimerListStyle4Desc" value="500,2,300,24" />
-    <parameter name="TimerListStyle4Desc1" value="0,26,500,24" />
-    <parameter name="TimerListStyle4Tags" value="800,2,367,24" />
-    <parameter name="TimerListStateStyle4" value="800,2,367,24" />
-    <parameter name="TimerListStyle5Name" value="0,2,533,24" />
-    <parameter name="TimerListStyle5Desc" value="547,2,354,24" />
-    <parameter name="TimerListStyle5Desc1" value="0,26,413,24" />
-    <parameter name="TimerListStyle5Tags" value="900,2,267,24" />
-    <parameter name="TimerListTime" value="433,26,583,24" />
+    <parameter name="TimerListNoStyleName" value="0,28,354,27" />
+    <parameter name="TimerListNoStyleDesc" value="0,2,1167,27" />
+    <parameter name="TimerListTime" value="433,28,583,27" />
+    <parameter name="TimerListState" value="1007,28,160,27" />
+    <parameter name="TimerListStyle1Name" value="0,2,794,27" />
+    <parameter name="TimerListStyle1Desc" value="813,2,354,27" />
+    <parameter name="TimerListStyle1Desc1" value="0,28,413,27" />
+    <parameter name="TimerListStyle2Name" value="0,2,1167,27" />
+    <parameter name="TimerListStyle2Desc" value="0,28,447,27" />
+    <parameter name="TimerListStyle4Name" value="0,2,500,27" />
+    <parameter name="TimerListStyle4Desc" value="500,2,300,27" />
+    <parameter name="TimerListStyle4Desc1" value="0,28,500,27" />
+    <parameter name="TimerListStyle4Tags" value="800,2,367,27" />
+    <parameter name="TimerListStateStyle4" value="800,2,367,27" />
+    <parameter name="TimerListStyle5Name" value="0,2,533,27" />
+    <parameter name="TimerListStyle5Desc" value="547,2,354,27" />
+    <parameter name="TimerListStyle5Desc1" value="0,28,413,27" />
+    <parameter name="TimerListStyle5Tags" value="900,2,267,27" />
     <parameter name="TimerListFont1" value="Regular;22" />
     <parameter name="TimerListFont2" value="Regular;22" />
-    <parameter name="TimerListState" value="1007,26,160,24" />
-    <parameter name="TimerListIcon" value="4,26,24,24" />
+    <parameter name="TimerListIcon" value="4,28,30,30" />
     <parameter name="TimerListIconHOffset" value="40" />
     <parameter name="TimerListNoIconHOffset" value="7" />
     <parameter name="TimerListTrimLength" value="47" />
-    <parameter name="TimerListPngTimer" value="4,2,24,24" />
-    <parameter name="TimerListZapTimer" value="4,2,24,24" />
-    <parameter name="TimerListDisabledTimer" value="4,2,24,24" />
+    <parameter name="TimerListPngTimer" value="4,2,30,30" />
+    <parameter name="TimerListZapTimer" value="4,2,30,30" />
+    <parameter name="TimerListDisabledTimer" value="4,2,30,30" />
     <parameter name="TimerListInstantRecord" value="0, 0, 0, 0" />
-    <parameter name="TimerListRedTimer" value="1140,2,24,24" />
+    <parameter name="TimerListRedTimer" value="1140,2,30,30" />
   </parameters>
   <!-- ********** Screens ********** -->
   <!-- ********** Timer ********** -->
@@ -55,7 +55,7 @@
   </screen>
   <!-- TimerEditList -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerEditList" position="0,0" size="1280,720" title="Timer Editor">
-    <widget backgroundColor="Kravenbg3" name="timerlist" font="Regular;22" foregroundColor="KravenFont1" position="42,300" size="1196,330" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget backgroundColor="Kravenbg2" name="timerlist" font="Regular;22" foregroundColor="KravenFont1" position="42,300" size="1196,330" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
 	<!-- menubg */-->
@@ -79,12 +79,12 @@
     <widget backgroundColor="Kravenbg2" font="Regular;22" foregroundColor="KravenFont1" position="450,120" render="KravenVBRunningText" options="movetype=running,startpoint=0,direction=top,steptime=90,repeat=5,startdelay=5000,wrap,always=0" size="790,161" source="Event" transparent="1" halign="left" valign="center" zPosition="1">
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>
-    <widget source="session.VideoPicture" render="KravenVBPig3" position="42,65" size="368,207" zPosition="3" backgroundColor="transparent" />
-    <eLabel backgroundColor="#00000000" position="42,65" size="368,207" transparent="0" zPosition="2" />
-    <eLabel backgroundColor="KravenBorder2" position="42,65" size="368,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="42,269" size="368,3" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="42,65" size="3,207" transparent="0" zPosition="4" />
-    <eLabel backgroundColor="KravenBorder2" position="407,65" size="3,207" transparent="0" zPosition="4" />
+    <widget source="session.VideoPicture" render="KravenVBPig3" position="42,74" size="368,207" zPosition="3" backgroundColor="transparent" />
+    <eLabel backgroundColor="#00000000" position="42,74" size="368,207" transparent="0" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder2" position="42,74" size="368,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="42,278" size="368,3" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="42,74" size="3,207" transparent="0" zPosition="4" />
+    <eLabel backgroundColor="KravenBorder2" position="407,74" size="3,207" transparent="0" zPosition="4" />
     <constant-widget name="NameRedGreenYellowBlue"/>
 	<!-- Menu ibar -->
     <constant-widget name="OKExit"/>

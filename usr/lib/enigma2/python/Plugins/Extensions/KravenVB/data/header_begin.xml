@@ -260,6 +260,18 @@
 	<parameter name="ServicelistHorName" value="2,100,191,30" />
 	<parameter name="ServicelistHorServiceInfo" value="3,140,191,54" />
 	<parameter name="ServicelistHorCustomPiconSize" value="144,81" />
+    <!-- FileList -->
+    <parameter name="FileListName" value="33,0,666,30" />
+    <parameter name="FileListIcon" value="3,5,20,20" />
+    <parameter name="FileListMultiName" value="63,0,633,30" />
+    <parameter name="FileListMultiIcon" value="33,5,20,20" />
+    <parameter name="FileListMultiLock" value="3,5,20,20" />
+    <parameter name="FileListFont" value="Regular;22" />
+    <parameter name="FileListItemHeight" value="30" />
+	<!-- SelectionList openATV -->
+    <parameter name="SelectionListDescr" value="36,1,666,27" />
+    <parameter name="SelectionListLock" value="3,5,20,20" />
+	<parameter name="SelectionListLockOff" value="3,5,20,20" />
   </parameters>
   <fonts>
     <font filename="lcd.ttf" name="LCD" scale="100" />

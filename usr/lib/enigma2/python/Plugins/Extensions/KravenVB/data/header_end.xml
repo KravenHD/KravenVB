@@ -1467,6 +1467,46 @@
 	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
 	</constant-widget>
 	
+	<constant-widget name="gradient-ibepg">
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,75" size="1280,310" zPosition="-9" />
+      <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,0" size="1280,310" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box-ibepg">
+	  <eLabel position="0,100" size="1280,285" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,100" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ibepg">
+      <ePixmap pixmap="KravenVB/graphics/ibar7.png" position="0,100" size="1280,285" zPosition="-9" />
+	  <eLabel position="0,100" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-ibepg">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,100" size="1280,285" zPosition="-9" />
+	  <eLabel position="0,100" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="gradient-ibev">
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,0" size="1280,200" zPosition="-9" />
+      <ePixmap pixmap="KravenVB/graphics/ibaro.png" position="0,50" size="1280,200" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box-ibev">
+	  <eLabel position="0,0" size="1280,150" backgroundColor="KravenIBbg" zPosition="-9" />
+	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="box2-ibev">
+      <ePixmap pixmap="KravenVB/graphics/ibaro4.png" position="0,0" size="1280,150" zPosition="-9" />
+	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
+	<constant-widget name="texture-ibev">
+      <ePixmap pixmap="KravenVB/graphics/ibtexture.png" position="0,0" size="1280,150" zPosition="-9" />
+	  <eLabel position="0,150" size="1280,2" backgroundColor="KravenIBLine" zPosition="-8" />
+	</constant-widget>
+	
 	<constant-widget name="gradient-player">
       <ePixmap pixmap="KravenVB/graphics/ibar.png" position="0,490" size="1280,400" zPosition="-9" />
 	</constant-widget>

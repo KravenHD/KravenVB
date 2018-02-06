@@ -464,67 +464,69 @@
     <!--<text="GraphicalEPGPIG" position="70,0" />-->
   </screen>
   <!-- GraphicalInfoBarEPG -->
-  <screen name="GraphicalInfoBarEPG" title="InfoBar" position="0,435" size="1280,285" backgroundColor="Kravenbg" flags="wfNoBorder">
-    <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="Kravenbg" backgroundColor="Kravenbg" />
-    <widget source="global.CurrentTime" render="Label" position="1140,18" size="110,42" backgroundColor="Kravenbg" transparent="1" zPosition="1" font="Regular; 32" valign="center" halign="center">
+  <screen name="GraphicalInfoBarEPG" title="InfoBar" position="0,335" size="1280,385" backgroundColor="transparent" flags="wfNoBorder">
+    <widget name="bouquetlist" position="0,0" size="1,1" itemHeight="1" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" />
+    <widget source="global.CurrentTime" render="Label" position="1128,118" size="110,42" backgroundColor="KravenIBbg" transparent="1" zPosition="1" font="Regular;32" valign="center" halign="right">
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget source="Service" render="Label" position="95,18" size="600,42" font="Regular; 32" valign="center" noWrap="1" backgroundColor="Kravenbg3" transparent="1">
+    <widget source="Service" render="Label" position="95,118" size="600,42" font="Regular; 32" valign="center" noWrap="1" backgroundColor="KravenIBbg" transparent="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget source="Service" render="Picon" position="12,18" size="70,42" transparent="0" zPosition="2" alphatest="blend">
+    <widget source="Service" render="Picon" position="12,118" size="70,42" transparent="0" zPosition="2" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
     </widget>
-    <widget source="session.RecordState" render="Pixmap" pixmap="KravenVB/infobar-global-icons/ico_rec_on.png" position="848,235" size="43,22" zPosition="2" alphatest="blend">
+    <widget name="lab1" position="9,175" size="1256,145" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="KravenIBbg" transparent="1" />
+    <widget name="timeline_text" position="10,175" size="1260,25" foregroundColor="KravenFont1" font="Regular;20" backgroundColor="Kravenbg2" transparent="0" zPosition="21" />
+    <widget name="list" position="10,200" size="1260,120" backgroundColor="KravenIBbg" scrollbarMode="never" zPosition="1" EntryFontWrap="no" transparent="1" />
+    <widget name="timeline_now" position="10,200" zPosition="2" size="15,120" pixmap="KravenVB/epg/timeline-ge.png" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="65,362" size="200,5" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_green1.png" position="315,362" size="200,5" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_yellow1.png" position="565,362" size="200,5" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_blue1.png" position="815,362" size="200,5" alphatest="blend" />
+    <widget name="key_red" zPosition="1" position="70,335" size="220,26" font="Regular;20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget name="key_green" zPosition="1" position="320,335" size="220,26" font="Regular;20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget name="key_yellow" zPosition="1" position="570,335" size="220,26" font="Regular;20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget name="key_blue" zPosition="1" position="820,335" size="220,26" font="Regular;20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget source="session.RecordState" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="1045,340" size="43,22" zPosition="2" alphatest="blend">
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget name="lab1" position="9,75" size="1256,145" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="Kravenbg" transparent="1" />
-    <widget name="timeline_text" position="10,75" size="1260,25" foregroundColor="KravenFont1" font="Regular; 20" transparent="0" zPosition="21" />
-    <widget name="list" position="10,100" size="1260,120" backgroundColor="Kravenbg" scrollbarMode="showNever" zPosition="1" EntryFontWrap="no" transparent="1" />
-    <widget name="timeline_now" position="10,100" zPosition="2" size="15,120" pixmap="KravenVB/epg/timeline-ge.png" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="65,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_green1.png" position="315,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_yellow1.png" position="565,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_blue1.png" position="815,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <widget name="key_red" zPosition="1" position="70,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <widget name="key_green" zPosition="1" position="320,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <widget name="key_yellow" zPosition="1" position="570,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <widget name="key_blue" zPosition="1" position="820,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <ePixmap  pixmap="KravenVB/global-icons/key_menu.png" position="1095,235" size="43,22" alphatest="blend" />
-    <ePixmap  pixmap="KravenVB/global-icons/key_ok.png" position="1145,235" size="43,22" alphatest="blend" />
-    <ePixmap  pixmap="KravenVB/global-icons/key_exit.png" position="1195,235" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-icons/key_menu.png" position="1095,340" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-icons/key_ok.png" position="1145,340" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-icons/key_exit.png" position="1195,340" size="43,22" alphatest="blend" />
+    <constant-widget name="gradient-ibepg"/>
     <!--<text="GraphicalInfoBarEPG" position="70,0" />-->
   </screen>
     <!-- QuickEPG -->
-  <screen name="QuickEPG" flags="wfNoBorder" position="0,435" size="1280,285" title="InfoBar" backgroundColor="Kravenbg">
-    <widget source="Event" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" position="761,95" size="498,120" font="Regular;21" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" valign="top" zPosition="-8">
+  <screen name="QuickEPG" flags="wfNoBorder" position="0,335" size="1280,385" title="InfoBar" backgroundColor="transparent">
+    <widget source="Event" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,wrap=1,always=0,repeat=2,oneshot=1" position="761,195" size="498,120" font="Regular;21" backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" transparent="1" valign="top" zPosition="-8">
       <convert type="KravenVBEventName">ExtendedDescription</convert>
     </widget>
-    <widget source="Service" render="Label" position="95,18" size="595,40" font="Regular; 32" valign="center" noWrap="1" backgroundColor="Kravenbg" transparent="1">
+    <widget source="Service" render="Label" position="95,118" size="595,40" font="Regular;32" valign="center" noWrap="1" backgroundColor="KravenIBbg" transparent="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <eLabel position="8,70" size="1264,1" backgroundColor="KravenLine" />
-    <widget source="Event" render="Progress" pixmap="KravenVB/progress/progress1265.png" foregroundColor="KravenProgress" position="8,67" size="1264,6" transparent="1" alphatest="on">
+    <eLabel position="8,170" size="1264,1" backgroundColor="KravenLine" />
+    <widget source="Event" render="Progress" pixmap="KravenVB/progress/progress1265.png" foregroundColor="KravenProgress" position="8,167" size="1264,6" transparent="1" alphatest="on">
       <convert type="KravenVBEventTime">Progress</convert>
     </widget>
-    <widget source="global.CurrentTime" render="Label" position="1140,18" size="110,42" backgroundColor="Kravenbg" transparent="1" zPosition="1" font="Regular; 32" valign="center" halign="center">
+    <widget source="global.CurrentTime" render="Label" position="1140,118" size="110,42" backgroundColor="KravenIBbg" transparent="1" zPosition="1" font="Regular;32" valign="center" halign="center">
       <convert type="ClockToText">Default</convert>
     </widget>
-    <widget name="list" position="17,95" size="715,120" font="Regular; 24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" />
-    <widget source="Service" render="Picon" position="12,18" size="70,42" transparent="0" zPosition="2" alphatest="blend">
+    <widget name="list" position="17,195" size="715,120" font="Regular; 24" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" />
+    <widget source="Service" render="Picon" position="12,118" size="70,42" transparent="0" zPosition="2" alphatest="blend">
       <convert type="ServiceName">Reference</convert>
     </widget>
-    <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="65,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_green1.png" position="315,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_yellow1.png" position="565,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <ePixmap pixmap="KravenVB/buttons/key_blue1.png" position="815,257" size="200,5" backgroundColor="Kravenbg" alphatest="blend" />
-    <widget name="key_red" zPosition="1" position="70,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <widget name="key_green" zPosition="1" position="320,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <widget name="key_yellow" zPosition="1" position="570,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <widget name="key_blue" zPosition="1" position="820,230" size="220,26" font="Regular; 20" backgroundColor="Kravenbg" foregroundColor="KravenFont1" transparent="1" halign="left" valign="center" />
-    <ePixmap  pixmap="KravenVB/global-icons/key_menu.png" position="1095,235" size="43,22" alphatest="blend" />
-    <ePixmap  pixmap="KravenVB/global-icons/key_ok.png" position="1145,235" size="43,22" alphatest="blend" />
-    <ePixmap  pixmap="KravenVB/global-icons/key_exit.png" position="1195,235" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_red1.png" position="65,362" size="200,5" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_green1.png" position="315,362" size="200,5" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_yellow1.png" position="565,362" size="200,5" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/buttons/key_blue1.png" position="815,362" size="200,5" alphatest="blend" />
+    <widget name="key_red" zPosition="1" position="70,335" size="220,26" font="Regular; 20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget name="key_green" zPosition="1" position="320,335" size="220,26" font="Regular; 20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget name="key_yellow" zPosition="1" position="570,335" size="220,26" font="Regular; 20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <widget name="key_blue" zPosition="1" position="820,335" size="220,26" font="Regular; 20" backgroundColor="KravenIBbg" foregroundColor="KravenButton" transparent="1" halign="left" valign="center" />
+    <ePixmap pixmap="KravenVB/infobar-icons/key_menu.png" position="1095,340" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-icons/key_ok.png" position="1145,340" size="43,22" alphatest="blend" />
+    <ePixmap pixmap="KravenVB/infobar-icons/key_exit.png" position="1195,340" size="43,22" alphatest="blend" />
+    <constant-widget name="gradient-ibepg"/>
     <!--<text="QuickEPG" position="70,0" />-->
   </screen>
   <!-- NetworkMountsMenu -->
@@ -1120,10 +1122,10 @@
       <convert type="SensorToText">
       </convert>
     </widget>
-    <widget font="Regular; 20" halign="left" valign="center" source="red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" source="green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" source="yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular; 20" halign="left" valign="center" source="blue" position="820,665" size="220,26" render="Label" backgroundColor="Kravenbg3" foregroundColor="white" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="blue" position="820,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
@@ -1231,7 +1233,7 @@
     <widget name="repeat" position="700,120" size="50,25" pixmaps="KravenVB/backg.png,KravenVB/mmp/repeat.png" alphatest="blend" />
     <widget name="PositionGauge" position="0,0" size="0,0" />
     <widget name="coverArt" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/no_coverArt.png" position="789,140" size="470,470" transparent="1" alphatest="blend" />
-    <constant-widget name="Title-big"/>
+    <constant-widget name="Title-big2"/>
     <constant-widget name="Background"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="MenuOKExit"/>
@@ -1401,15 +1403,6 @@
     <constant-widget name="MenuOKExit"/>
     <!--<text="DreamExplorerII" position="70,0" />-->
   </screen>
-  <!-- vEditor -->
-  <screen name="vEditor" position="0,0" size="1280,720" flags="wfNoBorder" title="File-Explorer" backgroundColor="transparent">
-    <constant-widget name="Title-big"/>
-    <widget backgroundColor="Kravenbg3" name="filedata" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showNever" enableWrapAround="1" transparent="1" />
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <constant-widget name="OKExit"/>
-    <!--<text="vEditor" position="70,0" />-->
-  </screen>
   <!-- vInputBox -->
   <screen name="vInputBox" position="0,0" size="1280,720" flags="wfNoBorder" title="Input..." backgroundColor="transparent">
     <constant-widget name="Title-big"/>
@@ -1434,7 +1427,7 @@
   </screen>
   <!-- MusicExplorer -->
   <screen name="MusicExplorer" position="0,0" size="1280,720" flags="wfNoBorder" title="Music-Explorer" backgroundColor="transparent">
-    <constant-widget name="Title-big"/>
+    <constant-widget name="Title-big2"/>
     <widget backgroundColor="Kravenbg" source="session.CurrentService" render="Label" font="Regular;24" foregroundColor="KravenFont1" position="50,80" size="120,30" transparent="1" valign="center" zPosition="1">
       <convert type="ServicePosition">Remaining</convert>
     </widget>
@@ -1472,4 +1465,17 @@
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <!--<text="JobView" position="70,0" />-->
+  </screen>
+  <!-- InfoBarEventView -->
+  <screen name="InfoBarEventView" position="0,0" size="1280,200" backgroundColor="transparent" flags="wfNoBorder">
+    <widget backgroundColor="KravenIBbg2" source="Event" render="KravenVBEmptyEpg2" foregroundColor="KravenIBFont2" font="Regular2;30" position="42,12" size="736,38" halign="left" noWrap="1" transparent="1">
+      <convert type="EventName">Name</convert>
+    </widget>
+    <widget backgroundColor="KravenIBbg2" name="datetime" foregroundColor="KravenIBFont1" font="Regular;24" position="800,16" size="280,30" halign="right" noWrap="1" transparent="1" />
+    <widget backgroundColor="KravenIBbg2" name="duration" foregroundColor="KravenIBFont1" font="Regular;24" position="1000,16" size="238,30" halign="right" noWrap="1" transparent="1" />
+    <widget backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" position="42,55" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1196,81" source="Event" transparent="1" valign="top">
+      <convert type="EventName">ExtendedDescription</convert>
+    </widget>
+    <constant-widget name="gradient-ibev"/>
+    <!--<text="InfoBarEventView" position="70,0" />-->
   </screen>
