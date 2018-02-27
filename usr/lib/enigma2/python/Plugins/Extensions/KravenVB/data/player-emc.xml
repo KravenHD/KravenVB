@@ -1,19 +1,19 @@
   <!-- EMCMediaCenter -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="EMCMediaCenter" position="0,0" size="1280,720" title="InfoBar">
-    <widget backgroundColor="KravenIBbg" font="Regular;30" foregroundColor="KravenIBFont2" noWrap="1" position="210,620" render="Label" size="708,40" source="session.CurrentService" transparent="1" valign="center" zPosition="1">
+    <widget backgroundColor="KravenIBbg" font="Regular;30" foregroundColor="KravenIBFont2" noWrap="1" position="210,620" render="Label" size="708,38" source="session.CurrentService" transparent="1" zPosition="1">
       <convert type="ServiceName">Name</convert>
     </widget>
-    <widget backgroundColor="KravenIBbg" font="Regular;18" halign="left" position="676,681" render="Label" size="80,25" source="session.CurrentService" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1">
+    <widget backgroundColor="KravenIBbg" font="Regular;20" halign="left" position="676,680" render="Label" size="80,24" source="session.CurrentService" transparent="1" zPosition="1" foregroundColor="KravenIBFont1">
       <convert type="ServicePosition">Length</convert>
     </widget>
-    <eLabel backgroundColor="KravenIBbg" font="Regular;18" halign="center" position="655,681" size="20,25" text="/" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1" />
-    <widget backgroundColor="KravenIBbg" font="Regular;18" halign="right" position="536,681" render="Label" size="120,25" source="session.CurrentService" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1">
+    <eLabel backgroundColor="KravenIBbg" font="Regular;20" halign="center" position="655,680" size="20,24" text="/" transparent="1" zPosition="1" foregroundColor="KravenIBFont1" />
+    <widget backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="536,680" render="Label" size="120,24" source="session.CurrentService" transparent="1" zPosition="1" foregroundColor="KravenIBFont1">
       <convert type="ServicePosition">Position</convert>
     </widget>
-    <widget backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="926,629" render="Label" size="100,35" source="session.CurrentService" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1">
+    <widget backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="926,629" render="Label" size="100,24" source="session.CurrentService" transparent="1" zPosition="1" foregroundColor="KravenIBFont1">
       <convert type="ServicePosition">Remaining</convert>
     </widget>
-    <eLabel backgroundColor="KravenIBbg" font="Regular;20" foregroundColor="KravenIBFont1" halign="right" position="1027,629" size="40,35" text="min" transparent="1" valign="center" zPosition="1" />
+    <eLabel backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="1028,629" size="40,24" text="min" transparent="1" zPosition="1" foregroundColor="KravenIBFont1" />
     <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="360,680" size="43,22" zPosition="1" />
     <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="360,680" render="Pixmap" size="43,22" source="session.RecordState" zPosition="5">
       <convert type="ConditionalShowHide" />
@@ -39,16 +39,25 @@
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_off.png" position="310,680" size="43,22" zPosition="1" />
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_on.png" position="310,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_sd.png" position="310,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">0,719</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hd_on.png" position="310,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">720,1080</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_uhd.png" position="310,680" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">1081,5000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <ePixmap pixmap="KravenVB/infobar-icons/aufloesung3.png" position="410,680" size="124,22" zPosition="1" alphatest="blend" />
-    <widget source="session.CurrentService" render="Label" zPosition="3" position="411,677" size="122,30" font="Regular;20" halign="center" backgroundColor="KravenIBbg" foregroundColor="KravenIcon" transparent="1">
-      <convert type="KravenVBExtraInfo">Resolution</convert>
-	</widget>
+    <widget source="session.CurrentService" render="Label" size="118,22" font="Regular;18" halign="center" backgroundColor="KravenIBbg" position="413,680" valign="center" foregroundColor="KravenIcon" transparent="1">
+      <convert type="KravenVBServiceInfoEX">Resolution</convert>
+    </widget>
     <widget position="210,666" render="PositionGauge" size="858,9" source="session.CurrentService" transparent="1">
       <convert type="ServicePosition">Gauge</convert>
     </widget>
@@ -56,11 +65,15 @@
       <convert type="ServicePosition">Position</convert>
     </widget>
     <eLabel backgroundColor="KravenLine" position="210,670" size="858,1" zPosition="-1" />
-    <eLabel backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="852,677" size="120,30" text="läuft bis " transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1" />
-    <widget source="session.CurrentService" render="Label" position="973,678" size="55,30" font="Regular;20" halign="right" valign="center" backgroundColor="KravenIBbg" transparent="1" zPosition="1" text="13:45" foregroundColor="KravenIBFont1">
-      <convert type="ServicePosition">EndTime,ShowNoSeconds</convert>
+    <widget source="session.CurrentService" render="Label" backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="852,680" size="120,24" transparent="1" zPosition="1" foregroundColor="KravenIBFont1">
+      <convert type="KravenVBTextTranslator">runsuntil</convert>
     </widget>
-    <eLabel backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="1028,677" size="40,30" text="Uhr" transparent="1" valign="center" zPosition="1" foregroundColor="KravenIBFont1" />
+	<widget source="session.CurrentService" render="Label" position="973,680" size="55,24" font="Regular;20" halign="right" backgroundColor="KravenIBbg" transparent="1" zPosition="1" text="13:45" foregroundColor="KravenIBFont1">
+	  <convert type="KravenVBServiceEndTime">EndTime</convert>
+	</widget>
+    <widget source="session.CurrentService" render="Label" backgroundColor="KravenIBbg" font="Regular;20" halign="right" position="1028,680" size="40,24" transparent="1" zPosition="1" foregroundColor="KravenIBFont1">
+      <convert type="KravenVBTextTranslator">clock</convert>
+    </widget>
     <widget source="session.CurrentService" render="Picon" alphatest="blend" position="25,618" size="160,96" transparent="1" zPosition="1">
       <convert type="KravenVBMovieReference" />
     </widget>

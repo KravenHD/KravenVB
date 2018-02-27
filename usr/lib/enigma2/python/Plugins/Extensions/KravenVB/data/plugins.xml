@@ -1774,64 +1774,14 @@
   <screen backgroundColor="transparent" flags="wfNoBorder" name="SpinnerSelectionBox" position="0,0" size="1280,720" title=" ">
 	<widget backgroundColor="KravenIBbg3" name="text" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
 	<widget backgroundColor="Kravenbg3" name="list" position="70,80" size="354,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" text="Vorschau:" position="508,80" size="200,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1" />
+    <widget source="session.CurrentService" render="Label" backgroundColor="Kravenbg3" position="508,80" size="200,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1">
+      <convert type="KravenVBTextTranslator">preview</convert>
+    </widget>
 	<widget backgroundColor="Kravenbg3" name="bild" position="508,130" size="200,144" zPosition="1" transparent="1" />
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="OKExit"/>
     <!--<text="SpinnerSelectionBox" position="70,0" />-->
-  </screen>
-  <!-- Bootlogos -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="Bootlogos" position="0,0" size="1280,720" title=" ">
-    <eLabel backgroundColor="KravenIBbg3" text="BootlogoATV-Stony272" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
-    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,30" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" text="Vorschau:" position="70,130" size="708,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="bootlogohelperimage" position="257,180" size="334,188" zPosition="1" />
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Cancel" position="70,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Save" position="320,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="OKExit"/>
-    <!--<text="Bootlogos" position="70,0" />-->
-  </screen>
-  <!-- Radiologos -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="Radiologos" position="0,0" size="1280,720" title=" ">
-    <eLabel backgroundColor="KravenIBbg3" text="RadiologoATV-Stony272" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
-    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,30" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" text="Vorschau:" position="70,130" size="708,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="bootlogohelperimage" position="257,180" size="334,188" zPosition="1" />
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Cancel" position="70,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Save" position="320,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="OKExit"/>
-    <!--<text="Radiologos" position="70,0" />-->
-  </screen>
-  <!-- BootlogosVTI -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="BootlogosVTI" position="0,0" size="1280,720" title=" ">
-    <eLabel backgroundColor="KravenIBbg3" text="BootlogoVTI-Stony272" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
-    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,30" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" text="Vorschau:" position="70,130" size="708,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="bootlogohelperimage" position="257,180" size="334,188" zPosition="1" />
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Cancel" position="70,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Save" position="320,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="OKExit"/>
-    <!--<text="BootlogosVTI" position="70,0" />-->
-  </screen>
-  <!-- RadiologosVTI -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="RadiologosVTI" position="0,0" size="1280,720" title=" ">
-    <eLabel backgroundColor="KravenIBbg3" text="RadiologoVTI-Stony272" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
-    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,30" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
-    <eLabel backgroundColor="Kravenbg3" text="Vorschau:" position="70,130" size="708,32" zPosition="1" font="Regular;26" foregroundColor="KravenFont2" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="bootlogohelperimage" position="257,180" size="334,188" zPosition="1" />
-	<!-- Logo -->
-    <constant-widget name="Colorbuttons"/>
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Cancel" position="70,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <eLabel backgroundColor="KravenIBbg3" font="Regular;20" halign="left" valign="center" text="Save" position="320,665" size="220,26" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <constant-widget name="OKExit"/>
-    <!--<text="RadiologosVTI" position="70,0" />-->
   </screen>
   <!-- vEditor -->
   <screen name="vEditor" position="0,0" size="1280,720" flags="wfNoBorder" title="File-Explorer" backgroundColor="transparent">
@@ -1841,5 +1791,55 @@
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="OKExit"/>
     <!--<text="vEditor" position="70,0" />-->
+  </screen>
+  <!-- ToplevelPPanel -->
+  <screen name="ToplevelPPanel" position="0,0" size="1280,720" title="Toplevel PPanel" flags="wfNoBorder" backgroundColor="transparent">
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" name="nodelist" position="70,80" size="708,450" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="helptext" position="70,540" size="708,81" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="ToplevelPPanel" position="70,0" />-->
+  </screen>
+  <!-- PPanel -->
+  <screen name="PPanel" position="0,0" size="1280,720" title="PPanel" flags="wfNoBorder" backgroundColor="transparent">
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" name="nodelist" position="70,80" size="708,450" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="helptext" position="70,540" size="708,81" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="PPanel" position="70,0" />-->
+  </screen>
+  <!-- File -->
+  <screen name="File" position="0,0" size="1280,720" title="File" flags="wfNoBorder" backgroundColor="transparent">
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" name="nodelist" position="70,80" size="708,450" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="helptext" position="70,540" size="708,81" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="File" position="70,0" />-->
+  </screen>
+  <!-- Tarball -->
+  <screen name="Tarball" position="0,0" size="1280,720" title="Tarball" flags="wfNoBorder" backgroundColor="transparent">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="progress" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="Tarball" position="70,0" />-->
+  </screen>
+  <!-- Execute -->
+  <screen name="Execute" position="0,0" size="1280,720" title="Execute" flags="wfNoBorder" backgroundColor="transparent">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="linelist" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="Execute" position="70,0" />-->
   </screen>
 <!-- plugins -->

@@ -74,20 +74,28 @@
   <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="887,35" size="50,25" source="Title" zPosition="8" halign="center" transparent="1">
     <convert type="KravenVBWeather">Day_4,MinTemp</convert>
   </widget>
-  <eLabel text="Temp:" position="990,8" size="170,22" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,8" size="215,22" source="Title" zPosition="3" halign="left" transparent="1">
+  <widget source="Title" render="Label" position="990,8" size="170,22" zPosition="5" halign="left" valign="center" font="Regular2;18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">temp</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,8" size="215,22" source="Title" zPosition="3" halign="left" valign="center" transparent="1">
     <convert type="KravenVBWeather">Day_0,FeelTemp</convert>
   </widget>
-  <eLabel text="Wind:" position="990,32" size="70,22" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <widget backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,32" size="215,22" source="Title" zPosition="3" halign="left" transparent="1">
+  <widget source="Title" render="Label" position="990,32" size="70,22" zPosition="5" halign="left" valign="center" font="Regular2;18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">wind</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,32" size="215,22" source="Title" zPosition="3" halign="left" valign="center" transparent="1">
     <convert type="KravenVBWeather">Day_0,Wind</convert>
   </widget>
-  <eLabel text="Klima:" position="990,56" size="180,25" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,56" size="215,22" source="Title" zPosition="3" halign="left" transparent="1">
+  <widget source="Title" render="Label" position="990,56" size="180,25" zPosition="5" halign="left" valign="center" font="Regular2;18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">clime</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,56" size="215,22" source="Title" zPosition="3" halign="left" valign="center" transparent="1">
     <convert type="KravenVBWeather">Day_0,Humidity</convert>
   </widget>
-  <eLabel text="Ort:" position="990,80" size="60,25" zPosition="5" halign="left" font="Regular2; 18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,80" size="215,22" source="Title" zPosition="3" halign="left" transparent="1">
+  <widget source="Title" render="Label" position="990,80" size="60,25" zPosition="5" halign="left" valign="center" font="Regular2;18" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">city</convert>
+  </widget>
+  <widget noWrap="1" backgroundColor="KravenIBbg" font="Regular; 18" foregroundColor="KravenIBFont1" render="Label" position="1045,80" size="215,22" source="Title" zPosition="3" halign="left" valign="center" transparent="1">
     <convert type="KravenVBWeather">Day_0,City</convert>
   </widget>
   <constant-widget name="gradient-weather-big"/>

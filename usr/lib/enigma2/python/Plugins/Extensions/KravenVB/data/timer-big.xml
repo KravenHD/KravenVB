@@ -130,4 +130,15 @@
     <constant-widget name="Exit"/>
     <!--<text="TimerSanityConflict" position="70,0" />-->
   </screen>
+  <!-- RemoteTimerScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="RemoteTimerScreen" position="0,0" size="1280,720" title="Remote-Timer digest">
+    <widget backgroundColor="Kravenbg3" name="text" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" halign="left" valign="center" transparent="1" zPosition="1" />
+    <widget backgroundColor="Kravenbg3" name="timerlist" position="70,140" size="708,462" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
+	<!-- Logo -->
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="RemoteTimerScreen" position="70,0" />-->
+  </screen>
   <!-- Timer standard layout */ -->

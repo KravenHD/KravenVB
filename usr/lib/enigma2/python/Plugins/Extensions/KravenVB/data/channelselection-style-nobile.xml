@@ -18,7 +18,9 @@
       <convert type="KravenVBEventTime">Progress</convert>
     </widget>
     <eLabel position="536,116" size="324,1" backgroundColor="KravenLine" />
-    <eLabel text="es folgt:" position="474,377" size="180,27" font="Regular;22" halign="left" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" transparent="1" zPosition="2" />
+    <widget source="ServiceEvent" render="Label" position="474,377" size="180,27" font="Regular;22" halign="left" foregroundColor="KravenFont2" backgroundColor="Kravenbg4" transparent="1" zPosition="2">
+      <convert type="KravenVBTextTranslator">itfollows</convert>
+    </widget>
     <widget source="ServiceEvent" render="Label" position="474,409" zPosition="1" size="446,25" font="Regular;20" halign="left" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont2">
       <convert type="KravenVBServiceNameEventNobile">NextEvent</convert>
     </widget>

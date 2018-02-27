@@ -759,7 +759,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_yellow1.png" position="565,282" size="200,5" />
     <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_blue1.png" position="815,282" size="200,5" />
     <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,255" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <eLabel text="Timer (löschen)" position="320,255" size="240,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+	<widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,255" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,255" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,255" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
 	<widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenIBFont2" position="1116,254" size="100,34" font="Regular;26" halign="right" transparent="1" valign="center">
@@ -791,9 +791,19 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_hd_on.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_sd.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">0,719</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_hd_on.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">720,1080</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_uhd.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">1081,5000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;35" halign="left" name="channel" position="42,85" size="854,60" transparent="1" />
@@ -835,9 +845,19 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
       <convert type="ServiceInfo">IsWidescreen</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_hd_on.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-      <convert type="ServiceInfo">VideoWidth</convert>
-      <convert type="ValueRange">721,1980</convert>
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_sd.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">0,719</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_hd_on.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">720,1080</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/global-icons/ico_uhd.png" position="142,605" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="ServiceInfo">VideoHeight</convert>
+      <convert type="ValueRange">1081,5000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <widget backgroundColor="Kravenbg" foregroundColor="KravenFont2" font="Regular2;35" halign="left" name="channel" position="42,85" size="854,60" transparent="1" />
@@ -872,7 +892,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="Background"/>
     <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <eLabel text="Timer (löschen)" position="320,665" size="240,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+	<widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <constant-widget name="MenuOKExit"/>
@@ -1663,7 +1683,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
   <!-- ********** Channel Selection and Infobar ********** -->
   <!-- SimpleChannelSelection -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="SimpleChannelSelection" position="0,0" size="1280,720" title="Channel Selection">
-    <widget colorEventProgressbarBorder="KravenFont1" colorEventProgressbarBorderSelected="KravenFont1" colorServiceDescription="KravenFont1" colorServiceDescriptionSelected="yellow" foregroundColorServiceNotAvail="KravenNotAvailable" name="list" position="70,80" serviceInfoFont="Regular2;21" serviceItemHeight="30" serviceNameFont="Regular;22" serviceNumberFont="Regular;22" size="708,540" transparent="1" />
+    <widget backgroundColor="Kravenbg3" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" itemHeight="50" name="list" position="70,78" serviceInfoFont="Regular;24" serviceItemHeight="34" serviceNameFont="Regular;24" serviceNumberFont="Regular;24" size="708,544" name="giopet" transparent="1" />
     <constant-widget name="Title-big"/>
     <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
@@ -1819,16 +1839,16 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
 					{"default": (25, [
 						MultiContentEntryText(pos = (0, 0),   size = (30, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # key,
 						MultiContentEntryText(pos = (35, 0),  size = (40, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # number,
-						MultiContentEntryText(pos = (80, 0), size = (150, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
-						MultiContentEntryText(pos = (235, 0), size = (328, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
-						MultiContentEntryText(pos = (568, 2), size = (100, 25),  font = 1, flags = RT_HALIGN_RIGHT, text = 5), # selection,
+						MultiContentEntryText(pos = (80, 0),  size = (200, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
+						MultiContentEntryText(pos = (285, 0), size = (278, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
+						MultiContentEntryText(pos = (568, 2), size = (100, 25), font = 1, flags = RT_HALIGN_RIGHT, text = 5), # selection,
 					], True, "showOnDemand"),
 					"notselected": (25, [
 						MultiContentEntryText(pos = (0, 0),   size = (30, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 1), # key,
 						MultiContentEntryText(pos = (35, 0),  size = (40, 25),  font = 0, flags = RT_HALIGN_LEFT,  text = 2), # number,
-						MultiContentEntryText(pos = (80, 0), size = (150, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
-						MultiContentEntryText(pos = (235, 0), size = (328, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
-						MultiContentEntryText(pos = (568, 2), size = (100, 25),  font = 1, flags = RT_HALIGN_RIGHT, text = 5), # selection,
+						MultiContentEntryText(pos = (80, 0),  size = (200, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 3), # description,
+						MultiContentEntryText(pos = (285, 0), size = (278, 25), font = 0, flags = RT_HALIGN_LEFT,  text = 4), # language,
+						MultiContentEntryText(pos = (568, 2), size = (100, 25), font = 1, flags = RT_HALIGN_RIGHT, text = 5), # selection,
 					], False, "showOnDemand")
 					},
 				"fonts": [gFont("Regular", 20), gFont("Regular", 16)],

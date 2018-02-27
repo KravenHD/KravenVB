@@ -272,6 +272,8 @@
     <parameter name="SelectionListDescr" value="36,1,666,27" />
     <parameter name="SelectionListLock" value="3,5,20,20" />
 	<parameter name="SelectionListLockOff" value="3,5,20,20" />
+	<!-- ConfigList openATV -->
+    <parameter name="ConfigListSeperator" value="400" />
   </parameters>
   <fonts>
     <font filename="lcd.ttf" name="LCD" scale="100" />

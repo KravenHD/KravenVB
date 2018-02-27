@@ -443,7 +443,7 @@
       <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
 	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
       <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-      <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+	  <widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
 	</constant-widget>
@@ -486,7 +486,7 @@
       <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
 	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
       <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-      <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+	  <widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
       <!-- nontransbg */-->
@@ -534,7 +534,7 @@
       <widget name="timeline5" backgroundColor="orange" position="0,332" size="1,300" zPosition="1" />
 	  <widget name="timeline_now" position="0,327" zPosition="2" size="15,310" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/pic/timeline-now.png" alphatest="blend" />
       <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-      <eLabel text="Timer (löschen)" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" font="Regular;20" transparent="1" halign="left" zPosition="1" />
+	  <widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
       <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
       <!-- nontransbg */-->
@@ -1909,6 +1909,12 @@
 	<constant-widget name="progress-mpplayer">
       <widget borderWidth="0" position="210,668" render="Progress" size="858,5" source="session.CurrentService" transparent="1" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress858.png">
         <convert type="MPServicePosition">Position</convert>
+      </widget>
+	</constant-widget>
+	
+	<constant-widget name="resolution-mpplayer">
+      <widget source="session.CurrentService" render="Label" size="118,22" font="Regular;18" halign="center" backgroundColor="KravenIBbg" position="413,680" valign="center" foregroundColor="KravenIcon" transparent="1">
+        <convert type="KravenVBServiceInfoEX">Resolution</convert>
       </widget>
 	</constant-widget>
 	

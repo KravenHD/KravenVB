@@ -309,7 +309,9 @@
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>
     <widget CoolBar="0" CoolBarColor="KravenFont1" CoolCurrentCol="KravenSelFont" CoolDurationColor="KravenFont1" CoolDurationPos="666" CoolDurationSize="70" CoolEventColor="KravenFont1" CoolEventFont="Regular;22" CoolEventHPos="3" CoolEventPos="240" CoolEventSize="350" CoolFont="Regular;25" CoolMarkerHPos="1" CoolMarkerPicHPos="2" CoolMarkerPicPos="2" CoolMarkerPos="140" CoolPico="28" CoolPicoHPos="1" CoolRecAlarmCol="yellow" CoolRecColor="red" CoolServiceColor="KravenFont1" CoolServiceFont="Regular;24" CoolServiceHPos="0" CoolServicePos="2" CoolServiceSize="210" CoolTime="1" CoolTimeHPos="3" CoolTimePos="580" CoolTimeSize="130" CoolTunerCol="KravenFont1" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" itemHeight="32" name="list" position="488,60" size="750,576" transparent="1" zPosition="25" />
-    <eLabel backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont2" halign="left" position="42,540" size="384,25" text="gleich :" transparent="1" valign="center" />
+    <widget source="Service" render="Label" backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont2" halign="left" position="42,540" size="384,25" transparent="1" valign="center">
+      <convert type="KravenVBTextTranslator">coming</convert>
+    </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;19" foregroundColor="KravenFont2" position="42,570" render="CoolNextEvent" size="384,80" source="Service" transparent="1">
     </widget>
     <widget backgroundColor="KravenIBCoolbg" name="date" position="950,16" font="Regular2;22" foregroundColor="KravenMFont2" halign="right" size="180,30" transparent="1" />

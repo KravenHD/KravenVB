@@ -1138,6 +1138,25 @@ config.plugins.KravenVB.ATVna = ConfigSelection(default="na", choices = [
 				("na", _("not available for openATV"))
 				])
 
+config.plugins.KravenVB.emptyline = ConfigSelection(default="emptyline", choices = [
+				("emptyline", _("      "))
+				])
+
+config.plugins.KravenVB.hidden = ConfigSelection(default="hidden-on", choices = [
+				("hidden-on", _("      ")),
+				("hidden-off", _("      "))
+				])
+
+config.plugins.KravenVB.KravenIconVPosition = ConfigSelection(default="vposition0", choices = [
+				("vposition-3", _("-3")),
+				("vposition-2", _("-2")),
+				("vposition-1", _("-1")),
+				("vposition0", _("0")),
+				("vposition+1", _("+1")),
+				("vposition+2", _("+2")),
+				("vposition+3", _("+3"))
+				])
+
 config.plugins.KravenVB.InfobarSelfColorR = ConfigSlider(default=0, increment=15, limits=(0,255))
 config.plugins.KravenVB.InfobarSelfColorG = ConfigSlider(default=0, increment=15, limits=(0,255))
 config.plugins.KravenVB.InfobarSelfColorB = ConfigSlider(default=0, increment=15, limits=(0,255))
@@ -1157,6 +1176,7 @@ class ActivateSkinSettings:
 		self.komponente = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/comp/"
 		self.picPath = "/usr/lib/enigma2/python/Plugins/Extensions/KravenVB/images/"
 		self.profiles = "/etc/enigma2/"
+		self.BoxName=self.getBoxName()
 		self.E2DistroVersion=self.getE2DistroVersion()
 		self.InternetAvailable=self.getInternetAvailable()
 
@@ -1593,31 +1613,31 @@ class ActivateSkinSettings:
 
 		### Infobar (Serviceevent) Font-Size
 		if config.plugins.KravenVB.IBFontSize.value == "size-22":
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,543" size="336,40"', 'font="Regular;22" position="603,551" size="336,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,640" size="336,40"', 'font="Regular;22" position="603,648" size="336,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,544" size="484,40"', 'font="Regular;22" position="603,552" size="484,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,644" size="484,40"', 'font="Regular;22" position="603,652" size="484,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="438,615" size="472,40"', 'font="Regular;22" position="438,620" size="472,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="510,667" size="437,40"', 'font="Regular;22" position="510,674" size="437,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,615" size="481,40"', 'font="Regular;22" position="430,623" size="481,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,667" size="481,40"', 'font="Regular;22" position="430,674" size="481,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,559" size="481,40"', 'font="Regular;22" position="430,567" size="481,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,650" size="481,40"', 'font="Regular;22" position="430,659" size="481,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="199,585" size="708,40"', 'font="Regular;22" position="199,593" size="708,27"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="199,637" size="708,40"', 'font="Regular;22" position="199,644" size="708,27"'])
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,542" size="336,38"', 'font="Regular;22" position="603,549" size="336,27"']) # ZZ1, ZZZ1 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,639" size="336,38"', 'font="Regular;22" position="603,646" size="336,27"']) # ZZ1, ZZZ1 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,543" size="484,38"', 'font="Regular;22" position="603,550" size="484,27"']) # ZZ4 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,643" size="484,38"', 'font="Regular;22" position="603,650" size="484,27"']) # ZZ4 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="438,614" size="472,38"', 'font="Regular;22" position="438,621" size="472,27"']) # ZZ2, ZZ3 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="510,666" size="437,38"', 'font="Regular;22" position="510,673" size="437,27"']) # ZZ3 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,614" size="481,38"', 'font="Regular;22" position="430,621" size="481,27"']) # X2, X3, Z1, Z2 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,666" size="481,38"', 'font="Regular;22" position="430,673" size="481,27"']) # X2, X3, Z1, Z2 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,558" size="481,38"', 'font="Regular;22" position="430,565" size="481,27"']) # X1 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,649" size="481,38"', 'font="Regular;22" position="430,656" size="481,27"']) # X1 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="199,584" size="708,38"', 'font="Regular;22" position="199,591" size="708,27"']) # no picon now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="199,636" size="708,38"', 'font="Regular;22" position="199,643" size="708,27"']) # no picon next
 		elif config.plugins.KravenVB.IBFontSize.value == "size-26":
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,543" size="336,40"', 'font="Regular;26" position="603,546" size="336,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,640" size="336,40"', 'font="Regular;26" position="603,643" size="336,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,544" size="484,40"', 'font="Regular;26" position="603,547" size="484,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="603,644" size="484,40"', 'font="Regular;26" position="603,647" size="484,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="438,615" size="472,40"', 'font="Regular;26" position="438,618" size="472,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="510,667" size="437,40"', 'font="Regular;26" position="510,670" size="437,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,615" size="481,40"', 'font="Regular;26" position="430,618" size="481,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,667" size="481,40"', 'font="Regular;26" position="430,670" size="481,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,559" size="481,40"', 'font="Regular;26" position="430,562" size="481,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="430,650" size="481,40"', 'font="Regular;26" position="430,653" size="481,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="199,585" size="708,40"', 'font="Regular;26" position="199,588" size="708,34"'])
-			self.skinSearchAndReplace.append(['font="Regular;30" position="199,637" size="708,40"', 'font="Regular;26" position="199,640" size="708,34"'])
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,542" size="336,38"', 'font="Regular;26" position="603,545" size="336,33"']) # ZZ1, ZZZ1 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,639" size="336,38"', 'font="Regular;26" position="603,642" size="336,33"']) # ZZ1, ZZZ1 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,543" size="484,38"', 'font="Regular;26" position="603,546" size="484,33"']) # ZZ4 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="603,643" size="484,38"', 'font="Regular;26" position="603,646" size="484,33"']) # ZZ4 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="438,614" size="472,38"', 'font="Regular;26" position="438,617" size="472,33"']) # ZZ2, ZZ3 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="510,666" size="437,38"', 'font="Regular;26" position="510,669" size="437,33"']) # ZZ3 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,614" size="481,38"', 'font="Regular;26" position="430,617" size="481,33"']) # X2, X3, Z1, Z2 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,666" size="481,38"', 'font="Regular;26" position="430,669" size="481,33"']) # X2, X3, Z1, Z2 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,558" size="481,38"', 'font="Regular;26" position="430,561" size="481,33"']) # X1 now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="430,649" size="481,38"', 'font="Regular;26" position="430,652" size="481,33"']) # X1 next
+			self.skinSearchAndReplace.append(['font="Regular;30" position="199,584" size="708,38"', 'font="Regular;26" position="199,587" size="708,33"']) # no picon now
+			self.skinSearchAndReplace.append(['font="Regular;30" position="199,636" size="708,38"', 'font="Regular;26" position="199,639" size="708,33"']) # no picon next
 
 		### ChannelSelection (Servicename, Servicenumber, Serviceinfo) Font-Size
 		if self.E2DistroVersion == "VTi":
@@ -2163,6 +2183,79 @@ class ActivateSkinSettings:
 		### HelpMenu
 		if self.E2DistroVersion == "openatv":
 			self.skinSearchAndReplace.append(['skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png,skin_default/rc_vu_4.png,skin_default/rc_vu_5.png', 'skin_default/rc.png,skin_default/rcold.png'])
+
+		### KravenIconVPosition
+		if config.plugins.KravenVB.hidden.value == "hidden-on":
+			if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+				self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',686" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+				self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',691" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+				self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',689" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+				self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',22" valign="center" foregroundColor="KravenIcon"'])
+			self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',679" valign="center" foregroundColor="KravenIcon"'])
+		else:
+			if config.plugins.KravenVB.KravenIconVPosition.value == "vposition-3":
+				if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+					self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',684" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+					self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',689" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+					self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',687" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',20" valign="center" foregroundColor="KravenIcon"'])
+				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',677" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.KravenIconVPosition.value == "vposition-2":
+				if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+					self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',685" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+					self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',690" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+					self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',688" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',21" valign="center" foregroundColor="KravenIcon"'])
+				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',678" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.KravenIconVPosition.value == "vposition-1":
+				if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+					self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',686" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+					self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',691" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+					self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',689" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',22" valign="center" foregroundColor="KravenIcon"'])
+				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',679" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.KravenIconVPosition.value == "vposition+1":
+				if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+					self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',688" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+					self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',693" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+					self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',691" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',24" valign="center" foregroundColor="KravenIcon"'])
+				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',681" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.KravenIconVPosition.value == "vposition+2":
+				if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+					self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',689" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+					self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',694" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+					self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',692" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',25" valign="center" foregroundColor="KravenIcon"'])
+				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',682" valign="center" foregroundColor="KravenIcon"'])
+			elif config.plugins.KravenVB.KravenIconVPosition.value == "vposition+3":
+				if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-zz1","infobar-style-zzz1"):
+					self.skinSearchAndReplace.append([',687" valign="center" foregroundColor="KravenIcon"', ',690" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-x1":
+					self.skinSearchAndReplace.append([',692" valign="center" foregroundColor="KravenIcon"', ',695" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value == "infobar-style-zz4":
+					self.skinSearchAndReplace.append([',690" valign="center" foregroundColor="KravenIcon"', ',693" valign="center" foregroundColor="KravenIcon"'])
+				elif config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-x2","infobar-style-z1"):
+					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',26" valign="center" foregroundColor="KravenIcon"'])
+				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',683" valign="center" foregroundColor="KravenIcon"'])
 
 		### Header
 		if (not self.silent and config.usage.movielist_show_picon.value == True) or (self.silent and 'config.usage.movielist_show_picon=true' in self.E2settings):
@@ -3292,6 +3385,19 @@ class ActivateSkinSettings:
 			for item in tmpSearchAndReplace:
 				skinLine = skinLine.replace(item[0], item[1])
 			self.skin_lines.append(skinLine)
+
+	def getBoxName(self):
+		if fileExists("/proc/stb/info/vumodel"):
+			file = open('/proc/stb/info/vumodel', 'r')
+			boxname = file.readline().strip()
+			file.close()
+			return boxname
+		else:
+			try:
+				from boxbranding import getMachineName
+				return getMachineName()
+			except ImportError:
+				return "unknown"
 
 	def getE2DistroVersion(self):
 		try:

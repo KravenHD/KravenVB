@@ -1,10 +1,22 @@
 <!-- System-Info -->
-  <eLabel text="Temperatur:" position="1000,275" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="CPU-Last:" position="1000,295" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="Satellit:" position="1000,315" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="Drehzahl:" position="1145,275" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="Systemlast:" position="1145,295" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="Signal:" position="1145,315" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
+  <widget source="Title" render="Label" position="1000,275" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">temperature</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1000,295" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">cpuload</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1000,315" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">satellite</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1145,275" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">fanspeed</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1145,295" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">avgload</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1145,315" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">signal</convert>
+  </widget>
   <widget source="Title" render="Label" font="Regular;16" position="1090,275" size="40,20" halign="right" valign="bottom" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIBFont1">
     <convert type="KravenVBTempFanInfo">TempInfo</convert>   
   </widget>
@@ -23,10 +35,18 @@
   <widget source="session.FrontendStatus" render="Label" font="Regular;16" position="1220,315" size="40,20" halign="right" valign="bottom" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIBFont1">
     <convert type="KravenVBFrontendInfo">SNR</convert>
   </widget>
-  <eLabel text="Flash:" position="1000,345" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="Ram:" position="1000,365" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="HDD:" position="1000,385" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
-  <eLabel text="USB:" position="1000,405" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2" />
+  <widget source="Title" render="Label" position="1000,345" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">flash</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1000,365" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">ram</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1000,385" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">hdd</convert>
+  </widget>
+  <widget source="Title" render="Label" position="1000,405" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+    <convert type="KravenVBTextTranslator">usb</convert>
+  </widget>
   <widget source="Title" render="Label" font="Regular;16" position="1050,345" size="220,20" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" noWrap="1" foregroundColor="KravenIBFont1">
     <convert type="KravenVBLayoutInfo">FlashInfo,Free</convert>
   </widget>

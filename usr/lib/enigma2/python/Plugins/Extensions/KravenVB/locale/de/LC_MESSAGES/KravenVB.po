@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2018-01-25 22:49+0100\n"
+"PO-Revision-Date: 2018-02-26 20:30+0100\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
@@ -2326,4 +2326,108 @@ msgstr "Hauptmenü Schriftgrösse"
 
 #: KravenVB.py
 msgid "Choose the font size of mainmenus."
-msgstr "Wählen Sie die Schriftgrösse für die Hauptmenüs"
+msgstr "Wählen Sie die Schriftgrösse für die Hauptmenüs."
+
+#: KravenVBTextTranslator.py
+msgid "Move/Copy"
+msgstr "verschieben/kopieren"
+
+#: KravenVBTextTranslator.py
+msgid "currently running:"
+msgstr "aktuell läuft:"
+
+#: KravenVBTextTranslator.py
+msgid "it follows:"
+msgstr "es folgt:"
+
+#: KravenVBTextTranslator.py
+msgid "coming:"
+msgstr "gleich:"
+
+#: KravenVBTextTranslator.py
+msgid "running since"
+msgstr "Sendung läuft seit"
+
+#: KravenVBTextTranslator.py
+msgid "preview"
+msgstr "Vorschau"
+
+#: KravenVBTextTranslator.py
+msgid "runs until"
+msgstr "läuft bis "
+
+#: KravenVBTextTranslator.py
+msgid "   "
+msgstr "Uhr"
+
+#: KravenVBTextTranslator.py
+msgid "timeshift active"
+msgstr "timeshift aktiv"
+
+#: KravenVBTextTranslator.py
+msgid "until live:"
+msgstr "bis live:"
+
+#: KravenVBTextTranslator.py
+msgid "temperature"
+msgstr "Temperatur"
+
+#: KravenVBTextTranslator.py
+msgid "CPU load:"
+msgstr "CPU-Last:"
+
+#: KravenVBTextTranslator.py
+msgid "satellite"
+msgstr "Satellit"
+
+#: KravenVBTextTranslator.py
+msgid "fanspeed:"
+msgstr "Drehzahl:"
+
+#: KravenVBTextTranslator.py
+msgid "AVG load:"
+msgstr "Systemlast:"
+
+#: KravenVBTextTranslator.py
+msgid "signal"
+msgstr "Signal"
+
+#: KravenVBTextTranslator.py
+msgid "tuner"
+msgstr "Tuner"
+
+#: KravenVBTextTranslator.py
+msgid "video"
+msgstr "Video"
+
+#: KravenVBTextTranslator.py
+msgid "r/m:"
+msgstr "U/m:"
+
+#: KravenVBTextTranslator.py
+msgid "load"
+msgstr "Last"
+
+#: KravenVBTextTranslator.py
+msgid "temp:"
+msgstr "Temp:"
+
+#: KravenVBTextTranslator.py
+msgid "wind:"
+msgstr "Wind:"
+
+#: KravenVBTextTranslator.py
+msgid "clime:"
+msgstr "Klima:"
+
+#: KravenVBTextTranslator.py
+msgid "city:"
+msgstr "Ort:"
+
+#: KravenVB.py
+msgid "Icon-Font V-Position"
+msgstr "Symbol-Schrift V-Position"
+
+#: KravenVB.py
+msgid "Choose the vertical position of Icon-Fonts for infobars and players."
+msgstr "Wählen Sie die vertikale Position der Symbol-Schriften für die Infoleisten und Wiedergabe."
