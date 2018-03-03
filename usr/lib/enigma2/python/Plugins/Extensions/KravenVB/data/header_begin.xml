@@ -274,6 +274,9 @@
 	<parameter name="SelectionListLockOff" value="3,5,20,20" />
 	<!-- ConfigList openATV -->
     <parameter name="ConfigListSeperator" value="400" />
+	<!-- Programmlisten_Updater openATV -->
+    <parameter name="ProgrammlistenUpdaterListFont" value="Regular;22" />
+    <parameter name="ProgrammlistenUpdaterList" value="10,1,450,238,30" />
   </parameters>
   <fonts>
     <font filename="lcd.ttf" name="LCD" scale="100" />
@@ -284,8 +287,11 @@
     <font filename="KravenVB/fonts/OpenSans-Semibold.ttf" name="Regular2" scale="95" />
     <font filename="KravenVB/fonts/meteocons.ttf" name="Meteo" scale="100" />
 	<font filename="KravenVB/fonts/owfont-regular.ttf" name="Meteo2" scale="100" />
+	<alias name="FileList" font="Regular" size="22" height="30" />
+	<alias name="FileListMulti" font="Regular" size="22" height="30" />
 	<alias name="MaxCubeRoom" font="Regular" size="18" height="50"/>
 	<alias name="MaxCubeTemp" font="Regular2" size="30" height="50"/>
+	<alias name="SelectionList" font="Regular" size="22" height="30"/>
   </fonts>
   <subtitles>
     <sub font="Regular;30" name="Subtitle_TTX" shadowColor="shadow" shadowOffset="3,3" />

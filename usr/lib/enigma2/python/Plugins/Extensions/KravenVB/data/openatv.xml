@@ -1568,3 +1568,104 @@
     <constant-widget name="OKExit"/>
     <!--<text="RadiologosATV" position="70,0" />-->
   </screen>
+  <!-- Programmlisten_Updater -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Programmlisten_Updater" position="0,0" size="1280,720" title=" ">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="MenuListSetting" position="70,80" size="708,450" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <eLabel backgroundColor="Kravenbg3" text="AutoUpdate:" font="Regular2;22" foregroundColor="KravenFont2" position="70,550" size="200,27" halign="left" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="update" position="280,550" size="498,27" font="Regular;22" foregroundColor="KravenFont1" halign="left" valign="center" transparent="1" />
+    <eLabel backgroundColor="Kravenbg3" text="Current installed" font="Regular2;22" foregroundColor="KravenFont2" position="70,584" size="200,27" halign="left" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="description" position="280,584" size="498,27" font="Regular;22" foregroundColor="KravenFont1" halign="left" valign="bottom" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellow"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="Programmlisten_Updater" position="70,0" />-->
+  </screen>
+  <!-- PU_History -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PU_History" position="0,0" size="1280,720" title=" ">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="History" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<widget font="Regular;20" halign="left" valign="center" source="key_red" position="70,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="OKExit"/>
+    <!--<text="PU_History" position="70,0" />-->
+  </screen>
+  <!-- PU_Restore -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PU_Restore" position="0,0" size="1280,720" title=" ">
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="ListSetting" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellow"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="PU_Restore" position="70,0" />-->
+  </screen>
+  <!-- BirthdayReminder -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="BirthdayReminder" position="0,0" size="1280,720" title=" " >
+    <eLabel backgroundColor="KravenIBbg3" text="Birthday Reminder" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
+    <widget source="session.CurrentService" render="Label" backgroundColor="Kravenbg3" position="76,80" size="300,27" font="Regular;22" foregroundColor="KravenFont2" halign="left" valign="center" transparent="1">
+      <convert type="KravenVBTextTranslator">name</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" backgroundColor="Kravenbg3" position="396,80" size="260,27" font="Regular;22" foregroundColor="KravenFont2" halign="left" valign="center" transparent="1">
+      <convert type="KravenVBTextTranslator">birthday</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Label" backgroundColor="Kravenbg3" position="676,80" size="96,27" font="Regular;22" foregroundColor="KravenFont2" halign="right" valign="center" transparent="1">
+      <convert type="KravenVBTextTranslator">age</convert>
+    </widget>
+	<widget backgroundColor="Kravenbg3" source="list" render="Listbox" position="70,110" size="708,510" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1">
+	  <convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (6, 1),   size = (300, 27), font=0, flags = RT_HALIGN_LEFT, text = 0),
+					MultiContentEntryText(pos = (326, 1), size = (260, 27), font=0, flags = RT_HALIGN_LEFT, text = 1),
+					MultiContentEntryText(pos = (606, 1), size = (96, 27), font=0, flags = RT_HALIGN_RIGHT, text = 2),
+					],
+					"fonts": [gFont("Regular", 22)],
+					"itemHeight": 30
+				}
+	  </convert>
+    </widget>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="BirthdayReminder" position="70,0" />-->
+  </screen>
+  <!-- EditBirthdayScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="EditBirthdayScreen" position="0,0" size="1280,720" title=" " >
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,480" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="error" position="70,580" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreen"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="EditBirthdayScreen" position="70,0" />-->
+  </screen>
+  <!-- BirthdayReminderSettings -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="BirthdayReminderSettings" position="0,0" size="1280,720" title=" " >
+    <widget source="session.CurrentService" render="Label" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center">
+      <convert type="KravenVBTextTranslator">brsettings</convert>
+    </widget>
+    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreen"/>
+    <widget font="Regular;20" halign="left" valign="center" source="key_blue" position="820,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="OKExit"/>
+    <!--<text="BirthdayReminderSettings" position="70,0" />-->
+  </screen>
+  <!-- PathSelectionScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="PathSelectionScreen" position="0,0" size="1280,720" title=" " >
+    <widget source="session.CurrentService" render="Label" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center">
+      <convert type="KravenVBTextTranslator">brpath</convert>
+    </widget>
+    <widget backgroundColor="Kravenbg3" name="target" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="filelist" position="70,110" size="708,510" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreen"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="PathSelectionScreen" position="70,0" />-->
+  </screen>

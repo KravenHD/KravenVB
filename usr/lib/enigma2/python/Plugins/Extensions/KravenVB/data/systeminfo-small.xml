@@ -13,7 +13,7 @@
     <convert type="KravenVBTextTranslator">fanspeed</convert>
   </widget>
   <widget source="Title" render="Label" position="1105,345" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
-    <convert type="KravenVBTextTranslator">loadavg</convert>
+    <convert type="KravenVBTextTranslator">avgload</convert>
   </widget>
   <widget source="Title" render="Label" position="1105,365" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
     <convert type="KravenVBTextTranslator">signal</convert>
