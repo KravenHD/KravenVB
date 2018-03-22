@@ -33,7 +33,7 @@
 	<widget name="timeline_text" position="2,80" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg2" foregroundColor="KravenFont1" />
 	<widget source="Event" render="Label" position="1088,79" size="150,25" font="Regular;21" backgroundColor="Kravenbg2" foregroundColor="KravenFont2" transparent="1" halign="right">
 	  <convert type="EventTime">StartTime</convert>
-	  <convert type="ClockToText">Format:%a %d.%b</convert>
+	  <convert type="KravenVBClockToText">Format:%a %d.%b</convert>
 	</widget>
     <widget name="timeline0" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
     <widget name="timeline1" backgroundColor="orange" position="0,107" size="1,510" zPosition="1" />
@@ -48,7 +48,7 @@
     <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <!-- nontransbg */-->
 	<widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-      <convert type="ClockToText">Default</convert>
+      <convert type="KravenVBClockToText">Default</convert>
     </widget>
 	<!-- Menu ibar -->
     <constant-widget name="Colorbuttons"/>

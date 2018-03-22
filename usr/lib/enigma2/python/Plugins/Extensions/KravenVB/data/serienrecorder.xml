@@ -3,7 +3,7 @@
     <widget backgroundColor="KravenIBbg2" name="headline" position="20,20" size="880,40" transparent="1" font="Regular;26" valign="center" halign="center" />
     <widget backgroundColor="KravenIBbg2" name="version" position="860,20" size="400,40" foregroundColor="KravenMFont2" transparent="1" font="Regular;26" valign="center" halign="right" />
     <widget backgroundColor="Kravenbg2" source="global.CurrentTime" position="860,50" size="400,55" render="Label" font="Regular;26" valign="center" halign="right"  foregroundColor="KravenFont1" transparent="1">
-        <convert type="ClockToText">Format:%A, %d.%m.%Y  %H:%M</convert>
+        <convert type="KravenVBClockToText">Format:%A, %d.%m.%Y  %H:%M</convert>
     </widget>
     <widget name="video" position="938,120" size="322,182" zPosition="5" backgroundColor="transparent" />
     <eLabel backgroundColor="#00000000" position="938,120" size="322,182" transparent="0" zPosition="4" />

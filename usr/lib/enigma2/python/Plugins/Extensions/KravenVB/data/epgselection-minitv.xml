@@ -20,7 +20,7 @@
     <constant-widget name="Colorbuttons"/>
     <!-- nontransbg */-->
 	<widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-      <convert type="ClockToText">Default</convert>
+      <convert type="KravenVBClockToText">Default</convert>
     </widget>
 	<!-- Menu ibar -->
     <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
@@ -46,7 +46,7 @@
     <constant-widget name="Colorbuttons"/>
     <!-- nontransbg */-->
 	<widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-      <convert type="ClockToText">Default</convert>
+      <convert type="KravenVBClockToText">Default</convert>
     </widget>
 	<!-- Menu ibar -->
     <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />

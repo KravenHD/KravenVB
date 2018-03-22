@@ -31,9 +31,9 @@ class KravenVBMenuPig(Renderer):
 
 	GUI_WIDGET = eVideoWidget
 
-	def debug(self,what):
-		f=open('/tmp/kraven_debug.txt','a+')
-		f.write(str(what)+'\n')
+	def debug(self, what):
+		f = open('/tmp/kraven_debug.txt', 'a+')
+		f.write(str(what) + '\n')
 		f.close()
 		
 	def postWidgetCreate(self, instance):
@@ -43,8 +43,8 @@ class KravenVBMenuPig(Renderer):
 
 	def applySkin(self, desktop, parent):
 		attribs = self.skinAttributes[:]
-		for attrib, value in self.skinAttributes:
-			if attrib == 'hidePip':
+		for (attrib, value) in self.skinAttributes:
+			if attrib == "hidePip":
 				self.hidePip = value == 1
 				attribs.remove((attrib, value))
 

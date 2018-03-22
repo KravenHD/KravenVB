@@ -19,21 +19,21 @@
 	<constant-widget name="Logo1">
 	  <!-- menubg */-->
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%H</convert>
+	    <convert type="KravenVBClockToText">Format:%H</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%M</convert>
+	    <convert type="KravenVBClockToText">Format:%M</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%S</convert>
+	    <convert type="KravenVBClockToText">Format:%S</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%A</convert>
+	    <convert type="KravenVBClockToText">Format:%A</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%e. %B</convert>
+	    <convert type="KravenVBClockToText">Format:%e. %B</convert>
 	  </widget>
 	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
@@ -48,21 +48,21 @@
 	  <!-- menubg */-->
 	  <ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%H</convert>
+	    <convert type="KravenVBClockToText">Format:%H</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%M</convert>
+	    <convert type="KravenVBClockToText">Format:%M</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%S</convert>
+	    <convert type="KravenVBClockToText">Format:%S</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%A</convert>
+	    <convert type="KravenVBClockToText">Format:%A</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%e. %B</convert>
+	    <convert type="KravenVBClockToText">Format:%e. %B</convert>
 	  </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -73,21 +73,21 @@
 	    <convert type="KravenVBMenuIconPath"></convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%H</convert>
+	    <convert type="KravenVBClockToText">Format:%H</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%M</convert>
+	    <convert type="KravenVBClockToText">Format:%M</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%S</convert>
+	    <convert type="KravenVBClockToText">Format:%S</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%A</convert>
+	    <convert type="KravenVBClockToText">Format:%A</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%e. %B</convert>
+	    <convert type="KravenVBClockToText">Format:%e. %B</convert>
 	  </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -95,7 +95,7 @@
 	<constant-widget name="Logo4">
 	  <!-- menubg */-->
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
 	  <eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
@@ -112,21 +112,21 @@
 	<constant-widget name="Icons1">
 	  <!-- menubg */-->
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%H</convert>
+	    <convert type="KravenVBClockToText">Format:%H</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,334" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,334" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%M</convert>
+	    <convert type="KravenVBClockToText">Format:%M</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,348" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,348" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%S</convert>
+	    <convert type="KravenVBClockToText">Format:%S</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,404" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%A</convert>
+	    <convert type="KravenVBClockToText">Format:%A</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,429" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%e. %B</convert>
+	    <convert type="KravenVBClockToText">Format:%e. %B</convert>
 	  </widget>
 	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" /><eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
 	  <eLabel backgroundColor="KravenBorder2" position="822,80" size="416,3" transparent="0" zPosition="4" />
@@ -141,21 +141,21 @@
 	  <!-- menubg */-->
 	  <ePixmap backgroundColor="Kravenbg3" pixmap="KravenVB/logo.png" position="902,72" size="256,256" alphatest="blend" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%H</convert>
+	    <convert type="KravenVBClockToText">Format:%H</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%M</convert>
+	    <convert type="KravenVBClockToText">Format:%M</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%S</convert>
+	    <convert type="KravenVBClockToText">Format:%S</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%A</convert>
+	    <convert type="KravenVBClockToText">Format:%A</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%e. %B</convert>
+	    <convert type="KravenVBClockToText">Format:%e. %B</convert>
 	  </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -166,21 +166,21 @@
 	    <convert type="KravenVBMenuIconPath"></convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="938,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%H</convert>
+	    <convert type="KravenVBClockToText">Format:%H</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="995,354" size="15,80" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;43" foregroundColor="KravenFont1" halign="center" position="1005,354" render="Label" size="65,80" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%M</convert>
+	    <convert type="KravenVBClockToText">Format:%M</convert>
 	  </widget>
 	  <eLabel backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1061,368" size="15,60" text=":" transparent="1" valign="center" zPosition="1" />
 	  <widget backgroundColor="Kravenbg3" font="Regular;32" foregroundColor="KravenFont1" halign="center" position="1071,368" render="Label" size="50,60" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%S</convert>
+	    <convert type="KravenVBClockToText">Format:%S</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,424" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%A</convert>
+	    <convert type="KravenVBClockToText">Format:%A</convert>
 	  </widget>
 	  <widget backgroundColor="Kravenbg3" font="Regular;18" foregroundColor="KravenFont1" halign="center" position="928,449" render="Label" size="203,30" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
-	    <convert type="ClockToText">Format:%e. %B</convert>
+	    <convert type="KravenVBClockToText">Format:%e. %B</convert>
 	  </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -188,7 +188,7 @@
 	<constant-widget name="Icons4">
 	  <!-- menubg */-->
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	  <widget source="session.VideoPicture" render="KravenVBMenuPig" position="822,80" size="416,234" zPosition="3" backgroundColor="transparent" />
 	  <eLabel backgroundColor="#00000000" position="822,80" size="416,234" transparent="0" zPosition="2" />
@@ -269,7 +269,7 @@
 	<constant-widget name="Background">
       <!-- globalbg */-->
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-        <convert type="ClockToText">Default</convert>
+        <convert type="KravenVBClockToText">Default</convert>
       </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -361,7 +361,7 @@
 	
 	<constant-widget name="EMCSelection">
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
 	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,692" size="200,5" />
@@ -378,7 +378,7 @@
 	
 	<constant-widget name="MovieSelection">
       <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-        <convert type="ClockToText">Default</convert>
+        <convert type="KravenVBClockToText">Default</convert>
       </widget>
       <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="65,692" size="200,5" />
       <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="315,692" size="200,5" />
@@ -395,7 +395,7 @@
 	
 	<constant-widget name="CoolTV">
       <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,17" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-        <convert type="ClockToText">Default</convert>
+        <convert type="KravenVBClockToText">Default</convert>
       </widget>
       <ePixmap backgroundColor="Kravenbg2" alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,697" size="200,5" />
       <ePixmap backgroundColor="Kravenbg2" alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,697" size="200,5" />
@@ -419,7 +419,7 @@
       </widget>
       <widget backgroundColor="Kravenbg" font="Regular;20" foregroundColor="KravenFont1" halign="left" position="70,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">StartTime</convert>
-        <convert type="ClockToText">Format:%H:%M </convert>
+        <convert type="KravenVBClockToText">Format:%H:%M </convert>
       </widget>
       <widget backgroundColor="Kravenbg" borderWidth="0" position="135,131" render="Progress" size="888,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress888.png">
         <convert type="KravenVBEventTime">Progress</convert>
@@ -427,11 +427,11 @@
       <eLabel backgroundColor="KravenLine" position="135,133" size="888,1" />
       <widget backgroundColor="Kravenbg" font="Regular;20" foregroundColor="KravenFont1" halign="right" position="1023,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">EndTime</convert>
-        <convert type="ClockToText">Format:%H:%M</convert>
+        <convert type="KravenVBClockToText">Format:%H:%M</convert>
       </widget>
 	  <widget backgroundColor="Kravenbg" font="Regular2;20" foregroundColor="KravenFont2" halign="right" position="1088,120" render="Label" size="150,24" source="Event" transparent="1">
 	    <convert type="EventTime">StartTime</convert>
-	    <convert type="ClockToText">Format:%a %d.%b</convert>
+	    <convert type="KravenVBClockToText">Format:%a %d.%b</convert>
 	  </widget>
 	  <widget name="timeline_text" position="2,305" size="1275,25" selectionDisabled="1" transparent="1" zPosition="5" backgroundColor="Kravenbg" foregroundColor="KravenFont1" />
 	  <widget name="JumpInterval" position="1038,304" size="200,25" font="Regular;21" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1" halign="right" />
@@ -456,7 +456,7 @@
       </widget>
       <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="left" position="70,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">StartTime</convert>
-        <convert type="ClockToText">Format:%H:%M </convert>
+        <convert type="KravenVBClockToText">Format:%H:%M </convert>
       </widget>
       <widget backgroundColor="Kravenbg2" borderWidth="0" position="135,131" render="Progress" size="480,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress480.png">
         <convert type="KravenVBEventTime">Progress</convert>
@@ -464,11 +464,11 @@
       <eLabel backgroundColor="KravenLine" position="135,133" size="480,1" />
       <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="right" position="615,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">EndTime</convert>
-        <convert type="ClockToText">Format:%H:%M</convert>
+        <convert type="KravenVBClockToText">Format:%H:%M</convert>
       </widget>
 	  <widget backgroundColor="Kravenbg2" render="Label" source="Event" font="Regular2;20" foregroundColor="KravenFont2" position="680,120" size="150,24" halign="right" transparent="1">
 	    <convert type="EventTime">StartTime</convert>
-	    <convert type="ClockToText">Format:%a %d.%b</convert>
+	    <convert type="KravenVBClockToText">Format:%a %d.%b</convert>
 	  </widget>
       <widget source="session.VideoPicture" render="Pig" position="870,80" size="368,207" zPosition="3" backgroundColor="transparent" />
       <eLabel backgroundColor="#00000000" position="870,80" size="368,207" transparent="0" zPosition="2" />
@@ -491,7 +491,7 @@
       <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
       <!-- nontransbg */-->
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-        <convert type="ClockToText">Default</convert>
+        <convert type="KravenVBClockToText">Default</convert>
       </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -504,7 +504,7 @@
       </widget>
       <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="left" position="478,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">StartTime</convert>
-        <convert type="ClockToText">Format:%H:%M </convert>
+        <convert type="KravenVBClockToText">Format:%H:%M </convert>
       </widget>
       <widget backgroundColor="Kravenbg2" borderWidth="0" position="543,131" render="Progress" size="480,5" source="Event" transparent="1" zPosition="20" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress480.png">
         <convert type="KravenVBEventTime">Progress</convert>
@@ -512,11 +512,11 @@
       <eLabel backgroundColor="KravenLine" position="543,133" size="480,1" />
       <widget backgroundColor="Kravenbg2" font="Regular;20" foregroundColor="KravenFont1" halign="right" position="1023,119" render="Label" size="65,22" source="Event" transparent="1">
         <convert type="KravenVBEventTime">EndTime</convert>
-        <convert type="ClockToText">Format:%H:%M</convert>
+        <convert type="KravenVBClockToText">Format:%H:%M</convert>
       </widget>
 	  <widget backgroundColor="Kravenbg2" font="Regular2;20" foregroundColor="KravenFont2" halign="right" position="1088,120" render="Label" size="150,24" source="Event" transparent="1">
 	    <convert type="EventTime">StartTime</convert>
-	    <convert type="ClockToText">Format:%a %d.%b</convert>
+	    <convert type="KravenVBClockToText">Format:%a %d.%b</convert>
 	  </widget>
       <widget source="session.VideoPicture" render="Pig" position="70,80" size="368,207" zPosition="3" backgroundColor="transparent" />
       <eLabel backgroundColor="#00000000" position="70,80" size="368,207" transparent="0" zPosition="2" />
@@ -539,7 +539,7 @@
       <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,639" size="220,52" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
       <!-- nontransbg */-->
 	  <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBCoolbg" foregroundColor="KravenMFont1" position="1138,22" size="100,28" font="Regular;26" halign="right" transparent="1" valign="center">
-        <convert type="ClockToText">Default</convert>
+        <convert type="KravenVBClockToText">Default</convert>
       </widget>
 	  <!-- Menu ibar -->
 	</constant-widget>
@@ -547,7 +547,7 @@
 	<constant-widget name="ChannelSelection">
 	  <widget backgroundColor="KravenIBbg4" font="Regular2;34" foregroundColor="KravenMFont2" position="42,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
 	  <widget source="global.CurrentTime" render="Label" position="1138,22" size="100,28" foregroundColor="KravenMFont1" font="Regular;26" halign="right" backgroundColor="KravenIBbg4" transparent="1" valign="center">
-        <convert type="ClockToText">Default</convert>
+        <convert type="KravenVBClockToText">Default</convert>
       </widget>
 	  <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_red1.png" position="42,692" size="200,5" />
       <ePixmap alphatest="blend" pixmap="KravenVB/buttons/key_green1.png" position="292,692" size="200,5" />
@@ -2016,37 +2016,37 @@
 	
 	<constant-widget name="permanentclock-infobar-big">
       <widget backgroundColor="KravenIBbg" source="global.CurrentTime" render="Label" position="0,0" size="120,30" font="Regular;26" foregroundColor="KravenIBFont1" valign="center" halign="center" transparent="1">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	</constant-widget>
 	
 	<constant-widget name="permanentclock-infobar-small">
       <widget backgroundColor="KravenIBbg" source="global.CurrentTime" render="Label" position="0,0" size="80,20" font="Regular;18" foregroundColor="KravenIBFont1" valign="center" halign="center" transparent="1">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	</constant-widget>
 	
 	<constant-widget name="permanentclock-global-big">
       <widget backgroundColor="Kravenbg" source="global.CurrentTime" render="Label" position="0,0" size="120,30" font="Regular;26" foregroundColor="KravenFont1" valign="center" halign="center" transparent="1">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	</constant-widget>
 	
 	<constant-widget name="permanentclock-global-small">
       <widget backgroundColor="Kravenbg" source="global.CurrentTime" render="Label" position="0,0" size="80,20" font="Regular;18" foregroundColor="KravenFont1" valign="center" halign="center" transparent="1">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	</constant-widget>
 	
 	<constant-widget name="permanentclock-transparent-big">
       <widget backgroundColor="#7F7F7F7F" source="global.CurrentTime" render="Label" position="0,0" size="120,30" font="Regular;26" foregroundColor="KravenPermanentClock" valign="center" halign="center" transparent="1">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	</constant-widget>
 	
 	<constant-widget name="permanentclock-transparent-small">
       <widget backgroundColor="#7F7F7F7F" source="global.CurrentTime" render="Label" position="0,0" size="80,20" font="Regular;18" foregroundColor="KravenPermanentClock" valign="center" halign="center" transparent="1">
-	    <convert type="ClockToText">Default</convert>
+	    <convert type="KravenVBClockToText">Default</convert>
 	  </widget>
 	</constant-widget>
 	

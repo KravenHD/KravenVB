@@ -12,11 +12,11 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="right" position="124,349" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="232,349" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="center" position="42,384" render="Label" size="384,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -44,11 +44,11 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="450,115" render="Label" size="100,32" source="Event" transparent="1" zPosition="3">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="520,115" render="Label" size="100,32" source="Event" transparent="1" zPosition="3">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="622,115" render="Label" size="150,32" source="Event" transparent="1" zPosition="3">
       <convert type="KravenVBEventTime">Remaining</convert>
@@ -85,11 +85,11 @@
     <widget alphatest="on" name="timeline_now" pixmap="KravenVB/epg/timelineCooltv.jpg" position="0,95" size="3,420" zPosition="2" />
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="42,524" render="Label" size="80,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="110,524" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" position="222,524" render="Label" size="1016,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -111,11 +111,11 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="450,100" render="Label" size="80,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="522,100" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" valign="top" position="632,100" render="Label" size="600,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -151,11 +151,11 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="450,98" render="Label" size="80,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="522,98" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" valign="top" position="632,98" render="Label" size="600,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -183,11 +183,11 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="450,98" render="Label" size="80,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="522,98" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" valign="top" position="632,98" render="Label" size="600,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -216,11 +216,11 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="450,98" render="Label" size="80,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" valign="top" position="522,98" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" valign="top" position="632,98" render="Label" size="600,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -263,11 +263,11 @@
     <widget alphatest="on" name="timeline_now" pixmap="KravenVB/epg/timelineCooltv.jpg" position="0,95" size="3,420" zPosition="2" />
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="42,524" render="Label" size="80,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;24" foregroundColor="KravenFont1" halign="left" position="120,524" render="Label" size="100,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:- %H:%M</convert>
+      <convert type="KravenVBClockToText">Format:- %H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" position="222,524" render="Label" size="1016,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
@@ -292,7 +292,7 @@
     <eLabel backgroundColor="KravenBorder2" position="407,65" size="3,207" transparent="0" zPosition="4" />
     <widget backgroundColor="Kravenbg2" font="Regular;22" foregroundColor="KravenFont1" halign="left" position="42,290" render="Label" size="60,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget foregroundColor="KravenProgress" position="110,303" render="Progress" size="248,5" source="Event" transparent="1" zPosition="2" backgroundColor="Kravenbg2" pixmap="KravenVB/progress/progress248.png">
       <convert type="KravenVBEventTime">Progress</convert>
@@ -300,7 +300,7 @@
     <eLabel backgroundColor="KravenLine" position="110,305" size="248,1" zPosition="1" />
     <widget backgroundColor="Kravenbg2" font="Regular;22" foregroundColor="KravenFont1" halign="right" position="366,290" render="Label" size="60,30" source="Event" transparent="1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">Format:%H:%M</convert>
+      <convert type="KravenVBClockToText">Format:%H:%M</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;24" foregroundColor="KravenFont2" halign="left" position="42,330" render="Label" size="384,30" source="Event" transparent="1">
       <convert type="KravenVBEventName">Name</convert>

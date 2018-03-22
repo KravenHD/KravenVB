@@ -14,11 +14,11 @@
   <eLabel position="438,660" size="581,1" backgroundColor="KravenLine" />
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="left" noWrap="1" position="438,667" render="Label" size="70,27" source="session.Event_Now" transparent="1" zPosition="1">
     <convert type="KravenVBEventTime">StartTime</convert>
-    <convert type="ClockToText">Default</convert>
+    <convert type="KravenVBClockToText">Default</convert>
   </widget>
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont1" halign="right" noWrap="1" position="949,667" render="Label" size="70,27" source="session.Event_Now" transparent="1" zPosition="1">
     <convert type="KravenVBEventTime">EndTime</convert>
-    <convert type="ClockToText">Default</convert>
+    <convert type="KravenVBClockToText">Default</convert>
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="515,673" size="43,22" zPosition="2" />
   <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="515,673" zPosition="2" size="43,22" alphatest="blend">

@@ -6,9 +6,9 @@
     <convert type="KravenVBWeather">Day_0,DayTemp</convert>
   </widget>
   <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" position="1173,648" size="90,30" font="Regular;26" halign="center" valign="center" zPosition="2" transparent="1">
-    <convert type="ClockToText">Default</convert>
+    <convert type="KravenVBClockToText">Default</convert>
   </widget>
   <widget source="global.CurrentTime" render="Label" backgroundColor="KravenIBbg" foregroundColor="KravenIBFont1" position="1173,681" size="90,21" font="Regular;17" halign="center" valign="center" zPosition="2" transparent="1">
-	<convert type="ClockToText">Format:%d.%m.%Y</convert>
+	<convert type="KravenVBClockToText">Format:%d.%m.%Y</convert>
   </widget>
     <!--Clock */-->

@@ -1927,6 +1927,7 @@ class ActivateSkinSettings:
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress200.png"',' pixmap="KravenVB/progress/progress200_2.png"'])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress220.png"',' pixmap="KravenVB/progress/progress220_2.png"'])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress248.png"',' pixmap="KravenVB/progress/progress248_2.png"'])
+			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress270.png"',' pixmap="KravenVB/progress/progress270_2.png"'])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress300.png"',' pixmap="KravenVB/progress/progress300_2.png"'])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress328.png"',' pixmap="KravenVB/progress/progress328_2.png"'])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress370.png"',' pixmap="KravenVB/progress/progress370_2.png"'])
@@ -1948,6 +1949,7 @@ class ActivateSkinSettings:
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress200.png"'," "])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress220.png"'," "])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress248.png"'," "])
+			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress270.png"'," "])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress300.png"'," "])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress328.png"'," "])
 			self.skinSearchAndReplace.append([' pixmap="KravenVB/progress/progress370.png"'," "])
@@ -3268,12 +3270,11 @@ class ActivateSkinSettings:
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.MovieSelection.value + ".xml")
 
 		### SerienRecorder
-		self.appendSkinFile(self.daten + config.plugins.KravenVB.SerienRecorder.value + ".xml")
+		if config.plugins.KravenVB.SerienRecorder.value == "serienrecorder":
+			self.appendSkinFile(self.daten + config.plugins.KravenVB.SerienRecorder.value + ".xml")
 
 		### MediaPortal
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/plugin.py"):
-			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/haupt_Screen.xml"):
-				system("rm -r /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/")
 			if config.plugins.KravenVB.MediaPortal.value == "mediaportal":
 				if config.plugins.KravenVB.IBColor.value == "all-screens" and config.plugins.KravenVB.IconStyle.value == "icons-light" and config.plugins.KravenVB.IBStyle.value == "grad":
 					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-light.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
@@ -3291,6 +3292,9 @@ class ActivateSkinSettings:
 					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_IB_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
 				elif config.plugins.KravenVB.IBColor.value == "only-infobar" and config.plugins.KravenVB.IconStyle.value == "icons-dark" and config.plugins.KravenVB.IBStyle.value == "box":
 					system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/MediaPortal_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/; tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/Player_box_icons-dark.tar.gz -C /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/simpleplayer/")
+			else:
+				if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/skin.xml"):
+					system("rm -rf /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB")
 
 		### vti - atv
 		if self.E2DistroVersion == "VTi":

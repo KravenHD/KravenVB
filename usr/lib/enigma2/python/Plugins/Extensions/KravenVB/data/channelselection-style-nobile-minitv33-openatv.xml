@@ -12,12 +12,12 @@
     </widget>
     <widget source="ServiceEvent" render="Label" position="474,100" size="60,25" font="Regular;20" halign="left" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
       <convert type="KravenVBEventTime">StartTime</convert>
-      <convert type="ClockToText">
+      <convert type="KravenVBClockToText">
       </convert>
     </widget>
     <widget source="ServiceEvent" render="Label" position="860,100" size="60,25" font="Regular;20" halign="right" backgroundColor="Kravenbg4" transparent="1" foregroundColor="KravenFont1">
       <convert type="KravenVBEventTime">EndTime</convert>
-      <convert type="ClockToText">
+      <convert type="KravenVBClockToText">
       </convert>
     </widget>
     <widget position="536,111" size="324,5" render="Progress" source="ServiceEvent" transparent="1" zPosition="7" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress328.png">
