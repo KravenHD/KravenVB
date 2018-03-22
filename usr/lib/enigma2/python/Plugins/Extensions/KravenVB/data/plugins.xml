@@ -1810,6 +1810,17 @@
     <constant-widget name="OKExit"/>
     <!--<text="Execute" position="70,0" />-->
   </screen>
+  <!-- QuadPipScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="QuadPipScreen" position="0,0" size="1280,720" >
+    <widget name="ch1" position="160,160" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
+    <widget name="ch2" position="800,160" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
+    <widget name="ch3" position="160,520" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
+    <widget name="ch4" position="800,520" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
+    <widget name="text1" position="53,666" zPosition="2" size="533,40" font="Regular;22" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" halign="center" valign="center" alphatest="on" />
+    <widget name="text2" position="693,666" zPosition="2" size="533,40" font="Regular;22" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" halign="center" valign="center" alphatest="on" />
+    <widget name="focus" position="0,0" zPosition="-1" size="640,360" backgroundColor="Kravenbg" borderWidth="5" borderColor="KravenSelection" alphatest="on" />
+    <!--<text="QuadPipScreen" position="70,0" />-->
+  </screen>
   <!-- CreateQuadPipChannelEntry -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="CreateQuadPipChannelEntry" position="0,0" size="1280,720" title=" " >
     <constant-widget name="Title-big"/>
