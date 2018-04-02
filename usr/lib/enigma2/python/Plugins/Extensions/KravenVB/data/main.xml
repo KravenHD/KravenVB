@@ -19,14 +19,6 @@
     <constant-widget name="Exit"/>
     <!--<text="AtileHD_Config" position="70,0" />-->
   </screen>
-  <!--About -->
-  <screen name="About" position="0,0" size="1280,720" title="About" flags="wfNoBorder" backgroundColor="transparent">
-    <eLabel text="About Vu + Series" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" transparent="1" halign="left" valign="center" />
-	<widget name="FullAbout" position="70,80" size="708,540" font="Regular;24" halign="left" foregroundColor="KravenFont1" backgroundColor="Kravenbg3" scrollbarWidth="5" transparent="1" />
-	<!-- Logo -->
-    <constant-widget name="Exit"/>
-    <!--<text="About" position="70,0" />-->
-  </screen>
   <!-- ********** Menu ********** -->
   <!-- Menu -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="Menu" position="0,0" size="1280,720" title="Main menu">
@@ -623,48 +615,6 @@
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <!--<text="Ipkg" position="70,0" />-->
-  </screen>
- <!-- ChoiceBox -->
-  <screen name="ChoiceBox" position="130,140" size="600,400" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
-    <widget source="Title" render="Label" backgroundColor="Kravenbg" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="530,32" halign="left" valign="center" transparent="1" />
-	<widget name="text" position="20,45" size="530,27" backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" />
-	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="0,80" size="550,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
-	<applet type="onLayoutFinish">
-# this should be factored out into some helper code, but currently demonstrates applets.
-from enigma import eSize, ePoint
-
-orgwidth = self.instance.size().width()
-orgpos = self.instance.position()
-textsize = self["text"].getSize()
-
-# y size still must be fixed in font stuff...
-textsize = (textsize[0] + 70, textsize[1] + 70)
-count = len(self.list)
-if count &gt; 15:
-        count = 15
-offset = 30 * count
-wsizex = textsize[0] + 30
-wsizey = textsize[1] + offset + 20
-
-if (650 &gt; wsizex):
-        wsizex = 650
-wsize = (wsizex, wsizey)
-
-# resize
-self.instance.resize(eSize(*wsize))
-
-# resize label
-self["text"].instance.resize(eSize(*textsize))
-
-# move list
-listsize = (wsizex - 20, 30 * count)
-self["list"].instance.move(ePoint(10, textsize[1]))
-self["list"].instance.resize(eSize(*listsize))
-
-# center window
-newwidth = wsize[0]
-self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
-	</applet>
   </screen>
   <screen backgroundColor="transparent" flags="wfNoBorder" name="Console" position="0,0" size="1280,720" title="Command execution...">
     <widget backgroundColor="Kravenbg3" font="Console;18" name="text" scrollbarWidth="5" position="70,120" size="708,500" transparent="1" foregroundColor="KravenFont1" />
@@ -1951,11 +1901,11 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
       <convert type="FrontendInfo">BER</convert>
     </widget>
     <eLabel backgroundColor="Kravenbg3" font="Regular2;21" foregroundColor="KravenFont2" halign="right" name="lock" position="120,185" size="80,25" text="Lock:" transparent="1" />
-    <widget alphatest="blend" pixmap="skin_default/icons/lock_on.png" position="210,183" render="Pixmap" size="38,31" source="Frontend" zPosition="1">
+    <widget alphatest="blend" pixmap="KravenVB/icons/lock_on.png" position="210,188" render="Pixmap" size="20,20" source="Frontend" zPosition="1">
       <convert type="FrontendInfo">LOCK</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="skin_default/icons/lock_off.png" position="210,183" render="Pixmap" size="8,31" source="Frontend" zPosition="1">
+    <widget alphatest="blend" pixmap="KravenVB/icons/lock_off.png" position="210,188" render="Pixmap" size="20,20" source="Frontend" zPosition="1">
       <convert type="FrontendInfo">LOCK</convert>
       <convert type="ConditionalShowHide">Invert</convert>
     </widget>
@@ -2110,27 +2060,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <constant-widget name="SourceRedGreenYellow"/>
     <constant-widget name="Exit"/>
     <!--<text="BackupSelection" position="70,0" />-->
-  </screen>
-  <!-- InputDeviceSelection -->
-  <screen name="InputDeviceSelection" position="0,0" size="1280,720" title="Select input device" flags="wfNoBorder" backgroundColor="transparent">
-    <widget source="list" render="Listbox" position="68,80" size="708,490" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" zPosition="10" transparent="1">
-      <convert type="TemplatedMultiContent">
-							{"template": [
-									MultiContentEntryPixmapAlphaTest(pos = (2, 8), size = (54, 54), png = 2), # index 3 is the interface pixmap
-									MultiContentEntryText(pos = (65, 6), size = (450, 54), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 1), # index 1 is the interfacename
-								],
-							"fonts": [gFont("Regular", 20),gFont("Regular", 20)],
-							"itemHeight": 70
-							}
-			</convert>
-    </widget>
-    <widget source="introduction" render="Label" position="70,595" size="708,28" zPosition="10" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1" />
-    <constant-widget name="Title-big"/>
-    <constant-widget name="Colorbuttons"/>
-	<!-- Logo -->
-    <constant-widget name="SourceRedGreen"/>
-    <constant-widget name="OKExit"/>
-    <!--<text="InputDeviceSelection" position="70,0" />-->
   </screen>
   <!-- addJob -->
   <screen flags="wfNoBorder" name="addJob" position="0,0" size="1280,720" title="Add Cron Job" backgroundColor="transparent">
@@ -2473,5 +2402,26 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
 	<widget name="scan_progress" position="320,16" size="200,15" borderColor="KravenBorder" borderWidth="2" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress200.png" transparent="1" />
 	<widget name="scan_state" position="600,13" size="650,25" font="Regular;20" foregroundColor="KravenSIBFont1" backgroundColor="KravenSIBbg2" valign="center" transparent="1" />
     <constant-widget name="gradient-sib"/>
+  </screen>
+  <!-- QuitMainloopScreen -->
+  <screen backgroundColor="Kravenbg" name="QuitMainloopScreen" position="0,0" size="1280,720" flags="wfNoBorder">
+    <ePixmap pixmap="KravenVB/global-icons/info.png" position="613,299" size="53,53" alphatest="blend" zPosition="1" />
+	<widget backgroundColor="Kravenbg" name="text" position="208,362" size="864,54" font="Regular;22" foregroundColor="KravenFont1" halign="center" valign="center" zPosition="1" transparent="1" />
+  </screen>
+  <!-- Seekbar -->
+  <screen backgroundColor="transparent" name="Seekbar" position="355,0" size="570,80" flags="wfNoBorder" zPosition="2">
+    <widget name="cursor" position="0,0" size="16,16" pixmap="KravenVB/epg/timeline-now_s.png" alphatest="blend" zPosition="6" />
+    <widget backgroundColor="Kravenbg" name="time" foregroundColor="KravenFont1" font="Regular;22" position="2,40" size="566,27" halign="center" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg" source="session.CurrentService" render="Label" foregroundColor="KravenFont1" font="Regular;22" position="52,17" size="90,27" halign="right" valign="center" transparent="1">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <widget source="session.CurrentService" render="Progress" position="152,28" size="270,5" transparent="1" zPosition="7" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress270.png">
+      <convert type="ServicePosition">Position</convert>
+    </widget>
+    <eLabel position="152,30" size="270,1" backgroundColor="KravenLine" />
+    <widget backgroundColor="Kravenbg" source="session.CurrentService" render="Label" foregroundColor="KravenFont1" font="Regular;22" position="432,17" size="90,27" halign="left" valign="center" transparent="1">
+      <convert type="ServicePosition">Length</convert>
+    </widget>
+	<eLabel backgroundColor="Kravenbg" position="42,0" size="490,80" zPosition="-1" />
   </screen>
   <!-- Main */ -->

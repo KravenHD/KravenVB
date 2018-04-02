@@ -24,7 +24,7 @@
     <eLabel backgroundColor="KravenBorder2" position="822,144" size="3,216" transparent="0" zPosition="4" />
     <eLabel backgroundColor="KravenBorder2" position="1203,144" size="3,216" transparent="0" zPosition="4" />
     <!-- nontransbg */-->
-    <constant-widget name="ChannelSelection"/>
+    <constant-widget name="ChannelSelection-template"/>
     <constant-widget name="gradient-cs"/>
     <constant-widget name="CSREPG22"/>
     <!--<text="ChannelSelection - MiniTV right" position="42,0" />-->

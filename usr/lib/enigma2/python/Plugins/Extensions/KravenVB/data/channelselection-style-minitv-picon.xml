@@ -40,7 +40,7 @@
     <widget backgroundColor="Kravenbg2" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" name="list" position="545,234" serviceInfoFont="Regular;23" serviceItemHeight="33" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="693,396" name="giopet" transparent="1" />
     <!-- nontransbg */-->
     <constant-widget name="CSMTP22"/>
-    <constant-widget name="ChannelSelection"/>
+    <constant-widget name="ChannelSelection-template"/>
     <constant-widget name="gradient-cs"/>
     <!--<text="ChannelSelection - MiniTV Picon" position="42,0" />-->
   </screen>

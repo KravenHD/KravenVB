@@ -21,7 +21,7 @@
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular2;17" foregroundColor="KravenFont2" halign="left" position="822,621" render="Label" size="70,24" source="Service" transparent="1" zPosition="1">
       <convert type="ServiceTime">Duration</convert>
-      <convert type="KravenVBClockToText">AsLength</convert>
+      <convert type="ClockToText">AsLength</convert>
     </widget>
     <widget backgroundColor="Kravenbg2" font="Regular;17" foregroundColor="KravenFont1" halign="center" position="940,621" render="Label" size="180,24" source="Service" transparent="1" zPosition="1">
       <convert type="MovieInfo">RecordServiceName</convert>
@@ -31,7 +31,7 @@
     </widget>
     <!-- nontransbg */-->
 	<constant-widget name="msmc22"/>
-	<constant-widget name="EMCSelection"/>
+	<constant-widget name="EMCSelection-template"/>
     <constant-widget name="gradient-emc"/>
     <!--<text="MovieSelection - MiniTV + Cover" position="70,0" />-->
   </screen>

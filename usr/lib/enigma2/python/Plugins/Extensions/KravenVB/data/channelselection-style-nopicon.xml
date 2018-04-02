@@ -18,7 +18,7 @@
     </widget>
     <widget backgroundColor="Kravenbg4" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" itemHeight="50" name="list" position="500,77" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="738,560" name="giopet" transparent="1" />
     <!-- channelbg */-->
-    <constant-widget name="ChannelSelection"/>
+    <constant-widget name="ChannelSelection-template"/>
     <constant-widget name="gradient-cs"/>
     <constant-widget name="CSNPEPG22"/>
     <!--<text="ChannelSelection - no Picon" position="42,0" />-->

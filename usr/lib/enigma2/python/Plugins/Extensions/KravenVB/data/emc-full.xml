@@ -13,31 +13,31 @@
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="Label" font="Regular2;22" foregroundColor="KravenFont2" position="658,436" size="580,27" halign="right" transparent="1">
 	  <convert type="EMCServiceTime">StartTime</convert>
-	  <convert type="EMCKravenVBClockToText">Date</convert>
+	  <convert type="EMCClockToText">Date</convert>
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="Label" font="Regular;22" foregroundColor="KravenFont1" position="70,469" size="580,27" noWrap="1" halign="left" transparent="1">
 	  <convert type="EMCEventName">Name</convert>
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="Label" font="Regular2;22" foregroundColor="KravenFont2" position="1111,469" size="57,27" halign="right" transparent="1">
 	  <convert type="EMCServiceTime">StartTime</convert>
-	  <convert type="EMCKravenVBClockToText">Format:%H:%M</convert>
+	  <convert type="EMCClockToText">Format:%H:%M</convert>
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="Label" font="Regular2;22" foregroundColor="KravenFont2" position="1168,469" size="70,27" halign="right" transparent="1">
 	  <convert type="EMCServiceTime">EndTime</convert>
-	  <convert type="EMCKravenVBClockToText">Format:- %H:%M</convert>
+	  <convert type="EMCClockToText">Format:- %H:%M</convert>
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" font="Regular;22" foregroundColor="KravenFont1" position="70,501" size="1172,108" transparent="1" halign="left" valign="top">
 	  <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="Label" font="Regular2;22" foregroundColor="KravenFont2" position="70,615" size="134,27" halign="left" transparent="1">
 	  <convert type="EMCServiceTime">Duration</convert>
-	  <convert type="EMCKravenVBClockToText">InMinutes</convert>
+	  <convert type="EMCClockToText">InMinutes</convert>
 	</widget>
 	<widget backgroundColor="Kravenbg" source="Service" render="Label" font="Regular2;22" foregroundColor="KravenFont2" position="1104,615" size="134,27" halign="right" transparent="1">
 	  <convert type="EMCMovieInfo">FileSize</convert>
 	</widget>
 	<!-- globalbg */-->
-	<constant-widget name="MovieSelection"/>
+	<constant-widget name="MovieSelection-template"/>
     <constant-widget name="gradient-emc"/>
 	<!--<text="EMCSelection - full" position="70,0" />-->
   </screen>

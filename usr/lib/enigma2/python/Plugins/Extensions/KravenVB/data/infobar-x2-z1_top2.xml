@@ -1,6 +1,6 @@
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_sub_off.png" position="568,23" size="43,22" zPosition="1" />
   <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_sub_on.png" position="568,23" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="2">
-    <convert type="VServiceInfo">SubtitlesAvailable</convert>
+    <convert type="KravenVBServiceInfoEX">SubtitlesAvailable</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_txt_off.png" position="619,23" size="43,22" zPosition="1" />

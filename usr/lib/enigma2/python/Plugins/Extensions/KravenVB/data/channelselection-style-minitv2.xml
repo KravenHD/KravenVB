@@ -30,7 +30,7 @@
     <eLabel backgroundColor="KravenBorder2" position="429,354" size="3,204" transparent="0" zPosition="4" />
     <widget backgroundColor="Kravenbg2" scrollbarMode="showOnDemand" scrollbarWidth="5" picServiceEventProgressbar="KravenVB/progress/progress52.png" colorEventProgressbar="KravenProgress" colorEventProgressbarSelected="KravenProgress" foregroundColorMarkedSelected="green" foregroundColor="KravenFont1" colorEventProgressbarBorder="KravenBorder" colorEventProgressbarBorderSelected="KravenSelFont" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" colorServiceRecording="red" foregroundColorServiceNotAvail="KravenNotAvailable" itemHeight="50" name="list" position="500,70" serviceInfoFont="Regular;23" serviceItemHeight="35" serviceNameFont="Regular;25" serviceNumberFont="Regular;25" size="738,420" transparent="1" />
     <!-- nontransbg */-->
-    <constant-widget name="ChannelSelection"/>
+    <constant-widget name="ChannelSelection-template"/>
     <constant-widget name="gradient-cs"/>
     <constant-widget name="CSMT2EPG22"/>
     <!--<text="ChannelSelection - Dual TV" position="42,0" />-->

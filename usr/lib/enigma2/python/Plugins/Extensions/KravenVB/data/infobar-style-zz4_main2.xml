@@ -39,7 +39,7 @@
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_sub_off.png" position="903,611" size="43,22" zPosition="1" />
   <widget source="session.CurrentService" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_sub_on.png" position="903,611" size="43,22" zPosition="2" alphatest="blend">
-    <convert type="VServiceInfo">SubtitlesAvailable</convert>
+    <convert type="KravenVBServiceInfoEX">SubtitlesAvailable</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_txt_off.png" position="953,611" size="43,22" zPosition="1" />

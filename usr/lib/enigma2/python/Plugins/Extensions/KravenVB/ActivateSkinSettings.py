@@ -27,7 +27,7 @@ from Tools.Directories import fileExists
 
 try:
 	from boxbranding import getImageDistro
-	if getImageDistro() == "openatv":
+	if getImageDistro() in ("openatv","teamblue"):
 		from lxml import etree
 		from xml.etree.cElementTree import fromstring
 except ImportError:
@@ -508,6 +508,21 @@ config.plugins.KravenVB.ChannelSelectionStyle2 = ConfigSelection(default="channe
 				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
 				("channelselection-style-nobile-minitv3", _("Nobile Preview")),
 				("channelselection-style-nobile-minitv33", _("Nobile Extended Preview")),
+				("channelselection-style-minitv-picon", _("MiniTV Picon"))
+				])
+
+config.plugins.KravenVB.ChannelSelectionStyle3 = ConfigSelection(default="channelselection-style-minitv", choices = [
+				("channelselection-style-nopicon", _("no Picon")),
+				("channelselection-style-nopicon2", _("no Picon2")),
+				("channelselection-style-xpicon", _("X-Picons")),
+				("channelselection-style-zpicon", _("Z-Picons")),
+				("channelselection-style-zzpicon", _("ZZ-Picons")),
+				("channelselection-style-zzzpicon", _("ZZZ-Picons")),
+				("channelselection-style-minitv", _("MiniTV left")),
+				("channelselection-style-minitv4", _("MiniTV right")),
+				("channelselection-style-nobile", _("Nobile")),
+				("channelselection-style-nobile2", _("Nobile 2")),
+				("channelselection-style-nobile-minitv", _("Nobile MiniTV")),
 				("channelselection-style-minitv-picon", _("MiniTV Picon"))
 				])
 
@@ -1138,6 +1153,10 @@ config.plugins.KravenVB.ATVna = ConfigSelection(default="na", choices = [
 				("na", _("not available for openATV"))
 				])
 
+config.plugins.KravenVB.TBna = ConfigSelection(default="na", choices = [
+				("na", _("not available for teamBlue"))
+				])
+
 config.plugins.KravenVB.emptyline = ConfigSelection(default="emptyline", choices = [
 				("emptyline", _("      "))
 				])
@@ -1258,6 +1277,8 @@ class ActivateSkinSettings:
 				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle2.value
 			else:
 				self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle.value
+		elif self.E2DistroVersion == "teamblue":
+			self.actChannelselectionstyle=config.plugins.KravenVB.ChannelSelectionStyle3.value
 
 		### Calculate Backgrounds
 		self.calcBackgrounds()
@@ -1375,7 +1396,15 @@ class ActivateSkinSettings:
 
 		### Menu
 		if self.E2DistroVersion == "VTi":
-			self.skinSearchAndReplace.append(['render="KravenVBMenuPig"', 'render="KravenVBPig3"'])
+			if not self.actChannelselectionstyle in ("channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-nobile-minitv33","channelselection-style-minitv3","channelselection-style-nobile-minitv3"):
+				self.skinSearchAndReplace.append(['render="KravenVBMenuPig"', 'render="Pig"'])
+			else:
+				self.skinSearchAndReplace.append(['render="KravenVBMenuPig"', 'render="KravenVBPig3"'])
+		elif self.E2DistroVersion == "openatv":
+			if not self.actChannelselectionstyle in ("channelselection-style-minitv2","channelselection-style-minitv22","channelselection-style-minitv33","channelselection-style-nobile-minitv33","channelselection-style-minitv3","channelselection-style-nobile-minitv3"):
+				self.skinSearchAndReplace.append(['render="KravenVBMenuPig"', 'render="Pig"'])
+		elif self.E2DistroVersion == "teamblue":
+			self.skinSearchAndReplace.append(['render="KravenVBMenuPig"', 'render="Pig"'])
 		if self.InternetAvailable:
 			if config.plugins.KravenVB.Logo.value == "minitv":
 				self.skinSearchAndReplace.append(['<!-- Logo -->', '<constant-widget name="Logo1"/>'])
@@ -1400,8 +1429,10 @@ class ActivateSkinSettings:
 		### Logo
 		if self.E2DistroVersion == "VTi":
 			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-vti.tar.gz -C /usr/share/enigma2/KravenVB/")
-		else:
+		elif self.E2DistroVersion == "openatv":
 			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-openatv.tar.gz -C /usr/share/enigma2/KravenVB/")
+		elif self.E2DistroVersion == "teamblue":
+			system("tar xf /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/logo-teamblue.tar.gz -C /usr/share/enigma2/KravenVB/")
 
 		### Mainmenu Fontsize
 		if config.plugins.KravenVB.MainmenuFontsize.value == "mainmenu-small":
@@ -2009,7 +2040,7 @@ class ActivateSkinSettings:
 				self.skinSearchAndReplace.append(['scrollbarWidth="5"', 'scrollbarWidth="10"'])
 			elif config.plugins.KravenVB.ScrollBar.value == "scrollbarWidth=15":
 				self.skinSearchAndReplace.append(['scrollbarWidth="5"', 'scrollbarWidth="15"'])
-		elif self.E2DistroVersion == "openatv":
+		elif self.E2DistroVersion in ("openatv","teamblue"):
 			if config.plugins.KravenVB.ScrollBar2.value == "showOnDemand":
 				self.skinSearchAndReplace.append(['scrollbarMode="showNever"', 'scrollbarMode="showOnDemand"'])
 				self.skinSearchAndReplace.append(['scrollbarWidth="5"', ''])
@@ -2183,7 +2214,7 @@ class ActivateSkinSettings:
 		self.skinSearchAndReplace.append(["analog.png", self.analog])
 
 		### HelpMenu
-		if self.E2DistroVersion == "openatv":
+		if self.E2DistroVersion in ("openatv","teamblue"):
 			self.skinSearchAndReplace.append(['skin_default/rc_vu_1.png,skin_default/rc_vu_2.png,skin_default/rc_vu_3.png,skin_default/rc_vu_4.png,skin_default/rc_vu_5.png', 'skin_default/rc.png,skin_default/rcold.png'])
 
 		### KravenIconVPosition
@@ -2259,15 +2290,28 @@ class ActivateSkinSettings:
 					self.skinSearchAndReplace.append([',23" valign="center" foregroundColor="KravenIcon"', ',26" valign="center" foregroundColor="KravenIcon"'])
 				self.skinSearchAndReplace.append([',680" valign="center" foregroundColor="KravenIcon"', ',683" valign="center" foregroundColor="KravenIcon"'])
 
+		### change constant-widgets to panels for teamblue (part #1)
+		if self.E2DistroVersion == "teamblue":
+			self.skinSearchAndReplace.append(['<constant-widgets>', '<!--/* Templates -->'])
+			self.skinSearchAndReplace.append(['</constant-widgets>', '<!-- Templates */-->'])
+			self.skinSearchAndReplace.append(['constant-panels', 'screen'])
+		elif self.E2DistroVersion in ("VTi","openatv"):
+			self.skinSearchAndReplace.append(['constant-panels', 'constant-widget'])
+
 		### Header
-		if (not self.silent and config.usage.movielist_show_picon.value == True) or (self.silent and 'config.usage.movielist_show_picon=true' in self.E2settings):
-			self.skinSearchAndReplace.append(['<parameter name="MovieListMinimalVTITitle" value="27,0,620,27" />', '<parameter name="MovieListMinimalVTITitle" value="27,0,535,27" />'])
 		if config.plugins.KravenVB.EPGListSize.value == "big":
 			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;26" />'])
+		if self.E2DistroVersion == "VTi":
+			if (not self.silent and config.usage.movielist_show_picon.value == True) or (self.silent and 'config.usage.movielist_show_picon=true' in self.E2settings):
+				self.skinSearchAndReplace.append(['<parameter name="MovieListMinimalVTITitle" value="27,0,620,27" />', '<parameter name="MovieListMinimalVTITitle" value="27,0,535,27" />'])
 		self.appendSkinFile(self.daten + "header_begin.xml")
 		if not config.plugins.KravenVB.SelectionBorderList.value == "none":
 			self.appendSkinFile(self.daten + "header_middle.xml")
 		self.appendSkinFile(self.daten + "header_end.xml")
+
+		### change constant-widgets to panels for teamblue (part #2)
+		if self.E2DistroVersion == "teamblue":
+			self.skinSearchAndReplace.append(['constant-widget', 'panel'])
 
 		### Volume
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.Volume.value + ".xml")
@@ -2357,6 +2401,12 @@ class ActivateSkinSettings:
 			else:
 				self.skinSearchAndReplace.append(['render="KravenVBPig3"', 'render="Pig"'])
 				self.appendSkinFile(self.daten + self.actChannelselectionstyle + ".xml")
+		
+		### ChannelSelection - teamblue
+		elif self.E2DistroVersion == "teamblue":
+			self.skinSearchAndReplace.append(['name="giopet"', ''])
+			self.skinSearchAndReplace.append(['render="KravenVBPig3"', 'render="Pig"'])
+			self.appendSkinFile(self.daten + self.actChannelselectionstyle + ".xml")
 
 		### Infobox
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-z1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
@@ -2373,7 +2423,7 @@ class ActivateSkinSettings:
 					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
 					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
-			elif self.E2DistroVersion == "openatv":
+			elif self.E2DistroVersion in ("openatv","teamblue"):
 				if config.plugins.KravenVB.Infobox2.value == "cpu":
 					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
 					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
@@ -2861,7 +2911,7 @@ class ActivateSkinSettings:
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB.value + "-small.xml")
 		else:
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SIB.value + ".xml")
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SecondInfoBar/plugin.py"):
+		if self.E2DistroVersion in ("VTi","openatv") and fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SecondInfoBar/plugin.py"):
 			config.plugins.SecondInfoBar.HideNormalIB.value = True
 			config.plugins.SecondInfoBar.HideNormalIB.save()
 
@@ -3086,12 +3136,9 @@ class ActivateSkinSettings:
 
 		### Plugins
 		self.appendSkinFile(self.daten + "plugins.xml")
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PermanentTimeshift/plugin.py"):
-			config.plugins.pts.showinfobar.value = False
-			config.plugins.pts.showinfobar.save()
 
 		### MSNWeatherPlugin XML
-		if self.E2DistroVersion == "openatv" and self.InternetAvailable:
+		if self.E2DistroVersion in ("openatv","teamblue") and self.InternetAvailable:
 			if fileExists("/usr/lib/enigma2/python/Components/Converter/MSNWeather.pyo"):
 				self.appendSkinFile(self.daten + "MSNWeatherPlugin.xml")
 				if not fileExists("/usr/share/enigma2/KravenVB/msn_weather_icons/1.png"):
@@ -3142,7 +3189,7 @@ class ActivateSkinSettings:
 
 		### NumberZapExt
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.NumberZapExt.value + ".xml")
-		if not self.silent and not config.plugins.KravenVB.NumberZapExt.value == "none":
+		if self.E2DistroVersion in ("VTi","openatv") and not self.silent and not config.plugins.KravenVB.NumberZapExt.value == "none":
 			config.usage.numberzap_show_picon.value = True
 			config.usage.numberzap_show_picon.save()
 			config.usage.numberzap_show_servicename.value = True
@@ -3169,7 +3216,7 @@ class ActivateSkinSettings:
 		### TimerEditScreen
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.TimerEditScreen.value + ".xml")
-		elif self.E2DistroVersion == "openatv":
+		elif self.E2DistroVersion in ("openatv","teamblue"):
 			self.appendSkinFile(self.daten + "timer-openatv.xml")
 
 		### TimerListStyle
@@ -3296,11 +3343,13 @@ class ActivateSkinSettings:
 				if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB/skin.xml"):
 					system("rm -rf /usr/lib/enigma2/python/Plugins/Extensions/MediaPortal/skins_720/KravenVB")
 
-		### vti - atv
+		### vti - openatv - teamblue
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + "vti.xml")
 		elif self.E2DistroVersion == "openatv":
 			self.appendSkinFile(self.daten + "openatv.xml")
+		elif self.E2DistroVersion == "teamblue":
+			self.appendSkinFile(self.daten + "teamblue.xml")
 
 		### skin-user
 		try:
@@ -3408,6 +3457,8 @@ class ActivateSkinSettings:
 			from boxbranding import getImageDistro
 			if getImageDistro() == "openatv":
 				return "openatv"
+			elif getImageDistro() == "teamblue":
+				return "teamblue"
 			elif getImageDistro() == "VTi":
 				return "VTi"
 		except ImportError:
@@ -3431,6 +3482,9 @@ class ActivateSkinSettings:
 			pathname="http://coolskins.de/downloads/kraven/"
 		elif self.E2DistroVersion == "openatv":
 			print "ATV Image found. Use ATV Server"
+			pathname="http://picons.mynonpublic.com/"
+		elif self.E2DistroVersion == "teamblue":
+			print "teamBlue Image found. Use ATV Server"
 			pathname="http://picons.mynonpublic.com/"
 		else:
 			print "No Icons found. Aborted"

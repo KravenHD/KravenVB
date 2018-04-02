@@ -35,7 +35,7 @@
 	<widget name="list" itemWidth="195" position="70,425" size="1170,210" zPosition="3" backgroundColor="Kravenbg2" boxOrientation="horizontal" colorServiceDescription="KravenFont2" colorServiceDescriptionSelected="KravenSelFont" enableWrapAround="1" foregroundColorSelected="KravenSelFont" foregroundColorServiceNotAvail="KravenNotAvailable" colorServiceRecording="red" onlyFullListEntries="true" scrollbarMode="showNever" serviceInfoAlign="center" serviceInfoFont="Regular;22" serviceNameAlign="center" serviceNameFont="Regular2;24" serviceNumberAlign="right" transparent="1" />
     <!-- nontransbg */-->
 	<constant-widget name="CSHORMT"/>
-    <constant-widget name="MovieSelection"/>
+    <constant-widget name="MovieSelection-template"/>
     <constant-widget name="gradient-cs"/>
     <!--<text="ChannelSelectionHorizontal - MiniTV" position="70,0" />-->
   </screen>
