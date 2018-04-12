@@ -521,6 +521,7 @@
     <eLabel backgroundColor="Kravenbg3" font="Regular2;23" position="70,80" size="708,28" text="Movielist menu" transparent="1" foregroundColor="KravenFont2" />
     <widget backgroundColor="Kravenbg3" name="menu" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,123" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="3" />
     <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
     <constant-widget name="OKExit"/>
     <!--<text="MovieContextMenu" position="70,0" />-->
@@ -1862,13 +1863,13 @@
   </screen>
   <!-- QuadPipScreen -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="QuadPipScreen" position="0,0" size="1280,720" >
-    <widget name="ch1" position="160,160" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
-    <widget name="ch2" position="800,160" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
-    <widget name="ch3" position="160,520" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
-    <widget name="ch4" position="800,520" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" alphatest="on" />
-    <widget name="text1" position="53,666" zPosition="2" size="533,40" font="Regular;22" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" halign="center" valign="center" alphatest="on" />
-    <widget name="text2" position="693,666" zPosition="2" size="533,40" font="Regular;22" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" halign="center" valign="center" alphatest="on" />
-    <widget name="focus" position="0,0" zPosition="-1" size="640,360" backgroundColor="Kravenbg" borderWidth="5" borderColor="KravenSelection" alphatest="on" />
+    <widget name="ch1" position="160,160" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" />
+    <widget name="ch2" position="800,160" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" />
+    <widget name="ch3" position="160,520" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" />
+    <widget name="ch4" position="800,520" zPosition="1" size="320,40" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" halign="center" valign="center" />
+    <widget name="text1" position="53,666" zPosition="2" size="533,40" font="Regular;22" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" halign="center" valign="center" />
+    <widget name="text2" position="693,666" zPosition="2" size="533,40" font="Regular;22" foregroundColor="KravenIBFont1" backgroundColor="KravenIBbg" halign="center" valign="center" />
+    <widget name="focus" position="0,0" zPosition="-1" size="640,360" backgroundColor="Kravenbg" borderWidth="5" borderColor="KravenSelection" />
     <!--<text="QuadPipScreen" position="70,0" />-->
   </screen>
   <!-- CreateQuadPipChannelEntry -->
@@ -2063,9 +2064,10 @@
     <!--<text="MerlinMusicPlayerScreen" position="70,0" />-->
   </screen>
   <!-- MerlinMusicPlayerScreenSaver -->
-  <screen name="MerlinMusicPlayerScreenSaver" position="0,0" size="1280,720" title="Merlin Music Player ScreenSaver" flags="wfNoBorder" backgroundColor="Kravenbg">
+  <screen name="MerlinMusicPlayerScreenSaver" position="0,0" size="1280,720" title="Merlin Music Player ScreenSaver" flags="wfNoBorder" backgroundColor="transparent">
     <widget name="coverArt" pixmap="KravenVB/mmp/no_coverArt.png" position="200,77" size="256,256" transparent="1" alphatest="blend" />
-    <widget name="display" position="200,371" size="1280,24" zPosition="1" transparent="1" font="Regular;20" foregroundColor="KravenFont1" />
+    <widget backgroundColor="#00000000" name="display" position="200,371" size="1280,24" font="Regular;20" foregroundColor="#00ffffff" zPosition="1" transparent="1" />
+    <eLabel backgroundColor="#00000000" position="0,0" size="1280,720" zPosition="-1" />
   </screen>
   <!-- MerlinMusicPlayerSetup -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="MerlinMusicPlayerSetup" position="0,0" size="1280,720" title="Merlin Music Player">

@@ -21,8 +21,7 @@
     <convert type="KravenVBClockToText">Default</convert>
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_off.png" position="515,673" size="43,22" zPosition="2" />
-  <widget source="session.FrontendInfo" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="515,673" zPosition="2" size="43,22" alphatest="blend">
-    <convert type="KravenVBFrontendInfo">RECORD</convert>
+  <widget source="session.RecordState" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="515,673" zPosition="2" size="43,22" alphatest="blend">
     <convert type="ConditionalShowHide">recordblink</convert>
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_hbbtv_off.png" position="570,673" size="43,22" zPosition="1" />

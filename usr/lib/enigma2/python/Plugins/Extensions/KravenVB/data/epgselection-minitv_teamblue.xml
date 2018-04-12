@@ -4,7 +4,7 @@
     <widget backgroundColor="KravenIBCoolbg" alphatest="blend" position="820,14" render="Picon" size="67,40" source="Service" transparent="1" zPosition="4">
       <convert type="ServiceName">Reference</convert>
     </widget>
-	<widget backgroundColor="Kravenbg2" name="list" font="Regular;22" foregroundColor="EPGSelection" itemHeight="30" position="70,75" size="708,540" zPosition="3" scrollbarMode="showOnDemand" scrollbarWidth="5" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg2" name="list" foregroundColor="KravenFont1" setEventItemFont="Regular;22" setEventTimeFont="Regular;16" setTimeWidth="90" setIconDistance="8" setIconShift="0" setColWidths="50,120" setColGap="10" itemHeight="30" position="70,75" size="708,540" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
     <widget source="session.VideoPicture" render="Pig" position="820,75" size="368,207" zPosition="3" backgroundColor="transparent" />
     <eLabel backgroundColor="#00000000" position="820,75" size="368,207" transparent="0" zPosition="2" />
     <eLabel backgroundColor="KravenBorder2" position="820,75" size="368,3" transparent="0" zPosition="4" />
@@ -26,14 +26,14 @@
     <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
 	<widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <constant-widget name="MenuOKExit"/>
     <!--<text="EPGSelection" position="70,0" />-->
   </screen>
     <!-- EPGSearch -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="EPGSearch" position="0,0" size="1280,720" title="EPG Selection">
     <widget backgroundColor="KravenIBCoolbg" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" render="Label" size="1000,46" source="Title" transparent="1" halign="left" valign="center" noWrap="1" />
-	<widget backgroundColor="Kravenbg2" name="list" foregroundColor="KravenFont1" font="Regular;22" itemHeight="60" position="70,75" size="708,540" zPosition="3" scrollbarMode="showOnDemand" scrollbarWidth="5" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg2" name="list" foregroundColor="KravenFont1" setEventItemFont="Regular;22" setEventTimeFont="Regular;16" setTimeWidth="90" setIconDistance="8" setIconShift="0" setColWidths="50,120" setColGap="10" itemHeight="30" position="70,75" size="708,540" zPosition="3" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
     <widget source="session.VideoPicture" render="Pig" position="820,75" size="368,207" zPosition="3" backgroundColor="transparent" />
     <eLabel backgroundColor="#00000000" position="820,75" size="368,207" transparent="0" zPosition="2" />
     <eLabel backgroundColor="KravenBorder2" position="820,75" size="368,3" transparent="0" zPosition="4" />
@@ -49,10 +49,10 @@
       <convert type="KravenVBClockToText">Default</convert>
     </widget>
 	<!-- Menu ibar -->
-    <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-	<widget font="Regular;20" halign="left" valign="top" noWrap="1" name="key_green" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="key_red" render="Label" position="70,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+	<widget font="Regular;20" halign="left" valign="center" source="key_green" render="Label" position="320,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="key_yellow" render="Label" position="570,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="key_blue" render="Label" position="820,665" size="220,26" backgroundColor="KravenIBCoolbg" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <constant-widget name="MenuOKExit"/>
     <!--<text="EPGSearch" position="70,0" />-->
   </screen>
