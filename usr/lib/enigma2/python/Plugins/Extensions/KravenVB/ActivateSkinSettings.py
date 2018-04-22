@@ -1128,9 +1128,9 @@ config.plugins.KravenVB.Unskinned = ConfigSelection(default="none", choices = [
 				("unskinned-colors-on", _("on"))
 				])
 
-config.plugins.KravenVB.UnwatchedColorList = ConfigSelection(default="F0A30A", choices = ColorSelfList)
-config.plugins.KravenVB.UnwatchedColorSelf = ConfigText(default="F0A30A")
-config.plugins.KravenVB.UnwatchedColor = ConfigText(default="F0A30A")
+config.plugins.KravenVB.UnwatchedColorList = ConfigSelection(default="ffffff", choices = ColorSelfList)
+config.plugins.KravenVB.UnwatchedColorSelf = ConfigText(default="ffffff")
+config.plugins.KravenVB.UnwatchedColor = ConfigText(default="ffffff")
 
 config.plugins.KravenVB.WatchingColorList = ConfigSelection(default="0050EF", choices = ColorSelfList)
 config.plugins.KravenVB.WatchingColorSelf = ConfigText(default="0050EF")
@@ -2019,9 +2019,13 @@ class ActivateSkinSettings:
 		### Runningtext
 		if config.plugins.KravenVB.RunningText.value == "none":
 			self.skinSearchAndReplace.append(["movetype=running", "movetype=none"])
-		if not config.plugins.KravenVB.RunningText.value == "none":
+		else:
 			self.skinSearchAndReplace.append(["startdelay=5000", config.plugins.KravenVB.RunningText.value])
+			
+			# vertical RunningText
 			self.skinSearchAndReplace.append(["steptime=90", config.plugins.KravenVB.RunningTextSpeed.value])
+			
+			# horizontal RunningText
 			if config.plugins.KravenVB.RunningTextSpeed.value == "steptime=200":
 				self.skinSearchAndReplace.append(["steptime=80", "steptime=66"])
 			elif config.plugins.KravenVB.RunningTextSpeed.value == "steptime=100":
@@ -2315,6 +2319,19 @@ class ActivateSkinSettings:
 
 		### Volume
 		self.appendSkinFile(self.daten + config.plugins.KravenVB.Volume.value + ".xml")
+
+		### ChannelSelection - horizontal RunningText
+		if not self.BoxName == "solo2":
+			if config.plugins.KravenVB.RunningTextSpeed.value == "steptime=200":
+				self.skinSearchAndReplace.append(['render="RunningTextEmptyEpg2"', 'render="KravenVBRunningText" options="movetype=running,startpoint=0,' + config.plugins.KravenVB.RunningText.value + ',steptime=66,wrap=0,always=0,repeat=2,oneshot=1"'])
+			elif config.plugins.KravenVB.RunningTextSpeed.value == "steptime=100":
+				self.skinSearchAndReplace.append(['render="RunningTextEmptyEpg2"', 'render="KravenVBRunningText" options="movetype=running,startpoint=0,' + config.plugins.KravenVB.RunningText.value + ',steptime=33,wrap=0,always=0,repeat=2,oneshot=1"'])
+			elif config.plugins.KravenVB.RunningTextSpeed.value == "steptime=66":
+				self.skinSearchAndReplace.append(['render="RunningTextEmptyEpg2"', 'render="KravenVBRunningText" options="movetype=running,startpoint=0,' + config.plugins.KravenVB.RunningText.value + ',steptime=22,wrap=0,always=0,repeat=2,oneshot=1"'])
+			elif config.plugins.KravenVB.RunningTextSpeed.value == "steptime=50":
+				self.skinSearchAndReplace.append(['render="RunningTextEmptyEpg2"', 'render="KravenVBRunningText" options="movetype=running,startpoint=0,' + config.plugins.KravenVB.RunningText.value + ',steptime=17,wrap=0,always=0,repeat=2,oneshot=1"'])
+		else:
+			self.skinSearchAndReplace.append(['render="RunningTextEmptyEpg2"', 'render="KravenVBEmptyEpg2"'])
 
 		### ChannelSelection - VTi
 		if self.E2DistroVersion == "VTi":
@@ -3246,16 +3263,23 @@ class ActivateSkinSettings:
 				self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;26" foregroundColor="KravenFont1" itemHeight="36"'])
 			else:
 				self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" itemHeight="30"', 'font="Regular;22" foregroundColor="KravenFont1" itemHeight="30"'])
+		elif self.E2DistroVersion == "teamblue":
+			if config.plugins.KravenVB.EPGListSize.value == "big":
+				self.skinSearchAndReplace.append(['teamBlueEPGListSkinParameter="EPGSelection_EPGSearch"', 'setEventItemFont="Regular;26" setEventTimeFont="Regular;21" setTimeWidth="104" setIconDistance="8" setIconShift="0" setColWidths="58,138" setColGap="10" itemHeight="35" position="70,80" size="708,525"']) # EPGSelection, EPGSearch
+				self.skinSearchAndReplace.append(['teamBlueEPGListSkinParameter="EPGSelectionMulti"', 'setEventItemFont="Regular;26" setEventTimeFont="Regular;21" setTimeWidth="104" setIconDistance="8" setIconShift="0" setColWidths="230,115" setColGap="10" itemHeight="35" position="50,135" size="1180,350"']) # EPGSelectionMulti
+			else:
+				self.skinSearchAndReplace.append(['teamBlueEPGListSkinParameter="EPGSelection_EPGSearch"', 'setEventItemFont="Regular;22" setEventTimeFont="Regular;18" setTimeWidth="90" setIconDistance="8" setIconShift="0" setColWidths="50,120" setColGap="10" itemHeight="30" position="70,80" size="708,540"']) # EPGSelection, EPGSearch
+				self.skinSearchAndReplace.append(['teamBlueEPGListSkinParameter="EPGSelectionMulti"', 'setEventItemFont="Regular;22" setEventTimeFont="Regular;18" setTimeWidth="90" setIconDistance="8" setIconShift="0" setColWidths="200,100" setColGap="10" itemHeight="30" position="50,135" size="1180,360"']) # EPGSelectionMulti
 		if config.plugins.KravenVB.EPGSelectionEPGSize.value == "big":
 			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,329" size="418,270"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,329" size="418,270"'])
 			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,294" size="418,297"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,294" size="418,300"'])
-			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,110" size="418,486"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,110" size="418,480"'])
-			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,75" size="418,532"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,75" size="418,510"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,115" size="418,486"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,115" size="418,480"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,80" size="418,532"', 'font="Regular;24" foregroundColor="KravenFont1" position="820,80" size="418,510"'])
 		else:
 			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,329" size="418,270"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,329" size="418,270"'])
 			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,294" size="418,297"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,294" size="418,297"'])
-			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,110" size="418,486"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,110" size="418,486"'])
-			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,75" size="418,532"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,75" size="418,532"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,115" size="418,486"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,115" size="418,486"'])
+			self.skinSearchAndReplace.append(['font="Regular;22" foregroundColor="EPGSelection" position="820,80" size="418,532"', 'font="Regular;22" foregroundColor="KravenFont1" position="820,80" size="418,532"'])
 		if self.E2DistroVersion in ("VTi","openatv"):
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.EPGSelection.value + ".xml")
 		elif self.E2DistroVersion == "teamblue":
@@ -3301,6 +3325,12 @@ class ActivateSkinSettings:
 		### VerticalEPG
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.VerticalEPG.value + ".xml")
+
+		### MovieSelection (MovieList) Font-Size - teamblue
+		if self.E2DistroVersion == "teamblue":
+			self.skinSearchAndReplace.append(['name="MovieList-teamblue"', 'fontName="Regular" fontSizesOriginal="22,20,20" fontSizesCompact="22,20" fontSizesMinimal="22,20" itemHeights="90,54,30" pbarShift="7" pbarHeight="16" pbarLargeWidth="48" partIconeShiftMinimal="5" partIconeShiftCompact="5" partIconeShiftOriginal="5" spaceIconeText="4" iconsWidth="25" trashShift="3" dirShift="3" spaceRight="2" columnsOriginal="200,220" columnsCompactDescription="140,160,180" compactColumn="220" treeDescription="180"'])
+		elif self.E2DistroVersion in ("VTi","openatv"):
+			self.skinSearchAndReplace.append([' name="MovieList-teamblue" ', ' '])
 
 		### MovieSelection (Event-Description) Font-Size
 		if config.plugins.KravenVB.MovieSelection.value == "movieselection-no-cover":

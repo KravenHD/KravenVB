@@ -634,7 +634,7 @@
     <widget backgroundColor="Kravenbg" font="Regular;22" halign="center" name="next_text" position="220,80" size="150,30" text="NEXT" transparent="1" zPosition="10" />
     <widget backgroundColor="Kravenbg" font="Regular;22" halign="center" name="more_text" position="370,80" size="150,30" text="MORE" transparent="1" zPosition="10" />
     <widget backgroundColor="Kravenbg" font="Regular;22" halign="right" name="date" position="960,80" size="250,30" transparent="1" valign="center" />
-    <widget backgroundColor="Kravenbg" name="list" foregroundColor="KravenFont1" setEventItemFont="Regular;22" setEventTimeFont="Regular;16" setTimeWidth="90" setIconDistance="8" setIconShift="0" setColWidths="200,100" setColGap="10" itemHeight="30" position="50,135" size="1180,360" enableWrapAround="1" transparent="1" />
+    <widget backgroundColor="Kravenbg" name="list" foregroundColor="KravenFont1" teamBlueEPGListSkinParameter="EPGSelectionMulti" enableWrapAround="1" transparent="1" />
     <widget backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" halign="left" position="50,508" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" size="1180,135" source="Event" transparent="1">
       <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
     </widget>

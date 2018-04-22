@@ -8,7 +8,7 @@
     <widget source="Service" render="Label" position="512,75" size="266,25" font="Regular;19" foregroundColor="KravenFont2" backgroundColor="Kravenbg" transparent="1" halign="right">
 	  <convert type="KravenVBDiskSpace">both</convert>
     </widget>
-    <widget name="list" position="70,105" size="708,540" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget name="list" position="70,105" size="708,540" name="MovieList-teamblue" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget source="Service" render="Label" position="822,75" size="312,60" font="Regular2;24" halign="left" valign="top" backgroundColor="Kravenbg" foregroundColor="KravenFont2" transparent="1">
       <convert type="KravenVBEventName">Name</convert>
     </widget>

@@ -1601,7 +1601,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
    <!-- PluginDownloadBrowser -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginDownloadBrowser" position="0,0" size="1280,720" title="Downloadable plugins">
     <widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,550" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" zPosition="4" />
-    <widget font="Regular2;22" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" halign="center" name="text" position="70,662" size="708,48" transparent="1" valign="center" zPosition="1" />
+    <widget font="Regular2;22" backgroundColor="KravenIBbg3" foregroundColor="KravenMFont2" halign="center" name="text" position="70,662" size="708,48" transparent="1" valign="center" zPosition="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="OKExit"/>
@@ -1854,6 +1854,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="lock_state" position="160,560" size="200,25" transparent="1" />
     <eLabel backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" position="70,560" size="80,25" text="Lock:" transparent="1" />
     <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
     <constant-widget name="Exit"/>
     <!--<text="PositionerSetup" position="70,0" />-->
@@ -1889,6 +1890,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="120,249" size="600,330" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="introduction" position="70,595" size="708,28" transparent="1" />
     <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
     <constant-widget name="OKExit"/>
     <!--<text="Satfinder" position="70,0" />-->
@@ -1898,6 +1900,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
 	<eLabel text="Service scan" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,480" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="introduction" position="70,595" size="708,28" transparent="1" />
+    <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
     <constant-widget name="OKExit"/>
     <!--<text="ScanSetup" position="70,0" />-->
@@ -1908,35 +1911,37 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,130" size="708,450" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" halign="center" name="footer" position="70,595" size="708,28" transparent="1" />
     <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
 	<!-- Logo -->
     <constant-widget name="OKExit"/>
     <!--<text="ScanSimple" position="70,0" />-->
   </screen>
   <!-- ServiceScan -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="ServiceScan" position="0,0" size="1280,720" title="Service Scan">
-    <widget alphatest="blend" pixmap="skin_default/icons/scan-s.png" position="707,120" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
+    <widget alphatest="blend" pixmap="KravenVB/menu/dvb-s.png" position="714,80" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
       <convert type="FrontendInfo">TYPE</convert>
       <convert type="ValueRange">0,0</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="skin_default/icons/scan-c.png" position="707,120" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
+    <widget alphatest="blend" pixmap="KravenVB/menu/dvb-c.png" position="714,80" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
       <convert type="FrontendInfo">TYPE</convert>
       <convert type="ValueRange">1,1</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="skin_default/icons/scan-t.png" position="707,120" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
+    <widget alphatest="blend" pixmap="KravenVB/menu/dvb-t.png" position="714,80" render="Pixmap" size="64,64" source="FrontendInfo" transparent="1">
       <convert type="FrontendInfo">TYPE</convert>
       <convert type="ValueRange">2,2</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="network" position="70,120" size="600,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="transponder" position="70,150" size="600,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="scan_state" position="70,180" size="600,25" transparent="1" zPosition="2" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;20" foregroundColor="KravenFont2" name="pass" position="70,210" size="600,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="scan_progress" foregroundColor="KravenProgress" position="70,250" size="599,15" pixmap="KravenVB/progress/progress599.png" borderColor="KravenBorder" borderWidth="1" transparent="1" />
-    <widget backgroundColor="Kravenbg3" name="servicelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="120,300" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" selectionDisabled="1" size="600,300" transparent="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="network" position="70,80" size="600,27" transparent="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="transponder" position="70,110" size="600,27" transparent="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="scan_state" position="70,140" size="600,27" transparent="1" />
+    <widget backgroundColor="Kravenbg" font="Regular2;22" foregroundColor="KravenFont2" name="pass" position="70,170" size="600,27" transparent="1" />
+    <widget backgroundColor="Kravenbg" name="scan_progress" foregroundColor="KravenProgress" position="70,210" size="708,15" pixmap="KravenVB/progress/progress708.png" borderColor="KravenBorder" borderWidth="2" transparent="1" />
+    <widget backgroundColor="Kravenbg" name="servicelist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,260" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" selectionDisabled="1" size="708,360" transparent="1" />
     <constant-widget name="Title-big"/>
-	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="Logo2"/>
     <constant-widget name="OKExit"/>
     <!--<text="ServiceScan" position="70,0" />-->
   </screen>

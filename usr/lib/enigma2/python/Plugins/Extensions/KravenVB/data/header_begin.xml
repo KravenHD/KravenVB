@@ -157,7 +157,7 @@
     <parameter name="ChoicelistFont" value="Regular;22" />
     <parameter name="ChoicelistFontSize" value="20" />
     <parameter name="ChoicelistName" value="47,1,1147,28" />
-    <parameter name="ChoicelistIcon" value="7,3,40,27" />
+    <parameter name="ChoicelistIcon" value="7,0,40,30" />
     <parameter name="ChoicelistDash" value="0,24,1147,20" />
     <!-- PiconManagerList -->
     <parameter name="PiconManagerList" value="7,4,1117,27" />
