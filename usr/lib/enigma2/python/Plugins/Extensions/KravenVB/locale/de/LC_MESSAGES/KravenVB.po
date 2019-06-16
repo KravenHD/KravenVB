@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: KravenVB\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-06 23:16+0200\n"
-"PO-Revision-Date: 2018-04-01 12:54+0200\n"
+"PO-Revision-Date: 2019-06-10 18:09+0200\n"
 "Last-Translator: örlgrey <ochzoetna@gmail.com>\n"
 "Language-Team: kraven & mike99\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: KravenVBWeather.py
@@ -1593,6 +1593,28 @@ msgid "No Accu ID found"
 msgstr "Keine Accu-ID gefunden"
 
 #: KravenVB.py
+msgid "Accuweather API Key"
+msgstr "Accuweather API-Schlüssel"
+
+#: KravenVB.py
+msgid ""
+"Press OK to enter your API Key.\n"
+"You will receive the key at\n"
+"https://developer.accuweather.com/."
+msgstr ""
+"Drücken Sie OK, um Ihren API-Schlüssel einzugeben.\n"
+"Sie erhalten den Schlüssel unter\n"
+"https://developer.accuweather.com/."
+
+#: KravenVB.py
+msgid "API authorization failed"
+msgstr "API-Autorisierung fehlgeschlagen"
+
+#: KravenVB.py
+msgid "API requests exceeded"
+msgstr "API-Anforderungen überschritten"
+
+#: KravenVB.py
 msgid "Choose the font color of android-clock temperature. Press OK to define your own RGB color."
 msgstr "Wählen Sie die Schriftfarbe für die Temperatur-Anzeige der Android-Uhr. Drücken Sie OK, um Ihre eigene RGB-Farbe festzulegen."
 
@@ -2178,27 +2200,27 @@ msgstr "grafisch mit MiniTV"
 
 #: KravenVB.py
 msgid "This sections offers all settings for VerticalEPG."
-msgstr "In diesem Abschnitt finden Sie alle Einstellungen zu Spalten-EPG."
+msgstr "In diesem Abschnitt finden Sie alle Einstellungen zum vertikalen EPG."
 
 #: KravenVB.py
 msgid "Choose from different styles for VerticalEPG."
-msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für \"Spalten-EPG\"."
+msgstr "Wählen Sie eine von verschiedenen Darstellungs-Varianten für das vertikale EPG."
 
 #: KravenVB.py
 msgid "VerticalEPG-Style"
-msgstr "Spalten-EPG-Stil"
+msgstr "Vertikal-EPG-Stil"
 
 #: KravenVB.py
 msgid "Choose the border color for VerticalEPG. Press OK to define your own RGB color."
-msgstr "Wählen Sie die Rahmenfarbe für \"Spalten-EPG\". Drücken Sie OK, um Ihre eigene RGB-Farbe festzulegen."
+msgstr "Wählen Sie die Rahmenfarbe für das vertikale EPG. Drücken Sie OK, um Ihre eigene RGB-Farbe festzulegen."
 
 #: KravenVB.py
 msgid "VERTICALEPG ______________________________________________________________"
-msgstr "SPALTEN-EPG ______________________________________________________________"
+msgstr "VERTIKAL-EPG _____________________________________________________________"
 
 #: KravenVB.py
 msgid "VerticalEPG"
-msgstr "Spalten-EPG"
+msgstr "Vertikales EPG"
 
 #: KravenVB.py
 msgid "description"
@@ -2451,3 +2473,11 @@ msgstr "Birthday Reminder Einstellungen"
 #: KravenVBTextTranslator.py
 msgid "Select a path for the birthday file"
 msgstr "Wähle den Pfad für die Geburtstagsdatei"
+
+#: KravenVB.py
+msgid "VTi-EPGList"
+msgstr "VTi-EPGListe"
+
+#: KravenVB.py
+msgid "Choose whether use VTi-EPGList in channellist or not."
+msgstr "Wählen Sie, ob Sie die VTi-EPGListe in der Kanalliste verwenden möchten oder nicht."

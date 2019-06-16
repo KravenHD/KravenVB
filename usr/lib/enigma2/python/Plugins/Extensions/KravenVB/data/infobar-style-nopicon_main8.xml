@@ -69,16 +69,20 @@
       <convert type="ValueRange">1081,5000</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="334,687" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="1">
-      <convert type="KravenVBEventName">Dolby_off</convert>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="334,687" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="KravenFHDDolby">Dolby_off</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_51.png" position="334,687" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="2">
-      <convert type="KravenVBEventName">Dolby51</convert>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="334,687" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="KravenFHDDolby">Dolby</convert>
       <convert type="ConditionalShowHide" />
     </widget>
-    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_20.png" position="334,687" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="3">
-      <convert type="KravenVBEventName">Dolby20</convert>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_51.png" position="334,687" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="KravenFHDDolby">Dolby51</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_20.png" position="334,687" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+      <convert type="KravenFHDDolby">Dolby20</convert>
       <convert type="ConditionalShowHide" />
     </widget>
     <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_crypt_off.png" position="384,687" size="43,22" zPosition="1" />

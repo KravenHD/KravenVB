@@ -5,7 +5,7 @@
   <widget source="Title" render="Label" position="1000,235" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
     <convert type="KravenVBTextTranslator">signal</convert>
   </widget>
-  <widget source="Title" render="Label" position="1000,235" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
+  <widget source="Title" render="Label" position="1000,255" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">
     <convert type="KravenVBTextTranslator">video</convert>
   </widget>
   <widget source="Title" render="Label" position="1000,275" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenIBbg" transparent="1" foregroundColor="KravenIBFont2">

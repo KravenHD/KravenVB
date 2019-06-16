@@ -569,6 +569,7 @@
   <screen backgroundColor="transparent" flags="wfNoBorder" name="AudioSetup" position="0,0" size="1280,720" title="Setup">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
   	<!-- Logo -->
 	<constant-widget name="Colorbuttons"/>
 	<constant-widget name="SourceRedGreen"/>
@@ -579,6 +580,7 @@
   <screen backgroundColor="transparent" flags="wfNoBorder" name="setup_subtitlesetup" position="0,0" size="1280,720" title="Setup">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
   	<!-- Logo -->
 	<constant-widget name="Colorbuttons"/>
 	<constant-widget name="SourceRedGreen"/>
@@ -589,6 +591,7 @@
   <screen backgroundColor="transparent" flags="wfNoBorder" name="setup_autolanguagesetup" position="0,0" size="1280,720" title="Setup">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
   	<!-- Logo -->
 	<constant-widget name="Colorbuttons"/>
 	<constant-widget name="SourceRedGreen"/>
@@ -742,4 +745,28 @@
 	<constant-widget name="Colorbuttons"/>
 	<constant-widget name="OKExit"/>
     <!--<text="ContactInfo" position="70,0" />-->
+  </screen>
+  <!-- VirtualKeyBoard -->
+  <screen name="VirtualKeyBoard" position="center,center" backgroundColor="Kravenbg" flags="wfNoBorder" size="560,366" zPosition="99">
+    <widget backgroundColor="Kravenbg" name="header" position="10,10" size="540,27" font="Regular;22" foregroundColor="KravenFont2" transparent="1" noWrap="1" />
+    <eLabel backgroundColor="KravenBorder" position="10,45" size="540,2" zPosition="-1" />
+    <eLabel backgroundColor="KravenBorder" position="10,125" size="540,2" zPosition="-1" />
+    <eLabel backgroundColor="KravenBorder" position="10,45" size="2,40" zPosition="-1" />
+    <eLabel backgroundColor="KravenBorder" position="548,45" size="2,40" zPosition="-1" />
+    <widget backgroundColor="Kravenbg" name="text" position="12,47" size="536,35" font="Regular;28" foregroundColor="KravenFont1" valign="center" noWrap="1" transparent="1" />
+    <widget backgroundColor="#00101B2F" name="list" position="10,94" size="540,225" selectionDisabled="1" foregroundColor="white" transparent="1" />
+    <widget backgroundColor="Kravenbg" source="country" render="Label" position="10,331" size="540,27" font="Regular;22" foregroundColor="KravenFont1" transparent="1" noWrap="1" />
+    <eLabel backgroundColor="KravenBorder" position="0,0" size="560,2" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder" position="0,364" size="560,2" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder" position="0,0" size="2,366" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder" position="558,0" size="2,366" zPosition="2" />
+  </screen>
+  <!-- Console -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Console" position="0,0" size="1280,720" title="Command execution...">
+    <widget backgroundColor="Kravenbg3" font="Console;18" name="text" scrollbarWidth="5" position="70,120" size="708,500" transparent="1" foregroundColor="KravenFont1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="Console" position="70,0" />-->
   </screen>

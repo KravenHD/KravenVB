@@ -42,5 +42,9 @@
     <constant-widget name="CSMTP22"/>
     <constant-widget name="ChannelSelection-template"/>
     <constant-widget name="gradient-cs"/>
+    <!--ChannellistEPGList-SNP backgroundColor="Kravenbg2" name="epglist" position="40,514" size="470,108" foregroundColor="KravenFont2" itemHeight="27" scrollbarMode="never" transparent="1" ChannellistEPGList-SNP-->
+    <!--ChannellistEPGList-BNP backgroundColor="Kravenbg2" name="epglist" position="40,514" size="470,81" foregroundColor="KravenFont2" itemHeight="30" scrollbarMode="never" transparent="1" ChannellistEPGList-BNP-->
+    <!--ChannellistEPGList-SP backgroundColor="Kravenbg2" name="epglist" position="40,506" size="470,120" foregroundColor="KravenFont2" itemHeight="27" scrollbarMode="never" transparent="1" ChannellistEPGList-SP-->
+    <!--ChannellistEPGList-BP backgroundColor="Kravenbg2" name="epglist" position="40,506" size="470,90" foregroundColor="KravenFont2" itemHeight="30" scrollbarMode="never" transparent="1" ChannellistEPGList-BP-->
     <!--<text="ChannelSelection - MiniTV Picon" position="42,0" />-->
   </screen>

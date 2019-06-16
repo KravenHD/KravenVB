@@ -526,6 +526,11 @@ config.plugins.KravenVB.ChannelSelectionStyle3 = ConfigSelection(default="channe
 				("channelselection-style-minitv-picon", _("MiniTV Picon"))
 				])
 
+config.plugins.KravenVB.ChannellistEPGList = ConfigSelection(default="channellistepglist-off", choices = [
+				("channellistepglist-on", _("on")),
+				("channellistepglist-off", _("off"))
+				])
+
 config.plugins.KravenVB.ChannelSelectionMode = ConfigSelection(default="zap", choices = [
 				("zap", _("Zap (1xOK)")),
 				("preview", _("Preview (2xOK)"))
@@ -647,12 +652,18 @@ config.plugins.KravenVB.VerticalEPG = ConfigSelection(default="verticalepg-minit
 				("verticalepg-full", _("full"))
 				])
 
+config.plugins.KravenVB.VerticalEPG2 = ConfigSelection(default="verticalepg-full", choices = [
+				("verticalepg-minitv3", _("MiniTV")),
+				("verticalepg-full", _("full"))
+				])
+
 config.plugins.KravenVB.VEPGBorderList = ConfigSelection(default="ffffff", choices = ColorSelfList)
 config.plugins.KravenVB.VEPGBorderSelf = ConfigText(default="ffffff")
 config.plugins.KravenVB.VEPGBorder = ConfigText(default="ffffff")
 
 config.plugins.KravenVB.MovieSelection = ConfigSelection(default="movieselection-no-cover", choices = [
 				("movieselection-no-cover", _("no Cover")),
+				("movieselection-no-cover2", _("no Cover2")),
 				("movieselection-small-cover", _("small Cover")),
 				("movieselection-big-cover", _("big Cover")),
 				("movieselection-minitv", _("MiniTV")),
@@ -844,14 +855,8 @@ config.plugins.KravenVB.IBtop = ConfigSelection(default="infobar-x2-z1_top2", ch
 				("infobar-x2-z1_top", _("4 Tuner")),
 				("infobar-x2-z1_top3", _("8 Tuner"))
 				])
-
-config.plugins.KravenVB.Infobox = ConfigSelection(default="sat", choices = [
-				("sat", _("Tuner/Satellite + SNR")),
-				("cpu", _("CPU + Load")),
-				("temp", _("Temperature + Fan"))
-				])
 				
-config.plugins.KravenVB.Infobox2 = ConfigSelection(default="sat", choices = [
+config.plugins.KravenVB.Infobox = ConfigSelection(default="sat", choices = [
 				("sat", _("Tuner/Satellite + SNR")),
 				("db", _("Tuner/Satellite + dB")),
 				("cpu", _("CPU + Load")),
@@ -999,24 +1004,19 @@ config.plugins.KravenVB.TimerListStyle = ConfigSelection(default="timerlist-stan
 				("timerlist-5", _("Style 5"))
 				])
 
-config.plugins.KravenVB.weather_gmcode = ConfigText(default="GM")
 config.plugins.KravenVB.weather_cityname = ConfigText(default = "")
 config.plugins.KravenVB.weather_language = ConfigSelection(default="de", choices = LanguageList)
 config.plugins.KravenVB.weather_server = ConfigSelection(default="_owm", choices = [
-				("_owm", _("OpenWeatherMap")),
-				("_accu", _("Accuweather")),
-				("_realtek", _("RealTek"))
+				("_owm", _("OpenWeatherMap"))
 				])
 
 config.plugins.KravenVB.weather_search_over = ConfigSelection(default="ip", choices = [
 				("ip", _("Auto (IP)")),
-				("name", _("Search String")),
-				("gmcode", _("GM Code"))
+				("name", _("Search String"))
 				])
 
 config.plugins.KravenVB.weather_owm_latlon = ConfigText(default = "")
-config.plugins.KravenVB.weather_accu_latlon = ConfigText(default = "")
-config.plugins.KravenVB.weather_realtek_latlon = ConfigText(default = "")
+config.plugins.KravenVB.weather_accu_apikey = ConfigText(default = "")
 config.plugins.KravenVB.weather_accu_id = ConfigText(default = "")
 config.plugins.KravenVB.weather_foundcity = ConfigText(default = "")
 
@@ -1937,14 +1937,6 @@ class ActivateSkinSettings:
 				self.skinSearchAndReplace.append(['size="70,70" render="KravenVBWetterPicon" alphatest="blend" path="WetterIcons"', 'size="70,70" render="Label" font="Meteo; 60" halign="center" valign="center" foregroundColor="KravenMeteo" noWrap="1"'])
 				self.skinSearchAndReplace.append(['size="100,100" render="KravenVBWetterPicon" alphatest="blend" path="WetterIcons"', 'size="100,100" render="Label" font="Meteo; 1000" halign="center" valign="center" foregroundColor="KravenMeteo" noWrap="1"'])
 				self.skinSearchAndReplace.append(['MeteoIcon</convert>', 'MeteoFont</convert>'])
-		elif config.plugins.KravenVB.weather_server.value == "_realtek":
-			self.skinSearchAndReplace.append(['KravenVBWeather', 'KravenVBWeather_realtek'])
-			if config.plugins.KravenVB.WeatherView.value == "meteo":
-				self.skinSearchAndReplace.append(['size="50,50" render="KravenVBWetterPicon" alphatest="blend" path="WetterIcons"', 'size="50,50" render="Label" font="Meteo; 40" halign="right" valign="center" foregroundColor="KravenMeteo" noWrap="1"'])
-				self.skinSearchAndReplace.append(['size="50,50" path="WetterIcons" render="KravenVBWetterPicon" alphatest="blend"', 'size="50,50" render="Label" font="Meteo; 45" halign="center" valign="center" foregroundColor="KravenMeteo" noWrap="1"'])
-				self.skinSearchAndReplace.append(['size="70,70" render="KravenVBWetterPicon" alphatest="blend" path="WetterIcons"', 'size="70,70" render="Label" font="Meteo; 60" halign="center" valign="center" foregroundColor="KravenMeteo" noWrap="1"'])
-				self.skinSearchAndReplace.append(['size="100,100" render="KravenVBWetterPicon" alphatest="blend" path="WetterIcons"', 'size="100,100" render="Label" font="Meteo; 100" halign="center" valign="center" foregroundColor="KravenMeteo" noWrap="1"'])
-				self.skinSearchAndReplace.append(['MeteoIcon</convert>', 'MeteoFont</convert>'])
 
 		### Meteo-Font
 		if config.plugins.KravenVB.MeteoColor.value == "meteo-dark":
@@ -2302,6 +2294,77 @@ class ActivateSkinSettings:
 		elif self.E2DistroVersion in ("VTi","openatv"):
 			self.skinSearchAndReplace.append(['constant-panels', 'constant-widget'])
 
+		### Channellist-EPGList - VTi
+		if self.E2DistroVersion == "VTi" and config.plugins.KravenVB.alternativeChannellist.value == "none":
+			if config.plugins.KravenVB.ChannellistEPGList.value == "channellistepglist-on":
+				if self.actChannelselectionstyle in ("channelselection-style-nobile","channelselection-style-nobile2","channelselection-style-nobile-minitv","channelselection-style-nobile-minitv3","channelselection-style-nobile-minitv33"):
+					self.skinSearchAndReplace.append(['alias name="EPGListChannelList0" font="Regular" size="23"', 'alias name="EPGListChannelList0" font="Regular" size="19"'])
+					self.skinSearchAndReplace.append(['alias name="EPGListChannelList1" font="Regular" size="23"', 'alias name="EPGListChannelList1" font="Regular" size="19"'])
+					self.skinSearchAndReplace.append(['parameter name="EPGServicelistText0" value="2,1,32,28"', 'parameter name="EPGServicelistText0" value="2,1,26,25"'])
+					self.skinSearchAndReplace.append(['parameter name="EPGServicelistText1" value="34,1,66,28"', 'parameter name="EPGServicelistText1" value="28,1,54,25"'])
+					self.skinSearchAndReplace.append(['parameter name="EPGServicelistText2" value="110,1,62,28"', 'parameter name="EPGServicelistText2" value="92,1,50,25"'])
+					self.skinSearchAndReplace.append(['parameter name="EPGServicelistRecImage" value="170,5,20,20"', 'parameter name="EPGServicelistRecImage" value="146,4,20,20"'])
+					self.skinSearchAndReplace.append(['parameter name="EPGServicelistRecText" value="187,1,600,28"', 'parameter name="EPGServicelistRecText" value="163,1,600,25"'])
+					self.skinSearchAndReplace.append(['parameter name="EPGServicelistNonRecText" value="170,1,600,28"', 'parameter name="EPGServicelistNonRecText" value="146,1,600,25"'])
+					if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
+						self.skinSearchAndReplace.append(['<!--ChannellistEPGList-P', '<widget'])
+						self.skinSearchAndReplace.append(['ChannellistEPGList-P-->', '/>'])
+					else:
+						self.skinSearchAndReplace.append(['<!--ChannellistEPGList-NP', '<widget'])
+						self.skinSearchAndReplace.append(['ChannellistEPGList-NP-->', '/>'])
+				elif self.actChannelselectionstyle == "channelselection-style-minitv22":
+					if config.plugins.KravenVB.ChannelSelectionEPGSize2.value == "small":
+						self.skinSearchAndReplace.append(['alias name="EPGListChannelList0" font="Regular" size="23"', 'alias name="EPGListChannelList0" font="Regular" size="21"'])
+						self.skinSearchAndReplace.append(['alias name="EPGListChannelList1" font="Regular" size="23"', 'alias name="EPGListChannelList1" font="Regular" size="21"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistText0" value="2,1,32,28"', 'parameter name="EPGServicelistText0" value="2,1,28,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistText1" value="34,1,66,28"', 'parameter name="EPGServicelistText1" value="30,1,58,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistText2" value="110,1,62,28"', 'parameter name="EPGServicelistText2" value="98,1,54,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistRecImage" value="170,5,20,20"', 'parameter name="EPGServicelistRecImage" value="154,4,20,20"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistRecText" value="187,1,600,28"', 'parameter name="EPGServicelistRecText" value="171,1,600,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistNonRecText" value="170,1,600,28"', 'parameter name="EPGServicelistNonRecText" value="154,1,600,25"'])
+						if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-SP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-SP-->', '/>'])
+						else:
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-SNP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-SNP-->', '/>'])
+					else:
+						if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-BP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-BP-->', '/>'])
+						else:
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-BNP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-BNP-->', '/>'])
+				else:
+					if config.plugins.KravenVB.ChannelSelectionEPGSize3.value == "small":
+						self.skinSearchAndReplace.append(['alias name="EPGListChannelList0" font="Regular" size="23"', 'alias name="EPGListChannelList0" font="Regular" size="21"'])
+						self.skinSearchAndReplace.append(['alias name="EPGListChannelList1" font="Regular" size="23"', 'alias name="EPGListChannelList1" font="Regular" size="21"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistText0" value="2,1,32,28"', 'parameter name="EPGServicelistText0" value="2,1,28,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistText1" value="34,1,66,28"', 'parameter name="EPGServicelistText1" value="30,1,58,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistText2" value="110,1,62,28"', 'parameter name="EPGServicelistText2" value="98,1,54,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistRecImage" value="170,5,20,20"', 'parameter name="EPGServicelistRecImage" value="154,4,20,20"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistRecText" value="187,1,600,28"', 'parameter name="EPGServicelistRecText" value="171,1,600,25"'])
+						self.skinSearchAndReplace.append(['parameter name="EPGServicelistNonRecText" value="170,1,600,28"', 'parameter name="EPGServicelistNonRecText" value="154,1,600,25"'])
+						if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-SP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-SP-->', '/>'])
+						else:
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-SNP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-SNP-->', '/>'])
+					else:
+						if config.plugins.KravenVB.Primetimeavailable.value == "primetime-on":
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-BP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-BP-->', '/>'])
+						else:
+							self.skinSearchAndReplace.append(['<!--ChannellistEPGList-BNP', '<widget'])
+							self.skinSearchAndReplace.append(['ChannellistEPGList-BNP-->', '/>'])
+			else:
+				self.skinSearchAndReplace.append(['<!--ChannellistSingleEpgList', '<widget'])
+				self.skinSearchAndReplace.append(['ChannellistSingleEpgList-->', 'widget>'])
+		elif self.E2DistroVersion in ("openatv","teamblue"):
+			self.skinSearchAndReplace.append(['<!--ChannellistSingleEpgList', '<widget'])
+			self.skinSearchAndReplace.append(['ChannellistSingleEpgList-->', 'widget>'])
+
 		### Header
 		if self.E2DistroVersion in ("VTi","openatv") and config.plugins.KravenVB.EPGListSize.value == "big":
 			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;26" />'])
@@ -2427,34 +2490,20 @@ class ActivateSkinSettings:
 
 		### Infobox
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-z1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
-			if self.E2DistroVersion == "VTi":
-				if config.plugins.KravenVB.Infobox.value == "cpu":
-					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
-					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
-					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBCpuUsage">$0'])
-				elif config.plugins.KravenVB.Infobox.value == "temp":
-					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
-					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
-					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
-			elif self.E2DistroVersion in ("openatv","teamblue"):
-				if config.plugins.KravenVB.Infobox2.value == "cpu":
-					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
-					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
-					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBCpuUsage">$0'])
-				elif config.plugins.KravenVB.Infobox2.value == "temp":
-					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
-					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
-					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
-					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
-				elif config.plugins.KravenVB.Infobox2.value == "db":
-					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert  type="KravenVBFrontendInfo">SNRdB'])
+			if config.plugins.KravenVB.Infobox.value == "cpu":
+				self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
+				self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
+				self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
+				self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
+				self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBCpuUsage">$0'])
+			elif config.plugins.KravenVB.Infobox.value == "temp":
+				self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
+				self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
+				self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
+				self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
+				self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
+			elif config.plugins.KravenVB.Infobox.value == "db":
+				self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert  type="KravenVBFrontendInfo">SNRdB'])
 
 		### Record State
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
@@ -3155,10 +3204,10 @@ class ActivateSkinSettings:
 		self.appendSkinFile(self.daten + "plugins.xml")
 
 		### MSNWeatherPlugin XML
-		if self.E2DistroVersion in ("openatv","teamblue") and self.InternetAvailable:
+		if self.E2DistroVersion in ("openatv","teamblue"):
 			if fileExists("/usr/lib/enigma2/python/Components/Converter/MSNWeather.pyo"):
 				self.appendSkinFile(self.daten + "MSNWeatherPlugin.xml")
-				if not fileExists("/usr/share/enigma2/KravenVB/msn_weather_icons/1.png"):
+				if self.InternetAvailable and not fileExists("/usr/share/enigma2/KravenVB/msn_weather_icons/1.png"):
 					system("wget -q http://picons.mynonpublic.com/msn-icon.tar.gz -O /tmp/msn-icon.tar.gz; tar xf /tmp/msn-icon.tar.gz -C /usr/share/enigma2/KravenVB/")
 			else:
 				self.appendSkinFile(self.daten + "MSNWeatherPlugin2.xml")
@@ -3325,6 +3374,13 @@ class ActivateSkinSettings:
 		### VerticalEPG
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.VerticalEPG.value + ".xml")
+		elif self.E2DistroVersion == "openatv":
+			if config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-full":
+				config.epgselection.vertical_pig.value = False
+				config.epgselection.vertical_pig.save()
+			elif config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-minitv3":
+				config.epgselection.graph_pig.value = "true"
+				config.epgselection.graph_pig.save()
 
 		### MovieSelection (MovieList) Font-Size - teamblue
 		if self.E2DistroVersion == "teamblue":
@@ -3336,6 +3392,9 @@ class ActivateSkinSettings:
 		if config.plugins.KravenVB.MovieSelection.value == "movieselection-no-cover":
 			if config.plugins.KravenVB.MovieSelectionEPGSize.value == "big":
 				self.skinSearchAndReplace.append(['<constant-widget name="msnc22"/>', '<constant-widget name="msnc24"/>'])
+		elif config.plugins.KravenVB.MovieSelection.value == "movieselection-no-cover2":
+			if config.plugins.KravenVB.MovieSelectionEPGSize.value == "big":
+				self.skinSearchAndReplace.append(['<constant-widget name="msnc222"/>', '<constant-widget name="msnc224"/>'])
 		elif config.plugins.KravenVB.MovieSelection.value == "movieselection-small-cover":
 			if config.plugins.KravenVB.MovieSelectionEPGSize.value == "big":
 				self.skinSearchAndReplace.append(['<constant-widget name="mssc22"/>', '<constant-widget name="mssc24"/>'])
@@ -4060,29 +4119,21 @@ class ActivateSkinSettings:
 			self.city = ''
 			self.lat = ''
 			self.lon = ''
-			self.zipcode = ''
 			self.accu_id = ''
-			self.woe_id = ''
-			self.gm_code = ''
 			self.preview_text = ''
 			self.preview_warning = ''
 
-			if config.plugins.KravenVB.weather_search_over.value == 'ip':
-			  self.get_latlon_by_ip()
-			elif config.plugins.KravenVB.weather_search_over.value == 'name':
-			  self.get_latlon_by_name()
-			elif config.plugins.KravenVB.weather_search_over.value == 'gmcode':
-			  self.get_latlon_by_gmcode()
-
-			self.generate_owm_accu_realtek_string()
 			if config.plugins.KravenVB.weather_server.value == '_accu':
-			  self.get_accu_id_by_latlon()
+				if config.plugins.KravenVB.weather_search_over.value == 'ip':
+					self.get_accu_id_by_ip()
+				elif config.plugins.KravenVB.weather_search_over.value == 'name':
+					self.get_accu_id_by_name()
+			elif config.plugins.KravenVB.weather_server.value == '_owm':
+				self.get_owm_by_ip()
 
 			self.actCity=self.preview_text+self.preview_warning
-			config.plugins.KravenVB.weather_foundcity.value=self.city
-			config.plugins.KravenVB.weather_foundcity.save()
 
-	def get_latlon_by_ip(self):
+	def get_owm_by_ip(self):
 
 		if self.InternetAvailable==False: 
 			return
@@ -4096,74 +4147,78 @@ class ActivateSkinSettings:
 				self.lat = data['lat']
 				self.lon = data['lon']
 				self.preview_text = str(self.city) + '\nLat: ' + str(self.lat) + '\nLong: ' + str(self.lon)
+				config.plugins.KravenVB.weather_owm_latlon.value = 'lat=%s&lon=%s&units=metric&lang=%s' % (str(self.lat),str(self.lon),str(config.plugins.KravenVB.weather_language.value))
+				config.plugins.KravenVB.weather_owm_latlon.save()
+				config.plugins.KravenVB.weather_foundcity.value = self.city
+				config.plugins.KravenVB.weather_foundcity.save()
 			else:
 				self.preview_text = _('No data for IP')
-
 		except:
 			self.preview_text = _('No data for IP')
 
-	def get_latlon_by_name(self):
+	def get_accu_id_by_ip(self):
 
 		if self.InternetAvailable==False: 
 			return
 		
 		try:
-			name = config.plugins.KravenVB.weather_cityname.getValue()
-			res = requests.get('http://maps.googleapis.com/maps/api/geocode/json?address=%s&sensor=true' % str(name), timeout=1)
+			res = requests.get('http://ip-api.com/json/?lang=de&fields=status,city', timeout=1)
 			data = res.json()
 
-			for entry in data['results'][0]['address_components']:
-				if entry['types'][0]=='locality':
-					self.city = entry['long_name']
-					break
-					
-			self.lat = data['results'][0]['geometry']['location']['lat']
-			self.lon = data['results'][0]['geometry']['location']['lng']
-
-			self.preview_text = str(self.city) + '\nLat: ' + str(self.lat) + '\nLong: ' + str(self.lon)
+			if data['status'] == 'success':
+				city = data['city']
+				apikey = config.plugins.KravenVB.weather_accu_apikey.value
+				language = config.plugins.KravenVB.weather_language.value
+				res1 = requests.get('http://dataservice.accuweather.com/locations/v1/cities/search?q=%s&apikey=%s&language=%s' % (str(city),str(apikey),str(language)), timeout=1)
+				data1 = res1.json()
+			
+				if 'Code' in data1:
+					if data1['Code'] == 'ServiceUnavailable':
+						self.preview_warning = _('API requests exceeded')
+					elif data1['Code'] == 'Unauthorized':
+						self.preview_warning = _('API authorization failed')
+				else:
+					self.accu_id = data1[0]['Key']
+					self.city = data1[0]['LocalizedName']
+					self.lat = data1[0]['GeoPosition']['Latitude']
+					self.lon = data1[0]['GeoPosition']['Longitude']
+					self.preview_text = str(self.city) + '\nLat: ' + str(self.lat) + '\nLong: ' + str(self.lon)
+					config.plugins.KravenVB.weather_accu_id.value = str(self.accu_id)
+					config.plugins.KravenVB.weather_accu_id.save()
+					config.plugins.KravenVB.weather_foundcity.value = str(self.city)
+					config.plugins.KravenVB.weather_foundcity.save()
+			else:
+				self.preview_text = _('No data for IP')
 		except:
-			self.get_latlon_by_ip()
-			self.preview_warning = _('\n\nNo data for search string,\nfallback to IP')
+			self.preview_warning = _('No Accu ID found')
 
-	def get_latlon_by_gmcode(self):
-
-		if self.InternetAvailable==False: 
-			return
-
-		try:
-			gmcode = config.plugins.KravenVB.weather_gmcode.value
-			res = requests.get('http://wxdata.weather.com/wxdata/weather/local/%s?cc=*' % str(gmcode), timeout=1)
-			data = fromstring(res.text)
-
-			self.city = data[1][0].text.split(',')[0]
-			self.lat = data[1][2].text
-			self.lon = data[1][3].text
-
-			self.preview_text = str(self.city) + '\nLat: ' + str(self.lat) + '\nLong: ' + str(self.lon)
-		except:
-			self.get_latlon_by_ip()
-			self.preview_warning = _('\n\nNo data for GM code,\nfallback to IP')
-
-	def get_accu_id_by_latlon(self):
+	def get_accu_id_by_name(self):
 
 		if self.InternetAvailable==False: 
 			return
 		
 		try:
-			res = requests.get('http://realtek.accu-weather.com/widget/realtek/weather-data.asp?%s' % config.plugins.KravenVB.weather_realtek_latlon.value, timeout=1)
-			cityId = re.search('cityId>(.+?)</cityId', str(res.text)).groups(1)
-			self.accu_id = str(cityId[0])
-			config.plugins.KravenVB.weather_accu_id.value = str(self.accu_id)
-			config.plugins.KravenVB.weather_accu_id.save()
+			city = config.plugins.KravenVB.weather_cityname.getValue()
+			apikey = config.plugins.KravenVB.weather_accu_apikey.value
+			language = config.plugins.KravenVB.weather_language.value
+			
+			res = requests.get('http://dataservice.accuweather.com/locations/v1/cities/search?q=%s&apikey=%s&language=%s' % (str(city),str(apikey),str(language)), timeout=1)
+			data = res.json()
+			
+			if 'Code' in data:
+				if data['Code'] == 'ServiceUnavailable':
+					self.preview_warning = _('API requests exceeded')
+				elif data['Code'] == 'Unauthorized':
+					self.preview_warning = _('API authorization failed')
+			else:
+				self.accu_id = data[0]['Key']
+				self.city = data[0]['LocalizedName']
+				self.lat = data[0]['GeoPosition']['Latitude']
+				self.lon = data[0]['GeoPosition']['Longitude']
+				self.preview_text = str(self.city) + '\nLat: ' + str(self.lat) + '\nLong: ' + str(self.lon)
+				config.plugins.KravenVB.weather_accu_id.value = str(self.accu_id)
+				config.plugins.KravenVB.weather_accu_id.save()
+				config.plugins.KravenVB.weather_foundcity.value = str(self.city)
+				config.plugins.KravenVB.weather_foundcity.save()
 		except:
-			self.preview_warning = '\n\n'+_('No Accu ID found')
-		if self.accu_id is None or self.accu_id=='':
-			self.preview_warning = '\n\n'+_('No Accu ID found')
-
-	def generate_owm_accu_realtek_string(self):
-		config.plugins.KravenVB.weather_owm_latlon.value = 'lat=%s&lon=%s&units=metric&lang=%s' % (str(self.lat),str(self.lon),str(config.plugins.KravenVB.weather_language.value))
-		config.plugins.KravenVB.weather_accu_latlon.value = 'lat=%s&lon=%s&metric=1&language=%s' % (str(self.lat), str(self.lon), str(config.plugins.KravenVB.weather_language.value))
-		config.plugins.KravenVB.weather_realtek_latlon.value = 'lat=%s&lon=%s&metric=1&language=%s' % (str(self.lat), str(self.lon), str(config.plugins.KravenVB.weather_language.value))
-		config.plugins.KravenVB.weather_owm_latlon.save()
-		config.plugins.KravenVB.weather_accu_latlon.save()
-		config.plugins.KravenVB.weather_realtek_latlon.save()
+			self.preview_warning = _('No Accu ID found')

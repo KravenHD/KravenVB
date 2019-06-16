@@ -7,87 +7,15 @@
     <!--<text="About" position="70,0" />-->
   </screen>
  <!-- ChoiceBox -->
-  <screen name="ChoiceBox" position="130,140" size="600,400" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
-    <widget source="Title" render="Label" backgroundColor="Kravenbg" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="530,32" halign="left" valign="center" transparent="1" />
-	<widget name="text" position="20,45" size="530,27" backgroundColor="Kravenbg" font="Regular;22" foregroundColor="KravenFont1" />
-	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="0,80" size="550,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
-	<applet type="onLayoutFinish">
-# this should be factored out into some helper code, but currently demonstrates applets.
-from enigma import eSize, ePoint
-
-orgwidth = self.instance.size().width()
-orgpos = self.instance.position()
-textsize = self["text"].getSize()
-
-# y size still must be fixed in font stuff...
-textsize = (textsize[0] + 70, textsize[1] + 70)
-count = len(self.list)
-if count &gt; 15:
-        count = 15
-offset = 30 * count
-wsizex = textsize[0] + 30
-wsizey = textsize[1] + offset + 20
-
-if (650 &gt; wsizex):
-        wsizex = 650
-wsize = (wsizex, wsizey)
-
-# resize
-self.instance.resize(eSize(*wsize))
-
-# resize label
-self["text"].instance.resize(eSize(*textsize))
-
-# move list
-listsize = (wsizex - 20, 30 * count)
-self["list"].instance.move(ePoint(10, textsize[1]))
-self["list"].instance.resize(eSize(*listsize))
-
-# center window
-newwidth = wsize[0]
-self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
-	</applet>
+  <screen name="ChoiceBox" position="310,110" size="660,501" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
+    <widget backgroundColor="Kravenbg" source="Title" render="Label" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="560,32" halign="left" valign="center" noWrap="1" transparent="1" />
+	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="560,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
+	<widget backgroundColor="Kravenbg" name="text" position="20,411" size="560,81" font="Regular2;22" foregroundColor="KravenFont2" transparent="1" />
   </screen>
  <!-- ExtensionsList -->
-  <screen name="ExtensionsList" position="130,140" size="600,400" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
-    <eLabel text="Please choose an extension..." backgroundColor="Kravenbg" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="530,32" halign="left" valign="center" transparent="1" />
-	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="550,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
-	<applet type="onLayoutFinish">
-# this should be factored out into some helper code, but currently demonstrates applets.
-from enigma import eSize, ePoint
-
-orgwidth = self.instance.size().width()
-orgpos = self.instance.position()
-textsize = self["text"].getSize()
-
-# y size still must be fixed in font stuff...
-textsize = (textsize[0] + 70, textsize[1] + 70)
-count = len(self.list)
-if count &gt; 15:
-        count = 15
-offset = 30 * count
-wsizex = textsize[0] + 30
-wsizey = textsize[1] + offset + 20
-
-if (650 &gt; wsizex):
-        wsizex = 650
-wsize = (wsizex, wsizey)
-
-# resize
-self.instance.resize(eSize(*wsize))
-
-# resize label
-self["text"].instance.resize(eSize(*textsize))
-
-# move list
-listsize = (wsizex - 20, 30 * count)
-self["list"].instance.move(ePoint(10, textsize[1]))
-self["list"].instance.resize(eSize(*listsize))
-
-# center window
-newwidth = wsize[0]
-self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
-	</applet>
+  <screen name="ExtensionsList" position="340,153" size="600,413" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
+    <eLabel backgroundColor="Kravenbg" text="Please choose an extension..." font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="560,32" halign="left" valign="center" noWrap="1" transparent="1" />
+	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="560,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
   </screen>
   <!-- PluginBrowser -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginBrowser" position="0,0" size="1280,720" title="Plugin browser">
@@ -220,6 +148,7 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
   <screen backgroundColor="transparent" flags="wfNoBorder" name="RemoteTimerSetup" position="0,0" size="1280,720" title="Settings">
     <constant-widget name="Title-big"/>
     <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="NameRedGreen"/>
@@ -278,4 +207,28 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <constant-widget name="MenuOKExit"/>
     <!--<text="EPGSelectionMulti" position="70,0" />-->
+  </screen>
+  <!-- VirtualKeyBoard -->
+  <screen name="VirtualKeyBoard" position="center,center" backgroundColor="Kravenbg" flags="wfNoBorder" size="560,366" zPosition="99">
+    <widget backgroundColor="Kravenbg" name="header" position="10,10" size="540,27" font="Regular;22" foregroundColor="KravenFont2" transparent="1" noWrap="1" />
+    <eLabel backgroundColor="KravenBorder" position="10,45" size="540,2" zPosition="-1" />
+    <eLabel backgroundColor="KravenBorder" position="10,125" size="540,2" zPosition="-1" />
+    <eLabel backgroundColor="KravenBorder" position="10,45" size="2,40" zPosition="-1" />
+    <eLabel backgroundColor="KravenBorder" position="548,45" size="2,40" zPosition="-1" />
+    <widget backgroundColor="Kravenbg" name="text" position="12,47" size="536,35" font="Regular;28" foregroundColor="KravenFont1" valign="center" noWrap="1" transparent="1" />
+    <widget backgroundColor="#00101B2F" name="list" position="10,94" size="540,225" selectionDisabled="1" foregroundColor="white" transparent="1" />
+    <widget backgroundColor="Kravenbg" source="country" render="Label" position="10,331" size="540,27" font="Regular;22" foregroundColor="KravenFont1" transparent="1" noWrap="1" />
+    <eLabel backgroundColor="KravenBorder" position="0,0" size="560,2" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder" position="0,364" size="560,2" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder" position="0,0" size="2,366" zPosition="2" />
+    <eLabel backgroundColor="KravenBorder" position="558,0" size="2,366" zPosition="2" />
+  </screen>
+  <!-- Console -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="Console" position="0,0" size="1280,720" title="Command execution...">
+    <widget backgroundColor="Kravenbg3" font="Console;18" name="text" scrollbarWidth="5" position="70,120" size="708,500" transparent="1" foregroundColor="KravenFont1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="Console" position="70,0" />-->
   </screen>

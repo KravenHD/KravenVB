@@ -1166,6 +1166,7 @@
   <screen backgroundColor="transparent" flags="wfNoBorder" name="AutoTimerFilterEditor" position="0,0" size="1280,720" title="Edit AutoTimer Filters">
     <constant-widget name="Title-big"/>
 	<widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="SourceRedGreenYellowBlue"/>

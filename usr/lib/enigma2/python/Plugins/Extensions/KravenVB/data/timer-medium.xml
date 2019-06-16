@@ -94,6 +94,7 @@
   <screen backgroundColor="transparent" flags="wfNoBorder" name="TimerEntry" position="0,0" size="1280,720" title="Timer entry">
 	<eLabel text="Timer entry" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,390" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
     <widget font="Regular;20" halign="left" valign="center" name="canceltext" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="oktext" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <constant-widget name="Colorbuttons"/>

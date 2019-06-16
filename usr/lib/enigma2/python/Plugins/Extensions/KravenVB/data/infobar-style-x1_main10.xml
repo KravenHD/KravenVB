@@ -17,7 +17,7 @@
     <convert type="KravenVBEventTime">EndTime</convert>
     <convert type="KravenVBClockToText">Default</convert>
   </widget>
-  <widget backgroundColor="KravenIBbg" source="session.Event_Next" render="KravenVBEmptyEpg" foregroundColor="KravenIBFont2" font="Regular;30" position="430,649" size="481,40" halign="left" transparent="1" zPosition="1">
+  <widget backgroundColor="KravenIBbg" source="session.Event_Next" render="KravenVBEmptyEpg" foregroundColor="KravenIBFont2" font="Regular;30" position="430,649" size="481,38" halign="left" transparent="1" zPosition="1">
     <convert type="KravenVBEventName">Name</convert>
   </widget>
   <widget backgroundColor="KravenIBbg" font="Regular;22" foregroundColor="KravenIBFont2" halign="right" position="913,656" render="Label" size="107,27" source="session.Event_Next" transparent="1" zPosition="1">
@@ -47,16 +47,20 @@
     <convert type="ServiceInfo">HasTelext</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="827,620" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="1">
-    <convert type="KravenVBEventName">Dolby_off</convert>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="827,620" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+    <convert type="KravenFHDDolby">Dolby_off</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_51.png" position="827,620" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="2">
-    <convert type="KravenVBEventName">Dolby51</convert>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="827,620" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+    <convert type="KravenFHDDolby">Dolby</convert>
     <convert type="ConditionalShowHide" />
   </widget>
-  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_20.png" position="827,620" render="Pixmap" size="43,22" source="session.Event_Now" zPosition="3">
-    <convert type="KravenVBEventName">Dolby20</convert>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_51.png" position="827,620" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+    <convert type="KravenFHDDolby">Dolby51</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_20.png" position="827,620" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
+    <convert type="KravenFHDDolby">Dolby20</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="877,620" size="43,22" zPosition="1" />

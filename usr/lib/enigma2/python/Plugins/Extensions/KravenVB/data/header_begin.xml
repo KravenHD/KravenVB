@@ -279,6 +279,19 @@
 	<!-- Programmlisten_Updater openATV -->
     <parameter name="ProgrammlistenUpdaterListFont" value="Regular;22" />
     <parameter name="ProgrammlistenUpdaterList" value="10,1,450,238,30" />
+	<!-- EPGListChannelList VTi -->
+	<parameter name="EPGServicelistText0OffSet" value="0,0" />
+	<parameter name="EPGServicelistText1OffSet" value="0,0" />
+	<parameter name="EPGServicelistText2OffSet" value="0,0" />
+	<parameter name="EPGServicelistRecImageOffset" value="0,0" />
+	<parameter name="EPGServicelistRecTextOffset" value="0,0" />
+	<parameter name="EPGServicelistNonRecTextOffset" value="0,0" />
+	<parameter name="EPGServicelistText0" value="2,1,32,28" />
+	<parameter name="EPGServicelistText1" value="34,1,66,28" />
+	<parameter name="EPGServicelistText2" value="110,1,62,28" />
+	<parameter name="EPGServicelistRecImage" value="170,5,20,20" />
+	<parameter name="EPGServicelistRecText" value="187,1,600,28" />
+	<parameter name="EPGServicelistNonRecText" value="170,1,600,28" />
   </parameters>
   <fonts>
     <font filename="lcd.ttf" name="LCD" scale="100" />
@@ -294,6 +307,8 @@
 	<alias name="MaxCubeRoom" font="Regular" size="18" height="50"/>
 	<alias name="MaxCubeTemp" font="Regular2" size="30" height="50"/>
 	<alias name="SelectionList" font="Regular" size="22" height="30"/>
+	<alias name="EPGListChannelList0" font="Regular" size="23" />
+	<alias name="EPGListChannelList1" font="Regular" size="23" />
   </fonts>
   <subtitles>
     <sub font="Regular;30" name="Subtitle_TTX" shadowColor="shadow" shadowOffset="3,3" />

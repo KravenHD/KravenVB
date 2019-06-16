@@ -93,3 +93,35 @@
     <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <!--<text="MSNWeatherPlugin" position="70,0" />-->
   </screen>
+  <!-- MSNWeatherPluginEntriesListConfigScreen -->
+  <screen name="MSNWeatherPluginEntriesListConfigScreen" position="0,0" size="1280,720" title="WeatherPlugin: List of Entries" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="entrylist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,146" size="708,450" scrollbarMode="showOnDemand" zPosition="1" transparent="1" />
+    <widget source="city" render="Label" position="70,105" size="220,28" font="Regular2; 20" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" />
+    <widget source="text" render="Label" position="297,105" size="480,28" font="Regular2; 22" halign="left" valign="center" transparent="1" backgroundColor="Kravenbg3" foregroundColor="KravenFont2" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+    <!--<text="MSNWeatherPluginEntriesListConfigScreen" position="70,0" />-->
+  </screen>
+  <!-- MSNWeatherPluginEntryConfigScreen -->
+  <screen name="MSNWeatherPluginEntryConfigScreen" position="0,0" size="1280,720" title="WeatherPlugin: Edit Entry" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" zPosition="1" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+    <!--<text="MSNWeatherPluginEntryConfigScreen" position="70,0" />-->
+  </screen>
+  <!-- MSNWeatherPluginSearch -->
+  <screen name="MSNWeatherPluginSearch" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="entrylist" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" zPosition="1" transparent="1" />
+    <widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+    <!--<text="MSNWeatherPluginSearch" position="70,0" />-->
+  </screen>
