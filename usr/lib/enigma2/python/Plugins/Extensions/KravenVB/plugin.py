@@ -26,9 +26,31 @@ def main(session, **kwargs):
 		import traceback
 		traceback.print_exc()
 
+def main_menu(menuid):
+	if menuid == "system":
+		return [("KravenVB", main, _("Configuration tool for KravenVB"), 27)]
+	else:
+		return []
+
 def Plugins(**kwargs):
 	screenwidth = getDesktop(0).size().width()
-	if screenwidth and screenwidth == 1920:
-		return [PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='pluginfhd.png', fnc=main)]
-	else:
-		return [PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='plugin.png', fnc=main)]
+	try:
+		from boxbranding import getImageDistro
+		if getImageDistro() == "openatv":
+			list = []
+			list.append(PluginDescriptor(name="Setup KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_MENU, fnc = main_menu))
+			if screenwidth and screenwidth == 1920:
+				list.append(PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='pluginfhd.png', fnc=main))
+			else:
+				list.append(PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='plugin.png', fnc=main))
+			return list
+		else:
+			if screenwidth and screenwidth == 1920:
+				return [PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='pluginfhd.png', fnc=main)]
+			else:
+				return [PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='plugin.png', fnc=main)]
+	except ImportError:
+		if screenwidth and screenwidth == 1920:
+			return [PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='pluginfhd.png', fnc=main)]
+		else:
+			return [PluginDescriptor(name="KravenVB", description=_("Configuration tool for KravenVB"), where = PluginDescriptor.WHERE_PLUGINMENU, icon='plugin.png', fnc=main)]
