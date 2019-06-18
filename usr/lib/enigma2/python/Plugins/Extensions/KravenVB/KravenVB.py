@@ -5077,7 +5077,7 @@ class KravenVB(ConfigListScreen, Screen):
 			elif config.plugins.KravenVB.GraphicalEPG.value == "text-minitv":
 				config.epgselection.graph_type_mode.value = False
 				config.epgselection.graph_type_mode.save()
-				config.epgselection.graph_pig.value = "true"
+				config.epgselection.graph_pig.value = True
 				config.epgselection.graph_pig.save()
 			elif config.plugins.KravenVB.GraphicalEPG.value == "graphical":
 				config.epgselection.graph_type_mode.value = "graphics"
@@ -5087,7 +5087,7 @@ class KravenVB(ConfigListScreen, Screen):
 			elif config.plugins.KravenVB.GraphicalEPG.value == "graphical-minitv":
 				config.epgselection.graph_type_mode.value = "graphics"
 				config.epgselection.graph_type_mode.save()
-				config.epgselection.graph_pig.value = "true"
+				config.epgselection.graph_pig.value = True
 				config.epgselection.graph_pig.save()
 		elif self.E2DistroVersion == "teamblue":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.GraphMultiEPG.value + "_teamblue.xml")
@@ -5100,7 +5100,7 @@ class KravenVB(ConfigListScreen, Screen):
 				config.epgselection.vertical_pig.value = False
 				config.epgselection.vertical_pig.save()
 			elif config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-minitv3":
-				config.epgselection.graph_pig.value = "true"
+				config.epgselection.graph_pig.value = True
 				config.epgselection.graph_pig.save()
 
 		### MovieSelection (MovieList) Font-Size - teamblue
