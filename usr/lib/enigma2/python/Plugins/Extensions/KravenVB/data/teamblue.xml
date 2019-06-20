@@ -380,7 +380,7 @@
     <widget backgroundColor="Kravenbg3" source="job_progress" render="Label" foregroundColor="KravenFont1" font="Regular;22" position="660,130" size="118,27" halign="right" zPosition="2" transparent="1">
       <convert type="ProgressToText" />
     </widget>
-    <widget backgroundColor="Kravenbg3" source="job_progress" render="Progress" foregroundColor="KravenProgress" pixmap="KravenFHD/progress/progress708.png" borderColor="KravenBorder" borderWidth="2" position="70,186" size="708,15" transparent="1" zPosition="2" />
+    <widget backgroundColor="Kravenbg3" source="job_progress" render="Progress" foregroundColor="KravenProgress" pixmap="KravenVB/progress/progress708.png" borderColor="KravenBorder" borderWidth="2" position="70,186" size="708,15" transparent="1" zPosition="2" />
     <widget backgroundColor="Kravenbg3" source="job_status" render="Label" foregroundColor="KravenFont1" font="Regular;22" position="70,230" size="708,27" transparent="1" />
     <widget backgroundColor="Kravenbg3" name="config" position="70,280" size="708,120" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
     <widget backgroundColor="KravenIBbg2" source="cancelable" render="FixedLabel" text="Cancel" foregroundColor="KravenButton" font="Regular;20" position="70,665" size="220,26" halign="left" valign="center" zPosition="1" transparent="1">

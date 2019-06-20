@@ -48,19 +48,19 @@
     <convert type="ConditionalShowHide" />
   </widget>
   <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_off.png" position="1053,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
-    <convert type="KravenFHDDolby">Dolby_off</convert>
+    <convert type="KravenVBDolby">Dolby_off</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" position="1053,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
-    <convert type="KravenFHDDolby">Dolby</convert>
+    <convert type="KravenVBDolby">Dolby</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_51.png" position="1053,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
-    <convert type="KravenFHDDolby">Dolby51</convert>
+    <convert type="KravenVBDolby">Dolby51</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_dolby_20.png" position="1053,611" render="Pixmap" size="43,22" source="session.CurrentService" zPosition="1">
-    <convert type="KravenFHDDolby">Dolby20</convert>
+    <convert type="KravenVBDolby">Dolby20</convert>
     <convert type="ConditionalShowHide" />
   </widget>
   <ePixmap alphatest="blend" pixmap="KravenVB/infobar-icons/ico_format_off.png" position="1053,611" size="43,22" zPosition="1" />
