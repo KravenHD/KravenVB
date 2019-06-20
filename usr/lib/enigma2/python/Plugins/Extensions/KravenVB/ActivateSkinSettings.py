@@ -1012,8 +1012,7 @@ config.plugins.KravenVB.TimerListStyle = ConfigSelection(default="timerlist-stan
 config.plugins.KravenVB.weather_cityname = ConfigText(default = "")
 config.plugins.KravenVB.weather_language = ConfigSelection(default="de", choices = LanguageList)
 config.plugins.KravenVB.weather_server = ConfigSelection(default="_owm", choices = [
-				("_owm", _("OpenWeatherMap")),
-				("_accu", _("Accuweather"))
+				("_owm", _("OpenWeatherMap"))
 				])
 
 config.plugins.KravenVB.weather_search_over = ConfigSelection(default="ip", choices = [
