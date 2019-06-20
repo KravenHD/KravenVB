@@ -1029,6 +1029,11 @@ config.plugins.KravenVB.SplitScreen = ConfigSelection(default="splitscreen1", ch
 				("splitscreen2", _("with description"))
 				])
 
+config.plugins.KravenVB.FileCommander = ConfigSelection(default="filecommander-hor", choices = [
+				("filecommander-hor", _("horizontal")),
+				("filecommander-ver", _("vertical"))
+				])
+
 config.plugins.KravenVB.TimerEditScreen = ConfigSelection(default="timer-standard", choices = [
 				("timer-standard", _("standard layout")),
 				("timer-medium", _("medium font with EPG Info")),
@@ -1047,7 +1052,8 @@ config.plugins.KravenVB.TimerListStyle = ConfigSelection(default="timerlist-stan
 config.plugins.KravenVB.weather_cityname = ConfigText(default = "")
 config.plugins.KravenVB.weather_language = ConfigSelection(default="de", choices = LanguageList)
 config.plugins.KravenVB.weather_server = ConfigSelection(default="_owm", choices = [
-				("_owm", _("OpenWeatherMap"))
+				("_owm", _("OpenWeatherMap")),
+				("_accu", _("Accuweather"))
 				])
 
 config.plugins.KravenVB.weather_search_over = ConfigSelection(default="ip", choices = [
@@ -1621,9 +1627,9 @@ class KravenVB(ConfigListScreen, Screen):
 		if self.E2DistroVersion == "VTi":
 			list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.SplitScreen, _("Choose from different styles to display SplitScreen.")))
 		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.ATVna, _("  ")))
+			list.append(getConfigListEntry(_("FileCommander"), config.plugins.KravenVB.FileCommander, _("  ")))
 		elif self.E2DistroVersion == "teamblue":
-			list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.TBna, _("  ")))
+			emptyLines+=1
 		for i in range(emptyLines+1):
 			list.append(getConfigListEntry(_(" "), ))
 		
@@ -4999,6 +5005,10 @@ class KravenVB(ConfigListScreen, Screen):
 		### SplitScreen
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.SplitScreen.value + ".xml")
+
+		### FileCommander
+		if self.E2DistroVersion == "openatv":
+			self.appendSkinFile(self.daten + config.plugins.KravenVB.FileCommander.value + ".xml")
 
 		### TimerEditScreen
 		if self.E2DistroVersion == "VTi":
