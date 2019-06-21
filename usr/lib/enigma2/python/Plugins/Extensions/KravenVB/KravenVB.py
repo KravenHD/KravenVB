@@ -1627,7 +1627,7 @@ class KravenVB(ConfigListScreen, Screen):
 		if self.E2DistroVersion == "VTi":
 			list.append(getConfigListEntry(_("SplitScreen"), config.plugins.KravenVB.SplitScreen, _("Choose from different styles to display SplitScreen.")))
 		elif self.E2DistroVersion == "openatv":
-			list.append(getConfigListEntry(_("FileCommander"), config.plugins.KravenVB.FileCommander, _("  ")))
+			list.append(getConfigListEntry(_("FileCommander"), config.plugins.KravenVB.FileCommander, _("Choose from different styles to display FileCommander.")))
 		elif self.E2DistroVersion == "teamblue":
 			emptyLines+=1
 		for i in range(emptyLines+1):
