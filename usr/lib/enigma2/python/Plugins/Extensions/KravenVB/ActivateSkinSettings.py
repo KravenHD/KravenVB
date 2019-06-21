@@ -3385,10 +3385,10 @@ class ActivateSkinSettings:
 		if self.E2DistroVersion == "VTi":
 			self.appendSkinFile(self.daten + config.plugins.KravenVB.VerticalEPG.value + ".xml")
 		elif self.E2DistroVersion == "openatv":
-			if config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-full":
+			if not self.silent and config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-full":
 				config.epgselection.vertical_pig.value = False
 				config.epgselection.vertical_pig.save()
-			elif config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-minitv3":
+			elif not self.silent and config.plugins.KravenVB.VerticalEPG2.value == "verticalepg-minitv3":
 				config.epgselection.graph_pig.value = True
 				config.epgselection.graph_pig.save()
 
