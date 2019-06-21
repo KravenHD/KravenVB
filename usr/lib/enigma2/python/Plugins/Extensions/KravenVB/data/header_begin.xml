@@ -298,6 +298,7 @@
     <font filename="ae_AlMateen.ttf" name="Replacement" replacement="1" scale="100" />
     <font filename="tuxtxt.ttf" name="Console" scale="100" />
     <font filename="KravenVB/fonts/nmsbd2.ttf" name="Arial" scale="100" />
+    <font filename="KravenVB/fonts/OpenSans-Regular.ttf" name="Fixed" scale="95" />
     <font filename="KravenVB/fonts/OpenSans-Regular.ttf" name="Regular" scale="95" />
     <font filename="KravenVB/fonts/OpenSans-Semibold.ttf" name="Regular2" scale="95" />
     <font filename="KravenVB/fonts/meteocons.ttf" name="Meteo" scale="100" />
