@@ -4096,6 +4096,10 @@ class KravenVB(ConfigListScreen, Screen):
 			self.skinSearchAndReplace.append(['<!--ChannellistSingleEpgList', '<widget'])
 			self.skinSearchAndReplace.append(['ChannellistSingleEpgList-->', 'widget>'])
 
+		### NumericalTextInputHelpDialog (HelpWindow)
+		if self.E2DistroVersion in ("VTi","teamblue"):
+			self.skinSearchAndReplace.append(['<widget name="HelpWindow" position="900,346" size="261,262" zPosition="98" transparent="1" alphatest="blend" />', ' '])
+
 		### Header
 		if self.E2DistroVersion in ("VTi","openatv") and config.plugins.KravenVB.EPGListSize.value == "big":
 			self.skinSearchAndReplace.append(['<parameter name="EPGlistFont1" value="Regular;22" />', '<parameter name="EPGlistFont1" value="Regular;26" />'])
