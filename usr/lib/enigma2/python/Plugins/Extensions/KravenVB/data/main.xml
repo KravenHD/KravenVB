@@ -783,7 +783,7 @@
     <!--<text="EventViewSimple" position="42,0" />-->
   </screen>
   <!-- NumericalTextInputHelpDialog -->
-  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="NumericalTextInputHelpDialog" position="0,0" size="261,262" zPosition="98">
+  <screen backgroundColor="Kravenbg2" flags="wfNoBorder" name="NumericalTextInputHelpDialog" position="900,346" size="261,262" zPosition="98">
     <eLabel backgroundColor="KravenBorder" position="0,0" size="260,2" transparent="0" zPosition="9" />
     <eLabel backgroundColor="KravenBorder" position="0,0" size="2,262" transparent="0" zPosition="9" />
     <eLabel backgroundColor="KravenBorder" position="259,0" size="2,262" transparent="0" zPosition="9" />
