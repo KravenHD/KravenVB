@@ -929,15 +929,14 @@ self.instance.move(ePoint((1280-wsizex)/2, (720-wsizey)/2))
     <constant-widget name="Exit"/>
     <!--<text="CronTimers" position="70,0" />-->
   </screen>
-  <!-- doFlashImage -->
-  <screen name="doFlashImage" position="0,0" size="1280,720" title="doFlashImage" flags="wfNoBorder" backgroundColor="transparent">
-    <widget name="imageList" position="70,80" size="708,540" scrollbarMode="showOnDemand" font="Regular;22" foregroundColor="KravenFont1" halign="left" valign="top" transparent="1" backgroundColor="Kravenbg3" />
+  <!-- BackupScreen -->
+  <screen name="BackupScreen" position="0,0" size="1280,720" title="Backup is running" flags="wfNoBorder" backgroundColor="transparent">
+    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,540" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
-    <constant-widget name="SourceRedGreenYellowBlue"/>
-    <constant-widget name="Exit"/>
-    <!--<text="doFlashImage" position="70,0" />-->
+    <constant-widget name="OKExit"/>
+    <!--<text="BackupScreen" position="70,0" />-->
   </screen>
   <!-- FlashOnline -->
   <screen name="FlashOnline" position="0,0" size="1280,720" title="FlashOnline" flags="wfNoBorder" backgroundColor="transparent">
