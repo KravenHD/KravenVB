@@ -18,8 +18,8 @@
     <widget alphatest="blend" pixmap="KravenVB/infobar-icons/ico_rec_on.png" position="360,680" render="Pixmap" size="43,22" source="session.RecordState" zPosition="5">
       <convert type="ConditionalShowHide" />
     </widget>
-    <ePixmap pixmap="KravenVB/global-icons/ico_dolby_off.png" alphatest="blend" position="210,680" size="43,22" zPosition="1" />
-    <widget source="session.CurrentService" render="Pixmap" pixmap="KravenVB/global-icons/ico_dolby_on.png" alphatest="blend" position="210,680" size="43,22" zPosition="2">
+    <ePixmap pixmap="KravenVB/infobar-icons/ico_dolby_off.png" alphatest="blend" position="210,680" size="43,22" zPosition="1" />
+    <widget source="session.CurrentService" render="Pixmap" pixmap="KravenVB/infobar-icons/ico_dolby_on.png" alphatest="blend" position="210,680" size="43,22" zPosition="2">
       <convert type="ServiceInfo">IsMultichannel</convert>
       <convert type="ConditionalShowHide" />
     </widget>
