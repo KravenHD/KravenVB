@@ -2356,4 +2356,15 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2,orgpos.y()))
     </widget>
 	<eLabel backgroundColor="Kravenbg" position="42,0" size="490,80" zPosition="-1" />
   </screen>
+ <!-- ChoiceBox -->
+  <screen name="ChoiceBox" position="center,center" size="768,501" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
+    <widget backgroundColor="Kravenbg" source="Title" render="Label" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="728,32" halign="left" valign="center" noWrap="1" transparent="1" />
+	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="728,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
+	<widget backgroundColor="Kravenbg" name="text" position="20,411" size="728,81" font="Regular2;22" foregroundColor="KravenFont2" transparent="1" />
+  </screen>
+ <!-- ExtensionsList -->
+  <screen name="ExtensionsList" position="center,center" size="680,413" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
+    <eLabel backgroundColor="Kravenbg" text="Please choose an extension..." font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="640,32" halign="left" valign="center" noWrap="1" transparent="1" />
+	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="640,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
+  </screen>
   <!-- Main */ -->

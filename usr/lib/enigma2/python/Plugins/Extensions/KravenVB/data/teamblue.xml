@@ -30,17 +30,6 @@
     <constant-widget name="Exit"/>
     <!--<text="About" position="70,0" />-->
   </screen>
- <!-- ChoiceBox -->
-  <screen name="ChoiceBox" position="310,110" size="660,501" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
-    <widget backgroundColor="Kravenbg" source="Title" render="Label" font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="560,32" halign="left" valign="center" noWrap="1" transparent="1" />
-	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="560,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
-	<widget backgroundColor="Kravenbg" name="text" position="20,411" size="560,81" font="Regular2;22" foregroundColor="KravenFont2" transparent="1" />
-  </screen>
- <!-- ExtensionsList -->
-  <screen name="ExtensionsList" position="340,153" size="600,413" title="Input" flags="wfNoBorder" backgroundColor="Kravenbg">
-    <eLabel backgroundColor="Kravenbg" text="Please choose an extension..." font="Regular2;26" foregroundColor="KravenFont2" position="20,8" size="560,32" halign="left" valign="center" noWrap="1" transparent="1" />
-	<widget backgroundColor="Kravenbg" name="list" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="20,45" size="560,360" enableWrapAround="1" scrollbarMode="showOnDemand" transparent="1"/>
-  </screen>
   <!-- PluginBrowser -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="PluginBrowser" position="0,0" size="1280,720" title="Plugin browser">
     <widget backgroundColor="Kravenbg3" name="list" itemHeight="50" font="Regular;22" foregroundColor="KravenFont1" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" position="70,80" size="708,550" transparent="1" />
