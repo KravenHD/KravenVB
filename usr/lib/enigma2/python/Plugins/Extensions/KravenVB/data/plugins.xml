@@ -568,7 +568,7 @@
     <constant-widget name="Title-big2"/>
     <constant-widget name="Colorbuttons"/>
     <constant-widget name="Background"/>
-    <constant-widget name="MenuOKExit"/>
+    <constant-widget name="OKExit"/>
     <!--<text="PiconManagerScreen" position="70,0" />-->
   </screen>
   <!-- PiconManagerFolderScreen -->
@@ -857,7 +857,7 @@
     <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" source="key_blue" position="820,665" size="220,26" render="Label" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <constant-widget name="Background"/>
-    <constant-widget name="OKExit"/>
+    <constant-widget name="MenuOKExit"/>
     <!--<text="picshow" position="70,0" />-->
   </screen>
   <!-- CrossEPG Menu -->
