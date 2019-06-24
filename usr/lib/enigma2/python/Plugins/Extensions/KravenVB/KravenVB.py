@@ -895,8 +895,14 @@ config.plugins.KravenVB.IBtop = ConfigSelection(default="infobar-x2-z1_top2", ch
 				("infobar-x2-z1_top", _("4 Tuner")),
 				("infobar-x2-z1_top3", _("8 Tuner"))
 				])
-				
+
 config.plugins.KravenVB.Infobox = ConfigSelection(default="sat", choices = [
+				("sat", _("Tuner/Satellite + SNR")),
+				("cpu", _("CPU + Load")),
+				("temp", _("Temperature + Fan"))
+				])
+				
+config.plugins.KravenVB.Infobox2 = ConfigSelection(default="sat", choices = [
 				("sat", _("Tuner/Satellite + SNR")),
 				("db", _("Tuner/Satellite + dB")),
 				("cpu", _("CPU + Load")),
@@ -1505,7 +1511,10 @@ class KravenVB(ConfigListScreen, Screen):
 		else:
 			emptyLines+=1
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-z1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
-			list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.Infobox, _("Choose which informations will be shown in the info box.")))
+			if self.E2DistroVersion == "VTi":
+				list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.Infobox, _("Choose which informations will be shown in the info box.")))
+			elif self.E2DistroVersion in ("openatv","teamblue"):
+				list.append(getConfigListEntry(_("Infobox-Contents"), config.plugins.KravenVB.Infobox2, _("Choose which informations will be shown in the info box.")))
 		else:
 			emptyLines+=1
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-x3","infobar-style-z1","infobar-style-z2","infobar-style-zz1","infobar-style-zz4"):
@@ -4220,20 +4229,34 @@ class KravenVB(ConfigListScreen, Screen):
 
 		### Infobox
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-x2","infobar-style-z1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
-			if config.plugins.KravenVB.Infobox.value == "cpu":
-				self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
-				self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
-				self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
-				self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
-				self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBCpuUsage">$0'])
-			elif config.plugins.KravenVB.Infobox.value == "temp":
-				self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
-				self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
-				self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
-				self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
-				self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
-			elif config.plugins.KravenVB.Infobox.value == "db":
-				self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert  type="KravenVBFrontendInfo">SNRdB'])
+			if self.E2DistroVersion == "VTi":
+				if config.plugins.KravenVB.Infobox.value == "cpu":
+					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
+					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
+					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBCpuUsage">$0'])
+				elif config.plugins.KravenVB.Infobox.value == "temp":
+					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
+					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
+					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
+			elif self.E2DistroVersion in ("openatv","teamblue"):
+				if config.plugins.KravenVB.Infobox2.value == "cpu":
+					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="  L:"'])
+					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
+					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBLayoutInfo">LoadAvg'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBCpuUsage">$0'])
+				elif config.plugins.KravenVB.Infobox2.value == "temp":
+					self.skinSearchAndReplace.append(['<!--<eLabel text="  S:"', '<eLabel text="U:"'])
+					self.skinSearchAndReplace.append(['foregroundColor="KravenIcon" />-->', 'foregroundColor="KravenIcon" />'])
+					self.skinSearchAndReplace.append(['  source="session.FrontendStatus', ' source="session.CurrentService'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert type="KravenVBTempFanInfo">FanInfo'])
+					self.skinSearchAndReplace.append(['convert  type="KravenVBServiceName2">OrbitalPos', 'convert  type="KravenVBTempFanInfo">TempInfo'])
+				elif config.plugins.KravenVB.Infobox2.value == "db":
+					self.skinSearchAndReplace.append(['convert  type="KravenVBFrontendInfo">SNR', 'convert  type="KravenVBFrontendInfo">SNRdB'])
 
 		### Record State
 		if config.plugins.KravenVB.InfobarStyle.value in ("infobar-style-nopicon","infobar-style-x1","infobar-style-zz1","infobar-style-zz4","infobar-style-zzz1"):
