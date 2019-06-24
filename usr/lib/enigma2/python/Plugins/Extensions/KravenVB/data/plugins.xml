@@ -2241,4 +2241,63 @@
     <constant-widget name="OKExit"/>
     <!--<text="PathSelectionScreen" position="70,0" />-->
   </screen>
+  <!-- OMBManagerInstall -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="OMBManagerInstall" position="0,0" size="1280,720" title="openMultiboot Install" >
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="info" position="70,80" size="708,54" font="Regular2;22" foregroundColor="KravenFont2" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="list" render="Listbox" position="70,170" size="708,450" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1">
+      <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (3, 1), size = (702, 27), font=0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 0), # index 0 is the name
+					],
+				"fonts": [gFont("Regular", 22)],
+				"itemHeight": 30
+				}
+      </convert>
+    </widget>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="OMBManagerInstall" position="70,0" />-->
+  </screen>
+  <!-- OMBManagerList -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="OMBManagerList" position="0,0" size="1280,720" title="openMultiboot Manager" >
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="label1" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="label2" position="70,110" size="708,27" font="Regular;22" foregroundColor="KravenFont1" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="list" render="Listbox" position="70,170" size="708,450" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1">
+      <convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (3, 1), size = (702, 27), font=0, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER, text = 0), # index 0 is the name
+					],
+				"fonts": [gFont("Regular", 22)],
+				"itemHeight": 30
+				}
+      </convert>
+    </widget>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="OMBManagerList" position="70,0" />-->
+  </screen>
+  <!-- OMBManagerPreferences -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="OMBManagerPreferences" position="0,0" size="1280,720" title="Preferences" >
+    <eLabel backgroundColor="KravenIBbg3" text="Preferences" font="Regular2;34" foregroundColor="KravenMFont2" position="70,12" size="1000,46" transparent="1" halign="left" valign="center" />
+    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="Exit"/>
+    <!--<text="OMBManagerPreferences" position="70,0" />-->
+  </screen>
+  <!-- OMBManagerAbout -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="OMBManagerAbout" position="0,0" size="1280,720" title="openMultiboot About" >
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="about" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="Exit"/>
+    <!--<text="OMBManagerAbout" position="70,0" />-->
+  </screen>
 <!-- plugins -->
