@@ -1,15 +1,2 @@
 #!/bin/sh
-echo "Checking for previous installations..."
-if [ -d /usr/share/enigma2/KravenVB/graphics ]; then
-    mkdir /tmp/graphics
-    cp /usr/share/enigma2/KravenVB/graphics/*.* /tmp/graphics
-fi
-if [ -f /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/skin-user.xml ]; then
-    cp /usr/lib/enigma2/python/Plugins/Extensions/KravenVB/data/skin-user.xml /tmp
-fi
-if [ -f /usr/share/enigma2/KravenVB/skin.xml ]; then
-    rm -rf /usr/share/enigma2/KravenVB/skin.xml
-fi
-echo "                                                           "
-echo "        The Skin KravenVB is now being installed...        "
-echo "                                                           "
+echo "KravenVB Skin will be now installed..."
