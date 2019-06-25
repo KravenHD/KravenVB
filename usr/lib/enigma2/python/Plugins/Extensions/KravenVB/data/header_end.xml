@@ -1912,13 +1912,13 @@
 	</constant-panels>
 	
 	<constant-panels name="emcvbc222">
-	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,454" size="755,189" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,506" size="777,135" font="Regular;22" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
 	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
 	  </widget>
 	</constant-panels>
 	
 	<constant-panels name="emcvbc224">
-	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,460" size="755,180" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
+	  <widget source="Service" render="KravenVBRunningText" options="movetype=running,direction=top,startpoint=0,startdelay=5000,steptime=90,wrap=1,always=0,repeat=2,oneshot=1" position="42,497" size="777,150" font="Regular;24" foregroundColor="KravenFont1" backgroundColor="Kravenbg" transparent="1" zPosition="2" halign="left" valign="top">
 	    <convert type="KravenVBEventName">BothDescriptionsFiltered</convert>
 	  </widget>
 	</constant-panels>
