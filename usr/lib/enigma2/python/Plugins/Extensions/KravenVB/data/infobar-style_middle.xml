@@ -1,60 +1,62 @@
-</screen>
+  </screen>
 
-<!-- SecondInfoBar -->
-<screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="0,0" size="1280,720" title="SecondInfoBar">
-  <widget source="session.CurrentService" render="Label" position="40,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">flash</convert>
-  </widget>
-  <widget source="Title" render="Label" font="Regular;16" position="82,16" size="180,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBLayoutInfo">FlashInfo,Free</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="270,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">hdd</convert>
-  </widget>
-  <widget source="Title" render="Label" font="Regular;16" position="308,16" size="170,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBLayoutInfo">HddInfo,Free</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="490,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">video</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" font="Regular;16" position="535,16" size="250,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBExtraInfo">VideoInfo</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="796,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">sys</convert>
-  </widget>
-  <widget source="Title" render="Label" font="Regular;16" position="824,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBTempFanInfo">TempInfo</convert>   
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="869,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">rm</convert>
-  </widget>
-  <widget source="Title" render="Label" font="Regular;16" position="905,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBTempFanInfo">FanInfo</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="950,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">cpu</convert>
-  </widget>
-  <widget source="Title" render="Label" font="Regular;16" position="980,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBCpuUsage">$0</convert>   
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="1026,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">load</convert>
-  </widget>
-  <widget source="Title" render="Label" font="Regular;16" position="1055,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="10" noWrap="1" foregroundColor="KravenSIBFont1">
-    <convert type="KravenVBLayoutInfo">LoadAvg</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="1100,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">sat</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" font="Regular;16" position="1125,16" size="40,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-     <convert type="KravenVBServiceName2">OrbitalPos</convert>
-  </widget>
-  <widget source="session.CurrentService" render="Label" position="1175,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
-    <convert type="KravenVBTextTranslator">snr</convert>
-  </widget>
-  <widget source="session.FrontendStatus" render="Label" font="Regular;16" position="1205,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
-     <convert type="KravenVBFrontendInfo">SNR</convert>
-  </widget>
-  <constant-widget name="gradient-sib"/>
-  <!-- Infobar ibar -->
+  <!-- SecondInfoBar -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SecondInfoBar" position="0,0" size="1280,720" title="SecondInfoBar">
+	<widget source="session.CurrentService" render="Label" position="40,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">flash</convert>
+	</widget>
+	<widget source="Title" render="Label" font="Regular;16" position="82,16" size="180,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBLayoutInfo">FlashInfo,Free</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="270,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">hdd</convert>
+	</widget>
+	<widget source="Title" render="Label" font="Regular;16" position="308,16" size="170,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBLayoutInfo">HddInfo,Free</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="490,16" size="50,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">video</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" font="Regular;16" position="535,16" size="250,20" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBExtraInfo">VideoInfo</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="796,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">sys</convert>
+	</widget>
+	<widget source="Title" render="Label" font="Regular;16" position="824,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBTempFanInfo">TempInfo</convert>   
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="869,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">rm</convert>
+	</widget>
+	<widget source="Title" render="Label" font="Regular;16" position="905,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBTempFanInfo">FanInfo</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="950,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">cpu</convert>
+	</widget>
+	<widget source="Title" render="Label" font="Regular;16" position="980,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBCpuUsage">$0</convert>   
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="1026,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">load</convert>
+	</widget>
+	<widget source="Title" render="Label" font="Regular;16" position="1055,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="10" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBLayoutInfo">LoadAvg</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="1100,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">sat</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" font="Regular;16" position="1125,16" size="40,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBServiceName2">OrbitalPos</convert>
+	</widget>
+	<widget source="session.CurrentService" render="Label" position="1175,16" size="100,20" font="Regular;16" halign="left" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" foregroundColor="KravenSIBFont2">
+      <convert type="KravenVBTextTranslator">snr</convert>
+	</widget>
+	<widget source="session.FrontendStatus" render="Label" font="Regular;16" position="1205,16" size="35,20" halign="right" valign="bottom" backgroundColor="KravenSIBbg2" transparent="1" noWrap="1" foregroundColor="KravenSIBFont1">
+      <convert type="KravenVBFrontendInfo">SNR</convert>
+	</widget>
+	<constant-widget name="gradient-sib"/>
+	<!-- Infobar ibar -->
+	<!-- Infobar clockstyle -->
+	<!-- SIB ecminfo -->

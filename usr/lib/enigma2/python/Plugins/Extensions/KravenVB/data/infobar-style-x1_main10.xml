@@ -255,10 +255,10 @@
     <convert type="KravenVBRemainingToText">InMinutes</convert>
   </widget>
   <ePixmap pixmap="KravenVB/infobar-icons/aufloesung2.png" position="904,692" size="116,22" zPosition="1" alphatest="blend" />
-  <widget backgroundColor="KravenIBbg" font="Regular;18" position="907,692" valign="center" foregroundColor="KravenIcon" halign="left" size="54,22" render="Label" source="session.CurrentService" transparent="1">
+  <widget backgroundColor="KravenIBbg" font="Regular;18" position="907,692" name="KravenIconVPosition" valign="center" foregroundColor="KravenIcon" halign="left" size="54,22" render="Label" source="session.CurrentService" transparent="1">
     <convert  type="KravenVBServiceName2">OrbitalPos</convert>
   </widget>
-  <widget render="Label" font="Regular;18" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" position="950,692" valign="center" foregroundColor="KravenIcon"  source="session.FrontendStatus">
+  <widget render="Label" font="Regular;18" size="67,22" halign="right" backgroundColor="KravenIBbg" transparent="1" noWrap="1" position="950,692" name="KravenIconVPosition" valign="center" foregroundColor="KravenIcon"  source="session.FrontendStatus">
     <convert  type="KravenVBFrontendInfo">SNR</convert>
   </widget>
-  <!--<eLabel text="  S:"  font="Regular;18" size="30,22" halign="left" backgroundColor="KravenIBbg" transparent="1" position="954,692" valign="center" foregroundColor="KravenIcon" />-->
+  <!--<eLabel text="  S:"  font="Regular;18" size="30,22" halign="left" backgroundColor="KravenIBbg" transparent="1" position="954,692" name="KravenIconVPosition" valign="center" foregroundColor="KravenIcon" />-->
