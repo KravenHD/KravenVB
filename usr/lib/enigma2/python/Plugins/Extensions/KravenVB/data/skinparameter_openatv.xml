@@ -1,0 +1,50 @@
+  <!-- Skinparameter openatv -->
+  <parameters>
+    <!-- Choicelist -->
+    <parameter name="ChoicelistItemHeight" value="30" />
+    <parameter name="ChoicelistFont" value="Regular;22" />
+    <parameter name="ChoicelistFontSize" value="20" />
+    <parameter name="ChoicelistName" value="47,1,1147,28" />
+    <parameter name="ChoicelistIcon" value="7,0,40,30" />
+    <parameter name="ChoicelistDash" value="0,24,1147,20" />
+    <!-- PiconManagerList -->
+    <parameter name="PiconManagerList" value="7,4,1117,27" />
+    <parameter name="PiconManagerListFont" value="Regular;22" />
+    <parameter name="PiconManagerListItemHeight" value="30" />
+	<!-- ChannelSelectionHorizontal -->
+	<parameter name="ServicelistHorServiceTypeIcon" value="0,0,0,0" />
+	<parameter name="ServicelistHorServiceTime" value="0,0,0,0" />
+	<parameter name="ServicelistHorProgressbar" value="0,0,0,0" />
+	<parameter name="ServicelistHorPreViewPic" value="0,0,0,0" />
+	<parameter name="ServicelistHorPicon" value="25,14,144,81" />
+	<parameter name="ServicelistHorNumber" value="0,0,0,0" />
+	<parameter name="ServicelistHorName" value="2,100,191,30" />
+	<parameter name="ServicelistHorServiceInfo" value="3,140,191,54" />
+	<parameter name="ServicelistHorCustomPiconSize" value="144,81" />
+    <!-- FileList -->
+    <parameter name="FileListName" value="33,0,666,30" />
+    <parameter name="FileListIcon" value="3,5,20,20" />
+    <parameter name="FileListMultiName" value="63,0,633,30" />
+    <parameter name="FileListMultiIcon" value="33,5,20,20" />
+    <parameter name="FileListMultiLock" value="3,5,20,20" />
+    <parameter name="FileListFont" value="Regular;22" />
+    <parameter name="FileListItemHeight" value="30" />
+	<!-- SelectionList openATV -->
+    <parameter name="SelectionListDescr" value="36,1,666,27" />
+    <parameter name="SelectionListLock" value="3,5,20,20" />
+	<parameter name="SelectionListLockOff" value="3,5,20,20" />
+	<!-- ConfigList openATV -->
+    <parameter name="ConfigListSeperator" value="400" />
+	<!-- Programmlisten_Updater openATV -->
+    <parameter name="ProgrammlistenUpdaterListFont" value="Regular;22" />
+    <parameter name="ProgrammlistenUpdaterList" value="10,1,450,238,30" />
+  </parameters>
+  <fonts>
+	<alias name="FileList" font="Regular" size="22" height="30" />
+	<alias name="FileListMulti" font="Regular" size="22" height="30" />
+	<alias name="MaxCubeRoom" font="Regular" size="18" height="50"/>
+	<alias name="MaxCubeTemp" font="Regular2" size="30" height="50"/>
+	<alias name="SelectionList" font="Regular" size="22" height="30"/>
+	<alias name="EPGListChannelList0" font="Regular" size="23" />
+	<alias name="EPGListChannelList1" font="Regular" size="23" />
+  </fonts>

@@ -1,0 +1,179 @@
+  <!-- Skinparameter VTi -->
+  <parameters>
+    <!-- Choicelist -->
+    <parameter name="ChoicelistItemHeight" value="30" />
+    <parameter name="ChoicelistFont" value="Regular;22" />
+    <parameter name="ChoicelistFontSize" value="20" />
+    <parameter name="ChoicelistName" value="47,1,1147,28" />
+    <parameter name="ChoicelistIcon" value="7,0,40,30" />
+    <parameter name="ChoicelistDash" value="0,24,1147,20" />
+    <!-- PiconManagerList -->
+    <parameter name="PiconManagerList" value="7,4,1117,27" />
+    <parameter name="PiconManagerListFont" value="Regular;22" />
+    <parameter name="PiconManagerListItemHeight" value="30" />
+    <!-- EPGlist -->
+    <parameter name="EPGlistText1" value="2,1,32,27" />
+    <parameter name="EPGlistText2" value="39,1,162,27" />
+    <parameter name="EPGlistRecImage" value="214,5,20,20" />
+    <parameter name="EPGlistRecText" value="240,1,466,27" />
+    <parameter name="EPGlistNonRecText" value="214,1,492,27" />
+	<!-- EPGSearch -->
+    <parameter name="EPGlistText3" value="214,1,492,27" />
+	<parameter name="EPGSearchItemHeightBig" value="60" />
+	<parameter name="EPGSearchItemHeightDefault" value="30" />
+	<!-- EPGSelectionEPGBar_HD -->
+    <parameter name="EPGlistEPGBarIcon" value="3,5,20,20" />
+    <parameter name="EPGlistEPGBarText1" value="27,1,469,27" />
+    <parameter name="EPGlistEPGBarText2" value="2,1,494,27" />
+	<!-- EPGlistMulti -->
+    <parameter name="EPGlistMultiRecIcon" value="2,5,20,20" />
+    <parameter name="EPGlistMultiRecText" value="26,1,123,27" />
+    <parameter name="EPGlistMultiNonRecText" value="3,1,146,27" />
+    <parameter name="EPGlistMultiBeginText1" value="155,2,185,27" />
+    <parameter name="EPGlistMultiBeginText2" value="346,2,832,27" />
+    <parameter name="EPGlistMultiProgress" value="210,11,33,8" />
+    <parameter name="EPGlistMultiProgressText" value="250,2,928,27" />
+    <!-- EPGShare -->
+	<parameter name="EPGShareListItemHeight" value="30" />
+	<parameter name="EPGShareListWidth" value="688" />
+	<parameter name="EPGShareListMarginLeft" value="10" />
+	<parameter name="EPGShareListFont" value="Regular;22" />
+    <!-- MovieList -->
+    <parameter name="MovieListFontSize1" value="22" />
+    <parameter name="MovieListFontSize2" value="20" />
+	<parameter name="MovieListDirIcon" value="7,5,27,27" />
+    <parameter name="MovieListDirectoryIcon" value="37, 0, 667, 24" />
+    <parameter name="MovieListDirectoryNoIcon" value="7, 0, 667, 24" />
+    <parameter name="MovieListProgress" value="17, 10, 60, 10" />
+    <parameter name="MovieListProgressPercent" value="14, 12, 40, 7" />
+    <parameter name="MovieListProgressBorder" value="2" />
+    <parameter name="MovieListIconXOffset" value="27" />
+    <parameter name="MovieListProgressBarXtraYOffsetVTIStyle" value="5" />
+    <parameter name="MovieListIcon" value="7,4,27,27" />
+    <parameter name="MovieListMinimalItemHeight" value="30" />
+    <parameter name="MovieListMinimalVTITitle" value="27,0,620,27" />
+    <parameter name="MovieListMinimalVTIPicon" value="544,2,40,27" />
+    <parameter name="MovieListMinimalVTIBegin" value="550,2,47,25" />
+    <parameter name="MovieListMinimalVTILength" value="597,2,47,25" />
+    <parameter name="MovieListMinimalVTISize" value="644,2,47,25" />
+    <parameter name="MovieListMinimalVTIService" value="0, 0, 0, 0" />
+    <parameter name="MovieListMinimalVTIDescription" value="0, 0, 0, 0" />
+    <parameter name="MovieListMinimalVTITags" value="0, 0, 0, 0" />
+    <parameter name="MovieListMinimalVTIServiceTags" value="0, 0, 0, 0" />
+    <parameter name="MovieListItemHeight" value="30" />
+    <parameter name="MovieListMinimalFont1" value="Regular;22" />
+    <parameter name="MovieListMinimalFont2" value="Regular;20" />
+    <parameter name="MovieListMinimalFontSize1" value="22" />
+    <parameter name="MovieListMinimalFontSize2" value="20" />
+    <parameter name="MovieListMinimalTitleDesc" value="27,2,527,27" />
+    <parameter name="MovieListMinimalBegin" value="537,4,154,25" />
+    <parameter name="MovieListMinimalTitle" value="0, 0, 0, 0" />
+    <parameter name="MovieListMinimalLength" value="0, 0, 0, 0" />
+    <parameter name="MovieListOriginalItemHeight" value="30" />
+    <parameter name="MovieListOriginalFont1" value="Regular;22" />
+    <parameter name="MovieListOriginalFont2" value="Regular;20" />
+    <parameter name="MovieListOriginalFont3" value="Regular;20" />
+    <parameter name="MovieListOriginalFontSize1" value="22" />
+    <parameter name="MovieListOriginalFontSize2" value="20" />
+    <parameter name="MovieListOriginalFontSize3" value="20" />
+    <parameter name="MovieListOriginalTitle" value="27,0,500,27" />
+    <parameter name="MovieListOriginalBegin" value="537,2,154,27" />
+    <parameter name="MovieListOriginalService" value="0, 0, 0, 0" />
+    <parameter name="MovieListOriginalLength" value="0, 0, 0, 0" />
+    <parameter name="MovieListOriginalDescription" value="0, 0, 0, 0" />
+    <parameter name="MovieListOriginalDuration" value="0, 0, 0, 0" />
+    <parameter name="MovieListOriginalTags" value="0, 0, 0, 0" />
+    <parameter name="MovieListOriginalServiceTags" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactItemHeight" value="60" />
+    <parameter name="MovieListCompactFont1" value="Regular;22" />
+    <parameter name="MovieListCompactFont2" value="Regular;20" />
+    <parameter name="MovieListCompactFontSize1" value="22" />
+    <parameter name="MovieListCompactFontSize2" value="20" />
+    <parameter name="MovieListCompactTitle" value="27,0,600,27" />
+    <parameter name="MovieListCompactLength" value="610,0,80,27" />
+    <parameter name="MovieListCompactBegin" value="44,30,157,25" />
+    <parameter name="MovieListCompactServiceTags" value="210,30,480,25" />
+    <parameter name="MovieListCompactService" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactTags" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactDescription" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactDuration" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactDescTitle" value="27,0,534,27" />
+    <parameter name="MovieListCompactDescBegin" value="544,2,147,25" />
+    <parameter name="MovieListCompactDescDescription" value="7,30,340,25" />
+    <parameter name="MovieListCompactDescService" value="370,30,234,25" />
+    <parameter name="MovieListCompactDescLength" value="614,30,77,25" />
+    <parameter name="MovieListCompactDescDuration" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactDescTags" value="0, 0, 0, 0" />
+    <parameter name="MovieListCompactDescServiceTags" value="0, 0, 0, 0" />
+    <parameter name="MovieListDurationSize" value="60,100,87" />
+    <parameter name="MovieListChannelSize" value="74,34,0" />
+    <parameter name="MovieListBeginStringSize" value="107,74,0" />
+    <parameter name="MovieListNameXtraSize" value="0,40" />
+    <parameter name="MovieListFileSize" value="0,67" />
+	<!-- VerticalEPGView -->
+	<parameter name="VertEPGListFont_01" value="Regular;20" />
+	<parameter name="VertEPGListFont_02" value="Regular;22" />
+	<parameter name="VertEPGDate" value="0, 0, 0, 0" />
+	<parameter name="VertEPGBeginEndDuration" value="3, 1, 215, 24" />
+	<parameter name="VertEPGPrimeTimePic" value="0, 0, 0, 0" />
+	<parameter name="VertEPGText" value="3, 26, 215, 54" />
+	<parameter name="VertEPGDivLine" value="3, 81, 215, 1" />
+	<parameter name="VertEPGColumnsCount" value="5" />
+	<!-- ChannelSelectionHorizontal -->
+	<parameter name="ServicelistHorServiceTypeIcon" value="0,0,0,0" />
+	<parameter name="ServicelistHorServiceTime" value="0,0,0,0" />
+	<parameter name="ServicelistHorProgressbar" value="0,0,0,0" />
+	<parameter name="ServicelistHorPreViewPic" value="0,0,0,0" />
+	<parameter name="ServicelistHorPicon" value="25,14,144,81" />
+	<parameter name="ServicelistHorNumber" value="0,0,0,0" />
+	<parameter name="ServicelistHorName" value="2,100,191,30" />
+	<parameter name="ServicelistHorServiceInfo" value="3,140,191,54" />
+	<parameter name="ServicelistHorCustomPiconSize" value="144,81" />
+    <!-- FileList -->
+    <parameter name="FileListName" value="33,0,666,30" />
+    <parameter name="FileListIcon" value="3,5,20,20" />
+    <parameter name="FileListMultiName" value="63,0,633,30" />
+    <parameter name="FileListMultiIcon" value="33,5,20,20" />
+    <parameter name="FileListMultiLock" value="3,5,20,20" />
+    <parameter name="FileListFont" value="Regular;22" />
+    <parameter name="FileListItemHeight" value="30" />
+	<!-- SelectionList openATV -->
+    <parameter name="SelectionListDescr" value="36,1,666,27" />
+    <parameter name="SelectionListLock" value="3,5,20,20" />
+	<parameter name="SelectionListLockOff" value="3,5,20,20" />
+	<!-- ConfigList openATV -->
+    <parameter name="ConfigListSeperator" value="400" />
+	<!-- EPGListChannelList VTi -->
+	<parameter name="EPGServicelistText0OffSet" value="0,0" />
+	<parameter name="EPGServicelistText1OffSet" value="0,0" />
+	<parameter name="EPGServicelistText2OffSet" value="0,0" />
+	<parameter name="EPGServicelistRecImageOffset" value="0,0" />
+	<parameter name="EPGServicelistRecTextOffset" value="0,0" />
+	<parameter name="EPGServicelistNonRecTextOffset" value="0,0" />
+	<parameter name="EPGServicelistText0" value="2,1,32,28" />
+	<parameter name="EPGServicelistText1" value="34,1,66,28" />
+	<parameter name="EPGServicelistText2" value="110,1,62,28" />
+	<parameter name="EPGServicelistRecImage" value="170,5,20,20" />
+	<parameter name="EPGServicelistRecText" value="187,1,600,28" />
+	<parameter name="EPGServicelistNonRecText" value="170,1,600,28" />
+	<!-- CoverFind -->
+    <parameter name="CoverFindListFont" value="Regular;22" />
+    <parameter name="CoverFindListIcon" value="4,3,25,25" />
+    <parameter name="CoverFindListName" value="35,1,669,27" />
+    <parameter name="CoverFindItemHeight" value="30" />
+    <parameter name="CoverFindCover" value="0,0,80,120" />
+    <parameter name="CoverFindName" value="88,1,617,27" />
+  </parameters>
+  <fonts>
+	<alias name="FileList" font="Regular" size="22" height="30" />
+	<alias name="FileListMulti" font="Regular" size="22" height="30" />
+	<alias name="MaxCubeRoom" font="Regular" size="18" height="50"/>
+	<alias name="MaxCubeTemp" font="Regular2" size="30" height="50"/>
+	<alias name="SelectionList" font="Regular" size="22" height="30"/>
+	<alias name="EPGListChannelList0" font="Regular" size="23" />
+	<alias name="EPGListChannelList1" font="Regular" size="23" />
+	<alias name="MovieListFont1" font="Regular" size="22" height="30" />
+	<alias name="MovieListFont2" font="Regular" size="20" height="30" />
+	<alias name="MovieListMinimalFont1" font="Regular" size="22" height="30" />
+	<alias name="MovieListMinimalFont2" font="Regular" size="20" height="30" />
+  </fonts>

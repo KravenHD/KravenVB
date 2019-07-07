@@ -1,6 +1,0 @@
-    <borderset name="bsListboxEntry" value="2">
-      <pixmap filename="KravenVB/graphics/borset.png" pos="bpTop" />
-      <pixmap filename="KravenVB/graphics/borset.png" pos="bpBottom" />
-      <pixmap filename="KravenVB/graphics/borset.png" pos="bpLeft" />
-      <pixmap filename="KravenVB/graphics/borset.png" pos="bpRight" />
-    </borderset>

@@ -2300,4 +2300,63 @@
     <constant-widget name="Exit"/>
     <!--<text="OMBManagerAbout" position="70,0" />-->
   </screen>
+  <!-- CoverFindConfigScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CoverFindConfigScreen" position="0,0" size="1280,720" title="CoverFind">
+    <widget backgroundColor="Kravenbg3" name="info" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="config" position="70,123" size="708,480" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="CoverFindConfigScreen" position="70,0" />-->
+  </screen>
+  <!-- CoverFindScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CoverFindScreen" position="0,0" size="1280,720" title="CoverFind">
+    <widget backgroundColor="Kravenbg3" name="searchinfo" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" noWrap="1" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="list" position="70,123" size="708,480" font="Regular;22" foregroundColor="KravenFont1" itemHeight="120" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreen"/>
+    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="228,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" noWrap="1" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="CoverFindScreen" position="70,0" />-->
+  </screen>
+  <!-- CoverFindAll -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CoverFindAll" position="0,0" size="1280,720" title="CoverFind">
+    <widget backgroundColor="Kravenbg3" name="searchinfo" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" noWrap="1" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="list" position="70,123" size="708,480" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg2" name="cover" position="900,346" size="261,262" zPosition="100" transparent="1" alphatest="blend" />
+    <eLabel backgroundColor="Kravenbg2" position="900,346" size="261,262" zPosition="98" />
+    <eLabel backgroundColor="KravenBorder" position="900,346" size="260,2" transparent="0" zPosition="99" />
+    <eLabel backgroundColor="KravenBorder" position="900,346" size="2,262" transparent="0" zPosition="99" />
+    <eLabel backgroundColor="KravenBorder" position="1159,346" size="2,262" transparent="0" zPosition="99" />
+    <eLabel backgroundColor="KravenBorder" position="900,606" size="260,2" transparent="0" zPosition="99" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="Exit"/>
+    <!--<text="CoverFindAll" position="70,0" />-->
+  </screen>
+  <!-- CoverFindFile -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="CoverFindFile" position="0,0" size="1280,720" title="CoverFind">
+    <widget backgroundColor="Kravenbg3" name="media" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" noWrap="1" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="filelist" position="70,123" size="708,480" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+	<widget backgroundColor="Kravenbg2" name="picture" position="900,346" size="261,262" zPosition="100" transparent="1" alphatest="blend" />
+    <eLabel backgroundColor="Kravenbg2" position="900,346" size="261,262" zPosition="98" />
+    <eLabel backgroundColor="KravenBorder" position="900,346" size="260,2" transparent="0" zPosition="99" />
+    <eLabel backgroundColor="KravenBorder" position="900,346" size="2,262" transparent="0" zPosition="99" />
+    <eLabel backgroundColor="KravenBorder" position="1159,346" size="2,262" transparent="0" zPosition="99" />
+    <eLabel backgroundColor="KravenBorder" position="900,606" size="260,2" transparent="0" zPosition="99" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreen"/>
+    <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="OKExit"/>
+    <!--<text="CoverFindFile" position="70,0" />-->
+  </screen>
 <!-- plugins -->
