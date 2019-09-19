@@ -1269,6 +1269,123 @@
     <constant-widget name="OKExit"/>
     <!--<text="OscamButler" position="70,0" />-->
   </screen>
+  <!-- OscamInfoMenu -->
+  <screen name="OscamInfoMenu" position="0,0" size="1280,720" title="OscamInfo Menu" flags="wfNoBorder" backgroundColor="transparent">
+	<widget backgroundColor="Kravenbg3" name="mainmenu" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" scrollbarWidth="5" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="OscamInfoMenu" position="70,0" />-->
+  </screen>
+  <!-- OscamInfoConfigScreen -->
+  <screen name="OscamInfoConfigScreen" position="0,0" size="1280,720" title="OscamInfo Menu" flags="wfNoBorder" backgroundColor="transparent">
+	<widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,300" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" scrollbarWidth="5" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="status" position="70,400" size="708,216" font="Regular2;22" foregroundColor="KravenFont2" halign="center" valign="center" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+	<constant-widget name="SourceRedGreen"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="OscamInfoConfigScreen" position="70,0" />-->
+  </screen>
+  <!-- oscInfo -->
+  <screen name="oscInfo" position="0,0" size="1280,720" title="Client Info" flags="wfNoBorder" backgroundColor="transparent">
+	<widget backgroundColor="Kravenbg3" name="output" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+	<constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="oscInfo" position="70,0" />-->
+  </screen>
+  <!-- oscECMInfo -->
+  <screen name="oscECMInfo" position="0,0" size="1280,720" title="OscamECM Info" flags="wfNoBorder" backgroundColor="transparent">
+	<widget backgroundColor="Kravenbg3" name="output" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="oscECMInfo" position="70,0" />-->
+  </screen>
+  <!-- oscReaderStats -->
+  <screen name="oscReaderStats" position="0,0" size="1280,720" title="OscamReader Stats" flags="wfNoBorder" backgroundColor="transparent">
+	<widget backgroundColor="Kravenbg" source="output" render="Listbox" position="70,80" size="1168,540" foregroundColor="KravenFont1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" >
+		<convert type="TemplatedMultiContent">
+				{"templates":
+					{"default": (30,[
+							MultiContentEntryText(pos = (0, 1), size = (100, 24), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is caid
+							MultiContentEntryText(pos = (100, 1), size = (50, 24), font=0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is csystem
+							MultiContentEntryText(pos = (150, 1), size = (150, 24), font=0, flags = RT_HALIGN_LEFT, text = 2), # index 2 is hop 1
+							MultiContentEntryText(pos = (300, 1), size = (60, 24), font=0, flags = RT_HALIGN_LEFT, text = 3), # index 3 is hop 2
+							MultiContentEntryText(pos = (360, 1), size = (60, 24), font=0, flags = RT_HALIGN_LEFT, text = 4), # index 4 is hop 3
+							MultiContentEntryText(pos = (420, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 5), # index 5 is hop 4
+							MultiContentEntryText(pos = (510, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 6), # index 6 is hop 5
+							MultiContentEntryText(pos = (590, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 7), # index 7 is sum of cards for caid
+							]),
+					"HD": (30,[
+							MultiContentEntryText(pos = (3, 1), size = (160, 26), font=1, flags = RT_HALIGN_LEFT, text = 0), # index 0 is caid
+							MultiContentEntryText(pos = (173, 1), size = (70, 26), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 1 is csystem
+							MultiContentEntryText(pos = (253, 1), size = (290, 26), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 2 is hop 1
+							MultiContentEntryText(pos = (553, 1), size = (100, 26), font=1, flags = RT_HALIGN_LEFT, text = 3), # index 3 is hop 2
+							MultiContentEntryText(pos = (663, 1), size = (100, 26), font=1, flags = RT_HALIGN_LEFT, text = 4), # index 4 is hop 3
+							MultiContentEntryText(pos = (773, 1), size = (130, 26), font=1, flags = RT_HALIGN_LEFT, text = 5), # index 5 is hop 4
+							MultiContentEntryText(pos = (913, 1), size = (130, 26), font=1, flags = RT_HALIGN_LEFT, text = 6), # index 6 is hop 5
+							MultiContentEntryText(pos = (1053, 1), size = (100, 26), font=1, flags = RT_HALIGN_LEFT, text = 7), # index 7 is sum of cards for caid
+							]),
+					},
+					"fonts": [gFont("Regular",20),gFont("Regular",20),gFont("Regular",20),gFont("Regular",20)],
+					"itemHeight": 30
+				}
+		</convert>
+	</widget>
+    <constant-widget name="Title-big"/>
+    <constant-widget name="Background"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="oscReaderStats" position="70,0" />-->
+  </screen>
+  <!-- oscEntitlements -->
+  <screen name="oscEntitlements" position="0,0" size="1280,720" title="OscamReader Stats" flags="wfNoBorder" backgroundColor="transparent">
+	<widget backgroundColor="Kravenbg" source="output" render="Listbox" position="70,80" size="1168,540" foregroundColor="KravenFont1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" >
+		<convert type="TemplatedMultiContent">
+				{"templates":
+					{"default": (60,[
+							MultiContentEntryText(pos = (0, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is caid
+							MultiContentEntryText(pos = (90, 1), size = (150, 24), font=0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is csystem
+							MultiContentEntryText(pos = (250, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 2), # index 2 is hop 1
+							MultiContentEntryText(pos = (290, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 3), # index 3 is hop 2
+							MultiContentEntryText(pos = (330, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 4), # index 4 is hop 3
+							MultiContentEntryText(pos = (370, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 5), # index 5 is hop 4
+							MultiContentEntryText(pos = (410, 1), size = (40, 24), font=0, flags = RT_HALIGN_LEFT, text = 6), # index 6 is hop 5
+							MultiContentEntryText(pos = (480, 1), size = (70, 24), font=0, flags = RT_HALIGN_LEFT, text = 7), # index 7 is sum of cards for caid
+							MultiContentEntryText(pos = (550, 1), size = (80, 24), font=0, flags = RT_HALIGN_LEFT, text = 8), # index 8 is reshare
+							MultiContentEntryText(pos = (0, 25), size = (700, 24), font=1, flags = RT_HALIGN_LEFT, text = 9), # index 9 is providers
+							]),
+					"HD": (60,[
+							MultiContentEntryText(pos = (3, 1), size = (160, 26), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is caid
+							MultiContentEntryText(pos = (173, 1), size = (240, 26), font=0, flags = RT_HALIGN_LEFT, text = 1), # index 1 is csystem
+							MultiContentEntryText(pos = (423, 1), size = (80, 26), font=0, flags = RT_HALIGN_LEFT, text = 2), # index 2 is hop 1
+							MultiContentEntryText(pos = (513, 1), size = (80, 26), font=0, flags = RT_HALIGN_LEFT, text = 3), # index 3 is hop 2
+							MultiContentEntryText(pos = (603, 1), size = (80, 26), font=0, flags = RT_HALIGN_LEFT, text = 4), # index 4 is hop 3
+							MultiContentEntryText(pos = (693, 1), size = (80, 26), font=0, flags = RT_HALIGN_LEFT, text = 5), # index 5 is hop 4
+							MultiContentEntryText(pos = (783, 1), size = (80, 26), font=0, flags = RT_HALIGN_LEFT, text = 6), # index 6 is hop 5
+							MultiContentEntryText(pos = (873, 1), size = (120, 26), font=0, flags = RT_HALIGN_LEFT, text = 7), # index 7 is sum of cards for caid
+							MultiContentEntryText(pos = (1003, 1), size = (150, 26), font=0, flags = RT_HALIGN_LEFT, text = 8), # index 8 is reshare
+							MultiContentEntryText(pos = (3, 31), size = (1150, 26), font=1, flags = RT_HALIGN_LEFT, text = 9), # index 9 is providers
+							]),
+					},
+					"fonts": [gFont("Regular",20),gFont("Regular",20),gFont("Regular",20),gFont("Regular",20)],
+					"itemHeight": 60
+				}
+		</convert>
+	</widget>
+    <constant-widget name="Title-big"/>
+    <constant-widget name="Background"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="oscEntitlements" position="70,0" />-->
+  </screen>
   <!-- EcmInfoConfigMenu -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="EcmInfoConfigMenu" position="0,0" size="1280,720" title=" ">
 	<eLabel text="Ecm Info" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
@@ -2358,5 +2475,69 @@
     <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <constant-widget name="OKExit"/>
     <!--<text="CoverFindFile" position="70,0" />-->
+  </screen>
+  <!-- ZapStatisticDurationScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ZapStatisticDurationScreen" position="0,0" size="1280,720" title="Zap Statistic">
+    <widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="ZapStatisticDurationScreen" position="70,0" />-->
+  </screen>
+  <!-- ZapStatisticCombinedScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ZapStatisticCombinedScreen" position="0,0" size="1280,720" title="Zap Statistic">
+    <widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="ZapStatisticCombinedScreen" position="70,0" />-->
+  </screen>
+  <!-- ZapStatisticScreen -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="ZapStatisticScreen" position="0,0" size="1280,720" title="Zap Statistic">
+    <widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="ZapStatisticScreen" position="70,0" />-->
+  </screen>
+  <!-- ChromiumOSWindow -->
+  <screen backgroundColor="transparent" name="ChromiumOSWindow" position="0,0" size="1280,720" title="Start ChromiumOS" flags="wfNoBorder">
+    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,120" itemHeight="30" font="Regular;22" scrollbarMode="showOnDemand" scrollbarWidth="5" enableWrapAround="1" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="startdesc" position="70,220" size="708,27" font="Regular2;22" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="settingdesc" position="70,250" size="708,27" font="Regular2;22" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="helpdesc" position="70,280" size="708,27" font="Regular2;22" valign="center" transparent="1" />
+	<constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <widget font="Regular;20" halign="left" valign="center" source="key_green" position="320,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="key_yellow" position="570,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" source="key_blue" position="820,665" size="220,26" render="Label" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="Colorbuttons"/>
+	<constant-widget name="OKExit"/>
+  <!--<text="ChromiumOSWindow" position="70,0" />-->
+  </screen>
+  <!-- ChromiumOSSettings -->  
+  <screen backgroundColor="transparent" name="ChromiumOSSettings" position="0,0" size="1280,720" title="ChromiumOS Settings" flags="wfNoBorder">
+    <widget backgroundColor="Kravenbg3" name="config" position="70,80" size="708,450" itemHeight="30" font="Regular;22" scrollbarMode="showOnDemand" scrollbarWidth="5" enableWrapAround="1" transparent="1" />
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="SourceRedGreen"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+  <!--<text="ChromiumOSSettings" position="70,0" />-->
+  </screen>
+  <!-- ChromiumOSHelpWindow -->  
+  <screen backgroundColor="transparent" name="ChromiumOSHelpWindow" position="0,0" size="1280,720" title="ChromiumOS Help" flags="wfNoBorder">
+    <constant-widget name="Title-big"/>
+	<!-- Logo -->
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="ChromiumOSHelpWindow" position="70,0" />-->
   </screen>
 <!-- plugins -->

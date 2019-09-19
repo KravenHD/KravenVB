@@ -41,15 +41,15 @@
 	<widget backgroundColor="Kravenbg2" foregroundColor="KravenFont1" itemHeight="82" name="epg_list3" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="538,294" size="227,328" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
 	<widget backgroundColor="Kravenbg2" foregroundColor="KravenFont1" itemHeight="82" name="epg_list4" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="775,294" size="227,328" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
 	<widget backgroundColor="Kravenbg2" foregroundColor="KravenFont1" itemHeight="82" name="epg_list5" TimeStringColor="KravenFont2" TimeColor="KravenFont2" position="1012,294" size="227,328" scrollbarMode="showOnDemand" scrollbarWidth="6" transparent="1" zPosition="5"/>
-	<eLabel backgroundColor="KravenVEPGBorder" position="63,241" size="1175,1" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="63,293" size="1175,1" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="63,622" size="1175,1" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="63,241" size="1,381" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="290,241" size="1,381" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="527,241" size="1,381" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="764,241" size="1,381" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="1001,241" size="1,381" zPosition="4" />
-	<eLabel backgroundColor="KravenVEPGBorder" position="1238,241" size="1,381" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="63,241" size="1175,1" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="63,293" size="1175,1" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="63,622" size="1175,1" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="63,241" size="1,381" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="290,241" size="1,381" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="527,241" size="1,381" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="764,241" size="1,381" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="1001,241" size="1,381" zPosition="4" />
+	<eLabel backgroundColor="KravenBorder" position="1238,241" size="1,381" zPosition="4" />
     <widget font="Regular;20" halign="left" valign="center" name="key_red" position="70,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_green" position="320,665" size="240,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />
     <widget font="Regular;20" halign="left" valign="center" name="key_yellow" position="570,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="1" />

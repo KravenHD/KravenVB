@@ -233,7 +233,27 @@
     <constant-widget name="OKExit"/>
     <!--<text="EPGPanel" position="70,0" />-->
   </screen>
- <!--DeviceManager2 -->
+  <!-- Edit_DVB_EPG_Blacklist -->
+  <screen name="Edit_DVB_EPG_Blacklist" position="0,0" size="1280,720" title="Edit blacklist for DVB EPG" flags="wfNoBorder" backgroundColor="transparent">
+    <eLabel text="Edit blacklist for DVB EPG" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" /> 
+	<widget backgroundColor="Kravenbg3" name="ServiceList" position="70,80" size="708,540" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="Colorbuttons"/>
+	<!-- Logo -->
+    <constant-widget name="OKExit"/>
+    <!--<text="Edit_DVB_EPG_Blacklist" position="70,0" />-->
+   </screen>
+  <!-- DVB_EPG_blacklist_ChannelSelection --> 
+  <screen name="DVB_EPG_blacklist_ChannelSelection" position="0,0" size="1280,720" title="Select service to add..." flags="wfNoBorder" backgroundColor="transparent">
+    <eLabel text="Select service to add..." position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
+	<widget backgroundColor="Kravenbg3" name="list" position="70,80" size="708,540" serviceNumberFont="Regular;22" serviceNameFont="Regular;22" serviceInfoFont="Regular;22" foregroundColor="KravenFont1" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+    <constant-widget name="Colorbuttons"/>
+	<!-- Logo -->
+    <constant-widget name="OKExit"/>
+    <!--<text="DVB_EPG_blacklist_ChannelSelection" position="70,0" />-->
+  </screen>
+  <!--DeviceManager2 -->
   <screen name="DeviceManager2" position="0,0" size="1280,720" title="DeviceManager2" backgroundColor="transparent" flags="wfNoBorder">
     <constant-widget name="title-small"/>
 	<widget source="menu" render="Listbox" position="70,80" size="708,470" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" backgroundColor="Kravenbg3" transparent="1">
@@ -529,18 +549,18 @@
   </screen>
   <!-- SleepTimerEdit -->
   <screen backgroundColor="transparent" flags="wfNoBorder" name="SleepTimerEdit" position="0,0" size="1280,720" title="Sleep Timer">
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="pretext" position="100,140" size="250,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="input" position="350,140" size="50,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="aftertext" position="400,140" size="120,25" transparent="1" />
-    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="current_status" position="100,180" size="690,30" transparent="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular;22" foregroundColor="KravenFont1" name="pretext" position="70,80" size="250,27" transparent="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular;22" foregroundColor="KravenFont1" name="input" position="320,80" size="50,27" transparent="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular;22" foregroundColor="KravenFont1" name="aftertext" position="370,80" size="120,27" transparent="1" />
+    <widget backgroundColor="Kravenbg3" font="Regular2;22" foregroundColor="KravenFont2" name="current_status" position="70,120" size="690,27" transparent="1" />
     <constant-widget name="Title-big"/>
 	<!-- Logo -->
     <constant-widget name="Colorbuttons"/>
-    <widget font="Regular;20" halign="left" valign="center" name="red_text" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="green_text" position="320,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="yellow_text" position="570,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
-    <widget font="Regular;20" halign="left" valign="center" name="blue_text" position="820,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="2" />
-    <constant-widget name="Exit"/>
+    <widget font="Regular;20" halign="left" valign="center" name="red_text" position="70,639" size="220,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="green_text" position="320,639" size="240,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="yellow_text" position="570,639" size="240,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <widget font="Regular;20" halign="left" valign="center" name="blue_text" position="820,639" size="240,52" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="2" />
+    <constant-widget name="OKExit"/>
     <!--<text="SleepTimerEdit" position="70,0" />-->
   </screen>
   <screen backgroundColor="transparent" flags="wfNoBorder" name="LanguageSelection" position="0,0" size="1280,720" title="Language selection">
@@ -811,4 +831,81 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
     <widget font="Regular;20" halign="left" valign="center" name="key_blue" position="820,665" size="220,26" backgroundColor="KravenIBbg2" foregroundColor="KravenButton" transparent="1" zPosition="2" />
     <constant-widget name="MenuOKExit"/>
     <!--<text="EPGSelectionMulti" position="70,0" />-->
+  </screen>
+  <!-- QuickSubtitlesConfigMenu -->
+  <screen name="QuickSubtitlesConfigMenu" position="0,0" size="1280,720" title="Subtitle settings" flags="wfNoBorder" backgroundColor="transparent">
+    <eLabel text="Subtitle settings" position="70,12" size="1000,46" backgroundColor="KravenIBbg3" font="Regular2;34" foregroundColor="KravenMFont2" halign="left" valign="center" transparent="1" />
+    <widget name="config" position="70,80" size="708,540" secondfont="Regular;20" font="Regular;22" itemHeight="30" backgroundColor="Kravenbg3" enableWrapAround="1" zPosition="10" transparent="1" />
+	  <applet type="onLayoutFinish">
+from enigma import eSize
+wsizex = 1280
+wsizey = 720
+wsize = (wsizex, wsizey)
+self.instance.resize(eSize(*wsize))
+	  </applet>
+    <!-- Logo -->
+    <constant-widget name="OKExit"/>
+    <constant-widget name="Colorbuttons"/>
+    <!--<text="QuickSubtitlesConfigMenu" position="70,0" />-->     
+  </screen>
+  <!-- WitAiSttSetup -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="WitAiSttSetup" position="0,0" size="1280,720" title="Wit.ai speech to text Setup">
+    <widget backgroundColor="Kravenbg3" position="70,80" size="708,60" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="description" render="Label" position="70,160" size="708,459" font="Regular2;22" foregroundColor="KravenFont2" transparent="1" valign="top" halign="center" />
+    <constant-widget name="Title-big"/>
+    <constant-widget name="Colorbuttons"/>
+    <!-- Logo -->
+    <eLabel font="Regular;20" halign="left" valign="center" text="Cancel" position="70,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <eLabel font="Regular;20" halign="left" valign="center" text="OK" position="320,665" size="220,26" backgroundColor="KravenIBbg3" foregroundColor="KravenButton" transparent="1" zPosition="1" />
+    <constant-widget name="Exit"/>
+    <!--<text="WitAiSttSetup" position="70,0" />-->
+  </screen>
+  <!-- SATIPClient -->
+  <screen backgroundColor="transparent" flags="wfNoBorder" name="SATIPClient" position="0,0" size="1280,720" title="VTI Sub Menu">
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" source="vtunerList" render="Listbox" position="70,80" size="708,288" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1">
+	  <convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (72,[
+						MultiContentEntryText(pos = (5, 0), size = (680, 28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+						MultiContentEntryText(pos = (5, 28), size = (210, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+						MultiContentEntryText(pos = (215, 28), size = (210, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
+						MultiContentEntryText(pos = (430, 28), size = (210, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 3),
+						MultiContentEntryText(pos = (5, 48), size = (680, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 4),
+				]),
+				},
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 72
+			}
+	  </convert>
+	</widget>
+	<widget source="description" render="Label" position="70,545" size="708,54" font="Regular2;22" halign="center" foregroundColor="KravenFont2" backgroundColor="Kravenbg3" transparent="1" />
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="SourceRedGreenYellowBlue"/>
+	<!-- Logo -->
+    <constant-widget name="Exit"/>
+    <!--<text="SATIPClient" position="70,0" />-->
+  </screen>
+  <!-- SATIPTuner -->
+  <screen backgroundColor="transparent" name="SATIPTuner" position="0,0" size="1280,720" title="SAT IP Tuner" flags="wfNoBorder" >
+    <constant-widget name="Title-big"/>
+    <widget backgroundColor="Kravenbg3" name="config" font="Regular;22" foregroundColor="KravenFont1" itemHeight="30" position="70,80" size="708,120" enableWrapAround="1" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="description" render="Label" position="70,220" size="708,270" font="Regular2;22" halign="center" valign="center" transparent="1" />
+    <widget backgroundColor="Kravenbg3" source="choices" render="Label" position="70,510" size="708,54" font="Regular;22" halign="center" valign="center" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="SourceRedGreenYellow"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="OKExit"/>
+    <!--<text="SATIPTuner" position="70,0" />-->
+  </screen>
+  <!-- backsNcoversScreen -->
+  <screen backgroundColor="transparent" name="backsNcoversScreen" position="0,0" size="1280,720" title="backsNcovers" flags="wfNoBorder" >
+    <constant-widget name="Title-big"/>
+	<widget backgroundColor="Kravenbg3" name="searchinfo" position="70,80" size="708,27" font="Regular2;22" foregroundColor="KravenFont2" noWrap="1" transparent="1" />
+    <widget backgroundColor="Kravenbg3" name="list" position="70,110" size="708,510" scrollbarMode="showOnDemand" scrollbarWidth="5" transparent="1" />
+	<!-- Logo -->
+    <constant-widget name="NameRedGreenYellowBlue"/>
+    <constant-widget name="Colorbuttons"/>
+    <constant-widget name="MenuOKExit"/>
+    <!--<text="backsNcoversScreen" position="70,0" />-->
   </screen>

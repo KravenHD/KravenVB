@@ -1,7 +1,0 @@
-  <!--/* InfoBar -->
-  <screen backgroundColor="transparent" flags="wfNoBorder" name="InfoBar" position="0,0" size="1280,720" title="InfoBar">
-	<ePixmap pixmap="KravenVB/backg.png" position="0,0" size="1280,720" zPosition="-9" />
-	<!-- Infobar ibar -->
-	<!-- Infobar clockstyle -->
-	<!-- Infobar channelname -->
-	<!-- Infobar ecminfo -->

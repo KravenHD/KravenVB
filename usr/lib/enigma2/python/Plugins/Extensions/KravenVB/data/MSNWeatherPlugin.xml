@@ -90,7 +90,7 @@
 	<widget source="session.MSNWeather" render="Label" font="Regular;24" foregroundColor="white" position="955,655" size="240,40" backgroundColor="#00666666" zPosition="3" transparent="1" halign="center" valign="center">
 	  <convert type="MSNWeather">temperature_text,day5</convert>
 	</widget>
-    <eLabel backgroundColor="Kravenbg" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
+    <eLabel backgroundColor="Kravenbg5" position="0,0" size="1280,720" transparent="0" zPosition="-10" />
     <!--<text="MSNWeatherPlugin" position="70,0" />-->
   </screen>
   <!-- MSNWeatherPluginEntriesListConfigScreen -->

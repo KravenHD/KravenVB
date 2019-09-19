@@ -45,7 +45,7 @@
     <parameter name="MovieListDirectoryIcon" value="37, 0, 667, 24" />
     <parameter name="MovieListDirectoryNoIcon" value="7, 0, 667, 24" />
     <parameter name="MovieListProgress" value="17, 10, 60, 10" />
-    <parameter name="MovieListProgressPercent" value="14, 12, 40, 7" />
+    <parameter name="MovieListProgressPercent" value="17, 2, 60, 27" />
     <parameter name="MovieListProgressBorder" value="2" />
     <parameter name="MovieListIconXOffset" value="27" />
     <parameter name="MovieListProgressBarXtraYOffsetVTIStyle" value="5" />
@@ -163,6 +163,11 @@
     <parameter name="CoverFindItemHeight" value="30" />
     <parameter name="CoverFindCover" value="0,0,80,120" />
     <parameter name="CoverFindName" value="88,1,617,27" />
+	<!-- backsNcovers -->
+    <parameter name="backsNcoversListFont" value="Regular;22" />
+    <parameter name="backsNcoversItemHeight" value="170" />
+    <parameter name="backsNcoversCover" value="0,0,255,170" />
+    <parameter name="backsNcoversName" value="270,31,423,108" />
   </parameters>
   <fonts>
 	<alias name="FileList" font="Regular" size="22" height="30" />
@@ -170,6 +175,8 @@
 	<alias name="MaxCubeRoom" font="Regular" size="18" height="50"/>
 	<alias name="MaxCubeTemp" font="Regular2" size="30" height="50"/>
 	<alias name="SelectionList" font="Regular" size="22" height="30"/>
+	<alias name="EPGList0" font="Regular" size="22" />
+	<alias name="EPGList1" font="Regular" size="22" />
 	<alias name="EPGListChannelList0" font="Regular" size="23" />
 	<alias name="EPGListChannelList1" font="Regular" size="23" />
 	<alias name="MovieListFont1" font="Regular" size="22" height="30" />
