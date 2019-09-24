@@ -1875,7 +1875,7 @@ class ActivateSkinSettings:
 		else:
 			self.skinSearchAndReplace.append(['name="KravenGMESelBg" value="#00389416', 'name="KravenGMESelBg" value="#00' + config.plugins.KravenVB.GMESelBg.value])
 		if config.plugins.KravenVB.GMENowFg.value == "global":
-			self.skinSearchAndReplace.append(['name="KravenGMENowFg" value="#00F0A30A', 'name="KravenGMENowFg" value="#00' + config.plugins.KravenVB.SelectionBackground.value])
+			self.skinSearchAndReplace.append(['name="KravenGMENowFg" value="#00F0A30A', 'name="KravenGMENowFg" value="#00' + config.plugins.KravenVB.SelectionFont.value])
 		else:
 			self.skinSearchAndReplace.append(['name="KravenGMENowFg" value="#00F0A30A', 'name="KravenGMENowFg" value="#00' + config.plugins.KravenVB.GMENowFg.value])
 		if config.plugins.KravenVB.GMENowBg.value == "global":
